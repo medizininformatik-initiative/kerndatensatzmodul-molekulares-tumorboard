@@ -1,0 +1,264 @@
+@startuml MII_MTB_LM
+skinparam linetype polyline 
+
+object MTB_EpisodeOfCare #FFFF66 {
+    Anmeldedatum
+    MTB_Einwilligung
+    Diagnose
+    Vortherapie
+    Probe
+    Molekular_Pathologie_Befund
+    NGS_Bericht
+    MTB_Beschluss_Therapieplan
+}
+
+object MTB_Einwilligung {
+    Status
+}
+MTB_Einwilligung --o MTB_EpisodeOfCare::MTB_Einwilligung
+
+object Diagnose {
+    Leitlinienbehandlung_Status
+    WHO_Grad_ZNS
+    Tumorausbreitung_ED_Wert
+    Tumorausbreitung_ED_Zeitpunkt
+    Tumorausbreitung_MTB_Wert
+    Tumorausbreitung_MTB_Zeitpunkt
+}
+
+object Vortherapie {
+    Zulassungsstatus
+    Therapielinie
+    Startdatum
+    Enddatum
+    Wirkstoffe
+    Systematische_Therapie_Ende_Grund
+    Typ_Kategorie
+}
+
+object Probe {
+    Tumorzellgehalt_Methode
+    Tumorzellgehalt_Wert
+}
+
+object Molekular_Pathologie_Befund {
+    Art_Diagnostik
+    IHC_Befund
+    FISH_Befund
+}
+
+object NGS_Bericht {
+    NGS_QC
+    TMB
+    NGS_Metadaten
+    Gen_Kodierung
+    Positionsbereich
+    HRD_Score
+    BRCAness
+    Einfache_Variante
+    RNA_Seq
+    RNA_Fusion
+    DNA_Fusion
+    CNV 
+}
+
+object NGS_QC {
+    Sequencing_Read_Type
+    Lueckenstatistik
+    Read_Laenge 
+}
+object NGS_TMB {
+    Interpretation
+    Wert
+}
+NGS_TMB --o NGS_Bericht::TMB
+
+object NGS_Metadaten {
+    Fragmentierung
+    Sequenzierkit_Hersteller
+    Sequenzierkit_Bezeichnung
+    Librarykit_Hersteller
+    Librarykit_Bezeichnung
+    Sequenziergeraet_Modell
+    Sequenziergeraet_Hersteller
+    Art_Sequenzierung
+    Erstellungsdatum
+    Referenzgenom
+    Probe
+    Pipeline
+}
+NGS_Metadaten --o NGS_Bericht::NGS_Metadaten
+object Gen_Kodierung{
+    ENSEMBL_ID
+    HGNC_ID
+    Symbol
+    Name_Gen
+}
+Gen_Kodierung --o NGS_Bericht::Gen_Kodierung
+object Positionsbereich {
+    Ende
+    Start
+}
+Positionsbereich --o NGS_Bericht::Positionsbereich 
+
+object HRD_Score {
+    Wert
+    Interpretation
+}
+HRD_Score --o NGS_Bericht::HRD_Score 
+
+
+object Einfache_Variante {
+    Gen
+    Positionsbereich
+    Interpretation
+}
+Einfache_Variante --o NGS_Bericht::Einfache_Variante 
+
+object RNA_Seq {
+    transcripts_per_million
+    Cohort_Ranking
+    Library_size
+    Raw_counts
+    Tissue_corrected_expression
+    Transcript_ID
+    Gen
+    Ensemble_ID
+    Entrez_ID
+    Varianten_ID
+}
+RNA_Seq --o NGS_Bericht::RNA_Seq 
+
+object RNA_Fusion {
+    RNA_Fusion_Partner_Strand
+    RNA_Fusion_Partner_Transcript_Position
+    RNA_Fusion_Partner_Exon_ID
+    RNA_Fusion_Partner_Transcript_ID
+    RNA_Fusion_Partner_Gen
+    Number_reported_reads
+    COSMIC_ID
+    Effect
+    3'FusionPartner
+    5'FusionPartner
+    Varianten_ID
+}
+RNA_Fusion --o NGS_Bericht::RNA_Fusion 
+
+
+object DNA_Fusion {
+    DNA_Fusion_Partner_Chromosom
+    DNA_Fusion_Partner_Position
+    DNA_Fusion_Partner_Gen
+    Number_reported_reads
+    3'FusionPartner
+    5'FusionPartner
+    Varianten_ID
+}
+
+object CopyNumberVariante {
+    End_Positionsbereich
+    Start_Positionsbereich
+    CopyNumberNeutral_LoH
+    Type
+    Reported_Focality
+    Reported_Affected_Genes
+    CNB
+    CNA
+    Relative_CN
+    Total_CN
+    Chromosom
+    Varianten_ID
+
+}
+NGS_Bericht::NGS_QC o-- NGS_QC
+NGS_Bericht::DNA_Fusion o-- DNA_Fusion 
+
+NGS_Bericht::CNV o-- CopyNumberVariante  
+
+
+object MTB_Beschluss_Therapieplan {
+    Therapie_Empfehlung
+    Status_Begründung
+    Rebiopsie_Auftrag
+    Rebiopsie_Auftrag_Begründung
+    Humangenetische_Beratung_Auftrag
+    Humangenetische_Beratung_Auftrag_Begründung
+    Histologie_Reevaluation_Auftrag
+    Histologie_Reevaluation_Auftrag_Begründung
+    Protokollauszug
+    Erstellungsdatum
+    
+}
+object Therapie_Empfehlung {
+    Stützende molekulare Alterationen
+    Stützende Entität
+    EvL_Publikationen_DOI
+    EvL_Publikationen_PMID
+    EvL_Graduierung
+    EvL_Zusatz
+    Priorität
+    Wirkstoffe
+    Studien_Einschluss_Empfehlung
+}
+Therapie_Empfehlung --o MTB_Beschluss_Therapieplan::Therapie_Empfehlung
+
+object Studien_Einschluss_Empfehlung{
+    Stützende Entität
+    NCT_Nummer
+    Eudra_CT_Cummer
+    DRKS_Nummer
+}
+Therapie_Empfehlung::Studien_Einschluss_Empfehlung o--  Studien_Einschluss_Empfehlung
+NGS_Bericht -right--> MTB_Beschluss_Therapieplan 
+
+
+object MTB_Followup {
+    Erfassungsdatum
+    Follow_up_Status
+    Grund_Nicht_Umsetzung
+    Systemische_Therapie
+}
+object MTB_Systemische_Therapie {
+    Therapie_Startdatum date
+    Therapie_Enddatum date
+    Systemische_Therapie_Ende_Grund 
+    Therapie_Empfehlung
+    Bemerkungen
+    Status
+    Wirkstoffe
+    Dosisdichte
+    ResponseBefund
+}
+object ResponseBefund{
+    Response_Beurteilung
+    Beurteilungsmethode
+    Zeitpunkt
+}
+
+
+object MTB_Antrag_Kostenuebernahme #FFFF66 {
+    Ausstellungsdatum date
+    Therapieempfehlung 
+    Antragsstadium code 
+    Antragstellung_ZPM_Geschaeftstelle code
+}
+Therapie_Empfehlung <-- MTB_Antrag_Kostenuebernahme::TherapieEmpfehlung
+object Antwort_Kostenuebernahme #FFFF66 {
+    Datum date
+    Antrag 
+    Status
+    Grund
+}
+Antwort_Kostenuebernahme::Antrag -left-> MTB_Antrag_Kostenuebernahme
+MTB_EpisodeOfCare::MTB_Einwiliigung o-down- MTB_Einwilligung
+MTB_EpisodeOfCare::Diagnose o-down- Diagnose
+MTB_EpisodeOfCare::Vortherapie o-down- Vortherapie
+MTB_EpisodeOfCare::Probe o-down- Probe
+MTB_EpisodeOfCare::Molekular_Pathologie_Befund  o-down- Molekular_Pathologie_Befund
+MTB_EpisodeOfCare::NGS_Bericht o-down--- NGS_Bericht
+MTB_EpisodeOfCare::MTB_Beschluss_Therapieplan o-down-- MTB_Beschluss_Therapieplan
+MTB_Systemische_Therapie::Therapie_Empfehlung <-- Therapie_Empfehlung
+ResponseBefund o-- MTB_Systemische_Therapie
+MTB_Systemische_Therapie <-right- MTB_Followup::Systemische_Therapie
+
+@enduml
