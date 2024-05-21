@@ -1,14 +1,84 @@
 @startuml MII_MTB_Overview
-object MII Onkologie
-object MII Pathologischer Befundbericht
-object MII Molekulargenetischer Befundbericht
-object MII Molekulares Tumorboard
-object IHC-Befund
-object ISH-Befund
+skinparam Linetype ortho
+'skinparam linetype polyline
 
-object FISH-Befund
-object Diagnose
-object Vortherapie 
-object MTB_Systemische_Therapie
-object 
+package MII_Modul_Biobank {
+ object Bioprobe
+
+}
+
+package MII_Modul_Pathologiebefund {
+    object MII_Pathologie_Befundbericht
+    object MII_Patho_Finding
+    MII_Pathologie_Befundbericht -[hidden]down- MII_Patho_Finding
+   
+}
+
+package MII_Modul_Molekulargenetischer_Befundbericht {
+object MII_Molekulargenetischer_Befundbericht
+object MII_Variante
+}
+package MII_Modul_Onkologie {
+    object MII_Onko_Diagnose
+    object MII_Onko_Systemische_Therapie
+}
+
+package MII_Modul_Molekulares_Tumorboard {
+    object Probe
+    Bioprobe <|... Probe
+
+    object IHC_Befund
+    object ISH_Befund
+    MII_Patho_Finding <|... IHC_Befund 
+    MII_Patho_Finding <|... ISH_Befund  
+
+    object NGS_Bericht 
+    MII_Molekulargenetischer_Befundbericht <|-left-- NGS_Bericht
+    MII_Molekulargenetischer_Befundbericht -[hidden]down- MII_Variante
+
+    object Einfache_Variante
+    object RNA_Seq
+    object RNA_Fusion
+    object DNA_Fusion
+    object CopyNumberVariation
+    object FISH_Befund
+
+    MII_Variante <|--- Einfache_Variante
+    MII_Variante <|--- RNA_Seq
+    MII_Variante <|--- RNA_Fusion
+    MII_Variante <|--- DNA_Fusion
+    MII_Variante <|--- CopyNumberVariation
+    MII_Variante <|--- FISH_Befund
+    Einfache_Variante -[hidden]down- RNA_Seq
+    RNA_Seq -[hidden]down- RNA_Fusion
+    RNA_Fusion -[hidden]down- DNA_Fusion
+    DNA_Fusion -[hidden]down- CopyNumberVariation
+    CopyNumberVariation -[hidden]down- FISH_Befund
+
+    object Diagnose
+    object Vortherapie
+    object MTB_Systemische_Therapie
+    MII_Onko_Diagnose <|... Diagnose
+    MII_Onko_Systemische_Therapie <|... Vortherapie
+    MII_Onko_Systemische_Therapie <|... MTB_Systemische_Therapie
+    ISH_Befund -[hidden]right- IHC_Befund 
+    Diagnose  -[hidden]down-Vortherapie
+    Vortherapie -[hidden]down- MTB_Systemische_Therapie
+    
+
+
+package MII_MTB_Neuprofilierungen {
+    object MTB_EpisodeOfCare
+    object Kostenübernahme
+    object ResponseBefund
+    object Followup
+    }
+ISH_Befund -[hidden]down- MII_MTB_Neuprofilierungen
+}
+MII_Modul_Biobank -[hidden]left-  MII_Modul_Molekulares_Tumorboard
+MII_Modul_Onkologie -[hidden]left-  MII_Modul_Molekulares_Tumorboard
+MII_Modul_Onkologie -[hidden]left-  MTB_Systemische_Therapie
+MII_Modul_Onkologie -[hidden]left-   Diagnose
+MII_Onko_Diagnose -[hidden]down- MII_Onko_Systemische_Therapie
+
 @enduml
