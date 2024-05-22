@@ -15,7 +15,6 @@ object MTB_EpisodeOfCare #FFFF66 {
 object MTB_Einwilligung {
     Status
 }
-MTB_Einwilligung --o MTB_EpisodeOfCare::MTB_Einwilligung
 
 object Diagnose {
     Leitlinienbehandlung_Status
@@ -250,7 +249,7 @@ object Antwort_Kostenuebernahme #FFFF66 {
     Grund
 }
 Antwort_Kostenuebernahme::Antrag -left-> MTB_Antrag_Kostenuebernahme
-MTB_EpisodeOfCare::MTB_Einwiliigung o-down- MTB_Einwilligung
+MTB_EpisodeOfCare::MTB_Einwiliigung o-left- MTB_Einwilligung
 MTB_EpisodeOfCare::Diagnose o-down- Diagnose
 MTB_EpisodeOfCare::Vortherapie o-down- Vortherapie
 MTB_EpisodeOfCare::Probe o-down- Probe
