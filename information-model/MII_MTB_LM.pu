@@ -1,325 +1,395 @@
 @startuml MII_MTB_LM
-skinparam linetype polyline 
+skinparam Linetype ortho
+skinparam Nodesep 150
+skinparam Ranksep 80
+skinparam legendBackgroundColor #white
 
-object MTB_EpisodeOfCare #FFFF66 {
-    Anmeldedatum
-    MTB_Einwilligung
-    Diagnose
-    Vortherapie
-    ECOG
-    Probe
-    Molekular_Pathologie_Befund
-    NGS_Bericht
-    MTB_Beschluss_Therapieplan
+package EpisodeOfCare {
+    class MTB_EpisodeOfCare {
+        + Anmeldedatum
+        + MTB_Einwilligung
+        + Diagnose
+        + Vortherapie
+        + ECOG
+        + Probe
+        + Molekular_Pathologie_Befund
+        + NGS_Bericht
+        + MTB_Beschluss_Therapieplan
+    }
+
+    class MTB_Einwilligung {
+        + Status
+    }
+
+    class Diagnose {
+        + Leitlinienbehandlung_Status
+        + WHO_Grad_ZNS
+        + Tumorausbreitung_ED_Wert
+        + Tumorausbreitung_ED_Zeitpunkt
+        + Tumorausbreitung_MTB_Wert
+        + Tumorausbreitung_MTB_Zeitpunkt
+    }
+
+    class Vortherapie {
+        + Zulassungsstatus
+        + Therapielinie
+        + Startdatum
+        + Enddatum
+        + Wirkstoffe
+        + Systematische_Therapie_Ende_Grund
+        + Typ_Kategorie
+    }
+
+    class ECOG {
+        + Datum
+    }
+
+    class Probe {
+        + Tumorzellgehalt_Methode
+        + Tumorzellgehalt_Wert
+    }
+
+    package MolekularPathologieBefund {
+        class Molekular_Pathologie_Befund {
+            + Art_Diagnostik
+            + IHC_Befund
+            + ISH_Befund
+        }
+
+        class IHC_Befund {
+            + Erstellungsdatum
+            + Block_Material_Nr
+            + Klon
+        }
+
+        class Protein_Befunde {
+            + Protein
+            + Ergebnis
+        }
+
+        class IHC_Ergebnis {
+            + Ergebnis
+            + Prozent
+            + Score
+            + TPS_Score
+            + CPS_Score
+            + IC_Score
+            + TC_Score
+            + Interpretation
+            + MSI: Ergebnis
+        }
+
+        class ISH_Befund {
+            + Erstellungsdatum
+            + Block_Material_Nr
+            + Gen_Sonde
+            + Interpration
+            + Ergebnis: Ergebnis
+        }
+    }
+
+    package NGSBericht {
+        class NGS_Bericht {
+            + Erstellungsdatum
+            + NGS_QC
+            + NGS_Metadaten
+            + Gen_Kodierung
+            + TMB: Ergebnis
+            + HRD_Score: Ergebnis
+            + BRCAness: Ergebnis
+            + MSI: Ergebnis
+            + Einfache_Variante
+            + RNA_Seq
+            + RNA_Fusion
+            + Fusion
+            + CNV 
+        }
+
+        class Ergebnis {
+            Wert
+            Interpretation
+        }
+
+        class NGS_QC {
+            + Sequencing_Read_Type
+            + Lueckenstatistik
+            + Read_Laenge 
+        }
+
+        class NGS_Metadaten {
+            + Fragmentierung
+            + Sequenzierkit_Hersteller
+            + Sequenzierkit_Bezeichnung
+            + Librarykit_Hersteller
+            + Librarykit_Bezeichnung
+            + Sequenziergeraet_Modell
+            + Sequenziergeraet_Hersteller
+            + Art_Sequenzierung
+            + Erstellungsdatum
+            + Referenzgenom
+            + Probe
+            + Pipeline
+        }
+
+        class Gen_Kodierung{
+            + ENSEMBL_ID
+            + HGNC_ID
+            + Symbol
+            + Name_Gen
+        }
+
+        class Positionsbereich {
+            + Start
+            + Ende
+        } 
+
+        ' package KomplexeBiomarker {
+        '     class TMB {
+        '         + Interpretation
+        '         + Wert
+        '     }
+
+        '     class HRD_Score {
+        '         + Wert
+        '         + Interpretation
+        '     }
+
+        '     class BRCAness {
+        '         + Wert
+        '         + Interpretation
+        '     }
+
+        '     class MSI {
+        '         + Wert
+        '         + Interpretation
+        '     }
+        ' }
+
+        class Einfache_Variante {
+            + Gen
+            + Positionsbereich: Positionsbereich
+            + Interpretation
+        }
+
+        class RNA_Seq {
+            + Transcripts_Per_Million
+            + Cohort_Ranking
+            + Library_size
+            + Raw_counts
+            + Tissue_Corrected_Expression
+            + Transcript_ID
+            + Gen
+            + Ensemble_ID
+            + Entrez_ID
+            + Varianten_ID
+        }
+
+        package StrukturelleVeraenderungen {
+            class RNA_Fusion {
+                + RNA_Fusion_Partner
+                + Number_Reported_Reads
+                + COSMIC_ID
+                + Effect
+                + 3'FusionPartner
+                + 5'FusionPartner
+                + Varianten_ID
+            }
+
+            class RNA_Fusion_Partner {
+                + RNA_Fusion_Partner_Strand
+                + RNA_Fusion_Partner_Transcript_Position
+                + RNA_Fusion_Partner_Exon_ID
+                + RNA_Fusion_Partner_Transcript_ID
+                + RNA_Fusion_Partner_Gen
+            }
+
+            class DNA_Fusion {
+                + DNA_Fusion_Partner
+                + Number_reported_reads
+                + 3'FusionPartner
+                + 5'FusionPartner
+                + Varianten_ID
+            }
+
+            class DNA_Fusion_Partner {
+                + Fusion_Partner_Chromosom
+                + Fusion_Partner_Position
+                + Fusion_Partner_Gen
+            }
+
+            class Copy_Number_Variante {
+                + Positionsbereich: Positionsbereich
+                + Copy_Number_Neutral_LoH
+                + Type
+                + Reported_Focality
+                + Reported_Affected_Genes
+                + CNB
+                + CNA
+                + Relative_CN
+                + Total_CN
+                + Chromosom
+                + Varianten_ID
+
+            } 
+
+            class CNV_Reported_Affected_Genes {
+                + Gen
+            }
+        }
+
+        class Ploidie {
+            + Kopienanzahl
+        }
+    }
+
+    package MTBBeschlussTherapieplan {
+        class MTB_Beschluss_Therapieplan {
+            + Erstellungsdatum
+            + Protokollauszug
+            + Status_Begründung
+            + Therapie_Empfehlung
+            + Rebiopsie_Auftrag
+            + Humangenetische_Beratung_Auftrag
+            + Histologie_Reevaluation_Auftrag
+        }
+
+        class Therapie_Empfehlung {
+            + Stützende_Molekulare_Alterationen
+            + Stützende_Entität
+            + Evidenz_Level
+            + Wirkstoffe
+            + Priorität
+            + Studien_Einschluss_Empfehlung
+        }
+
+        class Evidenz_Level {
+            + Graduierung
+            + Zusatz
+            + Publikation
+        }
+
+        class Publikation {
+            + Digital_class_Identifier
+            + Pub_Med_Identifier
+        }
+
+        class Studien_Einschluss_Empfehlung{
+            + Stützende_Entität
+            + NCT_Nummer
+            + Eudra_CT_Cummer
+            + DRKS_Nummer
+        }
+
+        class Rebiopsie_Auftrag {
+            + Begründung
+        }
+
+        class Humagenetische_Beratung_Auftrag {
+            + Begründung
+        }
+
+        class Histologie_Reevaluation_Auftrag {
+            + Begründung
+        }
+    }
 }
 
-object MTB_Einwilligung {
-    Status
-}
+package FollowUp {
+    class MTB_Followup {
+        + Erfassungsdatum
+        + Follow_up_Status
+        + Grund_Nicht_Umsetzung
+        + Systemische_Therapie
+    }
 
-object Diagnose {
-    Leitlinienbehandlung_Status
-    WHO_Grad_ZNS
-    Tumorausbreitung_ED_Wert
-    Tumorausbreitung_ED_Zeitpunkt
-    Tumorausbreitung_MTB_Wert
-    Tumorausbreitung_MTB_Zeitpunkt
-}
+    class MTB_Systemische_Therapie {
+        + Therapie_Startdatum 
+        + Therapie_Enddatum
+        + Systemische_Therapie_Ende_Grund 
+        + Therapie_Empfehlung
+        + Bemerkungen
+        + Status
+        + Wirkstoffe
+        + Dosisdichte
+        + Response_Befund
+    }
 
-object Vortherapie {
-    Zulassungsstatus
-    Therapielinie
-    Startdatum
-    Enddatum
-    Wirkstoffe
-    Systematische_Therapie_Ende_Grund
-    Typ_Kategorie
-}
+    class Response_Befund {
+        + Response_Beurteilung
+        + Beurteilungsmethode
+        + Zeitpunkt
+    }
 
-object ECOG {
-    Datum
-}
 
-object Probe {
-    Tumorzellgehalt_Methode
-    Tumorzellgehalt_Wert
-}
+    class MTB_Antrag_Kostenuebernahme {
+        + Ausstellungsdatum
+        + Therapieempfehlung 
+        + Antragsstadium
+        + Antragstellung_ZPM_Geschaeftstelle
+    }
 
-object Molekular_Pathologie_Befund {
-    Art_Diagnostik
-    IHC_Befund
-    ISH_Befund
-}
-
-object IHC_Befund {
-    Erstellungsdatum
-    Block-/Material-Nr.
-    Klon
-}
-
-object Protein_Befunde {
-    Protein
-    Ergebnis
-}
-
-object IHC_Ergebnis {
-    Ergebnis
-    Prozent
-    Score
-    TPS-Score
-    CPS-Score
-    IC-Score
-    TC-Score
-    Interpretation
-    MSI/MMR-Ergebnis_Wert
-    MSI/MMR-Ergebnis_Interpration
-}
-
-object ISH_Befund {
-    Erstellungsdatum
-    Block-/Material-Nr.
-    Gen/Sonde
-}
-
-object ISH_Ergebnis {
-    Ergebnis
-    Wert
-    Interpration
-}
-
-object NGS_Bericht {
-    Erstellungsdatum
-    NGS_QC
-    TMB
-    NGS_Metadaten
-    Gen_Kodierung
-    Positionsbereich
-    HRD_Score
-    BRCAness
-    Einfache_Variante
-    RNA_Seq
-    RNA_Fusion
-    Fusion
-    CNV 
-}
-
-object NGS_QC {
-    Sequencing_Read_Type
-    Lueckenstatistik
-    Read_Laenge 
-}
-object NGS_TMB {
-    Interpretation
-    Wert
-}
-
-object NGS_Metadaten {
-    Fragmentierung
-    Sequenzierkit_Hersteller
-    Sequenzierkit_Bezeichnung
-    Librarykit_Hersteller
-    Librarykit_Bezeichnung
-    Sequenziergeraet_Modell
-    Sequenziergeraet_Hersteller
-    Art_Sequenzierung
-    Erstellungsdatum
-    Referenzgenom
-    Probe
-    Pipeline
-}
-
-object Gen_Kodierung{
-    ENSEMBL_ID
-    HGNC_ID
-    Symbol
-    Name_Gen
-}
-
-object Positionsbereich {
-    Ende
-    Start
-} 
-
-object HRD_Score {
-    Wert
-    Interpretation
-}
-
-object BRCAness {
-    Wert
-    Interpretation
-}
-
-object MSI {
-    Wert
-    Interpretation
-}
-
-object Einfache_Variante {
-    Gen
-    Positionsbereich
-    Interpretation
-}
-
-object RNA_Seq {
-    Transcripts_Per_Million
-    Cohort_Ranking
-    Library_size
-    Raw_counts
-    Tissue_Corrected_Expression
-    Transcript_ID
-    Gen
-    Ensemble_ID
-    Entrez_ID
-    Varianten_ID
-}
-
-object RNA_Fusion {
-    RNA_Fusion_Partner
-    Number_Reported_Reads
-    COSMIC_ID
-    Effect
-    3'FusionPartner
-    5'FusionPartner
-    Varianten_ID
-}
-
-object RNA_Fusion_Partner {
-    RNA_Fusion_Partner_Strand
-    RNA_Fusion_Partner_Transcript_Position
-    RNA_Fusion_Partner_Exon_ID
-    RNA_Fusion_Partner_Transcript_ID
-    RNA_Fusion_Partner_Gen
-}
-
-object DNA_Fusion {
-    DNA_Fusion_Partner
-    Number_reported_reads
-    3'FusionPartner
-    5'FusionPartner
-    Varianten_ID
-}
-
-object DNA_Fusion_Partner {
-    Fusion_Partner_Chromosom
-    Fusion_Partner_Position
-    Fusion_Partner_Gen
-}
-
-object Copy_Number_Variante {
-    End_Positionsbereich
-    Start_Positionsbereich
-    Copy_Number_Neutral_LoH
-    Type
-    Reported_Focality
-    Reported_Affected_Genes
-    CNB
-    CNA
-    Relative_CN
-    Total_CN
-    Chromosom
-    Varianten_ID
-
-} 
-
-object CNV_Reported_Affected_Genes {
-    Gen
-}
-
-object Ploidie {
-    Kopienanzahl
-}
-
-object MTB_Beschluss_Therapieplan {
-    Erstellungsdatum
-    Protokollauszug
-    Status_Begründung
-    Therapie_Empfehlung
-    Rebiopsie_Auftrag
-    Humangenetische_Beratung_Auftrag
-    Histologie_Reevaluation_Auftrag
-}
-
-object Therapie_Empfehlung {
-    Stützende_Molekulare_Alterationen
-    Stützende_Entität
-    Evidenz_Level
-    Wirkstoffe
-    Priorität
-    Studien_Einschluss_Empfehlung
-}
-
-object Evidenz_Level {
-    Graduierung
-    Zusatz
-    Publikation
-}
-
-object Publikation {
-    Digital_Object_Identifier
-    Pub_Med_Identifier
-}
-
-object Studien_Einschluss_Empfehlung{
-    Stützende Entität
-    NCT_Nummer
-    Eudra_CT_Cummer
-    DRKS_Nummer
-}
-
-object Rebiopsie_Auftrag {
-    Begründung
-}
-
-object Humagenetische_Beratung_Auftrag {
-    Begründung
-}
-
-object Histologie_Reevaluation_Auftrag {
-    Begründung
-}
-
-object MTB_Followup {
-    Erfassungsdatum
-    Follow_up_Status
-    Grund_Nicht_Umsetzung
-    Systemische_Therapie
-}
-
-object MTB_Systemische_Therapie {
-    Therapie_Startdatum 
-    Therapie_Enddatum
-    Systemische_Therapie_Ende_Grund 
-    Therapie_Empfehlung
-    Bemerkungen
-    Status
-    Wirkstoffe
-    Dosisdichte
-    Response_Befund
-}
-
-object Response_Befund{
-    Response_Beurteilung
-    Beurteilungsmethode
-    Zeitpunkt
+    class MTB_Antwort_Kostenuebernahme {
+        + Datum
+        + Antrag 
+        + Status
+        + Grund
+    }
 }
 
 
-object MTB_Antrag_Kostenuebernahme #FFFF66 {
-    Ausstellungsdatum
-    Therapieempfehlung 
-    Antragsstadium
-    Antragstellung_ZPM_Geschaeftstelle
-}
+MTB_EpisodeOfCare -u- MTB_Einwilligung
+MTB_EpisodeOfCare -u- Diagnose
+MTB_EpisodeOfCare -l- Vortherapie
+MTB_EpisodeOfCare -u- ECOG
+MTB_EpisodeOfCare -r- Probe
+MTB_EpisodeOfCare -- Molekular_Pathologie_Befund
+MTB_EpisodeOfCare -d- NGS_Bericht
+MTB_EpisodeOfCare -l- MTB_Beschluss_Therapieplan
 
-object Antwort_Kostenuebernahme #FFFF66 {
-    Datum
-    Antrag 
-    Status
-    Grund
-}
+Molekular_Pathologie_Befund -- IHC_Befund
+IHC_Befund -- Protein_Befunde
+Protein_Befunde -- IHC_Ergebnis
+IHC_Ergebnis *- Ergebnis
+Molekular_Pathologie_Befund -- ISH_Befund
+ISH_Befund *- Ergebnis
 
-Antwort_Kostenuebernahme::Antrag -left-> MTB_Antrag_Kostenuebernahme
+NGS_Bericht -- NGS_QC
+NGS_Bericht -- NGS_Metadaten
+NGS_Bericht -- Gen_Kodierung
+Einfache_Variante *-- Positionsbereich
+Copy_Number_Variante *-- Positionsbereich
+
+NGS_Bericht -- Einfache_Variante
+NGS_Bericht -- RNA_Seq
+NGS_Bericht -- RNA_Fusion
+NGS_Bericht *-- Ergebnis
+RNA_Fusion -- RNA_Fusion_Partner
+NGS_Bericht -- DNA_Fusion
+DNA_Fusion -- DNA_Fusion_Partner
+NGS_Bericht -- Copy_Number_Variante
+Copy_Number_Variante -- CNV_Reported_Affected_Genes
+NGS_Bericht -- Ploidie
+
+MTB_Beschluss_Therapieplan -- Therapie_Empfehlung
+Therapie_Empfehlung -- Evidenz_Level
+Evidenz_Level -- Publikation
+Therapie_Empfehlung -- Studien_Einschluss_Empfehlung
+MTB_Beschluss_Therapieplan -- Rebiopsie_Auftrag
+MTB_Beschluss_Therapieplan -- Humagenetische_Beratung_Auftrag
+MTB_Beschluss_Therapieplan -- Histologie_Reevaluation_Auftrag
+
+MTB_Followup -- MTB_Systemische_Therapie
+MTB_Systemische_Therapie -- Response_Befund
+MTB_Followup -- MTB_Antrag_Kostenuebernahme
+MTB_Followup -- MTB_Antwort_Kostenuebernahme
+
+
+
+
+
+
+
+/'Antwort_Kostenuebernahme::Antrag -left-> MTB_Antrag_Kostenuebernahme
 MTB_EpisodeOfCare::MTB_Einwiliigung o-left- MTB_Einwilligung
 MTB_EpisodeOfCare::Diagnose o-up- Diagnose
 MTB_EpisodeOfCare::Vortherapie o-down- Vortherapie
@@ -350,6 +420,6 @@ IHC_Befund::Protein_Befunde o-- Protein_Befunde
 Protein_Befunde::Ergebnis o-- IHC_Ergebnis
 Molekular_Pathologie_Befund::IHC_Befund o-- IHC_Befund
 Molekular_Pathologie_Befund::ISH_Befund o-- ISH_Befund
-ISH_Befund::Ergebnis o-- ISH_Ergebnis
+ISH_Befund::Ergebnis o-- ISH_Ergebnis'/
 
 @enduml
