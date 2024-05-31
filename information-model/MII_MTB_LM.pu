@@ -353,56 +353,55 @@ package FollowUp {
 }
 
 
-MTB_EpisodeOfCare "1..*" o-u- "1" MTB_Einwilligung
-MTB_EpisodeOfCare "1..*" o-u- "1..*" Diagnose
-MTB_EpisodeOfCare "1..*" o-l- "1..*" Vortherapie
-MTB_EpisodeOfCare "1..*" o-u- "0..*" ECOG
-MTB_EpisodeOfCare "1..*" o-r- "1..*" Probe
-MTB_EpisodeOfCare "1..*" o-- "0..*" Molekular_Pathologie_Befund
-MTB_EpisodeOfCare "1..*" o-d- "0..*" NGS_Bericht
-MTB_EpisodeOfCare o-l- MTB_Beschluss_Therapieplan
+MTB_EpisodeOfCare "1..*" -u- "1" MTB_Einwilligung
+MTB_EpisodeOfCare "1..*" -u- "1..*" Diagnose
+MTB_EpisodeOfCare "1..*" -l- "1..*" Vortherapie
+MTB_EpisodeOfCare "1..*" -u- "0..*" ECOG
+MTB_EpisodeOfCare "1..*" -r- "1..*" Probe
+MTB_EpisodeOfCare "1..*" -- "0..*" Molekular_Pathologie_Befund
+MTB_EpisodeOfCare "1..*" -d- "0..*" NGS_Bericht
+MTB_EpisodeOfCare "1" -l- "0..*" MTB_Beschluss_Therapieplan
 
-Molekular_Pathologie_Befund "1" o-- "0..*" IHC_Befund
-IHC_Befund "1" o-- "0..*" Protein_Befunde
-Protein_Befunde o-- IHC_Ergebnis
-IHC_Ergebnis o-- MSI_MMR_Ergebnis
-Molekular_Pathologie_Befund o-- ISH_Befund
-ISH_Befund o-- ISH_Ergebnis
+Molekular_Pathologie_Befund "1" -- "0..*" IHC_Befund
+IHC_Befund "1" -- "0..*" Protein_Befunde
+Protein_Befunde "1" -- "1" IHC_Ergebnis
+IHC_Ergebnis "1" -- "1..*" MSI_MMR_Ergebnis
+Molekular_Pathologie_Befund "1" -- "0..*" ISH_Befund
+ISH_Befund "1" -- "1" ISH_Ergebnis
 
+NGS_Bericht "1" -u- "1" NGS_QC
+NGS_Bericht "1" -- "1" NGS_Metadaten
+NGS_Bericht -r- Gen_Kodierung
+NGS_Bericht -- Einfache_Variante
+NGS_Bericht -- RNA_Seq
+NGS_Bericht -- RNA_Fusion
+NGS_Bericht -u- TMB
+NGS_Bericht -u- HRD_Score
+NGS_Bericht -u- BRCAness
+NGS_Bericht -u- MSI
+NGS_Bericht -- Copy_Number_Variante
+NGS_Bericht -- Ploidie
+NGS_Bericht -- DNA_Fusion
+RNA_Fusion -- RNA_Fusion_Partner
+DNA_Fusion -- DNA_Fusion_Partner
+NGS_Metadaten -- Sequenzierkit
+NGS_Metadaten -- Library_Praeperationskit
+NGS_Metadaten -- Sequenziergeraet
+Einfache_Variante -d- Positionsbereich
+Copy_Number_Variante -l- Positionsbereich
 
-NGS_Bericht o-u- NGS_QC
-NGS_Bericht o-- NGS_Metadaten
-NGS_Bericht o-r- Gen_Kodierung
-NGS_Bericht o-- Einfache_Variante
-NGS_Bericht o-- RNA_Seq
-NGS_Bericht o-- RNA_Fusion
-NGS_Bericht o-u- TMB
-NGS_Bericht o-u- HRD_Score
-NGS_Bericht o-u- BRCAness
-NGS_Bericht o-u- MSI
-NGS_Bericht o-- Copy_Number_Variante
-NGS_Bericht o-- Ploidie
-NGS_Bericht o-- DNA_Fusion
-RNA_Fusion o-- RNA_Fusion_Partner
-DNA_Fusion o-- DNA_Fusion_Partner
-NGS_Metadaten o-- Sequenzierkit
-NGS_Metadaten o-- Library_Praeperationskit
-NGS_Metadaten o-- Sequenziergeraet
-Einfache_Variante o-d- Positionsbereich
-Copy_Number_Variante o-l- Positionsbereich
+MTB_Beschluss_Therapieplan -- Therapie_Empfehlung
+Therapie_Empfehlung -- Evidenz_Level
+Evidenz_Level -- Publikation
+Therapie_Empfehlung -- Studien_Einschluss_Empfehlung
+MTB_Beschluss_Therapieplan -- Rebiopsie_Auftrag
+MTB_Beschluss_Therapieplan -- Humagenetische_Beratung_Auftrag
+MTB_Beschluss_Therapieplan -- Histologie_Reevaluation_Auftrag
 
-MTB_Beschluss_Therapieplan o-- Therapie_Empfehlung
-Therapie_Empfehlung o-- Evidenz_Level
-Evidenz_Level o-- Publikation
-Therapie_Empfehlung o-- Studien_Einschluss_Empfehlung
-MTB_Beschluss_Therapieplan o-- Rebiopsie_Auftrag
-MTB_Beschluss_Therapieplan o-- Humagenetische_Beratung_Auftrag
-MTB_Beschluss_Therapieplan o-- Histologie_Reevaluation_Auftrag
-
-MTB_Followup o-- MTB_Systemische_Therapie
-MTB_Systemische_Therapie o-- Response_Befund
-MTB_Followup o-- MTB_Antrag_Kostenuebernahme
-MTB_Followup o-- MTB_Antwort_Kostenuebernahme
+MTB_Followup -- MTB_Systemische_Therapie
+MTB_Systemische_Therapie -- Response_Befund
+MTB_Followup -- MTB_Antrag_Kostenuebernahme
+MTB_Followup -- MTB_Antwort_Kostenuebernahme
 
 Ploidie -[hidden]- Copy_Number_Variante
 DNA_Fusion_Partner -[hidden]- Copy_Number_Variante

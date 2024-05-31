@@ -103,7 +103,6 @@ package EpisodeOfCare {
             + Erstellungsdatum: Datum
             + NGS_QC: NGS_QC
             + NGS_Metadaten: NGS_Metadaten
-            + Gen_Kodierung: Gen_Kodierung
             + TMB: TMB
             + HRD_Score: HRD_Score
             + BRCAness: BRCAness
@@ -372,7 +371,6 @@ ISH_Befund o-- ISH_Ergebnis
 
 NGS_Bericht o-u- NGS_QC
 NGS_Bericht o-- NGS_Metadaten
-NGS_Bericht o-r- Gen_Kodierung
 NGS_Bericht o-- Einfache_Variante
 NGS_Bericht o-- RNA_Seq
 NGS_Bericht o-- RNA_Fusion
@@ -390,6 +388,8 @@ NGS_Metadaten o-- Library_Praeperationskit
 NGS_Metadaten o-- Sequenziergeraet
 Einfache_Variante o-d- Positionsbereich
 Copy_Number_Variante o-l- Positionsbereich
+Einfache_Variante o-- Gen_Kodierung
+Copy_Number_Variante o-- Gen_Kodierung
 
 MTB_Beschluss_Therapieplan o-- Therapie_Empfehlung
 Therapie_Empfehlung o-- Evidenz_Level
@@ -411,4 +411,5 @@ NGS_QC -[hidden]- Sequenziergeraet
 FollowUp -[hidden]r- MolekularPathologieBefund
 FollowUp -[hidden]l- MTB_Beschluss_Therapieplan
 FollowUp -[hidden]d- MolekularPathologieBefund
+Gen_Kodierung -[hidden]u- Positionsbereich
 @enduml
