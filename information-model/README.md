@@ -3,4 +3,4 @@ Arbeitsreposititory des MII-Kerndatensatz-Erweiterungsmoduls Molekulares Tumorbo
 
 ## UML Informationsmodell
 
-![Informationsmodell UML](MII_MTB_LM.svg)
+![Informationsmodell UML](MII_MTB_LM_wo_cardinalities.svg)
