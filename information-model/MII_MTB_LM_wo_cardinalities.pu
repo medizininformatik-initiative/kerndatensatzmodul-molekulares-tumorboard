@@ -353,17 +353,17 @@ package FollowUp {
 }
 
 
-MTB_EpisodeOfCare "1..*" o-u- "1" MTB_Einwilligung
-MTB_EpisodeOfCare "1..*" o-u- "1..*" Diagnose
-MTB_EpisodeOfCare "1..*" o-l- "1..*" Vortherapie
-MTB_EpisodeOfCare "1..*" o-u- "0..*" ECOG
-MTB_EpisodeOfCare "1..*" o-r- "1..*" Probe
-MTB_EpisodeOfCare "1..*" o-- "0..*" Molekular_Pathologie_Befund
-MTB_EpisodeOfCare "1..*" o-d- "0..*" NGS_Bericht
+MTB_EpisodeOfCare o-u- MTB_Einwilligung
+MTB_EpisodeOfCare o-u- Diagnose
+MTB_EpisodeOfCare o-l- Vortherapie
+MTB_EpisodeOfCare o-u- ECOG
+MTB_EpisodeOfCare o-r- Probe
+MTB_EpisodeOfCare o-- Molekular_Pathologie_Befund
+MTB_EpisodeOfCare o-d- NGS_Bericht
 MTB_EpisodeOfCare o-l- MTB_Beschluss_Therapieplan
 
-Molekular_Pathologie_Befund "1" o-- "0..*" IHC_Befund
-IHC_Befund "1" o-- "0..*" Protein_Befunde
+Molekular_Pathologie_Befund o-- IHC_Befund
+IHC_Befund o-- Protein_Befunde
 Protein_Befunde o-- IHC_Ergebnis
 IHC_Ergebnis o-- MSI_MMR_Ergebnis
 Molekular_Pathologie_Befund o-- ISH_Befund
