@@ -1,2 +1,2 @@
 RuleSet: Studieneinschlussempfehlungen
-* PlaceholderProperty4 1..1 string "Placeholder" "Placeholder Property"
+* Studieneinschlussempfehlungen 0..1 BackboneElement "Studieneinschlussempfehlungen" "Empfehlungen zum Studieneinschlus gemäß Beschluss des Molekularen Tumorboards"

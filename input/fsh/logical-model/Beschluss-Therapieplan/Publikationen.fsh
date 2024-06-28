@@ -1,2 +1,2 @@
 RuleSet: Publikationen
-* PlaceholderProperty7 1..1 string "Placeholder" "Placeholder Property"
+* Publikationen 0..1 BackboneElement "Publikationen" "Publikationen zur Evidenzeinstufung"

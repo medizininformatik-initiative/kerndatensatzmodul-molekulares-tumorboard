@@ -1,3 +1,3 @@
 RuleSet: EvidenzLevel
+* EvidenzLevel 0..1 BackboneElement "Evidenzleven" "Evidenzeinstufung"
 * insert Publikationen
-* PlaceholderProperty6 1..1 string "Placeholder" "Placeholder Property"

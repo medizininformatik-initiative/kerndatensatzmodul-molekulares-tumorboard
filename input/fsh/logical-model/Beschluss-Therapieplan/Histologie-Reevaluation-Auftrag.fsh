@@ -1,2 +1,2 @@
 RuleSet: HistologieReevaluationAuftrag
-* PlaceholderProperty1 1..1 string "Placeholder" "Placeholder Property"
+* HistologieReevaluationAuftrag  0..1 BackboneElement "Auftrag zur Histologie-Reevaluation" "Auftrag zur Histologie-Reevaluation"

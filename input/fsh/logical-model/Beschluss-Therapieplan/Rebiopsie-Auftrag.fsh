@@ -1,2 +1,2 @@
 RuleSet: RebiopsieAuftrag
-* PlaceholderProperty3 1..1 string "Placeholder" "Placeholder Property"
+* RebiopsieAuftrag 0..1 BackboneElement "Auftrag zur Rebiopsie" "Auftrag zur Rebiopsie gemäß Beschluss des Molekularen Tumorboards"

@@ -1,2 +1,2 @@
 RuleSet: HumangenetischeBeratungAuftrag
-* PlaceholderProperty2 1..1 string "Placeholder" "Placeholder Property"
+* HumangenetischeBeratungAuftrag 0..1 BackboneElement "Auftrag zur Human-genetischen Beratung" "Auftrag zur Human-genetischen Beratung"

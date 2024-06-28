@@ -1,3 +1,4 @@
 RuleSet: Therapieempfehlungen
-* insert EvidenzLevel
-* PlaceholderProperty5 1..1 string "Placeholder" "Placeholder Property"
+* Therapieempfehlungen 1..1 BackboneElement "Therapieempfehlungen gemäß Beschluss des Molekularen Tumorboards"
+  * insert EvidenzLevel
+  * insert Studieneinschlussempfehlungen
