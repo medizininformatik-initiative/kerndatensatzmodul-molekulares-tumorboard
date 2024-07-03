@@ -11,14 +11,14 @@ RuleSet: SystemischeTherapie
   * insert ResponseBefund
 
 RuleSet: SystemischeTherapieMapping
-* SystemischeTherapie -> "Procedure"
-  * MTBTherapieStartdatum -> "Procedure.date"
-  * MTBTherapieEnddatum -> "Procedure.date"
-  * SystemischeTherapieEndeGrund -> ""
-  * TherapieEmpfehlung -> "Procedure.basedOn"
-  * Bemerkungen -> "Procedure.basedOn"
+* SystemischeTherapie -> "MedicationStatement" 
+  * MTBTherapieStartdatum -> "MedicationStatement.effectivePeriod.start" 
+  * MTBTherapieEnddatum -> "MedicationStatement.effectivePeriod.end"
+  * SystemischeTherapieEndeGrund -> "MedicationStatement.adherence.reason"
+  * TherapieEmpfehlung -> "MedicationStatement.reason.Procedure.basedOn"
+  * Bemerkungen -> "MedicationStatement.reason.Procedure.basedOn"
   * Status -> ""
-  * Wirkstoffe -> ""
-  * Dosisdichte -> "MedicationRequest"
+  * Wirkstoffe -> "Medication.ingredient"
+  * Dosisdichte -> "MedicationStatement.dosage"
   
 

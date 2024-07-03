@@ -1,11 +1,11 @@
 RuleSet: ResponseBefund
-* ResponseBefund            0..* BackboneElement "Response Befund"
+* ResponseBefund            0..* BackboneElement "Response Befund" 
   * ResponseBeurteilung     0..1 code "Response Beurteilung"
   * Beurteilungsmethode     1..1 code "Beurteilungsmethode" "Beurteilungsmethode des Response Befundes"
   * Zeitpunkt               0..1 dateTime "Zeitpunkt" "Zeitpunkt des Response Befundes"
 
 RuleSet: ResponseBefundMapping
-* ResponseBefund
-  * ResponseBeurteilung
-  * Beurteilungsmethode
-  * Zeitpunkt
+* ResponseBefund -> "Observation"
+  * ResponseBeurteilung -> "Observation.valueCodeableConcept"
+  * Beurteilungsmethode -> "Observation.method"
+  * Zeitpunkt -> "Observation.effectiveDateTime"
