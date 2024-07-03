@@ -6,3 +6,12 @@ RuleSet: Therapieempfehlungen
   * StuetzendeEntitaet 0..* string "Stützende Entität" "Wenn eine Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht, sondern aufgrund der Tumorentität"
   * Prioritaet 0..1 code "Priorität" //code hinzufügen
   * Wirkstoffe 0..1 string "Wirkstoffe"
+
+
+RuleSet: TherapieempfehlungenMapping
+// Hier wird das CarePlan Profil von Onkologie Modul verwendet
+* Therapieempfehlungen -> "CarePlan"
+  * StuetzendeMolekularAlterationen -> "CarePlan.supportingInfo"
+  * StuetzendeEntitaet -> "CarePlan.supportingInfo"
+  * Wirkstoffe -> "CarePlan.activity.detail.product"
+  * Prioritaet -> "CarePlan.activity.extension(Prioritaet)"
