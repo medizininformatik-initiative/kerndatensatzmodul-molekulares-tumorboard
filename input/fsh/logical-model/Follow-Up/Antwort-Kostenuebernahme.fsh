@@ -7,7 +7,7 @@ RuleSet: AntwortKostenuebernahme
 
 RuleSet: AntwortKostenuebernahmeMapping
 * AntwortKostenuebernahme -> "ClaimResponse"
-  * Datum -> "ClaimResponse.recreated"
-  * Antrag -> "Claim?"
+  * Datum -> "ClaimResponse.created"
+  * Antrag -> "ClaimResponse.request"
   * Status -> "ClaimResponse.code"
   * Grund -> "ClaimResponse.item.adjucation.reason"
