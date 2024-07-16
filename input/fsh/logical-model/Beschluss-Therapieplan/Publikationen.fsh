@@ -1,11 +1,13 @@
 RuleSet: Publikationen
-* Publikationen 0..1 BackboneElement "Publikationen" "Publikationen zur Evidenzeinstufung"
-  * DigitalObjectIdentifier 0..1 string "Digital Object Identfier (DOI)" "Die DOI-Nummer der relevante Publikationen"
-  * PubmedIdentifier 0..1 string "PubMed Identifier (PMID)" "Identfier der Publikation in PubMed"
+* Publikationen               0..* BackboneElement     "Publikationen"                    "Publikationen zur Evidenzeinstufung"
+  * DigitalObjectIdentifier   0..1 url                 "Digital Object Identifier (DOI)"   "DOI zur Publikation"
+  * PubMedIdentifier          0..1 url                 "PubMed Identifier (PMID)"         "PMID zur Publikation"
 
 RuleSet: PublikationenMapping
-* Publikationen -> "DocumentReference"
-  * DigitalObjectIdentifier -> "DocumentReference.identifier.value"
-  * PubmedIdentifier -> "DocumentReference.identifier.value"
-  // in DocumentReference sind die Elemente content und status verpflichtet, diese zwei Elemente müssen befüllt werden.
-  // DocumentReference kann direkt bei Observation(EvidenzLevel).derivedFrom referenziert werden.
+// TODO: Neues Profil zur Darstellung von Publikationen (Zitationen)
+// TODO: Referenz via Observation.component.extension(Publikationen) oder Observation.extension(workflow-relatedArtifact)
+* Publikationen               -> "RelatedArtifact"
+  // NOTE: Basis URL ist http://doi.org/<DOI>
+  * DigitalObjectIdentifier   -> "RelatedArtifact.url[DOI]"
+  // NOTE: Basis URL ist http://www.ncbi.nlm.nih.gov/pubmed/<PMID>
+  * PubMedIdentifier          -> "RelatedArtifact.url[PMID]"

@@ -5,3 +5,6 @@ Alias: mii-pr-patho-specimen = https://www.medizininformatik-initiative.de/fhir/
 
 // Aliases für Profile des MII Onkologie-Moduls
 Alias: mii-pr-onko-specimen = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen
+
+// Aliases für Profile des MII Medikation-Moduls
+Alias: mii-pr-medikation-medication-request = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest

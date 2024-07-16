@@ -1,13 +1,14 @@
 RuleSet: EvidenzLevel
-* EvidenzLevel 0..1 BackboneElement "Evidenzleven" "Evidenzeinstufung"
-  * Graduierung 0..1 code "Graduierung" // Code hinzufügen
-  * Zusatz 0..1 string "Zusatz" "Zusätzliche Informationen"
+* EvidenzLevel      0..1 BackboneElement     "Evidenzeinstufung" "Evidenzeinstufung für Biomarker-basierte Therapieempfehlung"
+  // TODO: Neues CodeSystem nach Evidenzgraduierung der ZPM erstellen
+  * Graduierung     0..1 code                "Graduierung"       "Evidenzgraduierung der Therapieempfehlung"
+  // TODO: Neues CodeSystem nach Zusatzverweisen zur Evidenzeinstufun der ZPM erstellen
+  * Zusatz          0..1 code                "Zusatzverweis"     "Zusatzverweise für Evidenzeinstufung"
   * insert Publikationen
 
 RuleSet: EvidenzLevelMapping
-* EvidenzLevel -> "Observation"
-  * Graduierung -> "Observation.code.coding.code"
-  * Zusatz -> "Observation.code.text"
-// Dieses Profil kann in CarePlan.activity.detail.resonReference referenziert werden.
-// für die Graduierung können vielleicht die Codes hier https://sozialministerium.baden-wuerttemberg.de/fileadmin/redaktion/m-sm/intern/downloads/Downloads_Krankenhaeuser/Fachplanung_ZPM_28-03-2019.pdf
-// in Tabelle 1 aufgelistet sind verwenden?
+// TODO: Neues Profil zur Darstellung der Evidenzeinstufung
+* EvidenzLevel      -> "Observation"
+  * Graduierung     -> "Observation.component.valueCodableConcept.coding.code"
+  * Zusatz          -> "Observation.component.valueCodableConcept.coding.code"
+  * insert PublikationenMapping
