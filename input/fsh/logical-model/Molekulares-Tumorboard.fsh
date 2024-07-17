@@ -3,6 +3,7 @@ Parent: Element
 Id: mii-lm-mtb
 Title: "MII LM Molekulares Tumorboard"
 Description: "MII Logical Model Modul Molekulares Tumorboard"
+* insert FollowUp
 // TODO: Allgemeine, geteilte Elemente und Metadaten einfügen
 * insert BeschlussTherapieplan
 
@@ -12,4 +13,5 @@ Source: MII_LM_MTB
 Id: mii-map-mtb
 Title: "MII MAP Molekulares Tumorboard"
 Description: "MII Mappings Modul Molekulares Tumorboard"
+* insert FollowUpMapping
 * insert BeschlussTherapieplanMapping
