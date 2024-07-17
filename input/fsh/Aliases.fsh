@@ -8,3 +8,7 @@ Alias: mii-pr-onko-specimen = https://www.medizininformatik-initiative.de/fhir/e
 
 // Aliases für Profile des MII Medikation-Moduls
 Alias: mii-pr-medikation-medication-request = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest
+
+// Aliases für Profile des MII MTB-Moduls
+Alias: $mii-cs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-status-begruendung
+Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung
