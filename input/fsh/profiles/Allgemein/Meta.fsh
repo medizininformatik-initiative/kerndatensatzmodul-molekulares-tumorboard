@@ -13,3 +13,6 @@ RuleSet: CS_Meta(url)
 
 RuleSet: VS_Meta(url)
 * insert CS_VS_Meta({url})
+
+RuleSet: EX_Meta(url)
+* ^url = {url}

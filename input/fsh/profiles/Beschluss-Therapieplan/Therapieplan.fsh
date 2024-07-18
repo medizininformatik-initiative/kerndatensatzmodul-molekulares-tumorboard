@@ -3,7 +3,7 @@ Parent: MII_PR_Onko_Tumorkonferenz
 Id: mii-pr-mtb-therapieplan
 Title: "MII PR MTB Therapieplan"
 Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
-* insert ProfileHeader
+* insert PR_Header
 * created MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbt
 * created ^definition = "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
 * description 0..1 MS

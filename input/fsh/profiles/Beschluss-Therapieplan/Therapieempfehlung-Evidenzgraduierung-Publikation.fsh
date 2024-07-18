@@ -2,7 +2,7 @@ Extension: MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation
 Id: mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 Title: "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation"
 Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung"
-* ^url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
+* insert EX_Header($mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation)
 * value[x] only Identifier
 * value[x] 1..1 MS
 * value[x].type = $hl7-v2-0203#RI

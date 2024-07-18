@@ -3,4 +3,4 @@ Parent: ServiceRequest
 Id: mii-pr-mtb-biopsie-auftrag
 Title: "MII PR MTB Biopsie Auftrag"
 Description: "Auftrag zur (erneuten) Biopsie"
-* insert ProfileHeader
+* insert PR_Header

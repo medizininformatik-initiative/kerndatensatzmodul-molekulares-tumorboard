@@ -3,7 +3,7 @@ Parent: MII_PR_Medikation_MedicationRequest
 Id: mii-pr-mtb-therapieempfehlung
 Title: "MII PR MTB Therapieempfehlung Systemische Therapie"
 Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
-* insert ProfileHeader
+* insert PR_Header
 // TODO: Klärung der Abweichung bei Kardinalitäten zwischen LM und PR
 * medication[x] 1..1 MS
 * medicationReference only Reference(MII_PR_Medikation_Medication)

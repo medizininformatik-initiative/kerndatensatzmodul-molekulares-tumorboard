@@ -3,4 +3,4 @@ Parent: ServiceRequest
 Id: mii-pr-mtb-histologie-evaluation-auftrag
 Title: "MII PR MTB Histologie-Evaluation Auftrag"
 Description: "Auftrag zur (erneuten) Histologie-Evaluation"
-* insert ProfileHeader
+* insert PR_Header
