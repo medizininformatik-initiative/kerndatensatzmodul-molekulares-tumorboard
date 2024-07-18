@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Therapieempfehlung
-Parent: mii-pr-medikation-medication-request
+Parent: MII_PR_Medikation_MedicationRequest
 Id: mii-pr-mtb-therapieempfehlung
 Title: "MII PR MTB Therapieempfehlung Systemische Therapie"
 Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
@@ -17,14 +17,12 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * supportingInformation[StuetzendeMolekulareAlteration] ^short = "Stützende molekulare Alteration(en)"
 * supportingInformation[StuetzendeMolekulareAlteration] ^definition = "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)"
 * supportingInformation[StuetzendeMolekulareAlteration] 1..1 MS
-//* supportingInformation[StuetzendeMolekulareAlteration] only Reference(MII_PR_Patho_Base_Observation or MII_PR_MolGen_Variante)
-* supportingInformation[StuetzendeMolekulareAlteration] only Reference(Observation)
+* supportingInformation[StuetzendeMolekulareAlteration] only Reference(MII_PR_Patho_Base_Observation or MII_PR_MolGen_Variante)
 * supportingInformation contains StuetzendeEntitaet 0..* MS
 * supportingInformation[StuetzendeEntitaet] ^short = "Stützende Entität"
 * supportingInformation[StuetzendeEntitaet] ^definition = "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht"
 * supportingInformation[StuetzendeEntitaet] 1..1 MS
-//* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose or Condition)
-* supportingInformation[StuetzendeEntitaet] only Reference(Condition)
+* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose)
 * extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet] ^short = "Priorität"
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet] ^definition = "Priorität der (einzelnen) Therapieempfehlung"
