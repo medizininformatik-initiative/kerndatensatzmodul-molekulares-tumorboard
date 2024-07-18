@@ -1,10 +1,10 @@
 Profile: MII_PR_MTB_Therapieplan
-Parent: CarePlan
+Parent: MII_PR_Onko_Tumorkonferenz
 Id: mii-pr-mtb-therapieplan
 Title: "MII PR MTB Therapieplan"
 Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * insert ProfileHeader
-* created 0..1 MS
+* created MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbt
 * created ^definition = "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
 * description 0..1 MS
 * description ^definition = "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
@@ -20,7 +20,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Therapieempfehlung] ^comment = "Kann keine Therapieempfehlung für eine Systemische Therapie gegeben werden, muss dies als Begründung unter `detail.statusReason` angegeben werden"
 * activity[Therapieempfehlung].reference 0..1 MS
 * activity[Therapieempfehlung].reference only Reference(MII_PR_MTB_Therapieempfehlung)
-* activity[Therapieempfehlung].detail 0..1 MS
+* activity[Therapieempfehlung].detail MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbet
 * activity[Therapieempfehlung].detail.kind = #MedicationRequest (exactly)
 * activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_TherapieempfehlungStatusBegruendung (required)
 * activity contains HumangenetischeBeratung 0..1 MS
