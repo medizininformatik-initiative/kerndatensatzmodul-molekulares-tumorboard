@@ -11,6 +11,15 @@ Alias: $mii-pr-onko-specimen = https://www.medizininformatik-initiative.de/fhir/
 Alias: $mii-pr-medikation-medication-request = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest
 
 // Aliases für Profile des MII MTB-Moduls
+Alias: $mii-cs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad
+Alias: $mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 Alias: $mii-cs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-status-begruendung
-Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung
+Alias: $mii-ex-mtb-therapieempfehlung-evidenzgraduierung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung
+Alias: $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 Alias: $mii-ex-mtb-therapieempfehlung-prioritaet = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet
+Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad
+Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
+Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung
+
+// Aliases für HL7 Terminologie
+Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203

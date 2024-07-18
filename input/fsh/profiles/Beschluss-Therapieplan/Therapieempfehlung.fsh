@@ -27,11 +27,11 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet] ^short = "Priorität"
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet] ^definition = "Priorität der (einzelnen) Therapieempfehlung"
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet] ^comment = "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität"
-
-Extension: MII_EX_MTB_Therapieempfehlung_Prioritaet
-Id: mii-ex-mtb-therapieempfehlung-prioritaet
-Title: "MII EX MTB Therapieempfehlung Priorität"
-Description: "Priorität der (einzelnen) Therapieempfehlung"
-* ^url = $mii-ex-mtb-therapieempfehlung-prioritaet
-* value[x] only positiveInt
-* valuePositiveInt 1..1 MS
+* extension contains MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung named Evidenzgraduierung 0..1 MS
+* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung] ^short = "Evidenzgraduierung"
+* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung] ^definition = "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung"
+* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung] ^comment = "Evidenzgraduierung wird durch einen Evidenzgrad und einen optionalen Zusatzverweis angegeben"
+* extension contains MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation named Publikation 0..* MS
+* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation] ^short = "Publikation"
+* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation] ^definition = "Verweis auf Publikation zur Evidenzgraduierung"
+* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation] ^comment = "Verweis auf Publikation erfolgt anhand der DOI oder PMID"
