@@ -38,3 +38,8 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Biopsy] ^definition = "Auftrag zur (erneuten) Biopsie"
 * activity[Biopsy].reference 1..1 MS
 * activity[Biopsy].reference only Reference(MII_PR_MTB_Biopsie_Auftrag)
+* activity contains Studieneinschlussempfehlung 0..* MS
+* activity[Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"
+* activity[Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
+* activity[Studieneinschlussempfehlung].reference 1..1 MS
+* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage)
