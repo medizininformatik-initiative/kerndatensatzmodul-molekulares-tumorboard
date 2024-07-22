@@ -5,7 +5,7 @@ Title: "MII LM Molekulares Tumorboard"
 Description: "MII Logical Model Modul Molekulares Tumorboard"
 // * insert Publisher
 // * insert PR_CS_VS_Version
- * ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb"
+* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb"
 
 
 
