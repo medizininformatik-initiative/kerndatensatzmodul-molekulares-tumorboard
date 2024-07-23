@@ -1,0 +1,126 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-therapieempfehlung-evidenzgraduierung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung",
+  "title": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Evidenzgraduierung der (einzelnen) Therapieempfehlung",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
+        "definition": "Evidenzgraduierung der (einzelnen) Therapieempfehlung"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding",
+        "path": "Extension.value[x].coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für die Evidenzgraduierung anhand von `system`",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Evidenzgrad",
+        "path": "Extension.value[x].coding",
+        "sliceName": "Evidenzgrad",
+        "short": "Evidenzgrad",
+        "definition": "Evidenzgrad der Therapieempfehlung",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Evidenzgrad.system",
+        "path": "Extension.value[x].coding.system",
+        "min": 1,
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad"
+      },
+      {
+        "id": "Extension.value[x].coding:Evidenzgrad.code",
+        "path": "Extension.value[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Zusatzverweis",
+        "path": "Extension.value[x].coding",
+        "sliceName": "Zusatzverweis",
+        "short": "Zusatzverweis",
+        "definition": "Zusatzverweis zum Evidenzgrad",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Zusatzverweis.system",
+        "path": "Extension.value[x].coding.system",
+        "min": 1,
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
+      },
+      {
+        "id": "Extension.value[x].coding:Zusatzverweis.code",
+        "path": "Extension.value[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

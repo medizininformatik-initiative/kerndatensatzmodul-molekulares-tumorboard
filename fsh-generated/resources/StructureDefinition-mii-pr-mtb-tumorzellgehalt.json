@@ -1,0 +1,109 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-tumorzellgehalt",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Tumorzellgehalt",
+  "title": "MII PR MTB Tumorzellgehalt",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Bestimmter Tumorzellgehalt",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category:laboratory-category",
+        "path": "Observation.category",
+        "sliceName": "laboratory-category"
+      },
+      {
+        "id": "Observation.category:laboratory-category.coding",
+        "path": "Observation.category.coding",
+        "patternCoding": {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      },
+      {
+        "id": "Observation.category:section-type",
+        "path": "Observation.category",
+        "sliceName": "section-type"
+      },
+      {
+        "id": "Observation.category:section-type.coding",
+        "path": "Observation.category.coding",
+        "patternCoding": {
+          "code": "77599-9",
+          "system": "http://loinc.org"
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "93356-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x].value",
+        "path": "Observation.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].unit",
+        "path": "Observation.value[x].unit",
+        "patternString": "percent / 100"
+      },
+      {
+        "id": "Observation.value[x].system",
+        "path": "Observation.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.value[x].code",
+        "path": "Observation.value[x].code",
+        "patternCode": "%/100"
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "min": 1,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-bestimmungsmethode-tumorzellgehalt"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis",
+  "id": "mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis",
+  "title": "MII CS Therapieempfehlung Evidenzgrad Zusatzverweis",
+  "description": "Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis",
+  "concept": [
+    {
+      "code": "is",
+      "display": "is",
+      "definition": "In situ-Daten aus Untersuchungen an Patientenmaterial (z.B. IHC, FISH) unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern zusätzlich angegeben werden, z.B. Evidenzgrad 3 is (IHC)."
+    },
+    {
+      "code": "iv",
+      "display": "iv",
+      "definition": "In vitro-Daten/ in vivo-Modelle (z.B. PDX-Modelle) derselben Tumorentität unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern angegeben werden, z.B. Evidenzgrad 2 iv (PDX)."
+    },
+    {
+      "code": "Z",
+      "display": "Z",
+      "definition": "Zusatzverweis für Zulassungsstatus (Z = EMA-Zulassung liegt vor; Z (FDA) = nur FDA-Zulassung vorhanden)"
+    },
+    {
+      "code": "R",
+      "display": "R",
+      "definition": "Verweis, dass es sich hierbei um einen Resistenzmarker für eine bestimmte Therapie handelt"
+    }
+  ],
+  "version": "2024.0.0-ballot",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+    ]
+  },
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 4
+}

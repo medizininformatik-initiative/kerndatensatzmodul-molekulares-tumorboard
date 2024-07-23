@@ -1,0 +1,104 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-biopsie-auftrag",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Biopsie_Auftrag",
+  "title": "MII PR MTB Biopsie Auftrag",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Auftrag zur (erneuten) Biopsie",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-service-request",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ServiceRequest.reasonCode",
+        "path": "ServiceRequest.reasonCode",
+        "max": "1",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-auftrag-begruendung"
+        }
+      },
+      {
+        "id": "ServiceRequest.reasonReference",
+        "path": "ServiceRequest.reasonReference",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "reference.reference"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für referenzierten Histologiebefund oder bestimmten Tumorzellgehalt",
+          "ordered": false
+        }
+      },
+      {
+        "id": "ServiceRequest.reasonReference:Histologie",
+        "path": "ServiceRequest.reasonReference",
+        "sliceName": "Histologie",
+        "short": "Histologiebefund",
+        "definition": "Verweis auf Histologiebefund",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-befund"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.reasonReference:Tumorzellgehalt",
+        "path": "ServiceRequest.reasonReference",
+        "sliceName": "Tumorzellgehalt",
+        "short": "Tumorzellgehalt",
+        "definition": "Verweis auf bestimmten Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.specimen",
+        "path": "ServiceRequest.specimen",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

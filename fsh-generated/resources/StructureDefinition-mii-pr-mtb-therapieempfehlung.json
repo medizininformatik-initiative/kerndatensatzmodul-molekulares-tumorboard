@@ -1,0 +1,157 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-therapieempfehlung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Therapieempfehlung",
+  "title": "MII PR MTB Therapieempfehlung Systemische Therapie",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Therapieempfehlung für eine medikamentöse Systemische Therapie",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest.extension:Prioritaet",
+        "path": "MedicationRequest.extension",
+        "sliceName": "Prioritaet",
+        "short": "Priorität",
+        "definition": "Priorität der (einzelnen) Therapieempfehlung",
+        "comment": "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.extension:Evidenzgraduierung",
+        "path": "MedicationRequest.extension",
+        "sliceName": "Evidenzgraduierung",
+        "short": "Evidenzgraduierung",
+        "definition": "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung",
+        "comment": "Evidenzgraduierung wird durch einen Evidenzgrad und einen optionalen Zusatzverweis angegeben",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.extension:Publikation",
+        "path": "MedicationRequest.extension",
+        "sliceName": "Publikation",
+        "short": "Publikation",
+        "definition": "Verweis auf Publikation zur Evidenzgraduierung",
+        "comment": "Verweis auf Publikation erfolgt anhand der DOI oder PMID",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.medication[x]:medicationReference",
+        "path": "MedicationRequest.medication[x]",
+        "sliceName": "medicationReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/Medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.supportingInformation",
+        "path": "MedicationRequest.supportingInformation",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "reference.reference"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für stützende Angaben zur Systemischen Therapie auf Basis des referenzierten Ressourcentyps",
+          "ordered": false
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.supportingInformation:StuetzendeMolekulareAlteration",
+        "path": "MedicationRequest.supportingInformation",
+        "sliceName": "StuetzendeMolekulareAlteration",
+        "short": "Stützende molekulare Alteration(en)",
+        "definition": "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-genetische-variante",
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.supportingInformation:StuetzendeEntitaet",
+        "path": "MedicationRequest.supportingInformation",
+        "sliceName": "StuetzendeEntitaet",
+        "short": "Stützende Entität",
+        "definition": "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
