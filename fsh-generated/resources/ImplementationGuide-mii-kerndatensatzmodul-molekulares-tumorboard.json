@@ -1,0 +1,72 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "mii-kerndatensatzmodul-molekulares-tumorboard",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard",
+  "version": "0.1.0",
+  "name": "MIIKDSModulMoekularesTumorboard",
+  "status": "draft",
+  "publisher": "Medizininformatik-Initiative",
+  "contact": [
+    {
+      "name": "Medizininformatik-Initiative",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "packageId": "mii-kerndatensatzmodul-molekulares-tumorboard",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
+      "version": "2.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation-v2",
+      "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
+      "version": "2024.0.0-ballot-alpha-1",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
+      "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.patho",
+      "version": "1.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ImplementationGuide/mii-ig-patho",
+      "id": "de_medizininformatikinitiative_kerndatensatz_patho"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-lm-mtb"
+        },
+        "name": "MII LM Molekulares Tumorboard",
+        "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": []
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2024+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}
