@@ -5,7 +5,6 @@ Id: mii-pr-mtb-tumorzellgehalt
 Title: "MII PR MTB Tumorzellgehalt"
 Description: "Bestimmter Tumorzellgehalt"
 * insert PR_Header
-// TODO: Prüfen lassen
 * category[laboratory-category].coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 // TODO: Zuordnung "Additional documentation" prüfen
 * category[section-type].coding = $LNC#77599-9

@@ -19,7 +19,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Therapieempfehlung] ^definition = "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * activity[Therapieempfehlung] ^comment = "Kann keine Therapieempfehlung für eine Systemische Therapie gegeben werden, muss dies als Begründung unter `detail.statusReason` angegeben werden"
 * activity[Therapieempfehlung].reference 0..1 MS
-* activity[Therapieempfehlung].reference only Reference(MII_PR_MTB_Therapieempfehlung)
+* activity[Therapieempfehlung].reference only Reference(MII_PR_MTB_Therapieempfehlung or MedicationRequest)
 * activity[Therapieempfehlung].detail MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbet
 * activity[Therapieempfehlung].detail.kind = #MedicationRequest (exactly)
 * activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_TherapieempfehlungStatusBegruendung (required)
@@ -27,19 +27,19 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[HumangenetischeBeratung] ^short = "Empfehlung Human-genetische Beratung"
 * activity[HumangenetischeBeratung] ^definition = "Auftrag zur (erneuten) Human-genetischen Beratung"
 * activity[HumangenetischeBeratung].reference 1..1 MS
-* activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag)
+* activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag or ServiceRequest)
 * activity contains HistologieEvaluation 0..1 MS
 * activity[HistologieEvaluation] ^short = "Empfehlung Histologie-Evaluation"
 * activity[HistologieEvaluation] ^definition = "Auftrag zur (erneuten) Histologie-Evaluation"
 * activity[HistologieEvaluation].reference 1..1 MS
-* activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag)
+* activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag or ServiceRequest)
 * activity contains Biopsy 0..* MS
 * activity[Biopsy] ^short = "Empfehlung Biopsie"
 * activity[Biopsy] ^definition = "Auftrag zur (erneuten) Biopsie"
 * activity[Biopsy].reference 1..1 MS
-* activity[Biopsy].reference only Reference(MII_PR_MTB_Biopsie_Auftrag)
+* activity[Biopsy].reference only Reference(MII_PR_MTB_Biopsie_Auftrag or ServiceRequest)
 * activity contains Studieneinschlussempfehlung 0..* MS
 * activity[Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"
 * activity[Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
 * activity[Studieneinschlussempfehlung].reference 1..1 MS
-* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage)
+* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage or ServiceRequest)

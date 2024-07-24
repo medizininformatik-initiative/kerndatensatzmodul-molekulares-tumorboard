@@ -18,3 +18,8 @@ RuleSet: CS_Header(url)
 RuleSet: VS_Header(url)
 * insert Header
 * insert VS_Meta({url})
+
+RuleSet: LM_Header(url)
+* insert PR_CS_VS_Version
+* insert Publisher
+* insert LM_Meta({url})

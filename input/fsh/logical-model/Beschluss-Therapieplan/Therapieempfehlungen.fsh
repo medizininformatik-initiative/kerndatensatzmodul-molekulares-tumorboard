@@ -10,7 +10,6 @@ RuleSet: Therapieempfehlungen
   * insert Studieneinschlussempfehlungen
 
 RuleSet: TherapieempfehlungenMapping
-// TODO: Neues Profil zur Darstellung der Therapieempfehlung
 // NOTE: Referenz von CarePlan.activity.reference(MedicationRequest)
 * Therapieempfehlungen              -> "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request)"
   * StuetzendeMolekularAlterationen -> "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).supportingInformation[StuetzendeMolekulareAlteration]"

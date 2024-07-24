@@ -17,11 +17,11 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * reasonReference[Histologie] ^short = "Histologiebefund"
 * reasonReference[Histologie] ^definition = "Verweis auf Histologiebefund"
 * reasonReference[Histologie] 0..1 MS
-* reasonReference[Histologie] only Reference(MII_PR_Onko_Befund)
+* reasonReference[Histologie] only Reference(MII_PR_Onko_Befund or DiagnosticReport)
 * reasonReference contains Tumorzellgehalt 0..1 MS
 * reasonReference[Tumorzellgehalt] ^short = "Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] ^definition = "Verweis auf bestimmten Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] 0..1 MS
-* reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt)
+* reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt or Observation)
 * specimen 1..* MS
-* specimen only Reference(MII_PR_Onko_Specimen)
+* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)

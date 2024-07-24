@@ -12,9 +12,9 @@ Description: "Anfrage zum Studieneinschluss"
 //* category = $SCT#308364004 // Research administrative procedure (procedure)
 //* code = $SCT#780816009 // Invitation to participate in research study (procedure)
 * reasonReference 0..* MS
-* reasonReference only Reference(MII_PR_Onko_Diagnose)
+* reasonReference only Reference(MII_PR_Onko_Diagnose or Condition)
 * supportingInfo 1..* MS
-* supportingInfo only Reference(MII_PR_Onko_Studie)
+* supportingInfo only Reference(MII_PR_Onko_Studie or MII_PR_Studie_Studie or ResearchStudy)
 
 // TODO: Klären, ob in Studien durch komplexe onkol. Diagnosen (Condition) als Kriterium verwendet werden kann
 // TODO: Ggf. auslagern in MII Onkologie-Modul
@@ -50,6 +50,6 @@ Id: mii-ex-onko-diagnose
 Title: "MII EX Onkologie Diagnose"
 Description: "Onkologische Diagnose"
 * insert EX_Header($mii-ex-onko-diagnose)
-* value[x] only Reference(MII_PR_Onko_Diagnose)
+* value[x] only Reference(MII_PR_Onko_Diagnose or Condition)
 * valueReference 1..1 MS
 

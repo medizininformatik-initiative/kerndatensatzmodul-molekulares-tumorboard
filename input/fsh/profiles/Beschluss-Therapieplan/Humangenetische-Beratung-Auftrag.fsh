@@ -8,4 +8,4 @@ Description: "Auftrag zur (erneuten) Human-genetischen Beratung"
 // TODO: Bindingstärke klären
 * reasonCode from MII_VS_MTB_AuftragBegruendung (preferred)
 * specimen 1..* MS
-* specimen only Reference(MII_PR_Onko_Specimen)
+* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)

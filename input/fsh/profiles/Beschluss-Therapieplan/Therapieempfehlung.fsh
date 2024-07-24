@@ -6,7 +6,7 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * insert PR_Header
 // TODO: Klärung der Abweichung bei Kardinalitäten zwischen LM und PR
 * medication[x] 1..1 MS
-* medicationReference only Reference(MII_PR_Medikation_Medication)
+* medicationReference only Reference(MII_PR_Medikation_Medication or Medication)
 * supportingInformation 0..* MS
 * supportingInformation ^slicing.discriminator.type = #type
 * supportingInformation ^slicing.discriminator.path = "reference.reference"
@@ -22,8 +22,8 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * supportingInformation[StuetzendeEntitaet] ^short = "Stützende Entität"
 * supportingInformation[StuetzendeEntitaet] ^definition = "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht"
 * supportingInformation[StuetzendeEntitaet] 1..1 MS
-* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose)
-// TODO: Verortung der Extension klären
+* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose or Condition)
+// TODO: Verortung der Extension klären (Priorität könnte auch CarePlan.activity erweitern)
 * extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet] ^short = "Priorität"
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet] ^definition = "Priorität der (einzelnen) Therapieempfehlung"

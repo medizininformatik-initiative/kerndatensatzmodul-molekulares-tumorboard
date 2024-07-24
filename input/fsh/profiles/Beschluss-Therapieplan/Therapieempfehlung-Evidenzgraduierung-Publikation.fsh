@@ -1,4 +1,3 @@
-// TODO: Canonical URLs für DOI und PMID nutzen, sofern diese als HL7 Terminologie existieren
 Extension: MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation
 Id: mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 Title: "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation"
