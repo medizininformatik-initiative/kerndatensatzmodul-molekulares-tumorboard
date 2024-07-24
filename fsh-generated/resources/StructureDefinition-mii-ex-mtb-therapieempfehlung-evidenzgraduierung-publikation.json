@@ -51,95 +51,18 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "system"
-            }
-          ],
-          "rules": "open",
-          "description": "Slice für Publikation anhand von `system`",
-          "ordered": false
-        },
         "min": 1,
         "type": [
+          {
+            "code": "string"
+          },
+          {
+            "code": "url"
+          },
           {
             "code": "Identifier"
           }
         ],
-        "mustSupport": true
-      },
-      {
-        "id": "Extension.value[x].type",
-        "path": "Extension.value[x].type",
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "RI",
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Extension.value[x].value",
-        "path": "Extension.value[x].value",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Extension.value[x]:DOI",
-        "path": "Extension.value[x]",
-        "sliceName": "DOI",
-        "short": "DOI",
-        "definition": "Document Object Identifier (DOI)",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Extension.value[x]:DOI.system",
-        "path": "Extension.value[x].system",
-        "min": 1,
-        "patternUri": "http://doi.org"
-      },
-      {
-        "id": "Extension.value[x]:DOI.value",
-        "path": "Extension.value[x].value",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Extension.value[x]:PMID",
-        "path": "Extension.value[x]",
-        "sliceName": "PMID",
-        "short": "PMID",
-        "definition": "PubMed Identifier (PMID)",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Extension.value[x]:PMID.system",
-        "path": "Extension.value[x].system",
-        "min": 1,
-        "patternUri": "http://www.ncbi.nlm.nih.gov/pubmed"
-      },
-      {
-        "id": "Extension.value[x]:PMID.value",
-        "path": "Extension.value[x].value",
-        "min": 1,
         "mustSupport": true
       }
     ]
