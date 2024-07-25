@@ -2,9 +2,21 @@
   "resourceType": "StructureDefinition",
   "id": "mii-lm-mtb",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb",
+  "version": "2024.0.0-ballot",
   "name": "MII_LM_MTB",
   "title": "MII LM Molekulares Tumorboard",
   "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
   "description": "MII Logical Model Modul Molekulares Tumorboard",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -552,7 +564,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+              "http://hl7.org/fhir/StructureDefinition/Medication"
             ]
           }
         ],
@@ -572,7 +584,7 @@
         "max": "1",
         "type": [
           {
-            "code": "integer"
+            "code": "positiveInt"
           }
         ],
         "mapping": [
@@ -585,8 +597,8 @@
       {
         "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
         "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
-        "short": "Evidenzeinstufung",
-        "definition": "Evidenzeinstufung für Biomarker-basierte Therapieempfehlung",
+        "short": "Evidenzgraduierung",
+        "definition": "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung",
         "min": 0,
         "max": "1",
         "type": [
@@ -597,15 +609,15 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Observation"
+            "map": "Extension"
           }
         ]
       },
       {
         "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
         "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
-        "short": "Graduierung",
-        "definition": "Evidenzgraduierung der Therapieempfehlung",
+        "short": "Evidenzgrad",
+        "definition": "Evidenzgrad der Therapieempfehlung",
         "min": 0,
         "max": "1",
         "type": [
@@ -616,7 +628,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Observation.component.valueCodableConcept.coding.code"
+            "map": "Extension.valueCodableConcept.coding.code"
           }
         ]
       },
@@ -624,7 +636,7 @@
         "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
         "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
         "short": "Zusatzverweis",
-        "definition": "Zusatzverweise für Evidenzeinstufung",
+        "definition": "Zusatzverweise zum Evidenzgrad",
         "min": 0,
         "max": "1",
         "type": [
@@ -635,7 +647,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Observation.component.valueCodableConcept.coding.code"
+            "map": "Extension.valueCodableConcept.coding.code"
           }
         ]
       },
@@ -643,7 +655,7 @@
         "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
         "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
         "short": "Publikationen",
-        "definition": "Publikationen zur Evidenzeinstufung",
+        "definition": "Publikationen zur Evidenzgraduierung",
         "min": 0,
         "max": "*",
         "type": [
@@ -654,7 +666,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "RelatedArtifact"
+            "map": "Extension"
           }
         ]
       },
@@ -667,13 +679,13 @@
         "max": "1",
         "type": [
           {
-            "code": "url"
+            "code": "string"
           }
         ],
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "RelatedArtifact.url[DOI]"
+            "map": "Idenfifier[DOI].value"
           }
         ]
       },
@@ -686,13 +698,13 @@
         "max": "1",
         "type": [
           {
-            "code": "url"
+            "code": "string"
           }
         ],
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "RelatedArtifact.url[PMID]"
+            "map": "Identifier[PMID].value"
           }
         ]
       },
@@ -768,7 +780,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[Eudra-CT-Nummer]"
+            "map": "ResearchStudy.identifier[EudraCT-Nummer]"
           }
         ]
       },
@@ -1262,7 +1274,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[Eudra-CT-Nummer]"
+            "map": "ResearchStudy.identifier[EudraCT-Nummer]"
           }
         ]
       },

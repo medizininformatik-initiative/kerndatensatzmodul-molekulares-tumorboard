@@ -1,9 +1,11 @@
 {
   "resourceType": "ImplementationGuide",
   "id": "mii-kerndatensatzmodul-molekulares-tumorboard",
+  "language": "de-DE",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard",
-  "version": "0.1.0",
-  "name": "MIIKDSModulMoekularesTumorboard",
+  "version": "2024.0.0-alpha",
+  "name": "MII_IG_MTB_DE",
+  "title": "MII IG Molekulares Tumorboard",
   "status": "draft",
   "publisher": "Medizininformatik-Initiative",
   "contact": [
@@ -17,16 +19,40 @@
       ]
     }
   ],
+  "description": "Medizininformatik Initiative - Modul Molekulares Tumorboard",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "276",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm"
+        }
+      ]
+    }
+  ],
   "packageId": "mii-kerndatensatzmodul-molekulares-tumorboard",
+  "license": "CC0-1.0",
   "fhirVersion": [
     "4.0.1"
   ],
   "dependsOn": [
     {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.biobank",
+      "version": "1.0.8",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.biobank/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.biobank",
+      "id": "de_medizininformatikinitiative_kerndatensatz_biobank"
+    },
+    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
       "version": "2.0.0",
       "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation-v2",
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
+      "version": "1.0.0",
+      "uri": "/guide/MedizininformatikInitiative-ModulMolekulargenetischerBefundberic?version=current",
+      "id": "de_medizininformatikinitiative_kerndatensatz_molgen"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
@@ -39,16 +65,231 @@
       "version": "1.0.0",
       "uri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ImplementationGuide/mii-ig-patho",
       "id": "de_medizininformatikinitiative_kerndatensatz_patho"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
+      "version": "1.0.0",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.studie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.studie",
+      "id": "de_medizininformatikinitiative_kerndatensatz_studie"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
+      "version": "2024.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose-de-v2024",
+      "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
+    },
+    {
+      "packageId": "hl7.fhir.uv.genomics-reporting",
+      "version": "2.0.0",
+      "uri": "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting",
+      "id": "hl7_fhir_uv_genomics_reporting"
     }
   ],
   "definition": {
     "resource": [
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-auftrag-begruendung"
+        },
+        "name": "MII CS Auftrag Begründung",
+        "description": "Begründung zum Auftrag zur (erneuten) Untersuchung oder Diagnostik",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt"
+        },
+        "name": "MII CS Bestimmungsmethode Tumorzellgehalt",
+        "description": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad"
+        },
+        "name": "MII CS Therapieempfehlung Evidenzgrad",
+        "description": "Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII CS Therapieempfehlung Evidenzgrad Zusatzverweis",
+        "description": "Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-status-begruendung"
+        },
+        "name": "MII CS Therapieempfehlung Status Begründung",
+        "description": "Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+        },
+        "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
+        "description": "Evidenzgraduierung der (einzelnen) Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
+        },
+        "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation",
+        "description": "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet"
+        },
+        "name": "MII EX MTB Therapieempfehlung Priorität",
+        "description": "Priorität der (einzelnen) Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-onko-diagnose"
+        },
+        "name": "MII EX Onkologie Diagnose",
+        "description": "Onkologische Diagnose",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-lm-mtb"
         },
         "name": "MII LM Molekulares Tumorboard",
         "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-biopsie-auftrag"
+        },
+        "name": "MII PR MTB Biopsie Auftrag",
+        "description": "Auftrag zur (erneuten) Biopsie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
+        },
+        "name": "MII PR MTB Histologie-Evaluation Auftrag",
+        "description": "Auftrag zur (erneuten) Histologie-Evaluation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag"
+        },
+        "name": "MII PR MTB Human-genetische Beratung Auftrag",
+        "description": "Auftrag zur (erneuten) Human-genetischen Beratung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
+        },
+        "name": "MII PR MTB Studieneinschluss Anfrage",
+        "description": "Anfrage zum Studieneinschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-therapieempfehlung"
+        },
+        "name": "MII PR MTB Therapieempfehlung Systemische Therapie",
+        "description": "Therapieempfehlung für eine medikamentöse Systemische Therapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-therapieplan"
+        },
+        "name": "MII PR MTB Therapieplan",
+        "description": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-tumorzellgehalt"
+        },
+        "name": "MII PR MTB Tumorzellgehalt",
+        "description": "Bestimmter Tumorzellgehalt",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-onko-studie"
+        },
+        "name": "MII PR Onkologie Studie",
+        "description": "Onkologische Studie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-auftrag-begruendung"
+        },
+        "name": "MII VS Auftrag Begründung",
+        "description": "ValueSet für Begründung zum Auftrag zur (erneuten) Untersuchung oder Diagnostik",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-bestimmungsmethode-tumorzellgehalt"
+        },
+        "name": "MII VS Bestimmungsmethode Tumorzellgehalt",
+        "description": "ValueSet für Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad"
+        },
+        "name": "MII VS Therapieempfehlung Evidenzgrad",
+        "description": "ValueSet für den Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII VS Therapieempfehlung Evidenzgrad Zusatzverweis",
+        "description": "ValueSet für den Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung"
+        },
+        "name": "MII VS Therapieempfehlung Status Begründung",
+        "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/mii-ns-studie-eudract"
+        },
+        "name": "NamingSystem für Identifikatoren der European Union Drug Regulating Authorities Clinical Trials (EudraCT)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/mii-ns-studie-drks"
+        },
+        "name": "NamingSystem für Identifikatoren des Deutschen Register Klinischer Studien (DRKS)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/mii-ns-onko-nct"
+        },
+        "name": "NamingSystem für Identifikatoren des Nationalen Centrums für Tumorerkrankungen (NCT)",
         "exampleBoolean": false
       }
     ],
