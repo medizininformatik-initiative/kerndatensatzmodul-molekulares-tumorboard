@@ -1,0 +1,195 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-therapieplan",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Therapieplan",
+  "title": "MII PR MTB Therapieplan",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-tumorkonferenz",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.description",
+        "path": "CarePlan.description",
+        "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.created",
+        "path": "CarePlan.created",
+        "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "reference.reference"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps",
+          "ordered": false
+        }
+      },
+      {
+        "id": "CarePlan.activity:Therapieempfehlung",
+        "path": "CarePlan.activity",
+        "sliceName": "Therapieempfehlung",
+        "short": "Therapieempfehlung Systemische Therapie",
+        "definition": "Therapieempfehlung für eine medikamentöse Systemische Therapie",
+        "comment": "Kann keine Therapieempfehlung für eine Systemische Therapie gegeben werden, muss dies als Begründung unter `detail.statusReason` angegeben werden",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:Therapieempfehlung.reference",
+        "path": "CarePlan.activity.reference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:Therapieempfehlung.detail.kind",
+        "path": "CarePlan.activity.detail.kind",
+        "fixedCode": "MedicationRequest"
+      },
+      {
+        "id": "CarePlan.activity:Therapieempfehlung.detail.statusReason",
+        "path": "CarePlan.activity.detail.statusReason",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung"
+        }
+      },
+      {
+        "id": "CarePlan.activity:HumangenetischeBeratung",
+        "path": "CarePlan.activity",
+        "sliceName": "HumangenetischeBeratung",
+        "short": "Empfehlung Human-genetische Beratung",
+        "definition": "Auftrag zur (erneuten) Human-genetischen Beratung",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:HumangenetischeBeratung.reference",
+        "path": "CarePlan.activity.reference",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:HistologieEvaluation",
+        "path": "CarePlan.activity",
+        "sliceName": "HistologieEvaluation",
+        "short": "Empfehlung Histologie-Evaluation",
+        "definition": "Auftrag zur (erneuten) Histologie-Evaluation",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:HistologieEvaluation.reference",
+        "path": "CarePlan.activity.reference",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:Biopsy",
+        "path": "CarePlan.activity",
+        "sliceName": "Biopsy",
+        "short": "Empfehlung Biopsie",
+        "definition": "Auftrag zur (erneuten) Biopsie",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:Biopsy.reference",
+        "path": "CarePlan.activity.reference",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:Studieneinschlussempfehlung",
+        "path": "CarePlan.activity",
+        "sliceName": "Studieneinschlussempfehlung",
+        "short": "Studieneinschlussempfehlung",
+        "definition": "Anfrage zum Studieneinschluss",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:Studieneinschlussempfehlung.reference",
+        "path": "CarePlan.activity.reference",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
