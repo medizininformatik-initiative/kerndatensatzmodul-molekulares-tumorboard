@@ -1,0 +1,44 @@
+{
+  "resourceType": "Claim",
+  "id": "BEISPIEL-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+    ]
+  },
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "reference": "Coverage/CoverageExample"
+      }
+    }
+  ],
+  "status": "active",
+  "priority": {
+    "coding": [
+      {
+        "code": "normal"
+      }
+    ]
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "institutional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/example"
+  },
+  "created": "2024-07-07",
+  "provider": {
+    "reference": "Organization/InstitutionID"
+  },
+  "prescription": {
+    "reference": "MedicationRequest/TherapieempfehlungExample"
+  }
+}

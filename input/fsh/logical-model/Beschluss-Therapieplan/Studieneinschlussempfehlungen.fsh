@@ -8,8 +8,8 @@ RuleSet: Studieneinschlussempfehlungen
 
 RuleSet: StudieneinschlussempfehlungenMapping
 * Studieneinschlussempfehlungen   -> "ResearchStudy"
-  // TODO: ICD-10, ICD-O, etc.(via Slicing) verwendet?
+  // TODO: Diagnose/Indikation die Gegenstand der Studie ist, nicht Diagnose des Patienten
   * StuetzendeEntitaet            -> "ResearchStudy.condition.valueCodeableConcept.coding.code"
   * NctNummer                     -> "ResearchStudy.identifier[NCT-Nummer]"
-  * EudraCtNummer                 -> "ResearchStudy.identifier[Eudra-CT-Nummer]"
+  * EudraCtNummer                 -> "ResearchStudy.identifier[EudraCT-Nummer]"
   * DrksNummer                    -> "ResearchStudy.identifier[DRKS-Nummer]"

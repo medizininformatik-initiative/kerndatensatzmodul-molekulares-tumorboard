@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "MII_VS_MTB_Therapieempfehlung_EvidenzgradZusatzverweis",
+  "id": "mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis",
+  "title": "MII VS Therapieempfehlung Evidenzgrad Zusatzverweis",
+  "description": "ValueSet für den Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis",
+  "version": "2024.0.0-ballot",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+    ]
+  },
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
+      }
+    ]
+  }
+}

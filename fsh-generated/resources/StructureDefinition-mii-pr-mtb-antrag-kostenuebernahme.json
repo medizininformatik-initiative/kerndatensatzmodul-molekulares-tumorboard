@@ -1,0 +1,117 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-antrag-kostenuebernahme",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme",
+  "name": "MII_PR_MTB_ANTRAG_KOSTENUEBERNAHME",
+  "title": "MII PR MTB Antrag Kostenuebernahme",
+  "status": "draft",
+  "description": "Antrag Kostenübernahme",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Claim",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Claim",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Claim.status",
+        "path": "Claim.status",
+        "patternCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.type",
+        "path": "Claim.type",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme"
+        }
+      },
+      {
+        "id": "Claim.use",
+        "path": "Claim.use",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.patient",
+        "path": "Claim.patient",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.created",
+        "path": "Claim.created",
+        "definition": "Austellungsdatum",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.provider",
+        "path": "Claim.provider",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.priority",
+        "path": "Claim.priority",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "normal"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.prescription",
+        "path": "Claim.prescription",
+        "short": "Therapieempfehlung",
+        "definition": "Verweis auf die Therapieempfehlung",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.insurance",
+        "path": "Claim.insurance",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.insurance.sequence",
+        "path": "Claim.insurance.sequence",
+        "patternPositiveInt": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.insurance.focal",
+        "path": "Claim.insurance.focal",
+        "patternBoolean": true,
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.insurance.coverage",
+        "path": "Claim.insurance.coverage",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.insurance.claimResponse",
+        "path": "Claim.insurance.claimResponse",
+        "mustSupport": true
+      }
+    ]
+  }
+}

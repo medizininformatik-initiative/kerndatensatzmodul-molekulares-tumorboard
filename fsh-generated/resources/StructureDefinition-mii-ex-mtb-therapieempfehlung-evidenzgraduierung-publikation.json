@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation",
+  "title": "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation",
+        "definition": "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          },
+          {
+            "code": "url"
+          },
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

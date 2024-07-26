@@ -1,0 +1,102 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-antwort-kostenuebernahme",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme",
+  "name": "MII_PR_MTB_ANTWORT_KOSTENUEBERNAHME",
+  "title": "MII PR MTB Anwort auf Kostenuebernahme Anfrage",
+  "status": "draft",
+  "description": "Antwort auf Antrag Kostenübernahme",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ClaimResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ClaimResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ClaimResponse.status",
+        "path": "ClaimResponse.status",
+        "patternCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.type",
+        "path": "ClaimResponse.type",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme"
+        }
+      },
+      {
+        "id": "ClaimResponse.use",
+        "path": "ClaimResponse.use",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.patient",
+        "path": "ClaimResponse.patient",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.created",
+        "path": "ClaimResponse.created",
+        "short": "Datum",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.insurer",
+        "path": "ClaimResponse.insurer",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.request",
+        "path": "ClaimResponse.request",
+        "short": "Antrag",
+        "definition": "Dazugehöriger Antrag zur Kostenübernahme",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.outcome",
+        "path": "ClaimResponse.outcome",
+        "patternCode": "complete",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.item",
+        "path": "ClaimResponse.item",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.item.adjudication",
+        "path": "ClaimResponse.item.adjudication",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.item.adjudication.category",
+        "path": "ClaimResponse.item.adjudication.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "eligpercent",
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication"
+            }
+          ]
+        }
+      },
+      {
+        "id": "ClaimResponse.item.adjudication.reason",
+        "path": "ClaimResponse.item.adjudication.reason",
+        "short": "Grund",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.item.adjudication.value",
+        "path": "ClaimResponse.item.adjudication.value",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

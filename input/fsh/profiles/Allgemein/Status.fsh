@@ -1,0 +1,2 @@
+RuleSet: Status
+* ^status = #draft
