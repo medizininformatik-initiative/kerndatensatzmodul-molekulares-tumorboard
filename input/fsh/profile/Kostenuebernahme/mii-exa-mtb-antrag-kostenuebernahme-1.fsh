@@ -8,4 +8,5 @@ Title: "Beispiel 1"
 * patient = Reference(Patient/example)
 * created = "2024-07-07"
 * provider = Reference(Organization/InstitutionID)
+* prescription = Reference(MedicationRequest/TherapieempfehlungExample)
 * insurance.coverage = Reference(Coverage/CoverageExample)
