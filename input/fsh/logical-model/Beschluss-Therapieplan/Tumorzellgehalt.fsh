@@ -4,6 +4,6 @@ RuleSet: Tumorzellgehalt
   * Wert              1..1 decimal          "Anzahl Tumorzellen"            "Gesamtanzahl an aktiven und inaktiven Tumorzellen"
 
 RuleSet: TumorzellgehaltMapping
-* Tumorzellgehalt -> "Observation.where(meta.profile = $mii-pr-patho-base-observation)"
-  * Methode       -> "Observation.where(meta.profile = $mii-pr-patho-base-observation).method.valueCodeableConcept.coding.code"
-  * Wert          -> "Observation.where(meta.profile = $mii-pr-patho-base-observation).valueQuantity.value"
+* Tumorzellgehalt -> "Observation"
+  * Methode       -> "Observation.method.valueCodeableConcept.coding.code"
+  * Wert          -> "Observation.valueQuantity.value"

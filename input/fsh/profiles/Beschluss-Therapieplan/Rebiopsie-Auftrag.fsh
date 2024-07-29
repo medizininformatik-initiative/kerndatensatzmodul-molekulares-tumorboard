@@ -13,15 +13,18 @@ Description: "Auftrag zur (erneuten) Biopsie"
 * reasonReference ^slicing.rules = #open
 * reasonReference ^slicing.description = "Slice für referenzierten Histologiebefund oder bestimmten Tumorzellgehalt"
 * reasonReference ^slicing.ordered = false
+
 * reasonReference contains Histologie 0..1 MS
 * reasonReference[Histologie] ^short = "Histologiebefund"
 * reasonReference[Histologie] ^definition = "Verweis auf Histologiebefund"
 * reasonReference[Histologie] 0..1 MS
 * reasonReference[Histologie] only Reference(MII_PR_Onko_Befund or DiagnosticReport)
+
 * reasonReference contains Tumorzellgehalt 0..1 MS
 * reasonReference[Tumorzellgehalt] ^short = "Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] ^definition = "Verweis auf bestimmten Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] 0..1 MS
 * reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt or Observation)
+
 * specimen 1..* MS
 * specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)

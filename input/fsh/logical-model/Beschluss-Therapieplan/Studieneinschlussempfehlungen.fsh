@@ -1,6 +1,5 @@
 RuleSet: Studieneinschlussempfehlungen
 * Studieneinschlussempfehlungen   0..* BackboneElement  "Studieneinschlussempfehlungen" "Empfehlungen zum Studieneinschlus gemäß Beschluss des Molekularen Tumorboards"
-  // TODO: Eigentlich hier die Diagnose, die die Studie genauer untersuchen möchte, nicht die des Patienten
   * StuetzendeEntitaet            0..* code             "Stützende Entität"             "Stützende Entität"
   * NctNummer                     0..1 Identifier       "NCT-Nummer"                    "Identifikator NCT Studie"
   * EudraCtNummer                 0..1 Identifier       "Eudra-CT-Nummer"               "Identifikator Eudra-CT Studie"

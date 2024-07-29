@@ -29,6 +29,7 @@ Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizinin
 
 // Aliases für HL7 Terminologie
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $fhir-observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $LNC = http://loinc.org

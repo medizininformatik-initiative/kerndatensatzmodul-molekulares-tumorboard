@@ -3,5 +3,5 @@ RuleSet: HumangenetischeBeratungAuftrag
   * insert Auftrag(Begründung Auftrag Human-genetische-Beratung, Begründung für die Beauftragung einer erneuten Human-genetischen Beratung)
 
 RuleSet: HumangenetischeBeratungAuftragMapping
-* HumangenetischeBeratungAuftrag -> "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request)"
+* HumangenetischeBeratungAuftrag -> "ServiceRequest"
   * insert AuftragMapping

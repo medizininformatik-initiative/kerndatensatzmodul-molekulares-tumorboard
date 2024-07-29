@@ -29,18 +29,22 @@ Description: "Onkologische Studie"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice für Identifikator eines Studienregisters anhand von `system`"
 * identifier ^slicing.ordered = false
+
 * identifier contains NCT 0..1
 * identifier[NCT].use = #official
 * identifier[NCT].system = $mii-ns-onko-nct
 * identifier[NCT].value 1..1 MS
+
 * identifier contains DRKS 0..1
 * identifier[DRKS].use = #official
 * identifier[DRKS].system = $mii-ns-studie-drks
 * identifier[DRKS].value 1..1 MS
+
 * identifier contains EudraCT 0..1
 * identifier[EudraCT].use = #official
 * identifier[EudraCT].system = $mii-ns-studie-eudract
 * identifier[EudraCT].value 1..1 MS
+
 * condition.extension contains MII_EX_Onko_Diagnose named OnkologischeDiagnose 0..* MS
 
 // Klären, ob Diagnose (für Studieneinschluss) als ResearchStudy.condition:valueCodeableConcept genügt
