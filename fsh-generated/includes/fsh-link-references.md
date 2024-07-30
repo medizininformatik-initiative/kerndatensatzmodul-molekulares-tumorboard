@@ -28,3 +28,5 @@
 [MII_VS_MTB_Therapieempfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad.html
 [MII_VS_MTB_Therapieempfehlung_EvidenzgradZusatzverweis]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
 [MII_VS_MTB_TherapieempfehlungStatusBegruendung]: ValueSet-mii-vs-mtb-therapieempfehlung-status-begruendung.html
+[MII-EXA-MTB-Kombinationstherapie]: Medication-MII-EXA-MTB-Kombinationstherapie.html
+[MII-EXA-MTB-Therapieempfehlung-Kombinationstherapie]: MedicationRequest-MII-EXA-MTB-Therapieempfehlung-Kombinationstherapie.html

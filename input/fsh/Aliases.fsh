@@ -30,8 +30,12 @@ Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizinin
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type
 Alias: $fhir-observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
+Alias: $ASK = http://fhir.de/CodeSystem/ask
+Alias: $ATC_DE = http://fhir.de/CodeSystem/bfarm/atc
+Alias: $EDQM = http://standardterms.edqm.eu
 Alias: $LNC = http://loinc.org
-Alias: $UCUM = http://unitsofmeasure.org
 Alias: $SCT = http://snomed.info/sct
+Alias: $UCUM = http://unitsofmeasure.org

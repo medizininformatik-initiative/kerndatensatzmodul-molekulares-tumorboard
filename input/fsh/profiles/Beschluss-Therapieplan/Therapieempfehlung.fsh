@@ -18,13 +18,11 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * supportingInformation contains StuetzendeMolekulareAlteration 0..* MS
 * supportingInformation[StuetzendeMolekulareAlteration] ^short = "Stützende molekulare Alteration(en)"
 * supportingInformation[StuetzendeMolekulareAlteration] ^definition = "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)"
-* supportingInformation[StuetzendeMolekulareAlteration] 1..1 MS
 * supportingInformation[StuetzendeMolekulareAlteration] only Reference(MII_PR_Patho_Finding or MII_PR_MolGen_Variante or MII_PR_Onko_Genetische_Variante or Observation)
 
 * supportingInformation contains StuetzendeEntitaet 0..* MS
 * supportingInformation[StuetzendeEntitaet] ^short = "Stützende Entität"
 * supportingInformation[StuetzendeEntitaet] ^definition = "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht"
-* supportingInformation[StuetzendeEntitaet] 1..1 MS
 * supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose or Condition)
 
 * extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS

@@ -49,6 +49,12 @@
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
+      "version": "1.0.3",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.meta/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.meta",
+      "id": "de_medizininformatikinitiative_kerndatensatz_meta"
+    },
+    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
       "version": "1.0.0",
       "uri": "/guide/MedizininformatikInitiative-ModulMolekulargenetischerBefundberic?version=current",
@@ -325,6 +331,22 @@
         "name": "MII VS Therapieempfehlung Status Begründung",
         "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Medication/MII-EXA-MTB-Kombinationstherapie"
+        },
+        "name": "MII-EXA-MTB-Kombinationstherapie",
+        "description": "Dabrafenib/Trametinib-Kombinationstherapie bei Melanom oder nicht-kleinzelligem Lungenkrebs mit BRAF-V600E- oder BRAF-V600K-Mutation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MII-EXA-MTB-Therapieempfehlung-Kombinationstherapie"
+        },
+        "name": "MII-EXA-MTB-Therapieempfehlung-Kombinationstherapie",
+        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie bei Melanom oder nicht-kleinzelligem Lungenkrebs mit BRAF-V600E- oder BRAF-V600K-Mutation",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
       }
     ],
     "page": {

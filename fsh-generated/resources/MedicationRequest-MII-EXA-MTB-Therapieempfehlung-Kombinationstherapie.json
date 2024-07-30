@@ -1,0 +1,49 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "MII-EXA-MTB-Therapieempfehlung-Kombinationstherapie",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+    ]
+  },
+  "subject": {
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "code": "PSEUDED",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue"
+          }
+        ]
+      },
+      "system": "http://www.acme.com/identifiers/patient",
+      "value": "123456"
+    }
+  },
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet",
+      "valuePositiveInt": 1
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad",
+            "code": "m1C"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
+      "valueUrl": "https://doi.org/10.1002/gcc.23222"
+    }
+  ],
+  "status": "active",
+  "intent": "proposal",
+  "medicationReference": {
+    "reference": "MII_EXA_MTB_Kombinationstherapie"
+  }
+}

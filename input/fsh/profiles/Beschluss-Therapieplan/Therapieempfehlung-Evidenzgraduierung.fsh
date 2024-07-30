@@ -16,11 +16,11 @@ Description: "Evidenzgraduierung der (einzelnen) Therapieempfehlung"
 * valueCodeableConcept.coding contains Evidenzgrad 1..1 MS
 * valueCodeableConcept.coding[Evidenzgrad] ^short = "Evidenzgrad"
 * valueCodeableConcept.coding[Evidenzgrad] ^definition = "Evidenzgrad der Therapieempfehlung"
-* valueCodeableConcept.coding[Evidenzgrad].system = $mii-vs-mtb-therapieempfehlung-evidenzgrad
+* valueCodeableConcept.coding[Evidenzgrad].system = $mii-cs-mtb-therapieempfehlung-evidenzgrad
 * valueCodeableConcept.coding[Evidenzgrad].code 1..1 MS
 
 * valueCodeableConcept.coding contains Zusatzverweis 0..* MS
 * valueCodeableConcept.coding[Zusatzverweis] ^short = "Zusatzverweis"
 * valueCodeableConcept.coding[Zusatzverweis] ^definition = "Zusatzverweis zum Evidenzgrad"
-* valueCodeableConcept.coding[Zusatzverweis].system = $mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
+* valueCodeableConcept.coding[Zusatzverweis].system = $mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 * valueCodeableConcept.coding[Zusatzverweis].code 1..1 MS
