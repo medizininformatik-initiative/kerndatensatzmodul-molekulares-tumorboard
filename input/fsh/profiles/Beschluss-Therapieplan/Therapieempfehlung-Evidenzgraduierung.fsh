@@ -3,6 +3,7 @@ Id: mii-ex-mtb-therapieempfehlung-evidenzgraduierung
 Title: "MII EX MTB Therapieempfehlung Evidenzgraduierung"
 Description: "Evidenzgraduierung der (einzelnen) Therapieempfehlung"
 * insert EX_Header($mii-ex-mtb-therapieempfehlung-evidenzgraduierung)
+
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept.coding 1..* MS

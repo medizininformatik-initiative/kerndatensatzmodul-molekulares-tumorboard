@@ -1,12 +1,11 @@
-// TODO: (Abstraktes) Basisprofil erstellen in MTB/Onko für Biopsie oder Histologie-Evaluation
 Profile: MII_PR_MTB_Histologie_Evaluation_Auftrag
 Parent: MII_PR_Patho_Service_Request
 Id: mii-pr-mtb-histologie-evaluation-auftrag
 Title: "MII PR MTB Histologie-Evaluation Auftrag"
 Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * insert PR_Header
+
 * reasonCode 0..1 MS
-// TODO: Bindingstärke klären
 * reasonCode from MII_VS_MTB_AuftragBegruendung (preferred)
 
 * reasonReference ^slicing.discriminator.type = #type
@@ -27,5 +26,5 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * reasonReference[Tumorzellgehalt] 0..1 MS
 * reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt or Observation)
 
-* specimen 1..* MS
+* specimen 0..* MS
 * specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)

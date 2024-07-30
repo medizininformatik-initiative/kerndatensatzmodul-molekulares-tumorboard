@@ -3,7 +3,7 @@ Id: mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 Title: "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation"
 Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung"
 * insert EX_Header($mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation)
-* value[x] only string or url or Identifier
+* value[x] only string or url or uri or Identifier
 * value[x] 1..1 MS
 
 // TODO: Probleme beim Reslicing (Extension.value[x] bereits gesliced), deshalb vorerst einkommentiert
@@ -23,7 +23,8 @@ Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) The
 //* value[x][PMID].system = "http://www.ncbi.nlm.nih.gov/pubmed"
 //* value[x].value 1..1 MS
 
-// NOTE: Reslicing Test
+// NOTE: Reslicing Tests
+
 //* value[x] ^slicing.discriminator.type = #type
 //* value[x] ^slicing.discriminator.path = "$this"
 //* value[x] ^slicing.rules = #open
@@ -38,3 +39,14 @@ Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) The
 //* value[x][valueIdentifier] ^slicing.ordered = false
 //* value[x][valueIdentifier] contains DOI
 //* value[x][valueIdentifier][DOI].system = "http://doi.org"
+
+//* value[x] only Identifier
+//* valueIdentifier 1..1 MS
+//* valueIdentifier ^slicing.discriminator.type = #value
+//* valueIdentifier ^slicing.discriminator.path = "system"
+//* valueIdentifier ^slicing.rules = #open
+//* valueIdentifier ^slicing.description = ""
+//* valueIdentifier ^slicing.ordered = false
+//* valueIdentifier contains DOI 0..1 MS
+//* valueIdentifier[DOI].system = "http://doi.org"
+//* valueIdentifier[DOI].value 1..1 MS

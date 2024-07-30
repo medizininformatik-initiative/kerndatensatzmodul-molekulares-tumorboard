@@ -618,7 +618,7 @@
         "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
         "short": "Evidenzgrad",
         "definition": "Evidenzgrad der Therapieempfehlung",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -638,7 +638,7 @@
         "short": "Zusatzverweis",
         "definition": "Zusatzverweise zum Evidenzgrad",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "code"
@@ -742,7 +742,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ResearchStudy.condition.valueCodeableConcept.coding.code"
+            "map": "ResearchStudy.condition.extension(Condition)"
           }
         ]
       },
@@ -846,7 +846,7 @@
         "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
         "short": "Histologie und Tumorzellgehalt",
         "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
-        "min": 1,
+        "min": 0,
         "max": "*",
         "type": [
           {
@@ -1017,7 +1017,7 @@
         "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
         "short": "Histologie und Tumorzellgehalt",
         "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
-        "min": 1,
+        "min": 0,
         "max": "*",
         "type": [
           {

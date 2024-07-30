@@ -7,8 +7,7 @@ RuleSet: Studieneinschlussempfehlungen
 
 RuleSet: StudieneinschlussempfehlungenMapping
 * Studieneinschlussempfehlungen   -> "ResearchStudy"
-  // TODO: Diagnose/Indikation die Gegenstand der Studie ist, nicht Diagnose des Patienten
-  * StuetzendeEntitaet            -> "ResearchStudy.condition.valueCodeableConcept.coding.code"
+  * StuetzendeEntitaet            -> "ResearchStudy.condition.extension(Condition)"
   * NctNummer                     -> "ResearchStudy.identifier[NCT-Nummer]"
   * EudraCtNummer                 -> "ResearchStudy.identifier[EudraCT-Nummer]"
   * DrksNummer                    -> "ResearchStudy.identifier[DRKS-Nummer]"

@@ -136,6 +136,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-diagnose"
+        },
+        "name": "MII EX MTB Diagnose",
+        "description": "Onkologische Diagnose",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
         },
         "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
@@ -160,18 +168,34 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-onko-diagnose"
-        },
-        "name": "MII EX Onkologie Diagnose",
-        "description": "Onkologische Diagnose",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/mii-lm-mtb"
         },
         "name": "MII LM Molekulares Tumorboard",
         "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/mii-ns-mtb-nct"
+        },
+        "name": "MII NS MTB NCT",
+        "description": "NamingSystem für Identifikatoren des Nationalen Centrums für Tumorerkrankungen (NCT)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/mii-ns-studie-drks"
+        },
+        "name": "MII NS Studie DRKS",
+        "description": "NamingSystem für Identifikatoren des Deutschen Register Klinischer Studien (DRKS)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/mii-ns-studie-eudract"
+        },
+        "name": "MII NS Studie EudraCT",
+        "description": "NamingSystem für Identifikatoren der European Union Drug Regulating Authorities Clinical Trials (EudraCT)",
         "exampleBoolean": false
       },
       {
@@ -216,6 +240,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-studie"
+        },
+        "name": "MII PR MTB Studie",
+        "description": "Onkologische Studie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
         },
         "name": "MII PR MTB Studieneinschluss Anfrage",
@@ -244,14 +276,6 @@
         },
         "name": "MII PR MTB Tumorzellgehalt",
         "description": "Bestimmter Tumorzellgehalt",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-onko-studie"
-        },
-        "name": "MII PR Onkologie Studie",
-        "description": "Onkologische Studie",
         "exampleBoolean": false
       },
       {
@@ -300,27 +324,6 @@
         },
         "name": "MII VS Therapieempfehlung Status Begründung",
         "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "NamingSystem/mii-ns-studie-eudract"
-        },
-        "name": "NamingSystem für Identifikatoren der European Union Drug Regulating Authorities Clinical Trials (EudraCT)",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "NamingSystem/mii-ns-studie-drks"
-        },
-        "name": "NamingSystem für Identifikatoren des Deutschen Register Klinischer Studien (DRKS)",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "NamingSystem/mii-ns-onko-nct"
-        },
-        "name": "NamingSystem für Identifikatoren des Nationalen Centrums für Tumorerkrankungen (NCT)",
         "exampleBoolean": false
       }
     ],

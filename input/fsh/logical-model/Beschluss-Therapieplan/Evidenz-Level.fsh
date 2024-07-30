@@ -1,7 +1,7 @@
 RuleSet: EvidenzLevel
 * EvidenzLevel      0..1 BackboneElement     "Evidenzgraduierung" "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung"
-  * Graduierung     0..1 code                "Evidenzgrad"       "Evidenzgrad der Therapieempfehlung"
-  * Zusatz          0..1 code                "Zusatzverweis"     "Zusatzverweise zum Evidenzgrad"
+  * Graduierung     1..1 code                "Evidenzgrad"       "Evidenzgrad der Therapieempfehlung"
+  * Zusatz          0..* code                "Zusatzverweis"     "Zusatzverweise zum Evidenzgrad"
   * insert Publikationen
 
 RuleSet: EvidenzLevelMapping
