@@ -89,6 +89,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "Claim/BEISPIEL-1"
+        },
+        "name": "Beispiel 1",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-auftrag-begruendung"
         },
         "name": "MII CS Auftrag Begründung",
@@ -169,6 +176,22 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+        },
+        "name": "MII PR MTB Antrag Kostenuebernahme",
+        "description": "Antrag Kostenübernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
+        },
+        "name": "MII PR MTB Anwort auf Kostenuebernahme Anfrage",
+        "description": "Antwort auf Antrag Kostenübernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-biopsie-auftrag"
         },
         "name": "MII PR MTB Biopsie Auftrag",
@@ -245,6 +268,14 @@
         },
         "name": "MII VS Bestimmungsmethode Tumorzellgehalt",
         "description": "ValueSet für Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-antrag-kostenuebernahme"
+        },
+        "name": "MII VS MTB Antrag Kostenuebernahme",
+        "description": "MII Logical Model Modul Molekulares Tumorboard",
         "exampleBoolean": false
       },
       {

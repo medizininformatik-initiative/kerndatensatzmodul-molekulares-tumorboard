@@ -26,6 +26,8 @@ Alias: $mii-vs-mtb-bestimmungsmethode-tumorzellgehalt = https://www.medizininfor
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung
+Alias: $claim-type = http://terminology.hl7.org/CodeSystem/claim-type
+// Alias: $mii-patient = https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient
 
 // Aliases für HL7 Terminologie
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
