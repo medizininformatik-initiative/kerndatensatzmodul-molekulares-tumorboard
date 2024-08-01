@@ -31,5 +31,29 @@ Description: "Antrag Kostenübernahme"
 * insurance.coverage only Reference(Coverage)
 * insurance.claimResponse MS
 * extension contains MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
+// Antragsstadium über related
 * extension[Antragsstadium] ^short = "Antragsstadium"
 * extension[Antragsstadium] ^definition = "Stadium des Antrags auf Kostenuebernahme"
+
+* careTeam ^slicing.discriminator.type = #type
+* careTeam ^slicing.discriminator.path = "sequence"
+* careTeam ^slicing.rules = #open
+* careTeam ^slicing.description = "Slice für Antragsstellung ZPM"
+* careTeam ^slicing.ordered = false
+
+* careTeam contains ZPMBeteiligung 1..* MS
+* careTeam[ZPMBeteiligung] ^short = "Antragstellung ZPM"
+* careTeam[ZPMBeteiligung] ^definition = "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)"
+* careTeam[ZPMBeteiligung] 1..1 MS
+
+* careTeam[ZPMBeteiligung].sequence MS
+* careTeam[ZPMBeteiligung].sequence = 1
+* careTeam[ZPMBeteiligung].provider MS
+* careTeam[ZPMBeteiligung].provider only Reference(Organization)
+* careTeam[ZPMBeteiligung].responsible 1..1 MS
+* careTeam[ZPMBeteiligung].responsible ^short = "Beteiliung - Ja/Nein"
+* careTeam[ZPMBeteiligung].responsible ^definition = "Beteiliung des ZPM - Ja/Nein"
+
+// slice 
+// careTeam mit Organizsation zpm
+// responsible true or false

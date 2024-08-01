@@ -34,16 +34,6 @@
       {
         "id": "Claim.extension",
         "path": "Claim.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "min": 1
       },
       {
@@ -133,6 +123,59 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.careTeam",
+        "path": "Claim.careTeam",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "sequence"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Antragsstellung ZPM",
+          "ordered": false
+        },
+        "min": 1
+      },
+      {
+        "id": "Claim.careTeam:ZPMBeteiligung",
+        "path": "Claim.careTeam",
+        "sliceName": "ZPMBeteiligung",
+        "short": "Antragstellung ZPM",
+        "definition": "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.careTeam:ZPMBeteiligung.sequence",
+        "path": "Claim.careTeam.sequence",
+        "patternPositiveInt": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.careTeam:ZPMBeteiligung.provider",
+        "path": "Claim.careTeam.provider",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.careTeam:ZPMBeteiligung.responsible",
+        "path": "Claim.careTeam.responsible",
+        "short": "Beteiliung - Ja/Nein",
+        "definition": "Beteiliung des ZPM - Ja/Nein",
+        "min": 1,
         "mustSupport": true
       },
       {

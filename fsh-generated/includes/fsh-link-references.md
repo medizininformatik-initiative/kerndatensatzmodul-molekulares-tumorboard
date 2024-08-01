@@ -19,8 +19,12 @@
 [MII_PR_MTB_Follow_Up_Procedure]: StructureDefinition-mii-pr-mtb-follow-up-procedure.html
 [MII_PR_MTB_Follow_Up]: StructureDefinition-mii-pr-mtb-follow-up.html
 [MII_PR_MTB_Histologie_Evaluation_Auftrag]: StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html
+[MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
+[MII_PR_MTB_Therapieempfehlung]: StructureDefinition-mii-pr-mtb-therapieempfehlung.html
+[MII_PR_MTB_Therapieplan]: StructureDefinition-mii-pr-mtb-therapieplan.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
+[MII_PR_Onko_Studie]: StructureDefinition-mii-pr-onko-studie.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_VS_MTB_AuftragBegruendung]: ValueSet-mii-vs-mtb-auftrag-begruendung.html
 [MII_VS_MTB_BestimmungsmethodeTumorzellgehalt]: ValueSet-mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.html
