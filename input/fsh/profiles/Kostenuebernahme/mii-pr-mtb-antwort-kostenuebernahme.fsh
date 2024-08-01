@@ -1,4 +1,4 @@
-Profile: MII_PR_MTB_ANTWORT_KOSTENUEBERNAHME
+Profile: MII_PR_MTB_Antwort_Kostenuebernahme
 Parent: ClaimResponse
 Id: mii-pr-mtb-antwort-kostenuebernahme
 Title: "MII PR MTB Anwort auf Kostenuebernahme Anfrage"
@@ -7,7 +7,7 @@ Description: "Antwort auf Antrag Kostenübernahme"
 * status MS
 * status = #active
 * type MS
-* type from MII_VS_MTB_ANTRAG_KOSTENUEBERNAHME
+* type from MII_VS_MTB_Antrag_Kostenuebernahme
 * use MS
 * patient MS
 // * patient only Reference(MII_Patient)
@@ -25,4 +25,3 @@ Description: "Antwort auf Antrag Kostenübernahme"
 * item.adjudication.value 1..1 MS
 * item.adjudication.reason MS
 * item.adjudication.reason ^short = "Grund"
-

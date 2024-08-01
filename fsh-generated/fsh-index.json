@@ -1,11 +1,19 @@
 [
   {
-    "outputFile": "Claim-BEISPIEL-1.json",
-    "fshName": "BEISPIEL-1",
+    "outputFile": "Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.json",
+    "fshName": "MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1",
     "fshType": "Instance",
     "fshFile": "profiles/Kostenuebernahme/mii-exa-mtb-antrag-kostenuebernahme-1.fsh",
     "startLine": 1,
-    "endLine": 12
+    "endLine": 13
+  },
+  {
+    "outputFile": "CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.json",
+    "fshName": "MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
+    "fshType": "CodeSystem",
+    "fshFile": "profiles/Kostenuebernahme/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.fsh",
+    "startLine": 1,
+    "endLine": 9
   },
   {
     "outputFile": "CodeSystem-mii-cs-mtb-auftrag-begruendung.json",
@@ -72,6 +80,14 @@
     "endLine": 51
   },
   {
+    "outputFile": "StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.json",
+    "fshName": "MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium",
+    "fshType": "Extension",
+    "fshFile": "profiles/Kostenuebernahme/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.fsh",
+    "startLine": 1,
+    "endLine": 12
+  },
+  {
     "outputFile": "StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation.json",
     "fshName": "MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation",
     "fshType": "Extension",
@@ -113,15 +129,15 @@
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.json",
-    "fshName": "MII_PR_MTB_ANTRAG_KOSTENUEBERNAHME",
+    "fshName": "MII_PR_MTB_Antrag_Kostenuebernahme",
     "fshType": "Profile",
     "fshFile": "profiles/Kostenuebernahme/mii-pr-mtb-antrag-kostenuebernahme.fsh",
     "startLine": 1,
-    "endLine": 32
+    "endLine": 35
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.json",
-    "fshName": "MII_PR_MTB_ANTWORT_KOSTENUEBERNAHME",
+    "fshName": "MII_PR_MTB_Antwort_Kostenuebernahme",
     "fshType": "Profile",
     "fshFile": "profiles/Kostenuebernahme/mii-pr-mtb-antwort-kostenuebernahme.fsh",
     "startLine": 1,
@@ -136,20 +152,44 @@
     "endLine": 27
   },
   {
+    "outputFile": "StructureDefinition-mii-pr-mtb-follow-up-careplan.json",
+    "fshName": "MII_PR_MTB_Follow_Up_CarePlan",
+    "fshType": "Profile",
+    "fshFile": "profiles/Follow-Up/mii-pr-mtb-follow-up-careplan.fsh",
+    "startLine": 1,
+    "endLine": 11
+  },
+  {
+    "outputFile": "StructureDefinition-mii-pr-mtb-follow-up-composition.json",
+    "fshName": "MII_PR_MTB_Follow_Up_Composition",
+    "fshType": "Profile",
+    "fshFile": "profiles/Follow-Up/mii-pr-mtb-follow-up-composition.fsh",
+    "startLine": 1,
+    "endLine": 14
+  },
+  {
+    "outputFile": "StructureDefinition-mii-pr-mtb-follow-up-procedure.json",
+    "fshName": "MII_PR_MTB_Follow_Up_Procedure",
+    "fshType": "Profile",
+    "fshFile": "profiles/Follow-Up/mii-pr-mtb-follow-up-procedure.fsh",
+    "startLine": 1,
+    "endLine": 15
+  },
+  {
+    "outputFile": "StructureDefinition-mii-pr-mtb-follow-up.json",
+    "fshName": "MII_PR_MTB_Follow_Up",
+    "fshType": "Profile",
+    "fshFile": "profiles/Follow-Up/mii-pr-mtb-follow-up.fsh",
+    "startLine": 1,
+    "endLine": 5
+  },
+  {
     "outputFile": "StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.json",
     "fshName": "MII_PR_MTB_Histologie_Evaluation_Auftrag",
     "fshType": "Profile",
     "fshFile": "profiles/Beschluss-Therapieplan/Histologie-Reevaluation-Auftrag.fsh",
     "startLine": 2,
     "endLine": 27
-  },
-  {
-    "outputFile": "StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.json",
-    "fshName": "MII_PR_MTB_Humangenetische_Beratung_Auftrag",
-    "fshType": "Profile",
-    "fshFile": "profiles/Beschluss-Therapieplan/Humangenetische-Beratung-Auftrag.fsh",
-    "startLine": 1,
-    "endLine": 11
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.json",
@@ -160,22 +200,6 @@
     "endLine": 17
   },
   {
-    "outputFile": "StructureDefinition-mii-pr-mtb-therapieempfehlung.json",
-    "fshName": "MII_PR_MTB_Therapieempfehlung",
-    "fshType": "Profile",
-    "fshFile": "profiles/Beschluss-Therapieplan/Therapieempfehlung.fsh",
-    "startLine": 1,
-    "endLine": 39
-  },
-  {
-    "outputFile": "StructureDefinition-mii-pr-mtb-therapieplan.json",
-    "fshName": "MII_PR_MTB_Therapieplan",
-    "fshType": "Profile",
-    "fshFile": "profiles/Beschluss-Therapieplan/Therapieplan.fsh",
-    "startLine": 1,
-    "endLine": 45
-  },
-  {
     "outputFile": "StructureDefinition-mii-pr-mtb-tumorzellgehalt.json",
     "fshName": "MII_PR_MTB_Tumorzellgehalt",
     "fshType": "Profile",
@@ -184,16 +208,16 @@
     "endLine": 20
   },
   {
-    "outputFile": "StructureDefinition-mii-pr-onko-studie.json",
-    "fshName": "MII_PR_Onko_Studie",
-    "fshType": "Profile",
-    "fshFile": "profiles/Beschluss-Therapieplan/Studieneinschluss-Anfrage.fsh",
-    "startLine": 21,
-    "endLine": 44
+    "outputFile": "ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.json",
+    "fshName": "MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
+    "fshType": "ValueSet",
+    "fshFile": "profiles/Kostenuebernahme/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.fsh",
+    "startLine": 1,
+    "endLine": 6
   },
   {
     "outputFile": "ValueSet-mii-vs-mtb-antrag-kostenuebernahme.json",
-    "fshName": "MII_VS_MTB_ANTRAG_KOSTENUEBERNAHME",
+    "fshName": "MII_VS_MTB_Antrag_Kostenuebernahme",
     "fshType": "ValueSet",
     "fshFile": "profiles/Kostenuebernahme/mii-vs-mtb-antrag-kostenuebernahme-type.fsh",
     "startLine": 1,

@@ -1,6 +1,6 @@
 {
   "resourceType": "Claim",
-  "id": "BEISPIEL-1",
+  "id": "MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
@@ -12,6 +12,18 @@
       "focal": true,
       "coverage": {
         "reference": "Coverage/CoverageExample"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "initial-claim"
+          }
+        ]
       }
     }
   ],

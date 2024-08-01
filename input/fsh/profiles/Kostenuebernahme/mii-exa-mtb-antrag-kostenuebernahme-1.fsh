@@ -1,7 +1,7 @@
-Instance: BEISPIEL-1
-InstanceOf: MII_PR_MTB_ANTRAG_KOSTENUEBERNAHME
+Instance: MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1
+InstanceOf: MII_PR_MTB_Antrag_Kostenuebernahme
 Usage: #example
-Title: "Beispiel 1"
+Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
 
 * type = #institutional
 * use = #claim
@@ -10,3 +10,4 @@ Title: "Beispiel 1"
 * provider = Reference(Organization/InstitutionID)
 * prescription = Reference(MedicationRequest/TherapieempfehlungExample)
 * insurance.coverage = Reference(Coverage/CoverageExample)
+* extension[Antragsstadium].valueCodeableConcept = #initial-claim 

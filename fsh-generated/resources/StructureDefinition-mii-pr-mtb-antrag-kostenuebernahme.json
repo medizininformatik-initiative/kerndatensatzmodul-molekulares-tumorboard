@@ -2,9 +2,21 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-antrag-kostenuebernahme",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme",
-  "name": "MII_PR_MTB_ANTRAG_KOSTENUEBERNAHME",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Antrag_Kostenuebernahme",
   "title": "MII PR MTB Antrag Kostenuebernahme",
   "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
   "description": "Antrag Kostenübernahme",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -14,6 +26,44 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Claim.meta.profile",
+        "path": "Claim.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.extension",
+        "path": "Claim.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Claim.extension:Antragsstadium",
+        "path": "Claim.extension",
+        "sliceName": "Antragsstadium",
+        "short": "Antragsstadium",
+        "definition": "Stadium des Antrags auf Kostenuebernahme",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
       {
         "id": "Claim.status",
         "path": "Claim.status",
@@ -74,7 +124,7 @@
         "id": "Claim.prescription",
         "path": "Claim.prescription",
         "short": "Therapieempfehlung",
-        "definition": "Verweis auf die Therapieempfehlung",
+        "definition": "Verweis auf die Therapieempfehlung des MTB",
         "type": [
           {
             "code": "Reference",

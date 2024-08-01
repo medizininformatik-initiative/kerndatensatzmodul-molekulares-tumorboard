@@ -89,10 +89,18 @@
     "resource": [
       {
         "reference": {
-          "reference": "Claim/BEISPIEL-1"
+          "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1"
         },
-        "name": "Beispiel 1",
+        "name": "Beispiel fuer einen Antrag auf Kostenuebernahme",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
+        },
+        "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
+        "description": "Codesystem zum Stadium des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -132,6 +140,14 @@
         },
         "name": "MII CS Therapieempfehlung Status Begründung",
         "description": "Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium"
+        },
+        "name": "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
+        "description": "Stadium des Antrags zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -200,18 +216,42 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-careplan"
         },
-        "name": "MII PR MTB Histologie-Evaluation Auftrag",
-        "description": "Auftrag zur (erneuten) Histologie-Evaluation",
+        "name": "MII PR MTB Follow-Up",
+        "description": "Follow-Up nach DNPM",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag"
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-composition"
         },
-        "name": "MII PR MTB Human-genetische Beratung Auftrag",
-        "description": "Auftrag zur (erneuten) Human-genetischen Beratung",
+        "name": "MII PR MTB Follow-Up",
+        "description": "Follow-Up nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-procedure"
+        },
+        "name": "MII PR MTB Follow-Up",
+        "description": "Follow-Up nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up"
+        },
+        "name": "MII PR MTB Follow-Up",
+        "description": "Follow-Up nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
+        },
+        "name": "MII PR MTB Histologie-Evaluation Auftrag",
+        "description": "Auftrag zur (erneuten) Histologie-Evaluation",
         "exampleBoolean": false
       },
       {
@@ -224,22 +264,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-therapieempfehlung"
-        },
-        "name": "MII PR MTB Therapieempfehlung Systemische Therapie",
-        "description": "Therapieempfehlung für eine medikamentöse Systemische Therapie",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-therapieplan"
-        },
-        "name": "MII PR MTB Therapieplan",
-        "description": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-tumorzellgehalt"
         },
         "name": "MII PR MTB Tumorzellgehalt",
@@ -248,10 +272,10 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-onko-studie"
+          "reference": "ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
-        "name": "MII PR Onkologie Studie",
-        "description": "Onkologische Studie",
+        "name": "MII VS Antrag Kostenuebernahme Antragsstadium",
+        "description": "ValueSet zum Stadium des Antrags zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {

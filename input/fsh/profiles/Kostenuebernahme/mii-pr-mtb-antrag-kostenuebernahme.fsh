@@ -1,16 +1,16 @@
-Profile: MII_PR_MTB_ANTRAG_KOSTENUEBERNAHME
+Profile: MII_PR_MTB_Antrag_Kostenuebernahme
 Parent: Claim
 Id: mii-pr-mtb-antrag-kostenuebernahme
 Title: "MII PR MTB Antrag Kostenuebernahme"
 Description: "Antrag Kostenübernahme"
-
+* insert PR_Header
 * status MS
 * status = #active
 * type MS
-* type from MII_VS_MTB_ANTRAG_KOSTENUEBERNAHME
+* type from MII_VS_MTB_Antrag_Kostenuebernahme
 * use MS
 * patient MS
-// * patient only Reference($mii-patient)
+* patient only Reference(Patient)
 * created MS
 * created ^definition = "Austellungsdatum"
 * provider MS
@@ -20,7 +20,7 @@ Description: "Antrag Kostenübernahme"
 // TODO: Überlegen ob prescription die richtige Wahl für Therapieempfehlung ist
 * prescription MS
 * prescription ^short = "Therapieempfehlung"
-* prescription ^definition = "Verweis auf die Therapieempfehlung"
+* prescription ^definition = "Verweis auf die Therapieempfehlung des MTB"
 * prescription only Reference(MedicationRequest)
 * insurance MS
 * insurance.sequence MS
@@ -30,3 +30,6 @@ Description: "Antrag Kostenübernahme"
 * insurance.coverage MS
 * insurance.coverage only Reference(Coverage)
 * insurance.claimResponse MS
+* extension contains MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
+* extension[Antragsstadium] ^short = "Antragsstadium"
+* extension[Antragsstadium] ^definition = "Stadium des Antrags auf Kostenuebernahme"
