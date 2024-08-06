@@ -1,0 +1,23 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-follow-up",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up",
+  "name": "MII_PR_MTB_Follow_Up",
+  "title": "MII PR MTB Follow-Up",
+  "status": "draft",
+  "description": "Follow-Up nach DNPM",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter"
+      }
+    ]
+  }
+}

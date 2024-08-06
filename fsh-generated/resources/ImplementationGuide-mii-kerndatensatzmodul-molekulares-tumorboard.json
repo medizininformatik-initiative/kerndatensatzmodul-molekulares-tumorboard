@@ -89,10 +89,32 @@
     "resource": [
       {
         "reference": {
-          "reference": "Claim/BEISPIEL-1"
+          "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1"
         },
-        "name": "Beispiel 1",
+        "name": "Beispiel fuer einen Antrag auf Kostenuebernahme",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1"
+        },
+        "name": "Beispiel fuer einen Follow-Up Careplan",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1"
+        },
+        "name": "Beispiel fuer einen Follow-Up Procedure",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-procedure"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
+        },
+        "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
+        "description": "Codesystem zum Stadium des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -108,6 +130,22 @@
         },
         "name": "MII CS Bestimmungsmethode Tumorzellgehalt",
         "description": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
+        },
+        "name": "MII CS Follow-Up Grund Nicht-Umsetzung",
+        "description": "Codesystem zum Follow-Up Grund Nicht-Umsetzung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-follow-up-status"
+        },
+        "name": "MII CS Follow-Up Status",
+        "description": "Codesystem zum Follow-Up Status",
         "exampleBoolean": false
       },
       {
@@ -132,6 +170,14 @@
         },
         "name": "MII CS Therapieempfehlung Status Begründung",
         "description": "Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium"
+        },
+        "name": "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
+        "description": "Stadium des Antrags zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -200,6 +246,30 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-procedure"
+        },
+        "name": "MII PR MTB Follow-Up",
+        "description": "Follow-Up nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up"
+        },
+        "name": "MII PR MTB Follow-Up",
+        "description": "Follow-Up nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-careplan"
+        },
+        "name": "MII PR MTB Follow-Up Careplan",
+        "description": "Durchgefuehrte geplante Therapien",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
         },
         "name": "MII PR MTB Histologie-Evaluation Auftrag",
@@ -256,6 +326,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium"
+        },
+        "name": "MII VS Antrag Kostenuebernahme Antragsstadium",
+        "description": "ValueSet zum Stadium des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-auftrag-begruendung"
         },
         "name": "MII VS Auftrag Begründung",
@@ -268,6 +346,22 @@
         },
         "name": "MII VS Bestimmungsmethode Tumorzellgehalt",
         "description": "ValueSet für Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-follow-grund-nicht-umsetzung"
+        },
+        "name": "MII VS Follow-Up Grund Nicht-Umsetzung",
+        "description": "ValueSet zum Follow-Up Grund Nicht-Umsetzung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-follow-up-status"
+        },
+        "name": "MII VS Follow-Up Status",
+        "description": "ValueSet zum Follow-Up Status",
         "exampleBoolean": false
       },
       {

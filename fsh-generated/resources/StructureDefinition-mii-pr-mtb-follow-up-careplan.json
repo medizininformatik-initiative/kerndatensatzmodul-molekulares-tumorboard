@@ -1,0 +1,44 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-follow-up-careplan",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan",
+  "name": "MII_PR_MTB_Follow_Up_CarePlan",
+  "title": "MII PR MTB Follow-Up Careplan",
+  "status": "draft",
+  "description": "Durchgefuehrte geplante Therapien",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CarePlan",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.status",
+        "path": "CarePlan.status",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.reference",
+        "path": "CarePlan.activity.reference",
+        "mustSupport": true
+      }
+    ]
+  }
+}
