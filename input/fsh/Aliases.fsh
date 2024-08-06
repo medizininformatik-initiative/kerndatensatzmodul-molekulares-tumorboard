@@ -31,6 +31,11 @@ Alias: $mii-ex-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizini
 Alias: $mii-cs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-vs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium
 
+Alias: $mii-cs-mtb-follow-up-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status
+Alias: $mii-vs-mtb-follow-up-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status
+Alias: $mii-cs-mtb-follow-up-grund-nicht-umsetzung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung
+Alias: $mii-vs-mtb-follow-up-grund-nicht-umsetzung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung
+
 // Aliases für HL7 Terminologie
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 

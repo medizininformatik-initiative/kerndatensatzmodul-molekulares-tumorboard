@@ -96,6 +96,20 @@
       },
       {
         "reference": {
+          "reference": "CarePlan/MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1"
+        },
+        "name": "Beispiel fuer einen Follow-Up Careplan",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1"
+        },
+        "name": "Beispiel fuer einen Follow-Up Procedure",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-procedure"
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
@@ -116,6 +130,22 @@
         },
         "name": "MII CS Bestimmungsmethode Tumorzellgehalt",
         "description": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
+        },
+        "name": "MII CS Follow-Up Grund Nicht-Umsetzung",
+        "description": "Codesystem zum Follow-Up Grund Nicht-Umsetzung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-follow-up-status"
+        },
+        "name": "MII CS Follow-Up Status",
+        "description": "Codesystem zum Follow-Up Status",
         "exampleBoolean": false
       },
       {
@@ -216,22 +246,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-follow-up-careplan"
-        },
-        "name": "MII PR MTB Follow-Up",
-        "description": "Follow-Up nach DNPM",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-follow-up-composition"
-        },
-        "name": "MII PR MTB Follow-Up",
-        "description": "Follow-Up nach DNPM",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-follow-up-procedure"
         },
         "name": "MII PR MTB Follow-Up",
@@ -244,6 +258,14 @@
         },
         "name": "MII PR MTB Follow-Up",
         "description": "Follow-Up nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-careplan"
+        },
+        "name": "MII PR MTB Follow-Up Careplan",
+        "description": "Durchgefuehrte geplante Therapien",
         "exampleBoolean": false
       },
       {
@@ -324,6 +346,22 @@
         },
         "name": "MII VS Bestimmungsmethode Tumorzellgehalt",
         "description": "ValueSet für Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-follow-grund-nicht-umsetzung"
+        },
+        "name": "MII VS Follow-Up Grund Nicht-Umsetzung",
+        "description": "ValueSet zum Follow-Up Grund Nicht-Umsetzung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-follow-up-status"
+        },
+        "name": "MII VS Follow-Up Status",
+        "description": "ValueSet zum Follow-Up Status",
         "exampleBoolean": false
       },
       {

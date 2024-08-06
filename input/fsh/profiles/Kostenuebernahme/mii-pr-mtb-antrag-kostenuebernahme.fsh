@@ -53,7 +53,3 @@ Description: "Antrag Kostenübernahme"
 * careTeam[ZPMBeteiligung].responsible 1..1 MS
 * careTeam[ZPMBeteiligung].responsible ^short = "Beteiliung - Ja/Nein"
 * careTeam[ZPMBeteiligung].responsible ^definition = "Beteiliung des ZPM - Ja/Nein"
-
-// slice 
-// careTeam mit Organizsation zpm
-// responsible true or false

@@ -62,40 +62,6 @@
         "path": "ClaimResponse.outcome",
         "patternCode": "complete",
         "mustSupport": true
-      },
-      {
-        "id": "ClaimResponse.item",
-        "path": "ClaimResponse.item",
-        "mustSupport": true
-      },
-      {
-        "id": "ClaimResponse.item.adjudication",
-        "path": "ClaimResponse.item.adjudication",
-        "mustSupport": true
-      },
-      {
-        "id": "ClaimResponse.item.adjudication.category",
-        "path": "ClaimResponse.item.adjudication.category",
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "eligpercent",
-              "system": "http://terminology.hl7.org/CodeSystem/adjudication"
-            }
-          ]
-        }
-      },
-      {
-        "id": "ClaimResponse.item.adjudication.reason",
-        "path": "ClaimResponse.item.adjudication.reason",
-        "short": "Grund",
-        "mustSupport": true
-      },
-      {
-        "id": "ClaimResponse.item.adjudication.value",
-        "path": "ClaimResponse.item.adjudication.value",
-        "min": 1,
-        "mustSupport": true
       }
     ]
   }

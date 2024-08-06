@@ -19,9 +19,11 @@ Description: "Antwort auf Antrag Kostenübernahme"
 * request ^definition = "Dazugehöriger Antrag zur Kostenübernahme"
 * outcome MS
 * outcome = http://hl7.org/fhir/remittance-outcome#complete
-* item MS
-* item.adjudication MS
-* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#eligpercent
-* item.adjudication.value 1..1 MS
-* item.adjudication.reason MS
-* item.adjudication.reason ^short = "Grund"
+
+
+// * item MS
+// * item.adjudication MS
+// * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#eligpercent
+// * item.adjudication.value 1..1 MS
+// * item.adjudication.reason MS
+// * item.adjudication.reason ^short = "Grund"
