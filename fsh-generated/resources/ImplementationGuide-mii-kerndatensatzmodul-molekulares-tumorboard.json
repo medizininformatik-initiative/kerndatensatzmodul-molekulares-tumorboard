@@ -89,6 +89,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-Beispiel-1"
+        },
+        "name": "Beispiel fuer eine Systemtherapie",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+      },
+      {
+        "reference": {
           "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1"
         },
         "name": "Beispiel fuer einen Antrag auf Kostenuebernahme",
@@ -254,14 +261,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-follow-up"
-        },
-        "name": "MII PR MTB Follow-Up",
-        "description": "Follow-Up nach DNPM",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-follow-up-careplan"
         },
         "name": "MII PR MTB Follow-Up Careplan",
@@ -286,10 +285,26 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-response-befund"
+        },
+        "name": "MII PR MTB Response Befund",
+        "description": "Response Beurteilung nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
         },
         "name": "MII PR MTB Studieneinschluss Anfrage",
         "description": "Anfrage zum Studieneinschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
+        },
+        "name": "MII PR MTB Systemtherapie",
+        "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -370,6 +385,14 @@
         },
         "name": "MII VS MTB Antrag Kostenuebernahme",
         "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-systemtherapie-status"
+        },
+        "name": "MII VS MTB Systemtherapie Status",
+        "description": "Einschränkung der Status für Systemtherapie",
         "exampleBoolean": false
       },
       {

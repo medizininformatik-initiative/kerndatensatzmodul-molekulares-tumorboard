@@ -17,6 +17,7 @@ Description: "Antwort auf Antrag Kostenübernahme"
 * request MS
 * request ^short = "Antrag"
 * request ^definition = "Dazugehöriger Antrag zur Kostenübernahme"
+* request only Reference(MII_PR_MTB_Antrag_Kostenuebernahme)
 * outcome MS
 * outcome = http://hl7.org/fhir/remittance-outcome#complete
 

@@ -19,11 +19,13 @@
         "path": "Procedure.basedOn",
         "short": "Umgesetzte Therapien",
         "definition": "Gemäß der Therapieempfehlungen umgesetzte Therapien",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/CarePlan"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
             ]
           }
         ],

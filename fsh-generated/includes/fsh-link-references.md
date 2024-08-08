@@ -1,3 +1,4 @@
+[MII-EXA-MTB-Systemtherapie-Beispiel-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-Beispiel-1.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1]: CarePlan-MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1]: Procedure-MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1.html
@@ -19,11 +20,12 @@
 [MII_PR_MTB_Antwort_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html
 [MII_PR_MTB_Biopsie_Auftrag]: StructureDefinition-mii-pr-mtb-biopsie-auftrag.html
 [MII_PR_MTB_Follow_Up_Procedure]: StructureDefinition-mii-pr-mtb-follow-up-procedure.html
-[MII_PR_MTB_Follow_Up]: StructureDefinition-mii-pr-mtb-follow-up.html
 [MII_PR_MTB_Follow_Up_CarePlan]: StructureDefinition-mii-pr-mtb-follow-up-careplan.html
 [MII_PR_MTB_Histologie_Evaluation_Auftrag]: StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
+[MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
+[MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
 [MII_PR_MTB_Therapieempfehlung]: StructureDefinition-mii-pr-mtb-therapieempfehlung.html
 [MII_PR_MTB_Therapieplan]: StructureDefinition-mii-pr-mtb-therapieplan.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
@@ -34,6 +36,7 @@
 [MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.html
 [MII_VS_MTB_Follow_Up_Status]: ValueSet-mii-vs-mtb-follow-up-status.html
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
+[MII_VS_MTB_Systemtherapie_Status]: ValueSet-mii-vs-mtb-systemtherapie-status.html
 [MII_VS_MTB_Therapieempfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad.html
 [MII_VS_MTB_Therapieempfehlung_EvidenzgradZusatzverweis]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
 [MII_VS_MTB_TherapieempfehlungStatusBegruendung]: ValueSet-mii-vs-mtb-therapieempfehlung-status-begruendung.html

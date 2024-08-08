@@ -9,11 +9,11 @@ Description: "Follow-Up nach DNPM"
 * performed[x] MS
 * performed[x] only dateTime
 * performed[x] ^short = "Erfassungsdatum"
-* basedOn MS
-* basedOn only Reference(CarePlan)
+* performed[x] ^definiton = "Erfassungsdatum Durchführung Follow-Up"
+* basedOn 1..1 MS
+* basedOn only Reference(MII_PR_MTB_Follow_Up_CarePlan)
 * basedOn ^short = "Umgesetzte Therapien"
 * basedOn ^definition = "Gemäß der Therapieempfehlungen umgesetzte Therapien"
-
 
 * followUp 1..1 MS
 * followUp ^slicing.discriminator.type = #value
@@ -26,6 +26,7 @@ Description: "Follow-Up nach DNPM"
 * followUp[Status].coding 1..1 MS
 * followUp[Status].coding.system = $mii-cs-mtb-follow-up-status
 * followUp[Status].coding.code MS
+// GrundNichtUmsetzung - Wird entweder evaluiert, wenn Patient ein zweites mal im MTB vorgestellt wird oder Patient verstorben ist. -> Rule?
 * followUp contains GrundNichtUmsetzung 0..1
 * followUp[GrundNichtUmsetzung] ^short = "Grund Nicht-Umsetzung"
 * followUp[GrundNichtUmsetzung] ^definition = "Grund für die Nicht-Umsetzung des gesamten Therapieplans"
