@@ -55,6 +55,14 @@
         "path": "ClaimResponse.request",
         "short": "Antrag",
         "definition": "Dazugehöriger Antrag zur Kostenübernahme",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {

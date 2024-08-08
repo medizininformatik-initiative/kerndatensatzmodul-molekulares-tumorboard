@@ -9,7 +9,7 @@ Description: "Follow-Up nach DNPM"
 * performed[x] MS
 * performed[x] only dateTime
 * performed[x] ^short = "Erfassungsdatum"
-* performed[x] ^definiton = "Erfassungsdatum Durchführung Follow-Up"
+* performed[x] ^definition = "Erfassungsdatum Durchführung Follow-Up"
 * basedOn 1..1 MS
 * basedOn only Reference(MII_PR_MTB_Follow_Up_CarePlan)
 * basedOn ^short = "Umgesetzte Therapien"
