@@ -1,7 +1,7 @@
 Profile: MII_PR_MTB_Antwort_Kostenuebernahme
 Parent: ClaimResponse
 Id: mii-pr-mtb-antwort-kostenuebernahme
-Title: "MII PR MTB Anwort auf Kostenuebernahme Anfrage"
+Title: "MII PR MTB Anwort Kostenuebernahme"
 Description: "Antwort auf Antrag Kostenübernahme"
 
 * status MS
