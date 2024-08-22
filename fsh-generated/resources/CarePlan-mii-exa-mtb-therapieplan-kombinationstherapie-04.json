@@ -1,0 +1,40 @@
+{
+  "resourceType": "CarePlan",
+  "id": "mii-exa-mtb-therapieplan-kombinationstherapie-04",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "postth",
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ"
+        }
+      ]
+    }
+  ],
+  "activity": [
+    {
+      "detail": {
+        "kind": "RequestGroup",
+        "code": {
+          "coding": [
+            {
+              "code": "ZS",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Zielgerichtete Substanz"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "RequestGroup/mii-exa-mtb-therapieempfehlung-kombinationstherapie-04"
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/mii-exa-mtb-patient-04"
+  },
+  "created": "2024-08-09"
+}

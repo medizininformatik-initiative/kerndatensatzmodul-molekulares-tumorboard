@@ -1,0 +1,34 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "mii-exa-mtb-therapieempfehlung-04-dabrafenib",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+    ]
+  },
+  "extension": [
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad",
+            "code": "m1C"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
+      "valueUrl": "https://doi.org/10.1002/gcc.23222"
+    }
+  ],
+  "status": "active",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/mii-exa-mtb-patient-04"
+  },
+  "medicationReference": {
+    "reference": "Medication/mii-exa-mtb-medikation-04-dabrafenib"
+  }
+}

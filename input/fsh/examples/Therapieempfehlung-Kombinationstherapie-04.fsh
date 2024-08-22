@@ -36,7 +36,9 @@ Description: "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dab
 * name.family = "Muster"
 
 Instance: mii-exa-mtb-therapieplan-kombinationstherapie-04
-InstanceOf: MII_PR_MTB_Therapieplan
+InstanceOf: CarePlan
+// TODO: RequestGroup in Profil nicht erlaubt, deshalb erstmal CarePlan
+//InstanceOf: MII_PR_MTB_Therapieplan
 Usage: #example
 Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 04)"
 // Erforderliche Angaben
@@ -45,12 +47,13 @@ Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kom
 * category = $mii-cs-onko-therapieplanung-typ#postth
 * subject = Reference(mii-exa-mtb-patient-04)
 * created = "2024-08-09"
+// TOOD: activity -> activity[Therapieempfehlung]
 // Therapieempfehlungen
-* activity[Therapieempfehlung].reference = Reference(mii-exa-mtb-therapieempfehlung-kombinationstherapie-04)
+* activity.reference = Reference(mii-exa-mtb-therapieempfehlung-kombinationstherapie-04)
 // Nachfolgende Attribute aufgrund Elternprofile erforderlich
-* activity[Therapieempfehlung].detail.kind = #MedicationRequest
-* activity[Therapieempfehlung].detail.code = $mii-cs-onko-therapie-typ#ZS "Zielgerichtete Substanz"
-* activity[Therapieempfehlung].detail.status = #not-started
+* activity.detail.kind = #RequestGroup
+* activity.detail.code = $mii-cs-onko-therapie-typ#ZS "Zielgerichtete Substanz"
+* activity.detail.status = #not-started
 
 Instance: mii-exa-mtb-therapieempfehlung-kombinationstherapie-04
 InstanceOf: RequestGroup
@@ -59,14 +62,18 @@ Description: "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie
 // Erforderliche Angaben
 * status = #active
 * intent = #proposal
-// Referenz Patient
+// Optional: Referenz Patient
 * subject = Reference(mii-exa-mtb-patient-04)
 // Referenz Kombinationstherapie
-* action[=].resource = Reference(mii-exa-mtb-kombinationstherapie-04)
-* action[+].resource = Reference(mii-exa-mtb-kombinationstherapie-04)
+* action[+].title = "Therapieempfehlung für Dabrafenib"
+* action[=].resource = Reference(mii-exa-mtb-therapieempfehlung-04-dabrafenib)
+* action[+].title = "Therapieempfehlung für Trametinib"
+* action[=].resource = Reference(mii-exa-mtb-therapieempfehlung-04-trametinib)
+// Therapieempfehlung Priorität = 1 (hoch)
+// TODO: Erweiterung an RequestGroup festmachen
+* extension[MII_EX_MTB_Therapieempfehlung_Prioritaet].valuePositiveInt = 1
 
-
-Instance: mii-exa-mtb-kombinationstherapie-04-therapieempfehlung-dabrafenib
+Instance: mii-exa-mtb-therapieempfehlung-04-dabrafenib
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Usage: #example
 Description: "Therapieempfehlung für Dabrafenib"
@@ -75,16 +82,14 @@ Description: "Therapieempfehlung für Dabrafenib"
 * intent = #proposal
 // Referenz Patient
 * subject = Reference(mii-exa-mtb-patient-04)
-// Therapieempfehlung Priorität = 1 (hoch)
-* extension[MII_EX_MTB_Therapieempfehlung_Prioritaet].valuePositiveInt = 1
 // Referenz Medikation
-* medicationReference = Reference(mii-exa-mtb-kombinationstherapie-04-dabrafenib)
+* medicationReference = Reference(mii-exa-mtb-medikation-04-dabrafenib)
 // Therapieempfehlung Evidenzgraduierung
 * extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #m1C
  // Therapieempfehlung Publikation zur Evidenzgraduierung
 * extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation].valueUrl = "https://doi.org/10.1002/gcc.23222"
 
-Instance: mii-exa-mtb-kombinationstherapie-04-therapieempfehlung-trametinib
+Instance: mii-exa-mtb-therapieempfehlung-04-trametinib
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Usage: #example
 Description: "Therapieempfehlung für Trametinib"
@@ -93,16 +98,14 @@ Description: "Therapieempfehlung für Trametinib"
 * intent = #proposal
 // Referenz Patient
 * subject = Reference(mii-exa-mtb-patient-04)
-// Therapieempfehlung Priorität = 1 (hoch)
-* extension[MII_EX_MTB_Therapieempfehlung_Prioritaet].valuePositiveInt = 1
 // Referenz Medikation
-* medicationReference = Reference(mii-exa-mtb-kombinationstherapie-04-rametinib)
+* medicationReference = Reference(mii-exa-mtb-medikation-04-rametinib)
 // Therapieempfehlung Evidenzgraduierung
 * extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #m2A
  // Therapieempfehlung Publikation zur Evidenzgraduierung
 * extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation].valueUrl = "https://doi.org/10.1002/gcc.23222"
 
-Instance: mii-exa-mtb-kombinationstherapie-04-dabrafenib
+Instance: mii-exa-mtb-medikation-04-dabrafenib
 InstanceOf: MII_PR_Medikation_Medication
 Usage: #example
 Description: "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)"
@@ -120,12 +123,8 @@ Description: "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)"
 * ingredient[=].strength.denominator.value = 4
 * ingredient[=].strength.denominator.code = #TAB
 * ingredient[=].extension[MII_EX_Medikation_Wirkstofftyp].valueCoding = #MIN
-// TODO: Therapieempfehlung Evidenzgraduierung m1C
-//* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #m1C
-// TODO: Therapieempfehlung Publikation zur Evidenzgraduierung
-//* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation].valueUrl = "https://doi.org/10.1002/gcc.23222"
 
-Instance: mii-exa-mtb-kombinationstherapie-04-trametinib
+Instance: mii-exa-mtb-medikation-04-trametinib
 InstanceOf: MII_PR_Medikation_Medication
 Usage: #example
 Description: "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)"
@@ -143,7 +142,3 @@ Description: "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)"
 * ingredient[=].strength.denominator.value = 1
 * ingredient[=].strength.denominator.code = #TAB
 * ingredient[=].extension[MII_EX_Medikation_Wirkstofftyp].valueCoding = #MIN
-// TODO: Therapieempfehlung Evidenzgraduierung m2A
-//* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #m2A
-// TODO: Therapieempfehlung Publikation zur Evidenzgraduierung
-//* extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation].valueUrl = "https://doi.org/10.1002/gcc.23222"
