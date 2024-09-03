@@ -21,7 +21,7 @@ Description: "Antwort auf Antrag Kostenübernahme"
 * outcome MS
 * outcome = http://hl7.org/fhir/remittance-outcome#complete
 
-* extension contains MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
+* extension contains MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
 // Antragsstadium über related
 * extension[Antragsstadium] ^short = "Antragsstadium"
 * extension[Antragsstadium] ^definition = "Stadium der Antwort auf den Antrag zur Kostenuebernahme"
