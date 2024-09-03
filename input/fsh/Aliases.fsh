@@ -32,6 +32,15 @@ Alias: $mii-ex-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizini
 Alias: $mii-cs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-vs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium
 
+Alias: $mii-ex-mtb-antwort-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium
+
+Alias: $mii-cs-mtb-antwort-kostenuebernahme-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium
+Alias: $mii-vs-mtb-antwort-kostenuebernahme-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium
+
+Alias: $mii-cs-mtb-ablehnung-kostenuebernahme-grund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-ablehnung-kostenuebernahme-grund
+Alias: $mii-vs-mtb-ablehnung-kostenuebernahme-grund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund
+
+
 Alias: $mii-cs-mtb-follow-up-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status
 Alias: $mii-vs-mtb-follow-up-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status
 Alias: $mii-cs-mtb-follow-up-grund-nicht-umsetzung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung

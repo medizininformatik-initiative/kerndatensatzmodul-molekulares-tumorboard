@@ -8,6 +8,6 @@ RuleSet: AntragKostenuebernahme
 RuleSet: ClaimMapping
 * AntragKostenuebernahme -> "Claim"
   * Ausstellungsdatum -> "Claim.created"
-  * TherapieEmpfehlung -> "Claim.prescription.Reference(MedicationRequest)"
-  * Antragsstadium -> "Claim.code"
+  * TherapieEmpfehlung -> "Claim.prescription"
+  * Antragsstadium -> "Claim.extension"
   * AntragsstellerZPMGeschaeftsstelle -> "Claim.careTeam.responsible"

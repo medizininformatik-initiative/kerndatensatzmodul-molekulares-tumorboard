@@ -2,7 +2,9 @@
 [MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1]: CarePlan-MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1]: Procedure-MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1.html
+[MII_CS_MTB_Ablehnung_Kostenuebernahme_Grund]: CodeSystem-mii-cs-mtb-ablehnung-kostenuebernahme-grund.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
+[MII_CS_MTB_Antwort_Kostenuebernahme_Status]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-status.html
 [MII_CS_MTB_AuftragBegruendung]: CodeSystem-mii-cs-mtb-auftrag-begruendung.html
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_CS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: CodeSystem-mii-cs-mtb-follow-up-grund-nicht-umsetzung.html
@@ -11,6 +13,7 @@
 [MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
 [MII_CS_MTB_TherapieempfehlungStatusBegruendung]: CodeSystem-mii-cs-mtb-therapieempfehlung-status-begruendung.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
+[MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung.html
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation.html
 [MII_EX_MTB_Therapieempfehlung_Prioritaet]: StructureDefinition-mii-ex-mtb-therapieempfehlung-prioritaet.html
@@ -30,7 +33,9 @@
 [MII_PR_MTB_Therapieplan]: StructureDefinition-mii-pr-mtb-therapieplan.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
 [MII_PR_Onko_Studie]: StructureDefinition-mii-pr-onko-studie.html
+[MII_VS_MTB_Ablehnung_Kostenuebernahme_Grund]: ValueSet-mii-vs-mtb-ablehnung-kostenuebernahme-grund.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.html
+[MII_VS_MTB_Antwort_Kostenuebernahme_Status]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-status.html
 [MII_VS_MTB_AuftragBegruendung]: ValueSet-mii-vs-mtb-auftrag-begruendung.html
 [MII_VS_MTB_BestimmungsmethodeTumorzellgehalt]: ValueSet-mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.html
