@@ -9,5 +9,5 @@ RuleSet: AntwortKostenuebernahmeMapping
 * AntwortKostenuebernahme -> "ClaimResponse"
   * Datum -> "ClaimResponse.created"
   * Antrag -> "ClaimResponse.request"
-  * Status -> "ClaimResponse.code"
-  * Grund -> "ClaimResponse.item.adjucation.reason"
+  * Status -> "ClaimResponse.extension[Status].code"
+  * Grund -> "ClaimResponse.extension[Grund].code"
