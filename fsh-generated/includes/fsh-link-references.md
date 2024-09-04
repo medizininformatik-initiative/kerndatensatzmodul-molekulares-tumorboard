@@ -19,6 +19,7 @@
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
 [MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
+[MII_PR_MTB_Therapieempfehlung_Gruppe]: StructureDefinition-mii-pr-mtb-therapieempfehlung-gruppe.html
 [MII_PR_MTB_Therapieempfehlung]: StructureDefinition-mii-pr-mtb-therapieempfehlung.html
 [MII_PR_MTB_Therapieplan]: StructureDefinition-mii-pr-mtb-therapieplan.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
