@@ -23,7 +23,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Therapieempfehlung] ^definition = "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * activity[Therapieempfehlung] ^comment = "Kann keine Therapieempfehlung für eine Systemische Therapie gegeben werden, muss dies als Begründung unter `detail.statusReason` angegeben werden"
 * activity[Therapieempfehlung].reference 0..1 MS
-* activity[Therapieempfehlung].reference only Reference(MII_PR_MTB_Therapieempfehlung or MedicationRequest)
+* activity[Therapieempfehlung].reference only Reference(MII_PR_MTB_Therapieempfehlung or MII_PR_MTB_Therapieempfehlung_Gruppe or MedicationRequest or RequestGroup)
 * activity[Therapieempfehlung].detail MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbet
 * activity[Therapieempfehlung].detail.kind = #MedicationRequest
 * activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_TherapieempfehlungStatusBegruendung (required)

@@ -17,7 +17,6 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 
 * status MS
 * intent MS // Wouldn't that always be 'proposal' or 'plan'?
-// priority left out - maybe it makes sense to use the built-in priority over the Extension?
 
 * subject MS
 * subject only Reference(Patient)
@@ -29,6 +28,15 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 * reasonReference MS
 
 * action MS
+  * prefix MS
+  * title MS
+  * description MS
+  * textEquivalent MS
   * resource MS // Constrain to 1..1?
   * resource only Reference(MII_PR_MTB_Therapieempfehlung or MedicationRequest)
 // I'd like to overwrite action ^contentReference, but I cannot make it point to my profile (the publisher rejects that)
+
+* extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS
+* extension[Prioritaet] ^short = "Priorität"
+* extension[Prioritaet] ^definition = "Priorität der (einzelnen) Therapieempfehlung"
+* extension[Prioritaet] ^comment = "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität"

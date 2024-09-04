@@ -56,7 +56,7 @@ Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kom
 * activity.detail.status = #not-started
 
 Instance: mii-exa-mtb-therapieempfehlung-kombinationstherapie-04
-InstanceOf: RequestGroup
+InstanceOf: MII_PR_MTB_Therapieempfehlung_Gruppe
 Usage: #example
 Description: "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
 // Erforderliche Angaben
@@ -70,7 +70,6 @@ Description: "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie
 * action[+].title = "Therapieempfehlung für Trametinib"
 * action[=].resource = Reference(mii-exa-mtb-therapieempfehlung-04-trametinib)
 // Therapieempfehlung Priorität = 1 (hoch)
-// TODO: Erweiterung an RequestGroup festmachen
 * extension[MII_EX_MTB_Therapieempfehlung_Prioritaet].valuePositiveInt = 1
 
 Instance: mii-exa-mtb-therapieempfehlung-04-dabrafenib
@@ -79,7 +78,7 @@ Usage: #example
 Description: "Therapieempfehlung für Dabrafenib"
 // Erforderliche Angaben
 * status = #active
-* intent = #proposal
+* intent = #option // Gefordert von RequestGroup.action.resource!
 // Referenz Patient
 * subject = Reference(mii-exa-mtb-patient-04)
 // Referenz Medikation
@@ -95,7 +94,7 @@ Usage: #example
 Description: "Therapieempfehlung für Trametinib"
 // Erforderliche Angaben
 * status = #active
-* intent = #proposal
+* intent = #option // Gefordert von RequestGroup.action.resource!
 // Referenz Patient
 * subject = Reference(mii-exa-mtb-patient-04)
 // Referenz Medikation
