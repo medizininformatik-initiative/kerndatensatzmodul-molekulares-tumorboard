@@ -99,7 +99,7 @@ Description: "Therapieempfehlung für Trametinib"
 // Referenz Patient
 * subject = Reference(mii-exa-mtb-patient-04)
 // Referenz Medikation
-* medicationReference = Reference(mii-exa-mtb-medikation-04-rametinib)
+* medicationReference = Reference(mii-exa-mtb-medikation-04-trametinib)
 // Therapieempfehlung Evidenzgraduierung
 * extension[MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #m2A
  // Therapieempfehlung Publikation zur Evidenzgraduierung
