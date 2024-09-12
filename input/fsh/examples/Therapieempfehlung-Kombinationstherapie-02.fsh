@@ -27,6 +27,7 @@
   
   Probleme:
     - Keine Evidenzgraduierung je Medikament/Bestandteil
+    - Zusammengehörigkeit nur implizit über "Priorität" erkennbar
 
   Lösungen:
     - Jedes zusammengehörige Medikament/ Bestandteil bei Kombinationstherapie als MedicationRequest
