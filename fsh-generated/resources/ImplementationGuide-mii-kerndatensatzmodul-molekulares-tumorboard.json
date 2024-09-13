@@ -49,6 +49,12 @@
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
+      "version": "1.0.3",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.meta/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.meta",
+      "id": "de_medizininformatikinitiative_kerndatensatz_meta"
+    },
+    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
       "version": "1.0.0",
       "uri": "/guide/MedizininformatikInitiative-ModulMolekulargenetischerBefundberic?version=current",
@@ -56,7 +62,7 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2024.0.0-ballot-alpha-1",
+      "version": "2024.0.0-ballot-beta-1",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
@@ -80,13 +86,20 @@
     },
     {
       "packageId": "hl7.fhir.uv.genomics-reporting",
-      "version": "2.0.0",
+      "version": "3.0.0-ballot",
       "uri": "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting",
       "id": "hl7_fhir_uv_genomics_reporting"
     }
   ],
   "definition": {
     "resource": [
+      {
+        "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-Beispiel-1"
+        },
+        "name": "Beispiel fuer eine Systemtherapie",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+      },
       {
         "reference": {
           "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1"
@@ -110,10 +123,26 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-ablehnung-kostenuebernahme-grund"
+        },
+        "name": "MII CS Ablehnung Kostenuebernahme Grund",
+        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
         "description": "Codesystem zum Stadium des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-status"
+        },
+        "name": "MII CS Antwort Kostenuebernahme Status",
+        "description": "Codesystem zum Status der Antwort zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -182,6 +211,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+        },
+        "name": "MII EX MTB Antwort Kostenuebernahme Antragsstadium",
+        "description": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
         },
         "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
@@ -232,7 +269,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
         },
-        "name": "MII PR MTB Anwort auf Kostenuebernahme Anfrage",
+        "name": "MII PR MTB Anwort Kostenuebernahme",
         "description": "Antwort auf Antrag Kostenübernahme",
         "exampleBoolean": false
       },
@@ -247,14 +284,6 @@
       {
         "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-follow-up-procedure"
-        },
-        "name": "MII PR MTB Follow-Up",
-        "description": "Follow-Up nach DNPM",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-follow-up"
         },
         "name": "MII PR MTB Follow-Up",
         "description": "Follow-Up nach DNPM",
@@ -286,10 +315,26 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-response-befund"
+        },
+        "name": "MII PR MTB Response Befund",
+        "description": "Response Beurteilung nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
         },
         "name": "MII PR MTB Studieneinschluss Anfrage",
         "description": "Anfrage zum Studieneinschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
+        },
+        "name": "MII PR MTB Systemtherapie",
+        "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -326,10 +371,26 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund"
+        },
+        "name": "MII VS Ablehnung Kostenuebernahme Grund",
+        "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII VS Antrag Kostenuebernahme Antragsstadium",
         "description": "ValueSet zum Stadium des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-antwort-kostenuebernahme-status"
+        },
+        "name": "MII VS Antwort Kostenuebernahme Status",
+        "description": "ValueSet zum Status der Antwort auf den Antrags zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -370,6 +431,14 @@
         },
         "name": "MII VS MTB Antrag Kostenuebernahme",
         "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-systemtherapie-status"
+        },
+        "name": "MII VS MTB Systemtherapie Status",
+        "description": "Einschränkung der Status für Systemtherapie",
         "exampleBoolean": false
       },
       {

@@ -1,0 +1,165 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-systemtherapie",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Systemtherapie",
+  "title": "MII PR MTB Systemtherapie",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement.meta.profile",
+        "path": "MedicationStatement.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.basedOn",
+        "path": "MedicationStatement.basedOn",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für die Referenzierung der Therapie zum Follow-\n                                  Up Careplan, wo die umgesetzten Therapien gesammelt werden.\n                                  und zur Referenzierung der Therapieempfehlung, auf welche die Therapie basiert",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.basedOn:Therapieempfehlung",
+        "path": "MedicationStatement.basedOn",
+        "sliceName": "Therapieempfehlung",
+        "short": "Therapieempfehlung",
+        "definition": "Referenz auf Therapieempfehlung in Therapieplan",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.basedOn:FollowUpCarePlan",
+        "path": "MedicationStatement.basedOn",
+        "sliceName": "FollowUpCarePlan",
+        "short": "Follow-Up Careplan",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "short": "Status",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemtherapie-status"
+        }
+      },
+      {
+        "id": "MedicationStatement.statusReason",
+        "path": "MedicationStatement.statusReason",
+        "short": "Systemische Therapie Ende Grund",
+        "definition": "Gibt den Grund an, warum die Systemtherapie beendet wurde.",
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/ValueSet/mii-vs-systemische-therapie-ende-grund"
+        }
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "short": "Wirkstoffe",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.effective[x]",
+        "path": "MedicationStatement.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Period"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.effective[x].start",
+        "path": "MedicationStatement.effective[x].start",
+        "short": "Startdatum",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.effective[x].end",
+        "path": "MedicationStatement.effective[x].end",
+        "short": "Enddatum",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.note",
+        "path": "MedicationStatement.note",
+        "short": "Bemerkungen",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage",
+        "path": "MedicationStatement.dosage",
+        "short": "Dosisdichte",
+        "mustSupport": true
+      }
+    ]
+  }
+}

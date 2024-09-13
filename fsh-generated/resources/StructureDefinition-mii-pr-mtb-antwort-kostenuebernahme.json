@@ -3,7 +3,7 @@
   "id": "mii-pr-mtb-antwort-kostenuebernahme",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme",
   "name": "MII_PR_MTB_Antwort_Kostenuebernahme",
-  "title": "MII PR MTB Anwort auf Kostenuebernahme Anfrage",
+  "title": "MII PR MTB Anwort Kostenuebernahme",
   "status": "draft",
   "description": "Antwort auf Antrag Kostenübernahme",
   "fhirVersion": "4.0.1",
@@ -14,6 +14,29 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "ClaimResponse.extension",
+        "path": "ClaimResponse.extension",
+        "min": 1
+      },
+      {
+        "id": "ClaimResponse.extension:Antragsstadium",
+        "path": "ClaimResponse.extension",
+        "sliceName": "Antragsstadium",
+        "short": "Antragsstadium",
+        "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
       {
         "id": "ClaimResponse.status",
         "path": "ClaimResponse.status",
@@ -55,6 +78,14 @@
         "path": "ClaimResponse.request",
         "short": "Antrag",
         "definition": "Dazugehöriger Antrag zur Kostenübernahme",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {

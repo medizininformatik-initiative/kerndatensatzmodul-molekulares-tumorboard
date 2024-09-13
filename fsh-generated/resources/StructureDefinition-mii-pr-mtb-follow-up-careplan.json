@@ -30,13 +30,16 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity",
-        "path": "CarePlan.activity",
-        "mustSupport": true
-      },
-      {
-        "id": "CarePlan.activity.reference",
-        "path": "CarePlan.activity.reference",
+        "id": "CarePlan.supportingInfo",
+        "path": "CarePlan.supportingInfo",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+            ]
+          }
+        ],
         "mustSupport": true
       }
     ]
