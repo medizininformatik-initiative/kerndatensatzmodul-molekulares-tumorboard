@@ -1,0 +1,21 @@
+{
+  "resourceType": "CarePlan",
+  "id": "MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
+    ]
+  },
+  "activity": [
+    {
+      "reference": {
+        "reference": "MedicationRequest/TherapieempfehlungExample"
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/example"
+  }
+}

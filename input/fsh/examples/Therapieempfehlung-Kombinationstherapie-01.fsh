@@ -25,6 +25,7 @@
 
   Probleme:
     - Keine Evidenzgraduierung je Medikament/Bestandteil
+    - Medikamente keine "Ingredients", sondern eigenständige Medikamente
 
   Lösungen:
     - L1: Kardinalität Evidenzgraduierung lockern (nicht dargestellt oberhalb)

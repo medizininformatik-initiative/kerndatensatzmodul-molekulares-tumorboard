@@ -28,6 +28,7 @@
   
   Probleme:
     - Keine Evidenzgraduierung je Medikament/Bestandteil
+    - Medikamente keine "Ingredients", sondern eigenständige Medikamente, aber besser als Variante 1
   
   Lösungen:
     - Extension Evidenzgraduierung unterhalb Medication anbringen

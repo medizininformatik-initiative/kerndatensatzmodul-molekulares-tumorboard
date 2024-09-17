@@ -16,16 +16,16 @@
     - Therapieplan (CarePlan)
       - Therapieempfehlung Dabrafenib/Trametinib (CarePlan.activity -> RequestGroup)
         - Priorität = 1
+        - Evidenzgraduierung = m1C
+        - Publikation = https://doi.org/10.1002/gcc.23222
         - Dabrafenib (RequestGroup.action.resource -> MedicationRequest)
-          - Dabrafenib (MedicationRequest.medicationReference -> Medication)
-            - Evidenzgraduierung = m1C
-            - Publikation = https://doi.org/10.1002/gcc.23222
-            - Dabrafenib (Medication.ingredient)
+          - Dabrafenib (MedicationRequest.medicationReference -> Medication.ingredient)
         - Trametinib (RequestGroup.action.resource -> MedicationRequest)
-          - Trametinib (MedicationRequest.medicationReference -> Medication)
-            - Evidenzgraduierung = m2A
-            - Publikation = https://doi.org/10.1002/gcc.23222
-            - Trametinib (Medication.ingredient)
+          - Trametinib (MedicationRequest.medicationReference -> Medication.ingredient)
+  
+  Probleme:
+    - Keine Evidenzgraduierung je Medikament/Bestandteil
+    - Neue FHIR Ressource "RequestGroup" wird eingeführt
 */
 
 Instance: mii-exa-mtb-patient-04
