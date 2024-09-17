@@ -54,7 +54,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression"
+            "map": "Procedure"
           }
         ]
       },
@@ -73,7 +73,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression.date"
+            "map": "Procedure.performed"
           }
         ]
       },
@@ -92,7 +92,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression.investigation.code"
+            "map": "Procedure.followUp[Status].coding.code"
           }
         ]
       },
@@ -111,7 +111,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.statusReason"
+            "map": "Procedure.followUp[GrundNichtUmsetzung].coding.code"
           }
         ]
       },
@@ -125,6 +125,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Prodcedure.basedOn"
           }
         ]
       },

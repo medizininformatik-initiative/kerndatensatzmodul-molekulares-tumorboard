@@ -9,7 +9,8 @@ RuleSet: FollowUp
 
 
 RuleSet: FollowUpMapping
-* FollowUp -> "ClinicalImpression"
-  * Erfassungsdatum -> "ClinicalImpression.date"
-  * FollowUpStatus -> "ClinicalImpression.investigation.code"
-  * GrundNichtUmsetzung -> "Procedure.statusReason"
+* FollowUp -> "Procedure"
+  * Erfassungsdatum -> "Procedure.performed"
+  * FollowUpStatus -> "Procedure.followUp[Status].coding.code"
+  * GrundNichtUmsetzung -> "Procedure.followUp[GrundNichtUmsetzung].coding.code"
+  * SystemischeTherapie -> "Prodcedure.basedOn"

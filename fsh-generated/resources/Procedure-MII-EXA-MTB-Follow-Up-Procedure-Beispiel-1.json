@@ -1,0 +1,35 @@
+{
+  "resourceType": "Procedure",
+  "id": "MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-procedure"
+    ]
+  },
+  "basedOn": [
+    {
+      "reference": "CarePlan/CarePlanExample"
+    }
+  ],
+  "followUp": [
+    {
+      "coding": [
+        {
+          "code": "on-going"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "no-indication"
+        }
+      ]
+    }
+  ],
+  "status": "preparation",
+  "subject": {
+    "reference": "Patient/PatientExample"
+  },
+  "performedDateTime": "2024-07-07"
+}

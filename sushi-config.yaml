@@ -26,8 +26,8 @@ language: de-DE
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 # dependencies:
-  ####### HIER müssen die MII packages rein, die wir verwenden wollen. 
-  #### MOLGEN, Onko, Medication, Person, etc... 
+####### HIER müssen die MII packages rein, die wir verwenden wollen. 
+#### MOLGEN, Onko, Medication, Person, etc... 
 #   hl7.fhir.us.core: 3.1.0
 #   hl7.fhir.us.mcode:
 #     id: mcode
@@ -37,15 +37,16 @@ dependencies:
   # Explicitly required dependencies
   de.medizininformatikinitiative.kerndatensatz.biobank: 1.0.8
   de.medizininformatikinitiative.kerndatensatz.medikation: 2.0.0
+  de.medizininformatikinitiative.kerndatensatz.meta: 1.0.3
   de.medizininformatikinitiative.kerndatensatz.molgen: 1.0.0
-  de.medizininformatikinitiative.kerndatensatz.onkologie: 2024.0.0-ballot-alpha-1
+  de.medizininformatikinitiative.kerndatensatz.onkologie: 2024.0.0-ballot-beta-1
   de.medizininformatikinitiative.kerndatensatz.patho: 1.0.0
   de.medizininformatikinitiative.kerndatensatz.studie: 1.0.0
   # Implicitly required dependencies for resolving profile inheritance hierarchy
   ## Required by: MII_PR_Onko_Diagnose
   de.medizininformatikinitiative.kerndatensatz.diagnose: 2024.0.0
   ## Required by: MII_PR_MolGen_Variante
-  hl7.fhir.uv.genomics-reporting: 2.0.0
+  hl7.fhir.uv.genomics-reporting: 3.0.0-ballot
 
 # The pages property corresponds to IG.definition.page. SUSHI can
 # auto-generate the page list, but if the author includes pages in
