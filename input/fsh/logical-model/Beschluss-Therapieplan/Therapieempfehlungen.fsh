@@ -11,18 +11,10 @@ RuleSet: Therapieempfehlungen
 
 RuleSet: TherapieempfehlungenMapping
 // NOTE: Referenz von CarePlan.activity.reference(MedicationRequest)
-* Therapieempfehlungen              -> "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request)"
-  * StuetzendeMolekularAlterationen -> "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).supportingInformation[StuetzendeMolekulareAlteration]"
-  * StuetzendeEntitaet              -> "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).supportingInformation[StuetzendeEntitaet]"
-  * Wirkstoffe                      -> "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).medicationReference"
-  * Prioritaet                      -> "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).extension(Prioritaet)"
+* Therapieempfehlungen              -> "MedicationRequest"
+  * StuetzendeMolekularAlterationen -> "MedicationRequest.supportingInformation[StuetzendeMolekulareAlteration]"
+  * StuetzendeEntitaet              -> "MedicationRequest.supportingInformation[StuetzendeEntitaet]"
+  * Wirkstoffe                      -> "MedicationRequest.medicationReference(Medication)"
+  * Prioritaet                      -> "MedicationRequest.extension(Prioritaet)"
   * insert EvidenzLevelMapping
   * insert StudieneinschlussempfehlungenMapping
-
-// NOTE: Alternative wäre CarePlan anstatt MedicationRequest denkbar
-//* Therapieempfehlungen              -> "CarePlan"
-//  * StuetzendeMolekularAlterationen -> "CarePlan.supportingInfo[StuetzendeMolekulareAlteration]"
-//  * StuetzendeEntitaet              -> "CarePlan.supportingInfo[StuetzendeEntitaet]"
-//  // NOTE: Alternative wäre CarePlan.activity.detail.productReference:Reference(Medication)
-//  * Wirkstoffe                      -> "CarePlan.activity.reference"
-//  * Prioritaet                      -> "CarePlan.activity.extension(Prioritaet)"

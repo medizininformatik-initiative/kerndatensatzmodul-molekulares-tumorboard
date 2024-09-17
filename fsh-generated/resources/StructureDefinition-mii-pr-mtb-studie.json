@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-pr-onko-studie",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-onko-studie",
-  "name": "MII_PR_Onko_Studie",
-  "title": "MII PR Onkologie Studie",
+  "id": "mii-pr-mtb-studie",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie",
+  "name": "MII_PR_MTB_Studie",
+  "title": "MII PR MTB Studie",
   "status": "draft",
   "description": "Onkologische Studie",
   "fhirVersion": "4.0.1",
@@ -25,7 +25,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice für Identifikator eines Studienregisters anhand von `system`",
+          "description": "Slice für Identifikator eines Studienregisters bzw. studiendurchführenden Organisation anhand von `system`",
           "ordered": false
         }
       },
@@ -45,7 +45,7 @@
         "id": "ResearchStudy.identifier:NCT.system",
         "path": "ResearchStudy.identifier.system",
         "min": 1,
-        "patternUri": "https://www.medizininformatik-initiative.de/fhir/modul-onko/sid/nct"
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/modul-mtb/sid/nct"
       },
       {
         "id": "ResearchStudy.identifier:NCT.value",
@@ -108,7 +108,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-diagnose"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose"
             ]
           }
         ],

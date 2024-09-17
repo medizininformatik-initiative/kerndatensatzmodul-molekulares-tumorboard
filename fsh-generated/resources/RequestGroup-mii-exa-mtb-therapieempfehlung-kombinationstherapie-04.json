@@ -1,0 +1,34 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "mii-exa-mtb-therapieempfehlung-kombinationstherapie-04",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-gruppe"
+    ]
+  },
+  "action": [
+    {
+      "title": "Therapieempfehlung für Dabrafenib",
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-04-dabrafenib"
+      }
+    },
+    {
+      "title": "Therapieempfehlung für Trametinib",
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-04-trametinib"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet",
+      "valuePositiveInt": 1
+    }
+  ],
+  "status": "active",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/mii-exa-mtb-patient-04"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "resourceType": "CarePlan",
+  "id": "mii-exa-mtb-therapieplan-kombinationstherapie-02",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ",
+          "code": "postth"
+        }
+      ]
+    }
+  ],
+  "activity": [
+    {
+      "detail": {
+        "kind": "MedicationRequest",
+        "code": {
+          "coding": [
+            {
+              "code": "ZS",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Zielgerichtete Substanz"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-02-trametinib"
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/mii-exa-mtb-patient-02"
+  },
+  "created": "2024-08-09"
+}

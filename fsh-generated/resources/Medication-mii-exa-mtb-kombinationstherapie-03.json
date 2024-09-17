@@ -1,0 +1,35 @@
+{
+  "resourceType": "Medication",
+  "id": "mii-exa-mtb-kombinationstherapie-03",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/Medication"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "L03EC02",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "display": "Dabrafenib 0,3 g O"
+      },
+      {
+        "code": "L03EE01",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "display": "Trametinib 2 mg O"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemReference": {
+        "reference": "Medication/mii-exa-mtb-kombinationstherapie-03-dabrafenib"
+      }
+    },
+    {
+      "itemReference": {
+        "reference": "Medication/mii-exa-mtb-kombinationstherapie-03-trametinib"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "resourceType": "Medication",
+  "id": "mii-exa-mtb-medikation-04-dabrafenib",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/Medication"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "L01EC02",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "display": "Dabrafenib 0,3 g O"
+      }
+    ]
+  },
+  "form": {
+    "coding": [
+      {
+        "code": "10219000",
+        "system": "http://standardterms.edqm.eu",
+        "display": "Tablette"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "code": "703648007",
+            "system": "http://snomed.info/sct",
+            "display": "Dabrafenib (as dabrafenib mesilate) 75 mg oral capsule"
+          }
+        ]
+      },
+      "strength": {
+        "numerator": {
+          "system": "http://unitsofmeasure.org",
+          "value": 75,
+          "code": "mg"
+        },
+        "denominator": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+          "value": 4,
+          "code": "TAB"
+        }
+      },
+      "extension": [
+        {
+          "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/wirkstofftyp",
+          "valueCoding": {
+            "system": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/CodeSystem/wirkstofftyp",
+            "code": "MIN"
+          }
+        }
+      ]
+    }
+  ]
+}

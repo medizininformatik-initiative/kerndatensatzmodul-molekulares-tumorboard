@@ -71,7 +71,9 @@
             "code": "Reference",
             "targetProfile": [
               "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
-              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-gruppe",
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/RequestGroup"
             ]
           }
         ],
@@ -80,7 +82,7 @@
       {
         "id": "CarePlan.activity:Therapieempfehlung.detail.kind",
         "path": "CarePlan.activity.detail.kind",
-        "fixedCode": "MedicationRequest"
+        "patternCode": "MedicationRequest"
       },
       {
         "id": "CarePlan.activity:Therapieempfehlung.detail.statusReason",

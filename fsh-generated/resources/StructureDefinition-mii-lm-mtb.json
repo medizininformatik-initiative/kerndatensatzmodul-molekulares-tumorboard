@@ -40,6 +40,1267 @@
         "definition": "MII Logical Model Modul Molekulares Tumorboard"
       },
       {
+        "id": "mii-lm-mtb.Behandlungsepisode",
+        "path": "mii-lm-mtb.Behandlungsepisode",
+        "short": "Behandlungsepisode",
+        "definition": "Behandlungsepisode",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Anmeldedatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.Anmeldedatum",
+        "short": "Anmeldedatum",
+        "definition": "Anmeldedatum für das Molekulare Tumorboard",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.period.start"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.KrankengeschichteFamilie",
+        "path": "mii-lm-mtb.Behandlungsepisode.KrankengeschichteFamilie",
+        "short": "Verweis auf Krankengeschichte Familie",
+        "definition": "Verweis auf die familiäre Krankengeschichte",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.extension(KrankengeschichteFamilie)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Einwilligung",
+        "path": "mii-lm-mtb.Behandlungsepisode.Einwilligung",
+        "short": "Einwilligung",
+        "definition": "Einwilligung zum Molekularen Tumorboard",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Consent"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Einwilligung.Status",
+        "path": "mii-lm-mtb.Behandlungsepisode.Einwilligung.Status",
+        "short": "Status Einwilligung",
+        "definition": "Status der Einwilligung zum Molekularen Tumorboard",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Consent.status"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose",
+        "short": "Diagnose",
+        "definition": "Diagnose",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.diagnosis"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.Diagnose",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.Diagnose",
+        "short": "Verweis auf Diagnose",
+        "definition": "Verweis auf Diagnose",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.diagnosis.condition:Reference(Condition)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.evidence.detail:Reference(DiagnosticReport)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.WHOGradZNS",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.WHOGradZNS",
+        "short": "WHO-Grad ZNS Tumor",
+        "definition": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.stage.summary:CodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED",
+        "short": "Tumorausbreitung ED",
+        "definition": "Tumorausbreitung zum Zeitpunkt der Erstdiagnose",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.stage.assesment:Reference(Observation)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Wert",
+        "short": "Wert",
+        "definition": "Wert Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Zeitpunkt",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Zeitpunkt",
+        "short": "Zeitpunkt",
+        "definition": "Zeitpunkt der Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.effectiveDateTime"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB",
+        "short": "Tumorausbreitung MTB",
+        "definition": "Tumorausbreitung zum Zeitpunkt der MTB-Anmeldung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.stage.assesment:Reference(Observation)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Wert",
+        "short": "Wert",
+        "definition": "Wert Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Zeitpunkt",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Zeitpunkt",
+        "short": "Zeitpunkt",
+        "definition": "Zeitpunkt der Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.effectiveDateTime"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.LeitlinienbehandlungStatus",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.LeitlinienbehandlungStatus",
+        "short": "Status Leitlinienbehandlung",
+        "definition": "Status der Leitlinienbehandlung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.extension(LeitlinenbehandlungStatus)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie",
+        "short": "Vortherapie",
+        "definition": "Vortherapie",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Diagnose",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Diagnose",
+        "short": "Verweis auf Diagnose",
+        "definition": "Verweis auf i.d.R. die Anmeldediagnose, in seltenen Fällen weitere Diagnosen",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Zulassungsstatus",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Zulassungsstatus",
+        "short": "Zulassungsstatus",
+        "definition": "Zulassungsstatus der Vortherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Therapielinie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Therapielinie",
+        "short": "Therapielinie",
+        "definition": "Therapielinie der Vortherapie (0 bis 9)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Startdatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Startdatum",
+        "short": "Startdatum",
+        "definition": "Startdatum der Vortherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Enddatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Enddatum",
+        "short": "Enddatum",
+        "definition": "Enddatum der Vortherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Wirkstoffe",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Wirkstoffe",
+        "short": "Wirkstoffe",
+        "definition": "Wirkstoffe der systemischen Leitlinientherapie",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Beendigungsgrund",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Beendigungsgrund",
+        "short": "Beendigungsgrund",
+        "definition": "Beendigungsgrund der systemischen Leitlinentherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Typ",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Typ",
+        "short": "Typ",
+        "definition": "Typ der Leitlinientherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Kategorie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Kategorie",
+        "short": "Kategorie",
+        "definition": "Kategorie der Leitlinientherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.ECOG",
+        "path": "mii-lm-mtb.Behandlungsepisode.ECOG",
+        "short": "ECOG Performance Status",
+        "definition": "ECOG Performance Status bei Einschluss ins Molekulare Tumorboard",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.ECOG.Datum",
+        "path": "mii-lm-mtb.Behandlungsepisode.ECOG.Datum",
+        "short": "Bestimmungsdatum",
+        "definition": "Bestimmungsdatum des ECOG Performance Status",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.ECOG.AllgemeinerLeistungszustand",
+        "path": "mii-lm-mtb.Behandlungsepisode.ECOG.AllgemeinerLeistungszustand",
+        "short": "Verweis auf Allgemeiner Leistungszustand",
+        "definition": "Verweis auf die Bewertung des allgemeinen Leistungszustandes",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe",
+        "short": "Histologie und Tumorzellgehalt",
+        "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonReference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "DiagnosticReport"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt",
+        "short": "Tumorzellgehalt",
+        "definition": "Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Methode",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Methode",
+        "short": "Bestimmungsmethode",
+        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.method.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Wert",
+        "short": "Anzahl Tumorzellen",
+        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueQuantity.value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan",
+        "short": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+        "definition": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Erstellungsdatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Erstellungsdatum",
+        "short": "Erstellungsdatum",
+        "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan.created"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Protokollauszug",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Protokollauszug",
+        "short": "Protokollauszug",
+        "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan.description"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.StatusBegruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.StatusBegruendung",
+        "short": "Status Begründung",
+        "definition": "Erforderliche Begründung für den Fall, dass der Beschluss keine Therapieempfehlungen enthält",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan.activity.detail.statusReason.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen",
+        "short": "Therapieempfehlungen gemäß Beschluss des Molekularen Tumorboards",
+        "definition": "Therapieempfehlungen gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeMolekularAlterationen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeMolekularAlterationen",
+        "short": "Stützende molekulare Alteration(en)",
+        "definition": "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.supportingInformation[StuetzendeMolekulareAlteration]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeEntitaet",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeEntitaet",
+        "short": "Stützende Entität",
+        "definition": "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Condition"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.supportingInformation[StuetzendeEntitaet]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Wirkstoffe",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Wirkstoffe",
+        "short": "Wirkstoffe",
+        "definition": "Empfohlene Wirkstoffe zur Therapie",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.medicationReference(Medication)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Prioritaet",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Prioritaet",
+        "short": "Priorität",
+        "definition": "Priorität der (einzelnen) Therapieempfehlung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.extension(Prioritaet)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
+        "short": "Evidenzgraduierung",
+        "definition": "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
+        "short": "Evidenzgrad",
+        "definition": "Evidenzgrad der Therapieempfehlung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension.valueCodableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
+        "short": "Zusatzverweis",
+        "definition": "Zusatzverweise zum Evidenzgrad",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension.valueCodableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
+        "short": "Publikationen",
+        "definition": "Publikationen zur Evidenzgraduierung",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.DigitalObjectIdentifier",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.DigitalObjectIdentifier",
+        "short": "Digital Object Identifier (DOI)",
+        "definition": "DOI zur Publikation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Idenfifier[DOI].value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.PubMedIdentifier",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.PubMedIdentifier",
+        "short": "PubMed Identifier (PMID)",
+        "definition": "PMID zur Publikation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Identifier[PMID].value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen",
+        "short": "Studieneinschlussempfehlungen",
+        "definition": "Empfehlungen zum Studieneinschlus gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.StuetzendeEntitaet",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.StuetzendeEntitaet",
+        "short": "Stützende Entität",
+        "definition": "Stützende Entität",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.condition.extension(Condition)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.NctNummer",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.NctNummer",
+        "short": "NCT-Nummer",
+        "definition": "Identifikator NCT Studie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.identifier[NCT-Nummer]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.EudraCtNummer",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.EudraCtNummer",
+        "short": "Eudra-CT-Nummer",
+        "definition": "Identifikator Eudra-CT Studie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.identifier[EudraCT-Nummer]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.DrksNummer",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.DrksNummer",
+        "short": "DRKS-Nummer",
+        "definition": "Identifikator DRKS Studie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.identifier[DRKS-Nummer]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag",
+        "short": "Auftrag zur Rebiopsie",
+        "definition": "Auftrag zur Rebiopsie gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Begruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Begruendung",
+        "short": "Begründung Auftrag Rebiopsie",
+        "definition": "Begründung für die Beauftragung einer erneuten Biopsie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonCode.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
+        "short": "Histologie und Tumorzellgehalt",
+        "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonReference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "DiagnosticReport"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt",
+        "short": "Tumorzellgehalt",
+        "definition": "Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Methode",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Methode",
+        "short": "Bestimmungsmethode",
+        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.method.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Wert",
+        "short": "Anzahl Tumorzellen",
+        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueQuantity.value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag",
+        "short": "Auftrag zur Human-genetischen Beratung",
+        "definition": "Auftrag zur Human-genetischen Beratung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Begruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Begruendung",
+        "short": "Begründung Auftrag Human-genetische-Beratung",
+        "definition": "Begründung für die Beauftragung einer erneuten Human-genetischen Beratung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonCode.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag",
+        "short": "Auftrag zur Histologie-Reevaluation",
+        "definition": "Auftrag zur Histologie-Reevaluation gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Begruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Begruendung",
+        "short": "Begründung Auftrag Histologie-Reevaluation",
+        "definition": "Begründung für die Beauftragung einer erneuten Histologie-Evaluation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonCode.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
+        "short": "Histologie und Tumorzellgehalt",
+        "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonReference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "DiagnosticReport"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt",
+        "short": "Tumorzellgehalt",
+        "definition": "Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Methode",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Methode",
+        "short": "Bestimmungsmethode",
+        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.method.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Wert",
+        "short": "Anzahl Tumorzellen",
+        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueQuantity.value"
+          }
+        ]
+      },
+      {
         "id": "mii-lm-mtb.FollowUp",
         "path": "mii-lm-mtb.FollowUp",
         "short": "Follow-Up nach DNPM",
@@ -417,889 +1678,6 @@
         "type": [
           {
             "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan",
-        "path": "mii-lm-mtb.BeschlussTherapieplan",
-        "short": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
-        "definition": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "CarePlan"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Erstellungsdatum",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Erstellungsdatum",
-        "short": "Erstellungsdatum",
-        "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "dateTime"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "CarePlan.created"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Protokollauszug",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Protokollauszug",
-        "short": "Protokollauszug",
-        "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "CarePlan.description"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.StatusBegruendung",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.StatusBegruendung",
-        "short": "Status Begründung",
-        "definition": "Erforderliche Begründung für den Fall, dass der Beschluss keine Therapieempfehlungen enthält",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "CarePlan.activity.detail.statusReason.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen",
-        "short": "Therapieempfehlungen gemäß Beschluss des Molekularen Tumorboards",
-        "definition": "Therapieempfehlungen gemäß Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeMolekularAlterationen",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeMolekularAlterationen",
-        "short": "Stützende molekulare Alteration(en)",
-        "definition": "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Observation"
-            ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).supportingInformation[StuetzendeMolekulareAlteration]"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeEntitaet",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeEntitaet",
-        "short": "Stützende Entität",
-        "definition": "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Condition"
-            ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).supportingInformation[StuetzendeEntitaet]"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Wirkstoffe",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Wirkstoffe",
-        "short": "Wirkstoffe",
-        "definition": "Empfohlene Wirkstoffe zur Therapie",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Medication"
-            ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).medicationReference"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Prioritaet",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Prioritaet",
-        "short": "Priorität",
-        "definition": "Priorität der (einzelnen) Therapieempfehlung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "positiveInt"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "MedicationRequest.where(meta.profile = $mii-pr-medikation-medication-request).extension(Prioritaet)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
-        "short": "Evidenzgraduierung",
-        "definition": "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Extension"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
-        "short": "Evidenzgrad",
-        "definition": "Evidenzgrad der Therapieempfehlung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Extension.valueCodableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
-        "short": "Zusatzverweis",
-        "definition": "Zusatzverweise zum Evidenzgrad",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Extension.valueCodableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
-        "short": "Publikationen",
-        "definition": "Publikationen zur Evidenzgraduierung",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Extension"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.DigitalObjectIdentifier",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.DigitalObjectIdentifier",
-        "short": "Digital Object Identifier (DOI)",
-        "definition": "DOI zur Publikation",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Idenfifier[DOI].value"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.PubMedIdentifier",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.PubMedIdentifier",
-        "short": "PubMed Identifier (PMID)",
-        "definition": "PMID zur Publikation",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Identifier[PMID].value"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen",
-        "short": "Studieneinschlussempfehlungen",
-        "definition": "Empfehlungen zum Studieneinschlus gemäß Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.StuetzendeEntitaet",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.StuetzendeEntitaet",
-        "short": "Stützende Entität",
-        "definition": "Stützende Entität",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.condition.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.NctNummer",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.NctNummer",
-        "short": "NCT-Nummer",
-        "definition": "Identifikator NCT Studie",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[NCT-Nummer]"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.EudraCtNummer",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.EudraCtNummer",
-        "short": "Eudra-CT-Nummer",
-        "definition": "Identifikator Eudra-CT Studie",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[EudraCT-Nummer]"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.DrksNummer",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.DrksNummer",
-        "short": "DRKS-Nummer",
-        "definition": "Identifikator DRKS Studie",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[DRKS-Nummer]"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag",
-        "short": "Auftrag zur Rebiopsie",
-        "definition": "Auftrag zur Rebiopsie gemäß Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Begruendung",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Begruendung",
-        "short": "Begründung Auftrag Rebiopsie",
-        "definition": "Begründung für die Beauftragung einer erneuten Biopsie",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request).reasonCode.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
-        "short": "Gewebeprobe des Tumors",
-        "definition": "Histologie und zum Tumorzellgehalt der Gewebeprobe",
-        "min": 1,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request).specimen"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Histologie",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Histologie",
-        "short": "Verweis auf Histologiebefund",
-        "definition": "Verweis auf den Befund zur Histologie des Tumors",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Specimen.where(meta.profile = $mii-pr-onko-specimen)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt",
-        "short": "Tumorzellgehalt",
-        "definition": "Tumorzellgehalt",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Methode",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Methode",
-        "short": "Bestimmungsmethode",
-        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation).method.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Wert",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Wert",
-        "short": "Anzahl Tumorzellen",
-        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "decimal"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation).valueQuantity.value"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag",
-        "short": "Auftrag zur Human-genetischen Beratung",
-        "definition": "Auftrag zur Human-genetischen Beratung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Begruendung",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Begruendung",
-        "short": "Begründung Auftrag Human-genetische-Beratung",
-        "definition": "Begründung für die Beauftragung einer erneuten Human-genetischen Beratung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request).reasonCode.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe",
-        "short": "Gewebeprobe des Tumors",
-        "definition": "Histologie und zum Tumorzellgehalt der Gewebeprobe",
-        "min": 1,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request).specimen"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Histologie",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Histologie",
-        "short": "Verweis auf Histologiebefund",
-        "definition": "Verweis auf den Befund zur Histologie des Tumors",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Specimen.where(meta.profile = $mii-pr-onko-specimen)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Tumorzellgehalt",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Tumorzellgehalt",
-        "short": "Tumorzellgehalt",
-        "definition": "Tumorzellgehalt",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Tumorzellgehalt.Methode",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Tumorzellgehalt.Methode",
-        "short": "Bestimmungsmethode",
-        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation).method.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Tumorzellgehalt.Wert",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Probe.Tumorzellgehalt.Wert",
-        "short": "Anzahl Tumorzellen",
-        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "decimal"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation).valueQuantity.value"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag",
-        "short": "Auftrag zur Histologie-Reevaluation",
-        "definition": "Auftrag zur Histologie-Reevaluation gemäß Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Begruendung",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Begruendung",
-        "short": "Begründung Auftrag Histologie-Reevaluation",
-        "definition": "Begründung für die Beauftragung einer erneuten Histologie-Evaluation",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request).reasonCode.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
-        "short": "Gewebeprobe des Tumors",
-        "definition": "Histologie und zum Tumorzellgehalt der Gewebeprobe",
-        "min": 1,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ServiceRequest.where(meta.profile = $mii-pr-patho-service-request).specimen"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Histologie",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Histologie",
-        "short": "Verweis auf Histologiebefund",
-        "definition": "Verweis auf den Befund zur Histologie des Tumors",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Specimen.where(meta.profile = $mii-pr-onko-specimen)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt",
-        "short": "Tumorzellgehalt",
-        "definition": "Tumorzellgehalt",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation)"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Methode",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Methode",
-        "short": "Bestimmungsmethode",
-        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation).method.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Wert",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Wert",
-        "short": "Anzahl Tumorzellen",
-        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "decimal"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Observation.where(meta.profile = $mii-pr-patho-base-observation).valueQuantity.value"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen",
-        "short": "Studieneinschlussempfehlungen",
-        "definition": "Empfehlungen zum Studieneinschlus gemäß Beschluss des Molekularen Tumorboards",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.StuetzendeEntitaet",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.StuetzendeEntitaet",
-        "short": "Stützende Entität",
-        "definition": "Stützende Entität",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.condition.valueCodeableConcept.coding.code"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.NctNummer",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.NctNummer",
-        "short": "NCT-Nummer",
-        "definition": "Identifikator NCT Studie",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[NCT-Nummer]"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.EudraCtNummer",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.EudraCtNummer",
-        "short": "Eudra-CT-Nummer",
-        "definition": "Identifikator Eudra-CT Studie",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[EudraCT-Nummer]"
-          }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.DrksNummer",
-        "path": "mii-lm-mtb.BeschlussTherapieplan.Studieneinschlussempfehlungen.DrksNummer",
-        "short": "DRKS-Nummer",
-        "definition": "Identifikator DRKS Studie",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "ResearchStudy.identifier[DRKS-Nummer]"
           }
         ]
       }
