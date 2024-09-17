@@ -1,0 +1,45 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "MII_CS_MTB_Antwort_Kostenuebernahme_Status",
+  "id": "mii-cs-mtb-antwort-kostenuebernahme-status",
+  "title": "MII CS Antwort Kostenuebernahme Status",
+  "description": "Codesystem zum Status der Antwort zur Kostenuebernahme",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium",
+  "concept": [
+    {
+      "code": "accepted",
+      "display": "Angenommen"
+    },
+    {
+      "code": "rejected",
+      "display": "Abgelehnt"
+    },
+    {
+      "code": "unknown",
+      "display": "Unbekannt"
+    }
+  ],
+  "version": "2024.0.0-ballot",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+    ]
+  },
+  "experimental": false,
+  "language": "de-DE",
+  "caseSensitive": true,
+  "count": 3
+}
