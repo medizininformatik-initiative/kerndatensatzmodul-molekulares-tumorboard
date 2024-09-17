@@ -56,7 +56,7 @@ Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kom
 * activity.detail.status = #not-started
 
 Instance: mii-exa-mtb-therapieempfehlung-kombinationstherapie-04
-InstanceOf: MII_PR_MTB_Therapieempfehlung_Gruppe
+InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Usage: #example
 Description: "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
 // Erforderliche Angaben
