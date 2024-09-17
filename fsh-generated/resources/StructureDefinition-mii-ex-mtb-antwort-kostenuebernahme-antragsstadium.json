@@ -1,0 +1,126 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-antwort-kostenuebernahme-antragsstadium",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium",
+  "title": "MII EX MTB Antwort Kostenuebernahme Antragsstadium",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Antwort Kostenuebernahme Antragsstadium",
+        "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding",
+        "path": "Extension.value[x].coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Status und Begründung der Antwort auf den Antrag zur Kostenuebernahme",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Status",
+        "path": "Extension.value[x].coding",
+        "sliceName": "Status",
+        "short": "Status",
+        "definition": "Status der Antwort auf den Antrag zur Kostenuebernahme",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Status.system",
+        "path": "Extension.value[x].coding.system",
+        "min": 1,
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium"
+      },
+      {
+        "id": "Extension.value[x].coding:Status.code",
+        "path": "Extension.value[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Grund",
+        "path": "Extension.value[x].coding",
+        "sliceName": "Grund",
+        "short": "Grund",
+        "definition": "Grund der Ablehnung des Antrags auf Kostenuebernahme",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].coding:Grund.system",
+        "path": "Extension.value[x].coding.system",
+        "min": 1,
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund"
+      },
+      {
+        "id": "Extension.value[x].coding:Grund.code",
+        "path": "Extension.value[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}
