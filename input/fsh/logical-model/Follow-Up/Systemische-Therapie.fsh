@@ -14,11 +14,11 @@ RuleSet: SystemischeTherapieMapping
 * SystemischeTherapie -> "MedicationStatement" 
   * MTBTherapieStartdatum -> "MedicationStatement.effectivePeriod.start" 
   * MTBTherapieEnddatum -> "MedicationStatement.effectivePeriod.end"
-  * SystemischeTherapieEndeGrund -> "MedicationStatement.adherence.reason"
-  * TherapieEmpfehlung -> "MedicationStatement.reason.Procedure.basedOn"
-  * Bemerkungen -> "MedicationStatement.reason.Procedure.basedOn"
-  * Status -> ""
-  * Wirkstoffe -> "Medication.ingredient"
+  * SystemischeTherapieEndeGrund -> "MedicationStatement.statusReason"
+  * TherapieEmpfehlung -> "MedicationStatement.basedOn"
+  * Bemerkungen -> "MedicationStatement.note"
+  * Status -> "MedicationStatement.status"
+  * Wirkstoffe -> "MedicationStatement.medication[x]"
   * Dosisdichte -> "MedicationStatement.dosage"
   
 
