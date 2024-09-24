@@ -16,6 +16,6 @@ Description: "Durchgefuehrte geplante Therapien"
 // m.M. die einzig mögliche sinnvolle Verknüpfung von Follow-Up (als CarePlan und Procedure) 
 // mit den Claims ohne extensions - JG-IBSM
 * supportingInfo 0..* MS
-* supportingInfo ^short "Antraege zur Kostenuebernahme"
-* supportingInfo ^definition "Referenz auf die zu den Therapien zugehörigen Antraege zur Kostenuebernahme"
+* supportingInfo ^short = "Antraege zur Kostenuebernahme"
+* supportingInfo ^definition = "Referenz auf die zu den Therapien zugehörigen Antraege zur Kostenuebernahme"
 * supportingInfo only Reference(MII_PR_MTB_Antrag_Kostenuebernahme)
