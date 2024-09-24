@@ -13,4 +13,4 @@ RuleSet: FollowUpMapping
   * Erfassungsdatum -> "Procedure.performed"
   * FollowUpStatus -> "Procedure.followUp[Status].coding.code"
   * GrundNichtUmsetzung -> "Procedure.followUp[GrundNichtUmsetzung].coding.code"
-  * SystemischeTherapie -> "Prodcedure.basedOn"
+  * SystemischeTherapie -> "Procedure.basedOn"
