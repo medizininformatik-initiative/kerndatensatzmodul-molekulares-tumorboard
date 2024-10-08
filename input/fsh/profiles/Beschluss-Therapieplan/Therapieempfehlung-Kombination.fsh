@@ -25,4 +25,4 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
   * resource only Reference(MII_PR_MTB_Therapieempfehlung or MedicationRequest)
   * action 0..0 // When we enforce a resource, sub-actions are disallowed by the constraint rqg-1 anyway.
 
-* extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named prioritaet 0..1 MS
+* insert Therapieempfehlung_Erweiterungen
