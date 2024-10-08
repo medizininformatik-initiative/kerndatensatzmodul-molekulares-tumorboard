@@ -21,6 +21,8 @@ Parent: MII_PR_Studie_Studie
 Id: mii-pr-mtb-studie
 Title: "MII PR MTB Studie"
 Description: "Onkologische Studie"
+* insert PR_Header
+
 * identifier 0..* MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"

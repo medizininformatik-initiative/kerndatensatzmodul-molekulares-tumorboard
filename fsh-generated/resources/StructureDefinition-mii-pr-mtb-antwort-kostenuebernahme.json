@@ -2,9 +2,21 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-antwort-kostenuebernahme",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme",
+  "version": "2024.0.0-ballot",
   "name": "MII_PR_MTB_Antwort_Kostenuebernahme",
   "title": "MII PR MTB Anwort Kostenuebernahme",
   "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
   "description": "Antwort auf Antrag Kostenübernahme",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -14,6 +26,11 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "ClaimResponse.meta",
+        "path": "ClaimResponse.meta",
+        "mustSupport": true
+      },
       {
         "id": "ClaimResponse.extension",
         "path": "ClaimResponse.extension",

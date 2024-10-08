@@ -5,10 +5,6 @@ Title: "MII PR MTB Therapieempfehlung Kombinationstherapie"
 Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 * insert PR_Header
 
-* id MS
-* meta MS
-* meta.source MS
-* meta.profile MS
 * identifier MS
 
 * replaces only Reference(MII_PR_MTB_Therapieempfehlung_Kombination or MII_PR_MTB_Therapieempfehlung or RequestGroup or MedicationRequest)

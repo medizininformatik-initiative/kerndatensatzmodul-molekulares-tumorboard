@@ -3,6 +3,7 @@ Parent: ClaimResponse
 Id: mii-pr-mtb-antwort-kostenuebernahme
 Title: "MII PR MTB Anwort Kostenuebernahme"
 Description: "Antwort auf Antrag Kostenübernahme"
+* insert PR_Header
 
 * status MS
 * status = #active
