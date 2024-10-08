@@ -33,8 +33,8 @@ Description: "Antrag Kostenübernahme"
 * insurance.claimResponse MS
 * extension contains MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
 // Antragsstadium über related
-* extension[Antragsstadium] ^short = "Antragsstadium"
-* extension[Antragsstadium] ^definition = "Stadium des Antrags auf Kostenuebernahme"
+//* extension[Antragsstadium] ^short = "Antragsstadium"
+//* extension[Antragsstadium] ^definition = "Stadium des Antrags auf Kostenuebernahme"
 
 * careTeam ^slicing.discriminator.type = #type
 * careTeam ^slicing.discriminator.path = "sequence"

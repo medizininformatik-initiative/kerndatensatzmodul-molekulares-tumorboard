@@ -25,17 +25,22 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * supportingInformation[StuetzendeEntitaet] ^definition = "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht"
 * supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose or Condition)
 
-* extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS
-* extension[Prioritaet] ^short = "Priorität"
-* extension[Prioritaet] ^definition = "Priorität der (einzelnen) Therapieempfehlung"
-* extension[Prioritaet] ^comment = "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität"
+* extension contains 
+    MII_EX_MTB_Therapieempfehlung_Prioritaet named prioritaet 0..1 MS and
+    MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung named evidenzgraduierung 0..1 MS and
+    MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation named publikation 0..* MS
 
-* extension contains MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung named Evidenzgraduierung 0..1 MS
-* extension[Evidenzgraduierung] ^short = "Evidenzgraduierung"
-* extension[Evidenzgraduierung] ^definition = "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung"
-* extension[Evidenzgraduierung] ^comment = "Evidenzgraduierung wird durch einen Evidenzgrad und einen optionalen Zusatzverweis angegeben"
-
-* extension contains MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation named Publikation 0..* MS
-* extension[Publikation] ^short = "Publikation"
-* extension[Publikation] ^definition = "Verweis auf Publikation zur Evidenzgraduierung"
-* extension[Publikation] ^comment = "Verweis auf Publikation erfolgt anhand der DOI oder PMID"
+//* extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS
+//* extension[Prioritaet] ^short = "Priorität"
+//* extension[Prioritaet] ^definition = "Priorität der (einzelnen) Therapieempfehlung"
+//* extension[Prioritaet] ^comment = "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität"
+//
+//* extension contains MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung named Evidenzgraduierung 0..1 MS
+//* extension[Evidenzgraduierung] ^short = "Evidenzgraduierung"
+//* extension[Evidenzgraduierung] ^definition = "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung"
+//* extension[Evidenzgraduierung] ^comment = "Evidenzgraduierung wird durch einen Evidenzgrad und einen optionalen Zusatzverweis angegeben"
+//
+//* extension contains MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation named Publikation 0..* MS
+//* extension[Publikation] ^short = "Publikation"
+//* extension[Publikation] ^definition = "Verweis auf Publikation zur Evidenzgraduierung"
+//* extension[Publikation] ^comment = "Verweis auf Publikation erfolgt anhand der DOI oder PMID"

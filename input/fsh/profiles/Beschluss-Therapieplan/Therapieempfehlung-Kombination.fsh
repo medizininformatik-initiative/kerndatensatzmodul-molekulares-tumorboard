@@ -25,7 +25,4 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
   * resource only Reference(MII_PR_MTB_Therapieempfehlung or MedicationRequest)
   * action 0..0 // When we enforce a resource, sub-actions are disallowed by the constraint rqg-1 anyway.
 
-* extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS
-* extension[Prioritaet] ^short = "Priorität"
-* extension[Prioritaet] ^definition = "Priorität dieser Kombinationstherapie-Empfehlung"
-* extension[Prioritaet] ^comment = "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität"
+* extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named prioritaet 0..1 MS

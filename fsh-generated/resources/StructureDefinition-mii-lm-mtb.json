@@ -24,6 +24,11 @@
       "identity": "mii-map-mtb",
       "name": "MII MAP Molekulares Tumorboard",
       "comment": "MII Mappings Modul Molekulares Tumorboard"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
     }
   ],
   "kind": "logical",
@@ -31,6 +36,3246 @@
   "type": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
   "derivation": "specialization",
+  "snapshot": {
+    "element": [
+      {
+        "id": "mii-lm-mtb",
+        "path": "mii-lm-mtb",
+        "short": "MII LM Molekulares Tumorboard",
+        "definition": "MII Logical Model Modul Molekulares Tumorboard",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb",
+          "min": 0,
+          "max": "*"
+        },
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.id",
+        "path": "mii-lm-mtb.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "http://hl7.org/fhirpath/System.String",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+                "valueUrl": "string"
+              }
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.extension",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
+        "path": "mii-lm-mtb.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "ext-1",
+            "severity": "error",
+            "human": "Must have either extensions or value[x], not both",
+            "expression": "extension.exists() != value.exists()",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode",
+        "path": "mii-lm-mtb.Behandlungsepisode",
+        "short": "Behandlungsepisode",
+        "definition": "Behandlungsepisode",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Anmeldedatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.Anmeldedatum",
+        "short": "Anmeldedatum",
+        "definition": "Anmeldedatum für das Molekulare Tumorboard",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Anmeldedatum",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.period.start"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.KrankengeschichteFamilie",
+        "path": "mii-lm-mtb.Behandlungsepisode.KrankengeschichteFamilie",
+        "short": "Verweis auf Krankengeschichte Familie",
+        "definition": "Verweis auf die familiäre Krankengeschichte",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.KrankengeschichteFamilie",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.extension(KrankengeschichteFamilie)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Einwilligung",
+        "path": "mii-lm-mtb.Behandlungsepisode.Einwilligung",
+        "short": "Einwilligung",
+        "definition": "Einwilligung zum Molekularen Tumorboard",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Einwilligung",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Consent"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Einwilligung.Status",
+        "path": "mii-lm-mtb.Behandlungsepisode.Einwilligung.Status",
+        "short": "Status Einwilligung",
+        "definition": "Status der Einwilligung zum Molekularen Tumorboard",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Einwilligung.Status",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Consent.status"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose",
+        "short": "Diagnose",
+        "definition": "Diagnose",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.diagnosis"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.Diagnose",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.Diagnose",
+        "short": "Verweis auf Diagnose",
+        "definition": "Verweis auf Diagnose",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.Diagnose",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.diagnosis.condition:Reference(Condition)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.Histologie",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.evidence.detail:Reference(DiagnosticReport)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.WHOGradZNS",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.WHOGradZNS",
+        "short": "WHO-Grad ZNS Tumor",
+        "definition": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.WHOGradZNS",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.stage.summary:CodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED",
+        "short": "Tumorausbreitung ED",
+        "definition": "Tumorausbreitung zum Zeitpunkt der Erstdiagnose",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.stage.assesment:Reference(Observation)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Wert",
+        "short": "Wert",
+        "definition": "Wert Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Wert",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Zeitpunkt",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Zeitpunkt",
+        "short": "Zeitpunkt",
+        "definition": "Zeitpunkt der Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungED.Zeitpunkt",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.effectiveDateTime"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB",
+        "short": "Tumorausbreitung MTB",
+        "definition": "Tumorausbreitung zum Zeitpunkt der MTB-Anmeldung",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Condition.stage.assesment:Reference(Observation)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Wert",
+        "short": "Wert",
+        "definition": "Wert Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Wert",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Zeitpunkt",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Zeitpunkt",
+        "short": "Zeitpunkt",
+        "definition": "Zeitpunkt der Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.TumorausbreitungMTB.Zeitpunkt",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.effectiveDateTime"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Diagnose.LeitlinienbehandlungStatus",
+        "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.LeitlinienbehandlungStatus",
+        "short": "Status Leitlinienbehandlung",
+        "definition": "Status der Leitlinienbehandlung",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Diagnose.LeitlinienbehandlungStatus",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "EpisodeOfCare.extension(LeitlinenbehandlungStatus)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie",
+        "short": "Vortherapie",
+        "definition": "Vortherapie",
+        "min": 1,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie",
+          "min": 1,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Diagnose",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Diagnose",
+        "short": "Verweis auf Diagnose",
+        "definition": "Verweis auf i.d.R. die Anmeldediagnose, in seltenen Fällen weitere Diagnosen",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Diagnose",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Zulassungsstatus",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Zulassungsstatus",
+        "short": "Zulassungsstatus",
+        "definition": "Zulassungsstatus der Vortherapie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Zulassungsstatus",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Therapielinie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Therapielinie",
+        "short": "Therapielinie",
+        "definition": "Therapielinie der Vortherapie (0 bis 9)",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Therapielinie",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Startdatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Startdatum",
+        "short": "Startdatum",
+        "definition": "Startdatum der Vortherapie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Startdatum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Enddatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Enddatum",
+        "short": "Enddatum",
+        "definition": "Enddatum der Vortherapie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Enddatum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Wirkstoffe",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Wirkstoffe",
+        "short": "Wirkstoffe",
+        "definition": "Wirkstoffe der systemischen Leitlinientherapie",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Wirkstoffe",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Beendigungsgrund",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Beendigungsgrund",
+        "short": "Beendigungsgrund",
+        "definition": "Beendigungsgrund der systemischen Leitlinentherapie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Beendigungsgrund",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Typ",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Typ",
+        "short": "Typ",
+        "definition": "Typ der Leitlinientherapie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Typ",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Kategorie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Kategorie",
+        "short": "Kategorie",
+        "definition": "Kategorie der Leitlinientherapie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Kategorie",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.ECOG",
+        "path": "mii-lm-mtb.Behandlungsepisode.ECOG",
+        "short": "ECOG Performance Status",
+        "definition": "ECOG Performance Status bei Einschluss ins Molekulare Tumorboard",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.ECOG",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.ECOG.Datum",
+        "path": "mii-lm-mtb.Behandlungsepisode.ECOG.Datum",
+        "short": "Bestimmungsdatum",
+        "definition": "Bestimmungsdatum des ECOG Performance Status",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.ECOG.Datum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.ECOG.AllgemeinerLeistungszustand",
+        "path": "mii-lm-mtb.Behandlungsepisode.ECOG.AllgemeinerLeistungszustand",
+        "short": "Verweis auf Allgemeiner Leistungszustand",
+        "definition": "Verweis auf die Bewertung des allgemeinen Leistungszustandes",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.ECOG.AllgemeinerLeistungszustand",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe",
+        "short": "Histologie und Tumorzellgehalt",
+        "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Probe",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonReference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Probe.Histologie",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "DiagnosticReport"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt",
+        "short": "Tumorzellgehalt",
+        "definition": "Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Methode",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Methode",
+        "short": "Bestimmungsmethode",
+        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Methode",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.method.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Wert",
+        "short": "Anzahl Tumorzellen",
+        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.Probe.Tumorzellgehalt.Wert",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueQuantity.value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan",
+        "short": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+        "definition": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Erstellungsdatum",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Erstellungsdatum",
+        "short": "Erstellungsdatum",
+        "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Erstellungsdatum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan.created"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Protokollauszug",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Protokollauszug",
+        "short": "Protokollauszug",
+        "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Protokollauszug",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan.description"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.StatusBegruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.StatusBegruendung",
+        "short": "Status Begründung",
+        "definition": "Erforderliche Begründung für den Fall, dass der Beschluss keine Therapieempfehlungen enthält",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.StatusBegruendung",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "CarePlan.activity.detail.statusReason.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen",
+        "short": "Therapieempfehlungen gemäß Beschluss des Molekularen Tumorboards",
+        "definition": "Therapieempfehlungen gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeMolekularAlterationen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeMolekularAlterationen",
+        "short": "Stützende molekulare Alteration(en)",
+        "definition": "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeMolekularAlterationen",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.supportingInformation[StuetzendeMolekulareAlteration]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeEntitaet",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeEntitaet",
+        "short": "Stützende Entität",
+        "definition": "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.StuetzendeEntitaet",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Condition"
+            ]
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.supportingInformation[StuetzendeEntitaet]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Wirkstoffe",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Wirkstoffe",
+        "short": "Wirkstoffe",
+        "definition": "Empfohlene Wirkstoffe zur Therapie",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Wirkstoffe",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.medicationReference(Medication)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Prioritaet",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Prioritaet",
+        "short": "Priorität",
+        "definition": "Priorität der (einzelnen) Therapieempfehlung",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Prioritaet",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationRequest.extension(Prioritaet)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
+        "short": "Evidenzgraduierung",
+        "definition": "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
+        "short": "Evidenzgrad",
+        "definition": "Evidenzgrad der Therapieempfehlung",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Graduierung",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension.valueCodableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
+        "short": "Zusatzverweis",
+        "definition": "Zusatzverweise zum Evidenzgrad",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Zusatz",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension.valueCodableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
+        "short": "Publikationen",
+        "definition": "Publikationen zur Evidenzgraduierung",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.DigitalObjectIdentifier",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.DigitalObjectIdentifier",
+        "short": "Digital Object Identifier (DOI)",
+        "definition": "DOI zur Publikation",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.DigitalObjectIdentifier",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Idenfifier[DOI].value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.PubMedIdentifier",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.PubMedIdentifier",
+        "short": "PubMed Identifier (PMID)",
+        "definition": "PMID zur Publikation",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.EvidenzLevel.Publikationen.PubMedIdentifier",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Identifier[PMID].value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen",
+        "short": "Studieneinschlussempfehlungen",
+        "definition": "Empfehlungen zum Studieneinschlus gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.StuetzendeEntitaet",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.StuetzendeEntitaet",
+        "short": "Stützende Entität",
+        "definition": "Stützende Entität",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.StuetzendeEntitaet",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.condition.extension(Condition)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.NctNummer",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.NctNummer",
+        "short": "NCT-Nummer",
+        "definition": "Identifikator NCT Studie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.NctNummer",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.identifier[NCT-Nummer]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.EudraCtNummer",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.EudraCtNummer",
+        "short": "Eudra-CT-Nummer",
+        "definition": "Identifikator Eudra-CT Studie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.EudraCtNummer",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.identifier[EudraCT-Nummer]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.DrksNummer",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.DrksNummer",
+        "short": "DRKS-Nummer",
+        "definition": "Identifikator DRKS Studie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.Therapieempfehlungen.Studieneinschlussempfehlungen.DrksNummer",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ResearchStudy.identifier[DRKS-Nummer]"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag",
+        "short": "Auftrag zur Rebiopsie",
+        "definition": "Auftrag zur Rebiopsie gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Begruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Begruendung",
+        "short": "Begründung Auftrag Rebiopsie",
+        "definition": "Begründung für die Beauftragung einer erneuten Biopsie",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Begruendung",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonCode.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
+        "short": "Histologie und Tumorzellgehalt",
+        "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonReference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Histologie",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "DiagnosticReport"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt",
+        "short": "Tumorzellgehalt",
+        "definition": "Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Methode",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Methode",
+        "short": "Bestimmungsmethode",
+        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Methode",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.method.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Wert",
+        "short": "Anzahl Tumorzellen",
+        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.RebiopsieAuftrag.Probe.Tumorzellgehalt.Wert",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueQuantity.value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag",
+        "short": "Auftrag zur Human-genetischen Beratung",
+        "definition": "Auftrag zur Human-genetischen Beratung",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Begruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Begruendung",
+        "short": "Begründung Auftrag Human-genetische-Beratung",
+        "definition": "Begründung für die Beauftragung einer erneuten Human-genetischen Beratung",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HumangenetischeBeratungAuftrag.Begruendung",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonCode.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag",
+        "short": "Auftrag zur Histologie-Reevaluation",
+        "definition": "Auftrag zur Histologie-Reevaluation gemäß Beschluss des Molekularen Tumorboards",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Begruendung",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Begruendung",
+        "short": "Begründung Auftrag Histologie-Reevaluation",
+        "definition": "Begründung für die Beauftragung einer erneuten Histologie-Evaluation",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Begruendung",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonCode.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
+        "short": "Histologie und Tumorzellgehalt",
+        "definition": "Histologiebefund und bestimmter Tumorzellgehalt",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ServiceRequest.reasonReference"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Histologie",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Histologie",
+        "short": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf den Befund zur Histologie des Tumors",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Histologie",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "DiagnosticReport"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt",
+        "short": "Tumorzellgehalt",
+        "definition": "Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Methode",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Methode",
+        "short": "Bestimmungsmethode",
+        "definition": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Methode",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.method.valueCodeableConcept.coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Wert",
+        "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Wert",
+        "short": "Anzahl Tumorzellen",
+        "definition": "Gesamtanzahl an aktiven und inaktiven Tumorzellen",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.Behandlungsepisode.BeschlussTherapieplan.HistologieReevaluationAuftrag.Probe.Tumorzellgehalt.Wert",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueQuantity.value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp",
+        "path": "mii-lm-mtb.FollowUp",
+        "short": "Follow-Up nach DNPM",
+        "definition": "Follow-Up nach DNPM",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.Erfassungsdatum",
+        "path": "mii-lm-mtb.FollowUp.Erfassungsdatum",
+        "short": "Erfassungsdatum",
+        "definition": "Erfassungsdatum Durchführung Follow-Up",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.Erfassungsdatum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.performed"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.FollowUpStatus",
+        "path": "mii-lm-mtb.FollowUp.FollowUpStatus",
+        "short": "FollowUpStatus",
+        "definition": "FollowUpStatus",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.FollowUpStatus",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.followUp[Status].coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.GrundNichtUmsetzung",
+        "path": "mii-lm-mtb.FollowUp.GrundNichtUmsetzung",
+        "short": "GrundNichtUmsetzung",
+        "definition": "Grund für die Nicht-Umsetzung des gesamten Therapieplans. Wird entweder evaluiert, wenn Patient ein zweites mal im MTB vorgestellt wird oder Patient verstorben ist.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.GrundNichtUmsetzung",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.followUp[GrundNichtUmsetzung].coding.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie",
+        "short": "Systemische Therapie nach DNPM",
+        "definition": "Systemische Therapie nach DNPM",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Prodcedure.basedOn"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.MTBTherapieStartdatum",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.MTBTherapieStartdatum",
+        "short": "Startdatum",
+        "definition": "Startdatum",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.MTBTherapieStartdatum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.MTBTherapieEnddatum",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.MTBTherapieEnddatum",
+        "short": "Enddatum",
+        "definition": "Enddatum",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.MTBTherapieEnddatum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.SystemischeTherapieEndeGrund",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.SystemischeTherapieEndeGrund",
+        "short": "Systemische Therapie Ende Grund",
+        "definition": "Gibt den Grund an, warum die Systemtherapie beendet wurde.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.SystemischeTherapieEndeGrund",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.TherapieEmpfehlung",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.TherapieEmpfehlung",
+        "short": "Therapieempfehlung",
+        "definition": "Referenz auf Therapieempfehlung in Therapieplan",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.TherapieEmpfehlung",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.Bemerkungen",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Bemerkungen",
+        "short": "Bemerkungen",
+        "definition": "Bemerkungen",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Bemerkungen",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.Status",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Status",
+        "short": "Status",
+        "definition": "WENN STATUS COMPLETED ODER STOPPED -> SYSTEMISCHE THERAPIE ENDE GRUND AUSFÜLLEN",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Status",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.Wirkstoffe",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Wirkstoffe",
+        "short": "Wirkstoffe",
+        "definition": "Wirkstoffe",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Wirkstoffe",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.Dosisdichte",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Dosisdichte",
+        "short": "Dosisdichte",
+        "definition": "Dosisdichte",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.Dosisdichte",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund",
+        "short": "Response Befund",
+        "definition": "Response Befund",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.ResponseBeurteilung",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.ResponseBeurteilung",
+        "short": "Response Beurteilung",
+        "definition": "Response Beurteilung",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.ResponseBeurteilung",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.Beurteilungsmethode",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.Beurteilungsmethode",
+        "short": "Beurteilungsmethode",
+        "definition": "Beurteilungsmethode des Response Befundes",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.Beurteilungsmethode",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.Zeitpunkt",
+        "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.Zeitpunkt",
+        "short": "Zeitpunkt",
+        "definition": "Zeitpunkt des Response Befundes",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.SystemischeTherapie.ResponseBefund.Zeitpunkt",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntragKostenuebernahme",
+        "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme",
+        "short": "Kostenuebernahme Follow-Up",
+        "definition": "Kostenuebernahme Follow-Up",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.Ausstellungsdatum",
+        "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.Ausstellungsdatum",
+        "short": "Ausstellungsdatum",
+        "definition": "Ausstellungsdatum Antrag Kostenübernahme",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.Ausstellungsdatum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.TherapieEmpfehlung",
+        "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.TherapieEmpfehlung",
+        "short": "Therapie Empfehlung",
+        "definition": "Referenz MTB Empfehlung",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.TherapieEmpfehlung",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.Antragsstadium",
+        "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.Antragsstadium",
+        "short": "Antragsstadium",
+        "definition": "Antragsstadium",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.Antragsstadium",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.AntragsstellerZPMGeschaeftsstelle",
+        "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.AntragsstellerZPMGeschaeftsstelle",
+        "short": "Antragssteller ZPM Geschäftsstelle",
+        "definition": "Antragssteller ZPM Geschäftsstelle",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntragKostenuebernahme.AntragsstellerZPMGeschaeftsstelle",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme",
+        "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme",
+        "short": "Antwort Kostenuebernahme Follow-Up",
+        "definition": "Antwort Kostenuebernahme Follow-Up",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Datum",
+        "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Datum",
+        "short": "Datum",
+        "definition": "Datum",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Datum",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Antrag",
+        "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Antrag",
+        "short": "Antrag",
+        "definition": "Antrag",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Antrag",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Status",
+        "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Status",
+        "short": "Status",
+        "definition": "Status",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Status",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Grund",
+        "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Grund",
+        "short": "Grund",
+        "definition": "Grund",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "mii-lm-mtb.FollowUp.AntwortKostenuebernahme.Grund",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ]
+      }
+    ]
+  },
   "differential": {
     "element": [
       {

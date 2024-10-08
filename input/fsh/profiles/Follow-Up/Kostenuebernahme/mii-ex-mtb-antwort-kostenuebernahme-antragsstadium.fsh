@@ -1,10 +1,12 @@
 Extension: MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium
 Id: mii-ex-mtb-antwort-kostenuebernahme-antragsstadium
+Context: ClaimResponse
 Title: "MII EX MTB Antwort Kostenuebernahme Antragsstadium"
 Description: "Stadium der Antwort auf den Antrag zur Kostenuebernahme"
 * insert EX_Header($mii-ex-mtb-antwort-kostenuebernahme-antragsstadium)
+
 * value[x] only CodeableConcept
-* valueCodeableConcept 1..1 MS
+* value[x] 1..1 MS
 
 * valueCodeableConcept.coding 1..2 MS
 * valueCodeableConcept.coding ^slicing.discriminator.type = #value

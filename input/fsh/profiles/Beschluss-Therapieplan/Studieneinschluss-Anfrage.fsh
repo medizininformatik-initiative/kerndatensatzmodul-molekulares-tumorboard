@@ -31,27 +31,26 @@ Description: "Onkologische Studie"
 * identifier ^slicing.ordered = false
 
 * identifier contains NCT 0..1
-* identifier[NCT].use = #official
 * identifier[NCT].system = $mii-ns-mtb-nct
 * identifier[NCT].value 1..1 MS
 
 * identifier contains DRKS 0..1
-* identifier[DRKS].use = #official
 * identifier[DRKS].system = $mii-ns-studie-drks
 * identifier[DRKS].value 1..1 MS
 
 * identifier contains EudraCT 0..1
-* identifier[EudraCT].use = #official
 * identifier[EudraCT].system = $mii-ns-studie-eudract
 * identifier[EudraCT].value 1..1 MS
 
-* condition.extension contains MII_EX_MTB_Diagnose named OnkologischeDiagnose 0..* MS
+* extension contains MII_EX_MTB_Diagnose named OnkologischeDiagnose 0..* MS
 
 // TODO: In nächster Version sollte nachfolgendes ggf. in Modul Forschungsvorhaben/ Onkologie umziehen
 Extension: MII_EX_MTB_Diagnose
 Id: mii-ex-mtb-diagnose
+Context: ResearchStudy
 Title: "MII EX MTB Diagnose"
 Description: "Onkologische Diagnose"
 * insert EX_Header($mii-ex-mtb-diagnose)
+
 * value[x] only Reference(MII_PR_Onko_Diagnose or Condition)
-* valueReference 1..1 MS
+* value[x] 1..1 MS

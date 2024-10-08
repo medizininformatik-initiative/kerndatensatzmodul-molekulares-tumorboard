@@ -1,10 +1,16 @@
 Extension: MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation
 Id: mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
+Context: RequestGroup, MedicationRequest
 Title: "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation"
 Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung"
 * insert EX_Header($mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation)
+
 * value[x] only string or url or uri or Identifier
 * value[x] 1..1 MS
+
+* value[x] ^short = "Publikation"
+* value[x] ^definition = "Verweis auf Publikation zur Evidenzgraduierung"
+* value[x] ^comment = "Verweis auf Publikation erfolgt anhand der DOI oder PMID"
 
 // TODO: Probleme beim Reslicing (Extension.value[x] bereits gesliced), deshalb vorerst einkommentiert
 // NOTE: Mehr zu Reslicing, siehe https://hl7.org/fhir/R4/profiling.html#reslicing
