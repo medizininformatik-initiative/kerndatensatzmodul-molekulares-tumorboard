@@ -1,6 +1,6 @@
 {
   "resourceType": "CarePlan",
-  "id": "mii-exa-mtb-therapieplan-kombinationstherapie-03",
+  "id": "mii-exa-mtb-therapieplan-kombinationstherapie",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
@@ -19,7 +19,6 @@
   "activity": [
     {
       "detail": {
-        "kind": "MedicationRequest",
         "code": {
           "coding": [
             {
@@ -32,14 +31,14 @@
         "status": "not-started"
       },
       "reference": {
-        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-kombinationstherapie-03"
+        "reference": "RequestGroup/mii-exa-mtb-therapieempfehlung-kombinationstherapie"
       }
     }
   ],
   "status": "active",
   "intent": "proposal",
   "subject": {
-    "reference": "Patient/mii-exa-mtb-patient-03"
+    "reference": "Patient/mii-exa-mtb-patient"
   },
   "created": "2024-08-09"
 }

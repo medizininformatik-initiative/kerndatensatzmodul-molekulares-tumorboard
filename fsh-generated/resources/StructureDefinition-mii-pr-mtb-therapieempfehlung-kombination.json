@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-pr-mtb-therapieempfehlung-gruppe",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-gruppe",
+  "id": "mii-pr-mtb-therapieempfehlung-kombination",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination",
   "version": "2024.0.0-ballot",
-  "name": "MII_PR_MTB_Therapieempfehlung_Gruppe",
+  "name": "MII_PR_MTB_Therapieempfehlung_Kombination",
   "title": "MII PR MTB Therapieempfehlung Kombinationstherapie",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
@@ -27,32 +27,14 @@
   "differential": {
     "element": [
       {
-        "id": "RequestGroup.id",
-        "path": "RequestGroup.id",
-        "mustSupport": true
-      },
-      {
         "id": "RequestGroup.meta",
         "path": "RequestGroup.meta",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.meta.source",
-        "path": "RequestGroup.meta.source",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.meta.profile",
-        "path": "RequestGroup.meta.profile",
         "mustSupport": true
       },
       {
         "id": "RequestGroup.extension:Prioritaet",
         "path": "RequestGroup.extension",
         "sliceName": "Prioritaet",
-        "short": "Priorität",
-        "definition": "Priorität dieser Kombinationstherapie-Empfehlung",
-        "comment": "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität",
         "min": 0,
         "max": "1",
         "type": [
@@ -66,22 +48,40 @@
         "mustSupport": true
       },
       {
-        "id": "RequestGroup.identifier",
-        "path": "RequestGroup.identifier",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.basedOn",
-        "path": "RequestGroup.basedOn",
+        "id": "RequestGroup.extension:Evidenzgraduierung",
+        "path": "RequestGroup.extension",
+        "sliceName": "Evidenzgraduierung",
+        "min": 0,
+        "max": "1",
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
-              "http://hl7.org/fhir/StructureDefinition/CarePlan"
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "RequestGroup.extension:Publikation",
+        "path": "RequestGroup.extension",
+        "sliceName": "Publikation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "RequestGroup.identifier",
+        "path": "RequestGroup.identifier",
         "mustSupport": true
       },
       {
@@ -91,7 +91,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-gruppe",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination",
               "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
               "http://hl7.org/fhir/StructureDefinition/RequestGroup",
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
@@ -100,13 +100,9 @@
         ]
       },
       {
-        "id": "RequestGroup.status",
-        "path": "RequestGroup.status",
-        "mustSupport": true
-      },
-      {
         "id": "RequestGroup.intent",
         "path": "RequestGroup.intent",
+        "patternCode": "proposal",
         "mustSupport": true
       },
       {
@@ -123,11 +119,6 @@
         "mustSupport": true
       },
       {
-        "id": "RequestGroup.authoredOn",
-        "path": "RequestGroup.authoredOn",
-        "mustSupport": true
-      },
-      {
         "id": "RequestGroup.author",
         "path": "RequestGroup.author",
         "type": [
@@ -138,47 +129,18 @@
               "http://hl7.org/fhir/StructureDefinition/PractitionerRole"
             ]
           }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.reasonCode",
-        "path": "RequestGroup.reasonCode",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.reasonReference",
-        "path": "RequestGroup.reasonReference",
-        "mustSupport": true
+        ]
       },
       {
         "id": "RequestGroup.action",
         "path": "RequestGroup.action",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.action.prefix",
-        "path": "RequestGroup.action.prefix",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.action.title",
-        "path": "RequestGroup.action.title",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.action.description",
-        "path": "RequestGroup.action.description",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.action.textEquivalent",
-        "path": "RequestGroup.action.textEquivalent",
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "RequestGroup.action.resource",
         "path": "RequestGroup.action.resource",
+        "min": 1,
         "type": [
           {
             "code": "Reference",
@@ -189,6 +151,11 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "RequestGroup.action.action",
+        "path": "RequestGroup.action.action",
+        "max": "0"
       }
     ]
   }

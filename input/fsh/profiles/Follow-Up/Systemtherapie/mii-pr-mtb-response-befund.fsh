@@ -5,7 +5,6 @@ Title: "MII PR MTB Response Befund"
 Description: "Response Beurteilung nach DNPM"
 * insert PR_Header
 
-
 * status MS
 * code MS
 * effectiveDateTime MS

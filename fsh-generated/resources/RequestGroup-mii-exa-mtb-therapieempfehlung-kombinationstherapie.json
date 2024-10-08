@@ -1,0 +1,49 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "mii-exa-mtb-therapieempfehlung-kombinationstherapie",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
+    ]
+  },
+  "action": [
+    {
+      "title": "Therapieempfehlung für Dabrafenib",
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"
+      }
+    },
+    {
+      "title": "Therapieempfehlung für Trametinib",
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-trametinib"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet",
+      "valuePositiveInt": 1
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
+      "valueUrl": "https://doi.org/10.1002/gcc.23222"
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad",
+            "code": "m1C"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+    }
+  ],
+  "intent": "proposal",
+  "status": "active",
+  "subject": {
+    "reference": "Patient/mii-exa-mtb-patient"
+  }
+}

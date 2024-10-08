@@ -2,9 +2,21 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-studie",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie",
+  "version": "2024.0.0-ballot",
   "name": "MII_PR_MTB_Studie",
   "title": "MII PR MTB Studie",
   "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
   "description": "Onkologische Studie",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -14,6 +26,27 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "ResearchStudy.meta",
+        "path": "ResearchStudy.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "ResearchStudy.extension:OnkologischeDiagnose",
+        "path": "ResearchStudy.extension",
+        "sliceName": "OnkologischeDiagnose",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
       {
         "id": "ResearchStudy.identifier",
         "path": "ResearchStudy.identifier",
@@ -37,11 +70,6 @@
         "max": "1"
       },
       {
-        "id": "ResearchStudy.identifier:NCT.use",
-        "path": "ResearchStudy.identifier.use",
-        "patternCode": "official"
-      },
-      {
         "id": "ResearchStudy.identifier:NCT.system",
         "path": "ResearchStudy.identifier.system",
         "min": 1,
@@ -58,11 +86,6 @@
         "sliceName": "DRKS",
         "min": 0,
         "max": "1"
-      },
-      {
-        "id": "ResearchStudy.identifier:DRKS.use",
-        "path": "ResearchStudy.identifier.use",
-        "patternCode": "official"
       },
       {
         "id": "ResearchStudy.identifier:DRKS.system",
@@ -83,11 +106,6 @@
         "max": "1"
       },
       {
-        "id": "ResearchStudy.identifier:EudraCT.use",
-        "path": "ResearchStudy.identifier.use",
-        "patternCode": "official"
-      },
-      {
         "id": "ResearchStudy.identifier:EudraCT.system",
         "path": "ResearchStudy.identifier.system",
         "min": 1,
@@ -97,22 +115,6 @@
         "id": "ResearchStudy.identifier:EudraCT.value",
         "path": "ResearchStudy.identifier.value",
         "min": 1
-      },
-      {
-        "id": "ResearchStudy.condition.extension:OnkologischeDiagnose",
-        "path": "ResearchStudy.condition.extension",
-        "sliceName": "OnkologischeDiagnose",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose"
-            ]
-          }
-        ],
-        "mustSupport": true
       }
     ]
   }
