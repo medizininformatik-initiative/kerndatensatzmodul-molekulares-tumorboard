@@ -8,4 +8,4 @@ RuleSet: TumorMutationalBurdenMapping
 * TumorMutationalBurden     ->      "MII_PR_MolGen_Mutationslast"
   * Interpretation          ->      "MII_PR_MolGen_Mutationslast.interpretation"
   * Wert                    ->      "MII_PR_MolGen_Mutationslast.value"
-  * Metadaten               ->      ""
+  * Metadaten               ->      "MII_PR_MolGen_Mutationslast.method"

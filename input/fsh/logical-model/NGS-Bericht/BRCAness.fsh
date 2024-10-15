@@ -9,5 +9,7 @@ RuleSet: BRCAnessMapping
 * BRCAness                  ->      "Observation"
   * Interpretation          ->      "Observation.interpretation"
   * Wert                    ->      "Observation.valueQuantity"
-  * Metadaten               ->      ""
+   // Metadaten entweder über method (plus extension für device und hersteller, oder Hersteller, plus "eigene Pipeline")
+   // oder umfangreiche Metadaten Device 
+  * Metadaten               ->      "Observation.method"
   //   * Konfidenz-Intervall        ->    "Observation.component[confidence-interval]"

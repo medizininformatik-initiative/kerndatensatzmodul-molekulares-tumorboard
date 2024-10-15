@@ -15,9 +15,9 @@ RuleSet: NGSBericht
 
 
 RuleSet: NGSBerichtMapping
-* NGS-Bericht                                       ->          "" 
-  * Erstellungsdatum                                ->          ""
-  * Probe                                           ->          ""
+* NGS-Bericht                                       ->          "DiagnosticReport" 
+  * Erstellungsdatum                                ->          "DiagnosticReport.effective[x].effectiveDateTime"
+  * Probe                                           ->          "DiagnosticReport.specimen"
   * insert MetadatenMapping                         
   * insert TumorMutationalBurdenMapping             
   * insert BRCAnessMapping                          

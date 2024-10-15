@@ -17,7 +17,7 @@ RuleSet: EinfacheVariante
 
 RuleSet: EinfacheVarianteMapping
 * EinfacheVariante                  ->      "MII_PR_MolGen_Variante"
-  * Chromosom                       ->      "MII_PR_MolGen_Variante.component.chromosome-identifier"
+  * Chromosom                       ->      "MII_PR_MolGen_Variante.component[chromosome-identifier]"
   * Gen                             ->      "MII_PR_MolGen_Variante."
   * TranskriptID                    ->      "MII_PR_MolGen_Variante."
   * Exon                            ->      "MII_PR_MolGen_Variante."
