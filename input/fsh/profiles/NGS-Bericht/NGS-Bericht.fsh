@@ -24,7 +24,8 @@ Description: "NGS-Bericht zu einer Probe"
 * result[microsatellite-instability] ^short = "Micro-Satellite Instabilities"
 
 * result[variant] MS
-* result[variant] ^short = ""
+* result[variant] ^short = "Varianten"
+
 
 
 // -------
@@ -56,16 +57,16 @@ Description: "NGS-Bericht zu einer Probe"
 * result ^slicing.ordered = false
 
 * result contains TumorMutionalBurden 0..1 MS
-* result[TumorMutionalBurden] ^short = "Tumor Mutinoal Burden"
-* result[TumorMutionalBurden] ^definition = "Verweis auf Tumor Mutinoal Burden"
+* result[TumorMutionalBurden] ^short = "Tumor Mutational Burden"
+* result[TumorMutionalBurden] ^definition = "Verweis auf Tumor Mutational Burden"
 * result[TumorMutionalBurden] 0..1 MS
-* result[TumorMutionalBurden] only Reference(MII_PR_Molgen_Mutationslast)
+* result[TumorMutionalBurden] only Reference(Observation) // or MII_PR_Molgen_Mutationslast or MII_PR_MTB_Mutationslast
 
 * result contains MicroSatelliteInstabilities 0..1 MS
 * result[MicroSatelliteInstabilities] ^short = "Micro-Satellite Instabilities"
 * result[MicroSatelliteInstabilities] ^definition = "Verweis auf Micro-Satellite Instabilities"
 * result[MicroSatelliteInstabilities] 0..1 MS
-* result[MicroSatelliteInstabilities] only Reference(MII_PR_MolGen_Mikrosatelliteninstabilitaet)
+* result[MicroSatelliteInstabilities] only Reference(Observation) //MII_PR_Molgen_Mutationslast
 
 * result contains HRDScore 0..1 MS
 * result[HRDScore] ^short = "HRD-Score"
@@ -93,5 +94,5 @@ Description: "NGS-Bericht zu einer Probe"
 * result[CopyNumberVariant] only Reference(MII_PR_MolGen_Variante) // or Copy Number Variant Profile
 
 
-* result[variant] MS
-* result[variant] ^short = ""
+// * result[variant] MS
+// * result[variant] ^short = ""

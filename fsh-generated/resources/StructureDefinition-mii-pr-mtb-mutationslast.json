@@ -1,0 +1,24 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-mutationslast",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast",
+  "name": "MII_PR_MTB_Mutationslast",
+  "title": "MII PR MTB Mutationslast",
+  "status": "draft",
+  "description": "Beschreibt die Gesamtzahl von in Krebszellen gefundenen Mutationen pro 1 Mio. Basen.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mutationslast",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "mustSupport": true
+      }
+    ]
+  }
+}
