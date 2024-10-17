@@ -4,6 +4,7 @@ Id: mii-pr-mtb-antrag-kostenuebernahme
 Title: "MII PR MTB Antrag Kostenuebernahme"
 Description: "Antrag Kostenübernahme"
 * insert PR_Header
+
 * status MS
 * status = #active
 * type MS

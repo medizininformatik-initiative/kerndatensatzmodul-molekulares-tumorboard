@@ -3,6 +3,8 @@ Parent: Procedure
 Id: mii-pr-mtb-follow-up-procedure
 Title: "MII PR MTB Follow-Up"
 Description: "Follow-Up nach DNPM"
+* insert PR_Header
+
 
 * status MS
 * subject MS
