@@ -1,0 +1,24 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-mmikrosatelliteninstabilitaet",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mmikrosatelliteninstabilitaet",
+  "name": "MII_PR_MTB_Mikrosatelliteninstabilitaet",
+  "title": "MII PR MTB Mikrosatelliteninstabilität",
+  "status": "draft",
+  "description": "Beschreibt die Neigung zu Mutationen aufgrund einer gestörten Fehlpaarungsreparatur (DNA mismatch repair, MMR).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mikrosatelliteninstabilitaet",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "mustSupport": true
+      }
+    ]
+  }
+}
