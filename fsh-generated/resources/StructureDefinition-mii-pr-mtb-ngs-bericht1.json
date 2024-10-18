@@ -42,7 +42,13 @@
               "http://hl7.org/fhir/StructureDefinition/Patient"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.issued",
+        "path": "DiagnosticReport.issued",
+        "mustSupport": true
       },
       {
         "id": "DiagnosticReport.specimen",
@@ -72,7 +78,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice für Varianten des NGS-Berichts",
+          "description": "Slice für Varianten & Biomarker des NGS-Berichts",
           "ordered": false
         }
       },

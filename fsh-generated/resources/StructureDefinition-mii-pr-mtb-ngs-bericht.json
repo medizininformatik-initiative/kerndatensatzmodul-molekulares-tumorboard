@@ -67,13 +67,22 @@
         "id": "DiagnosticReport.result:variant",
         "path": "DiagnosticReport.result",
         "sliceName": "variant",
-        "short": "Varianten"
+        "short": "Varianten & Biomarker"
       },
       {
         "id": "DiagnosticReport.result:tumor-mutation-burden",
         "path": "DiagnosticReport.result",
         "sliceName": "tumor-mutation-burden",
-        "short": "Tumor Mutational Burden"
+        "short": "Tumor Mutational Burden",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mutationslast"
+            ]
+          }
+        ]
       },
       {
         "id": "DiagnosticReport.result:microsatellite-instability",
