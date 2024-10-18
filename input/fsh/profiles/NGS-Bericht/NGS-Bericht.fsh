@@ -5,40 +5,8 @@ Title: "MII PR MTB NGS-Bericht"
 Description: "NGS-Bericht zu einer Probe"
 * insert PR_Header
 
-* subject only Reference(Patient)
-* subject ^short = "Referenz auf Patient"
-
-* specimen MS
-* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
-* specimen ^short = "Referenz auf Probe"
-
-// Wohin mit QC & Ploidie? - JG-IBSM
-
-* result[tumor-mutation-burden] MS
-* result[tumor-mutation-burden] ^short = "Tumor Mutational Burden"
-* result[tumor-mutation-burden] only Reference(MII_PR_MTB_Mutationslast or MII_PR_MolGen_Mutationslast)
-
-* result[microsatellite-instability] MS
-* result[microsatellite-instability] ^short = "Micro-Satellite Instabilities"
-
-* result[variant] MS
-* result[variant] ^short = "Varianten & Biomarker"
-
-// wo kommen RNA- und DNA-Fusion hin? Und wohin RNA Seq? 
-// gehören die auch zu Varianten und Biomarkern? - JG-IBSM
-
-
-
-// ------- Alternative:
-// NGS-Bericht ohne Erben von MII_PR_MolGen_MolekulargenetischerBefundbericht
-
-
-Profile: MII_PR_MTB_NGS_Bericht1
-Parent: DiagnosticReport
-Id: mii-pr-mtb-ngs-bericht1
-Title: "MII PR MTB NGS-Bericht"
-Description: "NGS-Bericht zu einer Probe"
-* insert PR_Header
+* issued MS
+* issued ^short = "Erstellungsdatum"
 
 * subject MS
 * subject only Reference(Patient)
@@ -48,9 +16,47 @@ Description: "NGS-Bericht zu einer Probe"
 * specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
 * specimen ^short = "Referenz auf Probe"
 
-* issued MS
+// Wohin mit Metadaten, QC & Ploidie? - JG-IBSM
 
-// Wohin mit QC & Ploidie? Extensions? - JG-IBSM
+* result[tumor-mutation-burden] MS
+* result[tumor-mutation-burden] ^short = "Tumor Mutational Burden"
+* result[tumor-mutation-burden] only Reference(MII_PR_MTB_Mutationslast or MII_PR_MolGen_Mutationslast)
+
+* result[microsatellite-instability] MS
+* result[microsatellite-instability] ^short = "Micro-Satellite Instabilities"
+
+* result[variant] 0..* MS
+* result[variant] ^short = "Varianten & Biomarker"
+
+// wo kommen RNA- und DNA-Fusion hin? Und wohin RNA Seq? 
+// gehören die auch zu Varianten und Biomarkern? - JG-IBSM
+
+
+// ---------------------------------------------------------------------------
+// Alternative:
+// NGS-Bericht ohne Erben von MII_PR_MolGen_MolekulargenetischerBefundbericht
+// ---------------------------------------------------------------------------
+
+Profile: MII_PR_MTB_NGS_Bericht1
+Parent: DiagnosticReport
+Id: mii-pr-mtb-ngs-bericht1
+Title: "MII PR MTB NGS-Bericht"
+Description: "NGS-Bericht zu einer Probe"
+* insert PR_Header
+
+* issued MS
+* issued ^short = "Erstellungsdatum"
+
+* subject MS
+* subject only Reference(Patient)
+* subject ^short = "Referenz auf Patient"
+
+* specimen MS
+* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
+* specimen ^short = "Referenz auf Probe"
+
+
+// Wohin mit Metadaten, QC & Ploidie? Extensions? - JG-IBSM
 
 * result ^slicing.discriminator.type = #type
 * result ^slicing.discriminator.path = "reference.reference"
@@ -63,27 +69,28 @@ Description: "NGS-Bericht zu einer Probe"
 * result[TumorMutionalBurden] ^definition = "Verweis auf Tumor Mutational Burden"
 * result[TumorMutionalBurden] 0..1 MS
 * result[TumorMutionalBurden] only Reference(Observation) // or MII_PR_Molgen_Mutationslast or MII_PR_MTB_Mutationslast
-
 // Ich darf hier keine Referenz zu den MII_PR_Molgen_Mutationslast or MII_PR_MTB_Mutationslast Profilen machen
 // obwohl ihr Basisprofil Observation ist .... - JG-IBSM
+ 
 
 * result contains MicroSatelliteInstabilities 0..1 MS
 * result[MicroSatelliteInstabilities] ^short = "Micro-Satellite Instabilities"
 * result[MicroSatelliteInstabilities] ^definition = "Verweis auf Micro-Satellite Instabilities"
 * result[MicroSatelliteInstabilities] 0..1 MS
-* result[MicroSatelliteInstabilities] only Reference(Observation) //MII_PR_Molgen_Mutationslast
+* result[MicroSatelliteInstabilities] only Reference(Observation) //MII_PR_MTB_Mikrosatelliteninstabilitaet or MII_PR_MolGen_Mikrosatelliteninstabilitaet
+// Problem s.o. 
 
 * result contains HRDScore 0..1 MS
 * result[HRDScore] ^short = "HRD-Score"
 * result[HRDScore] ^definition = "Verweis auf HRD-Score"
 * result[HRDScore] 0..1 MS
-* result[HRDScore] only Reference(MII_PR_MolGen_Variante) // or HRD-Profile
+* result[HRDScore] only Reference(MII_PR_MTB_HRD_Score) // or HRD-Profile
 
 * result contains BRCAness 0..1 MS
 * result[BRCAness] ^short = "BRCAness"
 * result[BRCAness] ^definition = "Verweis auf BRCAness"
 * result[BRCAness] 0..1 MS
-* result[BRCAness] only Reference(MII_PR_MolGen_Variante) // or BRCAness-Profile
+* result[BRCAness] only Reference(MII_PR_MTB_BRCAness) // or BRCAness-Profile
 
 * result contains EinfacheVariante 0..1 MS
 * result[EinfacheVariante] ^short = "Einfache Variante"
