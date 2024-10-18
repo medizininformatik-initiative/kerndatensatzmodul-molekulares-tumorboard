@@ -25,11 +25,13 @@ Description: "Follow-Up nach DNPM"
 * followUp ^slicing.ordered = false
 * followUp contains Status 1..1
 * followUp[Status] ^short = "Follow-Up Status"
-* followUp[Status] 1..1 MS 
-* followUp[Status] from $mii-vs-mtb-follow-up-status
+* followUp[Status].coding 1..1 MS
+* followUp[Status].coding.system = $mii-cs-mtb-follow-up-status
+* followUp[Status].coding.code 1..1 MS 
+* followUp[Status].coding.code from $mii-cs-mtb-follow-up-status
 // GrundNichtUmsetzung - Wird entweder evaluiert, wenn Patient ein zweites mal im MTB vorgestellt wird oder Patient verstorben ist. -> Rule?
 * followUp contains GrundNichtUmsetzung 0..1
-* followUp[GrundNichtUmsetzung] ^short = "Grund Nicht-Umsetzung"
-* followUp[GrundNichtUmsetzung] ^definition = "Grund für die Nicht-Umsetzung des gesamten Therapieplans"
-* followUp[GrundNichtUmsetzung] 1..1 MS 
-* followUp[GrundNichtUmsetzung] from $mii-vs-mtb-follow-up-grund-nicht-umsetzung
+* followUp[GrundNichtUmsetzung].coding 1..1
+* followUp[GrundNichtUmsetzung].coding.system = $mii-cs-mtb-follow-up-grund-nicht-umsetzung
+* followUp[GrundNichtUmsetzung].coding.code 1..1 MS 
+* followUp[GrundNichtUmsetzung].coding.code from $mii-cs-mtb-follow-up-grund-nicht-umsetzung

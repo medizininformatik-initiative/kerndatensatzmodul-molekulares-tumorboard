@@ -84,7 +84,7 @@
           "description": "Slice für Status des Follow-Up und Grund Nicht-Umsetzung bei Status 'not done'",
           "ordered": false
         },
-        "min": 2,
+        "min": 1,
         "max": "2",
         "mustSupport": true
       },
@@ -94,25 +94,56 @@
         "sliceName": "Status",
         "short": "Follow-Up Status",
         "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.followUp:Status.coding",
+        "path": "Procedure.followUp.coding",
+        "min": 1,
         "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.followUp:Status.coding.system",
+        "path": "Procedure.followUp.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status"
+      },
+      {
+        "id": "Procedure.followUp:Status.coding.code",
+        "path": "Procedure.followUp.coding.code",
+        "min": 1,
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status"
         }
       },
       {
         "id": "Procedure.followUp:GrundNichtUmsetzung",
         "path": "Procedure.followUp",
         "sliceName": "GrundNichtUmsetzung",
-        "short": "Grund Nicht-Umsetzung",
-        "definition": "Grund für die Nicht-Umsetzung des gesamten Therapieplans",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.followUp:GrundNichtUmsetzung.coding",
+        "path": "Procedure.followUp.coding",
         "min": 1,
-        "max": "1",
+        "max": "1"
+      },
+      {
+        "id": "Procedure.followUp:GrundNichtUmsetzung.coding.system",
+        "path": "Procedure.followUp.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
+      },
+      {
+        "id": "Procedure.followUp:GrundNichtUmsetzung.coding.code",
+        "path": "Procedure.followUp.coding.code",
+        "min": 1,
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
         }
       }
     ]
