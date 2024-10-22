@@ -27,6 +27,11 @@
   "differential": {
     "element": [
       {
+        "id": "CarePlan.meta",
+        "path": "CarePlan.meta",
+        "mustSupport": true
+      },
+      {
         "id": "CarePlan.description",
         "path": "CarePlan.description",
         "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
@@ -71,18 +76,13 @@
             "code": "Reference",
             "targetProfile": [
               "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-gruppe",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination",
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
               "http://hl7.org/fhir/StructureDefinition/RequestGroup"
             ]
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "CarePlan.activity:Therapieempfehlung.detail.kind",
-        "path": "CarePlan.activity.detail.kind",
-        "patternCode": "MedicationRequest"
       },
       {
         "id": "CarePlan.activity:Therapieempfehlung.detail.statusReason",

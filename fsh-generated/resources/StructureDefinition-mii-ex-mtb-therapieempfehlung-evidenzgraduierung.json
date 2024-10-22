@@ -23,8 +23,12 @@
   "abstract": false,
   "context": [
     {
-      "type": "element",
-      "expression": "Element"
+      "expression": "RequestGroup",
+      "type": "element"
+    },
+    {
+      "expression": "MedicationRequest",
+      "type": "element"
     }
   ],
   "type": "Extension",
@@ -51,6 +55,9 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
+        "short": "Evidenzgraduierung",
+        "definition": "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung",
+        "comment": "Evidenzgraduierung wird durch einen Evidenzgrad und einen optionalen Zusatzverweis angegeben",
         "min": 1,
         "type": [
           {

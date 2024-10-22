@@ -1,6 +1,6 @@
 {
   "resourceType": "Medication",
-  "id": "mii-exa-mtb-kombinationstherapie-02-dabrafenib",
+  "id": "mii-exa-mtb-medikation-trametinib",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/Medication"
@@ -9,9 +9,9 @@
   "code": {
     "coding": [
       {
-        "code": "L01EC02",
+        "code": "L01EE01",
         "system": "http://fhir.de/CodeSystem/bfarm/atc",
-        "display": "Dabrafenib 0,3 g O"
+        "display": "Trametinib 2 mg O"
       }
     ]
   },
@@ -29,21 +29,21 @@
       "itemCodeableConcept": {
         "coding": [
           {
-            "code": "703648007",
+            "code": "895671007",
             "system": "http://snomed.info/sct",
-            "display": "Dabrafenib (as dabrafenib mesilate) 75 mg oral capsule"
+            "display": "Trametinib (as trametinib dimethyl sulfoxide) 2 mg oral tablet"
           }
         ]
       },
       "strength": {
         "numerator": {
           "system": "http://unitsofmeasure.org",
-          "value": 75,
+          "value": 2,
           "code": "mg"
         },
         "denominator": {
           "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-          "value": 4,
+          "value": 1,
           "code": "TAB"
         }
       },

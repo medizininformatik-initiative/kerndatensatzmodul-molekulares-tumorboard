@@ -23,8 +23,12 @@
   "abstract": false,
   "context": [
     {
-      "type": "element",
-      "expression": "Element"
+      "expression": "RequestGroup",
+      "type": "element"
+    },
+    {
+      "expression": "MedicationRequest",
+      "type": "element"
     }
   ],
   "type": "Extension",
@@ -51,6 +55,9 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
+        "short": "Priorität",
+        "definition": "Priorität dieser Kombinationstherapie-Empfehlung",
+        "comment": "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität",
         "min": 1,
         "type": [
           {

@@ -371,7 +371,7 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-therapieempfehlung-gruppe"
+          "reference": "StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
         },
         "name": "MII PR MTB Therapieempfehlung Kombinationstherapie",
         "description": "Therapieempfehlung für eine medikamentöse Kombinationstherapie",
@@ -499,187 +499,59 @@
       },
       {
         "reference": {
-          "reference": "Medication/mii-exa-mtb-kombinationstherapie-01"
+          "reference": "Medication/mii-exa-mtb-medikation-dabrafenib"
         },
-        "name": "mii-exa-mtb-kombinationstherapie-01",
-        "description": "Dabrafenib/Trametinib-Kombinationstherapie bei Melanom oder nicht-kleinzelligem Lungenkrebs mit BRAF-V600E- oder BRAF-V600K-Mutation",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-kombinationstherapie-02-dabrafenib"
-        },
-        "name": "mii-exa-mtb-kombinationstherapie-02-dabrafenib",
+        "name": "mii-exa-mtb-medikation-dabrafenib",
         "description": "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Medication/mii-exa-mtb-kombinationstherapie-02-trametinib"
+          "reference": "Medication/mii-exa-mtb-medikation-trametinib"
         },
-        "name": "mii-exa-mtb-kombinationstherapie-02-trametinib",
+        "name": "mii-exa-mtb-medikation-trametinib",
         "description": "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Medication/mii-exa-mtb-kombinationstherapie-03"
+          "reference": "Patient/mii-exa-mtb-patient"
         },
-        "name": "mii-exa-mtb-kombinationstherapie-03",
-        "description": "Dabrafenib/Trametinib-Kombinationstherapie bei Melanom oder nicht-kleinzelligem Lungenkrebs mit BRAF-V600E- oder BRAF-V600K-Mutation",
+        "name": "mii-exa-mtb-patient",
+        "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Medication/mii-exa-mtb-kombinationstherapie-03-dabrafenib"
+          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"
         },
-        "name": "mii-exa-mtb-kombinationstherapie-03-dabrafenib",
-        "description": "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-kombinationstherapie-03-trametinib"
-        },
-        "name": "mii-exa-mtb-kombinationstherapie-03-trametinib",
-        "description": "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medikation-04-dabrafenib"
-        },
-        "name": "mii-exa-mtb-medikation-04-dabrafenib",
-        "description": "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medikation-04-trametinib"
-        },
-        "name": "mii-exa-mtb-medikation-04-trametinib",
-        "description": "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Patient/mii-exa-mtb-patient-01"
-        },
-        "name": "mii-exa-mtb-patient-01",
-        "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 01)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Patient/mii-exa-mtb-patient-02"
-        },
-        "name": "mii-exa-mtb-patient-02",
-        "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 02)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Patient/mii-exa-mtb-patient-03"
-        },
-        "name": "mii-exa-mtb-patient-03",
-        "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 03)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Patient/mii-exa-mtb-patient-04"
-        },
-        "name": "mii-exa-mtb-patient-04",
-        "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 04)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-02-dabrafenib"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-02-dabrafenib",
-        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie: Bestandteil Dabrafenib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-02-trametinib"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-02-trametinib",
-        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie: Bestandteil Trametinib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-04-dabrafenib"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-04-dabrafenib",
+        "name": "mii-exa-mtb-therapieempfehlung-dabrafenib",
         "description": "Therapieempfehlung für Dabrafenib",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
       },
       {
         "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-04-trametinib"
+          "reference": "RequestGroup/mii-exa-mtb-therapieempfehlung-kombinationstherapie"
         },
-        "name": "mii-exa-mtb-therapieempfehlung-04-trametinib",
+        "name": "mii-exa-mtb-therapieempfehlung-kombinationstherapie",
+        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-trametinib"
+        },
+        "name": "mii-exa-mtb-therapieempfehlung-trametinib",
         "description": "Therapieempfehlung für Trametinib",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
       },
       {
         "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-kombinationstherapie-01"
+          "reference": "CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie"
         },
-        "name": "mii-exa-mtb-therapieempfehlung-kombinationstherapie-01",
-        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie bei Melanom oder nicht-kleinzelligem Lungenkrebs mit BRAF-V600E- oder BRAF-V600K-Mutation",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-kombinationstherapie-03"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-kombinationstherapie-03",
-        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "RequestGroup/mii-exa-mtb-therapieempfehlung-kombinationstherapie-04"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-kombinationstherapie-04",
-        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-gruppe"
-      },
-      {
-        "reference": {
-          "reference": "CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie-01"
-        },
-        "name": "mii-exa-mtb-therapieplan-kombinationstherapie-01",
-        "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 01)",
+        "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
+        "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
-      },
-      {
-        "reference": {
-          "reference": "CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie-02"
-        },
-        "name": "mii-exa-mtb-therapieplan-kombinationstherapie-02",
-        "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 02)",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
-      },
-      {
-        "reference": {
-          "reference": "CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie-03"
-        },
-        "name": "mii-exa-mtb-therapieplan-kombinationstherapie-03",
-        "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 03)",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
-      },
-      {
-        "reference": {
-          "reference": "CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie-04"
-        },
-        "name": "mii-exa-mtb-therapieplan-kombinationstherapie-04",
-        "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie (Variante 04)",
-        "exampleBoolean": true
       }
     ],
     "page": {
