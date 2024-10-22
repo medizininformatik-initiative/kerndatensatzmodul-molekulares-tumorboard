@@ -1,0 +1,17 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "mii-exa-mtb-therapieempfehlung-trametinib",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+    ]
+  },
+  "status": "active",
+  "intent": "option",
+  "subject": {
+    "reference": "Patient/mii-exa-mtb-patient"
+  },
+  "medicationReference": {
+    "reference": "Medication/mii-exa-mtb-medikation-trametinib"
+  }
+}

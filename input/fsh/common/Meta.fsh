@@ -1,8 +1,7 @@
 RuleSet: Meta
-* meta.profile 0..* MS
+* meta MS
 
 RuleSet: CS_VS_Meta(url)
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = {url}
 * ^experimental = false
 * ^language = #de-DE

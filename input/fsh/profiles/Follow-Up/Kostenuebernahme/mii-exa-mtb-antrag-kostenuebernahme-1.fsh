@@ -2,7 +2,6 @@ Instance: MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1
 InstanceOf: MII_PR_MTB_Antrag_Kostenuebernahme
 Usage: #example
 Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
-
 * type = #institutional
 * use = #claim
 * patient = Reference(Patient/example)

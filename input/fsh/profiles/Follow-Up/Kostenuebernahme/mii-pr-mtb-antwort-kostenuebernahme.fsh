@@ -24,5 +24,5 @@ Description: "Antwort auf Antrag Kostenübernahme"
 
 * extension contains MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
 // Antragsstadium über related
-* extension[Antragsstadium] ^short = "Antragsstadium"
-* extension[Antragsstadium] ^definition = "Stadium der Antwort auf den Antrag zur Kostenuebernahme"
+//* extension[Antragsstadium] ^short = "Antragsstadium"
+//* extension[Antragsstadium] ^definition = "Stadium der Antwort auf den Antrag zur Kostenuebernahme"
