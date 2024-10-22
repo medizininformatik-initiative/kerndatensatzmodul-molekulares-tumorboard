@@ -1,0 +1,100 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-ngs-bericht",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_NGS_Bericht",
+  "title": "MII PR MTB NGS-Bericht",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "NGS-Bericht zu einer Probe",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/molekulargenetischer-befundbericht",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.meta",
+        "path": "DiagnosticReport.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.subject",
+        "path": "DiagnosticReport.subject",
+        "short": "Referenz auf Patient",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.issued",
+        "path": "DiagnosticReport.issued",
+        "short": "Erstellungsdatum"
+      },
+      {
+        "id": "DiagnosticReport.specimen",
+        "path": "DiagnosticReport.specimen",
+        "short": "Referenz auf Probe",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/Specimen",
+              "http://hl7.org/fhir/StructureDefinition/Specimen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:variant",
+        "path": "DiagnosticReport.result",
+        "sliceName": "variant",
+        "short": "Varianten & Biomarker"
+      },
+      {
+        "id": "DiagnosticReport.result:tumor-mutation-burden",
+        "path": "DiagnosticReport.result",
+        "sliceName": "tumor-mutation-burden",
+        "short": "Tumor Mutational Burden",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mutationslast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:microsatellite-instability",
+        "path": "DiagnosticReport.result",
+        "sliceName": "microsatellite-instability",
+        "short": "Micro-Satellite Instabilities"
+      }
+    ]
+  }
+}

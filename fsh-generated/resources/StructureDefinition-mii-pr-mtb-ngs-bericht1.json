@@ -1,0 +1,234 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-ngs-bericht1",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht1",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_NGS_Bericht1",
+  "title": "MII PR MTB NGS-Bericht",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "NGS-Bericht zu einer Probe",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.meta",
+        "path": "DiagnosticReport.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.subject",
+        "path": "DiagnosticReport.subject",
+        "short": "Referenz auf Patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.issued",
+        "path": "DiagnosticReport.issued",
+        "short": "Erstellungsdatum",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.specimen",
+        "path": "DiagnosticReport.specimen",
+        "short": "Referenz auf Probe",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/Specimen",
+              "http://hl7.org/fhir/StructureDefinition/Specimen"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "reference.reference"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Varianten & Biomarker des NGS-Berichts",
+          "ordered": false
+        }
+      },
+      {
+        "id": "DiagnosticReport.result:TumorMutionalBurden",
+        "path": "DiagnosticReport.result",
+        "sliceName": "TumorMutionalBurden",
+        "short": "Tumor Mutational Burden",
+        "definition": "Verweis auf Tumor Mutational Burden",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:MicroSatelliteInstabilities",
+        "path": "DiagnosticReport.result",
+        "sliceName": "MicroSatelliteInstabilities",
+        "short": "Micro-Satellite Instabilities",
+        "definition": "Verweis auf Micro-Satellite Instabilities",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:HRDScore",
+        "path": "DiagnosticReport.result",
+        "sliceName": "HRDScore",
+        "short": "HRD-Score",
+        "definition": "Verweis auf HRD-Score",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:BRCAness",
+        "path": "DiagnosticReport.result",
+        "sliceName": "BRCAness",
+        "short": "BRCAness",
+        "definition": "Verweis auf BRCAness",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:EinfacheVariante",
+        "path": "DiagnosticReport.result",
+        "sliceName": "EinfacheVariante",
+        "short": "Einfache Variante",
+        "definition": "Verweis auf Einfache Variante",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:CopyNumberVariant",
+        "path": "DiagnosticReport.result",
+        "sliceName": "CopyNumberVariant",
+        "short": "Copy Number Variant",
+        "definition": "Verweis auf Copy Number Variant",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:DNAFusion",
+        "path": "DiagnosticReport.result",
+        "sliceName": "DNAFusion",
+        "short": "DNA-Fusion",
+        "definition": "Verweis auf DNA-Fusion",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:RNAFusion",
+        "path": "DiagnosticReport.result",
+        "sliceName": "RNAFusion",
+        "short": "RNA-Fusion",
+        "definition": "Verweis auf RNA-Fusion",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:RNASeq",
+        "path": "DiagnosticReport.result",
+        "sliceName": "RNASeq",
+        "short": "RNASeq",
+        "definition": "Verweis auf RNASeq",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
