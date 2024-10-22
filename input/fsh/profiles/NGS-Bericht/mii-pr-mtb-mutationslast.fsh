@@ -6,3 +6,5 @@ Description: "Beschreibt die Gesamtzahl von in Krebszellen gefundenen Mutationen
 * insert PR_Header
 
 * interpretation MS
+
+// Labels der Datenfelder ggf. aktualisieren

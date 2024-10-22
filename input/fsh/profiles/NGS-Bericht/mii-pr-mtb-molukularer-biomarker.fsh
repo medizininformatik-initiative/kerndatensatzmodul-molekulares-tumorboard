@@ -17,6 +17,7 @@ Description: "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis v
 * category[labCategory].coding.code = #laboratory
 * category[labCategory].coding.system = $fhir-observation-category
 
+// TODO Fhir comment about missing category and component
 // mbCategory left out, since the code 'biomarker-category' does not yet exist in STU2.
 
 * category contains geCategory 1..1
