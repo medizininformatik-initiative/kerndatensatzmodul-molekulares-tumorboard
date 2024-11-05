@@ -9,6 +9,7 @@
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_CS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: CodeSystem-mii-cs-mtb-follow-up-grund-nicht-umsetzung.html
 [MII_CS_MTB_Follow_Up_Status]: CodeSystem-mii-cs-mtb-follow-up-status.html
+[MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_TherapieempfehlungEvidenzgrad]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad.html
 [MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
 [MII_CS_MTB_TherapieempfehlungStatusBegruendung]: CodeSystem-mii-cs-mtb-therapieempfehlung-status-begruendung.html
@@ -25,10 +26,17 @@
 [MII_PR_MTB_Antrag_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html
 [MII_PR_MTB_Antwort_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html
 [MII_PR_MTB_Biopsie_Auftrag]: StructureDefinition-mii-pr-mtb-biopsie-auftrag.html
+[MII_PR_MTB_BRCAness]: StructureDefinition-mii-pr-mtb-brcaness.html
 [MII_PR_MTB_Follow_Up_Procedure]: StructureDefinition-mii-pr-mtb-follow-up-procedure.html
 [MII_PR_MTB_Follow_Up_CarePlan]: StructureDefinition-mii-pr-mtb-follow-up-careplan.html
 [MII_PR_MTB_Histologie_Evaluation_Auftrag]: StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html
+[MII_PR_MTB_HRD_Score]: StructureDefinition-mii-pr-mtb-hrd-score.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
+[MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mmikrosatelliteninstabilitaet.html
+[MII_PR_MTB_Molekularer_Biomarker]: StructureDefinition-mii-pr-mtb-molekularer-biomarker.html
+[MII_PR_MTB_Mutationslast]: StructureDefinition-mii-pr-mtb-mutationslast.html
+[MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
+[MII_PR_MTB_NGS_Bericht1]: StructureDefinition-mii-pr-mtb-ngs-bericht1.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
@@ -44,6 +52,7 @@
 [MII_VS_MTB_BestimmungsmethodeTumorzellgehalt]: ValueSet-mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.html
 [MII_VS_MTB_Follow_Up_Status]: ValueSet-mii-vs-mtb-follow-up-status.html
+[MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemtherapie_Status]: ValueSet-mii-vs-mtb-systemtherapie-status.html
 [MII_VS_MTB_Therapieempfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad.html

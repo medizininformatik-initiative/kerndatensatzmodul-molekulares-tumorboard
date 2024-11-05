@@ -179,6 +179,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-molekulare-biomarker"
+        },
+        "name": "MII CS Molekulare Biomarker",
+        "description": "Codesystem, welches verschiedene Molekulare Biomarker enthält.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad"
         },
         "name": "MII CS Therapieempfehlung Evidenzgrad",
@@ -307,6 +315,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-brcaness"
+        },
+        "name": "MII PR MTB BRCAness",
+        "description": "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zeigt, welches BRCA1- oder BRCA2-Mutationen entspricht. Die BRCAness ist ein Indikator für die Wirksamkeit von PARP-Inhibitoren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-follow-up-procedure"
         },
         "name": "MII PR MTB Follow-Up",
@@ -331,10 +347,58 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-hrd-score"
+        },
+        "name": "MII PR MTB HRD Score",
+        "description": "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizienz bei Zellen beschreibt.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag"
         },
         "name": "MII PR MTB Human-genetische Beratung Auftrag",
         "description": "Auftrag zur (erneuten) Human-genetischen Beratung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-mmikrosatelliteninstabilitaet"
+        },
+        "name": "MII PR MTB Mikrosatelliteninstabilität",
+        "description": "Beschreibt die Neigung zu Mutationen aufgrund einer gestörten Fehlpaarungsreparatur (DNA mismatch repair, MMR).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-molekularer-biomarker"
+        },
+        "name": "MII PR MTB Molekularer Biomarker",
+        "description": "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis von https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-molecular-biomarker.html nachgebaut.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-mutationslast"
+        },
+        "name": "MII PR MTB Mutationslast",
+        "description": "Beschreibt die Gesamtzahl von in Krebszellen gefundenen Mutationen pro 1 Mio. Basen.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-ngs-bericht"
+        },
+        "name": "MII PR MTB NGS-Bericht",
+        "description": "NGS-Bericht zu einer Probe",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-ngs-bericht1"
+        },
+        "name": "MII PR MTB NGS-Bericht",
+        "description": "NGS-Bericht zu einer Probe",
         "exampleBoolean": false
       },
       {
@@ -455,6 +519,14 @@
         },
         "name": "MII VS Follow-Up Status",
         "description": "ValueSet zum Follow-Up Status",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-molekulare-biomarker"
+        },
+        "name": "MII VS Molekulare Biomarker",
+        "description": "ValueSet zum CS Molekulare Biomarker",
         "exampleBoolean": false
       },
       {
