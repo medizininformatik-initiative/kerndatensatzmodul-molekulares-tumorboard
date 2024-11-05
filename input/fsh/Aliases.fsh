@@ -57,3 +57,4 @@ Alias: $EDQM = http://standardterms.edqm.eu
 Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+Alias: $ENS = http://ensembl.org
