@@ -1,0 +1,87 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-einfache-variante",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Einfache_variante",
+  "title": "MII PR MTB Einfache Variante",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Beschreibt eine gefundene genetische Variante.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.meta",
+        "path": "Observation.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:gene-studied",
+        "path": "Observation.component",
+        "sliceName": "gene-studied",
+        "definition": "Gen auf dem sich die Variante befindet."
+      },
+      {
+        "id": "Observation.component:transcript-ref-seq",
+        "path": "Observation.component",
+        "sliceName": "transcript-ref-seq",
+        "short": "Transcript ID",
+        "definition": "Ensemble Transcript ID ('ENST...')."
+      },
+      {
+        "id": "Observation.component:transcript-ref-seq.value[x]",
+        "path": "Observation.component.value[x]",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://ensembl.org"
+        }
+      },
+      {
+        "id": "Observation.component:exact-start-end",
+        "path": "Observation.component",
+        "sliceName": "exact-start-end",
+        "short": "Position",
+        "definition": "Genaue Position der genetischen Variante."
+      },
+      {
+        "id": "Observation.component:exact-start-end.code",
+        "path": "Observation.component.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:exact-start-end.value[x]",
+        "path": "Observation.component.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:chromosome-identifier",
+        "path": "Observation.component",
+        "sliceName": "chromosome-identifier",
+        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
+      },
+      {
+        "id": "Observation.component:dna-region",
+        "path": "Observation.component",
+        "sliceName": "dna-region",
+        "short": "Exon",
+        "definition": "Menschenlesbarer Name des Exons als Text, typischeweise Exon #"
+      }
+    ]
+  }
+}
