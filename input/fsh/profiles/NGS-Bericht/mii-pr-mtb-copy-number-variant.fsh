@@ -5,3 +5,4 @@ Title: "MII PR MTB Copy Number Variant"
 Description: "Copy Number Variant (CNV)"
 * insert PR_Header
 
+* value[x] ^slicing.rules = #open

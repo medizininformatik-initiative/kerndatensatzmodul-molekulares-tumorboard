@@ -30,6 +30,19 @@
         "id": "Observation.meta",
         "path": "Observation.meta",
         "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
       }
     ]
   }
