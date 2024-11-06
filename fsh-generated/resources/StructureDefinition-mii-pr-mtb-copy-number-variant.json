@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-copy-number-variant",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Copy_Number_Variant",
+  "title": "MII PR MTB Copy Number Variant",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Copy Number Variant (CNV)",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.meta",
+        "path": "Observation.meta",
+        "mustSupport": true
+      }
+    ]
+  }
+}
