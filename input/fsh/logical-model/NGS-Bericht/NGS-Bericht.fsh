@@ -1,5 +1,5 @@
 RuleSet: NGSBericht
-* NGSBericht               0..*        BackboneElement     "NGS-Bericht"
+* NGSBericht                0..*        BackboneElement     "NGS-Bericht"
   * Erstellungsdatum        1..1        dateTime            "Erstellungsdatum"      "Erstellungsdatum für den NGS-Bericht"
   * Probe                   1..1        Reference           "Probe"                 "Referenz zur zugehörigen Probe"
   * insert Metadaten
@@ -16,7 +16,7 @@ RuleSet: NGSBericht
 
 RuleSet: NGSBerichtMapping
 * NGS-Bericht                                       ->          "DiagnosticReport" 
-  * Erstellungsdatum                                ->          "DiagnosticReport.effective[x].effectiveDateTime"
+  * Erstellungsdatum                                ->          "DiagnosticReport.issued"
   * Probe                                           ->          "DiagnosticReport.specimen"
   * insert MetadatenMapping                         
   * insert TumorMutationalBurdenMapping             

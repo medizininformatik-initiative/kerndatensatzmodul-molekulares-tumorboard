@@ -5,7 +5,7 @@ RuleSet: HRDScore
   * Metadaten                     0..*   code                 "Metadaten"
 
 RuleSet: HRDScoreMapping
-* HRDScore                          ->      ""
-  * Interpretation                  ->      ".interpretation"
-  * Wert                            ->      ".value"
+* HRDScore                          ->      "MII_PR_MTB_Molekularer_Biomarker"
+  * Interpretation                  ->      "MII_PR_MTB_Molekularer_Biomarker.interpretation"
+  * Wert                            ->      "MII_PR_MTB_Molekularer_Biomarker.value"
   * Metadaten                       ->      ""
