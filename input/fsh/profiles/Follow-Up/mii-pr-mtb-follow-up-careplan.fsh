@@ -19,4 +19,4 @@ Description: "Durchgefuehrte geplante Therapien"
 * supportingInfo 0..* MS
 * supportingInfo ^short = "Antraege zur Kostenuebernahme"
 * supportingInfo ^definition = "Referenz auf die zu den Therapien zugehörigen Antraege zur Kostenuebernahme"
-* supportingInfo only Reference(MII_PR_MTB_Antrag_Kostenuebernahme)
+* supportingInfo only Reference(MII_PR_MTB_Antrag_Kostenuebernahme) // nicht zwingend only

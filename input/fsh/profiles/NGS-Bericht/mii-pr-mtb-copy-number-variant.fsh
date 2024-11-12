@@ -7,6 +7,15 @@ Description: "Copy Number Variant (CNV)"
 
 * value[x] ^slicing.rules = #open
 
+
+* component contains
+    relative-copy-number 0..* MS and
+    cna 0..* MS and
+    cnb 0..* MS and
+    reported-focality 0..* MS and
+    cnv-type 0..* MS and
+    copy-number-neutral-loh 0..* MS
+`
 * component[chromosome-identifier] MS
 * component[chromosome-identifier] ^definition = "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
 
@@ -22,11 +31,11 @@ Description: "Copy Number Variant (CNV)"
 * component[copy-number] ^short = "Total Copy Number" 
 * component[copy-number] ^definition = "Total Copy Number"
 
-* component[realative-copy-number] MS
-* component[realative-copy-number].code MS
-* component[realative-copy-number].valueQuantity MS
-* component[realative-copy-number] ^short = "Relative Copy Number" 
-* component[realative-copy-number] ^definition = "Relative Copy Number"
+* component[relative-copy-number] MS
+* component[relative-copy-number].code MS
+* component[relative-copy-number].valueQuantity MS
+* component[relative-copy-number] ^short = "Relative Copy Number" 
+* component[relative-copy-number] ^definition = "Relative Copy Number"
 
 * component[cna] MS
 * component[cna].code MS
