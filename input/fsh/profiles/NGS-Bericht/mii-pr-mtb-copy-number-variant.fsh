@@ -7,7 +7,6 @@ Description: "Copy Number Variant (CNV)"
 
 * value[x] ^slicing.rules = #open
 
-
 * component contains
     relative-copy-number 0..* MS and
     cna 0..* MS and
@@ -15,14 +14,14 @@ Description: "Copy Number Variant (CNV)"
     reported-focality 0..* MS and
     cnv-type 0..* MS and
     copy-number-neutral-loh 0..* MS
-`
+
 * component[chromosome-identifier] MS
 * component[chromosome-identifier] ^definition = "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
 
 * component[exact-start-end] MS
 * component[exact-start-end].code MS
 * component[exact-start-end].valueRange MS
-* component[exact-start-end] ^short = "Positionsbereich" 
+* component[exact-start-end] ^short = "Positionsbereich"
 * component[exact-start-end] ^definition = "Positionsbereich der genetischen Variante."
 
 * component[copy-number] MS
@@ -62,10 +61,10 @@ Description: "Copy Number Variant (CNV)"
 * component[reported-focality] ^definition = "Reported focality"
 
 * component[cnv-type] MS
-* component[cnv-type].code MS
+* component[cnv-type].code = $bwhc-cnv-type
 * component[cnv-type].valueCodeableConcept MS //values: low gain, high gain, loss
 * component[cnv-type] ^short = "CNV Type" 
-* component[cnv-type] ^definition = "CNV Type"
+* component[cnv-type] ^definition = "Copy Number Variant Type"
 
 * component[copy-number-neutral-loh] MS
 * component[copy-number-neutral-loh].code MS

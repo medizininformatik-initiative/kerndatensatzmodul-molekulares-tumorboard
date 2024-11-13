@@ -1,4 +1,4 @@
-Profile: MII_PR_MTB_Einfache_variante
+Profile: MII_PR_MTB_Einfache_Variante
 Parent: MII_PR_MolGen_Variante
 Id: mii-pr-mtb-einfache-variante
 Title: "MII PR MTB Einfache Variante"

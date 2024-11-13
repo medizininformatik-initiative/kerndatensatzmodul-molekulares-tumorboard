@@ -282,7 +282,14 @@
       {
         "id": "Observation.component:cnv-type.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "low-level-gain",
+              "system": "http://bwhc.de/mtb/genetics-copy-number-variant/type"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:cnv-type.value[x]",
