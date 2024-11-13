@@ -61,7 +61,7 @@ Description: "Copy Number Variant (CNV)"
 * component[reported-focality] ^definition = "Reported focality"
 
 * component[cnv-type] MS
-* component[cnv-type].code = $bwhc-cnv-type
+* component[cnv-type].code = $bwhc-cnv-type#type
 * component[cnv-type].valueCodeableConcept MS //values: low gain, high gain, loss
 * component[cnv-type] ^short = "CNV Type" 
 * component[cnv-type] ^definition = "Copy Number Variant Type"

@@ -60,4 +60,4 @@ Alias: $UCUM = http://unitsofmeasure.org
 Alias: $ENS = http://ensembl.org
 
 // Sonstige Aliases
-Alias: $bwhc-cnv-type = http://bwhc.de/mtb/genetics-copy-number-variant/type
+Alias: $bwhc-cnv-type = http://bwhc.de/mtb/genetics-copy-number-variant

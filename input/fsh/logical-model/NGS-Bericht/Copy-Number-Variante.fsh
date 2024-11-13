@@ -1,8 +1,8 @@
 RuleSet: CopyNumberVariant
 * CopyNumberVariant               0..*   BackboneElement      "Einfache Variante"
   * Chromosom                     1..1   code                 "Chromosom"
-  * Start-Positionsbereich        1..1   integer              "Start-Positionsbereich"
-  * Ende-Positionsbereich         1..1   integer              "Ende-Positionsbereich"
+  * StartPositionsbereich         1..1   integer              "Start-Positionsbereich"
+  * EndePositionsbereich          1..1   integer              "Ende-Positionsbereich"
   * TotalCN                       1..1   integer              "Total CN"
   * RelativeCN                    1..1   string               "Relative CN"
   * CNA                           1..1   integer              "CNA"
@@ -15,8 +15,8 @@ RuleSet: CopyNumberVariant
 RuleSet: CopyNumberVariantMapping
 * CopyNumberVariant                 ->      "MII_PR_MolGen_Variante"
   * Chromosom                       ->      "MII_PR_MolGen_Variante.component[chromosome-identifier]"
-  * Start-Positionsbereich          ->      "MII_PR_MolGen_Variante.component[exact-start-end].low"
-  * Ende-Positionsbereich           ->      "MII_PR_MolGen_Variante.component[exact-start-end].high"
+  * StartPositionsbereich           ->      "MII_PR_MolGen_Variante.component[exact-start-end].low"
+  * EndePositionsbereich            ->      "MII_PR_MolGen_Variante.component[exact-start-end].high"
   * TotalCN                         ->      "MII_PR_MolGen_Variante.component[copy-number]"
   * RelativeCN                      ->      "MII_PR_MolGen_Variante.component[relative-copy-number]"
   * CNA                             ->      "MII_PR_MolGen_Variante.component[cna]"
