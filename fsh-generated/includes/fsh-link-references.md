@@ -34,7 +34,7 @@
 [MII_PR_MTB_Histologie_Evaluation_Auftrag]: StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html
 [MII_PR_MTB_HRD_Score]: StructureDefinition-mii-pr-mtb-hrd-score.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
-[MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mmikrosatelliteninstabilitaet.html
+[MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
 [MII_PR_MTB_Molekularer_Biomarker]: StructureDefinition-mii-pr-mtb-molekularer-biomarker.html
 [MII_PR_MTB_Mutationslast]: StructureDefinition-mii-pr-mtb-mutationslast.html
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
