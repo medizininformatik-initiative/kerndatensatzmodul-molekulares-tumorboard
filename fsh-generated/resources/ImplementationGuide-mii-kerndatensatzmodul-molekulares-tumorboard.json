@@ -38,38 +38,38 @@
   "dependsOn": [
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.biobank",
-      "version": "1.0.8",
+      "version": "2025.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.biobank/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.biobank",
       "id": "de_medizininformatikinitiative_kerndatensatz_biobank"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
-      "version": "2.0.0",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation-v2",
+      "version": "2025.0.0-alpha3",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.medikation/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.medikation",
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
-      "version": "1.0.3",
+      "version": "2025.0.0-alpha4",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.meta/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.meta",
       "id": "de_medizininformatikinitiative_kerndatensatz_meta"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
-      "version": "1.0.0",
-      "uri": "/guide/MedizininformatikInitiative-ModulMolekulargenetischerBefundberic?version=current",
+      "version": "2025.0.0-alpha1",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.molgen/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.molgen",
       "id": "de_medizininformatikinitiative_kerndatensatz_molgen"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2024.0.0-ballot-beta-1",
+      "version": "2025.0.0-alpha1",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.patho",
-      "version": "1.0.0",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ImplementationGuide/mii-ig-patho",
+      "version": "2025.0.0-alpha2",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.patho/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.patho",
       "id": "de_medizininformatikinitiative_kerndatensatz_patho"
     },
     {
@@ -80,8 +80,8 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
-      "version": "2024.0.0",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose-de-v2024",
+      "version": "2025.0.0-alpha1",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose-de-v2025",
       "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
     },
     {
@@ -331,6 +331,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-diagnostische-implikation"
+        },
+        "name": "MII PR MTB Diagnostische Implikation",
+        "description": "Beschreibt den Zusammenhang zwischen einem oder mehreren Genotyp/Haplotyp/Varianten und Beweisen für oder gegen eine bestimmte Krankheit.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-einfache-variante"
         },
         "name": "MII PR MTB Einfache Variante",
@@ -576,62 +584,6 @@
         "name": "MII VS Therapieempfehlung Status Begründung",
         "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
         "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medikation-dabrafenib"
-        },
-        "name": "mii-exa-mtb-medikation-dabrafenib",
-        "description": "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medikation-trametinib"
-        },
-        "name": "mii-exa-mtb-medikation-trametinib",
-        "description": "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Patient/mii-exa-mtb-patient"
-        },
-        "name": "mii-exa-mtb-patient",
-        "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-dabrafenib",
-        "description": "Therapieempfehlung für Dabrafenib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "RequestGroup/mii-exa-mtb-therapieempfehlung-kombinationstherapie"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-kombinationstherapie",
-        "description": "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-trametinib"
-        },
-        "name": "mii-exa-mtb-therapieempfehlung-trametinib",
-        "description": "Therapieempfehlung für Trametinib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie"
-        },
-        "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
-        "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
       }
     ],
     "page": {

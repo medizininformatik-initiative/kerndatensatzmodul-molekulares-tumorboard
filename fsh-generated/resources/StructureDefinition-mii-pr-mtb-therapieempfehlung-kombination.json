@@ -27,70 +27,8 @@
   "differential": {
     "element": [
       {
-        "id": "RequestGroup.meta",
-        "path": "RequestGroup.meta",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.extension",
-        "path": "RequestGroup.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "RequestGroup.extension:Prioritaet",
-        "path": "RequestGroup.extension",
-        "sliceName": "Prioritaet",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.extension:Evidenzgraduierung",
-        "path": "RequestGroup.extension",
-        "sliceName": "Evidenzgraduierung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.extension:Publikation",
-        "path": "RequestGroup.extension",
-        "sliceName": "Publikation",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
-            ]
-          }
-        ],
+        "id": "DomainResource.meta",
+        "path": "DomainResource.meta",
         "mustSupport": true
       },
       {

@@ -3,6 +3,8 @@ name: IG Publisher
 env:
   NODE_VERSION: 20
   DOTNET_VERSION: 8
+  FIRELY_TERMINAL_VERSION: 3.2.1
+  SUSHI_VERSION: 3.12.1
 
 defaults:
   run:
@@ -30,9 +32,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-
       - name: Install latest SUSHI
-        run: npm install -g fsh-sushi
+        run: npm install -g fsh-sushi@${{ env.SUSHI_VERSION }}
 
       - name: Install .NET SDK (for Firely Terminal)
         uses: actions/setup-dotnet@v4
@@ -40,7 +41,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Install latest Firely Terminal
-        run: dotnet tool install -g firely.terminal
+        run: dotnet tool install firely.terminal --global --allow-downgrade --version ${{ env.FIRELY_TERMINAL_VERSION }}
 
       - name: Get all FHIR packages
         run: fhir restore
@@ -51,7 +52,7 @@ jobs:
       - name: Build profiles
         uses: cybernop/build-fhir-ig@v1
         with:
-          sushi-version: "3.0.0-beta.2"
+          sushi-version: ${{ env.SUSHI_VERSION }}
 
       - name: Archive profile artifacts
         uses: actions/upload-artifact@v3

@@ -27,35 +27,9 @@
   "differential": {
     "element": [
       {
-        "id": "Observation.meta",
-        "path": "Observation.meta",
+        "id": "DomainResource.meta",
+        "path": "DomainResource.meta",
         "mustSupport": true
-      },
-      {
-        "id": "Observation.category:laboratory-category",
-        "path": "Observation.category",
-        "sliceName": "laboratory-category"
-      },
-      {
-        "id": "Observation.category:laboratory-category.coding",
-        "path": "Observation.category.coding",
-        "patternCoding": {
-          "code": "laboratory",
-          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
-        }
-      },
-      {
-        "id": "Observation.category:section-type",
-        "path": "Observation.category",
-        "sliceName": "section-type"
-      },
-      {
-        "id": "Observation.category:section-type.coding",
-        "path": "Observation.category.coding",
-        "patternCoding": {
-          "code": "77599-9",
-          "system": "http://loinc.org"
-        }
       },
       {
         "id": "Observation.code",
