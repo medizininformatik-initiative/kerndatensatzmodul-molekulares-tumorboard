@@ -5,7 +5,7 @@ RuleSet: TumorMutationalBurden
   * Metadaten               0..*   code                 "Metadaten"
 
 RuleSet: TumorMutationalBurdenMapping
-* TumorMutationalBurden     ->      "MII_PR_MolGen_Mutationslast"
-  * Interpretation          ->      "MII_PR_MolGen_Mutationslast.interpretation"
-  * Wert                    ->      "MII_PR_MolGen_Mutationslast.value"
-  * Metadaten               ->      "MII_PR_MolGen_Mutationslast.method"
+* TumorMutationalBurden     ->      "MII_PR_MTB_Mutationslast"
+  * Interpretation          ->      "MII_PR_MTB_Mutationslast.interpretation"
+  * Wert                    ->      "MII_PR_MTB_Mutationslast.value"
+  * Metadaten               ->      "MII_PR_MTB_Mutationslast.method"

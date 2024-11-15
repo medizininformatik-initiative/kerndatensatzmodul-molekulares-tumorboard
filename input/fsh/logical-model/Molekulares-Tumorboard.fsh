@@ -6,6 +6,7 @@ Description: "MII Logical Model Modul Molekulares Tumorboard"
 * insert LM_Header($mii-lm-mtb)
 * insert Behandlungsepisode
 * insert FollowUp
+* insert NGSBericht
 
 Mapping: MII_MAP_MTB
 Source: MII_LM_MTB
@@ -14,3 +15,4 @@ Title: "MII MAP Molekulares Tumorboard"
 Description: "MII Mappings Modul Molekulares Tumorboard"
 * insert BehandlungsepisodeMapping
 * insert FollowUpMapping
+* insert NGSBerichtMapping

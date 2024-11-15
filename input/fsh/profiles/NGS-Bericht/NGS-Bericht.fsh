@@ -1,45 +1,6 @@
 Profile: MII_PR_MTB_NGS_Bericht
-Parent: MII_PR_MolGen_MolekulargenetischerBefundbericht
-Id: mii-pr-mtb-ngs-bericht
-Title: "MII PR MTB NGS-Bericht"
-Description: "NGS-Bericht zu einer Probe"
-* insert PR_Header
-
-* issued MS
-* issued ^short = "Erstellungsdatum"
-
-* subject MS
-* subject only Reference(Patient)
-* subject ^short = "Referenz auf Patient"
-
-* specimen MS
-* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
-* specimen ^short = "Referenz auf Probe"
-
-// Wohin mit Metadaten, QC & Ploidie? - JG-IBSM
-
-* result[tumor-mutation-burden] MS
-* result[tumor-mutation-burden] ^short = "Tumor Mutational Burden"
-* result[tumor-mutation-burden] only Reference(MII_PR_MTB_Mutationslast or MII_PR_MolGen_Mutationslast)
-
-* result[microsatellite-instability] MS
-* result[microsatellite-instability] ^short = "Micro-Satellite Instabilities"
-
-* result[variant] 0..* MS
-* result[variant] ^short = "Varianten & Biomarker"
-
-// wo kommen RNA- und DNA-Fusion hin? Und wohin RNA Seq? 
-// gehören die auch zu Varianten und Biomarkern? - JG-IBSM
-
-
-// ---------------------------------------------------------------------------
-// Alternative:
-// NGS-Bericht ohne Erben von MII_PR_MolGen_MolekulargenetischerBefundbericht
-// ---------------------------------------------------------------------------
-
-Profile: MII_PR_MTB_NGS_Bericht1
 Parent: DiagnosticReport
-Id: mii-pr-mtb-ngs-bericht1
+Id: mii-pr-mtb-ngs-bericht
 Title: "MII PR MTB NGS-Bericht"
 Description: "NGS-Bericht zu einer Probe"
 * insert PR_Header

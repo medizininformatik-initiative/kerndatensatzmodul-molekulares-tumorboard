@@ -5,7 +5,7 @@ RuleSet: HRDScore
   * Metadaten                     0..*   code                 "Metadaten"
 
 RuleSet: HRDScoreMapping
-* HRDScore                          ->      ""
-  * Interpretation                  ->      ".interpretation"
-  * Wert                            ->      ".value"
+* HRDScore                          ->      "MII_PR_MTB_HRD_Score"
+  * Interpretation                  ->      "MII_PR_MTB_HRD_Score.interpretation"
+  * Wert                            ->      "MII_PR_MTB_HRD_Score.value"
   * Metadaten                       ->      ""

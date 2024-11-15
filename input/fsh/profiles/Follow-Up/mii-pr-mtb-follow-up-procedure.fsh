@@ -17,7 +17,7 @@ Description: "Follow-Up nach DNPM"
 * basedOn ^short = "Umgesetzte Therapien"
 * basedOn ^definition = "Gemäß der Therapieempfehlungen umgesetzte Therapien"
 
-* followUp 1..2 MS
+* followUp 1..* MS
 * followUp ^slicing.discriminator.type = #value
 * followUp ^slicing.discriminator.path = "system"
 * followUp ^slicing.rules = #open
