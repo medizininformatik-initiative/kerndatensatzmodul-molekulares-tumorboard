@@ -120,8 +120,8 @@ Description: "QC des NGS-Berichts"
 * value[x] 1..1 MS
 
 * valueReference
-* valueReference ^short = "Metadaten"
-* valueReference ^definition = "Metadaten des NGS-Berichts"
+* valueReference ^short = "QC"
+* valueReference ^definition = "QC des NGS-Berichts"
 // * valueReference only Reference(MII_PR_MTB_NGS_Bericht_Metadaten)
 
 
