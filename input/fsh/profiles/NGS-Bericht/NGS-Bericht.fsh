@@ -16,9 +16,6 @@ Description: "NGS-Bericht zu einer Probe"
 * specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
 * specimen ^short = "Referenz auf Probe"
 
-
-// Wohin mit Metadaten, QC & Ploidie? Extensions? - JG-IBSM
-
 * result ^slicing.discriminator.type = #type
 * result ^slicing.discriminator.path = "reference.reference"
 * result ^slicing.rules = #open
@@ -40,6 +37,12 @@ Description: "NGS-Bericht zu einer Probe"
 * result[MicroSatelliteInstabilities] 0..1 MS
 * result[MicroSatelliteInstabilities] only Reference(Observation) //MII_PR_MTB_Mikrosatelliteninstabilitaet or MII_PR_MolGen_Mikrosatelliteninstabilitaet
 // Problem s.o. 
+
+* result contains Ploidie 0..1 MS
+* result[Ploidie] ^short = "Ploidie"
+* result[Ploidie] ^definition = "Ploidie"
+* result[Ploidie] 0..1 MS
+* result[Ploidie] only Reference(Observation)
 
 * result contains HRDScore 0..1 MS
 * result[HRDScore] ^short = "HRD-Score"
@@ -82,4 +85,43 @@ Description: "NGS-Bericht zu einer Probe"
 * result[RNASeq] ^definition = "Verweis auf RNASeq"
 * result[RNASeq] 0..1 MS
 * result[RNASeq] only Reference(MII_PR_MolGen_Variante) // or MTB RNASeq Profile
+
+
+* extension contains MII_EX_MTB_NGS_Bericht_Metadaten named Metadaten 0..1 MS
+* extension[Metadaten] ^short = "Metadaten"
+
+* extension contains MII_EX_MTB_NGS_Bericht_QC named QC 0..1 MS
+* extension[Metadaten] ^short = "QC"
+
+Extension: MII_EX_MTB_NGS_Bericht_Metadaten
+Id: mii-ex-mtb-ngs-bericht-metadaten
+Context: DiagnosticReport
+Title: "MII EX MTB NGS Bericht Metadaten"
+Description: "Metadaten des NGS-Berichts"
+* insert EX_Header($mii-ex-mtb-ngs-bericht-metadaten)
+
+* value[x] only Reference
+* value[x] 1..1 MS
+
+* valueReference
+* valueReference ^short = "Metadaten"
+* valueReference ^definition = "Metadaten des NGS-Berichts"
+// * valueReference only Reference(MII_PR_MTB_NGS_Bericht_Metadaten)
+
+
+Extension: MII_EX_MTB_NGS_Bericht_QC
+Id: mii-ex-mtb-ngs-bericht-qc
+Context: DiagnosticReport
+Title: "MII EX MTB NGS Bericht QC"
+Description: "QC des NGS-Berichts"
+* insert EX_Header($mii-ex-mtb-ngs-bericht-qc)
+
+* value[x] only Reference
+* value[x] 1..1 MS
+
+* valueReference
+* valueReference ^short = "Metadaten"
+* valueReference ^definition = "Metadaten des NGS-Berichts"
+// * valueReference only Reference(MII_PR_MTB_NGS_Bericht_Metadaten)
+
 

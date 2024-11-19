@@ -93,7 +93,8 @@
         "sliceName": "Status",
         "short": "Follow-Up Status",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Procedure.followUp:Status.coding",
@@ -121,8 +122,11 @@
         "id": "Procedure.followUp:GrundNichtUmsetzung",
         "path": "Procedure.followUp",
         "sliceName": "GrundNichtUmsetzung",
+        "short": "Grund Nicht-Umsetzung",
+        "definition": "Grund der Nicht-Umsetzung des gesamten Therapieplans",
         "min": 0,
-        "max": "1"
+        "max": "*",
+        "mustSupport": true
       },
       {
         "id": "Procedure.followUp:GrundNichtUmsetzung.coding",

@@ -41,6 +41,8 @@ Alias: $mii-vs-mtb-molekulare-biomarker = https://www.medizininformatik-initiati
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung
+Alias: $mii-ex-mtb-ngs-bericht-metadaten = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-metadaten
+Alias: $mii-ex-mtb-ngs-bericht-qc = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-qc
 
 // Aliases für HL7 Terminologie
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type

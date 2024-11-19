@@ -16,6 +16,7 @@
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Diagnose]: StructureDefinition-mii-ex-mtb-diagnose.html
+[MII_EX_MTB_NGS_Bericht_Metadaten]: StructureDefinition-mii-ex-mtb-ngs-bericht-metadaten.html
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung.html
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation.html
 [MII_EX_MTB_Therapieempfehlung_Prioritaet]: StructureDefinition-mii-ex-mtb-therapieempfehlung-prioritaet.html
