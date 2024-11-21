@@ -1,6 +1,20 @@
 {
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-therapieempfehlung",
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/spdx-license",
+            "code": "CC-BY-4.0",
+            "display": "Creative Commons Attribution 4.0 International"
+          }
+        ]
+      }
+    }
+  ],
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
   "version": "2024.0.0-ballot",
   "name": "MII_PR_MTB_Therapieempfehlung",
@@ -75,20 +89,6 @@
         "mustSupport": true
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference",
-        "path": "MedicationRequest.medication[x]",
-        "sliceName": "medicationReference",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/Medication",
-              "http://hl7.org/fhir/StructureDefinition/Medication"
-            ]
-          }
-        ]
-      },
-      {
         "id": "MedicationRequest.supportingInformation",
         "path": "MedicationRequest.supportingInformation",
         "slicing": {
@@ -137,7 +137,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor",
               "http://hl7.org/fhir/StructureDefinition/Condition"
             ]
           }
