@@ -66,6 +66,29 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.component:chromosome-identifier",
+        "path": "Observation.component",
+        "sliceName": "chromosome-identifier",
+        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
+      },
+      {
+        "id": "Observation.component:copy-number",
+        "path": "Observation.component",
+        "sliceName": "copy-number",
+        "short": "Total Copy Number",
+        "definition": "Total Copy Number"
+      },
+      {
+        "id": "Observation.component:copy-number.code",
+        "path": "Observation.component.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:copy-number.value[x]",
+        "path": "Observation.component.value[x]",
+        "mustSupport": true
+      },
+      {
         "id": "Observation.component:relative-copy-number",
         "path": "Observation.component",
         "sliceName": "relative-copy-number",
@@ -322,29 +345,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:chromosome-identifier",
-        "path": "Observation.component",
-        "sliceName": "chromosome-identifier",
-        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
-      },
-      {
-        "id": "Observation.component:copy-number",
-        "path": "Observation.component",
-        "sliceName": "copy-number",
-        "short": "Total Copy Number",
-        "definition": "Total Copy Number"
-      },
-      {
-        "id": "Observation.component:copy-number.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:copy-number.value[x]",
-        "path": "Observation.component.value[x]",
         "mustSupport": true
       }
     ]
