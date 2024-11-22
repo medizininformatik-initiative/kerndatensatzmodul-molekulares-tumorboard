@@ -10,7 +10,7 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 * replaces only Reference(MII_PR_MTB_Therapieempfehlung_Kombination or MII_PR_MTB_Therapieempfehlung or RequestGroup or MedicationRequest)
 
 * intent MS
-* intent = #proposal
+//* intent = #proposal // wenn intent = option sein soll, kann das hier nicht gesetzt werden
 // priority left unconstrained. It has a different meaning than our priority extension and could make sense to keep here.
 
 * subject MS

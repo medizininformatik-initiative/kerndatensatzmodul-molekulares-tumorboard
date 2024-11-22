@@ -6,7 +6,7 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * insert PR_Header
 
 * medication[x] 1..1 MS
-* medicationReference only Reference(MII_PR_Medikation_Medication or Medication)
+* medicationReference only Reference(MII_PR_Medikation_Medication)
 
 * supportingInformation 0..* MS
 * supportingInformation ^slicing.discriminator.type = #type
@@ -23,6 +23,6 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * supportingInformation contains StuetzendeEntitaet 0..* MS
 * supportingInformation[StuetzendeEntitaet] ^short = "Stützende Entität"
 * supportingInformation[StuetzendeEntitaet] ^definition = "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht"
-* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose or Condition)
+* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose_Primaertumor or Condition)
 
 * insert Therapieempfehlung_Erweiterungen
