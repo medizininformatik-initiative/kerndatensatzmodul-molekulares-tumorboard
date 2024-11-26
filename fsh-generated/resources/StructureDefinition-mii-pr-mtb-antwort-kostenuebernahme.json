@@ -34,22 +34,14 @@
       {
         "id": "ClaimResponse.extension",
         "path": "ClaimResponse.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "min": 1
       },
       {
         "id": "ClaimResponse.extension:Antragsstadium",
         "path": "ClaimResponse.extension",
         "sliceName": "Antragsstadium",
+        "short": "Antragsstadium",
+        "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
         "min": 1,
         "max": "1",
         "type": [

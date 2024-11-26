@@ -31,10 +31,6 @@ Description: "Antrag Kostenübernahme"
 * insurance.coverage MS
 * insurance.coverage only Reference(Coverage)
 * insurance.claimResponse MS
-* extension contains MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
-// Antragsstadium über related
-//* extension[Antragsstadium] ^short = "Antragsstadium"
-//* extension[Antragsstadium] ^definition = "Stadium des Antrags auf Kostenuebernahme"
 
 * careTeam ^slicing.discriminator.type = #type
 * careTeam ^slicing.discriminator.path = "sequence"
@@ -54,3 +50,7 @@ Description: "Antrag Kostenübernahme"
 * careTeam[ZPMBeteiligung].responsible 1..1 MS
 * careTeam[ZPMBeteiligung].responsible ^short = "Beteiliung - Ja/Nein"
 * careTeam[ZPMBeteiligung].responsible ^definition = "Beteiliung des ZPM - Ja/Nein"
+
+* extension contains MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium named Antragsstadium 1..1 MS
+* extension[Antragsstadium] ^short = "Antragsstadium"
+* extension[Antragsstadium] ^definition = "Stadium des Antrags auf Kostenuebernahme"

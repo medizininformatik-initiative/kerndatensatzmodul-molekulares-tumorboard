@@ -20,8 +20,8 @@ RuleSet: EX_Meta(url)
 RuleSet: LM_Meta(url)
 * ^url = {url}
 
-RuleSet: CS_Citation(uri)
-* ^extension[http://hl7.org/fhir/StructureDefinition/codesystem-sourceReference].valueUri = "{uri}"
-
-RuleSet: VS_Citation(uri)
-* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-sourceReference].valueUri = "{uri}"
+//RuleSet: CS_Citation(uri)
+//* ^extension[http://hl7.org/fhir/StructureDefinition/codesystem-sourceReference].valueUri = "{uri}"
+//
+//RuleSet: VS_Citation(uri)
+//* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-sourceReference].valueUri = "{uri}"

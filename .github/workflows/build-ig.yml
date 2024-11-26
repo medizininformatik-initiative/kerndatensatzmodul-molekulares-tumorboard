@@ -3,6 +3,8 @@ name: IG Publisher
 env:
   NODE_VERSION: 20
   DOTNET_VERSION: 8
+  FIRELY_TERMINAL_VERSION: 3.3.2
+  SUSHI_VERSION: 3.12.1
 
 defaults:
   run:
@@ -30,9 +32,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-
       - name: Install latest SUSHI
-        run: npm install -g fsh-sushi
+        run: npm install -g fsh-sushi@${{ env.SUSHI_VERSION }}
 
       - name: Install .NET SDK (for Firely Terminal)
         uses: actions/setup-dotnet@v4
@@ -40,18 +41,24 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Install latest Firely Terminal
-        run: dotnet tool install -g firely.terminal
+        run: dotnet tool install firely.terminal -g --version ${{ env.FIRELY_TERMINAL_VERSION }}
+      
+      - name: Clean up local FHIR cache
+        run: rm -rf ${HOME}/.fhir
 
       - name: Get all FHIR packages
         run: fhir restore
 
       - name: Generate depended FHIR packages snapshots
-        run: fhir deps | tr ' ' '@' | xargs -I% fhir inflate --package % --snapshot --expand --force
+        run: fhir deps | grep -E '^[^hl7.fhir.r.*.core].*' | tr -s '[:blank:]' '@' | xargs -I % fhir inflate --package % --snapshot --expand --force
+
+      - name: Build FHIR profiles
+        run: sushi build --log-level debug
 
       - name: Build profiles
         uses: cybernop/build-fhir-ig@v1
         with:
-          sushi-version: "3.0.0-beta.2"
+          sushi-version: ${{ env.SUSHI_VERSION }}
 
       - name: Archive profile artifacts
         uses: actions/upload-artifact@v3

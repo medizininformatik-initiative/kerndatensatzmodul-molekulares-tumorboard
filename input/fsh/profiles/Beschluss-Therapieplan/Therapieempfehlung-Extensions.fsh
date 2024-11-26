@@ -6,7 +6,7 @@ Description: "Priorität der (einzelnen) Therapieempfehlung"
 * insert EX_Header($mii-ex-mtb-therapieempfehlung-prioritaet)
 
 * value[x] only positiveInt
-* value[x] 1..1 MS
+* valuePositiveInt 1..1 MS
 
 * value[x] ^short = "Priorität"
 * value[x] ^definition = "Priorität dieser Kombinationstherapie-Empfehlung"
@@ -105,7 +105,7 @@ Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) The
 //* valueIdentifier[DOI].value 1..1 MS
 
 RuleSet: Therapieempfehlung_Erweiterungen
-* extension contains 
+* extension contains
     MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS and
     MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung named Evidenzgraduierung 0..1 MS and
     MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation named Publikation 0..* MS
