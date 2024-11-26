@@ -27,8 +27,31 @@
   "differential": {
     "element": [
       {
-        "id": "DomainResource.meta",
-        "path": "DomainResource.meta",
+        "id": "ClaimResponse.meta",
+        "path": "ClaimResponse.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.extension",
+        "path": "ClaimResponse.extension",
+        "min": 1
+      },
+      {
+        "id": "ClaimResponse.extension:Antragsstadium",
+        "path": "ClaimResponse.extension",
+        "sliceName": "Antragsstadium",
+        "short": "Antragsstadium",
+        "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {

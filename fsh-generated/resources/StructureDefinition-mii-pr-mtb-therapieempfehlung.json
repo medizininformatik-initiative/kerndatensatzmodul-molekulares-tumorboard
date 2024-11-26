@@ -41,6 +41,54 @@
   "differential": {
     "element": [
       {
+        "id": "MedicationRequest.extension:Prioritaet",
+        "path": "MedicationRequest.extension",
+        "sliceName": "Prioritaet",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.extension:Evidenzgraduierung",
+        "path": "MedicationRequest.extension",
+        "sliceName": "Evidenzgraduierung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.extension:Publikation",
+        "path": "MedicationRequest.extension",
+        "sliceName": "Publikation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "MedicationRequest.supportingInformation",
         "path": "MedicationRequest.supportingInformation",
         "slicing": {

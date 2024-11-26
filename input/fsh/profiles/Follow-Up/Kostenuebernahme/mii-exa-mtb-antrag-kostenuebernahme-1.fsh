@@ -9,7 +9,7 @@ Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
 * provider = Reference(Organization/InstitutionID)
 * prescription = Reference(MedicationRequest/TherapieempfehlungExample)
 * insurance.coverage = Reference(Coverage/CoverageExample)
-//* extension[Antragsstadium].valueCodeableConcept = #initial-claim
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample)
 * careTeam[ZPMBeteiligung].responsible = true
 * careTeam[ZPMBeteiligung].sequence = 1
+* extension[Antragsstadium].valueCodeableConcept = #initial-claim
