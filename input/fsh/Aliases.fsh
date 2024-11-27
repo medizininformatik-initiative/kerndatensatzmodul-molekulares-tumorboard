@@ -24,6 +24,7 @@ Alias: $mii-cs-mtb-molekulare-biomarker = https://www.medizininformatik-initiati
 Alias: $mii-cs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad
 Alias: $mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 Alias: $mii-cs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-status-begruendung
+Alias: $mii-cs-mtb-who-grad-tumor-zns = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-who-grad-tumor-zns
 Alias: $mii-ex-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-ex-mtb-antwort-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium
 Alias: $mii-ex-mtb-diagnose = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose
@@ -41,6 +42,7 @@ Alias: $mii-vs-mtb-molekulare-biomarker = https://www.medizininformatik-initiati
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung
+Alias: $mii-vs-mtb-who-grad-tumor-zns = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns
 
 // Aliases für HL7 Terminologie
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type

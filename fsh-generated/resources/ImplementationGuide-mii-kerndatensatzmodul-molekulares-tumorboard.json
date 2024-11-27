@@ -43,6 +43,12 @@
       "id": "de_medizininformatikinitiative_kerndatensatz_biobank"
     },
     {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
+      "version": "2025.0.0-alpha4",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.fall/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.fall",
+      "id": "de_medizininformatikinitiative_kerndatensatz_fall"
+    },
+    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
       "version": "2025.0.0-alpha5",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.medikation/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.medikation",
@@ -71,6 +77,12 @@
       "version": "2025.0.0-alpha3",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.patho/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.patho",
       "id": "de_medizininformatikinitiative_kerndatensatz_patho"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.person",
+      "version": "2025.0.0-alpha4",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.person/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.person",
+      "id": "de_medizininformatikinitiative_kerndatensatz_person"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
@@ -211,6 +223,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-who-grad-tumor-zns"
+        },
+        "name": "MII CS WHO Grad Tumor ZNS",
+        "description": "Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
@@ -307,6 +327,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-behandlungsepisode"
+        },
+        "name": "MII PR MTB Behandlungsepisode",
+        "description": "Behandlungsepisode",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-biopsie-auftrag"
         },
         "name": "MII PR MTB Biopsie Auftrag",
@@ -327,6 +355,14 @@
         },
         "name": "MII PR MTB Copy Number Variant",
         "description": "Copy Number Variant (CNV)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-diagnose-primaertumor"
+        },
+        "name": "MII PR MTB Diagnose Primaertumor",
+        "description": "Diagnose zum Primaertumor",
         "exampleBoolean": false
       },
       {
@@ -483,6 +519,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
+        },
+        "name": "MII PR MTB WHO Grad Tumor ZNS",
+        "description": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund"
         },
         "name": "MII VS Ablehnung Kostenuebernahme Grund",
@@ -583,6 +627,14 @@
         },
         "name": "MII VS Therapieempfehlung Status Begründung",
         "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-who-grad-tumor-zns"
+        },
+        "name": "MII VS WHO Grad Tumor ZNS",
+        "description": "ValueSet zum Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
         "exampleBoolean": false
       },
       {

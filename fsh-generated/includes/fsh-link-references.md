@@ -13,6 +13,7 @@
 [MII_CS_MTB_TherapieempfehlungEvidenzgrad]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad.html
 [MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
 [MII_CS_MTB_TherapieempfehlungStatusBegruendung]: CodeSystem-mii-cs-mtb-therapieempfehlung-status-begruendung.html
+[MII_CS_MTB_WHO_Grad_Tumor_ZNS]: CodeSystem-mii-cs-mtb-who-grad-tumor-zns.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Diagnose]: StructureDefinition-mii-ex-mtb-diagnose.html
@@ -25,9 +26,11 @@
 [mii-ns-studie-eudract]: NamingSystem-mii-ns-studie-eudract.html
 [MII_PR_MTB_Antrag_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html
 [MII_PR_MTB_Antwort_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html
+[MII_PR_MTB_Behandlungsepisode]: StructureDefinition-mii-pr-mtb-behandlungsepisode.html
 [MII_PR_MTB_Biopsie_Auftrag]: StructureDefinition-mii-pr-mtb-biopsie-auftrag.html
 [MII_PR_MTB_BRCAness]: StructureDefinition-mii-pr-mtb-brcaness.html
 [MII_PR_MTB_Copy_Number_Variant]: StructureDefinition-mii-pr-mtb-copy-number-variant.html
+[MII_PR_MTB_Diagnose_Primaertumor]: StructureDefinition-mii-pr-mtb-diagnose-primaertumor.html
 [MII_PR_MTB_Diagnostische_Implikation]: StructureDefinition-mii-pr-mtb-diagnostische-implikation.html
 [MII_PR_MTB_Einfache_Variante]: StructureDefinition-mii-pr-mtb-einfache-variante.html
 [MII_PR_MTB_Follow_Up_Procedure]: StructureDefinition-mii-pr-mtb-follow-up-procedure.html
@@ -47,6 +50,7 @@
 [MII_PR_MTB_Therapieempfehlung]: StructureDefinition-mii-pr-mtb-therapieempfehlung.html
 [MII_PR_MTB_Therapieplan]: StructureDefinition-mii-pr-mtb-therapieplan.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
+[MII_PR_MTB_WHO_Grad_Tumor_ZNS]: StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Ablehnung_Kostenuebernahme_Grund]: ValueSet-mii-vs-mtb-ablehnung-kostenuebernahme-grund.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_VS_MTB_Antwort_Kostenuebernahme_Status]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-status.html
@@ -60,6 +64,7 @@
 [MII_VS_MTB_Therapieempfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad.html
 [MII_VS_MTB_Therapieempfehlung_EvidenzgradZusatzverweis]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
 [MII_VS_MTB_TherapieempfehlungStatusBegruendung]: ValueSet-mii-vs-mtb-therapieempfehlung-status-begruendung.html
+[MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
 [mii-exa-mtb-medikation-dabrafenib]: Medication-mii-exa-mtb-medikation-dabrafenib.html
 [mii-exa-mtb-medikation-trametinib]: Medication-mii-exa-mtb-medikation-trametinib.html
 [mii-exa-mtb-patient]: Patient-mii-exa-mtb-patient.html
