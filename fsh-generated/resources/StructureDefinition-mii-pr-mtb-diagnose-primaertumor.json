@@ -27,19 +27,36 @@
   "differential": {
     "element": [
       {
+        "id": "Condition.extension:LeitlinenbehandlungStatus",
+        "path": "Condition.extension",
+        "sliceName": "LeitlinenbehandlungStatus",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Condition.stage",
         "path": "Condition.stage",
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "type"
+              "type": "pattern",
+              "path": "type.coding"
             }
           ],
           "rules": "open",
           "description": "Slice fuer Stage/Grad",
           "ordered": false
         },
+        "min": 2,
         "mustSupport": true
       },
       {
@@ -54,6 +71,7 @@
         "id": "Condition.stage:ECOG.assessment",
         "path": "Condition.stage.assessment",
         "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "Reference",
@@ -71,14 +89,14 @@
         "mustSupport": true
       },
       {
-        "id": "Condition.stage:ECOG.type.coding.system",
-        "path": "Condition.stage.type.coding.system",
-        "patternUri": "http://snomed.info/sct"
-      },
-      {
-        "id": "Condition.stage:ECOG.type.coding.code",
-        "path": "Condition.stage.type.coding.code",
-        "patternCode": "423740007"
+        "id": "Condition.stage:ECOG.type.coding",
+        "path": "Condition.stage.type.coding",
+        "min": 1,
+        "patternCoding": {
+          "code": "423740007",
+          "system": "http://snomed.info/sct",
+          "display": "ECOG performance status"
+        }
       },
       {
         "id": "Condition.stage:WHOGradZNS",
@@ -92,6 +110,7 @@
         "id": "Condition.stage:WHOGradZNS.assessment",
         "path": "Condition.stage.assessment",
         "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "Reference",
@@ -109,14 +128,92 @@
         "mustSupport": true
       },
       {
-        "id": "Condition.stage:WHOGradZNS.type.coding.system",
-        "path": "Condition.stage.type.coding.system",
-        "patternUri": "http://snomed.info/sct"
+        "id": "Condition.stage:WHOGradZNS.type.coding",
+        "path": "Condition.stage.type.coding",
+        "min": 1,
+        "patternCoding": {
+          "code": "396920006",
+          "system": "http://snomed.info/sct",
+          "display": "WHO grade for central nervous system tumour"
+        }
       },
       {
-        "id": "Condition.stage:WHOGradZNS.type.coding.code",
-        "path": "Condition.stage.type.coding.code",
-        "patternCode": "396920006"
+        "id": "Condition.stage:ErstdiagnoseZeitpunkt",
+        "path": "Condition.stage",
+        "sliceName": "ErstdiagnoseZeitpunkt",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:ErstdiagnoseZeitpunkt.assessment",
+        "path": "Condition.stage.assessment",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:ErstdiagnoseZeitpunkt.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:ErstdiagnoseZeitpunkt.type.coding",
+        "path": "Condition.stage.type.coding",
+        "min": 1,
+        "patternCoding": {
+          "code": "473302008",
+          "system": "http://snomed.info/sct",
+          "display": "Aware of diagnosis"
+        }
+      },
+      {
+        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt",
+        "path": "Condition.stage",
+        "sliceName": "MolekularesTumorBoardZeitpunkt",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt.assessment",
+        "path": "Condition.stage.assessment",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt.type.coding",
+        "path": "Condition.stage.type.coding",
+        "min": 1,
+        "patternCoding": {
+          "code": "93771000119109",
+          "system": "http://snomed.info/sct",
+          "display": "Diagnosis deferred"
+        }
       }
     ]
   }

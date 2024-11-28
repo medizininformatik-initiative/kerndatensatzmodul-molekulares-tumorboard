@@ -31,6 +31,6 @@ Description: "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen 
 * valueCodeableConcept.coding ^slicing.description = "Slice fuer Codesystem"
 * valueCodeableConcept.coding ^slicing.ordered = false
 
-* valueCodeableConcept.coding contains SCT 0..1 MS
-* valueCodeableConcept.coding.system = $SCT
-* valueCodeableConcept.coding.code from MII_VS_MTB_WHO_Grad_Tumor_ZNS
+* valueCodeableConcept.coding contains SCT 1..1 MS
+* valueCodeableConcept.coding[SCT].system = $SCT
+* valueCodeableConcept.coding[SCT].code from MII_VS_MTB_WHO_Grad_Tumor_ZNS

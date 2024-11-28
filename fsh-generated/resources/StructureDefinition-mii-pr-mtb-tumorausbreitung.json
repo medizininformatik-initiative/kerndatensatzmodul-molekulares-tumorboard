@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-pr-mtb-who-grad-tumor-zns",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns",
+  "id": "mii-pr-mtb-tumorausbreitung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung",
   "version": "2024.0.0-ballot",
-  "name": "MII_PR_MTB_WHO_Grad_Tumor_ZNS",
-  "title": "MII PR MTB WHO Grad Tumor ZNS",
+  "name": "MII_PR_MTB_Tumorausbreitung",
+  "title": "MII PR MTB Tumorausbreitung",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
   "contact": [
@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
+  "description": "Anganbe zur Tumorausbreitung",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -32,6 +32,55 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding",
+        "path": "Observation.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice fuer Coding",
+          "ordered": false
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:ErstdiagnoseZeitpunkt",
+        "path": "Observation.category.coding",
+        "sliceName": "ErstdiagnoseZeitpunkt",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "473302008",
+          "system": "http://snomed.info/sct",
+          "display": "Aware of diagnosis"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:MolekularesTumorBoardZeitpunkt",
+        "path": "Observation.category.coding",
+        "sliceName": "MolekularesTumorBoardZeitpunkt",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "93771000119109",
+          "system": "http://snomed.info/sct",
+          "display": "Diagnosis deferred"
+        },
+        "mustSupport": true
+      },
+      {
         "id": "Observation.code",
         "path": "Observation.code",
         "mustSupport": true
@@ -41,9 +90,9 @@
         "path": "Observation.code.coding",
         "min": 1,
         "patternCoding": {
-          "code": "396921005",
+          "code": "371508000",
           "system": "http://snomed.info/sct",
-          "display": "WHO grade finding for central nervous system tumor"
+          "display": "Tumor stage"
         },
         "mustSupport": true
       },
@@ -71,6 +120,17 @@
             "targetProfile": [
               "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
             ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
           }
         ],
         "mustSupport": true
@@ -117,24 +177,24 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x].coding:SCT",
+        "id": "Observation.value[x].coding:Tumorausbreitung",
         "path": "Observation.value[x].coding",
-        "sliceName": "SCT",
+        "sliceName": "Tumorausbreitung",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x].coding:SCT.system",
+        "id": "Observation.value[x].coding:Tumorausbreitung.system",
         "path": "Observation.value[x].coding.system",
-        "patternUri": "http://snomed.info/sct"
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-tumorausbreitung"
       },
       {
-        "id": "Observation.value[x].coding:SCT.code",
+        "id": "Observation.value[x].coding:Tumorausbreitung.code",
         "path": "Observation.value[x].coding.code",
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-tumorausbreitung"
         }
       }
     ]
