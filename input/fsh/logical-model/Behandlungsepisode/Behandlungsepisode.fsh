@@ -8,6 +8,7 @@ RuleSet: Behandlungsepisode
   * insert ECOG
   * insert Probe
   * insert BeschlussTherapieplan
+  * insert NGSBericht
 
 RuleSet: BehandlungsepisodeMapping
 * Behandlungsepisode          -> "EpisodeOfCare"
@@ -20,3 +21,4 @@ RuleSet: BehandlungsepisodeMapping
   * insert ECOGMapping
   * insert ProbeMapping
   * insert BeschlussTherapieplanMapping
+  * insert NGSBerichtMapping
