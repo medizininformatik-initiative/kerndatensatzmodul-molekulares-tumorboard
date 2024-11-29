@@ -15,8 +15,52 @@
   "differential": {
     "element": [
       {
-        "id": "Procedure",
-        "path": "Procedure"
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:method-type",
+        "path": "Procedure.extension",
+        "sliceName": "method-type",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:method-type.value[x]",
+        "path": "Procedure.extension.value[x]",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-genomic-analysis-method-type"
+        }
+      },
+      {
+        "id": "Procedure.extension:genome-build",
+        "path": "Procedure.extension",
+        "sliceName": "genome-build",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:focus",
+        "path": "Procedure.extension",
+        "sliceName": "focus",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:specimen",
+        "path": "Procedure.extension",
+        "sliceName": "specimen",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:device",
+        "path": "Procedure.extension",
+        "sliceName": "device",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "mustSupport": true
       }
     ]
   }

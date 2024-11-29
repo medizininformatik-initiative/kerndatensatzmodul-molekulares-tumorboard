@@ -3,7 +3,7 @@ InstanceOf: MII_PR_MTB_Genomic_Study
 Usage: #example
 Title: "Beispiel fuer einen GenomicStudy"
 
-* extension[genomic-study-analysis][+].valueReference = Reference(MII_EXA_MTB-GenomicStudyAnalysis-1)
+* extension[genomic-study-analysis][+].valueReference = Reference(MII-EXA-MTB-GenomicStudyAnalysis-1)
 * status = #completed
 * subject = Reference(Patient/example)
 * reasonReference = Reference(Condition/Primary_Tumor)
@@ -23,7 +23,6 @@ Title: "Beispiel fuer einen GenomicStudyAnalysis"
 * extension[device][=].extension[function].valueCodeableConcept = MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction#sequencing-kit
 * extension[device][+].extension[device].valueReference = Reference(MII-EXA-MTB-Device-LibraryPreparation-Kit-1)
 * extension[device][=].extension[function].valueCodeableConcept = MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction#library-preparation-kit
-
 * extension[genome-build].valueCodeableConcept =  $LNC#LA26806-2 "GRCh38"
 
 Instance: MII-EXA-MTB-Device-Sequencer-1

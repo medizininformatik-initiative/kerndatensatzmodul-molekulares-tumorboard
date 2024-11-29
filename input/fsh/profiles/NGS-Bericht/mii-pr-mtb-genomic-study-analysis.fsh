@@ -3,6 +3,16 @@ Parent: GenomicStudyAnalysis
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
 Description: "A genomic study analysis is a component of a genomic study."
+
+* extension MS
+* extension[method-type] MS
+* extension[method-type].valueCodeableConcept from MII_VS_MTB_Genomic_Analysis_Method_Type
+* extension[genome-build] MS
+* extension[focus] MS
+* extension[specimen] MS
+* extension[device] MS
+* status MS
+
 /* * extension contains GenomicStudyAnalysisMethodType named method-type 0..*
     and GenomicStudyAnalysisChangeType named change-type 0..*
     and GenomicStudyAnalysisGenomeBuild named genome-build 0..1
