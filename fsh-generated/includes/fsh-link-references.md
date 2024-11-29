@@ -15,6 +15,7 @@
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_CS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: CodeSystem-mii-cs-mtb-follow-up-grund-nicht-umsetzung.html
 [MII_CS_MTB_Follow_Up_Status]: CodeSystem-mii-cs-mtb-follow-up-status.html
+[MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction]: CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_TherapieempfehlungEvidenzgrad]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad.html
 [MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
