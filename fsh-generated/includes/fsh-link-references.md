@@ -4,9 +4,9 @@
 [MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1]: Procedure-MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1.html
 [MII-EXA-MTB-GenomicStudy-1]: Procedure-MII-EXA-MTB-GenomicStudy-1.html
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
-[MII-EXA-MTB-Device-Sequencer-1]: DeviceDefinition-MII-EXA-MTB-Device-Sequencer-1.html
-[MII-EXA-MTB-Device-SequencingKit-1]: DeviceDefinition-MII-EXA-MTB-Device-SequencingKit-1.html
-[MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: DeviceDefinition-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
+[MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
+[MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
+[MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
 [MII_CS_MTB_Ablehnung_Kostenuebernahme_Grund]: CodeSystem-mii-cs-mtb-ablehnung-kostenuebernahme-grund.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
