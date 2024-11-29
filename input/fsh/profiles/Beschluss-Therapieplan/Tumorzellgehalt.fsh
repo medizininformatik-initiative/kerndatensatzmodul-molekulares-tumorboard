@@ -6,8 +6,8 @@ Description: "Bestimmter Tumorzellgehalt"
 * insert PR_Header
 
 // TODO: Zuordnung "Additional documentation" prüfen
-* category[laboratory-category].coding = $fhir-observation-category#laboratory
-* category[section-type].coding = $LNC#77599-9
+//* category[laboratory-category].coding = $fhir-observation-category#laboratory
+//* category[section-type].coding = $LNC#77599-9
 
 // TODO: Zuordnung prüfen (Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method)
 * code = $LNC#93356-4

@@ -3,7 +3,7 @@ Id: mii-cs-mtb-therapieempfehlung-evidenzgrad
 Title: "MII CS Therapieempfehlung Evidenzgrad"
 Description: "Evidenzgrad einer Therapieempfehlung"
 * insert CS_Header($mii-cs-mtb-therapieempfehlung-evidenzgrad)
-* insert CS_Citation(doi:10.1002/ijc.32358)
+//* insert CS_Citation(doi:10.1002/ijc.32358)
 
 * #m1A         "m1A"     "In der gleichen Tumorentität wurde der prädiktive Wert des Biomarkers oder die klinische Wirksamkeit in einer Biomarker-stratifizierten Kohorte einer adäquat gepowerten prospektiven Studie oder Metaanalyse gezeigt."
 * #m1A ^designation.language = #en
@@ -46,7 +46,7 @@ Id: mii-vs-mtb-therapieempfehlung-evidenzgrad
 Title: "MII VS Therapieempfehlung Evidenzgrad"
 Description: "ValueSet für den Evidenzgrad einer Therapieempfehlung"
 * insert VS_Header($mii-vs-mtb-therapieempfehlung-evidenzgrad)
-* insert VS_Citation(doi:10.1002/ijc.32358)
+//* insert VS_Citation(doi:10.1002/ijc.32358)
 * include codes from system MII_CS_MTB_TherapieempfehlungEvidenzgrad
 
 CodeSystem: MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis
@@ -54,7 +54,7 @@ Id: mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 Title: "MII CS Therapieempfehlung Evidenzgrad Zusatzverweis"
 Description: "Zusatzverweis zum Evidenzgrad einer Therapieempfehlung"
 * insert CS_Header($mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis)
-* insert CS_Citation(doi:10.1002/ijc.32358)
+//* insert CS_Citation(doi:10.1002/ijc.32358)
 
 * #is  "is" "In situ-Daten aus Untersuchungen an Patientenmaterial (z.B. IHC, FISH) unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern zusätzlich angegeben werden, z.B. Evidenzgrad 3 is (IHC)."
 * #is ^designation.language = #en
@@ -77,5 +77,5 @@ Id: mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
 Title: "MII VS Therapieempfehlung Evidenzgrad Zusatzverweis"
 Description: "ValueSet für den Zusatzverweis zum Evidenzgrad einer Therapieempfehlung"
 * insert VS_Header($mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis)
-* insert VS_Citation(doi:10.1002/ijc.32358)
+//* insert VS_Citation(doi:10.1002/ijc.32358)
 * include codes from system MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis
