@@ -1,0 +1,66 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-therapielinie",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapielinie",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Therapielinie",
+  "title": "MII EX MTB Therapielinie",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Therapielinie",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Procedure",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Therapielinie",
+        "definition": "Therapielinie"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapielinie"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Therapielinie",
+        "definition": "Therapielinie 0 bis 9",
+        "min": 1,
+        "type": [
+          {
+            "code": "unsignedInt"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

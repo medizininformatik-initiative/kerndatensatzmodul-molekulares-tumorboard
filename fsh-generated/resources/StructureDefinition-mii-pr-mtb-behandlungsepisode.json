@@ -32,6 +32,22 @@
         "mustSupport": true
       },
       {
+        "id": "EpisodeOfCare.extension:MedizinischerGrund",
+        "path": "EpisodeOfCare.extension",
+        "sliceName": "MedizinischerGrund",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-medizinischer-grund"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "EpisodeOfCare.identifier",
         "path": "EpisodeOfCare.identifier",
         "min": 1,

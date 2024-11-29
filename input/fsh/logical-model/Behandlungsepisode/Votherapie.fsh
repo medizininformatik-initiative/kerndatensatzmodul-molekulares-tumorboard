@@ -1,11 +1,12 @@
 RuleSet: Vortherapie
 * Vortherapie            1..*      BackboneElement     "Vortherapie"
   * Diagnose             0..*      Reference           "Verweis auf Diagnose"   "Verweis auf i.d.R. die Anmeldediagnose, in seltenen Fällen weitere Diagnosen"
+  // TODO:
   * Zulassungsstatus     0..1      code                "Zulassungsstatus"       "Zulassungsstatus der Vortherapie"
-  * Therapielinie        0..1      positiveInt         "Therapielinie"          "Therapielinie der Vortherapie (0 bis 9)"
+  * Therapielinie        0..1      unsignedInt         "Therapielinie"          "Therapielinie der Vortherapie (0 bis 9)"
   * Startdatum           0..1      dateTime            "Startdatum"             "Startdatum der Vortherapie"
   * Enddatum             0..1      dateTime            "Enddatum"               "Enddatum der Vortherapie"
-  * Wirkstoffe           0..*      code                "Wirkstoffe"             "Wirkstoffe der systemischen Leitlinientherapie"
+  * Wirkstoffe           0..*       code                "Wirkstoffe"             "Wirkstoffe der systemischen Leitlinientherapie"
   * Abbruchsgrund        0..1      code                "Abbruchsgrund"          "Gibt den Grund an, warum die Systemtherapie beendet wurde"
   * Kategorie            0..1      code                "Kategorie"              "Kategorie der Leitlinientherapie (Prozedur)"
 
@@ -17,5 +18,5 @@ RuleSet: VortherapieMapping
   * Startdatum        -> "Procedure.performedPeriod.start"
   * Enddatum          -> "Procedure.performedPeriod.end"
   * Wirkstoffe        -> "MedicationStatement.medicationCodeableConcept"
-  * Abbruchsgrund     -> "MedicationStatement.statusReason"
+  * Abbruchsgrund     -> "Procedure.statusReason"
   * Kategorie         -> "Procedure.category"

@@ -85,6 +85,12 @@
       "id": "de_medizininformatikinitiative_kerndatensatz_person"
     },
     {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.prozedur",
+      "version": "2025.0.0-alpha2",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.prozedur/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.prozedur",
+      "id": "de_medizininformatikinitiative_kerndatensatz_prozedur"
+    },
+    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
       "version": "1.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.studie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.studie",
@@ -132,6 +138,14 @@
         },
         "name": "Beispiel fuer einen Follow-Up Procedure",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-procedure"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-abbruchsgrund"
+        },
+        "name": "MII CS Abbruchsgrund",
+        "description": "Angabe zum Abbruchsgrund",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -279,6 +293,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-medizinischer-grund"
+        },
+        "name": "MII EX MTB Medizinischer Grund",
+        "description": "Medizinscher Grund, der während der Behandlungsepisode adressiert wird oder wurde",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
         },
         "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
@@ -299,6 +321,22 @@
         },
         "name": "MII EX MTB Therapieempfehlung Priorität",
         "description": "Priorität der (einzelnen) Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-therapielinie"
+        },
+        "name": "MII EX MTB Therapielinie",
+        "description": "Therapielinie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-zulassungsstatus"
+        },
+        "name": "MII EX MTB Zulassungsstatus",
+        "description": "Zulassungsstatus der Leitlinientherapie",
         "exampleBoolean": false
       },
       {
@@ -551,10 +589,26 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-vortherapie"
+        },
+        "name": "MII PR MTB Vortherapie",
+        "description": "Vortherapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
         },
         "name": "MII PR MTB WHO Grad Tumor ZNS",
         "description": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-abbruchsgrund"
+        },
+        "name": "MII VS Abbruchsgrund",
+        "description": "ValueSet zum Abbruchsgrund",
         "exampleBoolean": false
       },
       {

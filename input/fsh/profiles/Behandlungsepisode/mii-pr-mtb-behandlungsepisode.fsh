@@ -20,3 +20,6 @@ Description: "Behandlungsepisode"
 * diagnosis 1..* MS
 * diagnosis.condition 1..1 MS
 * diagnosis.condition only Reference(MII_PR_MTB_Diagnose_Primaertumor)
+
+// Medical reasons addressed during the episode of care
+* extension contains MII_EX_MTB_Medizinischer_Grund named MedizinischerGrund 0..* MS
