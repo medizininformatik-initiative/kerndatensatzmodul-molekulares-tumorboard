@@ -123,6 +123,49 @@
       },
       {
         "reference": {
+          "reference": "Procedure/MII-EXA-MTB-GenomicStudy-1"
+        },
+        "name": "Beispiel fuer einen GenomicStudy",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/MII-EXA-MTB-GenomicStudyAnalysis-1"
+        },
+        "name": "Beispiel fuer einen GenomicStudyAnalysis",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+      },
+      {
+        "reference": {
+          "reference": "DeviceDefinition/MII-EXA-MTB-Device-Sequencer-1"
+        },
+        "name": "Beispiel fuer einen Sequencer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "DeviceDefinition/MII-EXA-MTB-Device-SequencingKit-1"
+        },
+        "name": "Cool",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "DeviceDefinition/MII-EXA-MTB-Device-LibraryPreparation-Kit-1"
+        },
+        "name": "ExampleDefinition",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/genomic-study-analysis"
+        },
+        "name": "Genomic Study Analysis",
+        "description": "A genomic study analysis is a component of a genomic study.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-ablehnung-kostenuebernahme-grund"
         },
         "name": "MII CS Ablehnung Kostenuebernahme Grund",
@@ -375,6 +418,14 @@
         },
         "name": "MII PR MTB Follow-Up Careplan",
         "description": "Durchgefuehrte geplante Therapien",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-genomic-study"
+        },
+        "name": "MII PR MTB Genomic Study",
+        "description": "Genomic Study beinhaltet und verweist über GenomicStudyAnalysis auf Details zu den einzelnen Untersuchungen einer NGS-Untersuchung (Sequenzierung, Variant Calling, CNV-Analyse, Fusions-Analysen etc.)",
         "exampleBoolean": false
       },
       {

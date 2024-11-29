@@ -1,0 +1,23 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "genomic-study-analysis",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis",
+  "name": "MII_PR_MTB_Genomic_Study_Analysis",
+  "title": "Genomic Study Analysis",
+  "status": "draft",
+  "description": "A genomic study analysis is a component of a genomic study.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure"
+      }
+    ]
+  }
+}
