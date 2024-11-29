@@ -7,8 +7,6 @@ RuleSet: Behandlungsepisode
   * insert Vortherapie
   * insert ECOG
   * insert Probe
-  //* insert MolekularPathologieBefund
-  //* insert NextGenerationSequencingBericht
   * insert BeschlussTherapieplan
 
 RuleSet: BehandlungsepisodeMapping
@@ -18,7 +16,7 @@ RuleSet: BehandlungsepisodeMapping
   * KrankengeschichteFamilie  -> "EpisodeOfCare.extension(KrankengeschichteFamilie)"
   * insert EinwilligungMapping
   * insert DiagnoseMapping
-  //* insert VortherapieMapping
-  //* insert ECOGMapping
+  * insert VortherapieMapping
+  * insert ECOGMapping
   * insert ProbeMapping
   * insert BeschlussTherapieplanMapping
