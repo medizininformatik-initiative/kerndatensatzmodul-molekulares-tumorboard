@@ -28,15 +28,22 @@ Description: "Beschreibt eine gefundene genetische Variante."
 * component[exact-start-end] ^definition = "Genaue Position der genetischen Variante."
 
 * component[ref-allele] MS
+* component[ref-allele] ^definition = "Referenzsequenz am Ort der genetischen Variante."
 
 * component[alt-allele] MS
+* component[alt-allele] ^definition = "Veränderte Sequenz."
 
 * component[coding-hgvs] MS
+* component[coding-hgvs] ^definition = "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf DNA-Baseneben."
 
 * component[protein-hgvs] MS
+* component[protein-hgvs] ^definition = "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf Aminosäuren-Ebene."
 
 * component[allelic-read-depth] MS
+* component[allelic-read-depth] ^definition = "Lesetiefe am Ort der Variante."
 
 * component[sample-allelic-frequency] MS
+* component[sample-allelic-frequency] ^definition = "Relative Häufigkeit des Allels am Ort der Variante."
 
 * component[variation-code] MS
+* component[variation-code] ^definition = "Code der Variante in einer öffentlichen Datenbank (z.B. ClinVar)."
