@@ -29,6 +29,7 @@ Usage: #example
 Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
 // Erforderliche Angaben
 * status = #active
+// * intent = #proposal im Onko wird Plan gesetzt
 * category = $mii-cs-onko-therapieplanung-typ#postth
 * subject = Reference(mii-exa-mtb-patient)
 * created = "2024-08-09"
@@ -44,7 +45,7 @@ Usage: #example
 Description: "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
 // Erforderliche Angaben
 * status = #active
-* intent = #proposal
+* intent = #proposal 
 // Optional: Referenz Patient
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Kombinationstherapie

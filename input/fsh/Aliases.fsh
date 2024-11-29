@@ -11,6 +11,10 @@ Alias: $mii-pr-onko-specimen = https://www.medizininformatik-initiative.de/fhir/
 // Aliases für Profile des MII Medikation-Moduls
 Alias: $mii-pr-medikation-medication-request = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest
 
+// Aliases für Profile des MII MolGen-Moduls
+Alias: $mii-pr-molgen-diagnostische-implikation = https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/diagnostische-implikation
+
+
 // Aliases für Profile des MII MTB-Moduls
 Alias: $mii-lm-mtb = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb
 Alias: $mii-cs-mtb-abbruchsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-abbruchsgrund
@@ -33,6 +37,8 @@ Alias: $mii-ex-mtb-antwort-kostenuebernahme-antragsstadium = https://www.medizin
 Alias: $mii-ex-mtb-diagnose = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose
 Alias: $mii-ex-mtb-einwilligung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-einwilligung
 Alias: $mii-ex-mtb-medizinischer-grund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-medizinischer-grund
+Alias: $mii-ex-mtb-ngs-bericht-metadaten = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-metadaten
+Alias: $mii-ex-mtb-ngs-bericht-qc = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-qc
 Alias: $mii-ex-mtb-therapielinie = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapielinie
 Alias: $mii-ex-mtb-therapieempfehlung-evidenzgraduierung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung
 Alias: $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation

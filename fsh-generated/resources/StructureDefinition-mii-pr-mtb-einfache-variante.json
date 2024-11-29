@@ -38,6 +38,12 @@
         "definition": "Gen auf dem sich die Variante befindet."
       },
       {
+        "id": "Observation.component:coding-hgvs",
+        "path": "Observation.component",
+        "sliceName": "coding-hgvs",
+        "definition": "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf DNA-Baseneben."
+      },
+      {
         "id": "Observation.component:transcript-ref-seq",
         "path": "Observation.component",
         "sliceName": "transcript-ref-seq",
@@ -70,10 +76,46 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.component:ref-allele",
+        "path": "Observation.component",
+        "sliceName": "ref-allele",
+        "definition": "Referenzsequenz am Ort der genetischen Variante."
+      },
+      {
+        "id": "Observation.component:alt-allele",
+        "path": "Observation.component",
+        "sliceName": "alt-allele",
+        "definition": "Veränderte Sequenz."
+      },
+      {
+        "id": "Observation.component:sample-allelic-frequency",
+        "path": "Observation.component",
+        "sliceName": "sample-allelic-frequency",
+        "definition": "Relative Häufigkeit des Allels am Ort der Variante."
+      },
+      {
+        "id": "Observation.component:allelic-read-depth",
+        "path": "Observation.component",
+        "sliceName": "allelic-read-depth",
+        "definition": "Lesetiefe am Ort der Variante."
+      },
+      {
+        "id": "Observation.component:variation-code",
+        "path": "Observation.component",
+        "sliceName": "variation-code",
+        "definition": "Code der Variante in einer öffentlichen Datenbank (z.B. ClinVar)."
+      },
+      {
         "id": "Observation.component:chromosome-identifier",
         "path": "Observation.component",
         "sliceName": "chromosome-identifier",
         "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
+      },
+      {
+        "id": "Observation.component:protein-hgvs",
+        "path": "Observation.component",
+        "sliceName": "protein-hgvs",
+        "definition": "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf Aminosäuren-Ebene."
       },
       {
         "id": "Observation.component:dna-region",
