@@ -14,5 +14,5 @@ Description: "Medizinscher Grund, der während der Behandlungsepisode adressiert
 * valueReference ^slicing.description = "Slice fuer referenzierten Typ"
 * valueReference ^slicing.ordered = false
 
-* valueReference contains Prozedur 0..1 MS
+* valueReference contains Prozedur 1..1 MS
 * valueReference[Prozedur].type = #Procedure

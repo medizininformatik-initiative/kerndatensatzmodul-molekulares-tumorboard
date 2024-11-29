@@ -43,6 +43,18 @@
       "id": "de_medizininformatikinitiative_kerndatensatz_biobank"
     },
     {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.consent",
+      "version": "1.0.7",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.consent/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.consent",
+      "id": "de_medizininformatikinitiative_kerndatensatz_consent"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
+      "version": "2025.0.0-alpha3",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
+      "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
+    },
+    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
       "version": "2025.0.0-alpha4",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.fall/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.fall",
@@ -95,12 +107,6 @@
       "version": "1.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.studie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.studie",
       "id": "de_medizininformatikinitiative_kerndatensatz_studie"
-    },
-    {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
-      "version": "2025.0.0-alpha3",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
-      "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
     },
     {
       "packageId": "hl7.fhir.uv.genomics-reporting",
@@ -281,6 +287,14 @@
         },
         "name": "MII EX MTB Diagnose",
         "description": "Onkologische Diagnose",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-einwilligung"
+        },
+        "name": "MII EX MTB Einwilligung",
+        "description": "Einwilligung zur Besprechung im Molekularen Tumorboard",
         "exampleBoolean": false
       },
       {

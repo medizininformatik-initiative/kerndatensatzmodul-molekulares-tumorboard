@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-ex-mtb-medizinischer-grund",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-medizinischer-grund",
+  "id": "mii-ex-mtb-einwilligung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-einwilligung",
   "version": "2024.0.0-ballot",
-  "name": "MII_EX_MTB_Medizinischer_Grund",
-  "title": "MII EX MTB Medizinischer Grund",
+  "name": "MII_EX_MTB_Einwilligung",
+  "title": "MII EX MTB Einwilligung",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
   "contact": [
@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Medizinscher Grund, der während der Behandlungsepisode adressiert wird oder wurde",
+  "description": "Einwilligung zur Besprechung im Molekularen Tumorboard",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
@@ -35,8 +35,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "MII EX MTB Medizinischer Grund",
-        "definition": "Medizinscher Grund, der während der Behandlungsepisode adressiert wird oder wurde"
+        "short": "MII EX MTB Einwilligung",
+        "definition": "Einwilligung zur Besprechung im Molekularen Tumorboard"
       },
       {
         "id": "Extension.extension",
@@ -46,7 +46,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-medizinischer-grund"
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-einwilligung"
       },
       {
         "id": "Extension.value[x]",
@@ -75,9 +75,9 @@
         "mustSupport": true
       },
       {
-        "id": "Extension.value[x]:Prozedur",
+        "id": "Extension.value[x]:Einwilligung",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "Einwilligung",
         "min": 0,
         "max": "1",
         "type": [
@@ -114,9 +114,9 @@
         ]
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur",
+        "id": "Extension.value[x]:valueReference:Einwilligung",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "Einwilligung",
         "min": 1,
         "max": "1",
         "type": [
@@ -126,15 +126,15 @@
         ]
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur.type",
+        "id": "Extension.value[x]:valueReference:Einwilligung.type",
         "path": "Extension.value[x].type",
         "min": 1,
-        "patternUri": "Procedure"
+        "patternUri": "Consent"
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur",
+        "id": "Extension.value[x]:valueReference:Einwilligung",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "Einwilligung",
         "min": 0,
         "max": "1",
         "type": [
@@ -145,9 +145,9 @@
         "mustSupport": true
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur",
+        "id": "Extension.value[x]:valueReference:Einwilligung",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "Einwilligung",
         "min": 0,
         "max": "1",
         "type": [

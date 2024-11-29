@@ -5,14 +5,14 @@ Title: "MII PR MTB Behandlungsepisode"
 Description: "Behandlungsepisode"
 * insert PR_Header
 
-// Epsiode of Care Business Identifier
+// Epsiode of care business identifier
 * identifier 1..* MS
 
-// Patient from Module Person
+// Patient from module Person
 * patient 1..1 MS 
 * patient only Reference(MII_PR_Person_Patient or MII_PR_Person_PatientPseudonymisiert)
 
-// Registration Date Molecular Tumor Board
+// Registration date Molecular Tumor Board
 * period 1..1 MS
 * period.start 1..1 MS
 
@@ -23,3 +23,6 @@ Description: "Behandlungsepisode"
 
 // Medical reasons addressed during the episode of care
 * extension contains MII_EX_MTB_Medizinischer_Grund named MedizinischerGrund 0..* MS
+
+// Patient consent for discussion in Molecular Tumor Board
+* extension contains MII_EX_MTB_Einwilligung named Einwilligung 0..1 MS
