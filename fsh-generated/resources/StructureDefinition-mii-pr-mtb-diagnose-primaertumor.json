@@ -4,7 +4,7 @@
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor",
   "version": "2024.0.0-ballot",
   "name": "MII_PR_MTB_Diagnose_Primaertumor",
-  "title": "MII PR MTB Diagnose Primaertumor",
+  "title": "MII PR MTB Diagnose Primärtumor",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
   "contact": [
@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Diagnose zum Primaertumor",
+  "description": "Diagnose zum Primärtumor",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -53,7 +53,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice fuer Stage/Grad",
+          "description": "Slice für Stage/Grad",
           "ordered": false
         },
         "min": 2,
@@ -63,6 +63,8 @@
         "id": "Condition.stage:ECOG",
         "path": "Condition.stage",
         "sliceName": "ECOG",
+        "short": "ECOG Performanz-Status",
+        "definition": "Allgemeiner Leistungszustand gemäß ECOG Performanz-Status",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -102,6 +104,8 @@
         "id": "Condition.stage:WHOGradZNS",
         "path": "Condition.stage",
         "sliceName": "WHOGradZNS",
+        "short": "WHO Grad Tumor ZNS",
+        "definition": "Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -141,6 +145,8 @@
         "id": "Condition.stage:ErstdiagnoseZeitpunkt",
         "path": "Condition.stage",
         "sliceName": "ErstdiagnoseZeitpunkt",
+        "short": "Tumorausbreitung Erstdiagnose",
+        "definition": "Tumorausbreitung zum Zeitpunkt der Erstdiagnose",
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -177,15 +183,17 @@
         }
       },
       {
-        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt",
+        "id": "Condition.stage:MolekularesTumorboardZeitpunkt",
         "path": "Condition.stage",
-        "sliceName": "MolekularesTumorBoardZeitpunkt",
+        "sliceName": "MolekularesTumorboardZeitpunkt",
+        "short": "Tumorausbreitung Molekulares Tumorboard",
+        "definition": "Tumorausbreitung zum Zeitpunkt des Molekularen Tumorboard",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt.assessment",
+        "id": "Condition.stage:MolekularesTumorboardZeitpunkt.assessment",
         "path": "Condition.stage.assessment",
         "min": 1,
         "max": "1",
@@ -200,13 +208,13 @@
         "mustSupport": true
       },
       {
-        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt.type",
+        "id": "Condition.stage:MolekularesTumorboardZeitpunkt.type",
         "path": "Condition.stage.type",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "Condition.stage:MolekularesTumorBoardZeitpunkt.type.coding",
+        "id": "Condition.stage:MolekularesTumorboardZeitpunkt.type.coding",
         "path": "Condition.stage.type.coding",
         "min": 1,
         "patternCoding": {

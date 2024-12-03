@@ -9,6 +9,8 @@ Description: "Status der Behandlung nach Leitlinie"
 * value[x] only CodeableConcept
 
 * valueCodeableConcept.coding 1..1 MS
-* valueCodeableConcept.coding.system = $mii-cs-mtb-leitlinienbehandlung-status
 * valueCodeableConcept.coding.code 1..1 MS
+* valueCodeableConcept.coding.system = $mii-cs-mtb-leitlinienbehandlung-status
 * valueCodeableConcept.coding.code from MII_VS_MTB_Leitlinienbehandlung_Status
+* valueCodeableConcept.coding ^short = "Leitlinienbehandlungsstatus"
+* valueCodeableConcept.coding ^definition = "Status der Behandlung nach Leitline"

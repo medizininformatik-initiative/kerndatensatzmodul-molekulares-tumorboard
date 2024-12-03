@@ -11,8 +11,10 @@ Description: "Medizinscher Grund, der während der Behandlungsepisode adressiert
 * valueReference ^slicing.discriminator.type = #pattern
 * valueReference ^slicing.discriminator.path = "type"
 * valueReference ^slicing.rules = #open
-* valueReference ^slicing.description = "Slice fuer referenzierten Typ"
+* valueReference ^slicing.description = "Slice für adressierte Prozedur"
 * valueReference ^slicing.ordered = false
 
-* valueReference contains Prozedur 1..1 MS
-* valueReference[Prozedur].type = #Procedure
+* valueReference contains AdressierteProzedur 1..1 MS
+* valueReference[AdressierteProzedur].type = #Procedure
+* valueReference[AdressierteProzedur] ^short = "Adressierte Prozedur"
+* valueReference[AdressierteProzedur] ^definition = "Während der Behandlungsepisode adressierte Prozedur"

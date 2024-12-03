@@ -63,7 +63,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice fuer referenzierten Typ",
+          "description": "Slice für adressierte Prozedur",
           "ordered": false
         },
         "min": 1,
@@ -75,9 +75,9 @@
         "mustSupport": true
       },
       {
-        "id": "Extension.value[x]:Prozedur",
+        "id": "Extension.value[x]:AdressierteProzedur",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "AdressierteProzedur",
         "min": 0,
         "max": "1",
         "type": [
@@ -102,7 +102,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice fuer referenzierten Typ",
+          "description": "Slice für adressierte Prozedur",
           "ordered": false
         },
         "min": 1,
@@ -114,9 +114,9 @@
         ]
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur",
+        "id": "Extension.value[x]:valueReference:AdressierteProzedur",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "AdressierteProzedur",
         "min": 1,
         "max": "1",
         "type": [
@@ -126,15 +126,15 @@
         ]
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur.type",
+        "id": "Extension.value[x]:valueReference:AdressierteProzedur.type",
         "path": "Extension.value[x].type",
         "min": 1,
         "patternUri": "Procedure"
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur",
+        "id": "Extension.value[x]:valueReference:AdressierteProzedur",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "AdressierteProzedur",
         "min": 0,
         "max": "1",
         "type": [
@@ -145,9 +145,35 @@
         "mustSupport": true
       },
       {
-        "id": "Extension.value[x]:valueReference:Prozedur",
+        "id": "Extension.value[x]:valueReference:AdressierteProzedur",
         "path": "Extension.value[x]",
-        "sliceName": "Prozedur",
+        "sliceName": "AdressierteProzedur",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:AdressierteProzedur",
+        "path": "Extension.value[x]",
+        "sliceName": "AdressierteProzedur",
+        "short": "Adressierte Prozedur",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:AdressierteProzedur",
+        "path": "Extension.value[x]",
+        "sliceName": "AdressierteProzedur",
+        "definition": "Während der Behandlungsepisode adressierte Prozedur",
         "min": 0,
         "max": "1",
         "type": [

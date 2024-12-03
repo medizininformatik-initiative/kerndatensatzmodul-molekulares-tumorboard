@@ -35,6 +35,7 @@
         "id": "EpisodeOfCare.extension:MedizinischerGrund",
         "path": "EpisodeOfCare.extension",
         "sliceName": "MedizinischerGrund",
+        "short": "Vortherapien zur Behandlungsepisode",
         "min": 0,
         "max": "*",
         "type": [
@@ -51,6 +52,8 @@
         "id": "EpisodeOfCare.extension:Einwilligung",
         "path": "EpisodeOfCare.extension",
         "sliceName": "Einwilligung",
+        "short": "Einwilligung",
+        "definition": "Einwilligung zum Molekularen Tumorboard",
         "min": 0,
         "max": "1",
         "type": [
@@ -72,6 +75,8 @@
       {
         "id": "EpisodeOfCare.diagnosis",
         "path": "EpisodeOfCare.diagnosis",
+        "short": "Diagnose Primärtumor",
+        "definition": "Referenz auf Diagnose des Primärtumors",
         "min": 1,
         "mustSupport": true
       },
@@ -105,6 +110,8 @@
       {
         "id": "EpisodeOfCare.period",
         "path": "EpisodeOfCare.period",
+        "short": "Anmeldedatum",
+        "definition": "Anmeldedatum zum Molekularen Tumorboard",
         "min": 1,
         "mustSupport": true
       },

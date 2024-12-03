@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Einwilligung zur Besprechung im Molekularen Tumorboard",
+  "description": "Einwilligung zur Besprechung des Falls",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
@@ -36,7 +36,7 @@
         "id": "Extension",
         "path": "Extension",
         "short": "MII EX MTB Einwilligung",
-        "definition": "Einwilligung zur Besprechung im Molekularen Tumorboard"
+        "definition": "Einwilligung zur Besprechung des Falls"
       },
       {
         "id": "Extension.extension",
@@ -63,7 +63,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice fuer referenzierten Typ",
+          "description": "Slice für Einwilligung",
           "ordered": false
         },
         "min": 1,
@@ -102,7 +102,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice fuer referenzierten Typ",
+          "description": "Slice für Einwilligung",
           "ordered": false
         },
         "min": 1,
@@ -148,6 +148,32 @@
         "id": "Extension.value[x]:valueReference:Einwilligung",
         "path": "Extension.value[x]",
         "sliceName": "Einwilligung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Einwilligung",
+        "path": "Extension.value[x]",
+        "sliceName": "Einwilligung",
+        "short": "Einwilligung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Einwilligung",
+        "path": "Extension.value[x]",
+        "sliceName": "Einwilligung",
+        "definition": "Einwilligung zur Besprechung des Falls",
         "min": 0,
         "max": "1",
         "type": [

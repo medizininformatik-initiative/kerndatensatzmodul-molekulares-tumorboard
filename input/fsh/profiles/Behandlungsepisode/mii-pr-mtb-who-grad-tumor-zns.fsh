@@ -17,6 +17,8 @@ Description: "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen 
 // Encounter from Module Fall
 * encounter 0..1 MS
 * encounter only Reference(MII_PR_Fall_KontaktGesundheitseinrichtung)
+* encounter ^short = "Gesundheitseinrichtungskontakt"
+* encounter ^definition = "Kontakt zur Gesundheitseinrichtung"
 
 // Grade from WHO Classification
 * value[x] 1..1 MS
@@ -28,9 +30,11 @@ Description: "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen 
 * valueCodeableConcept.coding ^slicing.discriminator.type = #value
 * valueCodeableConcept.coding ^slicing.discriminator.path = "system"
 * valueCodeableConcept.coding ^slicing.rules = #open
-* valueCodeableConcept.coding ^slicing.description = "Slice fuer Codesystem"
+* valueCodeableConcept.coding ^slicing.description = "Slice für Klassifikation des Tumors"
 * valueCodeableConcept.coding ^slicing.ordered = false
 
 * valueCodeableConcept.coding contains SCT 1..1 MS
+* valueCodeableConcept.coding[SCT] ^short = "WHO-Klassifikation gemäß SNOMED CT"
+* valueCodeableConcept.coding[SCT] ^definition = "Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems gemäß SNOMED CT"
 * valueCodeableConcept.coding[SCT].system = $SCT
 * valueCodeableConcept.coding[SCT].code from MII_VS_MTB_WHO_Grad_Tumor_ZNS

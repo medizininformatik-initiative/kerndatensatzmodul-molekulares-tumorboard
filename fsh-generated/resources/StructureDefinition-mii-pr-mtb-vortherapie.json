@@ -27,22 +27,6 @@
   "differential": {
     "element": [
       {
-        "id": "Procedure.extension:LeitlinenbehandlungStatus",
-        "path": "Procedure.extension",
-        "sliceName": "LeitlinenbehandlungStatus",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
         "id": "Procedure.extension:Therapielinie",
         "path": "Procedure.extension",
         "sliceName": "Therapielinie",
@@ -90,7 +74,7 @@
             }
           ],
           "rules": "open",
-          "description": "",
+          "description": "Slice für Abbruchsgrund",
           "ordered": false
         },
         "min": 1,
@@ -100,6 +84,8 @@
         "id": "Procedure.statusReason.coding:Abbruchsgrund",
         "path": "Procedure.statusReason.coding",
         "sliceName": "Abbruchsgrund",
+        "short": "Abbruchsgrund",
+        "definition": "Angabe zum Abbruchsgrund",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -136,6 +122,7 @@
         "id": "Procedure.performed[x]:performedPeriod",
         "path": "Procedure.performed[x]",
         "sliceName": "performedPeriod",
+        "definition": "Zeitraum der Durchführung der Vortherapie",
         "type": [
           {
             "code": "Period"
@@ -145,16 +132,22 @@
       {
         "id": "Procedure.performed[x]:performedPeriod.start",
         "path": "Procedure.performed[x].start",
+        "short": "Startdatum",
+        "definition": "Startdatum der Vortherapie",
         "mustSupport": true
       },
       {
         "id": "Procedure.performed[x]:performedPeriod.end",
         "path": "Procedure.performed[x].end",
+        "short": "Enddatum",
+        "definition": "Enddatum der Vortherapie",
         "mustSupport": true
       },
       {
         "id": "Procedure.reasonReference",
         "path": "Procedure.reasonReference",
+        "short": "Primärdiagnose",
+        "definition": "Primärdiagnose zum Zeitpunkt der Anmeldung",
         "type": [
           {
             "code": "Reference",
