@@ -17,6 +17,7 @@
 [MII_CS_MTB_TherapieempfehlungStatusBegruendung]: CodeSystem-mii-cs-mtb-therapieempfehlung-status-begruendung.html
 [MII_CS_MTB_Tumorausbreitung]: CodeSystem-mii-cs-mtb-tumorausbreitung.html
 [MII_CS_MTB_WHO_Grad_Tumor_ZNS]: CodeSystem-mii-cs-mtb-who-grad-tumor-zns.html
+[MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Diagnose]: StructureDefinition-mii-ex-mtb-diagnose.html
@@ -80,6 +81,7 @@
 [MII_VS_MTB_TherapieempfehlungStatusBegruendung]: ValueSet-mii-vs-mtb-therapieempfehlung-status-begruendung.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
+[MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html
 [mii-exa-mtb-medikation-dabrafenib]: Medication-mii-exa-mtb-medikation-dabrafenib.html
 [mii-exa-mtb-medikation-trametinib]: Medication-mii-exa-mtb-medikation-trametinib.html
 [mii-exa-mtb-patient]: Patient-mii-exa-mtb-patient.html
