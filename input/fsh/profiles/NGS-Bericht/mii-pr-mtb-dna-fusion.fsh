@@ -22,7 +22,7 @@ Description: "DNA-Fusion"
 * component[five-prime-chromosome].valueCodeableConcept MS
 
 * component[three-prime-chromosome] MS
-* component[three-prime-chromosome] ^short = "5' Domain - Chromosom"
+* component[three-prime-chromosome] ^short = "3' Domain - Chromosom"
 * component[three-prime-chromosome].code MS
 * component[three-prime-chromosome].valueCodeableConcept MS
 
@@ -37,12 +37,12 @@ Description: "DNA-Fusion"
 * component[three-prime-position].valueRange
 
 * component[five-prime-gene] MS
-* component[five-prime-gene] ^short = "3' Domain - Gen"
+* component[five-prime-gene] ^short = "5' Domain - Gen"
 * component[five-prime-gene].code MS
 * component[five-prime-gene].valueCodeableConcept
 
 * component[three-prime-gene] MS
-* component[three-prime-gene] ^short = "5' Domain - Gen"
+* component[three-prime-gene] ^short = "3' Domain - Gen"
 * component[three-prime-gene].code MS
 * component[three-prime-gene].valueCodeableConcept MS
 
