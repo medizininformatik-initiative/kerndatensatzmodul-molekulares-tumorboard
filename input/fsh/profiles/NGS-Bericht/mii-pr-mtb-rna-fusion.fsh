@@ -34,7 +34,7 @@ Description: "RNA-Fusion"
 
 * component[allelic-read-depth] MS
 * component[allelic-read-depth].code MS
-* component[allelic-read-depth].valueCodeableConcept MS
+* component[allelic-read-depth].valueQuantity MS
 * component[allelic-read-depth] ^short = "Number reported reads" 
 
 * component[five-prime-gene] MS
