@@ -19,12 +19,12 @@ Description: "DNA-Fusion"
 * component[five-prime-chromosome] MS
 * component[five-prime-chromosome] ^short = "5' Domain - Chromosom"
 * component[five-prime-chromosome].code MS
-* component[five-prime-chromosome].valueInteger MS
+* component[five-prime-chromosome].valueCodeableConcept MS
 
 * component[three-prime-chromosome] MS
 * component[three-prime-chromosome] ^short = "5' Domain - Chromosom"
 * component[three-prime-chromosome].code MS
-* component[three-prime-chromosome].valueInteger MS
+* component[three-prime-chromosome].valueCodeableConcept MS
 
 * component[five-prime-position] MS
 * component[five-prime-position] ^short = "5' Domain - Position"
