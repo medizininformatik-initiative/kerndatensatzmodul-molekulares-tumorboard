@@ -20,7 +20,7 @@ Description: "RNA-Fusion"
     three-prime-transcript-id 1..1 MS and
     three-prime-exon-id 1..1 MS and
     three-prime-position 1..1 MS and
-    three-prime-strand 1..1 MS and
+    three-prime-strand 1..1 MS
 
 * component[effect] MS
 * component[effect].code MS

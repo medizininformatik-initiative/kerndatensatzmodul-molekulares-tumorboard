@@ -52,6 +52,7 @@
 [MII_PR_MTB_Mutationslast]: StructureDefinition-mii-pr-mtb-mutationslast.html
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
+[MII_PR_MTB_RNA_FUSION]: StructureDefinition-mii-pr-mtb-rna-fusion.html
 [MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
