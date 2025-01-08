@@ -39,7 +39,7 @@
 [MII_PR_MTB_BRCAness]: StructureDefinition-mii-pr-mtb-brcaness.html
 [MII_PR_MTB_Copy_Number_Variant]: StructureDefinition-mii-pr-mtb-copy-number-variant.html
 [MII_PR_MTB_Diagnostische_Implikation]: StructureDefinition-mii-pr-mtb-diagnostische-implikation.html
-[MII_PR_MTB_DNA_FUSION]: StructureDefinition-mii-pr-mtb-dna-fusion.html
+[MII_PR_MTB_DNA_Fusion]: StructureDefinition-mii-pr-mtb-dna-fusion.html
 [MII_PR_MTB_Einfache_Variante]: StructureDefinition-mii-pr-mtb-einfache-variante.html
 [MII_PR_MTB_Follow_Up_Procedure]: StructureDefinition-mii-pr-mtb-follow-up-procedure.html
 [MII_PR_MTB_Follow_Up_CarePlan]: StructureDefinition-mii-pr-mtb-follow-up-careplan.html
@@ -52,7 +52,7 @@
 [MII_PR_MTB_Mutationslast]: StructureDefinition-mii-pr-mtb-mutationslast.html
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
-[MII_PR_MTB_RNA_FUSION]: StructureDefinition-mii-pr-mtb-rna-fusion.html
+[MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
 [MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html

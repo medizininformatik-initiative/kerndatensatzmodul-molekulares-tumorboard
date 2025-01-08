@@ -1,7 +1,7 @@
 RuleSet: RNAFusion
 * RNAFusion                            0..*   BackboneElement        "RNA Fusion"
-  * FiveFusionPartner                  0..1   Reference              "5' Fusion Partner" // hier insert RNA Fusion PArtners?
-  * ThreeFusionPartner                 0..1   Reference              "3' Fusion Partner"
+  * FivePrimeFusionPartner                  0..1   Reference              "5' Fusion Partner" // hier insert RNA Fusion PArtners?
+  * ThreePrimeFusionPartner                 0..1   Reference              "3' Fusion Partner"
   * Effect                             0..1   string                 "Effect"
   * COSMICID                           0..1   string                 "COSMIC ID"
   * NumberReportedReads                0..1   integer                "Number Reported Reads"
