@@ -1,4 +1,4 @@
-Profile: MII_PR_MTB_RNA_FUSION
+Profile: MII_PR_MTB_RNA_Fusion
 Parent: MII_PR_MolGen_Variante
 Id: mii-pr-mtb-rna-fusion
 Title: "MII PR MTB RNA Fusion"

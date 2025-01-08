@@ -1,4 +1,4 @@
-Profile: MII_PR_MTB_DNA_FUSION
+Profile: MII_PR_MTB_DNA_Fusion
 Parent: MII_PR_MolGen_Variante
 Id: mii-pr-mtb-dna-fusion
 Title: "MII PR MTB DNA Fusion"
