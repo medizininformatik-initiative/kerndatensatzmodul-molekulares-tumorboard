@@ -123,6 +123,49 @@
       },
       {
         "reference": {
+          "reference": "Procedure/MII-EXA-MTB-GenomicStudy-1"
+        },
+        "name": "Beispiel fuer einen GenomicStudy",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/MII-EXA-MTB-GenomicStudyAnalysis-1"
+        },
+        "name": "Beispiel fuer einen GenomicStudyAnalysis",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+      },
+      {
+        "reference": {
+          "reference": "Device/MII-EXA-MTB-Device-Sequencer-1"
+        },
+        "name": "Beispiel fuer einen Sequencer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Device/MII-EXA-MTB-Device-SequencingKit-1"
+        },
+        "name": "Cool",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1"
+        },
+        "name": "ExampleDefinition",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/genomic-study-analysis"
+        },
+        "name": "Genomic Study Analysis",
+        "description": "A genomic study analysis is a component of a genomic study.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-ablehnung-kostenuebernahme-grund"
         },
         "name": "MII CS Ablehnung Kostenuebernahme Grund",
@@ -179,10 +222,26 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-genomic-analysis-method-type"
+        },
+        "name": "MII CS Genomic Analysis Method Type",
+        "description": "Codesystem, welches die verwendeten NGS-Methodiken gemäß dnpm-Kodierung high-level auflistet",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction"
+        },
+        "name": "MII CS GenomicAnalysis DeviceType",
+        "description": "Codesystem, welches verschiedene Molekulare Biomarker enthäldie verschiedenen Arten von Geräten und Produkten enthält, die im Rahmen einer NGS-Analyse genutzt werden",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-molekulare-biomarker"
         },
         "name": "MII CS Molekulare Biomarker",
-        "description": "Codesystem, welches verschiedene Molekulare Biomarker enthält.",
+        "description": "Codesystem, welches verschiedene Molekulare Biomarker enthält, die nicht in anderen offenen semantischen Standards wie LOINC oder SNOMED-CT abgebildet sind",
         "exampleBoolean": false
       },
       {
@@ -355,6 +414,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-dna-fusion"
+        },
+        "name": "MII PR MTB DNA Fusion",
+        "description": "DNA-Fusion",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-einfache-variante"
         },
         "name": "MII PR MTB Einfache Variante",
@@ -375,6 +442,14 @@
         },
         "name": "MII PR MTB Follow-Up Careplan",
         "description": "Durchgefuehrte geplante Therapien",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-genomic-study"
+        },
+        "name": "MII PR MTB Genomic Study",
+        "description": "Genomic Study beinhaltet und verweist über GenomicStudyAnalysis auf Details zu den einzelnen Untersuchungen einer NGS-Untersuchung (Sequenzierung, Variant Calling, CNV-Analyse, Fusions-Analysen etc.)",
         "exampleBoolean": false
       },
       {
@@ -439,6 +514,14 @@
         },
         "name": "MII PR MTB Response Befund",
         "description": "Response Beurteilung nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-rna-fusion"
+        },
+        "name": "MII PR MTB RNA Fusion",
+        "description": "RNA-Fusion",
         "exampleBoolean": false
       },
       {
@@ -551,6 +634,14 @@
         },
         "name": "MII VS Follow-Up Status",
         "description": "ValueSet zum Follow-Up Status",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-genomic-analysis-method-type"
+        },
+        "name": "MII VS Genomic Analysis Method Type",
+        "description": "ValueSet, dass die ursprünglich vom HL7 Clinical Genomics vorgeschlagenen Antwortmöglichkeiten für Genomic Study Analysis Method Type mit dem vom dnpm dekalrierten Antwortspektrum vereint",
         "exampleBoolean": false
       },
       {
