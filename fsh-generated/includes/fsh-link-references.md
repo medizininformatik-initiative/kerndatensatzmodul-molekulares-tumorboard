@@ -26,6 +26,7 @@
 [MII_EX_MTB_Medizinischer_Grund]: StructureDefinition-mii-ex-mtb-medizinischer-grund.html
 [MII_EX_MTB_NGS_Bericht_Metadaten]: StructureDefinition-mii-ex-mtb-ngs-bericht-metadaten.html
 [MII_EX_MTB_NGS_Bericht_QC]: StructureDefinition-mii-ex-mtb-ngs-bericht-qc.html
+[MII_EX_MTB_Probe]: StructureDefinition-mii-ex-mtb-probe.html
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung.html
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation.html
 [MII_EX_MTB_Therapieempfehlung_Prioritaet]: StructureDefinition-mii-ex-mtb-therapieempfehlung-prioritaet.html

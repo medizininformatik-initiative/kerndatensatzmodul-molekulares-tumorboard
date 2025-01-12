@@ -35,3 +35,8 @@ Description: "Behandlungsepisode"
 * extension contains MII_EX_MTB_Einwilligung named Einwilligung 0..1 MS
 * extension[Einwilligung] ^short = "Einwilligung"
 * extension[Einwilligung] ^definition = "Einwilligung zum Molekularen Tumorboard"
+
+// Specimen representing the tumour cell count
+* extension contains MII_EX_MTB_Probe named Probe 0..* MS
+* extension[Probe] ^short = "Bioprobe"
+* extension[Probe] ^definition = "Bioprobe mit ermittelten Tumorzellgehalt"

@@ -67,6 +67,24 @@
         "mustSupport": true
       },
       {
+        "id": "EpisodeOfCare.extension:Probe",
+        "path": "EpisodeOfCare.extension",
+        "sliceName": "Probe",
+        "short": "Bioprobe",
+        "definition": "Bioprobe mit ermittelten Tumorzellgehalt",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-probe"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "EpisodeOfCare.identifier",
         "path": "EpisodeOfCare.identifier",
         "min": 1,
