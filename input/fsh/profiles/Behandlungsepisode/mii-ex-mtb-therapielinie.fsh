@@ -1,6 +1,6 @@
 Extension: MII_EX_MTB_Therapielinie
 Id: mii-ex-mtb-therapielinie
-Context: Procedure
+Context: Extension, Procedure
 Title: "MII EX MTB Therapielinie"
 Description: "Angabe der Therapielinie"
 * insert EX_Header($mii-ex-mtb-therapielinie)

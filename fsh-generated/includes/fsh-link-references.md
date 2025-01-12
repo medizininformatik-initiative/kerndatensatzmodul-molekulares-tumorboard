@@ -23,7 +23,6 @@
 [MII_EX_MTB_Diagnose]: StructureDefinition-mii-ex-mtb-diagnose.html
 [MII_EX_MTB_Einwilligung]: StructureDefinition-mii-ex-mtb-einwilligung.html
 [MII_EX_MTB_Leitlinienbehandlung_Status]: StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.html
-[MII_EX_MTB_Medizinischer_Grund]: StructureDefinition-mii-ex-mtb-medizinischer-grund.html
 [MII_EX_MTB_NGS_Bericht_Metadaten]: StructureDefinition-mii-ex-mtb-ngs-bericht-metadaten.html
 [MII_EX_MTB_NGS_Bericht_QC]: StructureDefinition-mii-ex-mtb-ngs-bericht-qc.html
 [MII_EX_MTB_Probe]: StructureDefinition-mii-ex-mtb-probe.html
@@ -31,6 +30,7 @@
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation.html
 [MII_EX_MTB_Therapieempfehlung_Prioritaet]: StructureDefinition-mii-ex-mtb-therapieempfehlung-prioritaet.html
 [MII_EX_MTB_Therapielinie]: StructureDefinition-mii-ex-mtb-therapielinie.html
+[MII_EX_MTB_Vortherapie]: StructureDefinition-mii-ex-mtb-vortherapie.html
 [MII_EX_MTB_Zulassungsstatus]: StructureDefinition-mii-ex-mtb-zulassungsstatus.html
 [MII_LM_MTB]: StructureDefinition-mii-lm-mtb.html
 [mii-ns-mtb-nct]: NamingSystem-mii-ns-mtb-nct.html
@@ -57,13 +57,13 @@
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
+[MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
 [MII_PR_MTB_Therapieempfehlung_Kombination]: StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html
 [MII_PR_MTB_Therapieempfehlung]: StructureDefinition-mii-pr-mtb-therapieempfehlung.html
 [MII_PR_MTB_Therapieplan]: StructureDefinition-mii-pr-mtb-therapieplan.html
 [MII_PR_MTB_Tumorausbreitung]: StructureDefinition-mii-pr-mtb-tumorausbreitung.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
-[MII_PR_MTB_Vortherapie]: StructureDefinition-mii-pr-mtb-vortherapie.html
 [MII_PR_MTB_WHO_Grad_Tumor_ZNS]: StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Abbrungsgrund]: ValueSet-mii-vs-mtb-abbruchsgrund.html
 [MII_VS_MTB_Ablehnung_Kostenuebernahme_Grund]: ValueSet-mii-vs-mtb-ablehnung-kostenuebernahme-grund.html

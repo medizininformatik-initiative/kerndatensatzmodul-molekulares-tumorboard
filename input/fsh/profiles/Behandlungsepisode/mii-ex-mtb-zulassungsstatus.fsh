@@ -1,6 +1,6 @@
 Extension: MII_EX_MTB_Zulassungsstatus
 Id: mii-ex-mtb-zulassungsstatus
-Context: Procedure
+Context: Extension, Procedure
 Title: "MII EX MTB Zulassungsstatus"
 Description: "Zulassungsstatus der Leitlinientherapie"
 * insert EX_Header($mii-ex-mtb-zulassungsstatus)

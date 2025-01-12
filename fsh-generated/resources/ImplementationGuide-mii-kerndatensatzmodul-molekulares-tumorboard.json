@@ -149,8 +149,8 @@
         "reference": {
           "reference": "CodeSystem/mii-cs-mtb-abbruchsgrund"
         },
-        "name": "MII CS Abbruchsgrund",
-        "description": "Angabe zum Abbruchsgrund",
+        "name": "MII CS Abbruchsgrund Systemische Therapie",
+        "description": "Angabe zum Abbruchsgrund der Systemischen Therapie",
         "exampleBoolean": false
       },
       {
@@ -315,14 +315,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-medizinischer-grund"
-        },
-        "name": "MII EX MTB Medizinischer Grund",
-        "description": "Medizinscher Grund, der während der Behandlungsepisode adressiert wird oder wurde",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-ngs-bericht-metadaten"
         },
         "name": "MII EX MTB NGS Bericht Metadaten",
@@ -375,6 +367,14 @@
         },
         "name": "MII EX MTB Therapielinie",
         "description": "Angabe der Therapielinie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-vortherapie"
+        },
+        "name": "MII EX MTB Vortherapie",
+        "description": "Vortherapie in Behandlungsepisode",
         "exampleBoolean": false
       },
       {
@@ -587,6 +587,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-systemische-therapie"
+        },
+        "name": "MII PR MTB Systemische Therapie",
+        "description": "Systemische Therapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
         },
         "name": "MII PR MTB Systemtherapie",
@@ -631,14 +639,6 @@
         },
         "name": "MII PR MTB Tumorzellgehalt",
         "description": "Bestimmter Tumorzellgehalt",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-vortherapie"
-        },
-        "name": "MII PR MTB Vortherapie",
-        "description": "Vortherapie",
         "exampleBoolean": false
       },
       {

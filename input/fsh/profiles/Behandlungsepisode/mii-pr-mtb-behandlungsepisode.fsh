@@ -26,10 +26,10 @@ Description: "Behandlungsepisode"
 * diagnosis ^short = "Diagnose Primärtumor"
 * diagnosis ^definition = "Referenz auf Diagnose des Primärtumors"
 
-// Medical reasons addressed during the episode of care
-* extension contains MII_EX_MTB_Medizinischer_Grund named MedizinischerGrund 0..* MS
-* extension[MedizinischerGrund] ^short = "Vortherapie"
-* extension[MedizinischerGrund] ^short = "Vortherapien zur Behandlungsepisode"
+// Performed pre-therapies according clinical guideline
+* extension contains MII_EX_MTB_Vortherapie named Vortherapie 0..* MS
+* extension[Vortherapie] ^short = "Vortherapie"
+* extension[Vortherapie] ^definition = "Vortherapie in Behandlungsepisode"
 
 // Patient consent for discussion in Molecular Tumor Board
 * extension contains MII_EX_MTB_Einwilligung named Einwilligung 0..1 MS

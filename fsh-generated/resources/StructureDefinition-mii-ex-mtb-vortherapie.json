@@ -1,0 +1,242 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-vortherapie",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-vortherapie",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Vortherapie",
+  "title": "MII EX MTB Vortherapie",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Vortherapie in Behandlungsepisode",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "EpisodeOfCare",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Vortherapie",
+        "definition": "Vortherapie in Behandlungsepisode"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:Vortherapie",
+        "path": "Extension.extension",
+        "sliceName": "Vortherapie",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Vortherapie.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:Vortherapie.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "Vortherapie"
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            },
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Prozedur",
+          "ordered": false
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:Vortherapie",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "Vortherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:valueReference",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "valueReference",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            },
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Prozedur",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:valueReference:Vortherapie",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "Vortherapie",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:valueReference:Vortherapie.type",
+        "path": "Extension.extension.value[x].type",
+        "min": 1,
+        "patternUri": "Procedure"
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:valueReference:Vortherapie",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "Vortherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:valueReference:Vortherapie",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "Vortherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:valueReference:Vortherapie",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "Vortherapie",
+        "short": "Referenz Vortherapie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Vortherapie.value[x]:valueReference:Vortherapie",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "Vortherapie",
+        "definition": "Referenz auf Vortherapie in Behandlungsepisode",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Therapielinie",
+        "path": "Extension.extension",
+        "sliceName": "Therapielinie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapielinie"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Zulassungsstatus",
+        "path": "Extension.extension",
+        "sliceName": "Zulassungsstatus",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-zulassungsstatus"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-vortherapie"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}
