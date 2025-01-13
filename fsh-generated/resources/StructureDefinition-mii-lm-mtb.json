@@ -2229,13 +2229,13 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.FiveDomain",
-        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.FiveDomain",
+        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.FivePrimeDomain",
+        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.FivePrimeDomain",
         "short": "5' Domain",
         "definition": "5' Domain",
         "min": 0,
@@ -2248,13 +2248,21 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion.component[five-prime-chromosome]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[five-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[five-prime-gene]"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.ThreeDomain",
-        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.ThreeDomain",
+        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.ThreePrimeDomain",
+        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.DNAFusion.ThreePrimeDomain",
         "short": "3' Domain",
         "definition": "3' Domain",
         "min": 0,
@@ -2267,7 +2275,15 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion.component[three-prime-chromosome]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[three-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[three-prime-gene]"
           }
         ]
       },
@@ -2286,7 +2302,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion.component[allelic-read-depth]"
           }
         ]
       },
@@ -2305,13 +2321,13 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.FiveFusionPartner",
-        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.FiveFusionPartner",
+        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.FivePrimeFusionPartner",
+        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.FivePrimeFusionPartner",
         "short": "5' Fusion Partner",
         "definition": "5' Fusion Partner",
         "min": 0,
@@ -2324,13 +2340,29 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-gene]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-transcript-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-exon-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-strand]"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.ThreeFusionPartner",
-        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.ThreeFusionPartner",
+        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.ThreePrimeFusionPartner",
+        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht.RNAFusion.ThreePrimeFusionPartner",
         "short": "3' Fusion Partner",
         "definition": "3' Fusion Partner",
         "min": 0,
@@ -2343,7 +2375,23 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-gene]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-transcript-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-exon-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-strand]"
           }
         ]
       },
@@ -2362,7 +2410,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[effect]"
           }
         ]
       },
@@ -2381,7 +2429,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[cosmic-id]"
           }
         ]
       },
@@ -2400,7 +2448,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[allelic-read-depth]"
           }
         ]
       },
@@ -3864,13 +3912,13 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.NGSBericht.DNAFusion.FiveDomain",
-        "path": "mii-lm-mtb.NGSBericht.DNAFusion.FiveDomain",
+        "id": "mii-lm-mtb.NGSBericht.DNAFusion.FivePrimeDomain",
+        "path": "mii-lm-mtb.NGSBericht.DNAFusion.FivePrimeDomain",
         "short": "5' Domain",
         "definition": "5' Domain",
         "min": 0,
@@ -3883,13 +3931,21 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion.component[five-prime-chromosome]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[five-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[five-prime-gene]"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.NGSBericht.DNAFusion.ThreeDomain",
-        "path": "mii-lm-mtb.NGSBericht.DNAFusion.ThreeDomain",
+        "id": "mii-lm-mtb.NGSBericht.DNAFusion.ThreePrimeDomain",
+        "path": "mii-lm-mtb.NGSBericht.DNAFusion.ThreePrimeDomain",
         "short": "3' Domain",
         "definition": "3' Domain",
         "min": 0,
@@ -3902,7 +3958,15 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion.component[three-prime-chromosome]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[three-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_DNA_Fusion.component[three-prime-gene]"
           }
         ]
       },
@@ -3921,7 +3985,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_DNA_Fusion.component[allelic-read-depth]"
           }
         ]
       },
@@ -3940,13 +4004,13 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.NGSBericht.RNAFusion.FiveFusionPartner",
-        "path": "mii-lm-mtb.NGSBericht.RNAFusion.FiveFusionPartner",
+        "id": "mii-lm-mtb.NGSBericht.RNAFusion.FivePrimeFusionPartner",
+        "path": "mii-lm-mtb.NGSBericht.RNAFusion.FivePrimeFusionPartner",
         "short": "5' Fusion Partner",
         "definition": "5' Fusion Partner",
         "min": 0,
@@ -3959,13 +4023,29 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-gene]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-transcript-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-exon-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[five-prime-strand]"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.NGSBericht.RNAFusion.ThreeFusionPartner",
-        "path": "mii-lm-mtb.NGSBericht.RNAFusion.ThreeFusionPartner",
+        "id": "mii-lm-mtb.NGSBericht.RNAFusion.ThreePrimeFusionPartner",
+        "path": "mii-lm-mtb.NGSBericht.RNAFusion.ThreePrimeFusionPartner",
         "short": "3' Fusion Partner",
         "definition": "3' Fusion Partner",
         "min": 0,
@@ -3978,7 +4058,23 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-gene]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-transcript-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-exon-id]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-position]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "MII_PR_MTB_RNA_Fusion.component[three-prime-strand]"
           }
         ]
       },
@@ -3997,7 +4093,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[effect]"
           }
         ]
       },
@@ -4016,7 +4112,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[cosmic-id]"
           }
         ]
       },
@@ -4035,7 +4131,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": ""
+            "map": "MII_PR_MTB_RNA_Fusion.component[allelic-read-depth]"
           }
         ]
       },

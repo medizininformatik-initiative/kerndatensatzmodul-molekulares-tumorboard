@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "genomic-study-analysis",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis",
+  "name": "MII_PR_MTB_Genomic_Study_Analysis",
+  "title": "Genomic Study Analysis",
+  "status": "draft",
+  "description": "A genomic study analysis is a component of a genomic study.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:method-type",
+        "path": "Procedure.extension",
+        "sliceName": "method-type",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:method-type.value[x]",
+        "path": "Procedure.extension.value[x]",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-genomic-analysis-method-type"
+        }
+      },
+      {
+        "id": "Procedure.extension:genome-build",
+        "path": "Procedure.extension",
+        "sliceName": "genome-build",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:focus",
+        "path": "Procedure.extension",
+        "sliceName": "focus",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:specimen",
+        "path": "Procedure.extension",
+        "sliceName": "specimen",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:device",
+        "path": "Procedure.extension",
+        "sliceName": "device",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "mustSupport": true
+      }
+    ]
+  }
+}
