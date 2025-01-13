@@ -26,6 +26,7 @@
 [MII_CS_MTB_Tumorausbreitung]: CodeSystem-mii-cs-mtb-tumorausbreitung.html
 [MII_CS_MTB_WHO_Grad_Tumor_ZNS]: CodeSystem-mii-cs-mtb-who-grad-tumor-zns.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
+[MII_EX_MTB_Allgemeiner_Leistungszustand]: StructureDefinition-mii-ex-mtb-allgemeiner-leistungszustand.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Diagnose]: StructureDefinition-mii-ex-mtb-diagnose.html

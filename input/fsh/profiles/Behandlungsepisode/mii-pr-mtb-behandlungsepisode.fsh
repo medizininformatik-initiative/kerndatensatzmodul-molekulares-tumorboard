@@ -18,7 +18,6 @@ Description: "Behandlungsepisode"
 * period ^short = "Anmeldedatum"
 * period ^definition = "Anmeldedatum zum Molekularen Tumorboard"
 
-// TODO: ECOG abweichend von InfoModell in Diagnose verschoben - iO?
 // Diagnosis
 * diagnosis 1..* MS
 * diagnosis.condition 1..1 MS
@@ -40,3 +39,8 @@ Description: "Behandlungsepisode"
 * extension contains MII_EX_MTB_Probe named Probe 0..* MS
 * extension[Probe] ^short = "Bioprobe"
 * extension[Probe] ^definition = "Bioprobe mit ermittelten Tumorzellgehalt"
+
+// Observation for observed ECOG performance status
+* extension contains MII_EX_MTB_Allgemeiner_Leistungszustand named ECOG 0..* MS
+* extension[ECOG] ^short = "ECOG"
+* extension[ECOG] ^definition = "ECOG Performance Status"

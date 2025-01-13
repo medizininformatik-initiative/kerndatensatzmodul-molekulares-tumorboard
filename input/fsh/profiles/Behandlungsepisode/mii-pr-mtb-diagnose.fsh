@@ -12,15 +12,6 @@ Description: "Diagnose zum Primärtumor"
 * stage ^slicing.description = "Slice für Stage/Grad"
 * stage ^slicing.ordered = false
 
-// ECOG Performance Status
-* stage contains ECOG 0..1 MS
-* stage[ECOG] ^short = "ECOG Performanz-Status"
-* stage[ECOG] ^definition = "Allgemeiner Leistungszustand gemäß ECOG Performanz-Status"
-* stage[ECOG].assessment 1..1 MS
-* stage[ECOG].assessment only Reference(MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG)
-* stage[ECOG].type 1..1 MS
-* stage[ECOG].type.coding = $SCT#423740007 "ECOG performance status"
-
 // WHO Grade for Central Nervous System Tumor
 * stage contains WHOGradZNS 0..1 MS
 * stage[WHOGradZNS] ^short = "WHO Grad Tumor ZNS"

@@ -86,6 +86,24 @@
         "mustSupport": true
       },
       {
+        "id": "EpisodeOfCare.extension:ECOG",
+        "path": "EpisodeOfCare.extension",
+        "sliceName": "ECOG",
+        "short": "ECOG",
+        "definition": "ECOG Performance Status",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-probe"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "EpisodeOfCare.identifier",
         "path": "EpisodeOfCare.identifier",
         "min": 1,
