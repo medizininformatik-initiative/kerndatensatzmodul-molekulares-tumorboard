@@ -45,7 +45,12 @@ Description: "Behandlungsepisode"
 * extension[ECOG] ^short = "ECOG"
 * extension[ECOG] ^definition = "ECOG Performance Status"
 
-// Associated care plans from molekular tumor board
+// Associated care plans from molecular tumor board
 * extension contains MII_EX_MTB_Therapieplan named Therapieplan 0..* MS
 * extension[Therapieplan] ^short = "Beschlossener Therapieplan"
 * extension[Therapieplan] ^definition = "Im Molekularen Tumorboard beschlossener Therapieplan"
+
+// Associated NGS report for molecular tumor board
+* extension contains MII_EX_MTB_Bericht named NgsBericht 0..1 MS
+* extension[NgsBericht] ^short = "NGS Report"
+* extension[NgsBericht] ^definition = "Für Molekulares Tumorboard bereitgestellter Next Generation Sequencing Bericht"

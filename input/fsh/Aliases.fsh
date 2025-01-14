@@ -37,6 +37,7 @@ Alias: $mii-cm-mtb-who-grad-tumor-zns = https://www.medizininformatik-initiative
 Alias: $mii-ex-mtb-allgemeiner-leistungszustand = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-allgemeiner-leistungszustand
 Alias: $mii-ex-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-ex-mtb-antwort-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium
+Alias: $mii-ex-mtb-bericht = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-bericht
 Alias: $mii-ex-mtb-diagnose = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose
 Alias: $mii-ex-mtb-einwilligung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-einwilligung
 Alias: $mii-ex-mtb-vortherapie = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-vortherapie

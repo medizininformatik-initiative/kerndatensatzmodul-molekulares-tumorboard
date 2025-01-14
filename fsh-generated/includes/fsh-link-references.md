@@ -31,6 +31,7 @@
 [MII_EX_MTB_Allgemeiner_Leistungszustand]: StructureDefinition-mii-ex-mtb-allgemeiner-leistungszustand.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
+[MII_EX_MTB_Bericht]: StructureDefinition-mii-ex-mtb-bericht.html
 [MII_EX_MTB_Diagnose]: StructureDefinition-mii-ex-mtb-diagnose.html
 [MII_EX_MTB_Einwilligung]: StructureDefinition-mii-ex-mtb-einwilligung.html
 [MII_EX_MTB_Leitlinienbehandlung_Status]: StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.html

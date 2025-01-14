@@ -1,0 +1,187 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-bericht",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-bericht",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Bericht",
+  "title": "MII EX MTB Bericht",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Bericht, der mit einer Behandlungsepisode assoiziiert ist",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "EpisodeOfCare",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Bericht",
+        "definition": "Bericht, der mit einer Behandlungsepisode assoiziiert ist"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-bericht"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            },
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Bericht",
+          "ordered": false
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:Bericht",
+        "path": "Extension.value[x]",
+        "sliceName": "Bericht",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference",
+        "path": "Extension.value[x]",
+        "sliceName": "valueReference",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            },
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Bericht",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Bericht",
+        "path": "Extension.value[x]",
+        "sliceName": "Bericht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Bericht.type",
+        "path": "Extension.value[x].type",
+        "min": 1,
+        "patternUri": "DiagnosticReport"
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Bericht",
+        "path": "Extension.value[x]",
+        "sliceName": "Bericht",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Bericht",
+        "path": "Extension.value[x]",
+        "sliceName": "Bericht",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Bericht",
+        "path": "Extension.value[x]",
+        "sliceName": "Bericht",
+        "short": "Bericht",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Bericht",
+        "path": "Extension.value[x]",
+        "sliceName": "Bericht",
+        "definition": "Assoziierter Bericht, z.B. zur Verwendung im Molekularen Tumorboard",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      }
+    ]
+  }
+}
