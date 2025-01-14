@@ -1,0 +1,187 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-therapieplan",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieplan",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Therapieplan",
+  "title": "MII EX MTB Therapieplan",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Therapieplan, der mit einer Behandlungsepisode assoiziiert ist",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "EpisodeOfCare",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Therapieplan",
+        "definition": "Therapieplan, der mit einer Behandlungsepisode assoiziiert ist"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieplan"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            },
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Therapieplan",
+          "ordered": false
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:Therapieplan",
+        "path": "Extension.value[x]",
+        "sliceName": "Therapieplan",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference",
+        "path": "Extension.value[x]",
+        "sliceName": "valueReference",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            },
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Therapieplan",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Therapieplan",
+        "path": "Extension.value[x]",
+        "sliceName": "Therapieplan",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Therapieplan.type",
+        "path": "Extension.value[x].type",
+        "min": 1,
+        "patternUri": "CarePlan"
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Therapieplan",
+        "path": "Extension.value[x]",
+        "sliceName": "Therapieplan",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Therapieplan",
+        "path": "Extension.value[x]",
+        "sliceName": "Therapieplan",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Therapieplan",
+        "path": "Extension.value[x]",
+        "sliceName": "Therapieplan",
+        "short": "Therapieplan",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueReference:Therapieplan",
+        "path": "Extension.value[x]",
+        "sliceName": "Therapieplan",
+        "definition": "Assoziierter Therapieplan, z.B. durch Beschluss im Molekulare Tumorboard",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      }
+    ]
+  }
+}

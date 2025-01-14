@@ -44,3 +44,8 @@ Description: "Behandlungsepisode"
 * extension contains MII_EX_MTB_Allgemeiner_Leistungszustand named ECOG 0..* MS
 * extension[ECOG] ^short = "ECOG"
 * extension[ECOG] ^definition = "ECOG Performance Status"
+
+// Associated care plans from molekular tumor board
+* extension contains MII_EX_MTB_Therapieplan named Therapieplan 0..* MS
+* extension[Therapieplan] ^short = "Beschlossener Therapieplan"
+* extension[Therapieplan] ^definition = "Im Molekularen Tumorboard beschlossener Therapieplan"

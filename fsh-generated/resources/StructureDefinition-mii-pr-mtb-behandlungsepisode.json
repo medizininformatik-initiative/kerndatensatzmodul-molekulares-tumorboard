@@ -104,6 +104,24 @@
         "mustSupport": true
       },
       {
+        "id": "EpisodeOfCare.extension:Therapieplan",
+        "path": "EpisodeOfCare.extension",
+        "sliceName": "Therapieplan",
+        "short": "Beschlossener Therapieplan",
+        "definition": "Im Molekularen Tumorboard beschlossener Therapieplan",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieplan"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "EpisodeOfCare.identifier",
         "path": "EpisodeOfCare.identifier",
         "min": 1,

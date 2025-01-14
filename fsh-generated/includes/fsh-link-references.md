@@ -41,6 +41,7 @@
 [MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation]: StructureDefinition-mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation.html
 [MII_EX_MTB_Therapieempfehlung_Prioritaet]: StructureDefinition-mii-ex-mtb-therapieempfehlung-prioritaet.html
 [MII_EX_MTB_Therapielinie]: StructureDefinition-mii-ex-mtb-therapielinie.html
+[MII_EX_MTB_Therapieplan]: StructureDefinition-mii-ex-mtb-therapieplan.html
 [MII_EX_MTB_Vortherapie]: StructureDefinition-mii-ex-mtb-vortherapie.html
 [MII_EX_MTB_Zulassungsstatus]: StructureDefinition-mii-ex-mtb-zulassungsstatus.html
 [MII_LM_MTB]: StructureDefinition-mii-lm-mtb.html
