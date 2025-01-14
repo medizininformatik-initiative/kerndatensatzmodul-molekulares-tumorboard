@@ -1,0 +1,98 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "mii-cm-mtb-abbruchsgrund",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-abbruchsgrund",
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1186606009",
+              "display": "Patient request observable (observable entity)",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "patient-wish",
+          "display": "Auf Wunsch des Patienten"
+        },
+        {
+          "target": [
+            {
+              "code": "419835002",
+              "display": "Tumor progression (finding)",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "progression",
+          "display": "Progression"
+        },
+        {
+          "target": [
+            {
+              "code": "75478009",
+              "display": "Toxicity",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "toxicity",
+          "display": "Toxizität"
+        },
+        {
+          "target": [
+            {
+              "code": "285384003",
+              "display": "General health deterioration (finding)",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "deterioration",
+          "display": "Zustandsverschlechterung"
+        },
+        {
+          "target": [
+            {
+              "code": "277022003",
+              "display": "Remission phase (qualifier value)",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "chronic-remission",
+          "display": "Anhaltende Remission"
+        },
+        {
+          "target": [
+            {
+              "code": "74964007",
+              "display": "Other (qualifier value)",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "other",
+          "display": "Weitere Gründe"
+        },
+        {
+          "target": [
+            {
+              "code": "261665006",
+              "display": "Unknown (qualifier value)",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "unknown",
+          "display": "Unbekannt"
+        }
+      ],
+      "target": "http://snomed.info/sct"
+    }
+  ],
+  "experimental": false,
+  "status": "active",
+  "name": "MII CM MTB Abbruchsgrund Systemische Therapie SNOMED-CT",
+  "title": "MII CM MTB Abbruchsgrund Systemische Therapie SNOMED-CT",
+  "date": "2025-01-14",
+  "description": "Mapping Abbruchsgrund Systemische Therapie Codes zu SNOMED-CT",
+  "purpose": "Technisches Mapping zur Transformation von Abbruchsgrund Systemische Therapie zu SNOMED-CT",
+  "sourceUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-abbruchsgrund",
+  "targetUri": "http://snomed.info/sct"
+}
