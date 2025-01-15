@@ -1,0 +1,114 @@
+{
+  "resourceType": "Observation",
+  "id": "MII-EXA-MTB-DNA-Fusion-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion",
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/dna-fusion"
+    ]
+  },
+  "component": [
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "372445009",
+            "system": "http://snomed.info/sct",
+            "display": "Chromosome 2"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "372445009",
+            "system": "http://snomed.info/sct",
+            "display": "Chromosome 5"
+          }
+        ]
+      }
+    },
+    {
+      "valueRange": {
+        "low": {
+          "value": 12345678
+        },
+        "high": {
+          "value": 12345680
+        }
+      }
+    },
+    {
+      "valueRange": {
+        "low": {
+          "value": 87654321
+        },
+        "high": {
+          "value": 87654323
+        }
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "259040001",
+            "system": "http://snomed.info/sct",
+            "display": "ALK gene"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "15220000",
+            "system": "http://snomed.info/sct",
+            "display": "EML4 gene"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "82121-5"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 150,
+        "code": "1",
+        "system": "http://unitsofmeasure.org",
+        "unit": "Number of reported reads"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "69548-6"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  }
+}

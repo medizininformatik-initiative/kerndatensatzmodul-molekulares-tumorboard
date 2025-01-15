@@ -17,16 +17,16 @@ Description: "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalte
 * encounter = Reference(Encounter/example)
 * specimen = Reference(Specimen/example)
 
-* interpretation = CodeableConcept{HighLowCodesVS#high, "High BRCAness"}
+* interpretation = $hl7-v3-observation-interpretation#high "High BRCAness"
 
 // Components
 * component[gene-studied].code.coding.system = $LNC
-* component[gene-studied].code.coding.code = #48018-6 "Gene studied"
-* component[gene-studied].valueCodeableConcept = HGNC#HGNC:1100 "BRCA1"
+* component[gene-studied].code.coding.code = $LNC#48018-6 "Gene studied"
+* component[gene-studied].valueCodeableConcept = #HGNC:1100 "BRCA1"
 
 * component[brcaness-score].code.coding.system = $LNC
 * component[brcaness-score].code.coding.code = "81259-4"
 * component[brcaness-score].code.text = "BRCAness Score"
 * component[brcaness-score].valueQuantity.value = 45.2
 * component[brcaness-score].valueQuantity.unit = "Score"
-* component[brcaness-score].interpretation = CodeableConcept{HighLowCodesVS#high, "High"}
+* component[brcaness-score].interpretation = $hl7-v3-observation-interpretation#high "High"

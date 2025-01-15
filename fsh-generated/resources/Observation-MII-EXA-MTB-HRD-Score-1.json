@@ -1,0 +1,39 @@
+{
+  "resourceType": "Observation",
+  "id": "MII-EXA-MTB-HRD-Score-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score",
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/molekularer-biomarker"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "hrd",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb--molekulare-biomarker",
+        "display": "HRD Score"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "specimen": {
+    "reference": "Specimen/example"
+  },
+  "valueQuantity": {
+    "value": 42,
+    "code": "HRD-Score",
+    "system": "http://unitsofmeasure.org"
+  }
+}

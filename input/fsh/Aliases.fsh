@@ -41,6 +41,7 @@ Alias: $mii-vs-mtb-auftrag-begruendung = https://www.medizininformatik-initiativ
 Alias: $mii-vs-mtb-bestimmungsmethode-tumorzellgehalt = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-bestimmungsmethode-tumorzellgehalt
 Alias: $mii-vs-mtb-follow-up-grund-nicht-umsetzung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung
 Alias: $mii-vs-mtb-follow-up-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status
+Alias: $mii-vs-mtb-genomic-analysis-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-genomic-analysis-method-type
 Alias: $mii-vs-mtb-molekulare-biomarker = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-molekulare-biomarker
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad
 Alias: $mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
@@ -55,6 +56,8 @@ Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statem
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
+Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+Alias: $hl7-genomics-tbd = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask

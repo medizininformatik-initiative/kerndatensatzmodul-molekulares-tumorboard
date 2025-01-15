@@ -7,6 +7,6 @@ Description: "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund
 * meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mikrosatelliteninstabilitaet"
 * status = #final
 
-* interpretation = CodeableConcept{ "code": "MSI-H", "display": "Mikrosatelliteninstabilität hoch" }
+* interpretation = #MSI-H "Mikrosatelliteninstabilität hoch"
 
 * valueQuantity = 0.93 UCUM#percent "Percent unstable MSI sites"

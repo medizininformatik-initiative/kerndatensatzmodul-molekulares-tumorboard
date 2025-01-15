@@ -7,13 +7,17 @@ Description: "Beispiel fuer eine DNA-Fusion in Tumorzellen."
 * meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/dna-fusion"
 * status = #final
 
-* component[five-prime-chromosome].valueCodeableConcept = SNOMED#372445009 "Chromosome 2"
-* component[three-prime-chromosome].valueCodeableConcept = SNOMED#372445009 "Chromosome 5"
+* subject = Reference(Patient/example)
 
-* component[five-prime-position].valueRange = { "low": 12345678, "high": 12345680 }
-* component[three-prime-position].valueRange = { "low": 87654321, "high": 87654323 }
+* component[five-prime-chromosome].valueCodeableConcept = $SCT#372445009 "Chromosome 2"
+* component[three-prime-chromosome].valueCodeableConcept = $SCT#372445009 "Chromosome 5"
 
-* component[five-prime-gene].valueCodeableConcept = SNOMED#259040001 "ALK gene"
-* component[three-prime-gene].valueCodeableConcept = SNOMED#15220000 "EML4 gene"
+* component[five-prime-position].valueRange.low.value = 12345678
+* component[five-prime-position].valueRange.high.value = 12345680
+* component[three-prime-position].valueRange.low.value = 87654321
+* component[three-prime-position].valueRange.high.value = 87654323
 
-* component[allelic-read-depth].valueQuantity = 150 UCUM#1 "Number of reported reads"
+* component[five-prime-gene].valueCodeableConcept = $SCT#259040001 "ALK gene"
+* component[three-prime-gene].valueCodeableConcept = $SCT#15220000 "EML4 gene"
+
+* component[allelic-read-depth].valueQuantity = 150 $UCUM#1 "Number of reported reads"

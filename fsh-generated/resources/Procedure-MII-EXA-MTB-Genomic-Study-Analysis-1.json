@@ -1,0 +1,33 @@
+{
+  "resourceType": "Procedure",
+  "id": "MII-EXA-MTB-Genomic-Study-Analysis-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis",
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/genomic-study-analysis"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-focus",
+      "valueReference": {
+        "reference": "mii-exa-molgen-gene-focus"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-specimen",
+      "valueReference": {
+        "reference": "Specimen/example"
+      }
+    }
+  ],
+  "status": "completed",
+  "category": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+      }
+    ]
+  }
+}

@@ -14,6 +14,6 @@ Description: "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombin
 * specimen = Reference(Specimen/example)
 * performer = Reference(Practitioner/example)
 
-* valueQuantity = 42 "HRD-Score"
+* valueQuantity = 42 'HRD-Score'
 // interpretation
 // component

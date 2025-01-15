@@ -1,3 +1,7 @@
+[MII-EXA-MTB-DNA-Fusion-1]: Observation-MII-EXA-MTB-DNA-Fusion-1.html
+[MII-EXA-MTB-Diagnostische-Implikation-1]: Observation-MII-EXA-MTB-Diagnostische-Implikation-1.html
+[MII-EXA-MTB-BRCAness-1]: Observation-MII-EXA-MTB-BRCAness-1.html
+[MII-EXA-MTB-Copy-Number-Variant-1]: Observation-MII-EXA-MTB-Copy-Number-Variant-1.html
 [MII-EXA-MTB-Systemtherapie-Beispiel-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-Beispiel-1.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1]: CarePlan-MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1.html
@@ -5,6 +9,13 @@
 [MII-EXA-MTB-GenomicStudy-1]: Procedure-MII-EXA-MTB-GenomicStudy-1.html
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
+[MII-EXA-MTB-Molekularer-Biomarker-1]: Observation-MII-EXA-MTB-Molekularer-Biomarker-1.html
+[MII-EXA-MTB-RNA-Fusion-1]: Observation-MII-EXA-MTB-RNA-Fusion-1.html
+[MII-EXA-MTB-Genomic-Study-Analysis-1]: Procedure-MII-EXA-MTB-Genomic-Study-Analysis-1.html
+[MII-EXA-MTB-HRD-Score-1]: Observation-MII-EXA-MTB-HRD-Score-1.html
+[MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
+[MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
+[MII-EXA-MTB-Einfache-Variante]: Observation-MII-EXA-MTB-Einfache-Variante.html
 [MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
 [MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
