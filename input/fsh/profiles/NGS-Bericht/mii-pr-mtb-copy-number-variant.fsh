@@ -69,5 +69,6 @@ Description: "Copy Number Variant (CNV)"
 * component[copy-number-neutral-loh] MS
 * component[copy-number-neutral-loh].code MS
 * component[copy-number-neutral-loh].valueCodeableConcept MS
+// * component[copy-number-neutral-loh].valueCodeableConcept from $LNC#LL624-8
 * component[copy-number-neutral-loh] ^short = "Copy number neutral LoH" 
 * component[copy-number-neutral-loh] ^definition = "Copy number neutral Loss of heterozygosity"

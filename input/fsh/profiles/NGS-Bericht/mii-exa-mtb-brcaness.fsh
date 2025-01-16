@@ -20,9 +20,6 @@ Description: "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalte
 * interpretation = $hl7-v3-observation-interpretation#high "High BRCAness"
 
 // Components
-* component[gene-studied].code.coding = $LNC#48018-6 "Gene studied"
+* component[gene-studied].code.coding.system = $LNC
+* component[gene-studied].code.coding.code = $LNC#48018-6 "Gene studied"
 * component[gene-studied].valueCodeableConcept = #HGNC:1100 "BRCA1"
-
-* component[brcaness-score].code.coding = $LNC#81259-4 "BRCAness Score"
-* component[brcaness-score].valueQuantity = 45.2 'Score'
-* component[brcaness-score].interpretation = $hl7-v3-observation-interpretation#high "High"

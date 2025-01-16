@@ -74,7 +74,7 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
-      "version": "1.0.0",
+      "version": "2025.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.studie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.studie",
       "id": "de_medizininformatikinitiative_kerndatensatz_studie"
     },
@@ -173,14 +173,6 @@
         },
         "name": "Beispiel fuer einen Sequencer",
         "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Observation/MII-EXA-MTB-Molekularer-Biomarker-1"
-        },
-        "name": "Beispiel fuer Molekularen Biomarker",
-        "description": "Ein Beispiel für einen molekularen Biomarker, der im Rahmen eines genetischen Tests identifiziert wurde.",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker"
       },
       {
         "reference": {
@@ -610,6 +602,14 @@
         },
         "name": "MII PR MTB RNA Fusion",
         "description": "RNA-Fusion",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-studie"
+        },
+        "name": "MII PR MTB Studie",
+        "description": "Onkologische Studie",
         "exampleBoolean": false
       },
       {

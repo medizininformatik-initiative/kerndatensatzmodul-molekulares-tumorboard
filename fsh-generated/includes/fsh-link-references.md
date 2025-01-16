@@ -9,7 +9,6 @@
 [MII-EXA-MTB-GenomicStudy-1]: Procedure-MII-EXA-MTB-GenomicStudy-1.html
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
-[MII-EXA-MTB-Molekularer-Biomarker-1]: Observation-MII-EXA-MTB-Molekularer-Biomarker-1.html
 [MII-EXA-MTB-RNA-Fusion-1]: Observation-MII-EXA-MTB-RNA-Fusion-1.html
 [MII-EXA-MTB-Genomic-Study-Analysis-1]: Procedure-MII-EXA-MTB-Genomic-Study-Analysis-1.html
 [MII-EXA-MTB-HRD-Score-1]: Observation-MII-EXA-MTB-HRD-Score-1.html
@@ -64,6 +63,7 @@
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
+[MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
 [MII_PR_MTB_Therapieempfehlung_Kombination]: StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html

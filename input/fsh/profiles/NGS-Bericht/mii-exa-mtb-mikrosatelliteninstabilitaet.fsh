@@ -6,6 +6,9 @@ Description: "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund
 
 * meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mikrosatelliteninstabilitaet"
 * status = #final
+* category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
+* code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
+* subject = Reference(Patient/example)
 
 * interpretation = #MSI-H "Mikrosatelliteninstabilität hoch"
 

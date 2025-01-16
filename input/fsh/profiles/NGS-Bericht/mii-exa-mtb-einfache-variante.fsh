@@ -35,10 +35,10 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 * component[sample-allelic-frequency].code = $LNC#81258-6 "Sample variant allelic frequency [NFr]"
 * component[sample-allelic-frequency].valueQuantity = 30.25 '%'
 * component[cytogenetic-location].code = $LNC#48001-2 "Cytogenetic (chromosome) location"
-* component[cytogenetic-location].valueCodeableConcept = ChromLoc#7q34
+* component[cytogenetic-location].valueCodeableConcept = $ChromLoc#7q34 //aus MolGen - aber wirft Fehler
 * component[coding-change-type].code = $LNC#48019-4 "DNA change type"
 * component[coding-change-type].valueCodeableConcept = SO#SO:1000008 "point_mutation"
 * component[amino-acid-change-type].code = $LNC#48006-1 "Amino acid change [Type]"
 * component[amino-acid-change-type].valueCodeableConcept = $LNC#LA6698-0 "Missense"
 * component[variation-code].code = $LNC#81252-9 "Discrete genetic variant"
-* component[variation-code].valueCodeableConcept = dbSNP#rs113488022
+* component[variation-code].valueCodeableConcept = $dbSNP#rs113488022
