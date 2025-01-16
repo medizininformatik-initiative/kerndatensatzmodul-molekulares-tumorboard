@@ -86,6 +86,43 @@
         "id": "Observation.component",
         "path": "Observation.component",
         "mustSupport": true
+      },
+      {
+        "id": "Observation.component:brcaness-score",
+        "path": "Observation.component",
+        "sliceName": "brcaness-score",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:brcaness-score.code.coding",
+        "path": "Observation.component.code.coding",
+        "patternCoding": {
+          "code": "81259-4",
+          "system": "http://loinc.org",
+          "display": "BRCAness Score"
+        }
+      },
+      {
+        "id": "Observation.component:brcaness-score.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:brcaness-score.value[x].value",
+        "path": "Observation.component.value[x].value",
+        "min": 1
+      },
+      {
+        "id": "Observation.component:brcaness-score.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "min": 1
       }
     ]
   }
