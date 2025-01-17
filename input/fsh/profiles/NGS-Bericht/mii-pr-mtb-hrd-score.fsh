@@ -10,6 +10,7 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * subject 1..1 MS
 * subject only Reference(Patient or Group)
 * encounter MS
+* value[x] only Quantity
 * specimen MS
 * interpretation MS
 * component MS
