@@ -1,0 +1,63 @@
+Profile: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+Parent: Observation
+Id: mii-pr-mtb-immunohistochemistry
+Title: "MII PR MTB Immunohistochemistry"
+Description: "Immunhistorchemistry report"
+* insert PR_Header
+
+* identifier MS
+* specimen MS
+* specimen ^definition = "Probe"
+* specimen ^short = "Probe"
+// Eingangs/Journal-Nr -> DiagnosticReport(Identifier) kein Teil von Observationm
+// Block-/Material Nr -> Wie mache ich das am Besten?
+
+//wie erstelle ich ein eigens CodeableConcept
+
+* component ^slicing.discriminator.type = #type
+* component ^slicing.discriminator.path = "reference.reference"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Immunohistochemische Ergebnisse"
+* component ^slicing.ordered = false
+
+* component contains 
+    tps-score 1..1 MS and
+    cps-score 1..1 MS and
+    ics-score 1..1 MS and
+    tc-score 1..1 MS and
+    msi 1..1 MS and
+    mmr 1..1 MS
+
+* component[tps-score] MS
+* component[tps-score].code MS // Code System noch spezifizieren
+* component[tps-score].valueInteger MS 
+* component[tps-score] ^short = "TPS-Score" 
+
+* component[cps-score] MS
+* component[cps-score].code MS // Code System noch spezifizieren
+* component[cps-score].valueInteger MS 
+* component[cps-score] ^short = "CPS-Score" 
+
+* component[ics-score] MS
+* component[ics-score].code MS // Code System noch spezifizieren
+* component[ics-score].valueRange MS // Wie spezifiziere ich high and low?
+* component[ics-score] ^short = "ICS-Score" 
+
+* component[tc-score] MS
+* component[tc-score].code MS // Code System noch spezifizieren
+* component[tc-score].valueRange MS // Wie spezifiziere ich high and low?
+* component[tc-score] ^short = "TC-Score" 
+
+* component[msi] MS
+* component[msi].code MS // Code System noch spezifizieren
+* component[msi].valueCodeableConcept MS // Wie spezifiziere ich high and low?
+* component[msi].interpretation MS 
+* component[msi] ^short = "Mikrosateliteninstablilität" 
+
+* component[mmr] MS
+* component[mmr].code MS // Code System noch spezifizieren
+* component[mmr].valueCodeableConcept MS 
+* component[mmr].interpretation MS
+* component[mmr] ^short = "Mismatch-Repair" 
+
+
