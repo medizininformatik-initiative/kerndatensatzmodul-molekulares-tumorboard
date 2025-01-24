@@ -62,4 +62,5 @@ Description: "Immunhistorchemistry report"
 * component[mmr].interpretation MS
 * component[mmr] ^short = "Mismatch-Repair" 
 
-// Evtl component gene-studied oder Erweiterung von Code (bei häufigen auch Loinc-Liste)
+// Evtl component gene-studied oder Erweiterung von Code (bei häufigen auch Loinc-Liste oder HGNC)
+// CodeSystem -> mii-molekulare-biomarker
