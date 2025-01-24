@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
-Parent: Observation
+Parent: Observation // Evtl von Observation von MolecularBiomarker erben
 Id: mii-pr-mtb-immunohistochemistry
 Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistorchemistry report"
@@ -12,21 +12,23 @@ Description: "Immunhistorchemistry report"
 // Eingangs/Journal-Nr -> DiagnosticReport(Identifier) kein Teil von Observationm
 // Block-/Material Nr -> Wie mache ich das am Besten?
 
-//wie erstelle ich ein eigens CodeableConcept
+// wie erstelle ich ein eigenes CodeableConcept
 
 * component ^slicing.discriminator.type = #type
 * component ^slicing.discriminator.path = "reference.reference"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Immunohistochemische Ergebnisse"
 * component ^slicing.ordered = false
+// Evtl. Binding auf High-Low-ValueSet aus MolgenBefundbericht als preferred oder als CodeableConcept
 
 * component contains 
-    tps-score 1..1 MS and
-    cps-score 1..1 MS and
-    ics-score 1..1 MS and
-    tc-score 1..1 MS and
-    msi 1..1 MS and
-    mmr 1..1 MS
+    tps-score 0..1 MS and
+    cps-score 0..1 MS and
+    ics-score 0..1 MS and
+    tc-score 0..1 MS and
+    msi 0..1 MS and
+    mmr 0..1 MS
+// Prozent-werte als Value-Quantity mit Unit %
 
 * component[tps-score] MS
 * component[tps-score].code MS // Code System noch spezifizieren
@@ -50,7 +52,7 @@ Description: "Immunhistorchemistry report"
 
 * component[msi] MS
 * component[msi].code MS // Code System noch spezifizieren
-* component[msi].valueCodeableConcept MS // Wie spezifiziere ich high and low?
+* component[msi].valueCodeableConcept MS // Wie spezifiziere ich high and low? -> Übernehmen aus MolgenModul, gibt schon high-low-ValueSet
 * component[msi].interpretation MS 
 * component[msi] ^short = "Mikrosateliteninstablilität" 
 
@@ -60,4 +62,4 @@ Description: "Immunhistorchemistry report"
 * component[mmr].interpretation MS
 * component[mmr] ^short = "Mismatch-Repair" 
 
-
+// Evtl component gene-studied oder Erweiterung von Code (bei häufigen auch Loinc-Liste)

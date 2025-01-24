@@ -7,7 +7,7 @@ Description: "Molecular pathology report"
 
 * identifier MS
 * subject 1..1 MS
-* subject only Reference(Patient or Group)
+* subject only Reference(Patient)
 * performer only Reference(Organization)
 * performer ^definition = "Berichtendes Institut"
 * performer ^short = "Institut"
@@ -21,6 +21,7 @@ Description: "Molecular pathology report"
 * result ^definition = "Art der Diagnostik"
 * result ^short = "Diagnostik"
 
-// Text = composition.text ->  Nicht auffindbar, war das eventuell as R4?
+// Text = composition.text ->  Nicht auffindbar, war das eventuell R5?
+// Verlinkung aus Composition-Profil, sollte auf MolPatho und NGS-Bericht passen
 
 
