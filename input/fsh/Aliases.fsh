@@ -55,6 +55,7 @@ Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statem
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
+Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask
@@ -64,6 +65,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $ENS = http://ensembl.org
+Alias: $HGNC = http://www.genenames.org
 
 // Sonstige Aliases
 Alias: $bwhc-cnv-type = http://bwhc.de/mtb/genetics-copy-number-variant
