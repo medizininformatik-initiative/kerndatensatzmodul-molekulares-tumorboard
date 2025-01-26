@@ -7,6 +7,7 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 
 * identifier MS
 * category MS
+* code = $mii-cs-mtb-molekulare-biomarker#brcaness
 * subject 1..1 MS
 * subject only Reference(Patient or Group)
 * encounter MS
@@ -16,4 +17,10 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * interpretation from HighLowCodesVS
 * component MS
 
-* code = $mii-cs-mtb-molekulare-biomarker#brcaness
+* component contains brcaness-score 0..*
+* component[brcaness-score].code.coding = $LNC#81259-4 "BRCAness Score"
+* component[brcaness-score].value[x] 1..1 MS
+* component[brcaness-score].value[x] only Quantity
+* component[brcaness-score].valueQuantity
+* component[brcaness-score].valueQuantity.value 1..1
+* component[brcaness-score].valueQuantity.unit 1..1

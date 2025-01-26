@@ -6,7 +6,8 @@ Description: "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombin
 
 * meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/molekularer-biomarker"
 * status = #final
-* category[labCategory] = ObsCat#laboratory "Laboratory"
+* category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
+* category[geCategory] = $hl7-v2-0074#GE
 * code = $mii-cs-mtb-molekulare-biomarker#hrd "HRD Score"
 
 * subject = Reference(Patient/example)

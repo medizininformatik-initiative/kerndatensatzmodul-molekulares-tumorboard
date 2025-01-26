@@ -7,14 +7,33 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/dna-fusion"
     ]
   },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
   "component": [
     {
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "372445009",
-            "system": "http://snomed.info/sct",
+            "code": "LA21255-7",
+            "system": "http://loinc.org",
             "display": "Chromosome 2"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
           }
         ]
       }
@@ -23,9 +42,17 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "372445009",
-            "system": "http://snomed.info/sct",
+            "code": "LA21258-1",
+            "system": "http://loinc.org",
             "display": "Chromosome 5"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
           }
         ]
       }
@@ -38,6 +65,14 @@
         "high": {
           "value": 12345680
         }
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
+          }
+        ]
       }
     },
     {
@@ -48,15 +83,12 @@
         "high": {
           "value": 87654323
         }
-      }
-    },
-    {
-      "valueCodeableConcept": {
+      },
+      "code": {
         "coding": [
           {
-            "code": "259040001",
-            "system": "http://snomed.info/sct",
-            "display": "ALK gene"
+            "code": "00000-1",
+            "system": "http://loinc.org"
           }
         ]
       }
@@ -65,9 +97,34 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "15220000",
-            "system": "http://snomed.info/sct",
-            "display": "EML4 gene"
+            "code": "HGNC:1100",
+            "display": "BRCA1"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "HGNC:9967",
+            "display": "RET"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
           }
         ]
       }
@@ -93,20 +150,11 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "69548-6"
+        "code": "69548-6",
+        "display": "Genetic variant assessment"
       }
     ]
   },
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code": "laboratory"
-        }
-      ]
-    }
-  ],
   "status": "final",
   "subject": {
     "reference": "Patient/example"

@@ -11,7 +11,8 @@
       "code": {
         "coding": [
           {
-            "system": "http://example.org/fhir/CodeSystem/rna-fusion-effects"
+            "system": "http://example.org/fhir/CodeSystem/rna-fusion-effects",
+            "code": "0000-1"
           }
         ],
         "text": "Fusion Aktivierung"
@@ -25,7 +26,8 @@
       "code": {
         "coding": [
           {
-            "system": "http://cancer.sanger.ac.uk/cosmic"
+            "system": "http://cancer.sanger.ac.uk/cosmic",
+            "code": "0000-1"
           }
         ]
       },
@@ -45,8 +47,158 @@
       "valueQuantity": {
         "value": 50,
         "code": "1",
-        "system": "UCUM",
+        "system": "http://unitsofmeasure.org",
         "unit": "Abdeckung der Fragmente"
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "text": "ALK"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "text": "ENST00000389048"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "text": "Exon 20"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueRange": {
+        "low": {
+          "value": 41234567
+        },
+        "high": {
+          "value": 41234589
+        }
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueRange": {
+        "low": {
+          "value": 1
+        },
+        "high": {
+          "value": 2
+        }
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "text": "EML4"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "text": "ENST00000461467"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "text": "Exon 6"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueRange": {
+        "low": {
+          "value": 12345678
+        },
+        "high": {
+          "value": 12345698
+        }
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    },
+    {
+      "valueRange": {
+        "low": {
+          "value": 1
+        },
+        "high": {
+          "value": 2
+        }
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "0000-1",
+            "system": "http://loinc.org"
+          }
+        ]
       }
     }
   ],
@@ -68,5 +220,8 @@
       ]
     }
   ],
-  "status": "final"
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  }
 }

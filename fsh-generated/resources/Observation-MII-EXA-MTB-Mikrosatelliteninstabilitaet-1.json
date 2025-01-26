@@ -7,6 +7,17 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mikrosatelliteninstabilitaet"
     ]
   },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
   "interpretation": [
     {
       "coding": [
@@ -21,21 +32,15 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "81695-9"
+        "code": "81695-9",
+        "display": "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
       }
     ]
   },
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code": "laboratory"
-        }
-      ]
-    }
-  ],
   "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  },
   "valueQuantity": {
     "value": 0.93,
     "code": "percent",

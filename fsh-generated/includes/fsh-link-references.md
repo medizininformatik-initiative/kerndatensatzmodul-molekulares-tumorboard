@@ -9,7 +9,6 @@
 [MII-EXA-MTB-GenomicStudy-1]: Procedure-MII-EXA-MTB-GenomicStudy-1.html
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
-[MII-EXA-MTB-Molekularer-Biomarker-1]: Observation-MII-EXA-MTB-Molekularer-Biomarker-1.html
 [MII-EXA-MTB-RNA-Fusion-1]: Observation-MII-EXA-MTB-RNA-Fusion-1.html
 [MII-EXA-MTB-Genomic-Study-Analysis-1]: Procedure-MII-EXA-MTB-Genomic-Study-Analysis-1.html
 [MII-EXA-MTB-HRD-Score-1]: Observation-MII-EXA-MTB-HRD-Score-1.html

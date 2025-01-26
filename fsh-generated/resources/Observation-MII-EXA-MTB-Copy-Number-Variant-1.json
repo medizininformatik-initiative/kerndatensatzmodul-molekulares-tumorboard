@@ -7,6 +7,17 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/copy-number-variant"
     ]
   },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
   "component": [
     {
       "code": {
@@ -79,6 +90,14 @@
       }
     },
     {
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
       "valueQuantity": {
         "value": 1.5,
         "code": "1",
@@ -87,6 +106,14 @@
       }
     },
     {
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
       "valueQuantity": {
         "value": 1,
         "code": "1",
@@ -95,6 +122,14 @@
       }
     },
     {
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
       "valueQuantity": {
         "value": 2,
         "code": "1",
@@ -103,6 +138,14 @@
       }
     },
     {
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
       "valueQuantity": {
         "value": 100,
         "code": "%",
@@ -128,26 +171,35 @@
           }
         ]
       }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "00000-1",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA33-6",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
     }
   ],
   "code": {
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "69548-6"
+        "code": "69548-6",
+        "display": "Genetic variant assessment"
       }
     ]
   },
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code": "laboratory"
-        }
-      ]
-    }
-  ],
   "status": "final",
   "subject": {
     "reference": "Patient/example"

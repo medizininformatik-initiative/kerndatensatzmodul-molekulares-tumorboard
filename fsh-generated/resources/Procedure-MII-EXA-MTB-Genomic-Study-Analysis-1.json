@@ -9,9 +9,33 @@
   },
   "extension": [
     {
+      "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "whole-genome-sequencing",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type",
+            "display": "Whole Genome Sequencing (WGS)"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA26806-2",
+            "system": "http://loinc.org",
+            "display": "GRCh38"
+          }
+        ]
+      }
+    },
+    {
       "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-focus",
       "valueReference": {
-        "reference": "mii-exa-molgen-gene-focus"
+        "reference": "Patient/example"
       }
     },
     {
@@ -19,6 +43,17 @@
       "valueReference": {
         "reference": "Specimen/example"
       }
+    },
+    {
+      "extension": [
+        {
+          "url": "device",
+          "valueReference": {
+            "reference": "Device/example"
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device"
     }
   ],
   "status": "completed",
@@ -29,5 +64,8 @@
         "code": "laboratory"
       }
     ]
+  },
+  "subject": {
+    "reference": "Patient/example"
   }
 }

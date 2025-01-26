@@ -7,5 +7,5 @@ Description: "Codesystem, welches die verwendeten NGS-Methodiken gemäß dnpm-Ko
 * #tngs                                 "Targeted NGS"
 * #gene-panel                           "Genpanel"
 * #fusion-detection-panel               "Fusions-Detektions-Panel"
-* #whole-genom-sequencing               "Whole Genom Sequencing (WGS)"
+* #whole-genome-sequencing               "Whole Genome Sequencing (WGS)"
 * #whole-exom-sequencing                "Whole Exom Sequencing (WES)"
