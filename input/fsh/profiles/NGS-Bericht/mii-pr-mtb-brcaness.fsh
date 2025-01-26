@@ -11,6 +11,7 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * subject 1..1 MS
 * subject only Reference(Patient or Group)
 * encounter MS
+* value[x] only Quantity
 * specimen MS
 * interpretation MS
 * interpretation from HighLowCodesVS

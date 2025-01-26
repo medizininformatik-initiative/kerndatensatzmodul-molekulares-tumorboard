@@ -29,6 +29,8 @@ Description: "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis v
 * code 1..1
 * code from $mii-vs-mtb-molekulare-biomarker (extensible)
 
+* value[x] 0..1 MS
+
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
