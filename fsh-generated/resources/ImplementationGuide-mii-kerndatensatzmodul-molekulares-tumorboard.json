@@ -80,7 +80,7 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2025.0.2",
+      "version": "2025.0.3",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
@@ -186,30 +186,6 @@
         },
         "name": "Genomic Study Analysis",
         "description": "A genomic study analysis is a component of a genomic study.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ConceptMap/mii-cm-mtb-abbruchsgrund"
-        },
-        "name": "MII CM MTB Abbruchsgrund Systemische Therapie SNOMED-CT",
-        "description": "Mapping Abbruchsgrund Systemische Therapie Codes zu SNOMED-CT",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ConceptMap/mii-cm-mtb-who-grad-tumor-zns"
-        },
-        "name": "MII CM MTB WHO Grad Tumor ZNS SNOMED-CT",
-        "description": "Mapping WHO Grad Tumor ZNS Codes zu SNOMED-CT",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-abbruchsgrund"
-        },
-        "name": "MII CS Abbruchsgrund Systemische Therapie",
-        "description": "Angabe zum Abbruchsgrund der Systemischen Therapie",
         "exampleBoolean": false
       },
       {
@@ -326,34 +302,10 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-tumorausbreitung"
-        },
-        "name": "MII CS Tumorausbreitung",
-        "description": "Angabe zur Tumorausbreitung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-who-grad-tumor-zns"
-        },
-        "name": "MII CS WHO Grad Tumor ZNS",
-        "description": "Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-zulassungsstatus"
         },
         "name": "MII CS Zulassungsstatus",
         "description": "Angabe zum Zulassungsstatus",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-allgemeiner-leistungszustand"
-        },
-        "name": "MII EX MTB Allgemeiner Leistungszustand",
-        "description": "Allgemeiner Leistungszustand, z.B. ECOG oder Karnofsky Performance Status",
         "exampleBoolean": false
       },
       {
@@ -374,14 +326,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-bericht"
-        },
-        "name": "MII EX MTB Bericht",
-        "description": "Bericht, der mit einer Behandlungsepisode assoiziiert ist",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-diagnose"
         },
         "name": "MII EX MTB Diagnose",
@@ -390,10 +334,10 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-einwilligung"
+          "reference": "StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
         },
-        "name": "MII EX MTB Einwilligung",
-        "description": "Einwilligung zur Besprechung des Falls",
+        "name": "MII EX MTB Leitlinie Dokumentation",
+        "description": "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur",
         "exampleBoolean": false
       },
       {
@@ -418,14 +362,6 @@
         },
         "name": "MII EX MTB NGS Bericht QC",
         "description": "QC des NGS-Berichts",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-probe"
-        },
-        "name": "MII EX MTB Probe",
-        "description": "Bioprobe im Rahmen des Molekularen Tumorboards",
         "exampleBoolean": false
       },
       {
@@ -458,22 +394,6 @@
         },
         "name": "MII EX MTB Therapielinie",
         "description": "Angabe der Therapielinie",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-therapieplan"
-        },
-        "name": "MII EX MTB Therapieplan",
-        "description": "Therapieplan, der mit einer Behandlungsepisode assoiziiert ist",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-vortherapie"
-        },
-        "name": "MII EX MTB Vortherapie",
-        "description": "Vortherapie in Behandlungsepisode",
         "exampleBoolean": false
       },
       {
@@ -537,7 +457,7 @@
           "reference": "StructureDefinition/mii-pr-mtb-behandlungsepisode"
         },
         "name": "MII PR MTB Behandlungsepisode",
-        "description": "Behandlungsepisode",
+        "description": "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen",
         "exampleBoolean": false
       },
       {

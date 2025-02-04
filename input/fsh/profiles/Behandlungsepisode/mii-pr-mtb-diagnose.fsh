@@ -6,7 +6,7 @@ Description: "Diagnose zum Primärtumor"
 * insert PR_Header
 
 * stage 0..* MS
-* stage ^slicing.discriminator.type = #pattern
+* stage ^slicing.discriminator.type = #value
 * stage ^slicing.discriminator.path = "type.coding"
 * stage ^slicing.rules = #open
 * stage ^slicing.description = "Slice für Stage/Grad"
@@ -21,7 +21,7 @@ Description: "Diagnose zum Primärtumor"
 * stage[WHOGradZNS].type 1..1 MS
 * stage[WHOGradZNS].type.coding = $SCT#396920006 "WHO grade for central nervous system tumour"
 
-// TODO: SCT passend?
+// TODO: SCT prüfen
 // Tumor stage (spreading) first diagnosis date time
 * stage contains ErstdiagnoseZeitpunkt 1..1 MS
 * stage[ErstdiagnoseZeitpunkt] ^short = "Tumorausbreitung Erstdiagnose"
@@ -31,7 +31,7 @@ Description: "Diagnose zum Primärtumor"
 * stage[ErstdiagnoseZeitpunkt].type 1..1 MS
 * stage[ErstdiagnoseZeitpunkt].type.coding = $SCT#473302008 "Aware of diagnosis"
 
-// TODO: SCT passend?
+// TODO: SCT prüfen
 // Tumor stage (spreading) molecular tumor board date time
 * stage contains MolekularesTumorboardZeitpunkt 1..1 MS
 * stage[MolekularesTumorboardZeitpunkt] ^short = "Tumorausbreitung Molekulares Tumorboard"

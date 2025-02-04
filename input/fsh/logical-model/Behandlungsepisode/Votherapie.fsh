@@ -1,7 +1,6 @@
 RuleSet: Vortherapie
 * Vortherapie            1..*      BackboneElement     "Vortherapie"
   * Diagnose             0..*      Reference           "Verweis auf Diagnose"   "Verweis auf i.d.R. die Anmeldediagnose, in seltenen Fällen weitere Diagnosen"
-  // TODO:
   * Zulassungsstatus     0..1      code                "Zulassungsstatus"       "Zulassungsstatus der Vortherapie"
   * Therapielinie        0..1      unsignedInt         "Therapielinie"          "Therapielinie der Vortherapie (0 bis 9)"
   * Startdatum           0..1      dateTime            "Startdatum"             "Startdatum der Vortherapie"

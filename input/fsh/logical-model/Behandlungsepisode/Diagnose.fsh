@@ -12,15 +12,16 @@ RuleSet: Diagnose
   * LeitlinienbehandlungStatus  0..1      code                "Status Leitlinienbehandlung"      "Status der Leitlinienbehandlung"
 
 RuleSet: DiagnoseMapping
-* Diagnose                      -> "EpisodeOfCare.diagnosis"
-  * Diagnose                    -> "EpisodeOfCare.diagnosis.condition:Reference(Condition)"
+* Diagnose                      -> "ClinicalImpression.problem"
+  * Diagnose                    -> "ClinicalImpression.problem:Reference(Condition)"
   // TODO: Prüfen, ob Histologie nicht via onkologischer Diagnose referenziert
-  * Histologie                  -> "Condition.evidence.detail:Reference(DiagnosticReport)"
-  * WHOGradZNS                  -> "Condition.stage.assessment:Reference(Observation)"
-  * TumorausbreitungED          -> "Condition.stage.assessment:Reference(Observation)"
+  // * Histologie                  -> "Condition.evidence.detail:Reference(DiagnosticReport)"
+  * WHOGradZNS                  -> "ClinicalImpression.investigation:Reference(Observation)"
+  * TumorausbreitungED          -> "ClinicalImpression.investigation:Reference(Observation)"
     * Wert                      -> "Observation.valueCodeableConcept.coding.code"
     * Zeitpunkt                 -> "Observation.effectiveDateTime"
-  * TumorausbreitungMTB         -> "Condition.stage.assessment:Reference(Observation)"
+  * TumorausbreitungMTB         -> "ClinicalImpression.investigation:Reference(Observation)"
     * Wert                      -> "Observation.valueCodeableConcept.coding.code"
     * Zeitpunkt                 -> "Observation.effectiveDateTime"
+  // Mapping?
   * LeitlinienbehandlungStatus  -> "EpisodeOfCare.extension(LeitlinenbehandlungStatus)"

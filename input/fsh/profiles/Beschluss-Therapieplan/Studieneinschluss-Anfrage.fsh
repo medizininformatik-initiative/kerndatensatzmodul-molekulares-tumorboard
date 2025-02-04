@@ -10,7 +10,7 @@ Description: "Anfrage zum Studieneinschluss"
 * code = $SCT#709491003 // Enrollment in clinical trial (procedure)
 
 * reasonReference 0..* MS
-* reasonReference only Reference(MII_PR_Onko_Diagnose_Primaertumor or Condition)
+* reasonReference only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
 * supportingInfo 1..* MS
 * supportingInfo only Reference(MII_PR_MTB_Studie or MII_PR_Studie_Studie or ResearchStudy)
@@ -52,5 +52,5 @@ Title: "MII EX MTB Diagnose"
 Description: "Onkologische Diagnose"
 * insert EX_Header($mii-ex-mtb-diagnose)
 
-* value[x] only Reference(MII_PR_Onko_Diagnose_Primaertumor or Condition)
+* value[x] only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 * value[x] 1..1 MS

@@ -50,3 +50,14 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
 * activity[Studieneinschlussempfehlung].reference 1..1 MS
 * activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage or ServiceRequest)
+
+* supportingInfo ^slicing.discriminator.type = #type
+* supportingInfo ^slicing.discriminator.path = "$this"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.description = "Slice für weitere Informationen"
+* supportingInfo ^slicing.ordered = false
+
+* supportingInfo contains Behandlungsepisode 0..1 MS
+* supportingInfo[Behandlungsepisode] ^short = "Behandlungsepisode"
+* supportingInfo[Behandlungsepisode] ^definition = "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
+* supportingInfo[Behandlungsepisode] only Reference(MII_PR_MTB_Behandlungsepisode)

@@ -23,6 +23,6 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * supportingInformation contains StuetzendeEntitaet 0..* MS
 * supportingInformation[StuetzendeEntitaet] ^short = "Stützende Entität"
 * supportingInformation[StuetzendeEntitaet] ^definition = "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht"
-* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_Onko_Diagnose_Primaertumor or Condition)
+* supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
 * insert Therapieempfehlung_Erweiterungen

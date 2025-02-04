@@ -47,14 +47,13 @@
           "discriminator": [
             {
               "type": "value",
-              "path": "system"
+              "path": "code"
             }
           ],
           "rules": "open",
           "description": "Slice für Abbruchsgrund",
           "ordered": false
-        },
-        "mustSupport": true
+        }
       },
       {
         "id": "Procedure.outcome.coding:Abbruchsgrund",
@@ -69,8 +68,7 @@
       {
         "id": "Procedure.outcome.coding:Abbruchsgrund.system",
         "path": "Procedure.outcome.coding.system",
-        "min": 1,
-        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-abbruchsgrund"
+        "patternUri": "http://snomed.info/sct"
       },
       {
         "id": "Procedure.outcome.coding:Abbruchsgrund.code",

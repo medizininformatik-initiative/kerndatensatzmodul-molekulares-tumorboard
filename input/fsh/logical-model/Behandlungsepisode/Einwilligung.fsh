@@ -4,5 +4,4 @@ RuleSet: Einwilligung
 
 RuleSet: EinwilligungMapping
 * Einwilligung      -> "Consent"
-  // TODO: Nur active/rejected gewünscht
   * Status          -> "Consent.status"

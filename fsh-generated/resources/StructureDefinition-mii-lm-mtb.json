@@ -54,7 +54,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare"
+            "map": "ClinicalImpression"
           }
         ]
       },
@@ -73,7 +73,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.period.start"
+            "map": "ClinicalImpression.effectiveDateTime"
           }
         ]
       },
@@ -92,7 +92,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.extension(KrankengeschichteFamilie)"
+            "map": "ClinicalImpression.investigation.item:Reference(FamilyMemberHistory)"
           }
         ]
       },
@@ -149,7 +149,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.diagnosis"
+            "map": "ClinicalImpression.problem"
           }
         ]
       },
@@ -168,7 +168,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.diagnosis.condition:Reference(Condition)"
+            "map": "ClinicalImpression.problem:Reference(Condition)"
           }
         ]
       },
@@ -182,12 +182,6 @@
         "type": [
           {
             "code": "Reference"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "mii-map-mtb",
-            "map": "Condition.evidence.detail:Reference(DiagnosticReport)"
           }
         ]
       },
@@ -206,7 +200,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Condition.stage.assessment:Reference(Observation)"
+            "map": "ClinicalImpression.investigation:Reference(Observation)"
           }
         ]
       },
@@ -225,7 +219,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Condition.stage.assessment:Reference(Observation)"
+            "map": "ClinicalImpression.investigation:Reference(Observation)"
           }
         ]
       },
@@ -282,7 +276,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Condition.stage.assessment:Reference(Observation)"
+            "map": "ClinicalImpression.investigation:Reference(Observation)"
           }
         ]
       },

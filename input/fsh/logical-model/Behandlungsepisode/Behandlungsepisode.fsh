@@ -11,10 +11,9 @@ RuleSet: Behandlungsepisode
   * insert NGSBericht
 
 RuleSet: BehandlungsepisodeMapping
-* Behandlungsepisode          -> "EpisodeOfCare"
-  * Anmeldedatum              -> "EpisodeOfCare.period.start"
-  // TODO: Prüfen der Referenz auf FamilyMemberHistory (z.B. Condition.assessment:Reference(ClinicalImpression).investigation.item:Reference(FamilyMemberHistory))
-  * KrankengeschichteFamilie  -> "EpisodeOfCare.extension(KrankengeschichteFamilie)"
+* Behandlungsepisode          -> "ClinicalImpression"
+  * Anmeldedatum              -> "ClinicalImpression.effectiveDateTime"
+  * KrankengeschichteFamilie  -> "ClinicalImpression.investigation.item:Reference(FamilyMemberHistory)"
   * insert EinwilligungMapping
   * insert DiagnoseMapping
   * insert VortherapieMapping

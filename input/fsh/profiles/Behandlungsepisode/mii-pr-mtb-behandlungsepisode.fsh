@@ -1,56 +1,87 @@
 Profile: MII_PR_MTB_Behandlungsepisode
-Parent: EpisodeOfCare
+Parent: ClinicalImpression
 Id: mii-pr-mtb-behandlungsepisode
 Title: "MII PR MTB Behandlungsepisode"
-Description: "Behandlungsepisode"
+Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * insert PR_Header
 
-// Epsiode of care business identifier
-* identifier 1..* MS
+* subject only Reference(MII_PR_Person_Patient or MII_PR_Person_PatientPseudonymisiert)
 
-// Patient from module Person
-* patient 1..1 MS 
-* patient only Reference(MII_PR_Person_Patient or MII_PR_Person_PatientPseudonymisiert)
+* effectiveDateTime 1..1 MS
+* effectiveDateTime ^short = "Anmeldedatum"
+* effectiveDateTime ^definition = "Anmeldedatum zum Molekularen Tumorboard"
 
-// Registration date Molecular Tumor Board
-* period 1..1 MS
-* period.start 1..1 MS
-* period ^short = "Anmeldedatum"
-* period ^definition = "Anmeldedatum zum Molekularen Tumorboard"
+* problem 0..* MS
+* problem ^slicing.discriminator.type = #type
+* problem ^slicing.discriminator.path = "$this"
+* problem ^slicing.rules = #open
+* problem ^slicing.description = "Slice für Diagnose"
+* problem ^slicing.ordered = false
 
-// Diagnosis
-* diagnosis 1..* MS
-* diagnosis.condition 1..1 MS
-* diagnosis.condition only Reference(MII_PR_MTB_Diagnose_Primaertumor)
-* diagnosis ^short = "Diagnose Primärtumor"
-* diagnosis ^definition = "Referenz auf Diagnose des Primärtumors"
+* problem contains PrimaertumorDiagnose 0..1 MS
+* problem[PrimaertumorDiagnose] ^short = "Primärtumor Diagnose"
+* problem[PrimaertumorDiagnose] ^definition = "Verweise auf Diagnose des Primärtumors"
+* problem[PrimaertumorDiagnose] only Reference(MII_PR_MTB_Diagnose_Primaertumor)
 
-// Performed pre-therapies according clinical guideline
-* extension contains MII_EX_MTB_Vortherapie named Vortherapie 0..* MS
-* extension[Vortherapie] ^short = "Vortherapie"
-* extension[Vortherapie] ^definition = "Vortherapie in Behandlungsepisode"
+* investigation ^slicing.discriminator.type = #type
+* investigation ^slicing.discriminator.path = "code.item"
+* investigation ^slicing.rules = #open
+* investigation ^slicing.description = "Slice für relevante Ermittlungen"
+* investigation ^slicing.ordered = false
 
-// Patient consent for discussion in Molecular Tumor Board
-* extension contains MII_EX_MTB_Einwilligung named Einwilligung 0..1 MS
-* extension[Einwilligung] ^short = "Einwilligung"
-* extension[Einwilligung] ^definition = "Einwilligung zum Molekularen Tumorboard"
+* investigation contains KrankengeschichteFamilie 0..1 MS
+* investigation[KrankengeschichteFamilie].code.coding = $SCT#416471007 "Family medical history"
+* investigation[KrankengeschichteFamilie].item 1..1
+* investigation[KrankengeschichteFamilie].item ^short = "Krankengeschichte Familie"
+* investigation[KrankengeschichteFamilie].item ^definition = "Verweis auf familiäre Krankengeschichte"
+* investigation[KrankengeschichteFamilie].item only Reference(MII_PR_MolGen_Familienanamnese)
 
-// Specimen representing the tumour cell count
-* extension contains MII_EX_MTB_Probe named Probe 0..* MS
-* extension[Probe] ^short = "Bioprobe"
-* extension[Probe] ^definition = "Bioprobe mit ermittelten Tumorzellgehalt"
+* investigation contains ECOG 0..1 MS
+* investigation[ECOG].code.coding = $SCT#424122007 "ECOG performance status finding"
+* investigation[ECOG].item 1..1
+* investigation[ECOG].item ^short = "ECOG"
+* investigation[ECOG].item ^definition = "ECOG Performance Status"
+* investigation[ECOG].item only Reference(MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG)
 
-// Observation for observed ECOG performance status
-* extension contains MII_EX_MTB_Allgemeiner_Leistungszustand named ECOG 0..* MS
-* extension[ECOG] ^short = "ECOG"
-* extension[ECOG] ^definition = "ECOG Performance Status"
+// TODO: SCT prüfen
+* investigation contains NgsBericht 0..1 MS
+* investigation[NgsBericht].code.coding = $SCT#721967005 "Tissue pathology biopsy report"
+* investigation[NgsBericht].item 1..1
+* investigation[NgsBericht].item ^short = "NGS Report"
+* investigation[NgsBericht].item ^definition = "Für Molekulares Tumorboard bereitgestellter Next Generation Sequencing Bericht"
+* investigation[NgsBericht].item only Reference(MII_PR_MTB_NGS_Bericht)
 
-// Associated care plans from molecular tumor board
-* extension contains MII_EX_MTB_Therapieplan named Therapieplan 0..* MS
-* extension[Therapieplan] ^short = "Beschlossener Therapieplan"
-* extension[Therapieplan] ^definition = "Im Molekularen Tumorboard beschlossener Therapieplan"
+// TODO: SCT prüfen
+// TODO: Referenz DiagnosticReport (Onko, Patho) vs. Specimen (Onko, Biobank)
+* investigation contains Probe 0..1 MS
+* investigation[Probe].code.coding = $SCT#125394000 "Cell content alteration"
+* investigation[Probe].item 1..1
+* investigation[Probe].item ^short = "Bioprobe"
+* investigation[Probe].item ^definition = "Bioprobe mit ermitteltem Tumorzellgehalt"
+* investigation[Probe].item only Reference(MII_PR_Onko_Befund or MII_PR_Patho_Report)
 
-// Associated NGS report for molecular tumor board
-* extension contains MII_EX_MTB_Bericht named NgsBericht 0..1 MS
-* extension[NgsBericht] ^short = "NGS Report"
-* extension[NgsBericht] ^definition = "Für Molekulares Tumorboard bereitgestellter Next Generation Sequencing Bericht"
+// TODO: Referenz Molekular Pathologie Befund
+
+* supportingInfo ^slicing.discriminator.type = #type
+* supportingInfo ^slicing.discriminator.path = "$this"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.description = "Slice für weitere Informationen"
+* supportingInfo ^slicing.ordered = false
+
+* supportingInfo contains Einwilligung 0..1 MS
+* supportingInfo[Einwilligung] ^short = "Einwilligung"
+* supportingInfo[Einwilligung] ^definition = "Einwilligung zum Molekularen Tumorboard"
+* supportingInfo[Einwilligung] only Reference(Consent)
+
+* supportingInfo contains Vortherapie 0..* MS
+* supportingInfo[Vortherapie] ^short = "Vortherapie"
+* supportingInfo[Vortherapie] ^definition = "Relevante Leitlinien-basierte Vortherapie"
+* supportingInfo[Vortherapie] only Reference(
+    MII_PR_MTB_Systemische_Therapie or 
+    MII_PR_Onko_Strahlentherapie or 
+    MII_PR_Onko_Operation or 
+    MII_PR_Prozedur_Procedure
+)
+* supportingInfo[Vortherapie].extension contains MII_EX_MTB_Leitlinie_Dokumentation named LeitlinieDokumentation 0..1 MS
+* supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^short = "Leitlinie Dokumentation"
+* supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^definition = "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur"
