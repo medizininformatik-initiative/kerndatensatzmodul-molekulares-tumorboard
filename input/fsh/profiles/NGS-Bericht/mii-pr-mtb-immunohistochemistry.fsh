@@ -36,7 +36,7 @@ Description: "Immunhistorchemistry report"
 * component[tps-score] ^short = "TPS-Score" 
 
 * component[cps-score] MS
-* component[cps-score].code MS // Code System noch spezifizieren
+* component[cps-score].code MS // Code System noch spezifizieren // hier LOINC 105305-7 
 * component[cps-score].valueInteger MS 
 * component[cps-score] ^short = "CPS-Score" 
 
