@@ -30,6 +30,7 @@ Description: "Immunhistorchemistry report"
     mmr 0..1 MS
 // Prozent-werte als Value-Quantity mit Unit %
 
+// diese scores gibt es nur, wenn das Protein PD-L1 ist (identifier)
 * component[tps-score] MS
 * component[tps-score].code MS // Code System noch spezifizieren
 * component[tps-score].valueInteger MS 
@@ -49,6 +50,7 @@ Description: "Immunhistorchemistry report"
 * component[tc-score].code MS // Code System noch spezifizieren
 * component[tc-score].valueRange MS // Wie spezifiziere ich high and low?
 * component[tc-score] ^short = "TC-Score" 
+
 
 * component[msi] MS
 * component[msi].code MS // Code System noch spezifizieren
