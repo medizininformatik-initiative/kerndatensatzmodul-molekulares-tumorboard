@@ -12,7 +12,7 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * encounter MS
 * specimen MS
 * interpretation MS
-* interpretation from HighLowCodesVS
+//* interpretation from HighLowCodesVS
 * component MS
 
 * code = $mii-cs-mtb-molekulare-biomarker#brcaness

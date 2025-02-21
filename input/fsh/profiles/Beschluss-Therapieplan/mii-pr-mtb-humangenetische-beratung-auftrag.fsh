@@ -9,4 +9,9 @@ Description: "Auftrag zur (erneuten) Human-genetischen Beratung"
 * reasonCode from MII_VS_MTB_AuftragBegruendung (preferred)
 
 * specimen 0..* MS
-* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
+* specimen only Reference(
+    MII_PR_Onko_Specimen or
+    MII_PR_Patho_Specimen or
+    ProfileSpecimenBioprobe or
+    Specimen
+)

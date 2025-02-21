@@ -1,6 +1,10 @@
 RuleSet: Meta
 * meta MS
 
+RuleSet: CM_Meta(url)
+* url = {url}
+* experimental = false
+
 RuleSet: CS_VS_Meta(url)
 * ^url = {url}
 * ^experimental = false

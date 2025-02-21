@@ -23,7 +23,12 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Therapieempfehlung] ^definition = "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * activity[Therapieempfehlung] ^comment = "Kann keine Therapieempfehlung für eine Systemische Therapie gegeben werden, muss dies als Begründung unter `detail.statusReason` angegeben werden"
 * activity[Therapieempfehlung].reference 0..1 MS
-* activity[Therapieempfehlung].reference only Reference(MII_PR_MTB_Therapieempfehlung or MII_PR_MTB_Therapieempfehlung_Kombination or MedicationRequest or RequestGroup)
+* activity[Therapieempfehlung].reference only Reference(
+    MII_PR_MTB_Therapieempfehlung or
+    MII_PR_MTB_Therapieempfehlung_Kombination or
+    MedicationRequest or
+    RequestGroup
+)
 * activity[Therapieempfehlung].detail MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbet
 * activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_TherapieempfehlungStatusBegruendung (required)
 
@@ -50,3 +55,14 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
 * activity[Studieneinschlussempfehlung].reference 1..1 MS
 * activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage or ServiceRequest)
+
+* supportingInfo ^slicing.discriminator.type = #type
+* supportingInfo ^slicing.discriminator.path = "$this"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.description = "Slice für weitere Informationen"
+* supportingInfo ^slicing.ordered = false
+
+* supportingInfo contains Behandlungsepisode 0..1 MS
+* supportingInfo[Behandlungsepisode] ^short = "Behandlungsepisode"
+* supportingInfo[Behandlungsepisode] ^definition = "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
+* supportingInfo[Behandlungsepisode] only Reference(MII_PR_MTB_Behandlungsepisode)

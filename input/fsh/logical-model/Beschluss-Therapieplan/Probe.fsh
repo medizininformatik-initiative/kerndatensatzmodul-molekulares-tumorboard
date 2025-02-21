@@ -4,6 +4,6 @@ RuleSet: Probe
   * insert Tumorzellgehalt
 
 RuleSet: ProbeMapping
-* Probe             -> "ServiceRequest.reasonReference"
+* Probe             -> "Specimen"
   * Histologie      -> "DiagnosticReport"
   * insert TumorzellgehaltMapping

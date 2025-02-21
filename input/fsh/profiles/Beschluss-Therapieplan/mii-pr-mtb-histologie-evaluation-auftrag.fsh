@@ -27,4 +27,9 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt or Observation)
 
 * specimen 0..* MS
-* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
+* specimen only Reference(
+    MII_PR_Onko_Specimen or
+    MII_PR_Patho_Specimen or
+    ProfileSpecimenBioprobe or
+    Specimen
+)
