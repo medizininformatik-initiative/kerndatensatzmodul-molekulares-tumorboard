@@ -8,22 +8,19 @@ Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) The
 * value[x] 1..1 MS
 * value[x] only string or Identifier
 
-* value[x] ^slicing.discriminator.type = #value
-* value[x] ^slicing.discriminator.path = "system"
-* value[x] ^slicing.rules = #open
-* value[x] ^slicing.description = "Slice für Publikation anhand von `system`"
-* value[x] ^slicing.ordered = false
+// Research database
+* valueIdentifier ^short = "Identifikator Publikation"
+* valueIdentifier ^definition = "Eindeutiger Identifikator zur Publikation in einer Publikationsdatenbank"
+* valueIdentifier ^comment = "Z.B. Document Object Identifier (DOI): https://doi.org/10.3414/ME18-03-0003"
+* valueIdentifier ^comment = "Z.B. PubMed Identifier (PMID): http://www.ncbi.nlm.nih.gov/pubmed/30016818"
+* valueIdentifier.system 1..1 MS
+* valueIdentifier.system ^comment = "Z.B. DOI: http://doi.org"
+* valueIdentifier.system ^comment = "Z.B. PMID: http://www.ncbi.nlm.nih.gov/pubmed"
+* valueIdentifier.value 1..1 MS
+* valueIdentifier.value ^comment = "Z.B. DOI: 10.1000/182"
+* valueIdentifier.value ^comment = "Z.B. PMID: 30016818"
 
-* value[x] contains DOI 0..1 MS
-* value[x][DOI] only Identifier
-* value[x][DOI] ^short = "DOI"
-* value[x][DOI] ^definition = "Document Object Identifier (DOI)"
-* value[x][DOI].system = "http://doi.org"
-* value[x][DOI].value 1..1 MS
-
-* value[x] contains PMID 0..1 MS
-* value[x][PMID] only Identifier
-* value[x][PMID] ^short = "PMID"
-* value[x][PMID] ^definition = "PubMed Identifier (PMID)"
-* value[x][PMID].system = "http://www.ncbi.nlm.nih.gov/pubmed"
-* value[x][PMID].value 1..1 MS
+// Other publication source
+* valueString ^short = "Andere Publikationsquelle"
+* valueString ^definition = "Publikationsquelle die nicht über eine Publikationsdatenbank referenzierbar ist"
+* valueString ^comment = "Z.B. Whitepaper oder Leitlinie"

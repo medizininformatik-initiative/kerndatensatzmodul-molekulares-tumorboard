@@ -6,6 +6,6 @@ RuleSet: Publikationen
 RuleSet: PublikationenMapping
 * Publikationen               -> "Extension"
   // NOTE: Basis URL ist http://doi.org/<DOI>
-  * DigitalObjectIdentifier   -> "Idenfifier[DOI].value"
+  * DigitalObjectIdentifier   -> "Idenfifier.value"
   // NOTE: Basis URL ist http://www.ncbi.nlm.nih.gov/pubmed/<PMID>
-  * PubMedIdentifier          -> "Identifier[PMID].value"
+  * PubMedIdentifier          -> "Identifier.value"
