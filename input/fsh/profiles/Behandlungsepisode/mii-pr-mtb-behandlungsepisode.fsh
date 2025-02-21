@@ -44,7 +44,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[ECOG].item only Reference(MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG)
 
 // TODO: SCT prüfen
-* investigation contains NgsBericht 0..1 MS
+* investigation contains NgsBericht 0..* MS
 * investigation[NgsBericht].code.coding = $SCT#106221001 "Genetic finding"
 * investigation[NgsBericht].item 1..1
 * investigation[NgsBericht].item ^short = "NGS Report"
@@ -52,7 +52,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[NgsBericht].item only Reference(MII_PR_MTB_NGS_Bericht)
 
 // TODO: SCT prüfen
-* investigation contains MolekularPathologieBefund 0..1 MS
+* investigation contains MolekularPathologieBefund 0..* MS
 * investigation[MolekularPathologieBefund].code.coding = $SCT#721967005 "Tissue pathology biopsy report"
 * investigation[MolekularPathologieBefund].item 1..1
 * investigation[MolekularPathologieBefund].item ^short = "Molekular Pathologie Befund"
