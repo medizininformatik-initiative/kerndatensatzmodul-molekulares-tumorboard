@@ -12,16 +12,14 @@ RuleSet: Diagnose
   * LeitlinienbehandlungStatus  0..1      code                "Status Leitlinienbehandlung"      "Status der Leitlinienbehandlung"
 
 RuleSet: DiagnoseMapping
-* Diagnose                      -> "ClinicalImpression.problem"
-  * Diagnose                    -> "ClinicalImpression.problem:Reference(Condition)"
-  // TODO: Prüfen, ob Histologie nicht via onkologischer Diagnose referenziert
-  // * Histologie                  -> "Condition.evidence.detail:Reference(DiagnosticReport)"
-  * WHOGradZNS                  -> "ClinicalImpression.investigation:Reference(Observation)"
-  * TumorausbreitungED          -> "ClinicalImpression.investigation:Reference(Observation)"
+* Diagnose                      -> "Condition"
+  * Diagnose                    -> "Condition.where(meta.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor')"
+  * Histologie                  -> "Observation.where(meta.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-histologie-icdo3')"
+  * WHOGradZNS                  -> "Condition.stage.assessment:Reference(Observation)"
+  * TumorausbreitungED          -> "Condition.stage.assessment:Reference(Observation)"
     * Wert                      -> "Observation.valueCodeableConcept.coding.code"
     * Zeitpunkt                 -> "Observation.effectiveDateTime"
-  * TumorausbreitungMTB         -> "ClinicalImpression.investigation:Reference(Observation)"
+  * TumorausbreitungMTB         -> "Condition.stage.assessment:Reference(Observation)"
     * Wert                      -> "Observation.valueCodeableConcept.coding.code"
     * Zeitpunkt                 -> "Observation.effectiveDateTime"
-  // Mapping?
-  * LeitlinienbehandlungStatus  -> "EpisodeOfCare.extension(LeitlinenbehandlungStatus)"
+  * LeitlinienbehandlungStatus  -> "Condition.extension(LeitlinenbehandlungStatus)"

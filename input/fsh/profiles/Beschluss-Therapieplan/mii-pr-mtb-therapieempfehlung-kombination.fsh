@@ -1,4 +1,4 @@
-Profile: MII_PR_MTB_Therapieempfehlung_Kombination // Not sure if this is a suitable name or if I violate any conventions here
+Profile: MII_PR_MTB_Therapieempfehlung_Kombination
 Parent: RequestGroup
 Id: mii-pr-mtb-therapieempfehlung-kombination
 Title: "MII PR MTB Therapieempfehlung Kombinationstherapie"
@@ -7,7 +7,12 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 
 * identifier MS
 
-* replaces only Reference(MII_PR_MTB_Therapieempfehlung_Kombination or MII_PR_MTB_Therapieempfehlung or RequestGroup or MedicationRequest)
+* replaces only Reference(
+    MII_PR_MTB_Therapieempfehlung_Kombination or
+    MII_PR_MTB_Therapieempfehlung or
+    RequestGroup or
+    MedicationRequest
+  )
 
 * intent MS
 //* intent = #proposal // wenn intent = option sein soll, kann das hier nicht gesetzt werden
@@ -25,4 +30,7 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
   * resource only Reference(MII_PR_MTB_Therapieempfehlung or MedicationRequest)
   * action 0..0 // When we enforce a resource, sub-actions are disallowed by the constraint rqg-1 anyway.
 
-* insert Therapieempfehlung_Erweiterungen
+* extension contains
+    MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS and
+    MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung named Evidenzgraduierung 0..1 MS and
+    MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation named Publikation 0..* MS

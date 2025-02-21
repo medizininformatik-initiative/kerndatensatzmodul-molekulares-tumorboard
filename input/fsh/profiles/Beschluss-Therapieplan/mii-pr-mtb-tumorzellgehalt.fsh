@@ -9,8 +9,8 @@ Description: "Bestimmter Tumorzellgehalt"
 //* category[laboratory-category].coding = $fhir-observation-category#laboratory
 //* category[section-type].coding = $LNC#77599-9
 
-// TODO: Zuordnung prüfen (Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method)
-* code = $LNC#93356-4
+// TODO: Zuordnung prüfen
+* code = $LNC#93356-4 "Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method"
 
 * value[x] 1..1 MS
 * value[x] only Quantity

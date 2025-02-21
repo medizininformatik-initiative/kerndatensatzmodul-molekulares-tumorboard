@@ -149,7 +149,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression.problem"
+            "map": "Condition"
           }
         ]
       },
@@ -168,7 +168,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression.problem:Reference(Condition)"
+            "map": "Condition.where(meta.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor')"
           }
         ]
       },
@@ -182,6 +182,12 @@
         "type": [
           {
             "code": "Reference"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.where(meta.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-histologie-icdo3')"
           }
         ]
       },
@@ -200,7 +206,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression.investigation:Reference(Observation)"
+            "map": "Condition.stage.assessment:Reference(Observation)"
           }
         ]
       },
@@ -219,7 +225,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression.investigation:Reference(Observation)"
+            "map": "Condition.stage.assessment:Reference(Observation)"
           }
         ]
       },
@@ -276,7 +282,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ClinicalImpression.investigation:Reference(Observation)"
+            "map": "Condition.stage.assessment:Reference(Observation)"
           }
         ]
       },
@@ -333,7 +339,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.extension(LeitlinenbehandlungStatus)"
+            "map": "Condition.extension(LeitlinenbehandlungStatus)"
           }
         ]
       },
@@ -390,7 +396,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.extension(Zulassungsstatus)"
+            "map": "ClinicalImpression.extension.extension(Zulassungsstatus)"
           }
         ]
       },
@@ -409,7 +415,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.extension(Therapielinie)"
+            "map": "ClinicalImpression.extension.extension(Therapielinie)"
           }
         ]
       },
@@ -485,7 +491,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.statusReason"
+            "map": "Procedure.outcome.coding.code"
           }
         ]
       },
