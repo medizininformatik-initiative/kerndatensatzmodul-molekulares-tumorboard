@@ -70,6 +70,7 @@ Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type
 Alias: $fhir-observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statement-status
 
@@ -78,6 +79,7 @@ Alias: $ASK = http://fhir.de/CodeSystem/ask
 Alias: $ATC_DE = http://fhir.de/CodeSystem/bfarm/atc
 Alias: $EDQM = http://standardterms.edqm.eu
 Alias: $ENS = http://ensembl.org
+Alias: $HGNC = http://www.genenames.org
 Alias: $ICD10GM = http://fhir.de/CodeSystem/bfarm/icd-10-gm
 Alias: $ICDO3 = http://terminology.hl7.org/CodeSystem/icd-o-3
 Alias: $LNC = http://loinc.org

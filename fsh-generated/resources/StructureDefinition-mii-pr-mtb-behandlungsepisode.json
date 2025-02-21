@@ -201,9 +201,9 @@
         "id": "ClinicalImpression.investigation:NgsBericht.code.coding",
         "path": "ClinicalImpression.investigation.code.coding",
         "patternCoding": {
-          "code": "721967005",
+          "code": "106221001",
           "system": "http://snomed.info/sct",
-          "display": "Tissue pathology biopsy report"
+          "display": "Genetic finding"
         }
       },
       {
@@ -223,35 +223,34 @@
         ]
       },
       {
-        "id": "ClinicalImpression.investigation:Probe",
+        "id": "ClinicalImpression.investigation:MolekularPathologieBefund",
         "path": "ClinicalImpression.investigation",
-        "sliceName": "Probe",
+        "sliceName": "MolekularPathologieBefund",
         "min": 0,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "ClinicalImpression.investigation:Probe.code.coding",
+        "id": "ClinicalImpression.investigation:MolekularPathologieBefund.code.coding",
         "path": "ClinicalImpression.investigation.code.coding",
         "patternCoding": {
-          "code": "125394000",
+          "code": "721967005",
           "system": "http://snomed.info/sct",
-          "display": "Cell content alteration"
+          "display": "Tissue pathology biopsy report"
         }
       },
       {
-        "id": "ClinicalImpression.investigation:Probe.item",
+        "id": "ClinicalImpression.investigation:MolekularPathologieBefund.item",
         "path": "ClinicalImpression.investigation.item",
-        "short": "Bioprobe",
-        "definition": "Bioprobe mit ermitteltem Tumorzellgehalt",
+        "short": "Molekular Pathologie Befund",
+        "definition": "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund",
         "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-befund",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report"
             ]
           }
         ]

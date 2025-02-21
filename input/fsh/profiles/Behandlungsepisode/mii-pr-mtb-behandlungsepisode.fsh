@@ -45,22 +45,19 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 
 // TODO: SCT prüfen
 * investigation contains NgsBericht 0..1 MS
-* investigation[NgsBericht].code.coding = $SCT#721967005 "Tissue pathology biopsy report"
+* investigation[NgsBericht].code.coding = $SCT#106221001 "Genetic finding"
 * investigation[NgsBericht].item 1..1
 * investigation[NgsBericht].item ^short = "NGS Report"
 * investigation[NgsBericht].item ^definition = "Für Molekulares Tumorboard bereitgestellter Next Generation Sequencing Bericht"
 * investigation[NgsBericht].item only Reference(MII_PR_MTB_NGS_Bericht)
 
 // TODO: SCT prüfen
-// TODO: Referenz DiagnosticReport (Onko, Patho) vs. Specimen (Onko, Biobank)
-* investigation contains Probe 0..1 MS
-* investigation[Probe].code.coding = $SCT#125394000 "Cell content alteration"
-* investigation[Probe].item 1..1
-* investigation[Probe].item ^short = "Bioprobe"
-* investigation[Probe].item ^definition = "Bioprobe mit ermitteltem Tumorzellgehalt"
-* investigation[Probe].item only Reference(MII_PR_Onko_Befund or MII_PR_Patho_Report)
-
-// TODO: Referenz Molekular Pathologie Befund
+* investigation contains MolekularPathologieBefund 0..1 MS
+* investigation[MolekularPathologieBefund].code.coding = $SCT#721967005 "Tissue pathology biopsy report"
+* investigation[MolekularPathologieBefund].item 1..1
+* investigation[MolekularPathologieBefund].item ^short = "Molekular Pathologie Befund"
+* investigation[MolekularPathologieBefund].item ^definition = "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund"
+* investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT)
 
 * supportingInfo ^slicing.discriminator.type = #type
 * supportingInfo ^slicing.discriminator.path = "$this"
