@@ -38,39 +38,69 @@
   "dependsOn": [
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.biobank",
-      "version": "2025.0.0",
+      "version": "2025.0.3",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.biobank/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.biobank",
       "id": "de_medizininformatikinitiative_kerndatensatz_biobank"
     },
     {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.consent",
+      "version": "2025.0.0",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.consent/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.consent",
+      "id": "de_medizininformatikinitiative_kerndatensatz_consent"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
+      "version": "2025.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
+      "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
+      "version": "2025.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ImplementationGuide/mii-ig-fall",
+      "id": "de_medizininformatikinitiative_kerndatensatz_fall"
+    },
+    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
-      "version": "2025.0.0-alpha5",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.medikation/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.medikation",
+      "version": "2025.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation",
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
-      "version": "2025.0.0-alpha4",
+      "version": "2025.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.meta/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.meta",
       "id": "de_medizininformatikinitiative_kerndatensatz_meta"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
-      "version": "2025.0.0-alpha2",
+      "version": "2025.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.molgen/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.molgen",
       "id": "de_medizininformatikinitiative_kerndatensatz_molgen"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2025.0.0-alpha2",
+      "version": "2025.0.3",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.patho",
-      "version": "2025.0.0-alpha3",
+      "version": "2025.0.2",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.patho/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.patho",
       "id": "de_medizininformatikinitiative_kerndatensatz_patho"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.person",
+      "version": "2025.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ImplementationGuide/mii-ig-person",
+      "id": "de_medizininformatikinitiative_kerndatensatz_person"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.prozedur",
+      "version": "2025.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ImplementationGuide/mii-ig-prozedur",
+      "id": "de_medizininformatikinitiative_kerndatensatz_prozedur"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
@@ -79,14 +109,8 @@
       "id": "de_medizininformatikinitiative_kerndatensatz_studie"
     },
     {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
-      "version": "2025.0.0-alpha3",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
-      "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
-    },
-    {
       "packageId": "hl7.fhir.uv.genomics-reporting",
-      "version": "3.0.0-ballot",
+      "version": "3.0.0",
       "uri": "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting",
       "id": "hl7_fhir_uv_genomics_reporting"
     }
@@ -318,6 +342,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-leitlinienbehandlung-status"
+        },
+        "name": "MII CS Leitlinienbehandlung Status",
+        "description": "Status der Behandlung nach Leitlinie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-molekulare-biomarker"
         },
         "name": "MII CS Molekulare Biomarker",
@@ -350,6 +382,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-zulassungsstatus"
+        },
+        "name": "MII CS Zulassungsstatus",
+        "description": "Angabe zum Zulassungsstatus",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
@@ -370,6 +410,22 @@
         },
         "name": "MII EX MTB Diagnose",
         "description": "Onkologische Diagnose",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
+        },
+        "name": "MII EX MTB Leitlinie Dokumentation",
+        "description": "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status"
+        },
+        "name": "MII EX MTB Leitlinienbehandlung Status",
+        "description": "Status der Behandlung nach Leitlinie",
         "exampleBoolean": false
       },
       {
@@ -410,6 +466,22 @@
         },
         "name": "MII EX MTB Therapieempfehlung Priorität",
         "description": "Priorität der (einzelnen) Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-therapielinie"
+        },
+        "name": "MII EX MTB Therapielinie",
+        "description": "Angabe der Therapielinie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-zulassungsstatus"
+        },
+        "name": "MII EX MTB Zulassungsstatus",
+        "description": "Zulassungsstatus der Leitlinientherapie",
         "exampleBoolean": false
       },
       {
@@ -462,6 +534,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-behandlungsepisode"
+        },
+        "name": "MII PR MTB Behandlungsepisode",
+        "description": "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-biopsie-auftrag"
         },
         "name": "MII PR MTB Biopsie Auftrag",
@@ -482,6 +562,14 @@
         },
         "name": "MII PR MTB Copy Number Variant",
         "description": "Copy Number Variant (CNV)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-diagnose-primaertumor"
+        },
+        "name": "MII PR MTB Diagnose Primärtumor",
+        "description": "Diagnose zum Primärtumor",
         "exampleBoolean": false
       },
       {
@@ -558,10 +646,26 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-immunohistochemistry"
+        },
+        "name": "MII PR MTB Immunohistochemistry",
+        "description": "Immunhistorchemistry report",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"
         },
         "name": "MII PR MTB Mikrosatelliteninstabilität",
         "description": "Beschreibt die Neigung zu Mutationen aufgrund einer gestörten Fehlpaarungsreparatur (DNA mismatch repair, MMR).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-molecular-pathology-report"
+        },
+        "name": "MII PR MTB Molecular Pathology Report",
+        "description": "Molecular pathology report",
         "exampleBoolean": false
       },
       {
@@ -622,6 +726,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-systemische-therapie"
+        },
+        "name": "MII PR MTB Systemische Therapie",
+        "description": "Systemische Therapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
         },
         "name": "MII PR MTB Systemtherapie",
@@ -654,10 +766,34 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-tumorausbreitung"
+        },
+        "name": "MII PR MTB Tumorausbreitung",
+        "description": "Angabe zur Tumorausbreitung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-tumorzellgehalt"
         },
         "name": "MII PR MTB Tumorzellgehalt",
         "description": "Bestimmter Tumorzellgehalt",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
+        },
+        "name": "MII PR MTB WHO Grad Tumor ZNS",
+        "description": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-abbruchsgrund"
+        },
+        "name": "MII VS Abbruchsgrund",
+        "description": "ValueSet zum Abbruchsgrund",
         "exampleBoolean": false
       },
       {
@@ -726,6 +862,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-leitlinienbehandlung-status"
+        },
+        "name": "MII VS Leitlinienbehandlung Status",
+        "description": "ValueSet zum Status der Behandlung nach Leitlinie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-molekulare-biomarker"
         },
         "name": "MII VS Molekulare Biomarker",
@@ -770,6 +914,30 @@
         },
         "name": "MII VS Therapieempfehlung Status Begründung",
         "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-tumorausbreitung"
+        },
+        "name": "MII VS Tumorausbreitung",
+        "description": "ValueSet zur Angabe der Tumorausbreitung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-who-grad-tumor-zns"
+        },
+        "name": "MII VS WHO Grad Tumor ZNS",
+        "description": "ValueSet zum Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-zulassungsstatus"
+        },
+        "name": "MII VS Zulassungsstatus",
+        "description": "ValueSet zum Zulassungsstatus",
         "exampleBoolean": false
       },
       {
@@ -827,6 +995,13 @@
         "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
         "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation-FISH-Analysis-for-Ewing-Sarcoma"
+        },
+        "name": "Observation-FISH-Analysis-for-Ewing-Sarcoma",
+        "exampleBoolean": true
       }
     ],
     "page": {

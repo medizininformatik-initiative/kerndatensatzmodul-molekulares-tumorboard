@@ -58,7 +58,7 @@ jobs:
         run: fhir restore
 
       - name: Generate depended FHIR packages snapshots
-        run: fhir deps | grep -E '^[^hl7.fhir.r.*.core].*' | tr -s '[:blank:]' '@' | xargs -I % fhir inflate --package % --snapshot --expand --force
+        run: fhir deps | sed '/^hl7.fhir.*.core.*/d' | sed -E 's/([a-z0-9.-]+)[[:space:]]+([0-9a-z.-]+).*/\1@\2/g' | xargs -I % fhir inflate --package % --snapshot --expand --force
 
       - name: Build FHIR profiles
         run: sushi build --log-level debug

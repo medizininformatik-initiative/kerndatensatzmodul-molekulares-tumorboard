@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-leitlinie-dokumentation",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation",
+  "version": "2024.0.0-ballot",
+  "name": "MII_EX_MTB_Leitlinie_Dokumentation",
+  "title": "MII EX MTB Leitlinie Dokumentation",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Element",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Leitlinie Dokumentation",
+        "definition": "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur"
+      },
+      {
+        "id": "Extension.extension:Therapielinie",
+        "path": "Extension.extension",
+        "sliceName": "Therapielinie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapielinie"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Zulassungsstatus",
+        "path": "Extension.extension",
+        "sliceName": "Zulassungsstatus",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-zulassungsstatus"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

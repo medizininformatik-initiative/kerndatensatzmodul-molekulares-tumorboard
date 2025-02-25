@@ -1,9 +1,9 @@
 RuleSet: Probe
-* Probe                 0..* BackboneElement  "Histologie und Tumorzellgehalt"  "Histologiebefund und bestimmter Tumorzellgehalt"
-  * Histologie          0..1 Reference        "Verweis auf Histologiebefund"    "Verweis auf den Befund zur Histologie des Tumors"
+* Probe                 0..* BackboneElement              "Histologie und Tumorzellgehalt"  "Histologiebefund und bestimmter Tumorzellgehalt"
+  * Histologie          0..1 Reference(DiagnosticReport)  "Verweis auf Histologiebefund"    "Verweis auf den Befund zur Histologie des Tumors"
   * insert Tumorzellgehalt
 
 RuleSet: ProbeMapping
-* Probe             -> "ServiceRequest.reasonReference"
+* Probe             -> "Specimen"
   * Histologie      -> "DiagnosticReport"
   * insert TumorzellgehaltMapping

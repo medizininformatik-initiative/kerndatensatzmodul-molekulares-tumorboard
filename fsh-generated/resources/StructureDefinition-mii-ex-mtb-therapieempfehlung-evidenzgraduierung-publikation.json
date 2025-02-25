@@ -55,25 +55,70 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "short": "Publikation",
-        "definition": "Verweis auf Publikation zur Evidenzgraduierung",
-        "comment": "Verweis auf Publikation erfolgt anhand der DOI oder PMID",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "min": 1,
         "type": [
           {
             "code": "string"
           },
           {
-            "code": "uri"
-          },
-          {
-            "code": "url"
-          },
-          {
             "code": "Identifier"
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:valueIdentifier",
+        "path": "Extension.value[x]",
+        "sliceName": "valueIdentifier",
+        "short": "Identifikator Publikation",
+        "definition": "Eindeutiger Identifikator zur Publikation in einer Publikationsdatenbank",
+        "comment": "Z.B. PubMed Identifier (PMID): http://www.ncbi.nlm.nih.gov/pubmed/30016818",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueIdentifier.system",
+        "path": "Extension.value[x].system",
+        "comment": "Z.B. PMID: http://www.ncbi.nlm.nih.gov/pubmed",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:valueIdentifier.value",
+        "path": "Extension.value[x].value",
+        "comment": "Z.B. PMID: 30016818",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:valueString",
+        "path": "Extension.value[x]",
+        "sliceName": "valueString",
+        "short": "Andere Publikationsquelle",
+        "definition": "Publikationsquelle die nicht über eine Publikationsdatenbank referenzierbar ist",
+        "comment": "Z.B. Whitepaper oder Leitlinie",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
       }
     ]
   }

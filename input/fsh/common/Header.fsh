@@ -7,6 +7,15 @@ RuleSet: PR_Header
 * insert Meta
 * insert Status
 
+RuleSet: CM_Header(url, module, date, source, target)
+* insert CM_Meta({url})
+* status = #active
+* name = "MII CM {module} {source} {target}"
+* title = "MII CM {module} {source} {target}"
+* date = "{date}"
+* description = "Mapping {source} Codes zu {target}"
+* purpose = "Technisches Mapping zur Transformation von {source} zu {target}"
+
 RuleSet: EX_Header(url)
 * insert Header
 * insert EX_Meta({url})

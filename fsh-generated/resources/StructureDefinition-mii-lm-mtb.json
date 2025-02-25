@@ -54,7 +54,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare"
+            "map": "ClinicalImpression"
           }
         ]
       },
@@ -73,7 +73,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.period.start"
+            "map": "ClinicalImpression.effectiveDateTime"
           }
         ]
       },
@@ -86,13 +86,60 @@
         "max": "1",
         "type": [
           {
-            "code": "Reference"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory"
+            ]
           }
         ],
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.extension(KrankengeschichteFamilie)"
+            "map": "ClinicalImpression.investigation.item:Reference(FamilyMemberHistory)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.NGSBericht",
+        "path": "mii-lm-mtb.Behandlungsepisode.NGSBericht",
+        "short": "Verweis auf NGS Bericht",
+        "definition": "Verweis auf Next Generation Sequencing Bericht",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClinicalImpression.investigation.item:Reference(DiagnosticReport)"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.Behandlungsepisode.MolekularPathologieBefund",
+        "path": "mii-lm-mtb.Behandlungsepisode.MolekularPathologieBefund",
+        "short": "Verweis auf Molekular Pathologie Befund",
+        "definition": "Verweis auf Molekular Pathologie Befund",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClinicalImpression.investigation.item:Reference(DiagnosticReport)"
           }
         ]
       },
@@ -149,7 +196,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.diagnosis"
+            "map": "Condition"
           }
         ]
       },
@@ -168,7 +215,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.diagnosis.condition:Reference(Condition)"
+            "map": "Condition.where(meta.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor')"
           }
         ]
       },
@@ -187,7 +234,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Condition.evidence.detail:Reference(DiagnosticReport)"
+            "map": "Observation.where(meta.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-histologie-icdo3')"
           }
         ]
       },
@@ -206,7 +253,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Condition.stage.summary:CodeableConcept.coding.code"
+            "map": "Condition.stage.assessment:Reference(Observation)"
           }
         ]
       },
@@ -225,7 +272,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Condition.stage.assesment:Reference(Observation)"
+            "map": "Condition.stage.assessment:Reference(Observation)"
           }
         ]
       },
@@ -257,7 +304,7 @@
         "max": "1",
         "type": [
           {
-            "code": "date"
+            "code": "dateTime"
           }
         ],
         "mapping": [
@@ -282,7 +329,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Condition.stage.assesment:Reference(Observation)"
+            "map": "Condition.stage.assessment:Reference(Observation)"
           }
         ]
       },
@@ -314,7 +361,7 @@
         "max": "1",
         "type": [
           {
-            "code": "date"
+            "code": "dateTime"
           }
         ],
         "mapping": [
@@ -339,7 +386,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "EpisodeOfCare.extension(LeitlinenbehandlungStatus)"
+            "map": "Condition.extension(LeitlinenbehandlungStatus)"
           }
         ]
       },
@@ -354,6 +401,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure"
+          }
         ]
       },
       {
@@ -365,7 +418,16 @@
         "max": "*",
         "type": [
           {
-            "code": "Reference"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Condition"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.reasonReference:Reference(Condition)"
           }
         ]
       },
@@ -380,6 +442,12 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClinicalImpression.extension.extension(Zulassungsstatus)"
+          }
         ]
       },
       {
@@ -391,7 +459,13 @@
         "max": "1",
         "type": [
           {
-            "code": "integer"
+            "code": "unsignedInt"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClinicalImpression.extension.extension(Therapielinie)"
           }
         ]
       },
@@ -404,7 +478,13 @@
         "max": "1",
         "type": [
           {
-            "code": "date"
+            "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.performedPeriod.start"
           }
         ]
       },
@@ -417,7 +497,13 @@
         "max": "1",
         "type": [
           {
-            "code": "date"
+            "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.performedPeriod.end"
           }
         ]
       },
@@ -430,33 +516,32 @@
         "max": "*",
         "type": [
           {
-            "code": "Reference"
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationStatement.medicationCodeableConcept"
           }
         ]
       },
       {
-        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Beendigungsgrund",
-        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Beendigungsgrund",
-        "short": "Beendigungsgrund",
-        "definition": "Beendigungsgrund der systemischen Leitlinentherapie",
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Abbruchsgrund",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Abbruchsgrund",
+        "short": "Abbruchsgrund",
+        "definition": "Gibt den Grund an, warum die Systemtherapie beendet wurde",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "code"
           }
-        ]
-      },
-      {
-        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Typ",
-        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Typ",
-        "short": "Typ",
-        "definition": "Typ der Leitlinientherapie",
-        "min": 0,
-        "max": "1",
-        "type": [
+        ],
+        "mapping": [
           {
-            "code": "code"
+            "identity": "mii-map-mtb",
+            "map": "Procedure.outcome.coding.code"
           }
         ]
       },
@@ -464,12 +549,18 @@
         "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Kategorie",
         "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Kategorie",
         "short": "Kategorie",
-        "definition": "Kategorie der Leitlinientherapie",
+        "definition": "Kategorie der Leitlinientherapie (Prozedur)",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.category"
           }
         ]
       },
@@ -484,6 +575,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
         ]
       },
       {
@@ -495,7 +592,13 @@
         "max": "1",
         "type": [
           {
-            "code": "date"
+            "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.effectiveDateTime"
           }
         ]
       },
@@ -508,7 +611,13 @@
         "max": "1",
         "type": [
           {
-            "code": "Reference"
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.valueCodeableConcept"
           }
         ]
       },
@@ -527,7 +636,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ServiceRequest.reasonReference"
+            "map": "Specimen"
           }
         ]
       },
@@ -540,7 +649,10 @@
         "max": "1",
         "type": [
           {
-            "code": "Reference"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"
+            ]
           }
         ],
         "mapping": [
@@ -878,7 +990,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Idenfifier[DOI].value"
+            "map": "Idenfifier.value"
           }
         ]
       },
@@ -897,7 +1009,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Identifier[PMID].value"
+            "map": "Identifier.value"
           }
         ]
       },
@@ -1049,7 +1161,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ServiceRequest.reasonReference"
+            "map": "Specimen"
           }
         ]
       },
@@ -1062,7 +1174,10 @@
         "max": "1",
         "type": [
           {
-            "code": "Reference"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"
+            ]
           }
         ],
         "mapping": [
@@ -1220,7 +1335,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "ServiceRequest.reasonReference"
+            "map": "Specimen"
           }
         ]
       },
@@ -1233,7 +1348,10 @@
         "max": "1",
         "type": [
           {
-            "code": "Reference"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"
+            ]
           }
         ],
         "mapping": [
