@@ -8,6 +8,9 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * medication[x] 1..1 MS
 * medicationReference only Reference(MII_PR_Medikation_Medication)
 
+// TODO Constrain status to draft?
+// TODO Constrain intent to proposal?
+
 * supportingInformation 0..* MS
 * supportingInformation ^slicing.discriminator.type = #type
 * supportingInformation ^slicing.discriminator.path = "reference.reference"
