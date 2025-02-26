@@ -25,7 +25,7 @@ Description: "Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh.
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
 * subject = Reference(Patient/KimMusterperson)
 * performedPeriod.start = "2023-01-04"
-* performedPeriod.end = "2023-03-01"
+* performedPeriod.end = "2023-05-24"
 * outcome.coding[+] = $mii-cs-onko-therapie-grund-ende#W
 * outcome.text = "Reguläres Ende mit Substanzwechsel"
 
