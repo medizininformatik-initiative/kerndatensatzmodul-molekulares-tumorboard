@@ -17,7 +17,6 @@ Instance: MTBChemo1Procedure
 InstanceOf: MII_PR_MTB_Systemische_Therapie
 Usage: #example
 Description: "Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28; Sechs Zyklen ab 04.01.2023"
-* extension[+].url = $mii-ex-onko-systemische-therapie-intention
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
 * status = #completed
 * category.coding[sct] = $SCT#277132007 // Therapeutic procedure | alternativ 18629005 Administration of medicine?
@@ -169,11 +168,8 @@ Usage: #example
 Instance: MTBMedicationRequestMirvetuximab
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Usage: #example
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-prioritaet
 * extension[Prioritaet].valuePositiveInt = 1
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung
 * extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = $mii-cs-mtb-therapieempfehlung-evidenzgrad#m1A
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 * extension[Publikation].valueIdentifier.system = "http://doi.org"
 * extension[Publikation].valueIdentifier.value = "10.1200/JCO.2022.40.16_suppl.5512"
 * status = $medicationrequest-status#draft
@@ -195,14 +191,10 @@ Usage: #example
 Instance: MTBMedicationRequestTrastuzumabDeruxtecan
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Usage: #example
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-prioritaet
 * extension[Prioritaet].valuePositiveInt = 3
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung
 * extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = $mii-cs-mtb-therapieempfehlung-evidenzgrad#m1B
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 * extension[Publikation][0].valueIdentifier.system = "http://www.ncbi.nlm.nih.gov/pubmed"
 * extension[Publikation][0].valueIdentifier.value = "35665782"
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 * extension[Publikation][1].valueIdentifier.system = "http://www.ncbi.nlm.nih.gov/pubmed"
 * extension[Publikation][1].valueIdentifier.value = "37870536"
 * status = $medicationrequest-status#draft
@@ -240,11 +232,8 @@ Usage: #example
 Instance: MTBRequestGroupAdavosertibCarboplatin
 InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Usage: #example
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-prioritaet
 * extension[Prioritaet].valuePositiveInt = 4
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung
 * extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = $mii-cs-mtb-therapieempfehlung-evidenzgrad#m1B
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 * extension[Publikation].valueIdentifier.system = "http://www.ncbi.nlm.nih.gov/pubmed"
 * extension[Publikation].valueIdentifier.value = "37236033"
 * status = $request-status#draft
@@ -292,11 +281,8 @@ Usage: #example
 Instance: MTBRequestGroupLunresertibCamonsertib
 InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Usage: #example
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-prioritaet
 * extension[Prioritaet].valuePositiveInt = 5
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung
 * extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = $mii-cs-mtb-therapieempfehlung-evidenzgrad#m1B
-* extension[+].url = $mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
 * extension[Publikation].valueIdentifier.system = "http://doi.org"
 * extension[Publikation].valueIdentifier.value = "10.1158/1535-7163.TARG-23-PR008"
 * status = $request-status#draft
@@ -310,7 +296,6 @@ Instance: MTBChemo2Procedure
 InstanceOf: MII_PR_MTB_Systemische_Therapie
 Usage: #example
 Description: "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.06.2023"
-* extension[+].url = $mii-ex-onko-systemische-therapie-intention
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
 * status = #completed
 * category.coding[sct] = $SCT#277132007 // Therapeutic procedure | alternativ 18629005 Administration of medicine?
