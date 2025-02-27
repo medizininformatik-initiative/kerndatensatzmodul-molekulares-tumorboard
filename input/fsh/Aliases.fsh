@@ -74,9 +74,12 @@ Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
-Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statement-status
-Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
 Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
+Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
+Alias: $request-status = http://hl7.org/fhir/request-status
+Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
+Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statement-status
+
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask
@@ -90,6 +93,7 @@ Alias: $LNC = http://loinc.org
 Alias: $OPS = http://fhir.de/CodeSystem/bfarm/ops
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+Alias: $UNII = http://fdasis.nlm.nih.gov
 
 // Sonstige Aliases
 Alias: $bwhc-cnv-type = http://bwhc.de/mtb/genetics-copy-number-variant
