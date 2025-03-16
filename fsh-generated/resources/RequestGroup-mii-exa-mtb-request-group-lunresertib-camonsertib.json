@@ -1,11 +1,18 @@
 {
   "resourceType": "RequestGroup",
-  "id": "MTBRequestGroupLunresertibCamonsertib",
+  "id": "mii-exa-mtb-request-group-lunresertib-camonsertib",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
     ]
   },
+  "action": [
+    {
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-camonsertib"
+      }
+    }
+  ],
   "extension": [
     {
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet",
@@ -24,22 +31,14 @@
     },
     {
       "valueIdentifier": {
-        "system": "http://doi.org",
+        "system": "$doi",
         "value": "10.1158/1535-7163.TARG-23-PR008"
       },
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
-    }
-  ],
-  "action": [
-    {
-      "resource": {
-        "reference": "MedicationRequest/MTBMedicationRequestLunresertib"
-      }
     },
     {
-      "resource": {
-        "reference": "MedicationRequest/MTBMedicationRequestCamonsertib"
-      }
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
+      "valueString": "https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf"
     }
   ],
   "status": "draft",

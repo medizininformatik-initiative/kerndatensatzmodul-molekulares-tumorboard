@@ -1,6 +1,6 @@
 {
   "resourceType": "MedicationRequest",
-  "id": "MTBMedicationRequestCamonsertib",
+  "id": "mii-exa-mtb-medication-request-lunresertib",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
@@ -8,10 +8,10 @@
   },
   "status": "draft",
   "intent": "option",
-  "medicationReference": {
-    "reference": "Medication/MTBMedicationCamonsertib"
-  },
   "subject": {
     "reference": "Patient/KimMusterperson"
+  },
+  "medicationReference": {
+    "reference": "Medication/mii-exa-mtb-medication-lunresertib"
   }
 }

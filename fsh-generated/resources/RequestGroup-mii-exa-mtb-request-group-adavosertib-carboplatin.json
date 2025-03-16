@@ -1,11 +1,18 @@
 {
   "resourceType": "RequestGroup",
-  "id": "MTBRequestGroupAdavosertibCarboplatin",
+  "id": "mii-exa-mtb-request-group-adavosertib-carboplatin",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
     ]
   },
+  "action": [
+    {
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-carboplatin"
+      }
+    }
+  ],
   "extension": [
     {
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet",
@@ -24,22 +31,10 @@
     },
     {
       "valueIdentifier": {
-        "system": "http://www.ncbi.nlm.nih.gov/pubmed",
+        "system": "$pmid",
         "value": "37236033"
       },
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
-    }
-  ],
-  "action": [
-    {
-      "resource": {
-        "reference": "MedicationRequest/MTBMedicationRequestAdavosertib"
-      }
-    },
-    {
-      "resource": {
-        "reference": "MedicationRequest/MTBMedicationRequestCarboplatin"
-      }
     }
   ],
   "status": "draft",

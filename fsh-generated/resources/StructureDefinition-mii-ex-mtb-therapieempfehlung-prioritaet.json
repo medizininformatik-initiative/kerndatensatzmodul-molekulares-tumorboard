@@ -23,11 +23,15 @@
   "abstract": false,
   "context": [
     {
+      "expression": "MedicationRequest",
+      "type": "element"
+    },
+    {
       "expression": "RequestGroup",
       "type": "element"
     },
     {
-      "expression": "MedicationRequest",
+      "expression": "ServiceRequest",
       "type": "element"
     }
   ],
@@ -55,10 +59,35 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "short": "Priorität",
-        "definition": "Priorität dieser Kombinationstherapie-Empfehlung",
+        "definition": "Priorität dieser Therapieempfehlung",
         "comment": "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität",
         "min": 1,
+        "type": [
+          {
+            "code": "decimal"
+          },
+          {
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valuePositiveInt",
+        "path": "Extension.value[x]",
+        "sliceName": "valuePositiveInt",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "positiveInt"

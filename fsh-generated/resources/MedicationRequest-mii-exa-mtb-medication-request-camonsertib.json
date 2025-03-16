@@ -1,6 +1,6 @@
 {
   "resourceType": "MedicationRequest",
-  "id": "MTBMedicationRequestAdavosertib",
+  "id": "mii-exa-mtb-medication-request-camonsertib",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
@@ -8,10 +8,10 @@
   },
   "status": "draft",
   "intent": "option",
-  "medicationReference": {
-    "reference": "Medication/MTBMedicationAdavosertib"
-  },
   "subject": {
     "reference": "Patient/KimMusterperson"
+  },
+  "medicationReference": {
+    "reference": "Medication/mii-exa-mtb-medication-camonsertib"
   }
 }
