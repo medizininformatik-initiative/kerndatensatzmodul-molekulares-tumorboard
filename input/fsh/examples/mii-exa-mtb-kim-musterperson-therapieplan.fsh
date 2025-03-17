@@ -1,57 +1,20 @@
-// Aliases für dieses Komplexbeispiel
-Alias: $doi = http://doi.org
-Alias: $pmid = http://www.ncbi.nlm.nih.gov/pubmed
-
-// RuleSets für dieses Komplexbeispiel
-RuleSet: BeschlussPrioritaet(prio)
-* extension[Prioritaet].valuePositiveInt = {prio}
-
-RuleSet: BeschlussSubPrioritaet(prio)
-* extension[Prioritaet].valueDecimal = {prio}
-
-RuleSet: BeschlussEvidenzgrad(grad)
-* extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #{grad}
-
-RuleSet: BeschlussEvidenzQuelle(quelle)
-* extension[Publikation][+].valueString = "{quelle}"
-
-RuleSet: BeschlussEvidenzPublikation(quelle, id)
-* extension[Publikation][+].valueIdentifier.system = "{quelle}"
-* extension[Publikation][=].valueIdentifier.value = "{id}"
-
-RuleSet: BeschlussEvidenz(grad, quelle, id)
-* insert BeschlussEvidenzgrad({grad})
-* insert BeschlussEvidenzPublikation({quelle}, {id})
-
-RuleSet: BeschlussEvidenzZweiPublikationen(grad, quelle, id1, id2)
-* insert BeschlussEvidenzgrad({grad})
-* insert BeschlussEvidenzPublikation({quelle}, {id1})
-* insert BeschlussEvidenzPublikation({quelle}, {id2})
-
-RuleSet: BeschlussEvidenzZweiQuellen(grad, quelle1, id1, quelle2, id2)
-* insert BeschlussEvidenzgrad({grad})
-* insert BeschlussEvidenzPublikation({quelle1}, {id1})
-* insert BeschlussEvidenzPublikation({quelle2}, {id2})
-
-RuleSet: BeschlussEvidenzDreiQuellen(grad, quelle1, id1, quelle2, id2, quelle3, id3)
-* insert BeschlussEvidenzgrad({grad})
-* insert BeschlussEvidenzPublikation({quelle1}, {id1})
-* insert BeschlussEvidenzPublikation({quelle2}, {id2})
-* insert BeschlussEvidenzPublikation({quelle3}, {id3})
-
 // Komplexbeispiel Beschluss Therapieplan Molekulares Tumorboard
 Instance: mii-exa-mtb-kim-musterperson-therapieplan
 InstanceOf: MII_PR_MTB_Therapieplan
-Title: "MTB Beschluss Kim Musterperson"
+Title: "MTB-Beschluss Kim Musterperson"
 Description: "Beschluss MTB-Fall Kim Musterperson vom 28.03.2023"
 Usage: #example
 * status = #active
 // Posttherapeutische Behandlung
 * category = $mii-cs-onko-therapieplanung-typ#postth
-// Patientin Kim Musterperson
-* subject = Reference(Patient/KimMusterperson)
+// Patientin Kim Musterperson (siehe KDS Erweiterungsmodul Onkologie)
+* subject = Reference(Patient/PatientKimMusterperson)
 // Beschluss nach Wiedervorstellung am 28.03.2023
-* created = "2023-03-28"
+* created = 2023-03-28
+// Primärdiagnose (siehe KDS Erweiterungsmodul Onkologie)
+* addresses = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
+// Behandlungsepisode
+* supportingInfo = Reference(mii-exa-mtb-kim-musterperson-behandlungsepisode)
 // Prio 1 - Therapieempfehlung: Mirvetuximab soravtansine (m1A)
 * activity.reference = Reference(mii-exa-mtb-medication-request-mirvetuximab)
 * activity.detail.code = $mii-cs-onko-therapie-typ#IZ "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
@@ -89,7 +52,6 @@ Usage: #example
 // Auf Grundlage der hohen Expression von Folat Rezeptor alpha (80% d. Tumorzellen) besteht die Rationale für einen
 // Therapieversuch mit Mirvetuximab Soravtansine (EL m1A; DOI: 10.1200/JCO.2022.40.16_suppl.5512 Journal of Clinical
 // Oncology 40, no. 16_suppl (June 01, 2022) 5512-5512 und PMID 38055253).
-
 Instance: mii-exa-mtb-medication-request-mirvetuximab
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Mirvetuximab soravtansine"
@@ -97,7 +59,7 @@ Description: "Therapieempfehlung: Mirvetuximab soravtansine, Priorität: 1, Evid
 Usage: #example
 * status = #draft
 * intent = #proposal
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FX26
 * insert BeschlussPrioritaet(1)
 * insert BeschlussEvidenzZweiQuellen(m1A, $doi, 10.1200/JCO.2022.40.16_suppl.5512, $pmid, 38055253)
@@ -121,7 +83,7 @@ Title: "Phase 1/2 CLDN6 CAR-T-Zell-Studie"
 Description: "Studieneinschlussempfehlung: Phase 1/2 CLDN6 CAR-T-Zell-Studie, Priorität: 2.1"
 Usage: #example
 * status = #draft
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-cldn6)
 * insert BeschlussSubPrioritaet(2.1)
 
@@ -145,7 +107,7 @@ Title: "TEDOVA"
 Description: "Studieeinschlussempfehlung: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA"
 Usage: #example
 * status = #draft
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-tedova)
 * insert BeschlussSubPrioritaet(2.2)
 
@@ -164,7 +126,7 @@ Title: "CCNE1"
 Description: "Studieneinschlussempfehlung: CCNE1 ampl. OvCA"
 Usage: #example
 * status = #draft
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-ccne1)
 * insert BeschlussSubPrioritaet(2.3)
 
@@ -185,7 +147,7 @@ Description: "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenz
 Usage: #example
 * status = #draft
 * intent = #proposal
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FD04
 * insert BeschlussPrioritaet(3)
 * insert BeschlussEvidenzDreiQuellen(m1B, $pmid, 35665782, $pmid, 37870536, $doi, 10.1200/JCO.2023.41.17_suppl.LBA3000)
@@ -211,7 +173,7 @@ Description: "Therapieempfehlung: Adavosertib"
 Usage: #example
 * status = #draft
 * intent = #option
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-adavosertib)
 
 Instance: mii-exa-mtb-medication-request-carboplatin
@@ -221,7 +183,7 @@ Description: "Therapieempfehlung: Carboplatin"
 Usage: #example
 * status = #draft
 * intent = #option
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01XA02
 
 Instance: mii-exa-mtb-request-group-adavosertib-carboplatin
@@ -231,7 +193,7 @@ Description: "Therapieempfehlung Kombinationstherapie: Adavosertib +/- Carboplat
 Usage: #example
 * status = #draft
 * intent = #proposal
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * action.resource = Reference(mii-exa-mtb-medication-request-adavosertib)
 * action.resource = Reference(mii-exa-mtb-medication-request-carboplatin)
 * insert BeschlussPrioritaet(4)
@@ -260,7 +222,7 @@ Description: "Therapieempfehlung: Lunresertib"
 Usage: #example
 * status = #draft
 * intent = #option
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-lunresertib)
 
 // TODO: MII_PR_Medikation_Medication nicht möglich, da Medication.ingredient 1..*
@@ -280,7 +242,7 @@ Description: "Therapieempfehlung: Camonsertib"
 Usage: #example
 * status = #draft
 * intent = #option
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-camonsertib)
 
 Instance: mii-exa-mtb-request-group-lunresertib-camonsertib
@@ -290,14 +252,14 @@ Description: "Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib
 Usage: #example
 * status = #draft
 * intent = #proposal
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * action.resource = Reference(mii-exa-mtb-medication-request-lunresertib)
 * action.resource = Reference(mii-exa-mtb-medication-request-camonsertib)
 * insert BeschlussPrioritaet(5)
 * insert BeschlussEvidenz(m1B, $doi, 10.1158/1535-7163.TARG-23-PR008)
 * insert BeschlussEvidenzQuelle(https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf)
 
-// 6: MEKi, z.B. Cobimetinib (m3)
+// 6. MEKi, z.B. Cobimetinib (m3)
 // PIK3R1mut (E160*): Ausweislich präklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3).
 Instance: mii-exa-mtb-medication-cobimetinib
 InstanceOf: Medication
@@ -315,7 +277,7 @@ Description: "Therapieempfehlung: Cobimetinib, Priorität: 6, Evidenzgrad: m3"
 Usage: #example
 * status = #draft
 * intent = #option
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
 * insert BeschlussPrioritaet(6)
 * insert BeschlussEvidenz(m3, $pmid, 31209687)
