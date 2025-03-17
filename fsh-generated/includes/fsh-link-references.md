@@ -19,6 +19,7 @@
 [mii-exa-mtb-medication-request-carboplatin]: MedicationRequest-mii-exa-mtb-medication-request-carboplatin.html
 [mii-exa-mtb-study-ccne1]: ResearchStudy-mii-exa-mtb-study-ccne1.html
 [mii-exa-mtb-study-request-ccne1]: ServiceRequest-mii-exa-mtb-study-request-ccne1.html
+[mii-exa-mtb-kim-musterperson-CNVariante-CCNE1]: Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html
 [mii-exa-mtb-medication-cobimetinib]: Medication-mii-exa-mtb-medication-cobimetinib.html
 [mii-exa-mtb-medication-request-cobimetinib]: MedicationRequest-mii-exa-mtb-medication-request-cobimetinib.html
 [MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
@@ -123,6 +124,7 @@
 [mii-exa-mtb-medication-request-mirvetuximab]: MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html
 [mii-exa-mtb-kim-musterperson-behandlungsepisode]: ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html
 [mii-exa-mtb-kim-musterperson-therapieplan]: CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.html
+[mii-exa-mtb-kim-musterperson-ngs-bericht]: DiagnosticReport-mii-exa-mtb-kim-musterperson-ngs-bericht.html
 [MTBChemo1MedicationStatement1]: MedicationStatement-MTBChemo1MedicationStatement1.html
 [MTBChemo1MedicationStatement1-1]: MedicationStatement-MTBChemo1MedicationStatement1-1.html
 [MTBChemo1MedicationStatement1-2]: MedicationStatement-MTBChemo1MedicationStatement1-2.html
@@ -152,6 +154,8 @@
 [Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-study-request-cldn6]: ServiceRequest-mii-exa-mtb-study-request-cldn6.html
+[mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html
 [mii-exa-mtb-study-tedova]: ResearchStudy-mii-exa-mtb-study-tedova.html
 [mii-exa-mtb-study-request-tedova]: ServiceRequest-mii-exa-mtb-study-request-tedova.html
+[mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53.html
 [mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan]: MedicationRequest-mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan.html
