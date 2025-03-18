@@ -147,6 +147,10 @@
 [MTBRequestGroupLunresertibCamonsertib]: RequestGroup-MTBRequestGroupLunresertibCamonsertib.html
 [Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [PatientKimMusterperson-AscitesSpecimen-2]: Specimen-PatientKimMusterperson-AscitesSpecimen-2.html
+[PatientKimMusterperson-MolecularPathologyDiagnImpl-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyDiagnImpl-0a-Her2neu.html
+[PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu.html
+[PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra]: Observation-PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra.html
+[PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2]: Observation-PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2.html
 [PatientKimMusterperson-MolecularPathologyObservation-1-CA125]: Observation-PatientKimMusterperson-MolecularPathologyObservation-1-CA125.html
 [PatientKimMusterperson-MolecularPathologyObservation-2-Pax8]: Observation-PatientKimMusterperson-MolecularPathologyObservation-2-Pax8.html
 [PatientKimMusterperson-MolecularPathologyObservation-3-WT1]: Observation-PatientKimMusterperson-MolecularPathologyObservation-3-WT1.html
