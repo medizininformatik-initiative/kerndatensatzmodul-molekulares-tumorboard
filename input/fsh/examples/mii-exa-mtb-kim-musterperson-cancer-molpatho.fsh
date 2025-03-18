@@ -30,15 +30,13 @@ Usage: #example
 * valueCodeableConcept.coding[+] = $LNC#LA11842-4 "2+"
 * valueCodeableConcept.coding[+] = $mii-cs-mtb-her2neu-interpretation#2+ 
 
-Instance: PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu
+Instance: PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu
 InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
 Usage: #example
 * status = #final
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
+* code.coding = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
-* interpretation.coding[+] = $LNC#LA11842-4 "2+"
-* interpretation.coding[+] = $mii-cs-mtb-her2neu-interpretation#2+ 
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra
@@ -47,7 +45,9 @@ Usage: #example
 * status = #final
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * code.coding = $LNC#55229-9 "Immune stain study" // LOINC 105010-3 Folate receptor alpha [Interpretation] in Tissue by Immune stain Narrative -> does not fit, because data type is narraitve
-* valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
+* valueQuantity.code = #{/100}
+* valueQuantity.value = 70
+* valueQuantity.unit = "%"
 * component[+].code.coding.code = #protein-studied
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:3791 "FOLR1"
 * component[=].valueCodeableConcept[=].coding = $LNC#LP440974-6 "Folate receptor alpha" //extra LOINC Part!

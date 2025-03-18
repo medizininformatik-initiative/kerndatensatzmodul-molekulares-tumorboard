@@ -15,30 +15,30 @@
       }
     ]
   },
-  "valueCodeableConcept": {
-    "coding": [
-      {
-        "code": "LA6576-8",
-        "system": "http://loinc.org",
-        "display": "Positive"
-      }
-    ]
-  },
   "interpretation": [
     {
       "coding": [
         {
-          "code": "LA11842-4",
+          "code": "LA6576-8",
           "system": "http://loinc.org",
-          "display": "1+"
-        },
-        {
-          "code": "1+",
-          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-her2neu-interpretation"
+          "display": "Her2low"
         }
       ]
     }
   ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA11842-4",
+        "system": "http://loinc.org",
+        "display": "2+"
+      },
+      {
+        "code": "2+",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-her2neu-interpretation"
+      }
+    ]
+  },
   "status": "final",
   "specimen": {
     "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
