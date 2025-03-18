@@ -1,0 +1,41 @@
+{
+  "resourceType": "Observation",
+  "id": "MII-EXA-MTB-Response-Befund-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+    ]
+  },
+  "partOf": [
+    {
+      "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-1"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "82783-2",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "312251004",
+        "system": "http://snomed.info/sct",
+        "display": "Computed tomography"
+      }
+    ]
+  },
+  "effectiveDateTime": "2023-08-20",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "123",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  }
+}

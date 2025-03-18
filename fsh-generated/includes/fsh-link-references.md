@@ -1,3 +1,9 @@
+[MII-EXA-MTB-Antwort-Kostenuebernahme-1]: ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html
+[MII-EXA-MTB-Systemtherapie-3]: MedicationStatement-MII-EXA-MTB-Systemtherapie-3.html
+[MII-EXA-MTB-Antrag-Kostenuebernahme-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-1.html
+[MII-EXA-MTB-Systemtherapie-2]: MedicationStatement-MII-EXA-MTB-Systemtherapie-2.html
+[MII-EXA-MTB-Response-Befund-1]: Observation-MII-EXA-MTB-Response-Befund-1.html
+[MII-EXA-MTB-Systemtherapie-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-1.html
 [MII-EXA-MTB-Systemtherapie-Beispiel-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-Beispiel-1.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1]: CarePlan-MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1.html
@@ -6,7 +12,9 @@
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
 [MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
+[MII-EXA-MTB-Follow-Up-Careplan-1]: CarePlan-MII-EXA-MTB-Follow-Up-Careplan-1.html
 [MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
+[MII-EXA-MTB-Follow-Up-Procedure-1]: Procedure-MII-EXA-MTB-Follow-Up-Procedure-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
 [MII_CS_MTB_Ablehnung_Kostenuebernahme_Grund]: CodeSystem-mii-cs-mtb-ablehnung-kostenuebernahme-grund.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
