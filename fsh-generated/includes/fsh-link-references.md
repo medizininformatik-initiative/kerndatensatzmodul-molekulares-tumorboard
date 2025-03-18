@@ -5,6 +5,12 @@
 [MII-EXA-MTB-GenomicStudy-1]: Procedure-MII-EXA-MTB-GenomicStudy-1.html
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
+[MTBObservationCA125-1]: Observation-MTBObservationCA125-1.html
+[MTBObservationCA125-2]: Observation-MTBObservationCA125-2.html
+[MTBObservationCA125-3]: Observation-MTBObservationCA125-3.html
+[MTBObservationCA125-4]: Observation-MTBObservationCA125-4.html
+[MTBObservationCA125-5]: Observation-MTBObservationCA125-5.html
+[MTBObservationCA125-6]: Observation-MTBObservationCA125-6.html
 [MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
 [MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
