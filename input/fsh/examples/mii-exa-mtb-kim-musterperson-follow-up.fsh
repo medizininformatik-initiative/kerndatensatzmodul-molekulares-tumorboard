@@ -13,7 +13,7 @@ Title: "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kost
 Instance: MII-EXA-MTB-Follow-Up-Careplan-1
 InstanceOf: MII_PR_MTB_Follow_Up_CarePlan
 Usage: #example
-Title: "Durch das Follow-Up vom 23.10.2023 erfasste, durchgeführte Therapien"
+Title: "Durch das Follow-Up vom 23.10.2023 erfasste durchgeführte Therapien"
 
 * status = #active
 * intent = #plan
@@ -77,11 +77,11 @@ Usage: #example
 Title: "22.10.2023 CT T/A"
 
 * status = #final
-* code = $SCT#82783-2 //Patient reported outcome response ?
+* code = $SCT#82783-2 //Patient reported outcome response? in Profil festlegen?
 * method = $SCT#312251004 "Computed tomography"
 * effectiveDateTime = "2023-08-20"
 * partOf = Reference(MII-EXA-MTB-Systemtherapie-1) // hier müsste man mehrere erlauben
-* valueCodeableConcept = $SCT#123 #SD
+* valueCodeableConcept = $SCT#123 #SD // Daten im Bsp nicht vorhanden
 
 Instance: MII-EXA-MTB-Antrag-Kostenuebernahme-1
 InstanceOf: MII_PR_MTB_Antrag_Kostenuebernahme
