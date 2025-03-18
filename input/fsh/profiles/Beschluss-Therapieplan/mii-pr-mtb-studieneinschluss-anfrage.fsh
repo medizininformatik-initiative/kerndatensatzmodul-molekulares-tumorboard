@@ -19,5 +19,6 @@ Description: "Anfrage zum Studieneinschluss"
     ResearchStudy
 )
 
-// TODO: Beibehalten?
-* extension contains MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS
+* extension contains
+    MII_EX_MTB_Empfehlung_Prioritaet named Prioritaet 0..1 MS and
+    MII_EX_MTB_Empfehlung_Publikation named Publikation 0..* MS

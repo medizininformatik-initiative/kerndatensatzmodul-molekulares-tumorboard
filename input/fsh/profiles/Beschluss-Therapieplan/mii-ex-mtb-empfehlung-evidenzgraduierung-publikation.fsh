@@ -1,9 +1,9 @@
-Extension: MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation
-Id: mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation
-Context: RequestGroup, MedicationRequest
-Title: "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation"
-Description: "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung"
-* insert EX_Header($mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation)
+Extension: MII_EX_MTB_Empfehlung_Publikation
+Id: mii-ex-mtb-empfehlung-publikation
+Context: MedicationRequest, RequestGroup, ServiceRequest
+Title: "MII EX MTB Empfehlung Publikation"
+Description: "Verweis auf Publikation der (einzelnen) Empfehlung"
+* insert EX_Header($mii-ex-mtb-empfehlung-publikation)
 
 * value[x] 1..1 MS
 * value[x] only string or Identifier

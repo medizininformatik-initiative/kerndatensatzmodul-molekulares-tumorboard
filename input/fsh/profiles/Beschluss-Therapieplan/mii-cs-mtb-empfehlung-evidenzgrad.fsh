@@ -1,8 +1,8 @@
-CodeSystem: MII_CS_MTB_TherapieempfehlungEvidenzgrad
-Id: mii-cs-mtb-therapieempfehlung-evidenzgrad
-Title: "MII CS Therapieempfehlung Evidenzgrad"
-Description: "Evidenzgrad einer Therapieempfehlung"
-* insert CS_Header($mii-cs-mtb-therapieempfehlung-evidenzgrad)
+CodeSystem: MII_CS_MTB_Empfehlung_Evidenzgrad
+Id: mii-cs-mtb-empfehlung-evidenzgrad
+Title: "MII CS Empfehlung Evidenzgrad"
+Description: "Evidenzgrad einer Empfehlung"
+* insert CS_Header($mii-cs-mtb-empfehlung-evidenzgrad)
 //* insert CS_Citation(doi:10.1002/ijc.32358)
 
 * #m1A         "m1A"     "In der gleichen Tumorentität wurde der prädiktive Wert des Biomarkers oder die klinische Wirksamkeit in einer Biomarker-stratifizierten Kohorte einer adäquat gepowerten prospektiven Studie oder Metaanalyse gezeigt."

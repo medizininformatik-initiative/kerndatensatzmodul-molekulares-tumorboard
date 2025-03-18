@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-ex-mtb-therapieempfehlung-evidenzgraduierung",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung",
+  "id": "mii-ex-mtb-empfehlung-evidenzgraduierung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung",
   "version": "2024.0.0-ballot",
-  "name": "MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung",
-  "title": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
+  "name": "MII_EX_MTB_Empfehlung_Evidenzgraduierung",
+  "title": "MII EX MTB Empfehlung Evidenzgraduierung",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
   "contact": [
@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Evidenzgraduierung der (einzelnen) Therapieempfehlung",
+  "description": "Evidenzgraduierung der (einzelnen) Empfehlung",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
@@ -39,8 +39,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
-        "definition": "Evidenzgraduierung der (einzelnen) Therapieempfehlung"
+        "short": "MII EX MTB Empfehlung Evidenzgraduierung",
+        "definition": "Evidenzgraduierung der (einzelnen) Empfehlung"
       },
       {
         "id": "Extension.extension",
@@ -50,13 +50,13 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "short": "Evidenzgraduierung",
-        "definition": "Evidenzgraduierung für Biomarker-basierte Therapieempfehlung",
+        "definition": "Evidenzgraduierung für Biomarker-basierte Empfehlung",
         "comment": "Evidenzgraduierung wird durch einen Evidenzgrad und einen optionalen Zusatzverweis angegeben",
         "min": 1,
         "type": [
@@ -88,7 +88,7 @@
         "path": "Extension.value[x].coding",
         "sliceName": "Evidenzgrad",
         "short": "Evidenzgrad",
-        "definition": "Evidenzgrad der Therapieempfehlung",
+        "definition": "Evidenzgrad der Empfehlung",
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -97,7 +97,7 @@
         "id": "Extension.value[x].coding:Evidenzgrad.system",
         "path": "Extension.value[x].coding.system",
         "min": 1,
-        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad"
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"
       },
       {
         "id": "Extension.value[x].coding:Evidenzgrad.code",
@@ -119,7 +119,7 @@
         "id": "Extension.value[x].coding:Zusatzverweis.system",
         "path": "Extension.value[x].coding.system",
         "min": 1,
-        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"
       },
       {
         "id": "Extension.value[x].coding:Zusatzverweis.code",

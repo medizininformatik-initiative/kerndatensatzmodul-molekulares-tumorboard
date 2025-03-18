@@ -34,6 +34,6 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * supportingInformation[StuetzendeEntitaet] only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
 * extension contains
-    MII_EX_MTB_Therapieempfehlung_Prioritaet named Prioritaet 0..1 MS and
-    MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung named Evidenzgraduierung 0..1 MS and
-    MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation named Publikation 0..* MS
+    MII_EX_MTB_Empfehlung_Prioritaet named Prioritaet 0..1 MS and
+    MII_EX_MTB_Empfehlung_Evidenzgraduierung named Evidenzgraduierung 0..1 MS and
+    MII_EX_MTB_Empfehlung_Publikation named Publikation 0..* MS

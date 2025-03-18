@@ -398,6 +398,30 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"
+        },
+        "name": "MII CS Empfehlung Evidenzgrad",
+        "description": "Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII CS Empfehlung Evidenzgrad Zusatzverweis",
+        "description": "Zusatzverweis zum Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-status-begruendung"
+        },
+        "name": "MII CS Empfehlung Status Begründung",
+        "description": "Begründung bei fehlender Empfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
         },
         "name": "MII CS Follow-Up Grund Nicht-Umsetzung",
@@ -446,30 +470,6 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad"
-        },
-        "name": "MII CS Therapieempfehlung Evidenzgrad",
-        "description": "Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
-        },
-        "name": "MII CS Therapieempfehlung Evidenzgrad Zusatzverweis",
-        "description": "Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-status-begruendung"
-        },
-        "name": "MII CS Therapieempfehlung Status Begründung",
-        "description": "Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-zulassungsstatus"
         },
         "name": "MII CS Zulassungsstatus",
@@ -502,6 +502,30 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+        },
+        "name": "MII EX MTB Empfehlung Evidenzgraduierung",
+        "description": "Evidenzgraduierung der (einzelnen) Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-empfehlung-prioritaet"
+        },
+        "name": "MII EX MTB Empfehlung Priorität",
+        "description": "Priorität der (einzelnen) Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+        },
+        "name": "MII EX MTB Empfehlung Publikation",
+        "description": "Verweis auf Publikation der (einzelnen) Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
         },
         "name": "MII EX MTB Leitlinie Dokumentation",
@@ -530,30 +554,6 @@
         },
         "name": "MII EX MTB NGS Bericht QC",
         "description": "QC des NGS-Berichts",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
-        },
-        "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
-        "description": "Evidenzgraduierung der (einzelnen) Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
-        },
-        "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation",
-        "description": "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet"
-        },
-        "name": "MII EX MTB Therapieempfehlung Priorität",
-        "description": "Priorität der (einzelnen) Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -934,6 +934,30 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-empfehlung-evidenzgrad"
+        },
+        "name": "MII VS Empfehlung Evidenzgrad",
+        "description": "ValueSet für den Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII VS Empfehlung Evidenzgrad Zusatzverweis",
+        "description": "ValueSet für den Zusatzverweis zum Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-empfehlung-status-begruendung"
+        },
+        "name": "MII VS Empfehlung Status Begründung",
+        "description": "ValueSet für Begründung bei fehlender Empfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-follow-grund-nicht-umsetzung"
         },
         "name": "MII VS Follow-Up Grund Nicht-Umsetzung",
@@ -986,30 +1010,6 @@
         },
         "name": "MII VS MTB Systemtherapie Status",
         "description": "Einschränkung der Status für Systemtherapie",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad"
-        },
-        "name": "MII VS Therapieempfehlung Evidenzgrad",
-        "description": "ValueSet für den Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
-        },
-        "name": "MII VS Therapieempfehlung Evidenzgrad Zusatzverweis",
-        "description": "ValueSet für den Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung"
-        },
-        "name": "MII VS Therapieempfehlung Status Begründung",
-        "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
         "exampleBoolean": false
       },
       {

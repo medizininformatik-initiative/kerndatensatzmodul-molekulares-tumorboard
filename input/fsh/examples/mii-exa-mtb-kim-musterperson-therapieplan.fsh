@@ -86,12 +86,12 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-cldn6)
 * insert BeschlussSubPrioritaet(2.1)
+* insert BeschlussEvidenzPublikation($pmid, 37872225)
 
 // Prio 2.2: TEDOVA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2)
 // Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven
 // rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach
-// mind. 4 Zyklen Platin im Rezidiv und HLA-A2). Zudem Beachtung einer geplanten Studie bei CCNE1 ampl.
-// OvCA (UKF, PI Prof. Duque, ID ausstehend).
+// mind. 4 Zyklen Platin im Rezidiv und HLA-A2).
 Instance: mii-exa-mtb-study-tedova
 InstanceOf: MII_PR_MTB_Studie
 Title: "TEDOVA"
@@ -139,7 +139,6 @@ Usage: #example
 // zentralem Assessment auch Score1+-Patient*innen eingeschlossen worden waren. 57% vom Patientinnen mit HER2-pos
 // Endometrium Karzinom haben auf die Therapie mit Trastuzumab- Deruxtecan angesprochen
 // (10.1200/JCO.2023.41.17_suppl.LBA3000, PMID: 37870536, EL m1B).
-
 Instance: mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Trastuzumab deruxtecan"

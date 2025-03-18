@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation",
+  "id": "mii-ex-mtb-empfehlung-publikation",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
   "version": "2024.0.0-ballot",
-  "name": "MII_EX_MTB_Therapieempfehlung_Evidenzgraduierung_Publikation",
-  "title": "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation",
+  "name": "MII_EX_MTB_Empfehlung_Publikation",
+  "title": "MII EX MTB Empfehlung Publikation",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
   "contact": [
@@ -17,17 +17,21 @@
       ]
     }
   ],
-  "description": "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung",
+  "description": "Verweis auf Publikation der (einzelnen) Empfehlung",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
   "context": [
     {
+      "expression": "MedicationRequest",
+      "type": "element"
+    },
+    {
       "expression": "RequestGroup",
       "type": "element"
     },
     {
-      "expression": "MedicationRequest",
+      "expression": "ServiceRequest",
       "type": "element"
     }
   ],
@@ -39,8 +43,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation",
-        "definition": "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung"
+        "short": "MII EX MTB Empfehlung Publikation",
+        "definition": "Verweis auf Publikation der (einzelnen) Empfehlung"
       },
       {
         "id": "Extension.extension",
@@ -50,7 +54,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
       },
       {
         "id": "Extension.value[x]",

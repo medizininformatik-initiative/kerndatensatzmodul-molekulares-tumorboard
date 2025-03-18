@@ -1,8 +1,8 @@
-CodeSystem: MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis
-Id: mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis
-Title: "MII CS Therapieempfehlung Evidenzgrad Zusatzverweis"
-Description: "Zusatzverweis zum Evidenzgrad einer Therapieempfehlung"
-* insert CS_Header($mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis)
+CodeSystem: MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis
+Id: mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis
+Title: "MII CS Empfehlung Evidenzgrad Zusatzverweis"
+Description: "Zusatzverweis zum Evidenzgrad einer Empfehlung"
+* insert CS_Header($mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis)
 //* insert CS_Citation(doi:10.1002/ijc.32358)
 
 * #is  "is" "In situ-Daten aus Untersuchungen an Patientenmaterial (z.B. IHC, FISH) unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern zusätzlich angegeben werden, z.B. Evidenzgrad 3 is (IHC)."
