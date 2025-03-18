@@ -1,0 +1,27 @@
+{
+  "resourceType": "Observation",
+  "id": "PatientKimMusterperson-MolecularPathologyObservation-4-ER",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "14228-1",
+        "system": "http://loinc.org",
+        "display": "Cells.estrogen receptor/cells in Tissue by Immune stain"
+      }
+    ]
+  },
+  "valueQuantity": {
+    "code": "/100",
+    "value": 70,
+    "unit": "%"
+  },
+  "status": "final",
+  "specimen": {
+    "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+  }
+}
