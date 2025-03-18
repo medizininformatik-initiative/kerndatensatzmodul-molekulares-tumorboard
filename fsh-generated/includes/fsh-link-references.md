@@ -63,7 +63,6 @@
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
-[MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
 [MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
@@ -137,3 +136,11 @@
 [MTBRequestGroupAdavosertibCarboplatin]: RequestGroup-MTBRequestGroupAdavosertibCarboplatin.html
 [MTBRequestGroupLunresertibCamonsertib]: RequestGroup-MTBRequestGroupLunresertibCamonsertib.html
 [Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
+[PatientKimMusterperson]: Patient-PatientKimMusterperson.html
+[PatientKimMusterperson-Procedure-1]: Procedure-PatientKimMusterperson-Procedure-1.html
+[PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
+[PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html
+[PatientKimMusterperson-Procedure-4]: Procedure-PatientKimMusterperson-Procedure-4.html
+[PatientKimMusterperson-Procedure-5]: Procedure-PatientKimMusterperson-Procedure-5.html
+[PatientKimMusterperson-Procedure-6]: Procedure-PatientKimMusterperson-Procedure-6.html
+[PatientKimMusterperson-Specimen-1]: Specimen-PatientKimMusterperson-Specimen-1.html

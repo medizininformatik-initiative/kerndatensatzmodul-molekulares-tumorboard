@@ -1,5 +1,5 @@
 // 02.01.2023 Histologie (Z 230201/23): 
-// - Aszites (20ml): mit malignen Tumorzellen
+// - Aszites (20ml): mit malignen Tumorzellen 
 // - Diagnose: Hier Zellbild wie bei malignen Tumorzellen im Aszites, über eine affirmative Färbung folgt ebenfalls ein Nachbericht.
 // Nachbericht:
 // - Die Tumorzellen sind partiell positiv für CA125, durchgehend nukleär für Pax 8 und WT1, Östrogenrezeptorpositivität in ca. 70 % der Tumorzellen und das Progesteronrezeptorprotein wird in ca. 30 % der Tumorzellen exprimiert. Kräftige nukleäre Überexpression von p53. Zudem sind die Tumorzellen negativ für CDX2.
@@ -13,3 +13,16 @@
 // 3. TP53mut (R81X): Nachweis einer pathogenen TP53-Mutation ohne direkte therapeutische Relevanz. 
 
 // 4. PIK3R1mut (E160*): ausweislich präklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3).
+
+Instance: PatientKimMusterperson-Specimen-1
+InstanceOf: MII_PR_Patho_Specimen
+Usage: #example
+Description: "02.01.2023 Histologie (Z 230201/23)"
+* accessionIdentifier.value = "Z 230201/23"
+* status = http://hl7.org/fhir/specimen-status#available
+* type.coding[sct] = $SCT#3955077
+* subject = Reference(PatientKimMusterperson)
+* collection.collectedDateTime = 2023-01-02
+* collection.quantity.unit = "ml"
+* collection.quantity.value = 20
+* collection.method = $SCT#178012008
