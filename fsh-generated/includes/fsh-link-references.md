@@ -61,6 +61,8 @@
 [MII_PR_MTB_Histologie_Evaluation_Auftrag]: StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html
 [MII_PR_MTB_HRD_Score]: StructureDefinition-mii-pr-mtb-hrd-score.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
+[MII_PR_MTB_HISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-histochemistry.html
+[MII_PR_MTB_IMMUNOHISTOCHEMISTRY_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
 [MII_PR_MTB_IMMUNOHISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
 [MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
@@ -69,6 +71,7 @@
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
+[MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
 [MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
@@ -88,6 +91,7 @@
 [MII_VS_MTB_Follow_Up_Status]: ValueSet-mii-vs-mtb-follow-up-status.html
 [MII_VS_MTB_Genomic_Analysis_Method_Type]: ValueSet-mii-vs-mtb-genomic-analysis-method-type.html
 [MII_VS_MTB_Leitlinienbehandlung_Status]: ValueSet-mii-vs-mtb-leitlinienbehandlung-status.html
+[MII_VS_MTB_Immunhistochemistry-Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemtherapie_Status]: ValueSet-mii-vs-mtb-systemtherapie-status.html
@@ -143,6 +147,19 @@
 [MTBRequestGroupLunresertibCamonsertib]: RequestGroup-MTBRequestGroupLunresertibCamonsertib.html
 [Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [PatientKimMusterperson]: Patient-PatientKimMusterperson.html
+[PatientKimMusterperson-AscitesSpecimen-2]: Specimen-PatientKimMusterperson-AscitesSpecimen-2.html
+[PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu.html
+[PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu.html
+[PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra]: Observation-PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra.html
+[PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2]: Observation-PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2.html
+[PatientKimMusterperson-MolecularPathologyObservation-1-CA125]: Observation-PatientKimMusterperson-MolecularPathologyObservation-1-CA125.html
+[PatientKimMusterperson-MolecularPathologyObservation-2-Pax8]: Observation-PatientKimMusterperson-MolecularPathologyObservation-2-Pax8.html
+[PatientKimMusterperson-MolecularPathologyObservation-3-WT1]: Observation-PatientKimMusterperson-MolecularPathologyObservation-3-WT1.html
+[PatientKimMusterperson-MolecularPathologyObservation-4-ER]: Observation-PatientKimMusterperson-MolecularPathologyObservation-4-ER.html
+[PatientKimMusterperson-MolecularPathologyObservation-5-PR]: Observation-PatientKimMusterperson-MolecularPathologyObservation-5-PR.html
+[PatientKimMusterperson-MolecularPathologyObservation-6-p53]: Observation-PatientKimMusterperson-MolecularPathologyObservation-6-p53.html
+[PatientKimMusterperson-MolecularPathologyObservation-7-p53]: Observation-PatientKimMusterperson-MolecularPathologyObservation-7-p53.html
+[PatientKimMusterperson-MolecularPathologyReport-1]: DiagnosticReport-PatientKimMusterperson-MolecularPathologyReport-1.html
 [PatientKimMusterperson-Procedure-1]: Procedure-PatientKimMusterperson-Procedure-1.html
 [PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
 [PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html

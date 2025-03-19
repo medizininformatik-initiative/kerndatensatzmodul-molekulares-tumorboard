@@ -1,6 +1,6 @@
-Profile: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+Profile: MII_PR_MTB_HISTOCHEMISTRY
 Parent: Observation // Evtl von Observation von MolecularBiomarker erben
-Id: mii-pr-mtb-immunohistochemistry
+Id: mii-pr-mtb-histochemistry
 Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistorchemistry report"
 * insert PR_Header
@@ -25,9 +25,33 @@ Description: "Immunhistorchemistry report"
 // Evtl. Binding auf High-Low-ValueSet aus MolgenBefundbericht als preferred oder als CodeableConcept
 
 * component contains 
+    tps-score 0..1 MS and
+    cps-score 0..1 MS and
+    ics-score 0..1 MS and
+    tc-score 0..1 MS and
     msi 0..1 MS and
     mmr 0..1 MS
 // Prozent-werte als Value-Quantity mit Unit %
+
+* component[tps-score] MS
+* component[tps-score].code MS // Code System noch spezifizieren
+* component[tps-score].valueInteger MS 
+* component[tps-score] ^short = "TPS-Score" 
+
+* component[cps-score] MS
+* component[cps-score].code MS // Code System noch spezifizieren // hier LOINC 105305-7 
+* component[cps-score].valueInteger MS 
+* component[cps-score] ^short = "CPS-Score" 
+
+* component[ics-score] MS
+* component[ics-score].code MS // Code System noch spezifizieren
+* component[ics-score].valueRange MS // Wie spezifiziere ich high and low?
+* component[ics-score] ^short = "ICS-Score" 
+
+* component[tc-score] MS
+* component[tc-score].code MS // Code System noch spezifizieren
+* component[tc-score].valueRange MS // Wie spezifiziere ich high and low?
+* component[tc-score] ^short = "TC-Score" 
 
 * component[msi] MS
 * component[msi].code MS // Code System noch spezifizieren

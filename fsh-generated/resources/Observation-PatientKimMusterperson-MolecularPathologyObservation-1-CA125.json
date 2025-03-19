@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "id": "PatientKimMusterperson-MolecularPathologyObservation-1-CA125",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "48677-9",
+        "system": "http://loinc.org",
+        "display": "Cancer Ag 125 [Presence] in Tissue by Immune stain"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA6576-8",
+        "system": "http://loinc.org",
+        "display": "Positive"
+      }
+    ],
+    "text": "Die Tumorzellen sind partiell positiv für CA125,..."
+  },
+  "status": "final",
+  "specimen": {
+    "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+  }
+}
