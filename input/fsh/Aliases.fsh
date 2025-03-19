@@ -11,7 +11,9 @@ Alias: $mii-cs-onko-therapie-stellungzurop = https://www.medizininformatik-initi
 Alias: $mii-cs-onko-therapie-typ = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ
 Alias: $mii-cs-onko-therapieabweichung = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieabweichung
 Alias: $mii-cs-onko-therapieplanung-typ = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ
+Alias: $mii-cs-onko-therapie-grund-ende = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-therapie-grund-ende
 Alias: $mii-pr-onko-specimen = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen
+Alias: $mii-ex-onko-systemische-therapie-intention = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention
 
 // Aliases für Profile des MII Medikation-Moduls
 Alias: $mii-pr-medikation-medication-request = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest
@@ -29,6 +31,7 @@ Alias: $mii-cs-mtb-auftrag-begruendung = https://www.medizininformatik-initiativ
 Alias: $mii-cs-mtb-bestimmungsmethode-tumorzellgehalt = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt
 Alias: $mii-cs-mtb-follow-up-grund-nicht-umsetzung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung
 Alias: $mii-cs-mtb-follow-up-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status
+Alias: $mii-cs-mtb-her2neu-interpretation = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-her2neu-interpretation
 Alias: $mii-cs-mtb-leitlinienbehandlung-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-leitlinienbehandlung-status
 Alias: $mii-cs-mtb-molekulare-biomarker = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb--molekulare-biomarker
 Alias: $mii-cs-mtb-therapieempfehlung-evidenzgrad = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad
@@ -72,7 +75,12 @@ Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
+Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
+Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
+Alias: $request-status = http://hl7.org/fhir/request-status
+Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
 Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statement-status
+
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask
@@ -86,6 +94,8 @@ Alias: $LNC = http://loinc.org
 Alias: $OPS = http://fhir.de/CodeSystem/bfarm/ops
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+Alias: $UNII = http://fdasis.nlm.nih.gov
+Alias: $UNIPROT = http://www.uniprot.org
 
 // Sonstige Aliases
 Alias: $bwhc-cnv-type = http://bwhc.de/mtb/genetics-copy-number-variant

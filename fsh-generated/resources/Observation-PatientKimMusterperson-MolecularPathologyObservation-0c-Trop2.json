@@ -1,0 +1,51 @@
+{
+  "resourceType": "Observation",
+  "id": "PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "55229-9",
+        "system": "http://loinc.org",
+        "display": "Immune stain study"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA6576-8",
+        "system": "http://loinc.org",
+        "display": "Positive"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "protein-studied"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "P09758",
+            "system": "http://www.uniprot.org",
+            "display": "Tumor-associated calcium signal transducer 2"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "specimen": {
+    "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "MTBMedicationRequestMirvetuximab",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet",
+      "valuePositiveInt": 1
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad",
+            "code": "m1A"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://doi.org",
+        "value": "10.1200/JCO.2022.40.16_suppl.5512"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
+    }
+  ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "code": "L01FX26"
+      }
+    ]
+  },
+  "status": "draft",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/KimMusterperson"
+  }
+}
