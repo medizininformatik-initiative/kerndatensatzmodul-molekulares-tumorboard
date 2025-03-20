@@ -60,31 +60,31 @@ Description: "NGS-Bericht zu einer Probe"
 * result[EinfacheVariante] ^short = "Einfache Variante"
 * result[EinfacheVariante] ^definition = "Verweis auf Einfache Variante"
 * result[EinfacheVariante] 0..1 MS
-* result[EinfacheVariante] only Reference(MII_PR_MolGen_Variante) // or Einfache Variante Profile
+* result[EinfacheVariante] only Reference(MII_PR_MTB_Einfache_Variante) // or Einfache Variante Profile
 
 * result contains CopyNumberVariant 0..1 MS
 * result[CopyNumberVariant] ^short = "Copy Number Variant"
 * result[CopyNumberVariant] ^definition = "Verweis auf Copy Number Variant"
 * result[CopyNumberVariant] 0..1 MS
-* result[CopyNumberVariant] only Reference(MII_PR_MolGen_Variante) // or Copy Number Variant Profile
+* result[CopyNumberVariant] only Reference(MII_PR_MTB_Copy_Number_Variant) // or Copy Number Variant Profile
 
 * result contains DNAFusion 0..1 MS
 * result[DNAFusion] ^short = "DNA-Fusion"
 * result[DNAFusion] ^definition = "Verweis auf DNA-Fusion"
 * result[DNAFusion] 0..1 MS
-* result[DNAFusion] only Reference(MII_PR_MolGen_Variante) // or MTB DNA-Fusion Profil
+* result[DNAFusion] only Reference(MII_PR_MTB_DNA_Fusion) // or MTB DNA-Fusion Profil
 
 * result contains RNAFusion 0..1 MS
 * result[RNAFusion] ^short = "RNA-Fusion"
 * result[RNAFusion] ^definition = "Verweis auf RNA-Fusion"
 * result[RNAFusion] 0..1 MS
-* result[RNAFusion] only Reference(MII_PR_MolGen_Variante) // or MTB RNA-Fusion Profile
+* result[RNAFusion] only Reference(MII_PR_MTB_RNA_Fusion) // or MTB RNA-Fusion Profile
 
 * result contains RNASeq 0..1 MS
 * result[RNASeq] ^short = "RNASeq"
 * result[RNASeq] ^definition = "Verweis auf RNASeq"
 * result[RNASeq] 0..1 MS
-* result[RNASeq] only Reference(MII_PR_MolGen_Variante) // or MTB RNASeq Profile
+* result[RNASeq] only Reference(MII_PR_MTB_RNA_Seq) // or MTB RNASeq Profile
 
 
 * extension contains MII_EX_MTB_NGS_Bericht_Metadaten named Metadaten 0..1 MS
