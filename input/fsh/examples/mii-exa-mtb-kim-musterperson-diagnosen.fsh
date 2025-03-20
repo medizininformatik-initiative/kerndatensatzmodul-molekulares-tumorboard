@@ -5,10 +5,11 @@ Usage: #example
 * name.family = "Musterperson"
 * name.given = "Kim"
 
-// 15.07.22 CT T/A: 
-// - konstante Flüssigkeitskollektion angrenzend bei Z.n. atpyischer Lebersegmentresktion, a.e. postoperativ
-// - kein Aszites, kein Hinweis auf Lokalrezidiv
-// - im linken Oberlappen der Lunge diskrete milchglasartige Trübung DD atypisch entzündlich, klinische Korrelation empfohlen, darüber hinaus kein Hinweis auf thorakale Filiae
+// 20.04.22 CT T/A: 
+// - Z.n. atypischer Lebersegmentresektion, kein eindeutiger Hinweis auf Metastasierung. Flüssigkeitskollektion angrenzend DD postoperativ
+// - kein Aszites
+// - kein Hinweis auf Lokalrezidiv
+// - kein Hinweis auf thorakale Metastasierung
 Instance: PatientKimMusterperson-Procedure-1
 InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
@@ -20,6 +21,16 @@ Description: "20.04.22 CT T/A"
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
 
+Instance: PatientKimMusterperson-Observation-1
+InstanceOf: Observation
+Usage: #example
+Description: "..."
+* partOf = Reference(PatientKimMusterperson-Procedure-1)
+* status = #final
+* code.coding = $SCT#128462008 "Metastatic malignant neoplasm (disorder)"
+* valueCodeableConcept.coding = $SCT#41647002 "No evidence of (contextual qualifier) (qualifier value)"
+* valueCodeableConcept.text = "kein Hinweis auf thorakale Metastasierung"
+* bodySite.text = $SCT#181268008
 
 // 19.10.22 CT T/A
 // - regrediente Flüssigkeitskollektion am Leberrand, Z.n. atypische Lebersegmentresektion. Darüberhinaus kein Hinweis auf Leberfilialisierung.
@@ -34,7 +45,7 @@ Description: "19.10.22 CT T/A"
 * code.coding = $OPS#3-20 "Native Computertomographie"
 * performedDateTime = 2022-10-22
 * bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax"
+* bodySite[+] = $SCT#37542245 "Thorax" 
 
 
 // 19.12.22 CT T/A

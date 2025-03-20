@@ -143,6 +143,7 @@
 [MTBRequestGroupLunresertibCamonsertib]: RequestGroup-MTBRequestGroupLunresertibCamonsertib.html
 [Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [PatientKimMusterperson]: Patient-PatientKimMusterperson.html
+[PatientKimMusterperson-Observation-1]: Observation-PatientKimMusterperson-Observation-1.html
 [PatientKimMusterperson-Procedure-1]: Procedure-PatientKimMusterperson-Procedure-1.html
 [PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
 [PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html
