@@ -148,9 +148,6 @@
 [MTBRequestGroupLunresertibCamonsertib]: RequestGroup-MTBRequestGroupLunresertibCamonsertib.html
 [Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [PatientKimMusterperson]: Patient-PatientKimMusterperson.html
-<<<<<<< HEAD
-[PatientKimMusterperson-Observation-1]: Observation-PatientKimMusterperson-Observation-1.html
-=======
 [PatientKimMusterperson-AscitesSpecimen-2]: Specimen-PatientKimMusterperson-AscitesSpecimen-2.html
 [PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu.html
 [PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu.html
@@ -164,7 +161,7 @@
 [PatientKimMusterperson-MolecularPathologyObservation-6-p53]: Observation-PatientKimMusterperson-MolecularPathologyObservation-6-p53.html
 [PatientKimMusterperson-MolecularPathologyObservation-7-p53]: Observation-PatientKimMusterperson-MolecularPathologyObservation-7-p53.html
 [PatientKimMusterperson-MolecularPathologyReport-1]: DiagnosticReport-PatientKimMusterperson-MolecularPathologyReport-1.html
->>>>>>> d3097e9d45e446da1143251f5257ac715f4f10ad
+[PatientKimMusterperson-Observation-1]: Observation-PatientKimMusterperson-Observation-1.html
 [PatientKimMusterperson-Procedure-1]: Procedure-PatientKimMusterperson-Procedure-1.html
 [PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
 [PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html
