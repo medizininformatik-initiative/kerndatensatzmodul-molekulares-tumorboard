@@ -160,10 +160,7 @@
 [PatientKimMusterperson-MolecularPathologyObservation-6-p53]: Observation-PatientKimMusterperson-MolecularPathologyObservation-6-p53.html
 [PatientKimMusterperson-MolecularPathologyObservation-7-p53]: Observation-PatientKimMusterperson-MolecularPathologyObservation-7-p53.html
 [PatientKimMusterperson-MolecularPathologyReport-1]: DiagnosticReport-PatientKimMusterperson-MolecularPathologyReport-1.html
-[PatientKimMusterperson-Observation-1]: Observation-PatientKimMusterperson-Observation-1.html
-[PatientKimMusterperson-Observation-2]: Observation-PatientKimMusterperson-Observation-2.html
-[PatientKimMusterperson-Observation-3]: Observation-PatientKimMusterperson-Observation-3.html
-[PatientKimMusterperson-Observation-4]: Observation-PatientKimMusterperson-Observation-4.html
+>>>>>>> d3097e9d45e446da1143251f5257ac715f4f10ad
 [PatientKimMusterperson-Procedure-1]: Procedure-PatientKimMusterperson-Procedure-1.html
 [PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
 [PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html
