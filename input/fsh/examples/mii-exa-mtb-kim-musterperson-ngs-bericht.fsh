@@ -60,7 +60,7 @@ Usage: #example
 * component[protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[protein-hgvs].valueCodeableConcept = $HGVS#NM_181523.2:p.E160*
 
-// Therapeutische Implikation der PIK3R1 Mutation (Pathogenität)
+// Therapeutische Implikation der PIK3R1 Mutation
 Instance: mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1
 InstanceOf: $mii-pr-molgen-therapeutische-implikation
 Title: "PIK3R1 Therapeutische Implikation"
@@ -71,6 +71,8 @@ Usage: #example
 * code = $TBD#therapeutic-implication "Therapeutische Implikation"
 * subject = Reference(Patient/PatientKimMusterperson)
 * derivedFrom = Reference(mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1)
+* component[conclusion-string].code = $TBD#conclusion-string
+* component[conclusion-string].valueString = "Ausweislich praeklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3)."
 * component[medication-assessed].code = $LNC#51963-7 "Medication assessed [ID]"
 * component[medication-assessed].valueCodeableConcept = $ATC_DE#L01EE "Mitogen-akivierte Proteinkinase (MEK)-Inhibitoren"
 
