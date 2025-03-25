@@ -32,6 +32,38 @@
         "mustSupport": true
       },
       {
+        "id": "ServiceRequest.extension:Prioritaet",
+        "path": "ServiceRequest.extension",
+        "sliceName": "Prioritaet",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.extension:Publikation",
+        "path": "ServiceRequest.extension",
+        "sliceName": "Publikation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.intent",
         "path": "ServiceRequest.intent",
         "patternCode": "proposal"

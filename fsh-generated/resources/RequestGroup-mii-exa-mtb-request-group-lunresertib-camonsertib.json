@@ -1,6 +1,6 @@
 {
   "resourceType": "RequestGroup",
-  "id": "mii-exa-mtb-therapieempfehlung-kombinationstherapie",
+  "id": "mii-exa-mtb-request-group-lunresertib-camonsertib",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
@@ -8,45 +8,42 @@
   },
   "action": [
     {
-      "title": "Therapieempfehlung für Dabrafenib",
       "resource": {
-        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"
-      }
-    },
-    {
-      "title": "Therapieempfehlung für Trametinib",
-      "resource": {
-        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-trametinib"
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-camonsertib"
       }
     }
   ],
   "extension": [
     {
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
-      "valuePositiveInt": 1
-    },
-    {
-      "valueIdentifier": {
-        "system": "https://doi.org",
-        "value": "10.1002/gcc.23222"
-      },
-      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+      "valuePositiveInt": 5
     },
     {
       "valueCodeableConcept": {
         "coding": [
           {
             "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
-            "code": "m1C"
+            "code": "m1B"
           }
         ]
       },
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "$doi",
+        "value": "10.1158/1535-7163.TARG-23-PR008"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+      "valueString": "https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf"
     }
   ],
-  "status": "active",
+  "status": "draft",
   "intent": "proposal",
   "subject": {
-    "reference": "Patient/mii-exa-mtb-patient"
+    "reference": "Patient/PatientKimMusterperson"
   }
 }

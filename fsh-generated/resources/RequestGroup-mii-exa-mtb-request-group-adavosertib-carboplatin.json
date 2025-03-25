@@ -1,6 +1,6 @@
 {
   "resourceType": "RequestGroup",
-  "id": "mii-exa-mtb-therapieempfehlung-kombinationstherapie",
+  "id": "mii-exa-mtb-request-group-adavosertib-carboplatin",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
@@ -8,45 +8,38 @@
   },
   "action": [
     {
-      "title": "Therapieempfehlung für Dabrafenib",
       "resource": {
-        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"
-      }
-    },
-    {
-      "title": "Therapieempfehlung für Trametinib",
-      "resource": {
-        "reference": "MedicationRequest/mii-exa-mtb-therapieempfehlung-trametinib"
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-carboplatin"
       }
     }
   ],
   "extension": [
     {
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
-      "valuePositiveInt": 1
-    },
-    {
-      "valueIdentifier": {
-        "system": "https://doi.org",
-        "value": "10.1002/gcc.23222"
-      },
-      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+      "valuePositiveInt": 4
     },
     {
       "valueCodeableConcept": {
         "coding": [
           {
             "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
-            "code": "m1C"
+            "code": "m1B"
           }
         ]
       },
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "$pmid",
+        "value": "37236033"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
     }
   ],
-  "status": "active",
+  "status": "draft",
   "intent": "proposal",
   "subject": {
-    "reference": "Patient/mii-exa-mtb-patient"
+    "reference": "Patient/PatientKimMusterperson"
   }
 }
