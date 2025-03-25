@@ -6,20 +6,39 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
     ]
   },
-  "partOf": [
-    {
-      "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-1"
-    }
-  ],
-  "status": "final",
   "code": {
     "coding": [
       {
-        "code": "82783-2",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "code": "396432002",
+        "display": "Status of regression of tumor (observable entity)"
       }
     ]
   },
+  "focus": [
+    {
+      "reference": "MII_PR_Onko_Diagnose_Primaertumor/example"
+    }
+  ],
+  "partOf": [
+    {
+      "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-1"
+    },
+    {
+      "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-2"
+    },
+    {
+      "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-3"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "CR"
+      }
+    ]
+  },
+  "status": "final",
   "method": {
     "coding": [
       {
@@ -30,12 +49,7 @@
     ]
   },
   "effectiveDateTime": "2023-08-20",
-  "valueCodeableConcept": {
-    "coding": [
-      {
-        "code": "123",
-        "system": "http://snomed.info/sct"
-      }
-    ]
+  "subject": {
+    "reference": "Patient/KimMusterperson"
   }
 }

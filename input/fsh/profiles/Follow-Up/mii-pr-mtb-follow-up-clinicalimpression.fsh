@@ -6,7 +6,12 @@ Description: "Follow-Up nach DNPM "
 * insert PR_Header
 
 * status MS
-// wie soll man hier seine eigenen Status abbilden wenn required vs? extension?
+* status = #completed
+
+* investigation MS
+* investigation ^short = "Status Follow-Up"
+* investigation.code.coding.system = $mii-cs-mtb-follow-up-status
+* investigation.code.coding.code from MII_VS_MTB_Follow_Up_Status
 
 
 * statusReason MS

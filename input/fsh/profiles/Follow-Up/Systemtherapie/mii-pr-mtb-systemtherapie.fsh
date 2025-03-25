@@ -2,7 +2,7 @@ Profile: MII_PR_MTB_Systemtherapie
 Parent: MedicationStatement
 Id: mii-pr-mtb-systemtherapie
 Title: "MII PR MTB Systemtherapie"
-Description: "Systemtherapie mit Referenz auf MTB Therapieempfehlung"
+Description: "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung"
 * insert PR_Header
 
 * basedOn 0..1 MS
@@ -17,9 +17,6 @@ Description: "Systemtherapie mit Referenz auf MTB Therapieempfehlung"
 * basedOn[Therapieempfehlung] only Reference(MedicationRequest)
 * basedOn[Therapieempfehlung] ^short = "Therapieempfehlung"
 * basedOn[Therapieempfehlung] ^definition = "Referenz auf Therapieempfehlung in Therapieplan"
-* basedOn contains FollowUpCarePlan 1..1
-* basedOn[FollowUpCarePlan] only Reference(MII_PR_MTB_Follow_Up_CarePlan)
-* basedOn[FollowUpCarePlan] ^short = "Follow-Up Careplan"
 
 * status MS
 * status ^short = "Status"
@@ -46,3 +43,6 @@ Description: "Systemtherapie mit Referenz auf MTB Therapieempfehlung"
 * dosage MS
 // TODO: überlegen wie man die Codes aus ArtDecor als 'Dosage' data type darstellen kann
 * dosage ^short = "Dosisdichte"
+* dosage.doseAndRate.doseQuantity MS
+* dosage.doseAndRate.doseQuantity.system = $mii-cs-mtb-dosisdichte
+* dosage.doseAndRate.doseQuantity.code from MII_VS_MTB_Dosisdichte

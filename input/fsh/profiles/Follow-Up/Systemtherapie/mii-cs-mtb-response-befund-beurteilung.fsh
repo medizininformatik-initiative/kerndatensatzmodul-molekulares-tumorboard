@@ -3,24 +3,19 @@ CodeSystem: MII_CS_MTB_Response_Befund_Beurteilung
 Id: mii-cs-mtb-response-befund-beurteilung
 Title: "MII CS Response Befund Beurteilung"
 Description: "Codesystem für die Beurteilung des Response Befund"
-* insert CS_Header($mii-cs-mtb-follow-up-grund-nicht-umsetzung)
-* #SD                                "Kostenübernahme abgelehnt"
-* #CR                                "Kostenübernahme noch ausstehend"
-* #payment-ended                                  "Ende der Kostenübernahme"
-* #no-indication                                  "Klinisch keine Indikation"
-* #medical-reason                                 "Medizinische Gründe"
-* #patient-refusal                                "Therapie durch Patient abgelehnt"
-* #patient-wish                                   "Auf Wunsch des Patienten"
-* #patient-death                                  "Tod"
-* #lost-to-fu                                     "Lost to follow-up"
-* #chronic-remission                              "Anhaltende Remission"
-* #progression                                    "Progression"
-* #toxicity                                       "Toxizität"
-* #other-therapy-chosen                           "Wahl einer anderen Therapie durch Behandler"
-* #best-supportive-care                           "Best Supportive Care"
-* #deterioration                                  "Zustandsverschlechterung"
-* #regular-completion                             "Reguläres Ende"
-* #regular-completion-with-dosage-reduction       "Reguläres Ende mit Dosisreduktion"
-* #regular-completion-with-substance-change       "Reguläres Ende mit Substanzwechsel"
-* #other                                          "Weitere Gründe"
-* #unknown                                        "Unbekannt"
+* insert CS_Header($mii-cs-mtb-response-befund-beurteilung)
+
+* #CR                                "Complete Response"
+* #PR                                "Partial Response"
+* #MR                                "Mixed Response"
+* #SD                                "Stable Disease"
+* #PD                                "Progressive Disease"
+* #NA                                "Not assessable"
+* #NYA                               "Not yet assessable"
+
+ValueSet: MII_VS_MTB_Response_Befund_Beurteilung
+Id: mii-vs-mtb-response-befund-beurteilung
+Title: "MII VS Response Befund Beurteilung"
+Description: "ValueSet Response Befund Beurteilung"
+* insert VS_Header($mii-vs-mtb-response-befund-beurteilung)
+* include codes from system MII_CS_MTB_Response_Befund_Beurteilung

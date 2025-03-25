@@ -20,5 +20,7 @@ Description: "Response Beurteilung nach DNPM"
 
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept ^short = "Response Beurteilung"
-* partOf 1..1 MS
-* partOf only Reference(MedicationStatement)
+* valueCodeableConcept.coding.system = $mii-cs-mtb-response-befund-beurteilung
+* valueCodeableConcept.coding.code from MII_VS_MTB_Response_Befund_Beurteilung
+* partOf 1..* MS
+* partOf only Reference(MII_PR_MTB_Systemtherapie or MedicationStatement)

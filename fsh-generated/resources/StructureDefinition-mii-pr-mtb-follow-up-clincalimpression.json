@@ -34,6 +34,7 @@
       {
         "id": "ClinicalImpression.status",
         "path": "ClinicalImpression.status",
+        "patternCode": "completed",
         "mustSupport": true
       },
       {
@@ -80,6 +81,24 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.investigation",
+        "path": "ClinicalImpression.investigation",
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.investigation.code.coding.system",
+        "path": "ClinicalImpression.investigation.code.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status"
+      },
+      {
+        "id": "ClinicalImpression.investigation.code.coding.code",
+        "path": "ClinicalImpression.investigation.code.coding.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status"
+        }
       },
       {
         "id": "ClinicalImpression.supportingInfo",
@@ -138,7 +157,7 @@
         "id": "ClinicalImpression.supportingInfo:AntwortenKostenuebernahme",
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "AntwortenKostenuebernahme",
-        "short": "Antworten Kostenübernahmen",
+        "short": "Antworten Kostenübernahme",
         "min": 0,
         "max": "*",
         "type": [

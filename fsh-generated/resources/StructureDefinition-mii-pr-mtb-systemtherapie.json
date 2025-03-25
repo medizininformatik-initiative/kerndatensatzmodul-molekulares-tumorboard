@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
+  "description": "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -45,7 +45,6 @@
           "description": "Slice für die Referenzierung der Therapie zum Follow-\n                                  Up Careplan, wo die umgesetzten Therapien gesammelt werden.\n                                  und zur Referenzierung der Therapieempfehlung, auf welche die Therapie basiert",
           "ordered": false
         },
-        "min": 1,
         "max": "1",
         "mustSupport": true
       },
@@ -62,22 +61,6 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MedicationStatement.basedOn:FollowUpCarePlan",
-        "path": "MedicationStatement.basedOn",
-        "sliceName": "FollowUpCarePlan",
-        "short": "Follow-Up Careplan",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
             ]
           }
         ]
@@ -159,6 +142,49 @@
         "path": "MedicationStatement.dosage",
         "short": "Dosisdichte",
         "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "sliceName": "doseQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.system",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.code",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte"
+        }
       }
     ]
   }

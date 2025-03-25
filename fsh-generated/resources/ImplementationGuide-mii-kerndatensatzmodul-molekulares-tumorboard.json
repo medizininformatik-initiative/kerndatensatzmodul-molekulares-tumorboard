@@ -217,13 +217,6 @@
       },
       {
         "reference": {
-          "reference": "CarePlan/MII-EXA-MTB-Follow-Up-Careplan-1"
-        },
-        "name": "Durch das Follow-Up vom 23.10.2023 erfasste durchgeführte Therapien",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
-      },
-      {
-        "reference": {
           "reference": "Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1"
         },
         "name": "ExampleDefinition",
@@ -231,10 +224,10 @@
       },
       {
         "reference": {
-          "reference": "Procedure/MII-EXA-MTB-Follow-Up-Procedure-1"
+          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1"
         },
         "name": "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-procedure"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
       },
       {
         "reference": {
@@ -286,6 +279,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-dosisdichte"
+        },
+        "name": "MII CS Dosisdichte",
+        "description": "Codesystem für die Dosisdichte einer Systemtheraptie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
         },
         "name": "MII CS Follow-Up Grund Nicht-Umsetzung",
@@ -330,6 +331,14 @@
         },
         "name": "MII CS Molekulare Biomarker",
         "description": "Codesystem, welches verschiedene Molekulare Biomarker enthält, die nicht in anderen offenen semantischen Standards wie LOINC oder SNOMED-CT abgebildet sind",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-response-befund-beurteilung"
+        },
+        "name": "MII CS Response Befund Beurteilung",
+        "description": "Codesystem für die Beurteilung des Response Befund",
         "exampleBoolean": false
       },
       {
@@ -721,7 +730,7 @@
           "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
         },
         "name": "MII PR MTB Systemtherapie",
-        "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
+        "description": "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -822,6 +831,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-dosisdichte"
+        },
+        "name": "MII VS Dosisdichte",
+        "description": "ValueSet zur Dosisdichte",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-follow-grund-nicht-umsetzung"
         },
         "name": "MII VS Follow-Up Grund Nicht-Umsetzung",
@@ -874,6 +891,14 @@
         },
         "name": "MII VS MTB Systemtherapie Status",
         "description": "Einschränkung der Status für Systemtherapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-response-befund-beurteilung"
+        },
+        "name": "MII VS Response Befund Beurteilung",
+        "description": "ValueSet Response Befund Beurteilung",
         "exampleBoolean": false
       },
       {

@@ -1,13 +1,5 @@
 [
   {
-    "outputFile": "CarePlan-MII-EXA-MTB-Follow-Up-Careplan-1.json",
-    "fshName": "MII-EXA-MTB-Follow-Up-Careplan-1",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 15,
-    "endLine": 22
-  },
-  {
     "outputFile": "CarePlan-MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1.json",
     "fshName": "MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1",
     "fshType": "Instance",
@@ -28,8 +20,8 @@
     "fshName": "MII-EXA-MTB-Antrag-Kostenuebernahme-1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 89,
-    "endLine": 104
+    "startLine": 86,
+    "endLine": 101
   },
   {
     "outputFile": "Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.json",
@@ -44,8 +36,16 @@
     "fshName": "MII-EXA-MTB-Antwort-Kostenuebernahme-1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 108,
-    "endLine": 118
+    "startLine": 105,
+    "endLine": 115
+  },
+  {
+    "outputFile": "ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.json",
+    "fshName": "MII-EXA-MTB-Follow-Up-ClinicalImpression-1",
+    "fshType": "Instance",
+    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
+    "startLine": 1,
+    "endLine": 14
   },
   {
     "outputFile": "CodeSystem-mii-cs-mtb-ablehnung-kostenuebernahme-grund.json",
@@ -86,6 +86,14 @@
     "fshFile": "profiles/Beschluss-Therapieplan/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.fsh",
     "startLine": 2,
     "endLine": 8
+  },
+  {
+    "outputFile": "CodeSystem-mii-cs-mtb-dosisdichte.json",
+    "fshName": "MII_CS_MTB_Dosisdichte",
+    "fshType": "CodeSystem",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-cs-mtb-dosisdichte.fsh",
+    "startLine": 1,
+    "endLine": 10
   },
   {
     "outputFile": "CodeSystem-mii-cs-mtb-follow-up-grund-nicht-umsetzung.json",
@@ -134,6 +142,14 @@
     "fshFile": "profiles/NGS-Bericht/mii-cs-mtb-molekulare-biomarker.fsh",
     "startLine": 1,
     "endLine": 8
+  },
+  {
+    "outputFile": "CodeSystem-mii-cs-mtb-response-befund-beurteilung.json",
+    "fshName": "MII_CS_MTB_Response_Befund_Beurteilung",
+    "fshType": "CodeSystem",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-cs-mtb-response-befund-beurteilung.fsh",
+    "startLine": 2,
+    "endLine": 14
   },
   {
     "outputFile": "CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.json",
@@ -300,24 +316,24 @@
     "fshName": "MII-EXA-MTB-Systemtherapie-1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 25,
-    "endLine": 39
+    "startLine": 17,
+    "endLine": 30
   },
   {
     "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-2.json",
     "fshName": "MII-EXA-MTB-Systemtherapie-2",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 42,
-    "endLine": 56
+    "startLine": 33,
+    "endLine": 46
   },
   {
     "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-3.json",
     "fshName": "MII-EXA-MTB-Systemtherapie-3",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 59,
-    "endLine": 73
+    "startLine": 49,
+    "endLine": 62
   },
   {
     "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-Beispiel-1.json",
@@ -325,7 +341,7 @@
     "fshType": "Instance",
     "fshFile": "profiles/Follow-Up/Systemtherapie/mii-exa-mtb-systemtherapie-1.fsh",
     "startLine": 1,
-    "endLine": 14
+    "endLine": 13
   },
   {
     "outputFile": "MedicationStatement-MTBChemo1MedicationStatement1-1.json",
@@ -548,8 +564,8 @@
     "fshName": "MII-EXA-MTB-Response-Befund-1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 77,
-    "endLine": 87
+    "startLine": 66,
+    "endLine": 82
   },
   {
     "outputFile": "Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.json",
@@ -566,14 +582,6 @@
     "fshFile": "profiles/Beschluss-Therapieplan/mii-exa-mtb-patient.fsh",
     "startLine": 19,
     "endLine": 24
-  },
-  {
-    "outputFile": "Procedure-MII-EXA-MTB-Follow-Up-Procedure-1.json",
-    "fshName": "MII-EXA-MTB-Follow-Up-Procedure-1",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 3,
-    "endLine": 12
   },
   {
     "outputFile": "Procedure-MII-EXA-MTB-Follow-Up-Procedure-Beispiel-1.json",
@@ -845,7 +853,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/Follow-Up/mii-pr-mtb-follow-up-clinicalimpression.fsh",
     "startLine": 1,
-    "endLine": 40
+    "endLine": 47
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-follow-up-procedure.json",
@@ -941,7 +949,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/Follow-Up/Systemtherapie/mii-pr-mtb-response-befund.fsh",
     "startLine": 1,
-    "endLine": 19
+    "endLine": 26
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-rna-fusion.json",
@@ -1088,6 +1096,14 @@
     "endLine": 6
   },
   {
+    "outputFile": "ValueSet-mii-vs-mtb-dosisdichte.json",
+    "fshName": "MII_VS_MTB_Dosisdichte",
+    "fshType": "ValueSet",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-cs-mtb-dosisdichte.fsh",
+    "startLine": 12,
+    "endLine": 17
+  },
+  {
     "outputFile": "ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.json",
     "fshName": "MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung",
     "fshType": "ValueSet",
@@ -1126,6 +1142,14 @@
     "fshFile": "profiles/NGS-Bericht/mii-vs-mtb-molekulare-biomarker.fsh",
     "startLine": 2,
     "endLine": 7
+  },
+  {
+    "outputFile": "ValueSet-mii-vs-mtb-response-befund-beurteilung.json",
+    "fshName": "MII_VS_MTB_Response_Befund_Beurteilung",
+    "fshType": "ValueSet",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-cs-mtb-response-befund-beurteilung.fsh",
+    "startLine": 16,
+    "endLine": 21
   },
   {
     "outputFile": "ValueSet-mii-vs-mtb-systemtherapie-status.json",

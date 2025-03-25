@@ -65,6 +65,11 @@ Alias: $mii-vs-mtb-therapieempfehlung-status-begruendung = https://www.medizinin
 Alias: $mii-vs-mtb-tumorausbreitung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-tumorausbreitung
 Alias: $mii-vs-mtb-who-grad-tumor-zns = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns
 Alias: $mii-vs-mtb-zulassungsstatus = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-zulassungsstatus
+Alias: $mii-cs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte
+Alias: $mii-vs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte
+Alias: $mii-cs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung
+Alias: $mii-vs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilung
+
 
 // Aliases für HL7 Terminologie
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status

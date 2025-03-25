@@ -5,7 +5,6 @@ Title: "Beispiel fuer eine Systemtherapie"
 
 
 * basedOn[Therapieempfehlung] = Reference(MedicationRequest/Example)
-* basedOn[FollowUpCarePlan] = Reference(CarePlan/Example)
 * status = #active
 * medicationReference = Reference(Medication/Example)
 * subject = Reference(Patient/Example)
