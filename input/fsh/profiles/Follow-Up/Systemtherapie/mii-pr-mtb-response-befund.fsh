@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Response_Befund
-Parent: Observation
+Parent: MII_PR_Onko_Verlauf
 Id: mii-pr-mtb-response-befund
 Title: "MII PR MTB Response Befund"
 Description: "Response Beurteilung nach DNPM"
@@ -7,12 +7,13 @@ Description: "Response Beurteilung nach DNPM"
 
 * status MS
 * code MS
+* subject MS
+* focus MS // jedes mal noch Primärtumor angeben?
 * effectiveDateTime MS
 * effectiveDateTime ^short = "Zeitpunkt"
 * method 1..1 MS
 * method ^short = "Beurteilungsmethode"
-// für valueCodeableConcept braucht es noch ein VS für coding.code
-// und ein CS für coding.system
+// für valueCodeableConcept eigenes CS & VS?
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept ^short = "Response Beurteilung"
 * partOf 1..1 MS

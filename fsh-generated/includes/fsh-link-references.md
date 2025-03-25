@@ -52,6 +52,7 @@
 [MII_PR_MTB_Behandlungsepisode]: StructureDefinition-mii-pr-mtb-behandlungsepisode.html
 [MII_PR_MTB_Biopsie_Auftrag]: StructureDefinition-mii-pr-mtb-biopsie-auftrag.html
 [MII_PR_MTB_BRCAness]: StructureDefinition-mii-pr-mtb-brcaness.html
+[MII_PR_MTB_Follow_Up_ClinicalImpression]: StructureDefinition-mii-pr-mtb-follow-up-clincalimpression.html
 [MII_PR_MTB_Copy_Number_Variant]: StructureDefinition-mii-pr-mtb-copy-number-variant.html
 [MII_PR_MTB_Diagnose_Primaertumor]: StructureDefinition-mii-pr-mtb-diagnose-primaertumor.html
 [MII_PR_MTB_Diagnostische_Implikation]: StructureDefinition-mii-pr-mtb-diagnostische-implikation.html

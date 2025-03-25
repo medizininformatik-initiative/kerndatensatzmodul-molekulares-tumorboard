@@ -1,3 +1,5 @@
+
+// Clinical Impression
 Instance: MII-EXA-MTB-Follow-Up-Procedure-1
 InstanceOf: MII_PR_MTB_Follow_Up_Procedure
 Usage: #example
@@ -71,6 +73,7 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * statusReason = #E // Daten im Bsp nicht vorhanden
 
 
+// hier MII_PR_ONKO_VERLAUF
 Instance: MII-EXA-MTB-Response-Befund-1
 InstanceOf: MII_PR_MTB_Response_Befund
 Usage: #example

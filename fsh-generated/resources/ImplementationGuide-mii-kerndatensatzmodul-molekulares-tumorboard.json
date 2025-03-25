@@ -219,7 +219,7 @@
         "reference": {
           "reference": "CarePlan/MII-EXA-MTB-Follow-Up-Careplan-1"
         },
-        "name": "Durch das Follow-Up vom 23.10.2023 erfasste, durchgeführte Therapien",
+        "name": "Durch das Follow-Up vom 23.10.2023 erfasste durchgeführte Therapien",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
       },
       {
@@ -530,6 +530,14 @@
         },
         "name": "MII PR MTB BRCAness",
         "description": "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zeigt, welches BRCA1- oder BRCA2-Mutationen entspricht. Die BRCAness ist ein Indikator für die Wirksamkeit von PARP-Inhibitoren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
+        },
+        "name": "MII PR MTB Clinical Impresssion",
+        "description": "Follow-Up nach DNPM ",
         "exampleBoolean": false
       },
       {
