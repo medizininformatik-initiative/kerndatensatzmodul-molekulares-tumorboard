@@ -20,6 +20,7 @@ Alias: $mii-pr-medikation-medication-request = https://www.medizininformatik-ini
 
 // Aliases für Profile des MII MolGen-Moduls
 Alias: $mii-pr-molgen-diagnostische-implikation = https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/diagnostische-implikation
+Alias: $mii-pr-molgen-therapeutische-implikation = https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/therapeutische-implikation
 
 // Aliases für Profile des MII MTB-Moduls
 Alias: $mii-lm-mtb = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb
@@ -87,12 +88,14 @@ Alias: $ASK = http://fhir.de/CodeSystem/ask
 Alias: $ATC_DE = http://fhir.de/CodeSystem/bfarm/atc
 Alias: $EDQM = http://standardterms.edqm.eu
 Alias: $ENS = http://ensembl.org
-Alias: $HGNC = http://www.genenames.org
+Alias: $HGNC = http://www.genenames.org/geneId
+Alias: $HGVS = http://varnomen.hgvs.org
 Alias: $ICD10GM = http://fhir.de/CodeSystem/bfarm/icd-10-gm
 Alias: $ICDO3 = http://terminology.hl7.org/CodeSystem/icd-o-3
 Alias: $LNC = http://loinc.org
 Alias: $OPS = http://fhir.de/CodeSystem/bfarm/ops
 Alias: $SCT = http://snomed.info/sct
+Alias: $TBD = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $UNII = http://fdasis.nlm.nih.gov
 Alias: $UNIPROT = http://www.uniprot.org

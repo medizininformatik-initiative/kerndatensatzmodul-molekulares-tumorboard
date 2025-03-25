@@ -211,7 +211,9 @@
 [mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-study-request-cldn6]: ServiceRequest-mii-exa-mtb-study-request-cldn6.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html
+[mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1.html
 [mii-exa-mtb-study-tedova]: ResearchStudy-mii-exa-mtb-study-tedova.html
 [mii-exa-mtb-study-request-tedova]: ServiceRequest-mii-exa-mtb-study-request-tedova.html
+[mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53]: Observation-mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53.html
 [mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan]: MedicationRequest-mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan.html
