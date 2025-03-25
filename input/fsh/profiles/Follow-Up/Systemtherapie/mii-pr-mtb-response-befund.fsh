@@ -13,7 +13,11 @@ Description: "Response Beurteilung nach DNPM"
 * effectiveDateTime ^short = "Zeitpunkt"
 * method 1..1 MS
 * method ^short = "Beurteilungsmethode"
+
 // für valueCodeableConcept eigenes CS & VS?
+// https://simplifier.net/medizininformatikinitiative-modulonkologie/mii-cs-onko-verlauf-gesamtbeurteilung
+// entsprich nicht ganz dem was DNPM vorsieht
+
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept ^short = "Response Beurteilung"
 * partOf 1..1 MS
