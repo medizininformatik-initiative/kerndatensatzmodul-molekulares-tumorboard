@@ -5,8 +5,8 @@ Title: "MTB-Beschluss Kim Musterperson"
 Description: "Beschluss MTB-Fall Kim Musterperson vom 28.03.2023"
 Usage: #example
 * status = #active
-// Posttherapeutische Behandlung
-* category = $mii-cs-onko-therapieplanung-typ#postth
+// Prätherapeutische Tumorkonferenz (Festlegung der Therapiestrategie)
+* category = $mii-cs-onko-therapieplanung-typ#praeth
 // Patientin Kim Musterperson (siehe KDS Erweiterungsmodul Onkologie)
 * subject = Reference(Patient/PatientKimMusterperson)
 // Beschluss nach Wiedervorstellung am 28.03.2023
@@ -57,7 +57,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Mirvetuximab soravtansine"
 Description: "Therapieempfehlung: Mirvetuximab soravtansine, Priorität: 1, Evidenzgrad: m1A"
 Usage: #example
-* status = #draft
+* status = #completed
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FX26
@@ -144,7 +144,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Trastuzumab deruxtecan"
 Description: "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenzgrad: m1B"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FD04
@@ -170,7 +170,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Adavosertib"
 Description: "Therapieempfehlung: Adavosertib"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-adavosertib)
@@ -180,7 +180,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Carboplatin"
 Description: "Therapieempfehlung: Carboplatin"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01XA02
@@ -190,7 +190,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Title: "Adavosertib +/- Carboplatin"
 Description: "Therapieempfehlung Kombinationstherapie: Adavosertib +/- Carboplatin"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * action.resource = Reference(mii-exa-mtb-medication-request-adavosertib)
@@ -219,7 +219,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Lunresertib"
 Description: "Therapieempfehlung: Lunresertib"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-lunresertib)
@@ -239,7 +239,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Camonsertib"
 Description: "Therapieempfehlung: Camonsertib"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-camonsertib)
@@ -249,7 +249,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Title: "Lunresertib + Camonsertib"
 Description: "Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib, Priorität: 5, Evidenzgrad: m1B"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * action.resource = Reference(mii-exa-mtb-medication-request-lunresertib)
@@ -274,7 +274,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Cobimetinib"
 Description: "Therapieempfehlung: Cobimetinib, Priorität: 6, Evidenzgrad: m3"
 Usage: #example
-* status = #draft
+* status = #on-hold
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
