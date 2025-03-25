@@ -166,6 +166,7 @@ InstanceOf: MII_PR_MTB_Systemische_Therapie
 Usage: #example
 Description: "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.06.2023"
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
+* basedOn[Therapieplan] = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 * status = #completed
 * category.coding[sct] = $SCT#277132007 // Therapeutic procedure | alternativ 18629005 Administration of medicine?
 * code.coding[sct] = $SCT#367336001 // Chemotherapy

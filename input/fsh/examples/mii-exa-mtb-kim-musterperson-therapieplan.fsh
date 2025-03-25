@@ -92,6 +92,7 @@ Usage: #example
 * status = #draft
 * identifier[+].system = $mii-ns-mtb-nct
 * identifier[=].value = "04503278"
+* extension[Therapieplan].valueReference = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 
 Instance: mii-exa-mtb-study-request-cldn6
 InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
@@ -116,6 +117,7 @@ Usage: #example
 * status = #draft
 * identifier[+].system = $mii-ns-mtb-nct
 * identifier[=].value = "04713514"
+* extension[Therapieplan].valueReference = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 
 Instance: mii-exa-mtb-study-request-tedova
 InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
@@ -135,6 +137,7 @@ Title: "CCNE1"
 Description: "Studie: CCNE1 ampl. OvCA"
 Usage: #example
 * status = #draft
+* extension[Therapieplan].valueReference = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 
 Instance: mii-exa-mtb-study-request-ccne1
 InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage

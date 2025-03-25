@@ -81,6 +81,8 @@ Alias: $request-status = http://hl7.org/fhir/request-status
 Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
 Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statement-status
 
+// Aliases für HL7 Extensions
+Alias: $fhir-ext-based-on = http://hl7.org/fhir/StructureDefinition/event-basedOn
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask

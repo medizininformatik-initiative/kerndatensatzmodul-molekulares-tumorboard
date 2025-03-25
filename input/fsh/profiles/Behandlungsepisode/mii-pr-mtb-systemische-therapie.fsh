@@ -5,6 +5,18 @@ Title: "MII PR MTB Systemische Therapie"
 Description: "Systemische Therapie"
 * insert PR_Header
 
+* basedOn 0..* MS
+* basedOn ^slicing.discriminator.type = #profile
+* basedOn ^slicing.discriminator.path = "$this"
+* basedOn ^slicing.rules = #open
+* basedOn ^slicing.description = "Slice für zugehörigen Therapieplan"
+* basedOn ^slicing.ordered = false
+
+* basedOn contains Therapieplan 0..1 MS
+* basedOn[Therapieplan] ^short = "Therpieplan zur Systemischen Therapie"
+* basedOn[Therapieplan] ^definition = "Therpieplan auf dessen Empfehlung die Systemische Therapie erfolgt"
+* basedOn[Therapieplan] only Reference(MII_PR_MTB_Therapieplan)
+
 * outcome.coding ^slicing.discriminator.type = #value
 * outcome.coding ^slicing.discriminator.path = "system"
 * outcome.coding ^slicing.discriminator.path = "code"

@@ -41,6 +41,39 @@
   "differential": {
     "element": [
       {
+        "id": "Procedure.basedOn",
+        "path": "Procedure.basedOn",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für zugehörigen Therapieplan",
+          "ordered": false
+        }
+      },
+      {
+        "id": "Procedure.basedOn:Therapieplan",
+        "path": "Procedure.basedOn",
+        "sliceName": "Therapieplan",
+        "short": "Therpieplan zur Systemischen Therapie",
+        "definition": "Therpieplan auf dessen Empfehlung die Systemische Therapie erfolgt",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Procedure.outcome.coding",
         "path": "Procedure.outcome.coding",
         "slicing": {
