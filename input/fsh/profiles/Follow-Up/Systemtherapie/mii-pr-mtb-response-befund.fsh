@@ -14,13 +14,12 @@ Description: "Response Beurteilung nach DNPM"
 * method 1..1 MS
 * method ^short = "Beurteilungsmethode"
 
-// für valueCodeableConcept eigenes CS & VS?
+// für valueCodeableConcept eigenes CS & VS
 // https://simplifier.net/medizininformatikinitiative-modulonkologie/mii-cs-onko-verlauf-gesamtbeurteilung
-// entsprich nicht ganz dem was DNPM vorsieht
-
-* valueCodeableConcept 1..1 MS
+// entspricht nicht ganz dem was DNPM vorsieht
+* valueCodeableConcept 0..1 MS
 * valueCodeableConcept ^short = "Response Beurteilung"
 * valueCodeableConcept.coding.system = $mii-cs-mtb-response-befund-beurteilung
 * valueCodeableConcept.coding.code from MII_VS_MTB_Response_Befund_Beurteilung
 * partOf 1..* MS
-* partOf only Reference(MII_PR_MTB_Systemtherapie or MedicationStatement)
+* partOf only Reference(MII_PR_MTB_Systemtherapie or MedicationStatement or Procedure)

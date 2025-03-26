@@ -4,7 +4,7 @@ Usage: #example
 Title: "Beispiel fuer eine Systemtherapie"
 
 
-* basedOn[Therapieempfehlung] = Reference(MedicationRequest/Example)
+* basedOn = Reference(MedicationRequest/Example)
 * status = #active
 * medicationReference = Reference(Medication/Example)
 * subject = Reference(Patient/Example)

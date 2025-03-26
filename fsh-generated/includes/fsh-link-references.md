@@ -1,9 +1,13 @@
 [MII-EXA-MTB-Antwort-Kostenuebernahme-1]: ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html
 [MII-EXA-MTB-Systemtherapie-3]: MedicationStatement-MII-EXA-MTB-Systemtherapie-3.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-1.html
+[MII-EXA-MTB-Systemtherapie-6]: MedicationStatement-MII-EXA-MTB-Systemtherapie-6.html
 [MII-EXA-MTB-Systemtherapie-2]: MedicationStatement-MII-EXA-MTB-Systemtherapie-2.html
 [MII-EXA-MTB-Response-Befund-1]: Observation-MII-EXA-MTB-Response-Befund-1.html
+[MII-EXA-MTB-Systemtherapie-5]: MedicationStatement-MII-EXA-MTB-Systemtherapie-5.html
+[MII-EXA-MTB-Response-Befund-2]: Observation-MII-EXA-MTB-Response-Befund-2.html
 [MII-EXA-MTB-Systemtherapie-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-1.html
+[MII-EXA-MTB-Systemtherapie-4]: MedicationStatement-MII-EXA-MTB-Systemtherapie-4.html
 [MII-EXA-MTB-Systemtherapie-Beispiel-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-Beispiel-1.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1]: CarePlan-MII-EXA-MTB-Follow-Up-Careplan-Beispiel-1.html

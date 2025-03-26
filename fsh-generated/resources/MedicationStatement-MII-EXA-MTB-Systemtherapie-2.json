@@ -11,6 +11,14 @@
       "reference": "MedicationRequest/TherapieempfehlungExample"
     }
   ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "code": "L01FX26"
+      }
+    ]
+  },
   "effectivePeriod": {
     "start": "2023-07-16",
     "end": "2023-07-16"
@@ -29,16 +37,21 @@
       ]
     }
   ],
+  "dosage": [
+    {
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 6,
+            "unit": "mg/kg KG",
+            "code": "mg/kg{KG}",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    }
+  ],
   "status": "completed",
-  "medicationCodeableConcept": {
-    "coding": [
-      {
-        "code": "123",
-        "system": "http://fhir.de/CodeSystem/bfarm/atc",
-        "display": "Mirvetuximab soravtansine"
-      }
-    ]
-  },
   "subject": {
     "reference": "Patient/KimMusterperson"
   }
