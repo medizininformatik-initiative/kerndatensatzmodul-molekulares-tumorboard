@@ -119,6 +119,73 @@
     "resource": [
       {
         "reference": {
+          "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"
+        },
+        "name": "01.05.2023 Krankenkassenantrag Mirvetuximab soravtansine genehmigt",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-3"
+        },
+        "name": "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+      },
+      {
+        "reference": {
+          "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
+        },
+        "name": "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-6"
+        },
+        "name": "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-2"
+        },
+        "name": "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-1"
+        },
+        "name": "20.08.2023 CT T/A",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-5"
+        },
+        "name": "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-2"
+        },
+        "name": "22.10.2023 CT T/A",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-1"
+        },
+        "name": "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-4"
+        },
+        "name": "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
           "reference": "Medication/mii-exa-mtb-medication-adavosertib"
         },
         "name": "Adavosertib",
@@ -326,6 +393,13 @@
       },
       {
         "reference": {
+          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1"
+        },
+        "name": "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/genomic-study-analysis"
         },
         "name": "Genomic Study Analysis",
@@ -398,6 +472,10 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-dosisdichte"
+        },
+        "name": "MII CS Dosisdichte",
+        "description": "Codesystem für die Dosisdichte einer Systemtheraptie",
           "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"
         },
         "name": "MII CS Empfehlung Evidenzgrad",
@@ -466,6 +544,38 @@
         },
         "name": "MII CS Molekulare Biomarker",
         "description": "Codesystem, welches verschiedene Molekulare Biomarker enthält, die nicht in anderen offenen semantischen Standards wie LOINC oder SNOMED-CT abgebildet sind",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-response-befund-beurteilung"
+        },
+        "name": "MII CS Response Befund Beurteilung",
+        "description": "Codesystem für die Beurteilung des Response Befund",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad"
+        },
+        "name": "MII CS Therapieempfehlung Evidenzgrad",
+        "description": "Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII CS Therapieempfehlung Evidenzgrad Zusatzverweis",
+        "description": "Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-status-begruendung"
+        },
+        "name": "MII CS Therapieempfehlung Status Begründung",
+        "description": "Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
         "exampleBoolean": false
       },
       {
@@ -642,6 +752,14 @@
         },
         "name": "MII PR MTB BRCAness",
         "description": "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zeigt, welches BRCA1- oder BRCA2-Mutationen entspricht. Die BRCAness ist ein Indikator für die Wirksamkeit von PARP-Inhibitoren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
+        },
+        "name": "MII PR MTB Clinical Impresssion",
+        "description": "Follow-Up nach DNPM ",
         "exampleBoolean": false
       },
       {
@@ -849,7 +967,7 @@
           "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
         },
         "name": "MII PR MTB Systemtherapie",
-        "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
+        "description": "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -950,6 +1068,10 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-dosisdichte"
+        },
+        "name": "MII VS Dosisdichte",
+        "description": "ValueSet zur Dosisdichte",
           "reference": "ValueSet/mii-vs-mtb-empfehlung-evidenzgrad"
         },
         "name": "MII VS Empfehlung Evidenzgrad",
@@ -1034,6 +1156,38 @@
         },
         "name": "MII VS MTB Systemtherapie Status",
         "description": "Einschränkung der Status für Systemtherapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-response-befund-beurteilung"
+        },
+        "name": "MII VS Response Befund Beurteilung",
+        "description": "ValueSet Response Befund Beurteilung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad"
+        },
+        "name": "MII VS Therapieempfehlung Evidenzgrad",
+        "description": "ValueSet für den Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII VS Therapieempfehlung Evidenzgrad Zusatzverweis",
+        "description": "ValueSet für den Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung"
+        },
+        "name": "MII VS Therapieempfehlung Status Begründung",
+        "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
         "exampleBoolean": false
       },
       {

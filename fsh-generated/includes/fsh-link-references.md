@@ -1,3 +1,13 @@
+[MII-EXA-MTB-Antwort-Kostenuebernahme-1]: ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html
+[MII-EXA-MTB-Systemtherapie-3]: MedicationStatement-MII-EXA-MTB-Systemtherapie-3.html
+[MII-EXA-MTB-Antrag-Kostenuebernahme-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-1.html
+[MII-EXA-MTB-Systemtherapie-6]: MedicationStatement-MII-EXA-MTB-Systemtherapie-6.html
+[MII-EXA-MTB-Systemtherapie-2]: MedicationStatement-MII-EXA-MTB-Systemtherapie-2.html
+[MII-EXA-MTB-Response-Befund-1]: Observation-MII-EXA-MTB-Response-Befund-1.html
+[MII-EXA-MTB-Systemtherapie-5]: MedicationStatement-MII-EXA-MTB-Systemtherapie-5.html
+[MII-EXA-MTB-Response-Befund-2]: Observation-MII-EXA-MTB-Response-Befund-2.html
+[MII-EXA-MTB-Systemtherapie-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-1.html
+[MII-EXA-MTB-Systemtherapie-4]: MedicationStatement-MII-EXA-MTB-Systemtherapie-4.html
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
@@ -25,6 +35,7 @@
 [MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
 [mii-exa-mtb-kim-musterperson-aufklaerung]: Consent-mii-exa-mtb-kim-musterperson-aufklaerung.html
 [MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
+[MII-EXA-MTB-Follow-Up-ClinicalImpression-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
 [mii-exa-mtb-medication-lunresertib]: Medication-mii-exa-mtb-medication-lunresertib.html
 [mii-exa-mtb-medication-request-lunresertib]: MedicationRequest-mii-exa-mtb-medication-request-lunresertib.html
@@ -34,6 +45,7 @@
 [MII_CS_MTB_Antwort_Kostenuebernahme_Status]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-status.html
 [MII_CS_MTB_AuftragBegruendung]: CodeSystem-mii-cs-mtb-auftrag-begruendung.html
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
+[MII_CS_MTB_Dosisdichte]: CodeSystem-mii-cs-mtb-dosisdichte.html
 [MII_CS_MTB_Empfehlung_Evidenzgrad]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad.html
 [MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.html
 [MII_CS_MTB_Empfehlung_StatusBegruendung]: CodeSystem-mii-cs-mtb-empfehlung-status-begruendung.html
@@ -43,6 +55,10 @@
 [MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction]: CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.html
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
+[MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
+[MII_CS_MTB_TherapieempfehlungEvidenzgrad]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad.html
+[MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
+[MII_CS_MTB_TherapieempfehlungStatusBegruendung]: CodeSystem-mii-cs-mtb-therapieempfehlung-status-begruendung.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
@@ -65,6 +81,7 @@
 [MII_PR_MTB_Behandlungsepisode]: StructureDefinition-mii-pr-mtb-behandlungsepisode.html
 [MII_PR_MTB_Biopsie_Auftrag]: StructureDefinition-mii-pr-mtb-biopsie-auftrag.html
 [MII_PR_MTB_BRCAness]: StructureDefinition-mii-pr-mtb-brcaness.html
+[MII_PR_MTB_Follow_Up_ClinicalImpression]: StructureDefinition-mii-pr-mtb-follow-up-clincalimpression.html
 [MII_PR_MTB_Copy_Number_Variant]: StructureDefinition-mii-pr-mtb-copy-number-variant.html
 [MII_PR_MTB_Diagnose_Primaertumor]: StructureDefinition-mii-pr-mtb-diagnose-primaertumor.html
 [MII_PR_MTB_Diagnostische_Implikation]: StructureDefinition-mii-pr-mtb-diagnostische-implikation.html
@@ -103,6 +120,7 @@
 [MII_VS_MTB_Antwort_Kostenuebernahme_Status]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-status.html
 [MII_VS_MTB_AuftragBegruendung]: ValueSet-mii-vs-mtb-auftrag-begruendung.html
 [MII_VS_MTB_BestimmungsmethodeTumorzellgehalt]: ValueSet-mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.html
+[MII_VS_MTB_Dosisdichte]: ValueSet-mii-vs-mtb-dosisdichte.html
 [MII_VS_MTB_Empfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-empfehlung-evidenzgrad.html
 [MII_VS_MTB_Empfehlung_EvidenzgradZusatzverweis]: ValueSet-mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis.html
 [MII_VS_MTB_Empfehlung_StatusBegruendung]: ValueSet-mii-vs-mtb-empfehlung-status-begruendung.html
@@ -114,6 +132,10 @@
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemtherapie_Status]: ValueSet-mii-vs-mtb-systemtherapie-status.html
+[MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
+[MII_VS_MTB_Therapieempfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad.html
+[MII_VS_MTB_Therapieempfehlung_EvidenzgradZusatzverweis]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
+[MII_VS_MTB_TherapieempfehlungStatusBegruendung]: ValueSet-mii-vs-mtb-therapieempfehlung-status-begruendung.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html

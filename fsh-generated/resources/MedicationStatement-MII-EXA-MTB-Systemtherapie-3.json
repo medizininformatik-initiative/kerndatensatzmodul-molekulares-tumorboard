@@ -1,0 +1,58 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "MII-EXA-MTB-Systemtherapie-3",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
+    ]
+  },
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/TherapieempfehlungExample"
+    }
+  ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "code": "L01FX26"
+      }
+    ]
+  },
+  "effectivePeriod": {
+    "start": "2023-08-07",
+    "end": "2023-08-07"
+  },
+  "note": [
+    {
+      "text": "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+    }
+  ],
+  "statusReason": [
+    {
+      "coding": [
+        {
+          "code": "E"
+        }
+      ]
+    }
+  ],
+  "dosage": [
+    {
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 6,
+            "unit": "mg/kg KG",
+            "code": "mg/kg{KG}",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/KimMusterperson"
+  }
+}

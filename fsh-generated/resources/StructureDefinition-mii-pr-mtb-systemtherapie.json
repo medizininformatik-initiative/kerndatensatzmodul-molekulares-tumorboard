@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
+  "description": "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -34,53 +34,19 @@
       {
         "id": "MedicationStatement.basedOn",
         "path": "MedicationStatement.basedOn",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "system"
-            }
-          ],
-          "rules": "open",
-          "description": "Slice für die Referenzierung der Therapie zum Follow-\r\n                                  Up Careplan, wo die umgesetzten Therapien gesammelt werden.\r\n                                  und zur Referenzierung der Therapieempfehlung, auf welche die Therapie basiert",
-          "ordered": false
-        },
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationStatement.basedOn:Therapieempfehlung",
-        "path": "MedicationStatement.basedOn",
-        "sliceName": "Therapieempfehlung",
         "short": "Therapieempfehlung",
-        "definition": "Referenz auf Therapieempfehlung in Therapieplan",
-        "min": 0,
+        "definition": "Referenz auf Therapieempfehlung in MTB-Therapieplan",
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
             ]
           }
-        ]
-      },
-      {
-        "id": "MedicationStatement.basedOn:FollowUpCarePlan",
-        "path": "MedicationStatement.basedOn",
-        "sliceName": "FollowUpCarePlan",
-        "short": "Follow-Up Careplan",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-careplan"
-            ]
-          }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MedicationStatement.status",
@@ -107,7 +73,123 @@
       {
         "id": "MedicationStatement.medication[x]",
         "path": "MedicationStatement.medication[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "short": "Wirkstoffe",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept",
+        "path": "MedicationStatement.medication[x]",
+        "sliceName": "medicationCodeableConcept",
+        "short": "Medikation Code",
+        "definition": "Code für das Medikament, welches Gegenstand des Eintrags ist.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding",
+        "path": "MedicationStatement.medication[x].coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:Pharmazentralnummer",
+        "path": "MedicationStatement.medication[x].coding",
+        "sliceName": "Pharmazentralnummer",
+        "short": "PZN Code",
+        "definition": "Ein Verweis auf einen von der Pharmazentralnummer (PZN) definierten Code",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:Pharmazentralnummer.system",
+        "path": "MedicationStatement.medication[x].coding.system",
+        "min": 1,
+        "patternUri": "http://fhir.de/CodeSystem/ifa/pzn",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:Pharmazentralnummer.code",
+        "path": "MedicationStatement.medication[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:atcClassDe",
+        "path": "MedicationStatement.medication[x].coding",
+        "sliceName": "atcClassDe",
+        "short": "ATC Klassifikation deutsche Version",
+        "definition": "ATC-Codes für Fertigarzneimittel bspw. von Kombiprodukten",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ValueSet/mii-vs-medikation-atc"
+        }
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:atcClassDe.system",
+        "path": "MedicationStatement.medication[x].coding.system",
+        "min": 1,
+        "patternUri": "http://fhir.de/CodeSystem/bfarm/atc",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:atcClassDe.code",
+        "path": "MedicationStatement.medication[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:atcClassEn",
+        "path": "MedicationStatement.medication[x].coding",
+        "sliceName": "atcClassEn",
+        "short": "Anatomical Therapeutic Chemical Classification System",
+        "definition": "ATC Classification International WHO Version",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:atcClassEn.system",
+        "path": "MedicationStatement.medication[x].coding.system",
+        "patternUri": "http://www.whocc.no/atc",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:atcClassEn.code",
+        "path": "MedicationStatement.medication[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.text",
+        "path": "MedicationStatement.medication[x].text",
         "mustSupport": true
       },
       {
@@ -157,7 +239,75 @@
       {
         "id": "MedicationStatement.dosage",
         "path": "MedicationStatement.dosage",
-        "short": "Dosisdichte",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für das Ermöglichen der Angabe der Dosisdichte",
+          "ordered": false
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage:Dosisdichte",
+        "path": "MedicationStatement.dosage",
+        "sliceName": "Dosisdichte",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage:Dosisdichte.doseAndRate.dose[x]",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationStatement.dosage:Dosisdichte.doseAndRate.dose[x]:doseQuantity",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "sliceName": "doseQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage:Dosisdichte.doseAndRate.dose[x]:doseQuantity.system",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte"
+      },
+      {
+        "id": "MedicationStatement.dosage:Dosisdichte.doseAndRate.dose[x]:doseQuantity.code",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte"
+        }
+      },
+      {
+        "id": "MedicationStatement.dosage:Dosis",
+        "path": "MedicationStatement.dosage",
+        "sliceName": "Dosis",
+        "min": 0,
+        "max": "1",
         "mustSupport": true
       }
     ]
