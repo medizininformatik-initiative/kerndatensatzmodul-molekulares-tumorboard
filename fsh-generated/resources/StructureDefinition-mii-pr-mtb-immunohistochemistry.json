@@ -37,6 +37,34 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
         "short": "Probe",
@@ -57,170 +85,6 @@
           "description": "Immunohistochemische Ergebnisse",
           "ordered": false
         }
-      },
-      {
-        "id": "Observation.component:tps-score",
-        "path": "Observation.component",
-        "sliceName": "tps-score",
-        "short": "TPS-Score",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:tps-score.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:tps-score.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.component:tps-score.value[x]:valueInteger",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueInteger",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "integer"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:cps-score",
-        "path": "Observation.component",
-        "sliceName": "cps-score",
-        "short": "CPS-Score",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:cps-score.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:cps-score.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.component:cps-score.value[x]:valueInteger",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueInteger",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "integer"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:ics-score",
-        "path": "Observation.component",
-        "sliceName": "ics-score",
-        "short": "ICS-Score",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:ics-score.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:ics-score.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.component:ics-score.value[x]:valueRange",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueRange",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:tc-score",
-        "path": "Observation.component",
-        "sliceName": "tc-score",
-        "short": "TC-Score",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:tc-score.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:tc-score.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.component:tc-score.value[x]:valueRange",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueRange",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "mustSupport": true
       },
       {
         "id": "Observation.component:msi",

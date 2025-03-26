@@ -31,6 +31,6 @@ Description: "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)"
 * ingredient[=].strength.numerator.value = 75
 * ingredient[=].strength.numerator.code = #mg
 * ingredient[=].strength.denominator.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* ingredient[=].strength.denominator.value = 4
+* ingredient[=].strength.denominator.value = 1
 * ingredient[=].strength.denominator.code = #TAB
 * ingredient[=].extension[MII_EX_Medikation_Wirkstofftyp].valueCoding = #MIN

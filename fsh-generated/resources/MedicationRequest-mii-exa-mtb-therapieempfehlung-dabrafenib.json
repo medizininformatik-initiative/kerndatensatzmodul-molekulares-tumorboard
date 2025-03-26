@@ -6,6 +6,29 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
     ]
   },
+  "dosageInstruction": [
+    {
+      "timing": {
+        "repeat": {
+          "when": [
+            "MORN",
+            "EVE"
+          ],
+          "frequency": 1
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 2,
+            "system": "http://unitsofmeasure.org",
+            "code": "{Tablet}",
+            "unit": "Tablet"
+          }
+        }
+      ]
+    }
+  ],
   "status": "active",
   "intent": "option",
   "subject": {

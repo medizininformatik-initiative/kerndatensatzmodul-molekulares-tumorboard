@@ -1,0 +1,54 @@
+{
+  "resourceType": "CarePlan",
+  "id": "mii-exa-mtb-kim-musterperson-therapieplan",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ",
+          "code": "postth"
+        }
+      ]
+    }
+  ],
+  "addresses": [
+    {
+      "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
+    }
+  ],
+  "activity": [
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "ZS",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "zielgerichtete Substanzen"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
+      }
+    }
+  ],
+  "intent": "plan",
+  "status": "active",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "created": "2023-03-28"
+}

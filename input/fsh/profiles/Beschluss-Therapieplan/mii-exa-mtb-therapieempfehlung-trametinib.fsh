@@ -27,3 +27,9 @@ Description: "Therapieempfehlung für Trametinib"
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Medikation
 * medicationReference = Reference(mii-exa-mtb-medikation-trametinib)
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.when[0] = #MORN
+* dosageInstruction.doseAndRate.doseQuantity.value = 1
+* dosageInstruction.doseAndRate.doseQuantity.system = $UCUM
+* dosageInstruction.doseAndRate.doseQuantity.code = #{Tablet}
+* dosageInstruction.doseAndRate.doseQuantity.unit = "Tablet"

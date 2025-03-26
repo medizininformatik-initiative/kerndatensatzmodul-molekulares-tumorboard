@@ -21,7 +21,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * problem contains PrimaertumorDiagnose 0..1 MS
 * problem[PrimaertumorDiagnose] ^short = "Primärtumor Diagnose"
 * problem[PrimaertumorDiagnose] ^definition = "Verweise auf Diagnose des Primärtumors"
-* problem[PrimaertumorDiagnose] only Reference(MII_PR_MTB_Diagnose_Primaertumor)
+* problem[PrimaertumorDiagnose] only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
 * investigation ^slicing.discriminator.type = #type
 * investigation ^slicing.discriminator.path = "code.item"
@@ -34,14 +34,14 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[KrankengeschichteFamilie].item 1..1
 * investigation[KrankengeschichteFamilie].item ^short = "Krankengeschichte Familie"
 * investigation[KrankengeschichteFamilie].item ^definition = "Verweis auf familiäre Krankengeschichte"
-* investigation[KrankengeschichteFamilie].item only Reference(MII_PR_MolGen_Familienanamnese)
+* investigation[KrankengeschichteFamilie].item only Reference(MII_PR_MolGen_Familienanamnese or FamilyMemberHistory)
 
 * investigation contains ECOG 0..1 MS
 * investigation[ECOG].code.coding = $SCT#424122007 "ECOG performance status finding"
 * investigation[ECOG].item 1..1
 * investigation[ECOG].item ^short = "ECOG"
 * investigation[ECOG].item ^definition = "ECOG Performance Status"
-* investigation[ECOG].item only Reference(MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG)
+* investigation[ECOG].item only Reference(MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG or Observation)
 
 // TODO: SCT prüfen
 * investigation contains NgsBericht 0..* MS
@@ -49,7 +49,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[NgsBericht].item 1..1
 * investigation[NgsBericht].item ^short = "NGS Report"
 * investigation[NgsBericht].item ^definition = "Für Molekulares Tumorboard bereitgestellter Next Generation Sequencing Bericht"
-* investigation[NgsBericht].item only Reference(MII_PR_MTB_NGS_Bericht)
+* investigation[NgsBericht].item only Reference(MII_PR_MTB_NGS_Bericht or DiagnosticReport)
 
 // TODO: SCT prüfen
 * investigation contains MolekularPathologieBefund 0..* MS
@@ -57,7 +57,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[MolekularPathologieBefund].item 1..1
 * investigation[MolekularPathologieBefund].item ^short = "Molekular Pathologie Befund"
 * investigation[MolekularPathologieBefund].item ^definition = "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund"
-* investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT)
+* investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT or DiagnosticReport)
 
 * supportingInfo ^slicing.discriminator.type = #type
 * supportingInfo ^slicing.discriminator.path = "$this"
@@ -77,7 +77,8 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
     MII_PR_MTB_Systemische_Therapie or 
     MII_PR_Onko_Strahlentherapie or 
     MII_PR_Onko_Operation or 
-    MII_PR_Prozedur_Procedure
+    MII_PR_Prozedur_Procedure or
+    Procedure
 )
 * supportingInfo[Vortherapie].extension contains MII_EX_MTB_Leitlinie_Dokumentation named LeitlinieDokumentation 0..1 MS
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^short = "Leitlinie Dokumentation"

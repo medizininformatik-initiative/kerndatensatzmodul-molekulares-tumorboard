@@ -1,0 +1,72 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis",
+  "id": "mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+  "title": "MII CS Empfehlung Evidenzgrad Zusatzverweis",
+  "description": "Zusatzverweis zum Evidenzgrad einer Empfehlung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+  "concept": [
+    {
+      "code": "is",
+      "display": "is",
+      "definition": "In situ-Daten aus Untersuchungen an Patientenmaterial (z.B. IHC, FISH) unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern zusätzlich angegeben werden, z.B. Evidenzgrad 3 is (IHC).",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Several in situ data and studies on patient material (e.g., IHC, FISH) support the biomarker and the level of evidence."
+        }
+      ]
+    },
+    {
+      "code": "iv",
+      "display": "iv",
+      "definition": "In vitro-Daten/ in vivo-Modelle (z.B. PDX-Modelle) derselben Tumorentität unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern angegeben werden, z.B. Evidenzgrad 2 iv (PDX).",
+      "designation": [
+        {
+          "language": "en",
+          "value": "in vitro data"
+        }
+      ]
+    },
+    {
+      "code": "Z",
+      "display": "Z",
+      "definition": "Zusatzverweis für Zulassungsstatus (Z = EMA-Zulassung liegt vor; Z (FDA) = nur FDA-Zulassung vorhanden)",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Drug is approved for use with the specific biomarker [Z = EMA approval, Z(FDA) = FDA approval]"
+        }
+      ]
+    },
+    {
+      "code": "R",
+      "display": "R",
+      "definition": "Verweis, dass es sich hierbei um einen Resistenzmarker für eine bestimmte Therapie handelt",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Biomarker predicts resistance to the drug."
+        }
+      ]
+    }
+  ],
+  "version": "2024.0.0-ballot",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "language": "de-DE",
+  "caseSensitive": true,
+  "count": 4
+}

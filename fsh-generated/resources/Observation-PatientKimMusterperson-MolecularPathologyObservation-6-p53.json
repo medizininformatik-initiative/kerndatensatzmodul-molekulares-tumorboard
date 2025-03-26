@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "id": "PatientKimMusterperson-MolecularPathologyObservation-6-p53",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "14229-9",
+        "system": "http://loinc.org",
+        "display": "P53 protein Ag [Presence] in Tissue by Immune stain"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA6576-8",
+        "system": "http://loinc.org",
+        "display": "Positive"
+      }
+    ],
+    "text": "Kräftige nukleäre Überexpression von p53"
+  },
+  "status": "final",
+  "specimen": {
+    "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+  }
+}
