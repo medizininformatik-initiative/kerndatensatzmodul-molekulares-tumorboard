@@ -20,11 +20,34 @@
       {
         "code": "LA6576-8",
         "system": "http://loinc.org",
-        "display": "Positive"
+        "display": "Her2low"
       }
     ]
   },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "gene-studied"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "HGNC:2064",
+            "system": "http://www.genenames.org/geneId",
+            "display": "ERBB2"
+          }
+        ]
+      }
+    }
+  ],
   "status": "final",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
   "specimen": {
     "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
   }

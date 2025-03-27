@@ -144,6 +144,10 @@
 [mii-exa-mtb-kim-musterperson-behandlungsepisode]: ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html
 [mii-exa-mtb-kim-musterperson-therapieplan]: CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.html
 [mii-exa-mtb-kim-musterperson-ngs-bericht]: DiagnosticReport-mii-exa-mtb-kim-musterperson-ngs-bericht.html
+[mii-exa-mtb-kim-musterperson-genomic-study]: Procedure-mii-exa-mtb-kim-musterperson-genomic-study.html
+[mii-exa-mtb-kim-musterperson-genomic-study-analysis-1]: Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-1.html
+[mii-exa-mtb-kim-musterperson-genomic-study-analysis-3]: Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-3.html
+[mii-exa-mtb-kim-musterperson-genomic-study-analysis-2]: Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-2.html
 [MTBChemo1MedicationStatement1]: MedicationStatement-MTBChemo1MedicationStatement1.html
 [MTBChemo1MedicationStatement1-1]: MedicationStatement-MTBChemo1MedicationStatement1-1.html
 [MTBChemo1MedicationStatement1-2]: MedicationStatement-MTBChemo1MedicationStatement1-2.html

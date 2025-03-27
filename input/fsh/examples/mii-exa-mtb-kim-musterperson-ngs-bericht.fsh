@@ -9,10 +9,55 @@ Usage: #example
 * code = $LNC#51969-4 "Genetic analysis report"
 * issued = "2023-03-28T00:00:00.000Z" // Ist das Datum des NGS-Berichts irgendwo angegeben?
 * subject = Reference(Patient/PatientKimMusterperson)
-* specimen = Reference(Specimen/PatientKimMusterperson)
+* specimen = Reference(Specimen/PatientKimMusterperson-Ascites )
 * result = Reference(mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53)
 * result = Reference(mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1)
 * result = Reference(mii-exa-mtb-kim-musterperson-CNVariante-CCNE1)
+
+Instance: mii-exa-mtb-kim-musterperson-genomic-study
+InstanceOf: MII_PR_MTB_Genomic_Study
+Title: "MTB-NGS-Bericht Kim Musterperson"
+Description: "Details zur Durchführung NGS-Bericht von Kim Musterperson"
+Usage: #example
+* status = #completed
+* subject = Reference(Patient/PatientKimMusterperson)
+
+Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-1
+InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
+Title: "MTB-NGS-Bericht Kim Musterperson"
+Description: "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500"
+Usage: #example
+* subject = Reference(Patient/PatientKimMusterperson)
+* extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
+* extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#ngs-mps "Next Generation Sequencing / Massively Parallel Sequencing" 
+* extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
+* extension[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "SNV" 
+* extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
+* extension[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "MNV" 
+* extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build"
+* extension[=].valueCodeableConcept = $LNC#LA30107-3 "GRCh38"
+* extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build"
+* extension[=].valueCodeableConcept = $LNC#LA30107-3 "GRCh38"
+
+
+
+Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-2
+InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
+Title: "MTB-NGS-Bericht Kim Musterperson HLA Status"
+Description: "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben weil Beispiel"
+Usage: #example
+* subject = Reference(Patient/PatientKimMusterperson)
+
+Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-3
+InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
+Title: "MTB-NGS-Bericht Kim Musterperson"
+Description: "Diagnostische Prozeduren  MolPatho-Bericht von Kim Musterperson - Immunhistochemie"
+Usage: #example
+* subject = Reference(Patient/PatientKimMusterperson)
+* extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
+* extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#histo "Next Generation Sequencing / Massively Parallel Sequencing" 
+ 
+ 
 
 // Nachweis einer pathogenen TP53-Mutation ohne direkte therapeutische Relevanz.
 Instance: mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53
