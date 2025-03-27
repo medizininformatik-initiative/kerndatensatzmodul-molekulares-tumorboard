@@ -1,3 +1,4 @@
+[mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
@@ -8,6 +9,8 @@
 [MII-EXA-MTB-GenomicStudy-1]: Procedure-MII-EXA-MTB-GenomicStudy-1.html
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
+[mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
+[mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
 [MTBObservationCA125-1]: Observation-MTBObservationCA125-1.html
 [MTBObservationCA125-2]: Observation-MTBObservationCA125-2.html
 [MTBObservationCA125-3]: Observation-MTBObservationCA125-3.html
@@ -154,6 +157,24 @@
 [MTBChemo2MedicationStatement5]: MedicationStatement-MTBChemo2MedicationStatement5.html
 [MTBChemo2MedicationStatement6]: MedicationStatement-MTBChemo2MedicationStatement6.html
 [MTBChemo2Procedure]: Procedure-MTBChemo2Procedure.html
+[mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups]: Group-mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups.html
+[mii-exa-mtb-study-cldn6-evidence-variable-0]: EvidenceVariable-mii-exa-mtb-study-cldn6-evidence-variable-0.html
+[mii-exa-mtb-study-cldn6-evidence-variable-1]: EvidenceVariable-mii-exa-mtb-study-cldn6-evidence-variable-1.html
+[mii-exa-mtb-study-cldn6-comparison-group-0]: Group-mii-exa-mtb-study-cldn6-comparison-group-0.html
+[mii-exa-mtb-study-cldn6-comparison-group-1]: Group-mii-exa-mtb-study-cldn6-comparison-group-1.html
+[mii-exa-mtb-study-cldn6-eligibility-criteria]: Group-mii-exa-mtb-study-cldn6-eligibility-criteria.html
+[mii-exa-mtb-study-cldn6-location-0]: Location-mii-exa-mtb-study-cldn6-location-0.html
+[mii-exa-mtb-study-cldn6-location-1]: Location-mii-exa-mtb-study-cldn6-location-1.html
+[mii-exa-mtb-study-cldn6-location-10]: Location-mii-exa-mtb-study-cldn6-location-10.html
+[mii-exa-mtb-study-cldn6-location-11]: Location-mii-exa-mtb-study-cldn6-location-11.html
+[mii-exa-mtb-study-cldn6-location-2]: Location-mii-exa-mtb-study-cldn6-location-2.html
+[mii-exa-mtb-study-cldn6-location-3]: Location-mii-exa-mtb-study-cldn6-location-3.html
+[mii-exa-mtb-study-cldn6-location-4]: Location-mii-exa-mtb-study-cldn6-location-4.html
+[mii-exa-mtb-study-cldn6-location-5]: Location-mii-exa-mtb-study-cldn6-location-5.html
+[mii-exa-mtb-study-cldn6-location-6]: Location-mii-exa-mtb-study-cldn6-location-6.html
+[mii-exa-mtb-study-cldn6-location-7]: Location-mii-exa-mtb-study-cldn6-location-7.html
+[mii-exa-mtb-study-cldn6-location-8]: Location-mii-exa-mtb-study-cldn6-location-8.html
+[mii-exa-mtb-study-cldn6-location-9]: Location-mii-exa-mtb-study-cldn6-location-9.html
 [Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [PatientKimMusterperson]: Patient-PatientKimMusterperson.html
 [PatientKimMusterperson-AscitesSpecimen-2]: Specimen-PatientKimMusterperson-AscitesSpecimen-2.html
@@ -208,7 +229,6 @@
 [PatientKimMusterperson-Procedure-6]: Procedure-PatientKimMusterperson-Procedure-6.html
 [PatientKimMusterperson-Procedure-7]: Procedure-PatientKimMusterperson-Procedure-7.html
 [PatientKimMusterperson-Specimen-1]: Specimen-PatientKimMusterperson-Specimen-1.html
-[mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-study-request-cldn6]: ServiceRequest-mii-exa-mtb-study-request-cldn6.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html
 [mii-exa-mtb-study-tedova]: ResearchStudy-mii-exa-mtb-study-tedova.html
