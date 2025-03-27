@@ -56,9 +56,6 @@
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
-[MII_CS_MTB_TherapieempfehlungEvidenzgrad]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad.html
-[MII_CS_MTB_TherapieempfehlungEvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
-[MII_CS_MTB_TherapieempfehlungStatusBegruendung]: CodeSystem-mii-cs-mtb-therapieempfehlung-status-begruendung.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
@@ -133,9 +130,6 @@
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemtherapie_Status]: ValueSet-mii-vs-mtb-systemtherapie-status.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
-[MII_VS_MTB_Therapieempfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad.html
-[MII_VS_MTB_Therapieempfehlung_EvidenzgradZusatzverweis]: ValueSet-mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis.html
-[MII_VS_MTB_TherapieempfehlungStatusBegruendung]: ValueSet-mii-vs-mtb-therapieempfehlung-status-begruendung.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html
