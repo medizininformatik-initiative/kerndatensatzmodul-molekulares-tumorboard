@@ -34,35 +34,65 @@
       {
         "id": "ClaimResponse.extension",
         "path": "ClaimResponse.extension",
-        "min": 1
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
-        "id": "ClaimResponse.extension:Antragsstadium",
+        "id": "ClaimResponse.extension:Entscheidung",
         "path": "ClaimResponse.extension",
-        "sliceName": "Antragsstadium",
-        "short": "Antragsstadium",
+        "sliceName": "Entscheidung",
+        "short": "Entscheidung der Kosten",
         "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung"
             ]
           }
         ],
         "mustSupport": true
       },
       {
+        "id": "ClaimResponse.extension:Ablehnungsgrund",
+        "path": "ClaimResponse.extension",
+        "sliceName": "Ablehnungsgrund",
+        "short": "Ablehnungsgrund",
+        "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund"
+            ]
+          }
+        ]
+      },
+      {
         "id": "ClaimResponse.status",
         "path": "ClaimResponse.status",
+        "short": "Status der FHIR-Ressource",
+        "definition": "Status der FHIR-Ressource, statisch auf #active gesetzt, da retrospektive Datenerschließung",
         "patternCode": "active",
         "mustSupport": true
       },
       {
         "id": "ClaimResponse.type",
         "path": "ClaimResponse.type",
+        "short": "Kategorie des Antragstellers",
+        "definition": "Kategorie des Antragstellers - z.B. stationär, ambulant, Apotheke",
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -72,6 +102,8 @@
       {
         "id": "ClaimResponse.use",
         "path": "ClaimResponse.use",
+        "short": "Art des Kostenerstattungsantrags (claim, predetermination, preauthorization)",
+        "definition": "folgt den Definitionen wie im amerikanischen Gesundsheitswesen gebräuchlich. claim: Erstattungsantrag nach erfolgter Therapie; predetermination: unverbindliche Anfrage, insb. zu Anteilen der Kostenübernahme;  preauthorization: Anfrage nach möglicher Erstattung für zukünftige Therapie",
         "mustSupport": true
       },
       {
@@ -82,7 +114,7 @@
       {
         "id": "ClaimResponse.created",
         "path": "ClaimResponse.created",
-        "short": "Datum",
+        "short": "Datum der Zusage / des Widerspruchs",
         "mustSupport": true
       },
       {
