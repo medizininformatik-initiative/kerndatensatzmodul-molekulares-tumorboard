@@ -154,6 +154,14 @@
       },
       {
         "reference": {
+          "reference": "CarePlan/MolekularesTumorboardSession-1"
+        },
+        "name": "20.01.2023 Molekulares Tumorboard:",
+        "description": "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie\n2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.\n3. Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.\n4. Studiencheck (inkl. QuickQueck Suche): Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ). Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2). \n5. Wiedervorstellung nach Eingang der Befunde.\n",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
           "reference": "Observation/MII-EXA-MTB-Response-Befund-1"
         },
         "name": "20.08.2023 CT T/A",
@@ -331,14 +339,6 @@
         "name": "Carboplatin",
         "description": "Therapieempfehlung: Carboplatin",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "ResearchStudy/mii-exa-mtb-study-ccne1"
-        },
-        "name": "CCNE1",
-        "description": "Studie: CCNE1 ampl. OvCA",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
       },
       {
         "reference": {
@@ -919,14 +919,6 @@
         },
         "name": "MII PR MTB RNA Seq",
         "description": "RNA Seq",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-studie"
-        },
-        "name": "MII PR MTB Studie",
-        "description": "Onkologische Studie",
         "exampleBoolean": false
       },
       {
@@ -1900,14 +1892,6 @@
       },
       {
         "reference": {
-          "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
-        },
-        "name": "Phase 1/2 CLDN6 CAR-T-Zell-Studie",
-        "description": "Studie: Phase 1/2 CLDN6 CAR-T-Zell-Studie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
-      },
-      {
-        "reference": {
           "reference": "ServiceRequest/mii-exa-mtb-study-request-cldn6"
         },
         "name": "Phase 1/2 CLDN6 CAR-T-Zell-Studie",
@@ -1929,14 +1913,6 @@
         "name": "PIK3R1 Therapeutische Implikation",
         "description": "Therapeutische Bedeutung der festgestellten PIK3R1 Mutation",
         "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "ResearchStudy/mii-exa-mtb-study-tedova"
-        },
-        "name": "TEDOVA",
-        "description": "Studie: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
       },
       {
         "reference": {
