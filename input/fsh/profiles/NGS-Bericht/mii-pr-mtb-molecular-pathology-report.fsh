@@ -5,7 +5,6 @@ Title: "MII PR MTB Molecular Pathology Report"
 Description: "Molecular pathology report"
 * insert PR_Header
 
-* identifier MS
 * subject 1..1 MS
 * subject only Reference(Patient)
 * performer only Reference(Organization)

@@ -12,6 +12,8 @@ Title: "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kost
 * supportingInfo[AntwortenKostenuebernahme][0] = Reference(MII-EXA-MTB-Antwort-Kostenuebernahme-1)
 
 
+// hier fehlt auch noch die übergeordnete SystemicTherapy-Procedure aus dem Onko-Modul
+/*
 Instance: MII-EXA-MTB-Systemtherapie-1
 InstanceOf: MII_PR_MTB_Systemtherapie
 Usage: #example
@@ -68,7 +70,7 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
 * dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
-
+*/
 
 Instance: MII-EXA-MTB-Response-Befund-1
 InstanceOf: MII_PR_MTB_Response_Befund
@@ -88,6 +90,7 @@ Title: "20.08.2023 CT T/A"
 * component[Lymphknoten_Verlauf].code.coding.code = #399656008
 * component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K
 
+/*  folgende Instanzen bereit in Medikations-Datei abgebildet
 
 
 Instance: MII-EXA-MTB-Systemtherapie-4
@@ -127,7 +130,6 @@ Title: "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
 * dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
 
-
 Instance: MII-EXA-MTB-Systemtherapie-6
 InstanceOf: MII_PR_MTB_Systemtherapie
 Usage: #example
@@ -146,7 +148,7 @@ Title: "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
 * dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
-
+*/ 
 
 
 Instance: MII-EXA-MTB-Response-Befund-2
@@ -177,14 +179,14 @@ Title: "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine"
 * use = #claim
 * patient = Reference(Patient/KimMusterperson)
 * created = "2023-03-10"
-* provider = Reference(Organization/InstitutionID) // Daten im Bsp nicht vorhanden
+* provider = Reference(Organization/InstitutionID) // Daten im Bsp nicht vorhanden, sollte die Klinik oder die verschreibende Einrichtung sein
 * prescription = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
 * insurance.coverage = Reference(Coverage/CoverageExample) // Daten im Bsp nicht vorhanden
 * insurance.claimResponse = Reference(ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1)
 
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample) // Daten im Bsp nicht vorhanden
 * careTeam[ZPMBeteiligung].responsible = true // Daten im Bsp nicht vorhanden
-* extension[Antragsstadium].valueCodeableConcept = #initial-claim
+* related.relationship.coding.code = #initial-claim
 
 
 
@@ -198,4 +200,5 @@ Title: "01.05.2023 Krankenkassenantrag Mirvetuximab soravtansine genehmigt"
 * created = "2023-05-01"
 * insurer = Reference(Organization/InstitutionID) // Daten im Bsp nicht vorhanden
 * request = Reference(Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1)
-* extension[Antragsstadium].valueCodeableConcept = #accepted
+// * extension[Ergebnis].valueCodeableConcept.coding = $mii-cs-mtb-antwort-kostenuebernahme-status#accepted
+//* extension[GrundAblehnung].valueCodeableConcept.coding = $mii-cs-mtb-antwort-kostenuebernahme-status#

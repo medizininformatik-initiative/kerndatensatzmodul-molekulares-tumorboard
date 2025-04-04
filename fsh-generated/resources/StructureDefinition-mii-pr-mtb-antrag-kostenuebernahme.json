@@ -32,47 +32,18 @@
         "mustSupport": true
       },
       {
-        "id": "Claim.extension",
-        "path": "Claim.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
-        "min": 1
-      },
-      {
-        "id": "Claim.extension:Antragsstadium",
-        "path": "Claim.extension",
-        "sliceName": "Antragsstadium",
-        "short": "Antragsstadium",
-        "definition": "Stadium des Antrags auf Kostenuebernahme",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
         "id": "Claim.status",
         "path": "Claim.status",
+        "short": "Antrag",
+        "definition": "Status der FHIR-Ressource - statisch auf #active gesetzt",
         "patternCode": "active",
         "mustSupport": true
       },
       {
         "id": "Claim.type",
         "path": "Claim.type",
+        "short": "Kategorie des Antragstellers",
+        "definition": "Kategorie des Antragstellers - z.B. stationär, ambulant, Apotheke",
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -82,6 +53,8 @@
       {
         "id": "Claim.use",
         "path": "Claim.use",
+        "short": "Art des Kostenerstattungsantrags (claim, predetermination, preauthorization)",
+        "definition": "folgt den Definitionen wie im amerikanischen Gesundsheitswesen gebräuchlich. claim: Erstattungsantrag nach erfolgter Therapie; predetermination: unverbindliche Anfrage, insb. zu Anteilen der Kostenübernahme;  preauthorization: Anfrage nach möglicher Erstattung für zukünftige Therapie",
         "mustSupport": true
       },
       {
@@ -92,25 +65,22 @@
       {
         "id": "Claim.created",
         "path": "Claim.created",
-        "definition": "Austellungsdatum",
+        "short": "Antragsdatum",
+        "definition": "Datum der Antragstellung",
         "mustSupport": true
       },
       {
         "id": "Claim.provider",
         "path": "Claim.provider",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ],
+        "short": "Antragstellende Einrichtung / Klinik / Person",
+        "definition": "Einrichtung, die den Antrag stellt. In der Regel die Klinik, die den Patienten behandelt",
         "mustSupport": true
       },
       {
         "id": "Claim.priority",
         "path": "Claim.priority",
+        "short": "Priorität des Antrags",
+        "definition": "Priorität des Antrags. Pflichtfeld in FHIR, aber nicht in der MII-Logik relevant",
         "patternCodeableConcept": {
           "coding": [
             {
@@ -121,10 +91,64 @@
         "mustSupport": true
       },
       {
+        "id": "Claim.related",
+        "path": "Claim.related",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open",
+          "description": "Stadium des Antrags auf Kostenübernahme"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.related.claim",
+        "path": "Claim.related.claim",
+        "short": "bei Folgeantrag/Widerspruch: Verweis auf ursprünglichen Erstantrag",
+        "definition": "Verweis auf ursprünglichen Erstantrag, der zu diesem Folgeantrag oder Widerspruch führt",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.related.relationship",
+        "path": "Claim.related.relationship",
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.related.relationship.coding",
+        "path": "Claim.related.relationship.coding",
+        "short": "Antragsstadium",
+        "definition": "Stadium des Antrags auf Kostenbeürnahme - Erstantrag, Widerspruch, Folgeantrag, Unbekannt. Bei Widerspruch oder Folgeantrag ist der Verweis auf den Erstantrag erforderlich",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Claim.related.relationship.coding.system",
+        "path": "Claim.related.relationship.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
+      },
+      {
+        "id": "Claim.related.relationship.coding.code",
+        "path": "Claim.related.relationship.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
         "id": "Claim.prescription",
         "path": "Claim.prescription",
         "short": "Therapieempfehlung",
-        "definition": "Verweis auf die Therapieempfehlung des MTB",
+        "definition": "Verweis auf die Therapieempfehlung des MTB, die zu diesem Antrag führt",
         "type": [
           {
             "code": "Reference",
@@ -164,12 +188,15 @@
       {
         "id": "Claim.careTeam:ZPMBeteiligung.sequence",
         "path": "Claim.careTeam.sequence",
+        "short": "interne Variable der beteiligten Einrichtung",
         "patternPositiveInt": 1,
         "mustSupport": true
       },
       {
         "id": "Claim.careTeam:ZPMBeteiligung.provider",
         "path": "Claim.careTeam.provider",
+        "short": "Verweis auf ZPM",
+        "definition": "Verweis auf Antragstellendes ZPM (z.B. ZPM ID)",
         "type": [
           {
             "code": "Reference",
@@ -183,7 +210,7 @@
       {
         "id": "Claim.careTeam:ZPMBeteiligung.responsible",
         "path": "Claim.careTeam.responsible",
-        "short": "Beteiliung - Ja/Nein",
+        "short": "Beteiliung ZPM - Ja/Nein",
         "definition": "Beteiliung des ZPM - Ja/Nein",
         "min": 1,
         "mustSupport": true

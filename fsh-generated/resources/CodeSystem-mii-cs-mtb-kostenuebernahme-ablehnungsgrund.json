@@ -2,19 +2,23 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "MII_CS_MTB_Ablehnung_Kostenuebernahme_Grund",
-  "id": "mii-cs-mtb-ablehnung-kostenuebernahme-grund",
-  "title": "MII CS Ablehnung Kostenuebernahme Grund",
+  "name": "MII_CS_MTB_Kostenuebernahme_Ablehnungsgrund",
+  "id": "mii-cs-mtb-kostenuebernahme-ablehnungsgrund",
+  "title": "MII CS Kostenuebernahme Ablehnungsrund",
   "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-ablehnung-kostenuebernahme-grund",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-kostenuebernahme-ablehnungsgrund",
   "concept": [
     {
       "code": "insufficient-evidence",
       "display": "Nicht ausreichende Evidenz"
     },
     {
-      "code": "standard-therapy-not-exhausted",
+      "code": "standard-therapy-not-exhausted-temporary",
       "display": "Standardtherapie nicht ausgeschöpft (Neuantrag erforderlich)"
+    },
+    {
+      "code": "standard-therapy-not-exhausted-definite",
+      "display": "Standardtherapie nicht ausgeschöpft (kein Neuantrag erforderlich)"
     },
     {
       "code": "formal-reasons",
@@ -41,20 +45,5 @@
       "display": "Unbekannt"
     }
   ],
-  "version": "2024.0.0-ballot",
-  "publisher": "Medizininformatik Initiative",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "https://www.medizininformatik-initiative.de"
-        }
-      ]
-    }
-  ],
-  "experimental": false,
-  "language": "de-DE",
-  "caseSensitive": true,
-  "count": 8
+  "count": 9
 }

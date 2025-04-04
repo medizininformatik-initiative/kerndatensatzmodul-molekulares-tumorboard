@@ -1,14 +1,8 @@
 [MII-EXA-MTB-Antwort-Kostenuebernahme-1]: ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html
-[MII-EXA-MTB-Systemtherapie-3]: MedicationStatement-MII-EXA-MTB-Systemtherapie-3.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-1.html
-[MII-EXA-MTB-Systemtherapie-6]: MedicationStatement-MII-EXA-MTB-Systemtherapie-6.html
-[MII-EXA-MTB-Systemtherapie-2]: MedicationStatement-MII-EXA-MTB-Systemtherapie-2.html
 [MolekularesTumorboardSession-1]: CarePlan-MolekularesTumorboardSession-1.html
 [MII-EXA-MTB-Response-Befund-1]: Observation-MII-EXA-MTB-Response-Befund-1.html
-[MII-EXA-MTB-Systemtherapie-5]: MedicationStatement-MII-EXA-MTB-Systemtherapie-5.html
 [MII-EXA-MTB-Response-Befund-2]: Observation-MII-EXA-MTB-Response-Befund-2.html
-[MII-EXA-MTB-Systemtherapie-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-1.html
-[MII-EXA-MTB-Systemtherapie-4]: MedicationStatement-MII-EXA-MTB-Systemtherapie-4.html
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
@@ -28,6 +22,7 @@
 [mii-exa-mtb-medication-camonsertib]: Medication-mii-exa-mtb-medication-camonsertib.html
 [mii-exa-mtb-medication-request-camonsertib]: MedicationRequest-mii-exa-mtb-medication-request-camonsertib.html
 [mii-exa-mtb-medication-request-carboplatin]: MedicationRequest-mii-exa-mtb-medication-request-carboplatin.html
+[mii-exa-mtb-study-ccne1]: ResearchStudy-mii-exa-mtb-study-ccne1.html
 [mii-exa-mtb-study-request-ccne1]: ServiceRequest-mii-exa-mtb-study-request-ccne1.html
 [mii-exa-mtb-kim-musterperson-CNVariante-CCNE1]: Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html
 [mii-exa-mtb-medication-cobimetinib]: Medication-mii-exa-mtb-medication-cobimetinib.html
@@ -40,9 +35,8 @@
 [mii-exa-mtb-medication-lunresertib]: Medication-mii-exa-mtb-medication-lunresertib.html
 [mii-exa-mtb-medication-request-lunresertib]: MedicationRequest-mii-exa-mtb-medication-request-lunresertib.html
 [mii-exa-mtb-request-group-lunresertib-camonsertib]: RequestGroup-mii-exa-mtb-request-group-lunresertib-camonsertib.html
-[MII_CS_MTB_Ablehnung_Kostenuebernahme_Grund]: CodeSystem-mii-cs-mtb-ablehnung-kostenuebernahme-grund.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
-[MII_CS_MTB_Antwort_Kostenuebernahme_Status]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-status.html
+[MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_CS_MTB_AuftragBegruendung]: CodeSystem-mii-cs-mtb-auftrag-begruendung.html
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_CS_MTB_Dosisdichte]: CodeSystem-mii-cs-mtb-dosisdichte.html
@@ -53,12 +47,14 @@
 [MII_CS_MTB_Follow_Up_Status]: CodeSystem-mii-cs-mtb-follow-up-status.html
 [MII_CS_MTB_Genomic_Analysis_Method_Type]: CodeSystem-mii-cs-mtb-genomic-analysis-method-type.html
 [MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction]: CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.html
+[MII_CS_MTB_Kostenuebernahme_Ablehnungsgrund]: CodeSystem-mii-cs-mtb-kostenuebernahme-ablehnungsgrund.html
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
-[MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.html
+[MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
+[MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_EX_MTB_Diagnose]: StructureDefinition-mii-ex-mtb-diagnose.html
 [MII_EX_MTB_Empfehlung_Evidenzgraduierung]: StructureDefinition-mii-ex-mtb-empfehlung-evidenzgraduierung.html
 [MII_EX_MTB_Empfehlung_Prioritaet]: StructureDefinition-mii-ex-mtb-empfehlung-prioritaet.html
@@ -101,6 +97,7 @@
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
 [MII_PR_MTB_RNA_Seq]: StructureDefinition-mii-pr-mtb-rna-seq.html
+[MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
 [MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
@@ -111,7 +108,6 @@
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
 [MII_PR_MTB_WHO_Grad_Tumor_ZNS]: StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Abbrungsgrund]: ValueSet-mii-vs-mtb-abbruchsgrund.html
-[MII_VS_MTB_Ablehnung_Kostenuebernahme_Grund]: ValueSet-mii-vs-mtb-ablehnung-kostenuebernahme-grund.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_VS_MTB_Antwort_Kostenuebernahme_Status]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-status.html
 [MII_VS_MTB_AuftragBegruendung]: ValueSet-mii-vs-mtb-auftrag-begruendung.html
@@ -123,6 +119,7 @@
 [MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.html
 [MII_VS_MTB_Follow_Up_Status]: ValueSet-mii-vs-mtb-follow-up-status.html
 [MII_VS_MTB_Genomic_Analysis_Method_Type]: ValueSet-mii-vs-mtb-genomic-analysis-method-type.html
+[MII_VS_MTB_Kostenuebernahme_Ablehnungsgrund]: ValueSet-mii-vs-mtb-kostenuebernahme-ablehnungsgrund.html
 [MII_VS_MTB_Leitlinienbehandlung_Status]: ValueSet-mii-vs-mtb-leitlinienbehandlung-status.html
 [MII_VS_MTB_Immunhistochemistry-Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
@@ -227,9 +224,11 @@
 [PatientKimMusterperson-Procedure-6]: Procedure-PatientKimMusterperson-Procedure-6.html
 [PatientKimMusterperson-Procedure-7]: Procedure-PatientKimMusterperson-Procedure-7.html
 [PatientKimMusterperson-Specimen-1]: Specimen-PatientKimMusterperson-Specimen-1.html
+[mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-study-request-cldn6]: ServiceRequest-mii-exa-mtb-study-request-cldn6.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html
 [mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1.html
+[mii-exa-mtb-study-tedova]: ResearchStudy-mii-exa-mtb-study-tedova.html
 [mii-exa-mtb-study-request-tedova]: ServiceRequest-mii-exa-mtb-study-request-tedova.html
 [mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53]: Observation-mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53.html
