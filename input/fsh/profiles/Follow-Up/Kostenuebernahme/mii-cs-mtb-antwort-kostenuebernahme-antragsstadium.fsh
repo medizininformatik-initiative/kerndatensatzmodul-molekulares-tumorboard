@@ -9,7 +9,7 @@ Description: "Codesystem zum Status der Antwort zur Kostenuebernahme"
 
 CodeSystem: MII_CS_MTB_Kostenuebernahme_Ablehnungsgrund
 Id: mii-cs-mtb-kostenuebernahme-ablehnungsgrund
-Title: "MII CS Kostenuebernahme Ablehnungsrund"
+Title: "MII CS Kostenuebernahme Ablehnungsgrund"
 Description: "Codesystem zum Grund der Ablehnung der Kostenuebernahme"
 // * insert CS_Header($mii-cs-mtb-ablehnung-kostenuebernahme-grund)
 * #insufficient-evidence               "Nicht ausreichende Evidenz"                                            ""
@@ -20,4 +20,4 @@ Description: "Codesystem zum Grund der Ablehnung der Kostenuebernahme"
 * #inclusion-in-study                  "Studieneinschluss"                                                     ""
 * #approval-revocation                 "Rücknahme der Zulassung"                                               ""
 * #other                               "Weitere Gründe"                                                        ""
-* #unknown                             "Unbekannt"                                                             ""
+* #unknown                             "Unbekannt"                                                             
