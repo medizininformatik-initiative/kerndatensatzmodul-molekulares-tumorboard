@@ -57,10 +57,13 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Mirvetuximab soravtansine"
 Description: "Therapieempfehlung: Mirvetuximab soravtansine, Priorität: 1, Evidenzgrad: m1A"
 Usage: #example
-* status = #draft
+* status = #active
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationCodeableConcept.coding = $ATC_DE#L01FX26
+* basedOn = Reference(MII_PR_MTB_Therapieplan/mii-exa-mtb-kim-musterperson-therapieplan)
+// Hier sonst auch wirkstoffgruppe angeben - nurbei targeted therapy macht das evtl. keinen Sinn 
+* medicationCodeableConcept.coding[+] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[+] = $ATC_DE#L01FX
 * insert BeschlussPrioritaet(1)
 * insert BeschlussEvidenzZweiQuellen(m1A, $doi, 10.1200/JCO.2022.40.16_suppl.5512, $pmid, 38055253)
 

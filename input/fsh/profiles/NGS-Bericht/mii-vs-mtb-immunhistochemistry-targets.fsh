@@ -1,5 +1,5 @@
 
-ValueSet: MII_VS_MTB_Immunhistochemistry-Targets
+ValueSet: MII_VS_MTB_Immunhistochemistry_Targets
 Id: mii-vs-mtb-immunohistochemistry-targets
 Title: "MII VS Molekulare Biomarker"
 Description: "ValueSet zum CS Molekulare Biomarker"
@@ -7,4 +7,6 @@ Description: "ValueSet zum CS Molekulare Biomarker"
 
 * include codes from system MII_CS_MTB_Molekulare_Biomarker
 * include codes from system $LNC
-* include codes from system $SCT
+* include codes from system $SCT 
+
+// ggfs. LOINCSNOMED Code children of 1234806008 |Observation using immunohistochemistry (observable entity)|

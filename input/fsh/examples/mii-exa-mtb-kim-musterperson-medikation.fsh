@@ -161,6 +161,7 @@ Usage: #example
 "2023-05-24", MTBChemo1Procedure, MTBChemo1MedicationStatement6, #L01DB01, 30, "mg/m2", #mg/m2)
 
 // MedicationStatements Mirvetuximab soravtansine ---------------------------------------------------------------------
+// DAS entsteht quasi erst im DIZ, Muss / Kann Followup hierauf zeigen? Zei
 Instance: MTBChemo2Procedure
 InstanceOf: MII_PR_MTB_Systemische_Therapie
 Usage: #example
@@ -175,6 +176,8 @@ Description: "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.0
 * performedPeriod.end = "2023-10-12"
 * outcome.coding[+] = $mii-cs-onko-therapie-grund-ende#E
 * outcome.text = "Reguläres Ende"
+
+
 
 // 24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22
 Instance: MTBChemo2MedicationStatement1
