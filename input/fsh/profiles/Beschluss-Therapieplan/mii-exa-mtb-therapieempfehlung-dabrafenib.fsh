@@ -27,3 +27,10 @@ Description: "Therapieempfehlung für Dabrafenib"
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Medikation
 * medicationReference = Reference(mii-exa-mtb-medikation-dabrafenib)
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.when[0] = #MORN
+* dosageInstruction.timing.repeat.when[1] = #EVE
+* dosageInstruction.doseAndRate.doseQuantity.value = 2
+* dosageInstruction.doseAndRate.doseQuantity.system = $UCUM
+* dosageInstruction.doseAndRate.doseQuantity.code = #{Tablet}
+* dosageInstruction.doseAndRate.doseQuantity.unit = "Tablet"

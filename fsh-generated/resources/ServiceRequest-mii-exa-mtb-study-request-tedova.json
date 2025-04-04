@@ -1,0 +1,25 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "mii-exa-mtb-study-request-tedova",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
+    ]
+  },
+  "supportingInfo": [
+    {
+      "reference": "ResearchStudy/mii-exa-mtb-study-tedova"
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "valueDecimal": 2.2
+    }
+  ],
+  "intent": "proposal",
+  "status": "draft",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

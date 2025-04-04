@@ -18,3 +18,7 @@ Description: "Anfrage zum Studieneinschluss"
     MII_PR_Studie_Studie or
     ResearchStudy
 )
+
+* extension contains
+    MII_EX_MTB_Empfehlung_Prioritaet named Prioritaet 0..1 MS and
+    MII_EX_MTB_Empfehlung_Publikation named Publikation 0..* MS

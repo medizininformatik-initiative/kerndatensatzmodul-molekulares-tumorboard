@@ -1,0 +1,22 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "mii-exa-mtb-medication-request-carboplatin",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "L01XA02",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc"
+      }
+    ]
+  },
+  "status": "draft",
+  "intent": "option",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

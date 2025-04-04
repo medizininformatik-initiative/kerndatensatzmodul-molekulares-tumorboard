@@ -119,6 +119,66 @@
     "resource": [
       {
         "reference": {
+          "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"
+        },
+        "name": "01.05.2023 Krankenkassenantrag Mirvetuximab soravtansine genehmigt",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
+        },
+        "name": "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/MolekularesTumorboardSession-1"
+        },
+        "name": "20.01.2023 Molekulares Tumorboard:",
+        "description": "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie\r\n2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.\r\n3. Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.\r\n4. Studiencheck (inkl. QuickQueck Suche): Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ). Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2). \r\n5. Wiedervorstellung nach Eingang der Befunde.\r\n",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-1"
+        },
+        "name": "20.08.2023 CT T/A",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-2"
+        },
+        "name": "22.10.2023 CT T/A",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      },
+      {
+        "reference": {
+          "reference": "Medication/mii-exa-mtb-medication-adavosertib"
+        },
+        "name": "Adavosertib",
+        "description": "Medikament: Adavosertib",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-adavosertib"
+        },
+        "name": "Adavosertib",
+        "description": "Therapieempfehlung: Adavosertib",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
+          "reference": "RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin"
+        },
+        "name": "Adavosertib +/- Carboplatin",
+        "description": "Therapieempfehlung Kombinationstherapie: Adavosertib +/- Carboplatin",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
+      },
+      {
+        "reference": {
           "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-Beispiel-1"
         },
         "name": "Beispiel fuer eine Systemtherapie",
@@ -216,9 +276,81 @@
       },
       {
         "reference": {
+          "reference": "Medication/mii-exa-mtb-medication-camonsertib"
+        },
+        "name": "Camonsertib",
+        "description": "Medikament: Camonsertib",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-camonsertib"
+        },
+        "name": "Camonsertib",
+        "description": "Therapieempfehlung: Camonsertib",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-carboplatin"
+        },
+        "name": "Carboplatin",
+        "description": "Therapieempfehlung: Carboplatin",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
+          "reference": "ResearchStudy/mii-exa-mtb-study-ccne1"
+        },
+        "name": "CCNE1",
+        "description": "Studie: CCNE1 ampl. OvCA",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/mii-exa-mtb-study-request-ccne1"
+        },
+        "name": "CCNE1",
+        "description": "Studieneinschlussempfehlung: CCNE1 ampl. OvCA",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-CNVariante-CCNE1"
+        },
+        "name": "CCNE1 Einfache Variante 2",
+        "description": "Kopienzahlveränderung bei einer CCNE1-Mutation",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant"
+      },
+      {
+        "reference": {
+          "reference": "Medication/mii-exa-mtb-medication-cobimetinib"
+        },
+        "name": "Cobimetinib",
+        "description": "Medikament: Cobimetinib",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
+        },
+        "name": "Cobimetinib",
+        "description": "Therapieempfehlung: Cobimetinib, Priorität: 6, Evidenzgrad: m3",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
           "reference": "Device/MII-EXA-MTB-Device-SequencingKit-1"
         },
         "name": "Cool",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Consent/mii-exa-mtb-kim-musterperson-aufklaerung"
+        },
+        "name": "Einwilligung zur MTB-Besprechung Kim Musterperson",
+        "description": "Einwilligung von Kim Musterperson zur Besprechung im Molekularen Tumorboard vom 02.01.2023",
         "exampleBoolean": true
       },
       {
@@ -230,6 +362,13 @@
       },
       {
         "reference": {
+          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1"
+        },
+        "name": "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/genomic-study-analysis"
         },
         "name": "Genomic Study Analysis",
@@ -238,11 +377,27 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-ablehnung-kostenuebernahme-grund"
+          "reference": "Medication/mii-exa-mtb-medication-lunresertib"
         },
-        "name": "MII CS Ablehnung Kostenuebernahme Grund",
-        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
-        "exampleBoolean": false
+        "name": "Lunresertib",
+        "description": "Medikament: Lunresertib",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-lunresertib"
+        },
+        "name": "Lunresertib",
+        "description": "Therapieempfehlung: Lunresertib",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
+          "reference": "RequestGroup/mii-exa-mtb-request-group-lunresertib-camonsertib"
+        },
+        "name": "Lunresertib + Camonsertib",
+        "description": "Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib, Priorität: 5, Evidenzgrad: m1B",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
       },
       {
         "reference": {
@@ -254,9 +409,9 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-status"
+          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung"
         },
-        "name": "MII CS Antwort Kostenuebernahme Status",
+        "name": "MII CS Antwort Kostenuebernahme Entscheidung",
         "description": "Codesystem zum Status der Antwort zur Kostenuebernahme",
         "exampleBoolean": false
       },
@@ -274,6 +429,38 @@
         },
         "name": "MII CS Bestimmungsmethode Tumorzellgehalt",
         "description": "Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-dosisdichte"
+        },
+        "name": "MII CS Dosisdichte",
+        "description": "Codesystem für die Dosisdichte einer Systemtheraptie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-nct"
+        },
+        "name": "MII CS Empfehlung Evidenzgrad",
+        "description": "Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII CS Empfehlung Evidenzgrad Zusatzverweis",
+        "description": "Zusatzverweis zum Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-status-begruendung"
+        },
+        "name": "MII CS Empfehlung Status Begründung",
+        "description": "Begründung bei fehlender Empfehlung im MTB-Beschluss",
         "exampleBoolean": false
       },
       {
@@ -310,6 +497,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-kostenuebernahme-ablehnungsgrund"
+        },
+        "name": "MII CS Kostenuebernahme Ablehnungsgrund",
+        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-leitlinienbehandlung-status"
         },
         "name": "MII CS Leitlinienbehandlung Status",
@@ -326,26 +521,10 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad"
+          "reference": "CodeSystem/mii-cs-mtb-response-befund-beurteilung"
         },
-        "name": "MII CS Therapieempfehlung Evidenzgrad",
-        "description": "Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
-        },
-        "name": "MII CS Therapieempfehlung Evidenzgrad Zusatzverweis",
-        "description": "Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-therapieempfehlung-status-begruendung"
-        },
-        "name": "MII CS Therapieempfehlung Status Begründung",
-        "description": "Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "name": "MII CS Response Befund Beurteilung",
+        "description": "Codesystem für die Beurteilung des Response Befund",
         "exampleBoolean": false
       },
       {
@@ -366,10 +545,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund"
         },
-        "name": "MII EX MTB Antwort Kostenuebernahme Antragsstadium",
-        "description": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "name": "MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund",
+        "description": "Ablehnungsgrund des Antrags auf Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung"
+        },
+        "name": "MII EX MTB Antwort Kostenuebernahme Entscheidung",
+        "description": "Entscheidung zum Antrag zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -378,6 +565,30 @@
         },
         "name": "MII EX MTB Diagnose",
         "description": "Onkologische Diagnose",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+        },
+        "name": "MII EX MTB Empfehlung Evidenzgraduierung",
+        "description": "Evidenzgraduierung der (einzelnen) Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-empfehlung-prioritaet"
+        },
+        "name": "MII EX MTB Empfehlung Priorität",
+        "description": "Priorität der (einzelnen) Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+        },
+        "name": "MII EX MTB Empfehlung Publikation",
+        "description": "Verweis auf Publikation der (einzelnen) Empfehlung",
         "exampleBoolean": false
       },
       {
@@ -410,30 +621,6 @@
         },
         "name": "MII EX MTB NGS Bericht QC",
         "description": "QC des NGS-Berichts",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung"
-        },
-        "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung",
-        "description": "Evidenzgraduierung der (einzelnen) Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-evidenzgraduierung-publikation"
-        },
-        "name": "MII EX MTB Therapieempfehlung Evidenzgraduierung Publikation",
-        "description": "Verweis auf Publikation zur Evidenzgraduierung der (einzelnen) Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-therapieempfehlung-prioritaet"
-        },
-        "name": "MII EX MTB Therapieempfehlung Priorität",
-        "description": "Priorität der (einzelnen) Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -522,6 +709,14 @@
         },
         "name": "MII PR MTB BRCAness",
         "description": "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zeigt, welches BRCA1- oder BRCA2-Mutationen entspricht. Die BRCAness ist ein Indikator für die Wirksamkeit von PARP-Inhibitoren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
+        },
+        "name": "MII PR MTB Clinical Impresssion",
+        "description": "Follow-Up nach DNPM ",
         "exampleBoolean": false
       },
       {
@@ -729,7 +924,7 @@
           "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
         },
         "name": "MII PR MTB Systemtherapie",
-        "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
+        "description": "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -790,14 +985,6 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund"
-        },
-        "name": "MII VS Ablehnung Kostenuebernahme Grund",
-        "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII VS Antrag Kostenuebernahme Antragsstadium",
@@ -830,6 +1017,38 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-dosisdichte"
+        },
+        "name": "MII VS Dosisdichte",
+        "description": "ValueSet zur Dosisdichte",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-empfehlung-evidenzgrad"
+        },
+        "name": "MII VS Empfehlung Evidenzgrad",
+        "description": "ValueSet für den Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis"
+        },
+        "name": "MII VS Empfehlung Evidenzgrad Zusatzverweis",
+        "description": "ValueSet für den Zusatzverweis zum Evidenzgrad einer Empfehlung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-empfehlung-status-begruendung"
+        },
+        "name": "MII VS Empfehlung Status Begründung",
+        "description": "ValueSet für Begründung bei fehlender Empfehlung im MTB-Beschluss",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-follow-grund-nicht-umsetzung"
         },
         "name": "MII VS Follow-Up Grund Nicht-Umsetzung",
@@ -850,6 +1069,14 @@
         },
         "name": "MII VS Genomic Analysis Method Type",
         "description": "ValueSet, dass die ursprünglich vom HL7 Clinical Genomics vorgeschlagenen Antwortmöglichkeiten für Genomic Study Analysis Method Type mit dem vom dnpm dekalrierten Antwortspektrum vereint",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-kostenuebernahme-ablehnungsgrund"
+        },
+        "name": "MII VS Kostenuebernahme Ablehnungsgrund",
+        "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -894,26 +1121,10 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad"
+          "reference": "ValueSet/mii-vs-mtb-response-befund-beurteilung"
         },
-        "name": "MII VS Therapieempfehlung Evidenzgrad",
-        "description": "ValueSet für den Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-evidenzgrad-zusatzverweis"
-        },
-        "name": "MII VS Therapieempfehlung Evidenzgrad Zusatzverweis",
-        "description": "ValueSet für den Zusatzverweis zum Evidenzgrad einer Therapieempfehlung",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/mii-vs-mtb-therapieempfehlung-status-begruendung"
-        },
-        "name": "MII VS Therapieempfehlung Status Begründung",
-        "description": "ValueSet für Begründung bei fehlender Therapieempfehlung im MTB-Beschluss",
+        "name": "MII VS Response Befund Beurteilung",
+        "description": "ValueSet Response Befund Beurteilung",
         "exampleBoolean": false
       },
       {
@@ -958,6 +1169,13 @@
       },
       {
         "reference": {
+          "reference": "ServiceRequest/MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar"
+        },
+        "name": "MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Patient/mii-exa-mtb-patient"
         },
         "name": "mii-exa-mtb-patient",
@@ -995,6 +1213,70 @@
         "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
         "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
+        },
+        "name": "Mirvetuximab soravtansine",
+        "description": "Therapieempfehlung: Mirvetuximab soravtansine, Priorität: 1, Evidenzgrad: m1A",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
+          "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
+        },
+        "name": "MTB-Behandlungsepisode Kim Musterperson",
+        "description": "Molekulares Tumorboard-Behandlungsepisode von Kim Musterperson ab 01.03.2022",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
+        },
+        "name": "MTB-Beschluss Kim Musterperson",
+        "description": "Beschluss MTB-Fall Kim Musterperson vom 28.03.2023",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/mii-exa-mtb-kim-musterperson-ngs-bericht"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson",
+        "description": "Ergebnisse des NGS-Bericht von Kim Musterperson",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson",
+        "description": "Details zur Durchführung NGS-Bericht von Kim Musterperson",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-1"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson",
+        "description": "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-3"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson",
+        "description": "Diagnostische Prozeduren  MolPatho-Bericht von Kim Musterperson - Immunhistochemie",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson HLA Status",
+        "description": "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben weil Beispiel",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
       },
       {
         "reference": {
@@ -1182,83 +1464,6 @@
       },
       {
         "reference": {
-          "reference": "Medication/MTBMedicationAdavosertib"
-        },
-        "name": "MTBMedicationAdavosertib",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/MTBMedicationCamonsertib"
-        },
-        "name": "MTBMedicationCamonsertib",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/MTBMedicationLunresertib"
-        },
-        "name": "MTBMedicationLunresertib",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/MTBMedicationRequestAdavosertib"
-        },
-        "name": "MTBMedicationRequestAdavosertib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/MTBMedicationRequestCamonsertib"
-        },
-        "name": "MTBMedicationRequestCamonsertib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/MTBMedicationRequestCarboplatin"
-        },
-        "name": "MTBMedicationRequestCarboplatin",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/MTBMedicationRequestLunresertib"
-        },
-        "name": "MTBMedicationRequestLunresertib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/MTBMedicationRequestMirvetuximab"
-        },
-        "name": "MTBMedicationRequestMirvetuximab",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/MTBMedicationRequestTrastuzumabDeruxtecan"
-        },
-        "name": "MTBMedicationRequestTrastuzumabDeruxtecan",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "RequestGroup/MTBRequestGroupAdavosertibCarboplatin"
-        },
-        "name": "MTBRequestGroupAdavosertibCarboplatin",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
-      },
-      {
-        "reference": {
-          "reference": "RequestGroup/MTBRequestGroupLunresertibCamonsertib"
-        },
-        "name": "MTBRequestGroupLunresertibCamonsertib",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
-      },
-      {
-        "reference": {
           "reference": "Observation/Observation-FISH-Analysis-for-Ewing-Sarcoma"
         },
         "name": "Observation-FISH-Analysis-for-Ewing-Sarcoma",
@@ -1364,6 +1569,254 @@
       },
       {
         "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-1"
+        },
+        "name": "PatientKimMusterperson-Observation-1",
+        "description": "kein Hinweis auf thorakale Metastasierung",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-10"
+        },
+        "name": "PatientKimMusterperson-Observation-10",
+        "description": "regrediente Flüssigkeitskollektion am Leberrand, Z.n. atypische Lebersegmentresektion. Darüberhinaus kein Hinweis auf Leberfilialisierung.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-11"
+        },
+        "name": "PatientKimMusterperson-Observation-11",
+        "description": "kein Aszites",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-12"
+        },
+        "name": "PatientKimMusterperson-Observation-12",
+        "description": "kein Hinweis auf Lokalrezidiv",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-13"
+        },
+        "name": "PatientKimMusterperson-Observation-13",
+        "description": "regrediente Milchglasinfiltrate im linken Oberlappen, somit a.e. atypisch entzündlich.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-14"
+        },
+        "name": "PatientKimMusterperson-Observation-14",
+        "description": "Leicht vermehrter mediastinaler Lymphknotenbesatz ohne Kontrastmittelaufnahme",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-15"
+        },
+        "name": "PatientKimMusterperson-Observation-15",
+        "description": "Leicht vermehrter mediastinaler Lymphknotenbesatz ohne pathologische Vergrößerung, Verlaufskontrolle empfohlen",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-16"
+        },
+        "name": "PatientKimMusterperson-Observation-16",
+        "description": "progredienter Aszites (ca. 700ml)",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-17"
+        },
+        "name": "PatientKimMusterperson-Observation-17",
+        "description": "Peritonealblatt mit zunehmender, unregelmäßiger KM-Aufnahme",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-18"
+        },
+        "name": "PatientKimMusterperson-Observation-18",
+        "description": "suspekt auf Progress der bekannten Peritonealkarzinose",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-19"
+        },
+        "name": "PatientKimMusterperson-Observation-19",
+        "description": "V.a. Lokalrezidiv bei kontrastmittelaufnehmender Raumforderung im kleinen Becken",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-2"
+        },
+        "name": "PatientKimMusterperson-Observation-2",
+        "description": "kein Hinweis auf Lokalrezidiv",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-20"
+        },
+        "name": "PatientKimMusterperson-Observation-20",
+        "description": "regredienter Aszites",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-21"
+        },
+        "name": "PatientKimMusterperson-Observation-21",
+        "description": "rückläufige KM-Aufnahme der lokalrezidivsuspekten Raumforderung im kleinen Becken",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-22"
+        },
+        "name": "PatientKimMusterperson-Observation-22",
+        "description": "noch flaue, aber insgesamt regrediente KM-Aufnhame der zahlenmäßig vermehrten LK im Mediastinum",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-23"
+        },
+        "name": "PatientKimMusterperson-Observation-23",
+        "description": "keine neue metastasensuspekte Läsion",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-24"
+        },
+        "name": "PatientKimMusterperson-Observation-24",
+        "description": "kein Aszites",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-25"
+        },
+        "name": "PatientKimMusterperson-Observation-25",
+        "description": "fast vollständig regredientes Lokalrezidiv ohne KM-Aufnahme im kleinen Becken",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-26"
+        },
+        "name": "PatientKimMusterperson-Observation-26",
+        "description": "formal noch vermehrte mediastinale Lymphknoten",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-27"
+        },
+        "name": "PatientKimMusterperson-Observation-27",
+        "description": "nicht mehr KM-aufnehmende mediastinale Lymphknoten",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-28"
+        },
+        "name": "PatientKimMusterperson-Observation-28",
+        "description": "geringer Aszites im kleinen Becken",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-29"
+        },
+        "name": "PatientKimMusterperson-Observation-29",
+        "description": "vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken aktuell metrisch nur noch schwer fassbar",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-3"
+        },
+        "name": "PatientKimMusterperson-Observation-3",
+        "description": "kein Aszites",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-30"
+        },
+        "name": "PatientKimMusterperson-Observation-30",
+        "description": "formal noch vermehrte mediastinale Lymphknoten",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-31"
+        },
+        "name": "PatientKimMusterperson-Observation-31",
+        "description": "nicht mehr KM-aufnehmende mediastinale Lymphknoten",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-4"
+        },
+        "name": "PatientKimMusterperson-Observation-4",
+        "description": "Z.n. atypischer Lebersegmentresektion, kein eindeutiger Hinweis auf Metastasierung. Flüssigkeitskollektion angrenzend DD postoperativ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-5"
+        },
+        "name": "PatientKimMusterperson-Observation-5",
+        "description": "konstante Flüssigkeitskollektion angrenzend bei Z.n. atpyischer Lebersegmentresktion, a.e. postoperativ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-6"
+        },
+        "name": "PatientKimMusterperson-Observation-6",
+        "description": "kein Aszites",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-7"
+        },
+        "name": "PatientKimMusterperson-Observation-7",
+        "description": "kein Hinweis auf Lokalrezidiv",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-8"
+        },
+        "name": "PatientKimMusterperson-Observation-8",
+        "description": "im linken Oberlappen der Lunge diskrete milchglasartige Trübung DD atypisch entzündlich, klinische Korrelation empfohlen, darüber hinaus kein Hinweis auf thorakale Filiae",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/PatientKimMusterperson-Observation-9"
+        },
+        "name": "PatientKimMusterperson-Observation-9",
+        "description": "regrediente Flüssigkeitskollektion am Leberrand, Z.n. atypische Lebersegmentresektion. Darüberhinaus kein Hinweis auf Leberfilialisierung.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Procedure/PatientKimMusterperson-Procedure-1"
         },
         "name": "PatientKimMusterperson-Procedure-1",
@@ -1375,7 +1828,7 @@
           "reference": "Procedure/PatientKimMusterperson-Procedure-2"
         },
         "name": "PatientKimMusterperson-Procedure-2",
-        "description": "19.10.22 CT T/A",
+        "description": "15.07.22 CT T/A",
         "exampleBoolean": true
       },
       {
@@ -1383,7 +1836,7 @@
           "reference": "Procedure/PatientKimMusterperson-Procedure-3"
         },
         "name": "PatientKimMusterperson-Procedure-3",
-        "description": "19.12.22 CT T/A",
+        "description": "19.10.22 CT T/A",
         "exampleBoolean": true
       },
       {
@@ -1391,7 +1844,7 @@
           "reference": "Procedure/PatientKimMusterperson-Procedure-4"
         },
         "name": "PatientKimMusterperson-Procedure-4",
-        "description": "20.03.2023 CT T/A",
+        "description": "19.12.22 CT T/A",
         "exampleBoolean": true
       },
       {
@@ -1399,7 +1852,7 @@
           "reference": "Procedure/PatientKimMusterperson-Procedure-5"
         },
         "name": "PatientKimMusterperson-Procedure-5",
-        "description": "20.08.2023 CT T/A",
+        "description": "20.03.2023 CT T/A",
         "exampleBoolean": true
       },
       {
@@ -1407,6 +1860,14 @@
           "reference": "Procedure/PatientKimMusterperson-Procedure-6"
         },
         "name": "PatientKimMusterperson-Procedure-6",
+        "description": "20.08.2023 CT T/A",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/PatientKimMusterperson-Procedure-7"
+        },
+        "name": "PatientKimMusterperson-Procedure-7",
         "description": "22.10.2023 CT T/A",
         "exampleBoolean": true
       },
@@ -1417,6 +1878,78 @@
         "name": "PatientKimMusterperson-Specimen-1",
         "description": "02.01.2023 Histologie (Z 230201/23)",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
+        },
+        "name": "Phase 1/2 CLDN6 CAR-T-Zell-Studie",
+        "description": "Studie: Phase 1/2 CLDN6 CAR-T-Zell-Studie",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/mii-exa-mtb-study-request-cldn6"
+        },
+        "name": "Phase 1/2 CLDN6 CAR-T-Zell-Studie",
+        "description": "Studieneinschlussempfehlung: Phase 1/2 CLDN6 CAR-T-Zell-Studie, Priorität: 2.1",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1"
+        },
+        "name": "PIK3R1 Einfache Variante",
+        "description": "Nachweis einer PIK3R1-Mutation",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1"
+        },
+        "name": "PIK3R1 Therapeutische Implikation",
+        "description": "Therapeutische Bedeutung der festgestellten PIK3R1 Mutation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ResearchStudy/mii-exa-mtb-study-tedova"
+        },
+        "name": "TEDOVA",
+        "description": "Studie: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/mii-exa-mtb-study-request-tedova"
+        },
+        "name": "TEDOVA",
+        "description": "Studieeinschlussempfehlung: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53"
+        },
+        "name": "TP53 Diagnostische Implikation",
+        "description": "Diagnostische Bedeutung der festgestellten TP53 Mutation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53"
+        },
+        "name": "TP53 Einfache Variante",
+        "description": "Nachweis einer pathogenen TP53-Mutation",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan"
+        },
+        "name": "Trastuzumab deruxtecan",
+        "description": "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenzgrad: m1B",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
       }
     ],
     "page": {

@@ -30,7 +30,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
     RequestGroup
 )
 * activity[Therapieempfehlung].detail MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbet
-* activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_TherapieempfehlungStatusBegruendung (required)
+* activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_Empfehlung_StatusBegruendung (required)
 
 * activity contains HumangenetischeBeratung 0..1 MS
 * activity[HumangenetischeBeratung] ^short = "Empfehlung Human-genetische Beratung"

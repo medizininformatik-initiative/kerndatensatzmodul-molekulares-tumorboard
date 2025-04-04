@@ -1,0 +1,47 @@
+{
+  "resourceType": "CarePlan",
+  "id": "MolekularesTumorboardSession-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ",
+          "code": "12345678"
+        }
+      ],
+      "text": "Molekulares Tumorboard"
+    }
+  ],
+  "activity": [
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "code": "12345678",
+              "display": "TSO500 Panel incl. HLA-Status"
+            }
+          ]
+        },
+        "status": "completed"
+      },
+      "reference": {
+        "reference": "ServiceRequest/mii-exa-mtb-service-request-TSO500-panel"
+      }
+    }
+  ],
+  "intent": "plan",
+  "status": "completed",
+  "title": "20.01.2023 Molekulares Tumorboard:",
+  "subject": {
+    "reference": "Patient/KimMusterperson"
+  },
+  "created": "2023-01-20",
+  "description": "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie\r\n2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.\r\n3. Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.\r\n4. Studiencheck (inkl. QuickQueck Suche): Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ). Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2). \r\n5. Wiedervorstellung nach Eingang der Befunde.\r\n"
+}
