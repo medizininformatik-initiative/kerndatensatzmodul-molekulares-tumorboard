@@ -1,0 +1,34 @@
+{
+  "resourceType": "Consent",
+  "id": "MolekularesTumorboardAufklaerung-1",
+  "scope": {
+    "coding": [
+      {
+        "code": "LP173034-2",
+        "system": "http://loinc.org",
+        "display": "Tumor board"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "INFA",
+          "display": "Information access"
+        }
+      ]
+    }
+  ],
+  "provision": {
+    "data": [
+      {
+        "reference": {
+          "reference": "CarePlan/MolekularesTumorboardSession-1"
+        },
+        "meaning": "dependents"
+      }
+    ]
+  },
+  "status": "active"
+}

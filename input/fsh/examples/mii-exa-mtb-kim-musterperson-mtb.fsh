@@ -12,5 +12,22 @@ InstanceOf: MII_PR_MTB_Therapieplan
 5. Wiedervorstellung nach Eingang der Befunde.
 "
 * activity[Studieneinschlussempfehlung].reference = Reference(mii-exa-mtb-study-request-cldn6)
-* category.coding.code = $SCT#12345678 // Platzhalter
+* activity[Studieneinschlussempfehlung].detail.code = $mii-cs-onko-therapie-typ#SO "Sonstiges"
+* activity[Studieneinschlussempfehlung].detail.status = #not-started
+* activity[Studieneinschlussempfehlung].reference = Reference(mii-exa-mtb-study-request-tedova)
+* activity[Studieneinschlussempfehlung].detail.code = $mii-cs-onko-therapie-typ#SO "Sonstiges"
+* activity[Studieneinschlussempfehlung].detail.status = #not-started
+* category.coding.code = $SCT#367531000000102 "Disease management" // Platzhalter
 * category.text = "Molekulares Tumorboard"
+* note.text = "Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie"
+
+// 2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.
+Instance: MolekularesTumorboardAufklaerung-1
+InstanceOf: Consent
+* status = #active
+* scope.coding = $LNC#LP173034-2 "Tumor board"
+* category.coding = #INFA "Information access"
+* provision.data.reference = Reference(MolekularesTumorboardSession-1)
+* provision.data.meaning = #dependents
+
+
