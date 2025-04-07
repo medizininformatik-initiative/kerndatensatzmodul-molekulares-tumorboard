@@ -6,10 +6,19 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
     ]
   },
+  "basedOn": [
+    {
+      "reference": "MII_PR_MTB_Therapieplan/mii-exa-mtb-kim-musterperson-therapieplan"
+    }
+  ],
   "medicationCodeableConcept": {
     "coding": [
       {
         "code": "L01FX26",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc"
+      },
+      {
+        "code": "L01FX",
         "system": "http://fhir.de/CodeSystem/bfarm/atc"
       }
     ]
@@ -45,7 +54,7 @@
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
     }
   ],
-  "status": "draft",
+  "status": "active",
   "intent": "proposal",
   "subject": {
     "reference": "Patient/PatientKimMusterperson"

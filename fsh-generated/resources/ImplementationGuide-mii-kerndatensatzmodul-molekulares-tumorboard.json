@@ -126,31 +126,10 @@
       },
       {
         "reference": {
-          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-3"
-        },
-        "name": "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
-      },
-      {
-        "reference": {
           "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
         },
         "name": "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
-      },
-      {
-        "reference": {
-          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-6"
-        },
-        "name": "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
-      },
-      {
-        "reference": {
-          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-2"
-        },
-        "name": "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
       },
       {
         "reference": {
@@ -169,31 +148,10 @@
       },
       {
         "reference": {
-          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-5"
-        },
-        "name": "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
-      },
-      {
-        "reference": {
           "reference": "Observation/MII-EXA-MTB-Response-Befund-2"
         },
         "name": "22.10.2023 CT T/A",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
-      },
-      {
-        "reference": {
-          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-1"
-        },
-        "name": "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
-      },
-      {
-        "reference": {
-          "reference": "MedicationStatement/MII-EXA-MTB-Systemtherapie-4"
-        },
-        "name": "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie"
       },
       {
         "reference": {
@@ -443,14 +401,6 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-ablehnung-kostenuebernahme-grund"
-        },
-        "name": "MII CS Ablehnung Kostenuebernahme Grund",
-        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
@@ -459,9 +409,9 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-status"
+          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung"
         },
-        "name": "MII CS Antwort Kostenuebernahme Status",
+        "name": "MII CS Antwort Kostenuebernahme Entscheidung",
         "description": "Codesystem zum Status der Antwort zur Kostenuebernahme",
         "exampleBoolean": false
       },
@@ -491,7 +441,7 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-nct"
         },
         "name": "MII CS Empfehlung Evidenzgrad",
         "description": "Evidenzgrad einer Empfehlung",
@@ -547,6 +497,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-kostenuebernahme-ablehnungsgrund"
+        },
+        "name": "MII CS Kostenuebernahme Ablehnungsgrund",
+        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-leitlinienbehandlung-status"
         },
         "name": "MII CS Leitlinienbehandlung Status",
@@ -587,10 +545,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund"
         },
-        "name": "MII EX MTB Antwort Kostenuebernahme Antragsstadium",
-        "description": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "name": "MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund",
+        "description": "Ablehnungsgrund des Antrags auf Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung"
+        },
+        "name": "MII EX MTB Antwort Kostenuebernahme Entscheidung",
+        "description": "Entscheidung zum Antrag zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -1019,14 +985,6 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund"
-        },
-        "name": "MII VS Ablehnung Kostenuebernahme Grund",
-        "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII VS Antrag Kostenuebernahme Antragsstadium",
@@ -1115,6 +1073,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-kostenuebernahme-ablehnungsgrund"
+        },
+        "name": "MII VS Kostenuebernahme Ablehnungsgrund",
+        "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-leitlinienbehandlung-status"
         },
         "name": "MII VS Leitlinienbehandlung Status",
@@ -1199,6 +1165,13 @@
         },
         "name": "mii-exa-mtb-medikation-trametinib",
         "description": "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar"
+        },
+        "name": "MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar",
         "exampleBoolean": true
       },
       {

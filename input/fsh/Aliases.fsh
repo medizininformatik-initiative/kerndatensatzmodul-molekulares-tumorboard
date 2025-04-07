@@ -25,7 +25,7 @@ Alias: $mii-pr-molgen-therapeutische-implikation = https://www.medizininformatik
 // Aliases für Profile des MII MTB-Moduls
 Alias: $mii-lm-mtb = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb
 Alias: $mii-cs-mtb-abbruchsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-abbruchsgrund
-Alias: $mii-cs-mtb-ablehnung-kostenuebernahme-grund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-ablehnung-kostenuebernahme-grund
+Alias: $mii-cs-mtb-kostenuebernahme-ablehnungsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-kostenuebernahme-ablehnungsgrund
 Alias: $mii-cs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-cs-mtb-antwort-kostenuebernahme-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium
 Alias: $mii-cs-mtb-auftrag-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung
@@ -52,7 +52,7 @@ Alias: $mii-ex-mtb-leitlinie-dokumentation = https://www.medizininformatik-initi
 Alias: $mii-ex-mtb-leitlinienbehandlung-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status
 Alias: $mii-ex-mtb-zulassungsstatus = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-zulassungsstatus
 Alias: $mii-vs-mtb-abbruchsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-abbruchsgrund
-Alias: $mii-vs-mtb-ablehnung-kostenuebernahme-grund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund
+Alias: $mii-vs-mtb-kostenuebernahme-ablehnungsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-kostenuebernahme-ablehnungsgrund
 Alias: $mii-vs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-vs-mtb-antwort-kostenuebernahme-status = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-vs-mtb-auftrag-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-auftrag-begruendung

@@ -13,7 +13,7 @@
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-mtb.fsh",
     "startLine": 1,
-    "endLine": 22
+    "endLine": 26
   },
   {
     "outputFile": "CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.json",
@@ -36,8 +36,8 @@
     "fshName": "MII-EXA-MTB-Antrag-Kostenuebernahme-1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 172,
-    "endLine": 187
+    "startLine": 174,
+    "endLine": 189
   },
   {
     "outputFile": "Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.json",
@@ -45,15 +45,15 @@
     "fshType": "Instance",
     "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-exa-mtb-antrag-kostenuebernahme-1.fsh",
     "startLine": 1,
-    "endLine": 15
+    "endLine": 14
   },
   {
     "outputFile": "ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.json",
     "fshName": "MII-EXA-MTB-Antwort-Kostenuebernahme-1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 191,
-    "endLine": 201
+    "startLine": 193,
+    "endLine": 202
   },
   {
     "outputFile": "ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.json",
@@ -72,14 +72,6 @@
     "endLine": 37
   },
   {
-    "outputFile": "CodeSystem-mii-cs-mtb-ablehnung-kostenuebernahme-grund.json",
-    "fshName": "MII_CS_MTB_Ablehnung_Kostenuebernahme_Grund",
-    "fshType": "CodeSystem",
-    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium.fsh",
-    "startLine": 10,
-    "endLine": 23
-  },
-  {
     "outputFile": "CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.json",
     "fshName": "MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
     "fshType": "CodeSystem",
@@ -88,8 +80,8 @@
     "endLine": 9
   },
   {
-    "outputFile": "CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-status.json",
-    "fshName": "MII_CS_MTB_Antwort_Kostenuebernahme_Status",
+    "outputFile": "CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.json",
+    "fshName": "MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung",
     "fshType": "CodeSystem",
     "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium.fsh",
     "startLine": 1,
@@ -120,20 +112,20 @@
     "endLine": 10
   },
   {
+    "outputFile": "CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.json",
+    "fshName": "MII_CS_MTB_Empfehlung_Evidenzgrad",
+    "fshType": "CodeSystem",
+    "fshFile": "profiles/Beschluss-Therapieplan/mii-cs-mtb-empfehlung-evidenzgrad.fsh",
+    "startLine": 1,
+    "endLine": 42
+  },
+  {
     "outputFile": "CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.json",
     "fshName": "MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis",
     "fshType": "CodeSystem",
     "fshFile": "profiles/Beschluss-Therapieplan/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.fsh",
     "startLine": 1,
     "endLine": 22
-  },
-  {
-    "outputFile": "CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad.json",
-    "fshName": "MII_CS_MTB_Empfehlung_Evidenzgrad",
-    "fshType": "CodeSystem",
-    "fshFile": "profiles/Beschluss-Therapieplan/mii-cs-mtb-empfehlung-evidenzgrad.fsh",
-    "startLine": 1,
-    "endLine": 42
   },
   {
     "outputFile": "CodeSystem-mii-cs-mtb-empfehlung-status-begruendung.json",
@@ -174,6 +166,14 @@
     "fshFile": "profiles/NGS-Bericht/mii-cs-mtb-genomic-analysis-device-function.fsh",
     "startLine": 1,
     "endLine": 8
+  },
+  {
+    "outputFile": "CodeSystem-mii-cs-mtb-kostenuebernahme-ablehnungsgrund.json",
+    "fshName": "MII_CS_MTB_Kostenuebernahme_Ablehnungsgrund",
+    "fshType": "CodeSystem",
+    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium.fsh",
+    "startLine": 10,
+    "endLine": 23
   },
   {
     "outputFile": "CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.json",
@@ -268,32 +268,32 @@
     "fshName": "mii-exa-mtb-medication-adavosertib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 159,
-    "endLine": 166
+    "startLine": 162,
+    "endLine": 169
   },
   {
     "outputFile": "Medication-mii-exa-mtb-medication-camonsertib.json",
     "fshName": "mii-exa-mtb-medication-camonsertib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 228,
-    "endLine": 235
+    "startLine": 231,
+    "endLine": 238
   },
   {
     "outputFile": "Medication-mii-exa-mtb-medication-cobimetinib.json",
     "fshName": "mii-exa-mtb-medication-cobimetinib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 263,
-    "endLine": 270
+    "startLine": 266,
+    "endLine": 273
   },
   {
     "outputFile": "Medication-mii-exa-mtb-medication-lunresertib.json",
     "fshName": "mii-exa-mtb-medication-lunresertib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 208,
-    "endLine": 215
+    "startLine": 211,
+    "endLine": 218
   },
   {
     "outputFile": "Medication-mii-exa-mtb-medikation-dabrafenib.json",
@@ -316,40 +316,40 @@
     "fshName": "mii-exa-mtb-medication-request-adavosertib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 168,
-    "endLine": 176
+    "startLine": 171,
+    "endLine": 179
   },
   {
     "outputFile": "MedicationRequest-mii-exa-mtb-medication-request-camonsertib.json",
     "fshName": "mii-exa-mtb-medication-request-camonsertib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 237,
-    "endLine": 245
+    "startLine": 240,
+    "endLine": 248
   },
   {
     "outputFile": "MedicationRequest-mii-exa-mtb-medication-request-carboplatin.json",
     "fshName": "mii-exa-mtb-medication-request-carboplatin",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 178,
-    "endLine": 186
+    "startLine": 181,
+    "endLine": 189
   },
   {
     "outputFile": "MedicationRequest-mii-exa-mtb-medication-request-cobimetinib.json",
     "fshName": "mii-exa-mtb-medication-request-cobimetinib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 272,
-    "endLine": 282
+    "startLine": 275,
+    "endLine": 285
   },
   {
     "outputFile": "MedicationRequest-mii-exa-mtb-medication-request-lunresertib.json",
     "fshName": "mii-exa-mtb-medication-request-lunresertib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 217,
-    "endLine": 225
+    "startLine": 220,
+    "endLine": 228
   },
   {
     "outputFile": "MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.json",
@@ -357,15 +357,15 @@
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
     "startLine": 55,
-    "endLine": 65
+    "endLine": 68
   },
   {
     "outputFile": "MedicationRequest-mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan.json",
     "fshName": "mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 142,
-    "endLine": 152
+    "startLine": 145,
+    "endLine": 155
   },
   {
     "outputFile": "MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.json",
@@ -382,54 +382,6 @@
     "fshFile": "profiles/Beschluss-Therapieplan/mii-exa-mtb-therapieempfehlung-trametinib.fsh",
     "startLine": 19,
     "endLine": 35
-  },
-  {
-    "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-1.json",
-    "fshName": "MII-EXA-MTB-Systemtherapie-1",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 15,
-    "endLine": 30
-  },
-  {
-    "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-2.json",
-    "fshName": "MII-EXA-MTB-Systemtherapie-2",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 33,
-    "endLine": 50
-  },
-  {
-    "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-3.json",
-    "fshName": "MII-EXA-MTB-Systemtherapie-3",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 53,
-    "endLine": 70
-  },
-  {
-    "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-4.json",
-    "fshName": "MII-EXA-MTB-Systemtherapie-4",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 93,
-    "endLine": 108
-  },
-  {
-    "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-5.json",
-    "fshName": "MII-EXA-MTB-Systemtherapie-5",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 111,
-    "endLine": 128
-  },
-  {
-    "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-6.json",
-    "fshName": "MII-EXA-MTB-Systemtherapie-6",
-    "fshType": "Instance",
-    "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 131,
-    "endLine": 148
   },
   {
     "outputFile": "MedicationStatement-MII-EXA-MTB-Systemtherapie-Beispiel-1.json",
@@ -588,48 +540,48 @@
     "fshName": "MTBChemo2MedicationStatement1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-medikation.fsh",
-    "startLine": 180,
-    "endLine": 192
+    "startLine": 183,
+    "endLine": 195
   },
   {
     "outputFile": "MedicationStatement-MTBChemo2MedicationStatement2.json",
     "fshName": "MTBChemo2MedicationStatement2",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-medikation.fsh",
-    "startLine": 195,
-    "endLine": 207
+    "startLine": 198,
+    "endLine": 210
   },
   {
     "outputFile": "MedicationStatement-MTBChemo2MedicationStatement3.json",
     "fshName": "MTBChemo2MedicationStatement3",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-medikation.fsh",
-    "startLine": 210,
-    "endLine": 222
+    "startLine": 213,
+    "endLine": 225
   },
   {
     "outputFile": "MedicationStatement-MTBChemo2MedicationStatement4.json",
     "fshName": "MTBChemo2MedicationStatement4",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-medikation.fsh",
-    "startLine": 225,
-    "endLine": 237
+    "startLine": 228,
+    "endLine": 240
   },
   {
     "outputFile": "MedicationStatement-MTBChemo2MedicationStatement5.json",
     "fshName": "MTBChemo2MedicationStatement5",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-medikation.fsh",
-    "startLine": 240,
-    "endLine": 252
+    "startLine": 243,
+    "endLine": 255
   },
   {
     "outputFile": "MedicationStatement-MTBChemo2MedicationStatement6.json",
     "fshName": "MTBChemo2MedicationStatement6",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-medikation.fsh",
-    "startLine": 255,
-    "endLine": 267
+    "startLine": 258,
+    "endLine": 270
   },
   {
     "outputFile": "NamingSystem-mii-ns-mtb-nct.json",
@@ -660,16 +612,16 @@
     "fshName": "MII-EXA-MTB-Response-Befund-1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 73,
-    "endLine": 89
+    "startLine": 75,
+    "endLine": 91
   },
   {
     "outputFile": "Observation-MII-EXA-MTB-Response-Befund-2.json",
     "fshName": "MII-EXA-MTB-Response-Befund-2",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-follow-up.fsh",
-    "startLine": 152,
-    "endLine": 168
+    "startLine": 154,
+    "endLine": 170
   },
   {
     "outputFile": "Observation-MTBObservationCA125-1.json",
@@ -1156,8 +1108,8 @@
     "fshName": "MTBChemo2Procedure",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-medikation.fsh",
-    "startLine": 164,
-    "endLine": 177
+    "startLine": 165,
+    "endLine": 178
   },
   {
     "outputFile": "Procedure-PatientKimMusterperson-Procedure-1.json",
@@ -1252,16 +1204,16 @@
     "fshName": "mii-exa-mtb-request-group-adavosertib-carboplatin",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 188,
-    "endLine": 199
+    "startLine": 191,
+    "endLine": 202
   },
   {
     "outputFile": "RequestGroup-mii-exa-mtb-request-group-lunresertib-camonsertib.json",
     "fshName": "mii-exa-mtb-request-group-lunresertib-camonsertib",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 247,
-    "endLine": 259
+    "startLine": 250,
+    "endLine": 262
   },
   {
     "outputFile": "RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.json",
@@ -1276,48 +1228,56 @@
     "fshName": "mii-exa-mtb-study-ccne1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 116,
-    "endLine": 121
+    "startLine": 119,
+    "endLine": 124
   },
   {
     "outputFile": "ResearchStudy-mii-exa-mtb-study-cldn6.json",
     "fshName": "mii-exa-mtb-study-cldn6",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 71,
-    "endLine": 78
+    "startLine": 74,
+    "endLine": 81
   },
   {
     "outputFile": "ResearchStudy-mii-exa-mtb-study-tedova.json",
     "fshName": "mii-exa-mtb-study-tedova",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 95,
-    "endLine": 102
+    "startLine": 98,
+    "endLine": 105
+  },
+  {
+    "outputFile": "ServiceRequest-MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar.json",
+    "fshName": "MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar",
+    "fshType": "Instance",
+    "fshFile": "examples/mii-exa-mtb-kim-musterperson-mtb.fsh",
+    "startLine": 33,
+    "endLine": 38
   },
   {
     "outputFile": "ServiceRequest-mii-exa-mtb-study-request-ccne1.json",
     "fshName": "mii-exa-mtb-study-request-ccne1",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 123,
-    "endLine": 131
+    "startLine": 126,
+    "endLine": 134
   },
   {
     "outputFile": "ServiceRequest-mii-exa-mtb-study-request-cldn6.json",
     "fshName": "mii-exa-mtb-study-request-cldn6",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 80,
-    "endLine": 89
+    "startLine": 83,
+    "endLine": 92
   },
   {
     "outputFile": "ServiceRequest-mii-exa-mtb-study-request-tedova.json",
     "fshName": "mii-exa-mtb-study-request-tedova",
     "fshType": "Instance",
     "fshFile": "examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh",
-    "startLine": 104,
-    "endLine": 112
+    "startLine": 107,
+    "endLine": 115
   },
   {
     "outputFile": "Specimen-PatientKimMusterperson-AscitesSpecimen-2.json",
@@ -1352,12 +1312,20 @@
     "endLine": 15
   },
   {
-    "outputFile": "StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.json",
-    "fshName": "MII_EX_MTB_Antwort_Kostenuebernahme_Antragsstadium",
+    "outputFile": "StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.json",
+    "fshName": "MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund",
     "fshType": "Extension",
-    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium.fsh",
+    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.fsh",
     "startLine": 1,
-    "endLine": 28
+    "endLine": 14
+  },
+  {
+    "outputFile": "StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-entscheidung.json",
+    "fshName": "MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung",
+    "fshType": "Extension",
+    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-ex-mtb-antwort-kostenuebernahme-entscheidung.fsh",
+    "startLine": 1,
+    "endLine": 15
   },
   {
     "outputFile": "StructureDefinition-mii-ex-mtb-diagnose.json",
@@ -1389,7 +1357,7 @@
     "fshType": "Extension",
     "fshFile": "profiles/Beschluss-Therapieplan/mii-ex-mtb-empfehlung-evidenzgraduierung-publikation.fsh",
     "startLine": 1,
-    "endLine": 26
+    "endLine": 33
   },
   {
     "outputFile": "StructureDefinition-mii-ex-mtb-leitlinie-dokumentation.json",
@@ -1453,7 +1421,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-pr-mtb-antrag-kostenuebernahme.fsh",
     "startLine": 1,
-    "endLine": 56
+    "endLine": 92
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.json",
@@ -1461,7 +1429,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-pr-mtb-antwort-kostenuebernahme.fsh",
     "startLine": 1,
-    "endLine": 27
+    "endLine": 40
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-behandlungsepisode.json",
@@ -1621,7 +1589,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/NGS-Bericht/mii-pr-mtb-molecular-pathology-report.fsh",
     "startLine": 1,
-    "endLine": 22
+    "endLine": 21
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-molekularer-biomarker.json",
@@ -1653,7 +1621,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/Follow-Up/Systemtherapie/mii-pr-mtb-response-befund.fsh",
     "startLine": 1,
-    "endLine": 25
+    "endLine": 27
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-rna-fusion.json",
@@ -1760,14 +1728,6 @@
     "endLine": 20
   },
   {
-    "outputFile": "ValueSet-mii-vs-mtb-ablehnung-kostenuebernahme-grund.json",
-    "fshName": "MII_VS_MTB_Ablehnung_Kostenuebernahme_Grund",
-    "fshType": "ValueSet",
-    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-vs-mtb-antwort-kostenuebernahme-antragsstadium.fsh",
-    "startLine": 8,
-    "endLine": 13
-  },
-  {
     "outputFile": "ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.json",
     "fshName": "MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
     "fshType": "ValueSet",
@@ -1865,11 +1825,19 @@
   },
   {
     "outputFile": "ValueSet-mii-vs-mtb-immunohistochemistry-targets.json",
-    "fshName": "MII_VS_MTB_Immunhistochemistry-Targets",
+    "fshName": "MII_VS_MTB_Immunhistochemistry_Targets",
     "fshType": "ValueSet",
     "fshFile": "profiles/NGS-Bericht/mii-vs-mtb-immunhistochemistry-targets.fsh",
     "startLine": 2,
     "endLine": 10
+  },
+  {
+    "outputFile": "ValueSet-mii-vs-mtb-kostenuebernahme-ablehnungsgrund.json",
+    "fshName": "MII_VS_MTB_Kostenuebernahme_Ablehnungsgrund",
+    "fshType": "ValueSet",
+    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-vs-mtb-antwort-kostenuebernahme-antragsstadium.fsh",
+    "startLine": 8,
+    "endLine": 13
   },
   {
     "outputFile": "ValueSet-mii-vs-mtb-leitlinienbehandlung-status.json",
