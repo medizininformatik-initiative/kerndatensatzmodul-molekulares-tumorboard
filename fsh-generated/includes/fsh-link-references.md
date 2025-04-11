@@ -131,14 +131,12 @@
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html
 [mii-exa-mtb-medikation-dabrafenib]: Medication-mii-exa-mtb-medikation-dabrafenib.html
 [mii-exa-mtb-medikation-trametinib]: Medication-mii-exa-mtb-medikation-trametinib.html
-[MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar]: ServiceRequest-MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar.html
 [mii-exa-mtb-patient]: Patient-mii-exa-mtb-patient.html
 [mii-exa-mtb-therapieempfehlung-dabrafenib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.html
 [mii-exa-mtb-therapieempfehlung-kombinationstherapie]: RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.html
 [mii-exa-mtb-therapieempfehlung-trametinib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-trametinib.html
 [mii-exa-mtb-therapieplan-kombinationstherapie]: CarePlan-mii-exa-mtb-therapieplan-kombinationstherapie.html
 [mii-exa-mtb-medication-request-mirvetuximab]: MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html
-[MolekularesTumorboardAufklaerung-1]: Consent-MolekularesTumorboardAufklaerung-1.html
 [mii-exa-mtb-kim-musterperson-behandlungsepisode]: ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html
 [mii-exa-mtb-kim-musterperson-therapieplan]: CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.html
 [mii-exa-mtb-kim-musterperson-ngs-bericht]: DiagnosticReport-mii-exa-mtb-kim-musterperson-ngs-bericht.html

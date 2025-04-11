@@ -11,6 +11,10 @@ Usage: #example
 * effectiveDateTime = 2022-03-01
 // Primärdiagnosie (siehe KDS Erweiterungsmodul Onkologie)
 * problem = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
+// hier aufnehmen: Den Allgemeinen Lebensqualität-Observation aus dem Onko Modul unter investigation
+
+
+// hier ggfs. nochmal slicen zwischen Imaging, Procedure und MedicationStatement? Wobei man gucken muss, dass die Zeitliche Reihenfolge passt
 // 10.06.2021 CT Abdomen (siehe KDS Erweiterungsmodul Onkologie)
 * supportingInfo = Reference(Procedure/PatientKimMusterperson-Procedure-1)
 // 15.06.2021 Aszitespunktion (siehe KDS Erweiterungsmodul Onkologie)

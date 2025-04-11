@@ -185,6 +185,7 @@ InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = $systemtherapie-status#completed
+* basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-06-24"
@@ -200,6 +201,7 @@ InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = $systemtherapie-status#completed
+* basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-07-16"
@@ -215,6 +217,7 @@ InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = $systemtherapie-status#completed
+* basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-08-07"
@@ -230,6 +233,7 @@ InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = $systemtherapie-status#completed
+* basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-08-29"
@@ -245,6 +249,7 @@ InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = $systemtherapie-status#completed
+* basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-09-20"
@@ -260,6 +265,7 @@ InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = $systemtherapie-status#completed
+* basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-10-12"
