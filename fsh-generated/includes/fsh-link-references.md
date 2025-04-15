@@ -210,11 +210,9 @@
 [PatientKimMusterperson-Observation-25]: Observation-PatientKimMusterperson-Observation-25.html
 [PatientKimMusterperson-Observation-26]: Observation-PatientKimMusterperson-Observation-26.html
 [PatientKimMusterperson-Observation-27]: Observation-PatientKimMusterperson-Observation-27.html
-[PatientKimMusterperson-Observation-28]: Observation-PatientKimMusterperson-Observation-28.html
 [PatientKimMusterperson-Observation-29]: Observation-PatientKimMusterperson-Observation-29.html
 [PatientKimMusterperson-Observation-3]: Observation-PatientKimMusterperson-Observation-3.html
 [PatientKimMusterperson-Observation-30]: Observation-PatientKimMusterperson-Observation-30.html
-[PatientKimMusterperson-Observation-31]: Observation-PatientKimMusterperson-Observation-31.html
 [PatientKimMusterperson-Observation-4]: Observation-PatientKimMusterperson-Observation-4.html
 [PatientKimMusterperson-Observation-5]: Observation-PatientKimMusterperson-Observation-5.html
 [PatientKimMusterperson-Observation-6]: Observation-PatientKimMusterperson-Observation-6.html

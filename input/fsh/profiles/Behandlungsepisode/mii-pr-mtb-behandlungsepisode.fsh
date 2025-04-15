@@ -7,9 +7,13 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 
 * subject only Reference(MII_PR_Person_Patient or MII_PR_Person_PatientPseudonymisiert)
 
-* effectiveDateTime 1..1 MS
-* effectiveDateTime ^short = "Anmeldedatum"
-* effectiveDateTime ^definition = "Anmeldedatum zum Molekularen Tumorboard"
+* effectivePeriod 1..1 MS
+* effectivePeriod ^short = "Zeitraum der Behandlungsepisode"
+* effectivePeriod ^definition = "Zeitraum von Einschluss bis Abschluss im Molekularen Tumorboard"
+* effectivePeriod.start ^short = "Einschlussdatum"
+* effectivePeriod.start ^definition = "Einschlussdatum Molekulares Tumorboard"
+* effectivePeriod.end ^short = "Abschlussdatum"
+* effectivePeriod.end ^definition = "Abschlussdatum Molekulares Tumorboard"
 
 * problem 0..* MS
 * problem ^slicing.discriminator.type = #type
@@ -83,3 +87,8 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Vortherapie].extension contains MII_EX_MTB_Leitlinie_Dokumentation named LeitlinieDokumentation 0..1 MS
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^short = "Leitlinie Dokumentation"
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^definition = "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur"
+
+* supportingInfo contains Vorbefund 0..* MS
+* supportingInfo[Vorbefund] ^short = "Vorbefund"
+* supportingInfo[Vorbefund] ^definition = "Relevanter Vorbefund"
+* supportingInfo[Vorbefund] only Reference(DiagnosticReport or Observation)
