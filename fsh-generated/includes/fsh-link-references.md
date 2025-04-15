@@ -7,10 +7,10 @@
 [MII-EXA-MTB-Response-Befund-1]: Observation-MII-EXA-MTB-Response-Befund-1.html
 [MII-EXA-MTB-Systemtherapie-5]: MedicationStatement-MII-EXA-MTB-Systemtherapie-5.html
 [MII-EXA-MTB-Response-Befund-2]: Observation-MII-EXA-MTB-Response-Befund-2.html
-[mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [MII-EXA-MTB-Systemische-Therapie-1]: Procedure-MII-EXA-MTB-Systemische-Therapie-1.html
 [MII-EXA-MTB-Systemtherapie-1]: MedicationStatement-MII-EXA-MTB-Systemtherapie-1.html
 [MII-EXA-MTB-Systemtherapie-4]: MedicationStatement-MII-EXA-MTB-Systemtherapie-4.html
+[mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
@@ -106,7 +106,7 @@
 [MII_PR_MTB_RNA_Seq]: StructureDefinition-mii-pr-mtb-rna-seq.html
 [MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
-[MII_PR_MTB_Systemische_Vortherapie]: StructureDefinition-mii-pr-mtb-systemische-vortherapie.html
+[MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
 [MII_PR_MTB_Systemische_Vortherapie]: StructureDefinition-mii-pr-mtb-systemische-vortherapie.html
 [MII_PR_MTB_Systemische_Therapie_Medication_Statement]: StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.html
 [MII_PR_MTB_Therapieempfehlung_Kombination]: StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html
