@@ -32,7 +32,27 @@
         "coding": [
           {
             "code": "HGNC:11998",
+            "system": "http://www.genenames.org/geneId",
             "display": "TP53"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "48005-3",
+            "display": "Amino acid change (pHGVS)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "NP_000537.3:p.Arg213Ter",
+            "system": "http://varnomen.hgvs.org"
           }
         ]
       }
@@ -48,6 +68,15 @@
     ]
   },
   "status": "final",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA9633-4",
+        "system": "http://loinc.org",
+        "display": "Present"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/KimMusterperson"
   }

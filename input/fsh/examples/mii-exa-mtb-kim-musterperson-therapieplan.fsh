@@ -60,5 +60,7 @@ Usage: #example
 * activity.detail.code = $mii-cs-onko-therapie-typ#ZS "zielgerichtete Substanzen"
 * activity.detail.status = #not-started
 
-// Umgesetzte Therapieempfehlung: Mirvetuximab soravtansine (m1A)
-* activity.outcomeReference = Reference(MTBChemo2Procedure)
+// Umgesetzte Therapieempfehlung (Mirvetuximab soravtansine)
+* activity[UmgesetzteEmpfehlung].outcomeReference = Reference(MTBChemo2Procedure)
+* activity[UmgesetzteEmpfehlung].detail.code = $mii-cs-onko-therapie-typ#IZ "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+* activity[UmgesetzteEmpfehlung].detail.status = #completed

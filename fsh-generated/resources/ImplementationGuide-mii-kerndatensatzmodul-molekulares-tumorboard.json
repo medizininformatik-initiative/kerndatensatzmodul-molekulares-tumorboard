@@ -119,6 +119,42 @@
     "resource": [
       {
         "reference": {
+          "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"
+        },
+        "name": "01.05.2023 Krankenkassenantrag Mirvetuximab soravtansine genehmigt",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
+        },
+        "name": "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/MolekularesTumorboardSession-1"
+        },
+        "name": "20.01.2023 Molekulares Tumorboard:",
+        "description": "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie\n2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.\n3. Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.\n4. Studiencheck (inkl. QuickQueck Suche): Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ). Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2). \n5. Wiedervorstellung nach Eingang der Befunde.\n",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-1"
+        },
+        "name": "20.08.2023 CT T/A",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-2"
+        },
+        "name": "22.10.2023 CT T/A",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      },
+      {
+        "reference": {
           "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
         },
         "name": "A Clinical Study of the Safety and Effectiveness of an Investigational Cell Therapy Given With and Without an Investigational RNA-based Vaccine in Patients With Organ Tumors",
@@ -350,6 +386,13 @@
       },
       {
         "reference": {
+          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1"
+        },
+        "name": "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/genomic-study-analysis"
         },
         "name": "Genomic Study Analysis",
@@ -382,14 +425,6 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-ablehnung-kostenuebernahme-grund"
-        },
-        "name": "MII CS Ablehnung Kostenuebernahme Grund",
-        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
@@ -398,9 +433,9 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-status"
+          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung"
         },
-        "name": "MII CS Antwort Kostenuebernahme Status",
+        "name": "MII CS Antwort Kostenuebernahme Entscheidung",
         "description": "Codesystem zum Status der Antwort zur Kostenuebernahme",
         "exampleBoolean": false
       },
@@ -422,7 +457,15 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"
+          "reference": "CodeSystem/mii-cs-mtb-dosisdichte"
+        },
+        "name": "MII CS Dosisdichte",
+        "description": "Codesystem für die Dosisdichte einer Systemtheraptie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-nct"
         },
         "name": "MII CS Empfehlung Evidenzgrad",
         "description": "Evidenzgrad einer Empfehlung",
@@ -478,6 +521,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-kostenuebernahme-ablehnungsgrund"
+        },
+        "name": "MII CS Kostenuebernahme Ablehnungsgrund",
+        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-leitlinienbehandlung-status"
         },
         "name": "MII CS Leitlinienbehandlung Status",
@@ -490,6 +541,14 @@
         },
         "name": "MII CS Molekulare Biomarker",
         "description": "Codesystem, welches verschiedene Molekulare Biomarker enthält, die nicht in anderen offenen semantischen Standards wie LOINC oder SNOMED-CT abgebildet sind",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-response-befund-beurteilung"
+        },
+        "name": "MII CS Response Befund Beurteilung",
+        "description": "Codesystem für die Beurteilung des Response Befund",
         "exampleBoolean": false
       },
       {
@@ -510,10 +569,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-antragsstadium"
+          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund"
         },
-        "name": "MII EX MTB Antwort Kostenuebernahme Antragsstadium",
-        "description": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "name": "MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund",
+        "description": "Ablehnungsgrund des Antrags auf Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung"
+        },
+        "name": "MII EX MTB Antwort Kostenuebernahme Entscheidung",
+        "description": "Entscheidung zum Antrag zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -666,6 +733,14 @@
         },
         "name": "MII PR MTB BRCAness",
         "description": "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zeigt, welches BRCA1- oder BRCA2-Mutationen entspricht. Die BRCAness ist ein Indikator für die Wirksamkeit von PARP-Inhibitoren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-follow-up-clincalimpression"
+        },
+        "name": "MII PR MTB Clinical Impresssion",
+        "description": "Follow-Up nach DNPM ",
         "exampleBoolean": false
       },
       {
@@ -873,7 +948,7 @@
           "reference": "StructureDefinition/mii-pr-mtb-systemtherapie"
         },
         "name": "MII PR MTB Systemtherapie",
-        "description": "Systemtherapie mit Referenz auf MTB Therapieempfehlung",
+        "description": "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung",
         "exampleBoolean": false
       },
       {
@@ -934,14 +1009,6 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-ablehnung-kostenuebernahme-grund"
-        },
-        "name": "MII VS Ablehnung Kostenuebernahme Grund",
-        "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII VS Antrag Kostenuebernahme Antragsstadium",
@@ -970,6 +1037,14 @@
         },
         "name": "MII VS Bestimmungsmethode Tumorzellgehalt",
         "description": "ValueSet für Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-dosisdichte"
+        },
+        "name": "MII VS Dosisdichte",
+        "description": "ValueSet zur Dosisdichte",
         "exampleBoolean": false
       },
       {
@@ -1022,6 +1097,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-kostenuebernahme-ablehnungsgrund"
+        },
+        "name": "MII VS Kostenuebernahme Ablehnungsgrund",
+        "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-leitlinienbehandlung-status"
         },
         "name": "MII VS Leitlinienbehandlung Status",
@@ -1062,6 +1145,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-response-befund-beurteilung"
+        },
+        "name": "MII VS Response Befund Beurteilung",
+        "description": "ValueSet Response Befund Beurteilung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-tumorausbreitung"
         },
         "name": "MII VS Tumorausbreitung",
@@ -1098,6 +1189,13 @@
         },
         "name": "mii-exa-mtb-medikation-trametinib",
         "description": "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar"
+        },
+        "name": "MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar",
         "exampleBoolean": true
       },
       {
@@ -1171,6 +1269,38 @@
         "name": "MTB-NGS-Bericht Kim Musterperson",
         "description": "Ergebnisse des NGS-Bericht von Kim Musterperson",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson",
+        "description": "Details zur Durchführung NGS-Bericht von Kim Musterperson",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-1"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson",
+        "description": "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-3"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson",
+        "description": "Diagnostische Prozeduren  MolPatho-Bericht von Kim Musterperson - Immunhistochemie",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2"
+        },
+        "name": "MTB-NGS-Bericht Kim Musterperson HLA Status",
+        "description": "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben weil Beispiel",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
       },
       {
         "reference": {
@@ -1919,6 +2049,14 @@
       },
       {
         "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1"
+        },
+        "name": "PIK3R1 Therapeutische Implikation",
+        "description": "Therapeutische Bedeutung der festgestellten PIK3R1 Mutation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ResearchStudy/mii-exa-mtb-study-tedova"
         },
         "name": "TEDOVA",
@@ -1932,6 +2070,14 @@
         "name": "TEDOVA",
         "description": "Studieeinschlussempfehlung: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53"
+        },
+        "name": "TP53 Diagnostische Implikation",
+        "description": "Diagnostische Bedeutung der festgestellten TP53 Mutation",
+        "exampleBoolean": true
       },
       {
         "reference": {
