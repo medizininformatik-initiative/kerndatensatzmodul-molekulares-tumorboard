@@ -7,6 +7,12 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 
 * identifier MS
 
+* status ^short = "Umsetzungsstatus"
+* status ^definition = "Status der Umsetzung der Therapieempfehlung"
+* status ^comment = "draft: Nicht begonnen"
+* status ^comment = "active: Begonnen"
+* status ^comment = "completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+
 * replaces only Reference(
     MII_PR_MTB_Therapieempfehlung_Kombination or
     MII_PR_MTB_Therapieempfehlung or

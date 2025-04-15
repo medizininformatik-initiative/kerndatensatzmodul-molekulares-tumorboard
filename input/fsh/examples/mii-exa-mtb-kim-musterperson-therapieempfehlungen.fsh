@@ -28,7 +28,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Trastuzumab deruxtecan"
 Description: "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenzgrad: m1B"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FD04
@@ -54,7 +54,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Adavosertib"
 Description: "Therapieempfehlung: Adavosertib"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-adavosertib)
@@ -64,7 +64,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Carboplatin"
 Description: "Therapieempfehlung: Carboplatin"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01XA02
@@ -74,7 +74,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Title: "Adavosertib +/- Carboplatin"
 Description: "Therapieempfehlung Kombinationstherapie: Adavosertib +/- Carboplatin"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * action.resource = Reference(mii-exa-mtb-medication-request-adavosertib)
@@ -103,7 +103,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Lunresertib"
 Description: "Therapieempfehlung: Lunresertib"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-lunresertib)
@@ -123,7 +123,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Camonsertib"
 Description: "Therapieempfehlung: Camonsertib"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-camonsertib)
@@ -133,7 +133,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Title: "Lunresertib + Camonsertib"
 Description: "Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib, Priorität: 5, Evidenzgrad: m1B"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * action.resource = Reference(mii-exa-mtb-medication-request-lunresertib)
@@ -158,7 +158,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Cobimetinib"
 Description: "Therapieempfehlung: Cobimetinib, Priorität: 6, Evidenzgrad: m3"
 Usage: #example
-* status = #on-hold
+* status = #draft
 * intent = #option
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
