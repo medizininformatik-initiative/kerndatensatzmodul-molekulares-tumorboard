@@ -78,7 +78,6 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[UmgesetzteEmpfehlung].outcomeReference only Reference(
     MII_PR_Consent_Einwilligung or
     MII_PR_MTB_Studie or
-    MII_PR_MTB_Systemische_Therapie or
     MII_PR_Onko_Befund or
     MII_PR_Onko_Systemische_Therapie or
     MII_PR_Onko_Systemische_Therapie_Medikation or

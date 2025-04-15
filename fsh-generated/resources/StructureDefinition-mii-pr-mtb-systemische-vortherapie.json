@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-pr-mtb-systemische-therapie",
+  "id": "mii-pr-mtb-systemische-vortherapie",
   "extension": [
     {
       "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
@@ -15,10 +15,10 @@
       }
     }
   ],
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie",
   "version": "2024.0.0-ballot",
-  "name": "MII_PR_MTB_Systemische_Therapie",
-  "title": "MII PR MTB Systemische Therapie",
+  "name": "MII_PR_MTB_Systemische_Vortherapie",
+  "title": "MII PR MTB Systemische Vortherapie",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
   "contact": [
@@ -31,7 +31,7 @@
       ]
     }
   ],
-  "description": "Systemische Therapie",
+  "description": "Systemische Vortherapie zum Molekularen Tumorboard",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -51,7 +51,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice für zugehörigen Therapieplan",
+          "description": "Slice für referenzierten Therapieplan",
           "ordered": false
         }
       },
@@ -59,8 +59,8 @@
         "id": "Procedure.basedOn:Therapieplan",
         "path": "Procedure.basedOn",
         "sliceName": "Therapieplan",
-        "short": "Therpieplan zur Systemischen Therapie",
-        "definition": "Therpieplan auf dessen Empfehlung die Systemische Therapie erfolgt",
+        "short": "Therpieplan",
+        "definition": "Verweis auf den im Molekularen Tumorboard beschlossenen Therpieplan",
         "min": 0,
         "max": "1",
         "type": [

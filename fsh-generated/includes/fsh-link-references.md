@@ -92,7 +92,7 @@
 [MII_PR_MTB_RNA_Seq]: StructureDefinition-mii-pr-mtb-rna-seq.html
 [MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
-[MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
+[MII_PR_MTB_Systemische_Vortherapie]: StructureDefinition-mii-pr-mtb-systemische-vortherapie.html
 [MII_PR_MTB_Systemtherapie]: StructureDefinition-mii-pr-mtb-systemtherapie.html
 [MII_PR_MTB_Therapieempfehlung_Kombination]: StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html
 [MII_PR_MTB_Therapieempfehlung]: StructureDefinition-mii-pr-mtb-therapieempfehlung.html

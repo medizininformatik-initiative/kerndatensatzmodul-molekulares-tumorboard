@@ -14,7 +14,7 @@ RuleSet: SystemTherapyMedicationStatement(text, dateTime, procedure, parent, atc
 
 // MedicationStatements Carboplatin + Doxorubicin ---------------------------------------------------------------------
 Instance: MTBChemo1Procedure
-InstanceOf: MII_PR_MTB_Systemische_Therapie
+InstanceOf: MII_PR_MTB_Systemische_Vortherapie
 Usage: #example
 Description: "Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28; Sechs Zyklen ab 04.01.2023"
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
@@ -162,7 +162,7 @@ Usage: #example
 
 // MedicationStatements Mirvetuximab soravtansine ---------------------------------------------------------------------
 Instance: MTBChemo2Procedure
-InstanceOf: MII_PR_MTB_Systemische_Therapie
+InstanceOf: MII_PR_MTB_Systemische_Vortherapie
 Usage: #example
 Description: "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.06.2023"
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K

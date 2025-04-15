@@ -78,7 +78,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Vortherapie] ^short = "Vortherapie"
 * supportingInfo[Vortherapie] ^definition = "Relevante Leitlinien-basierte Vortherapie"
 * supportingInfo[Vortherapie] only Reference(
-    MII_PR_MTB_Systemische_Therapie or 
+    MII_PR_MTB_Systemische_Vortherapie or 
     MII_PR_Onko_Strahlentherapie or 
     MII_PR_Onko_Operation or 
     MII_PR_Prozedur_Procedure or
