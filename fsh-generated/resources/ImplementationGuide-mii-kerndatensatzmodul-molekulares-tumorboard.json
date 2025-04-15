@@ -183,6 +183,7 @@
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "Procedure/MII-EXA-MTB-Systemische-Therapie-1"
         },
         "name": "24.06.2023 - 12.10.2023 Mirvetuximab soravtansine",
@@ -201,6 +202,13 @@
         },
         "name": "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement"
+=======
+          "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
+        },
+        "name": "A Clinical Study of the Safety and Effectiveness of an Investigational Cell Therapy Given With and Without an Investigational RNA-based Vaccine in Patients With Organ Tumors",
+        "description": "This is a Phase I, FIH, open-label, multicenter, dose escalation trial with expansion cohorts to evaluate safety and preliminary efficacy of claudin 6 (CLDN6) chimeric antigen receptor T cells (CAR-T) with or without CLDN6 ribonucleic acid lipoplexes (RNA-LPX) in patients with CLDN6-positive relapsed or refractory advanced solid tumors.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
+>>>>>>> dev
       },
       {
         "reference": {
@@ -266,6 +274,22 @@
           "reference": "Device/MII-EXA-MTB-Device-Sequencer-1"
         },
         "name": "Beispiel fuer einen Sequencer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/mii-exa-mtb-study-sponsor-biontech"
+        },
+        "name": "BioNTech Cell & Gene Therapies GmbH",
+        "description": "Sponsor: BioNTech Cell & Gene Therapies GmbH",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/mii-exa-mtb-study-investigator-biontech"
+        },
+        "name": "BioNTech Responsible Person",
+        "description": "Investigator: BioNTech Responsible Person, BioNTech SE",
         "exampleBoolean": true
       },
       {
@@ -941,8 +965,8 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-systemische-vortherapie"
         },
-        "name": "MII PR MTB Systemische Therapie",
-        "description": "Systemische Therapie",
+        "name": "MII PR MTB Systemische Vortherapie",
+        "description": "Systemische Vortherapie zum Molekularen Tumorboard",
         "exampleBoolean": false
       },
       {
@@ -1444,7 +1468,7 @@
         },
         "name": "MTBChemo1Procedure",
         "description": "Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28; Sechs Zyklen ab 04.01.2023",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie"
       },
       {
         "reference": {
@@ -1494,7 +1518,151 @@
         },
         "name": "MTBChemo2Procedure",
         "description": "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.06.2023",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie"
+      },
+      {
+        "reference": {
+          "reference": "Group/mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups"
+        },
+        "name": "NCT04503278 Age Group",
+        "description": "NCT04503278 Eligibility Criteria Age Group",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-0"
+        },
+        "name": "NCT04503278 CLDN6 CAR-T",
+        "description": "NCT04503278 CLDN6 CAR-T: Administered as an intravenous (i.v.) infusion",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-1"
+        },
+        "name": "NCT04503278 CLDN6 uRNA-LPX/CLDN6 modRNA-LPX",
+        "description": "NCT04503278 CLDN6 uRNA-LPX/CLDN6 modRNA-LPX: Administered as an i.v. injection at protocol-specified intervals",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Group/mii-exa-mtb-study-cldn6-comparison-group-0"
+        },
+        "name": "NCT04503278 Comparison Group: Part 1 - CLDN6 CAR-T",
+        "description": "NCT04503278 CLDN6 CAR-T: Dose escalation in lymphodepleted patients until the MTD and/or RP2D",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Group/mii-exa-mtb-study-cldn6-comparison-group-1"
+        },
+        "name": "NCT04503278 Comparison Group: Part 2 Vaccine-modulated - CLDN6 uRNA-LPX/CLDN6 modRNA-LPX",
+        "description": "Dose escalation until the MTD and/or RP2D",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Group/mii-exa-mtb-study-cldn6-eligibility-criteria"
+        },
+        "name": "NCT04503278 Eligibility Criteria",
+        "description": "NCT04503278 Eligibility Criteria",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-0"
+        },
+        "name": "NCT04503278 L0",
+        "description": "NCT04503278 Location 0",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-1"
+        },
+        "name": "NCT04503278 L1",
+        "description": "NCT04503278 Location 1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-10"
+        },
+        "name": "NCT04503278 L10",
+        "description": "NCT04503278 Location 10",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-11"
+        },
+        "name": "NCT04503278 L11",
+        "description": "NCT04503278 Location 11",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-2"
+        },
+        "name": "NCT04503278 L2",
+        "description": "NCT04503278 Location 2",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-3"
+        },
+        "name": "NCT04503278 L3",
+        "description": "NCT04503278 Location 3",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-4"
+        },
+        "name": "NCT04503278 L4",
+        "description": "NCT04503278 Location 4",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-5"
+        },
+        "name": "NCT04503278 L5",
+        "description": "NCT04503278 Location 5",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-6"
+        },
+        "name": "NCT04503278 L6",
+        "description": "NCT04503278 Location 6",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-7"
+        },
+        "name": "NCT04503278 L7",
+        "description": "NCT04503278 Location 7",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-8"
+        },
+        "name": "NCT04503278 L8",
+        "description": "NCT04503278 Location 8",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mii-exa-mtb-study-cldn6-location-9"
+        },
+        "name": "NCT04503278 L9",
+        "description": "NCT04503278 Location 9",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -1750,7 +1918,7 @@
           "reference": "Observation/PatientKimMusterperson-Observation-26"
         },
         "name": "PatientKimMusterperson-Observation-26",
-        "description": "formal noch vermehrte mediastinale Lymphknoten",
+        "description": "geringer Aszites im kleinen Becken",
         "exampleBoolean": true
       },
       {
@@ -1758,15 +1926,7 @@
           "reference": "Observation/PatientKimMusterperson-Observation-27"
         },
         "name": "PatientKimMusterperson-Observation-27",
-        "description": "nicht mehr KM-aufnehmende mediastinale Lymphknoten",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Observation/PatientKimMusterperson-Observation-28"
-        },
-        "name": "PatientKimMusterperson-Observation-28",
-        "description": "geringer Aszites im kleinen Becken",
+        "description": "vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken aktuell metrisch nur noch schwer fassbar",
         "exampleBoolean": true
       },
       {
@@ -1774,7 +1934,7 @@
           "reference": "Observation/PatientKimMusterperson-Observation-29"
         },
         "name": "PatientKimMusterperson-Observation-29",
-        "description": "vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken aktuell metrisch nur noch schwer fassbar",
+        "description": "formal noch vermehrte mediastinale Lymphknoten",
         "exampleBoolean": true
       },
       {
@@ -1790,14 +1950,6 @@
           "reference": "Observation/PatientKimMusterperson-Observation-30"
         },
         "name": "PatientKimMusterperson-Observation-30",
-        "description": "formal noch vermehrte mediastinale Lymphknoten",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Observation/PatientKimMusterperson-Observation-31"
-        },
-        "name": "PatientKimMusterperson-Observation-31",
         "description": "nicht mehr KM-aufnehmende mediastinale Lymphknoten",
         "exampleBoolean": true
       },
@@ -1912,14 +2064,6 @@
         "name": "PatientKimMusterperson-Specimen-1",
         "description": "02.01.2023 Histologie (Z 230201/23)",
         "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
-        },
-        "name": "Phase 1/2 CLDN6 CAR-T-Zell-Studie",
-        "description": "Studie: Phase 1/2 CLDN6 CAR-T-Zell-Studie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
       },
       {
         "reference": {

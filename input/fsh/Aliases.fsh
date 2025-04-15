@@ -77,6 +77,8 @@ Alias: $mii-vs-mtb-response-befund-beurteilung = https://www.medizininformatik-i
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type
 Alias: $fhir-observation-category = http://terminology.hl7.org/CodeSystem/observation-category
+Alias: $hl7-organization-type = http://terminology.hl7.org/CodeSystem/organization-type
+Alias: $hl7-research-study-arm-type = http://hl7.org/fhir/research-study-arm-type
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
@@ -87,6 +89,8 @@ Alias: $request-status = http://hl7.org/fhir/request-status
 Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
 Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statement-status
 
+// Aliases für HL7 Extensions
+Alias: $fhir-ext-based-on = http://hl7.org/fhir/StructureDefinition/event-basedOn
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask

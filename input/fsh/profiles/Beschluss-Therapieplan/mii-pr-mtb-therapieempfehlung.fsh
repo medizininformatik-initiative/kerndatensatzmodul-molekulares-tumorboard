@@ -5,6 +5,12 @@ Title: "MII PR MTB Therapieempfehlung Systemische Therapie"
 Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * insert PR_Header
 
+* status ^short = "Umsetzungsstatus"
+* status ^definition = "Status der Umsetzung der Therapieempfehlung"
+* status ^comment = "draft: Nicht umgesetzt"
+* status ^comment = "active: In Umsetzung"
+* status ^comment = "completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+
 * medication[x] 1..1 MS
 * medicationReference only Reference(MII_PR_Medikation_Medication)
 
