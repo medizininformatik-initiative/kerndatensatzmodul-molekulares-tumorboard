@@ -16,6 +16,12 @@ Usage: #example
 // Primärdiagnosie (siehe KDS Erweiterungsmodul Onkologie)
 * problem = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 
+// NGS Bericht
+* investigation[NgsBericht].item = Reference(DiagnosticReport/mii-exa-mtb-kim-musterperson-ngs-bericht)
+
+// Molekular Pathologiebefund
+* investigation[MolekularPathologieBefund].item = Reference(DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1)
+
 // 10.06.2021 CT Abdomen (siehe KDS Erweiterungsmodul Onkologie)
 * supportingInfo[Vortherapie] = Reference(Procedure/PatientKimMusterperson-Procedure-1)
 * supportingInfo[Vorbefund] = Reference(Observation/PatientKimMusterperson-Observation-1)

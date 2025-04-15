@@ -27,8 +27,8 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * problem[PrimaertumorDiagnose] ^definition = "Verweise auf Diagnose des Primärtumors"
 * problem[PrimaertumorDiagnose] only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
-* investigation ^slicing.discriminator.type = #type
-* investigation ^slicing.discriminator.path = "code.item"
+* investigation ^slicing.discriminator.type = #value
+* investigation ^slicing.discriminator.path = "code.coding"
 * investigation ^slicing.rules = #open
 * investigation ^slicing.description = "Slice für relevante Ermittlungen"
 * investigation ^slicing.ordered = false

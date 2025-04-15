@@ -15,6 +15,40 @@
       "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
     }
   ],
+  "investigation": [
+    {
+      "item": [
+        {
+          "reference": "DiagnosticReport/mii-exa-mtb-kim-musterperson-ngs-bericht"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "106221001",
+            "system": "http://snomed.info/sct",
+            "display": "Genetic finding"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "721967005",
+            "system": "http://snomed.info/sct",
+            "display": "Tissue pathology biopsy report"
+          }
+        ]
+      }
+    }
+  ],
   "supportingInfo": [
     {
       "reference": "Procedure/PatientKimMusterperson-Procedure-7"
