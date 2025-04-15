@@ -24,4 +24,4 @@ Description: "Response Beurteilung nach DNPM"
 * valueCodeableConcept.coding.system = $mii-cs-mtb-response-befund-beurteilung
 * valueCodeableConcept.coding.code from MII_VS_MTB_Response_Befund_Beurteilung
 * partOf 1..* MS
-* partOf only Reference(MII_PR_MTB_Systemtherapie or MedicationStatement or Procedure)
+* partOf only Reference(MII_PR_MTB_Systemische_Therapie or Procedure)

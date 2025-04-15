@@ -1,14 +1,19 @@
-Profile: MII_PR_MTB_Systemtherapie
+Profile: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Parent: MedicationStatement
-Id: mii-pr-mtb-systemtherapie
-Title: "MII PR MTB Systemtherapie"
-Description: "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB Therapieempfehlung"
+Id: mii-pr-mtb-systemtherapie-medication-statement
+Title: "MII PR MTB Systemtherapie Medication Statement"
+Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosis"
 * insert PR_Header
 
 * basedOn 0..1 MS
 * basedOn only Reference(MII_PR_MTB_Therapieempfehlung or MedicationRequest)
 * basedOn ^short = "Therapieempfehlung"
 * basedOn ^definition = "Referenz auf Therapieempfehlung in MTB-Therapieplan"
+
+* partOf 1..1 MS
+* partOf only Reference(MII_PR_MTB_Systemische_Therapie or MedicationStatement)
+* partOf ^short = "Systemische Therapie"
+* partOf ^definition = "Dazugehörige MTB Systemische Therapie"
 
 * status MS
 * status ^short = "Status"
@@ -70,6 +75,7 @@ Description: "Systemtherapie nach Abschluss des MTB-Falls. Mit Referenz auf MTB 
 * note ^short = "Bemerkungen"
 * dosage MS
 // TODO: überlegen wie man die Codes aus ArtDecor als 'Dosage' data type darstellen kann
+// ist die Dosisdichte vielleicht eher eine Info für die Procedure?
 * dosage ^slicing.discriminator.type = #value
 * dosage ^slicing.discriminator.path = "system"
 * dosage ^slicing.rules = #open

@@ -31,7 +31,7 @@
       ]
     }
   ],
-  "description": "Systemische Therapie",
+  "description": "Systemische Therapie im Follow-Up nach Abschluss des MTB",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -41,42 +41,53 @@
   "differential": {
     "element": [
       {
-        "id": "Procedure.outcome.coding",
-        "path": "Procedure.outcome.coding",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "code"
-            }
-          ],
-          "rules": "open",
-          "description": "Slice für Abbruchsgrund",
-          "ordered": false
-        }
+        "id": "Procedure.basedOn",
+        "path": "Procedure.basedOn",
+        "short": "MTB Therapieplan",
+        "definition": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+            ]
+          }
+        ]
       },
       {
-        "id": "Procedure.outcome.coding:Abbruchsgrund",
-        "path": "Procedure.outcome.coding",
-        "sliceName": "Abbruchsgrund",
-        "short": "Abbruchsgrund Systemische Therapie",
-        "definition": "Angabe zum Abbruchsgrund der Systemischen Therapie",
-        "min": 0,
-        "max": "1",
+        "id": "Procedure.statusReason",
+        "path": "Procedure.statusReason",
+        "short": "Status Grund",
+        "definition": "Grund des Status der Therapie",
         "mustSupport": true
       },
       {
-        "id": "Procedure.outcome.coding:Abbruchsgrund.system",
-        "path": "Procedure.outcome.coding.system",
-        "patternUri": "http://snomed.info/sct"
+        "id": "Procedure.statusReason.coding",
+        "path": "Procedure.statusReason.coding",
+        "min": 1,
+        "max": "1"
       },
       {
-        "id": "Procedure.outcome.coding:Abbruchsgrund.code",
-        "path": "Procedure.outcome.coding.code",
+        "id": "Procedure.statusReason.coding.system",
+        "path": "Procedure.statusReason.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
+      },
+      {
+        "id": "Procedure.statusReason.coding.code",
+        "path": "Procedure.statusReason.coding.code",
+        "min": 1,
+        "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-abbruchsgrund"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
         }
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "short": "Durchführungszeitraum",
+        "definition": "Durchführungszeitraum der Therapie"
       }
     ]
   }
