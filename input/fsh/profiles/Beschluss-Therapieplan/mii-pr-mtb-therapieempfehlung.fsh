@@ -8,8 +8,8 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * status ^short = "Umsetzungsstatus"
 * status ^definition = "Status der Umsetzung der Therapieempfehlung"
 * status ^comment = "
-    draft: Nicht umgesetzt<br>
-    active: In Umsetzung<br>
+    draft: Nicht umgesetzt, 
+    active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
 * medication[x] 1..1 MS
