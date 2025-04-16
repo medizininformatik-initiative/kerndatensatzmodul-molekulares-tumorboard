@@ -8,8 +8,8 @@ Description: "Anfrage zum Studieneinschluss"
 * status ^short = "Umsetzungsstatus"
 * status ^definition = "Status der Umsetzung der Empfehlung"
 * status ^comment = "
-    draft: Nicht umgesetzt\n
-    active: In Umsetzung
+    draft: Nicht umgesetzt<br>
+    active: In Umsetzung<br>
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
 * intent = #proposal

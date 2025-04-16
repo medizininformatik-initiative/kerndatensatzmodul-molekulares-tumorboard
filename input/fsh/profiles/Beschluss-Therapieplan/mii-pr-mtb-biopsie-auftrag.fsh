@@ -8,8 +8,8 @@ Description: "Auftrag zur (erneuten) Biopsie"
 * status ^short = "Umsetzungsstatus"
 * status ^definition = "Status der Umsetzung der Empfehlung"
 * status ^comment = "
-    draft: Nicht umgesetzt\n
-    active: In Umsetzung\n
+    draft: Nicht umgesetzt<br>
+    active: In Umsetzung<br>
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
 * reasonCode 0..1 MS

@@ -8,8 +8,8 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * status ^short = "Umsetzungsstatus"
 * status ^definition = "Status der Umsetzung des Therapieplans"
 * status ^comment = "
-    active: Empfehlung bzw. Therapieoption in Umsetzung (Regelfall)\n
-    revoked: Molekularer Tumorboard-Fall ist abgeschlossen\n
+    active: Empfehlung bzw. Therapieoption in Umsetzung (Regelfall)<br>
+    revoked: Molekularer Tumorboard-Fall ist abgeschlossen<br>
     completed: Alle Empfehlungen bzw. Therapieoptionen ausgeschöpft oder Patient verstorben"
 
 * created MS 
