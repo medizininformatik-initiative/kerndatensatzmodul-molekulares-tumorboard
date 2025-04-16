@@ -7,9 +7,10 @@ Description: "Anfrage zum Studieneinschluss"
 
 * status ^short = "Umsetzungsstatus"
 * status ^definition = "Status der Umsetzung der Empfehlung"
-* status ^comment = "draft: Nicht umgesetzt"
-* status ^comment = "active: In Umsetzung"
-* status ^comment = "completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+* status ^comment = "
+    draft: Nicht umgesetzt\n
+    active: In Umsetzung
+    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
 * intent = #proposal
 * category = $SCT#110465008 "Clinical trial (procedure)"
