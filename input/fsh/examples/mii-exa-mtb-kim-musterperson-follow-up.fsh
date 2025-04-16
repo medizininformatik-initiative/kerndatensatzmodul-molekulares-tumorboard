@@ -5,20 +5,30 @@ Title: "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kost
 * status = #completed
 * investigation.code.coding.code = #completed // Daten im Bsp nicht vorhanden
 * subject = Reference(Patient/KimMusterperson)
-* supportingInfo[UmgesetzteTherapien][0] = Reference(MII-EXA-MTB-Systemtherapie-1)
-* supportingInfo[UmgesetzteTherapien][+] = Reference(MII-EXA-MTB-Systemtherapie-2)
-* supportingInfo[UmgesetzteTherapien][+] = Reference(MII-EXA-MTB-Systemtherapie-3)
+* supportingInfo[UmgesetzteTherapien][0] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * supportingInfo[AntraegeKostenuebernahme][0] = Reference(MII-EXA-MTB-Antrag-Kostenuebernahme-1)
 * supportingInfo[AntwortenKostenuebernahme][0] = Reference(MII-EXA-MTB-Antwort-Kostenuebernahme-1)
 
 
-// hier fehlt auch noch die übergeordnete SystemicTherapy-Procedure aus dem Onko-Modul
-/*
+Instance: MII-EXA-MTB-Systemische-Therapie-1
+InstanceOf: MII_PR_MTB_Systemische_Therapie
+Usage: #example
+Title: "24.06.2023 - 12.10.2023 Mirvetuximab soravtansine"
+* status = #completed
+* statusReason = #regular-completion
+* extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K // kurativ
+* code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
+* subject = Reference(Patient/KimMusterperson)
+* performedPeriod.start = "2023-06-24"
+* performedPeriod.end = "2023-10-12"
+* basedOn = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
+
 Instance: MII-EXA-MTB-Systemtherapie-1
-InstanceOf: MII_PR_MTB_Systemtherapie
+InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
@@ -33,11 +43,11 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 
 
 Instance: MII-EXA-MTB-Systemtherapie-2
-InstanceOf: MII_PR_MTB_Systemtherapie
+InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-
 * basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
@@ -53,11 +63,11 @@ Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 
 
 Instance: MII-EXA-MTB-Systemtherapie-3
-InstanceOf: MII_PR_MTB_Systemtherapie
+InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-
 * basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
@@ -70,34 +80,29 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
 * dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
-*/
 
 Instance: MII-EXA-MTB-Response-Befund-1
 InstanceOf: MII_PR_MTB_Response_Befund
 Usage: #example
 Title: "20.08.2023 CT T/A"
-
 * status = #final
 * code.coding.code = #396432002
 * method = $SCT#312251004 // Computed tomography
 * effectiveDateTime = "2023-08-20"
 * subject = Reference(Patient/KimMusterperson)
 * focus = Reference(MII_PR_Onko_Diagnose_Primaertumor/example)
-* partOf[0] = Reference(MII-EXA-MTB-Systemtherapie-1) 
-* partOf[1] = Reference(MII-EXA-MTB-Systemtherapie-2) 
-* partOf[2] = Reference(MII-EXA-MTB-Systemtherapie-3) 
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1) 
 * valueCodeableConcept.coding.code = #CR
 * component[Lymphknoten_Verlauf].code.coding.code = #399656008
 * component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K
 
-/*  folgende Instanzen bereit in Medikations-Datei abgebildet
-
 
 Instance: MII-EXA-MTB-Systemtherapie-4
-InstanceOf: MII_PR_MTB_Systemtherapie
+InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
@@ -112,11 +117,11 @@ Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 
 
 Instance: MII-EXA-MTB-Systemtherapie-5
-InstanceOf: MII_PR_MTB_Systemtherapie
+InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-
 * basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
@@ -131,11 +136,11 @@ Title: "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
 
 Instance: MII-EXA-MTB-Systemtherapie-6
-InstanceOf: MII_PR_MTB_Systemtherapie
+InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-
 * basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
@@ -148,23 +153,19 @@ Title: "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
 * dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
-*/ 
 
 
 Instance: MII-EXA-MTB-Response-Befund-2
 InstanceOf: MII_PR_MTB_Response_Befund
 Usage: #example
 Title: "22.10.2023 CT T/A"
-
 * status = #final
 * code.coding.code = #396432002
 * method = $SCT#312251004 // Computed tomography
 * effectiveDateTime = "2023-10-22"
 * subject = Reference(Patient/KimMusterperson)
 * focus = Reference(MII_PR_Onko_Diagnose_Primaertumor/example)
-* partOf[0] = Reference(MII-EXA-MTB-Systemtherapie-4) 
-* partOf[1] = Reference(MII-EXA-MTB-Systemtherapie-5) 
-* partOf[2] = Reference(MII-EXA-MTB-Systemtherapie-6) 
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * valueCodeableConcept.coding.code = #PR
 * component[Lymphknoten_Verlauf].code.coding.code = #399656008
 * component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K
@@ -183,7 +184,6 @@ Title: "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine"
 * prescription = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
 * insurance.coverage = Reference(Coverage/CoverageExample) // Daten im Bsp nicht vorhanden
 * insurance.claimResponse = Reference(ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1)
-
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample) // Daten im Bsp nicht vorhanden
 * careTeam[ZPMBeteiligung].responsible = true // Daten im Bsp nicht vorhanden
 * related.relationship.coding.code = #initial-claim
