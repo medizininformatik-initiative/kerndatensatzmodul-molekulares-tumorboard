@@ -109,6 +109,7 @@
 [MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
 [MII_PR_MTB_Systemische_Vortherapie]: StructureDefinition-mii-pr-mtb-systemische-vortherapie.html
 [MII_PR_MTB_Systemische_Therapie_Medication_Statement]: StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.html
+[MII_PR_MTB_TherapeutischeImplikation]: StructureDefinition-mii-pr-mtb-therapeutische-implikation.html
 [MII_PR_MTB_Therapieempfehlung_Kombination]: StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html
 [MII_PR_MTB_Therapieempfehlung]: StructureDefinition-mii-pr-mtb-therapieempfehlung.html
 [MII_PR_MTB_Therapieplan]: StructureDefinition-mii-pr-mtb-therapieplan.html
