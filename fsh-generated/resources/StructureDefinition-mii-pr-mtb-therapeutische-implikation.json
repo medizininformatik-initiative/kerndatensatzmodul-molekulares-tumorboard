@@ -3,7 +3,7 @@
   "id": "mii-pr-mtb-therapeutische-implikation",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapeutische-implikation",
   "version": "2024.0.0-ballot",
-  "name": "MII_PR_MTB_TherapeutischeImplikation",
+  "name": "MII_PR_MTB_Therapeutische_Implikation",
   "title": "MII PR MTB Therapeutische Implikation",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
@@ -32,31 +32,20 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.component:evidence-level",
-        "path": "Observation.component",
-        "sliceName": "evidence-level",
-        "definition": "Evidenzlevel gemäß NCT-Klassifikation."
-      },
-      {
-        "id": "Observation.component:evidence-level.code",
-        "path": "Observation.component.code",
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "93044-6",
-              "system": "http://loinc.org",
-              "display": "Level of evidence"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:evidence-level.value[x]",
-        "path": "Observation.component.value[x]",
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-evidenzgrad"
-        }
+        "id": "Observation.extension:Evidenzgraduierung",
+        "path": "Observation.extension",
+        "sliceName": "Evidenzgraduierung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+            ]
+          }
+        ],
+        "mustSupport": true
       }
     ]
   }
