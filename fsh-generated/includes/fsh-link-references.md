@@ -132,7 +132,7 @@
 [MII_VS_MTB_Immunhistochemistry_Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
-[MII_VS_MTB_Systemtherapie_Status]: ValueSet-mii-vs-mtb-systemtherapie-status.html
+[MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html

@@ -16,13 +16,6 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * partOf ^definition = "Dazugehörige MTB Systemische Therapie"
 
 * status MS
-* status ^short = "Status"
-* status from MII_VS_MTB_Systemtherapie_Status
-// RULE: WENN STATUS COMPLETED ODER STOPPED -> MUSS SYSTEMISCHE THERAPIE ENDE GRUND AUSFÜLLEN
-* statusReason 0..1 MS
-* statusReason from https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/ValueSet/mii-vs-systemische-therapie-ende-grund
-* statusReason ^short = "Systemische Therapie Ende Grund" 
-* statusReason ^definition = "Gibt den Grund an, warum die Systemtherapie beendet wurde." 
 
 * medication[x] MS
 * medication[x] ^short = "Wirkstoffe"

@@ -9,9 +9,10 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 
 * status ^short = "Umsetzungsstatus"
 * status ^definition = "Status der Umsetzung der Therapieempfehlung"
-* status ^comment = "draft: Nicht umgesetzt"
-* status ^comment = "active: In Umsetzung"
-* status ^comment = "completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+* status ^comment = "
+    draft: Nicht umgesetzt, 
+    active: In Umsetzung, 
+    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
 * replaces only Reference(
     MII_PR_MTB_Therapieempfehlung_Kombination or

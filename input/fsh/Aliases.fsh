@@ -87,7 +87,7 @@ Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequ
 Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
 Alias: $request-status = http://hl7.org/fhir/request-status
 Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
-Alias: $systemtherapie-status = http://hl7.org/fhir/CodeSystem/medication-statement-status
+Alias: $systemtherapie-status = http://hl7.org/fhir/ValueSet/event-status
 
 // Aliases für HL7 Extensions
 Alias: $fhir-ext-based-on = http://hl7.org/fhir/StructureDefinition/event-basedOn

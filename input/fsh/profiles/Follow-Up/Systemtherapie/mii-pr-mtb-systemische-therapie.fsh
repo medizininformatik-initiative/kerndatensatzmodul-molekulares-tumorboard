@@ -8,6 +8,9 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 
 
 * status MS
+* status ^short = "Status"
+* status from MII_VS_MTB_Systemtherapie_Status
+
 * statusReason MS
 * statusReason ^short = "Status Grund"
 * statusReason ^definition = "Grund des Status der Therapie"

@@ -35,7 +35,6 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * effectivePeriod.start = "2023-06-24"
 * effectivePeriod.end = "2023-06-24"
 * note.text = "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* status = #completed
 * dosage[Dosis].doseAndRate.doseQuantity.value = 6
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
@@ -54,7 +53,6 @@ Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * effectivePeriod.start = "2023-07-16"
 * effectivePeriod.end = "2023-07-16"
 * note.text = "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* status = #completed
 * statusReason = #E // Daten im Bsp nicht vorhanden
 * dosage[Dosis].doseAndRate.doseQuantity.value = 6
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
@@ -74,7 +72,6 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * effectivePeriod.start = "2023-08-07"
 * effectivePeriod.end = "2023-08-07"
 * note.text = "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* status = #completed
 * statusReason = #E // Daten im Bsp nicht vorhanden
 * dosage[Dosis].doseAndRate.doseQuantity.value = 6
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
@@ -109,7 +106,6 @@ Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * effectivePeriod.start = "2023-08-29"
 * effectivePeriod.end = "2023-08-29"
 * note.text = "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* status = #completed
 * dosage[Dosis].doseAndRate.doseQuantity.value = 6
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
@@ -128,7 +124,6 @@ Title: "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * effectivePeriod.start = "2023-09-20"
 * effectivePeriod.end = "2023-09-20"
 * note.text = "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* status = #completed
 * statusReason = #E // Daten im Bsp nicht vorhanden
 * dosage[Dosis].doseAndRate.doseQuantity.value = 6
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
@@ -147,8 +142,6 @@ Title: "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * effectivePeriod.start = "2023-10-12"
 * effectivePeriod.end = "2023-10-12"
 * note.text = "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* status = #completed
-* statusReason = #E // Daten im Bsp nicht vorhanden
 * dosage[Dosis].doseAndRate.doseQuantity.value = 6
 * dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
