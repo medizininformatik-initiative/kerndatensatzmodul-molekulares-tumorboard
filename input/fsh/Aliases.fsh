@@ -91,6 +91,7 @@ Alias: $systemtherapie-status = http://hl7.org/fhir/ValueSet/event-status
 
 // Aliases für HL7 Extensions
 Alias: $fhir-ext-based-on = http://hl7.org/fhir/StructureDefinition/event-basedOn
+Alias: $fhir-ext-caused-by = http://hl7.org/fhir/StructureDefinition/procedure-causedBy
 
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask

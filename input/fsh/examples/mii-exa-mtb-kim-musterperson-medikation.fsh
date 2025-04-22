@@ -2,7 +2,7 @@
 RuleSet: SystemTherapyMedicationStatement(text, dateTime, procedure, parent, atc, doseValue, doseUnit, doseUnitCode)
 * partOf[+] = Reference(Procedure/{procedure})
 * partOf[+] = Reference(MedicationStatement/{parent})
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE{atc}
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = {dateTime}
@@ -33,7 +33,7 @@ Instance: MTBChemo1MedicationStatement1
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.text = "Z1 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-01-04"
@@ -55,7 +55,7 @@ Instance: MTBChemo1MedicationStatement2
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.text = "Z2 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-02-01"
@@ -77,7 +77,7 @@ Instance: MTBChemo1MedicationStatement3
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.text = "Z3 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-03-01"
@@ -99,7 +99,7 @@ Instance: MTBChemo1MedicationStatement4
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.text = "Z4 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-03-29"
@@ -121,7 +121,7 @@ Instance: MTBChemo1MedicationStatement5
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.text = "Z5 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-04-26"
@@ -143,7 +143,7 @@ Instance: MTBChemo1MedicationStatement6
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.text = "Z6 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-05-24"
@@ -185,7 +185,7 @@ Instance: MTBChemo2MedicationStatement1
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-06-24"
@@ -200,7 +200,7 @@ Instance: MTBChemo2MedicationStatement2
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-07-16"
@@ -215,7 +215,7 @@ Instance: MTBChemo2MedicationStatement3
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-08-07"
@@ -230,7 +230,7 @@ Instance: MTBChemo2MedicationStatement4
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-08-29"
@@ -245,7 +245,7 @@ Instance: MTBChemo2MedicationStatement5
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-09-20"
@@ -260,7 +260,7 @@ Instance: MTBChemo2MedicationStatement6
 InstanceOf: MII_PR_Medikation_MedicationStatement
 Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
-* status = $systemtherapie-status#completed
+* status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-10-12"

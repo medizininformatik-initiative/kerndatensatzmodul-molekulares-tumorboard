@@ -9,7 +9,7 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 
 * status MS
 * status ^short = "Status"
-* status from MII_VS_MTB_Systemtherapie_Status
+* status from MII_VS_MTB_Systemische_Therapie_Status
 
 * statusReason MS
 * statusReason ^short = "Status Grund"
@@ -18,6 +18,9 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 * statusReason.coding.system = $mii-cs-mtb-follow-up-grund-nicht-umsetzung
 * statusReason.coding.code 1..1 MS 
 * statusReason.coding.code from $mii-cs-mtb-follow-up-grund-nicht-umsetzung
+
+* extension contains $fhir-ext-caused-by named causedBy 0..1 MS
+* extension[causedBy] ^short = "Therapieempfehlung"
 
 * subject MS
 

@@ -11,11 +11,13 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * basedOn ^definition = "Referenz auf Therapieempfehlung in MTB-Therapieplan"
 
 * partOf 1..1 MS
-* partOf only Reference(MII_PR_MTB_Systemische_Therapie or MedicationStatement)
+* partOf only Reference(MII_PR_MTB_Systemische_Therapie or Procedure or MedicationStatement)
 * partOf ^short = "Systemische Therapie"
 * partOf ^definition = "Dazugehörige MTB Systemische Therapie"
 
 * status MS
+// * status ^short = "Status"
+// * status from MII_VS_MTB_Systemische_Therapie_Status
 
 * medication[x] MS
 * medication[x] ^short = "Wirkstoffe"
