@@ -120,6 +120,8 @@ Usage: #example
 * component[conclusion-string].valueString = "Ausweislich praeklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3)."
 * component[medication-assessed].code = $LNC#51963-7 "Medication assessed [ID]"
 * component[medication-assessed].valueCodeableConcept = $ATC_DE#L01EE "Mitogen-akivierte Proteinkinase (MEK)-Inhibitoren"
+* component[evidence-level].code = $LNC#93044-6 "Evidence level"
+* component[evidence-level].valueCodeableConcept = $mii-cs-mtb-empfehlung-evidenzgrad#m3
 
 // Kopienzahlveränderung von CCNE1.
 Instance: mii-exa-mtb-kim-musterperson-CNVariante-CCNE1
