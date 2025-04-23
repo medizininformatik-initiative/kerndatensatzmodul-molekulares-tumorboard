@@ -1,6 +1,6 @@
 Profile: MII_PR_MTB_Follow_Up_ClinicalImpression
 Parent: ClinicalImpression
-Id: mii-pr-mtb-follow-up-clincalimpression
+Id: mii-pr-mtb-follow-up-clinicalimpression
 Title: "MII PR MTB Clinical Impresssion"
 Description: "Follow-Up nach DNPM "
 * insert PR_Header
