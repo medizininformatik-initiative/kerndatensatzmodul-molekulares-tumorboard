@@ -10,6 +10,7 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 
 // TODO Constrain status to draft?
 // TODO Constrain intent to proposal and option? (Option is needed for RequestGroup)
+// statt supportingInformation hier besser * reasonReference -> das hat die Semantik, dass die Empfehlung auf eine bestimmte Diagnose/Variante zurückgeht
 
 * supportingInformation 0..* MS
 * supportingInformation ^slicing.discriminator.type = #type

@@ -57,7 +57,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Mirvetuximab soravtansine"
 Description: "Therapieempfehlung: Mirvetuximab soravtansine, Priorität: 1, Evidenzgrad: m1A"
 Usage: #example
-* status = #active
+* status = #completed
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * basedOn = Reference(MII_PR_MTB_Therapieplan/mii-exa-mtb-kim-musterperson-therapieplan)
@@ -131,6 +131,7 @@ Usage: #example
 * status = #draft
 * subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-ccne1)
+ // link über ReasonReference auf Variante/ Diagnostische Implikation / Therapeutische Implikations
 * insert BeschlussSubPrioritaet(2.3)
 
 // Prio 3: Trastuzumab deruxtecan (m1B)
@@ -283,3 +284,4 @@ Usage: #example
 * medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
 * insert BeschlussPrioritaet(6)
 * insert BeschlussEvidenz(m3, $pmid, 31209687)
+
