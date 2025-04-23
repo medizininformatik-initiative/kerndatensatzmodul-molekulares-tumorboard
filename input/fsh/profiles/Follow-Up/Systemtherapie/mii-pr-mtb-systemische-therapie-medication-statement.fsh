@@ -60,7 +60,7 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * subject MS
 * subject only Reference(Patient)
 * effective[x] 1..1 MS
-* effective[x] only Period
+* effective[x]
 * effectivePeriod MS
 * effectivePeriod.start 1..1 MS
 * effectivePeriod.start ^short = "Startdatum"

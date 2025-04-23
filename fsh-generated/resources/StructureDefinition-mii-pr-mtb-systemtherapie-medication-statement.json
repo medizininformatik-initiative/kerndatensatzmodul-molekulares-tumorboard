@@ -210,7 +210,25 @@
       {
         "id": "MedicationStatement.effective[x]",
         "path": "MedicationStatement.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.effective[x]:effectivePeriod",
+        "path": "MedicationStatement.effective[x]",
+        "sliceName": "effectivePeriod",
+        "min": 0,
+        "max": "1",
         "type": [
           {
             "code": "Period"
@@ -219,14 +237,14 @@
         "mustSupport": true
       },
       {
-        "id": "MedicationStatement.effective[x].start",
+        "id": "MedicationStatement.effective[x]:effectivePeriod.start",
         "path": "MedicationStatement.effective[x].start",
         "short": "Startdatum",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "MedicationStatement.effective[x].end",
+        "id": "MedicationStatement.effective[x]:effectivePeriod.end",
         "path": "MedicationStatement.effective[x].end",
         "short": "Enddatum",
         "min": 1,
