@@ -32,6 +32,20 @@
         "mustSupport": true
       },
       {
+        "id": "RequestGroup.extension",
+        "path": "RequestGroup.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
         "id": "RequestGroup.extension:Prioritaet",
         "path": "RequestGroup.extension",
         "sliceName": "Prioritaet",
@@ -102,13 +116,14 @@
       {
         "id": "RequestGroup.status",
         "path": "RequestGroup.status",
-        "short": "Umsetzungsstatus",
         "definition": "Status der Umsetzung der Therapieempfehlung",
         "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
       },
       {
         "id": "RequestGroup.intent",
         "path": "RequestGroup.intent",
+        "short": "proposal | option",
+        "definition": "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,\ndiese Therapieempfehlung ist selbst nochmal Teil einer RequestGroup. In dem Fall muss hier 'option' stehen.",
         "mustSupport": true
       },
       {

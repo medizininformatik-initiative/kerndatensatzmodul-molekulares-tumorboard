@@ -5,18 +5,20 @@ Title: "MII PR MTB Therapieempfehlung Systemische Therapie"
 Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * insert PR_Header
 
-* status ^short = "Umsetzungsstatus"
+* status ^short = "active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown"
 * status ^definition = "Status der Umsetzung der Therapieempfehlung"
 * status ^comment = "
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
+// TODO Strictly Constrain intent to proposal and option? (Option is needed for RequestGroup)
+* intent ^short = "proposal | option"
+* intent ^definition = "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,
+        diese Therapieempfehlung ist Teil einer RequestGroup (z.B. Kombinationstherapie). In dem Fall muss hier 'option' stehen."
+
 * medication[x] 1..1 MS
 * medicationReference only Reference(MII_PR_Medikation_Medication)
-
-// TODO Constrain status to draft?
-// TODO Constrain intent to proposal and option? (Option is needed for RequestGroup)
 
 * supportingInformation 0..* MS
 * supportingInformation ^slicing.discriminator.type = #type
