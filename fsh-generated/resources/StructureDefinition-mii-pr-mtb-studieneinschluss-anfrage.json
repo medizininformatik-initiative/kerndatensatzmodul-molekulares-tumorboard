@@ -32,20 +32,6 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.extension",
-        "path": "ServiceRequest.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
         "id": "ServiceRequest.extension:Prioritaet",
         "path": "ServiceRequest.extension",
         "sliceName": "Prioritaet",
@@ -82,7 +68,7 @@
         "path": "ServiceRequest.status",
         "short": "Umsetzungsstatus",
         "definition": "Status der Umsetzung der Empfehlung",
-        "comment": "\r\n    draft: Nicht umgesetzt, \r\n    active: In Umsetzung, \r\n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+        "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
       },
       {
         "id": "ServiceRequest.intent",
