@@ -91,9 +91,15 @@
       {
         "id": "MedicationRequest.status",
         "path": "MedicationRequest.status",
-        "short": "Umsetzungsstatus",
+        "short": "active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown",
         "definition": "Status der Umsetzung der Therapieempfehlung",
         "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "short": "proposal | option",
+        "definition": "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,\n        diese Therapieempfehlung ist Teil einer RequestGroup (z.B. Kombinationstherapie). In dem Fall muss hier 'option' stehen."
       },
       {
         "id": "MedicationRequest.supportingInformation",
