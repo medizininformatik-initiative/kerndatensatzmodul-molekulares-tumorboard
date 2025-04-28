@@ -3,7 +3,7 @@
   "id": "mii-pr-mtb-immunohistochemistry",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry",
   "version": "2024.0.0-ballot",
-  "name": "MII_PR_MTB_IMMUNOHISTOCHEMISTRY",
+  "name": "MII_PR_MTB_Immunohistochemistry",
   "title": "MII PR MTB Immunohistochemistry",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
@@ -22,15 +22,10 @@
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker",
   "derivation": "constraint",
   "differential": {
     "element": [
-      {
-        "id": "Observation.meta",
-        "path": "Observation.meta",
-        "mustSupport": true
-      },
       {
         "id": "Observation.identifier",
         "path": "Observation.identifier",

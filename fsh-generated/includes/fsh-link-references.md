@@ -87,8 +87,10 @@
 [MII_PR_MTB_HRD_Score]: StructureDefinition-mii-pr-mtb-hrd-score.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
 [MII_PR_MTB_HISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-histochemistry.html
-[MII_PR_MTB_IMMUNOHISTOCHEMISTRY_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
-[MII_PR_MTB_IMMUNOHISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
+[MII_PR_MTB_Immunohistochemistry]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
+[MII_PR_MTB_Immunohistochemistry_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
+[MII_PR_MTB_Immunohistochemistry_MMR_MSI]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr-msi.html
+[MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
 [MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
 [MII_PR_MTB_Molekularer_Biomarker]: StructureDefinition-mii-pr-mtb-molekularer-biomarker.html
@@ -170,7 +172,6 @@
 [MTBChemo2MedicationStatement5]: MedicationStatement-MTBChemo2MedicationStatement5.html
 [MTBChemo2MedicationStatement6]: MedicationStatement-MTBChemo2MedicationStatement6.html
 [MTBChemo2Procedure]: Procedure-MTBChemo2Procedure.html
-[Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [PatientKimMusterperson]: Patient-PatientKimMusterperson.html
 [PatientKimMusterperson-AscitesSpecimen-2]: Specimen-PatientKimMusterperson-AscitesSpecimen-2.html
 [PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu.html

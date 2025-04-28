@@ -16,6 +16,7 @@ Description: "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis v
 * category[labCategory].coding.system 1..1
 * category[labCategory].coding.code = #laboratory
 * category[labCategory].coding.system = $fhir-observation-category
+// to include in every Observation, copy:  * category[labCategory].coding= $fhir-observation-category#laboratory
 
 // TODO Fhir comment about missing category and component
 // mbCategory left out, since the code 'biomarker-category' does not yet exist in STU2.
@@ -25,6 +26,8 @@ Description: "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis v
 * category[geCategory].coding.system 1..1
 * category[geCategory].coding.code = #GE
 * category[geCategory].coding.system = $hl7-v2-0074
+// to include in every Observation, copy:  * category[geCategory].coding= $hl7-v2-0074#GE
+
 
 * code 1..1
 * code from $mii-vs-mtb-molekulare-biomarker (extensible)
@@ -54,4 +57,4 @@ Description: "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis v
 * component[gene-studied].code.coding.system = $LNC
 * component[gene-studied].code.coding.code = #48018-6
 * component[gene-studied].valueCodeableConcept ^short = "The HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
-* component[gene-studied].valueCodeableConcept from http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs (extensible)
+//* component[gene-studied].valueCodeableConcept from http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs (extensible)
