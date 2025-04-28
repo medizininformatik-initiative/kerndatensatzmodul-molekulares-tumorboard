@@ -29,7 +29,7 @@ package FollowUp <<Rectangle>> {
 package Behandlungsepisode <<Rectangle>> {
     object MII_PR_MTB_WHO_Grad_Tumor_ZNS #AA4499
     object MII_PR_MTB_Tumorausbreitung #AA4499
-    object MII_PR_MTB_Systemische_Therapie #44AA99
+    object MII_PR_MTB_Systemische_Vortherapie #44AA99
     object MII_PR_MTB_Diagnose_Primaertumor #999933
     object MII_PR_MTB_Behandlungsepisode #882255
 }
@@ -80,7 +80,7 @@ MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_Tumorausbreitung : stage[Molekul
 MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Diagnose_Primaertumor : problem[PrimaertumorDiagnose]
 MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_NGS_Bericht : investigation[NgsBericht].item
 MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT : investigation[MolekularPathologieBefund].item
-MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Systemische_Therapie : supportingInfo[Vortherapie]
+MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Systemische_Vortherapie : supportingInfo[Vortherapie]
 'End Behandlungsepisode
 
 'Start Beschluss-Therapieplan

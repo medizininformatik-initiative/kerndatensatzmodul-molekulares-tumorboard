@@ -1,0 +1,37 @@
+{
+  "resourceType": "ClinicalImpression",
+  "id": "MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
+    ]
+  },
+  "investigation": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "on-going"
+          }
+        ]
+      }
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "MII_PR_MTB_Systemische_Therapie/Example"
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/PatientExample"
+  },
+  "effectiveDateTime": "2024-07-07",
+  "statusReason": {
+    "coding": [
+      {
+        "code": "no-indication"
+      }
+    ]
+  }
+}

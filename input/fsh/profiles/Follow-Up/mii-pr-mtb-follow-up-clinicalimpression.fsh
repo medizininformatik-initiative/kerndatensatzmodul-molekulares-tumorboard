@@ -1,6 +1,6 @@
 Profile: MII_PR_MTB_Follow_Up_ClinicalImpression
 Parent: ClinicalImpression
-Id: mii-pr-mtb-follow-up-clincalimpression
+Id: mii-pr-mtb-follow-up-clinicalimpression
 Title: "MII PR MTB Clinical Impresssion"
 Description: "Follow-Up nach DNPM "
 * insert PR_Header
@@ -10,10 +10,15 @@ Description: "Follow-Up nach DNPM "
 
 * investigation MS
 * investigation ^short = "Status Follow-Up"
+* investigation ^definition = "Status des Patienten im Hinblick auf das Follow-Up"
 * investigation.code.coding.system = $mii-cs-mtb-follow-up-status
 * investigation.code.coding.code from MII_VS_MTB_Follow_Up_Status
 
-
+// hier mit einem eigenen VS, auslassen oder hier *auch* den VS verwenden?
+// man kann den Grund für die nicht-umsetzung 
+// ja eigentlich an dem grund nicht-umsetzung der einzelnen therapien herleiten
+// andererseits muss man wenn gar keine therapie erfasst wurde hier evtl auch einen
+// grund hinterlegen warum es nicht geklappt hat oder eine "leere" Therapie mit Status und StatusReason
 * statusReason MS
 * statusReason ^short = "Grund Nicht-Umsetzung"
 * statusReason ^definition = "Grund der Nicht-Umsetzung des gesamten Therapieplans"
@@ -31,9 +36,9 @@ Description: "Follow-Up nach DNPM "
 
 * supportingInfo 1..* MS
 * supportingInfo ^slicing.discriminator.type = #type
-* supportingInfo ^slicing.discriminator.path = "system"
+* supportingInfo ^slicing.discriminator.path = "$this"
 * supportingInfo ^slicing.rules = #open
-* supportingInfo ^slicing.description = "Slice für die durch das Follow-Up gewonnen Informationen"
+* supportingInfo ^slicing.description = "Slice für die durch das Follow-Up gewonnenen Informationen"
 * supportingInfo ^slicing.ordered = false
 * supportingInfo contains
     UmgesetzteTherapien 0..* MS and
@@ -41,7 +46,7 @@ Description: "Follow-Up nach DNPM "
     AntwortenKostenuebernahme 0..*
 
 * supportingInfo[UmgesetzteTherapien] ^short = "Umgesetzte Therapien"
-* supportingInfo[UmgesetzteTherapien] only Reference(MII_PR_MTB_Systemtherapie or MedicationStatement or Procedure)
+* supportingInfo[UmgesetzteTherapien] only Reference(MII_PR_MTB_Systemische_Therapie or Procedure)
 * supportingInfo[AntraegeKostenuebernahme] ^short = "Anträge Kostenübernahme"
 * supportingInfo[AntraegeKostenuebernahme] only Reference(MII_PR_MTB_Antrag_Kostenuebernahme)
 * supportingInfo[AntwortenKostenuebernahme] ^short = "Antworten Kostenübernahme"

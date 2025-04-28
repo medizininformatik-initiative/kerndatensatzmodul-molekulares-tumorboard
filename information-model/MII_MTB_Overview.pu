@@ -57,13 +57,13 @@ package MII_Modul_Molekulares_Tumorboard {
 
     object Diagnose
     object Vortherapie
-    object MTB_Systemische_Therapie
+    object MTB_Systemische_Vortherapie
     MII_Onko_Diagnose <|... Diagnose
     MII_Onko_Systemische_Therapie <|... Vortherapie
-    MII_Onko_Systemische_Therapie <|... MTB_Systemische_Therapie
+    MII_Onko_Systemische_Therapie <|... MTB_Systemische_Vortherapie
     ISH_Befund -[hidden]right- IHC_Befund 
     Diagnose  -[hidden]down-Vortherapie
-    Vortherapie -[hidden]down- MTB_Systemische_Therapie
+    Vortherapie -[hidden]down- MTB_Systemische_Vortherapie
     
 
 
@@ -78,7 +78,7 @@ ISH_Befund -[hidden]down- MII_MTB_Neuprofilierungen
 }
 MII_Modul_Biobank -[hidden]left-  MII_Modul_Molekulares_Tumorboard
 MII_Modul_Onkologie -[hidden]left-  MII_Modul_Molekulares_Tumorboard
-MII_Modul_Onkologie -[hidden]left-  MTB_Systemische_Therapie
+MII_Modul_Onkologie -[hidden]left-  MTB_Systemische_Vortherapie
 MII_Modul_Onkologie -[hidden]left-   Diagnose
 MII_Onko_Diagnose -[hidden]down- MII_Onko_Systemische_Therapie
 

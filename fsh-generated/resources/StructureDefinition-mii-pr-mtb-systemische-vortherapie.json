@@ -1,0 +1,116 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-systemische-vortherapie",
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/spdx-license",
+            "code": "CC-BY-4.0",
+            "display": "Creative Commons Attribution 4.0 International"
+          }
+        ]
+      }
+    }
+  ],
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Systemische_Vortherapie",
+  "title": "MII PR MTB Systemische Vortherapie",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Systemische Vortherapie zum Molekularen Tumorboard",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-systemische-therapie",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.basedOn",
+        "path": "Procedure.basedOn",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für referenzierten Therapieplan",
+          "ordered": false
+        }
+      },
+      {
+        "id": "Procedure.basedOn:Therapieplan",
+        "path": "Procedure.basedOn",
+        "sliceName": "Therapieplan",
+        "short": "Therpieplan",
+        "definition": "Verweis auf den im Molekularen Tumorboard beschlossenen Therpieplan",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.outcome.coding",
+        "path": "Procedure.outcome.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Abbruchsgrund",
+          "ordered": false
+        }
+      },
+      {
+        "id": "Procedure.outcome.coding:Abbruchsgrund",
+        "path": "Procedure.outcome.coding",
+        "sliceName": "Abbruchsgrund",
+        "short": "Abbruchsgrund Systemische Therapie",
+        "definition": "Angabe zum Abbruchsgrund der Systemischen Therapie",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.outcome.coding:Abbruchsgrund.system",
+        "path": "Procedure.outcome.coding.system",
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Procedure.outcome.coding:Abbruchsgrund.code",
+        "path": "Procedure.outcome.coding.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-abbruchsgrund"
+        }
+      }
+    ]
+  }
+}

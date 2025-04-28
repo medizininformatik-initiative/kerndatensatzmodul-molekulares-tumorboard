@@ -314,7 +314,7 @@ Instance: PatientKimMusterperson-Observation-20
 InstanceOf: Observation
 Usage: #example
 Description: "regredienter Aszites"
-* partOf = Reference(PatientKimMusterperson-Procedure-4)
+* partOf = Reference(PatientKimMusterperson-Procedure-5)
 * status = #final
 * code.coding = $SCT#389026000 "Acites"
 * code.text = "Aszites"
@@ -325,7 +325,7 @@ Instance: PatientKimMusterperson-Observation-21
 InstanceOf: Observation
 Usage: #example
 Description: "rückläufige KM-Aufnahme der lokalrezidivsuspekten Raumforderung im kleinen Becken"
-* partOf = Reference(PatientKimMusterperson-Procedure-4)
+* partOf = Reference(PatientKimMusterperson-Procedure-5)
 * status = #final
 * code.coding = $SCT#80266002 "True pelvis"
 * code.text = "im kleinen Becken"
@@ -337,7 +337,7 @@ Instance: PatientKimMusterperson-Observation-22
 InstanceOf: Observation
 Usage: #example
 Description: "noch flaue, aber insgesamt regrediente KM-Aufnhame der zahlenmäßig vermehrten LK im Mediastinum"
-* partOf = Reference(PatientKimMusterperson-Procedure-4)
+* partOf = Reference(PatientKimMusterperson-Procedure-5)
 * status = #final
 * code.coding = $SCT#274744005 "Localized enlarged lymph nodes"
 * code.text = "zahlenmäßig vermehrten LK im Mediastinum"
@@ -349,7 +349,7 @@ Instance: PatientKimMusterperson-Observation-23
 InstanceOf: Observation
 Usage: #example
 Description: "keine neue metastasensuspekte Läsion"
-* partOf = Reference(PatientKimMusterperson-Procedure-4)
+* partOf = Reference(PatientKimMusterperson-Procedure-5)
 * status = #final
 * code.coding = $SCT#52988006 "Lesion"
 * code.text = "Läsion"
@@ -358,7 +358,6 @@ Description: "keine neue metastasensuspekte Läsion"
 
 // 20.08.2023 CT T/A: 
 // - [x] kein Aszites, fast vollständig regredientes Lokalrezidiv ohne KM-Aufnahme im kleinen Becken
-// - [ ] formal noch vermehrte, jedoch nicht mehr KM-aufnehmende mediastinale Lymphknoten
 Instance: PatientKimMusterperson-Procedure-6
 InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
@@ -374,7 +373,7 @@ Instance: PatientKimMusterperson-Observation-24
 InstanceOf: Observation
 Usage: #example
 Description: "kein Aszites"
-* partOf = Reference(PatientKimMusterperson-Procedure-3)
+* partOf = Reference(PatientKimMusterperson-Procedure-6)
 * status = #final
 * code.coding = $SCT#389026000 "Acites"
 * valueCodeableConcept.coding = $SCT#860638000 "No ascites"
@@ -384,7 +383,7 @@ Instance: PatientKimMusterperson-Observation-25
 InstanceOf: Observation
 Usage: #example
 Description: "fast vollständig regredientes Lokalrezidiv ohne KM-Aufnahme im kleinen Becken"
-* partOf = Reference(PatientKimMusterperson-Procedure-3)
+* partOf = Reference(PatientKimMusterperson-Procedure-6)
 * status = #final
 * code.coding = $SCT#255227004 "Recurrent"
 * code.text = "Lokalrezidiv"
@@ -394,34 +393,9 @@ Description: "fast vollständig regredientes Lokalrezidiv ohne KM-Aufnahme im kl
 * valueCodeableConcept.coding[+] = $SCT#151174005 "Drug intake observed"
 * valueCodeableConcept.text = "regredientes Lokalrezidiv ohne KM-Aufnahme im kleinen Becken"
 
-
-Instance: PatientKimMusterperson-Observation-26
-InstanceOf: Observation
-Usage: #example
-Description: "formal noch vermehrte mediastinale Lymphknoten"
-* partOf = Reference(PatientKimMusterperson-Procedure-3)
-* status = #final
-* code.coding = $SCT#245276004 "Mediastinal lymph node group"
-* code.text = "mediastinale Lymphknoten"
-* valueCodeableConcept.coding = $SCT#35105006 "Increased"
-* valueCodeableConcept.text = "formal noch vermehrte"
-
-Instance: PatientKimMusterperson-Observation-27
-InstanceOf: Observation
-Usage: #example
-Description: "nicht mehr KM-aufnehmende mediastinale Lymphknoten"
-* partOf = Reference(PatientKimMusterperson-Procedure-3)
-* status = #final
-* code.coding = $SCT#245276004 "Mediastinal lymph node group"
-* code.text = "mediastinale Lymphknoten"
-* valueCodeableConcept.coding[+] = $SCT#373067005 "No"
-* valueCodeableConcept.coding[+] = $SCT#385420005 "Contrast media"
-* valueCodeableConcept.coding[+] = $SCT#151174005 "Drug intake observed"
-* valueCodeableConcept.text = "nicht mehr KM-aufnehmende"
-
 // 22.10.2023 CT T/A
 // - [x] lediglich geringer Aszites im kleinen Becken, vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken aktuell metrisch nur noch schwer fassbar
-// - [ ] formal noch vermehrte, jedoch nicht mehr KM-aufnehmende mediastinale Lymphknoten
+// - [x] formal noch vermehrte, jedoch nicht mehr KM-aufnehmende mediastinale Lymphknoten
 Instance: PatientKimMusterperson-Procedure-7
 InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
@@ -433,11 +407,11 @@ Description: "22.10.2023 CT T/A"
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
 
-Instance: PatientKimMusterperson-Observation-28
+Instance: PatientKimMusterperson-Observation-26
 InstanceOf: Observation
 Usage: #example
 Description: "geringer Aszites im kleinen Becken"
-* partOf = Reference(PatientKimMusterperson-Procedure-4)
+* partOf = Reference(PatientKimMusterperson-Procedure-7)
 * status = #final
 * code.coding = $SCT#80266002 "True pelvis"
 * code.text = "kleinen Becken"
@@ -445,11 +419,11 @@ Description: "geringer Aszites im kleinen Becken"
 * valueCodeableConcept.coding[+] = $SCT#389026000 "Acites"
 * valueCodeableConcept.text = "geringer Aszites"
 
-Instance: PatientKimMusterperson-Observation-29
+Instance: PatientKimMusterperson-Observation-27
 InstanceOf: Observation
 Usage: #example
 Description: "vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken aktuell metrisch nur noch schwer fassbar"
-* partOf = Reference(PatientKimMusterperson-Procedure-1)
+* partOf = Reference(PatientKimMusterperson-Procedure-7)
 * status = #final
 * code.coding[+] = $SCT#237679004 "Status post (contextual qualifier) (qualifier value)"
 * code.coding[+] = $SCT#246455001 "Recurrence"
@@ -459,22 +433,22 @@ Description: "vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken aktuell met
 * valueCodeableConcept.text = "aktuell metrisch nur noch schwer fassbar"
 * bodySite.coding = $SCT#80266002 "True pelvis"
 
-Instance: PatientKimMusterperson-Observation-30
+Instance: PatientKimMusterperson-Observation-29
 InstanceOf: Observation
 Usage: #example
 Description: "formal noch vermehrte mediastinale Lymphknoten"
-* partOf = Reference(PatientKimMusterperson-Procedure-3)
+* partOf = Reference(PatientKimMusterperson-Procedure-7)
 * status = #final
 * code.coding = $SCT#245276004 "Mediastinal lymph node group"
 * code.text = "mediastinale Lymphknoten"
 * valueCodeableConcept.coding = $SCT#35105006 "Increased"
 * valueCodeableConcept.text = "formal noch vermehrte"
 
-Instance: PatientKimMusterperson-Observation-31
+Instance: PatientKimMusterperson-Observation-30
 InstanceOf: Observation
 Usage: #example
 Description: "nicht mehr KM-aufnehmende mediastinale Lymphknoten"
-* partOf = Reference(PatientKimMusterperson-Procedure-3)
+* partOf = Reference(PatientKimMusterperson-Procedure-7)
 * status = #final
 * code.coding = $SCT#245276004 "Mediastinal lymph node group"
 * code.text = "mediastinale Lymphknoten"
