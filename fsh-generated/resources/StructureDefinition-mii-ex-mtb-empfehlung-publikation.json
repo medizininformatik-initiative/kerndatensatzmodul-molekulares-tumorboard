@@ -86,7 +86,7 @@
         "sliceName": "valueIdentifier",
         "short": "Identifikator Publikation",
         "definition": "Eindeutiger Identifikator zur Publikation in einer Publikationsdatenbank",
-        "comment": "Z.B. PubMed Identifier (PMID): http://www.ncbi.nlm.nih.gov/pubmed/30016818",
+        "comment": "Z.B. Document Object Identifier (DOI): https://doi.org/10.3414/ME18-03-0003 oder PubMed Identifier (PMID): http://www.ncbi.nlm.nih.gov/pubmed/30016818",
         "min": 0,
         "max": "1",
         "type": [
@@ -98,14 +98,14 @@
       {
         "id": "Extension.value[x]:valueIdentifier.system",
         "path": "Extension.value[x].system",
-        "comment": "Z.B. PMID: http://www.ncbi.nlm.nih.gov/pubmed",
+        "comment": "Publikationsdatenbank, z.B. DOI: http://doi.org oder PMID: http://www.ncbi.nlm.nih.gov/pubmed",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Extension.value[x]:valueIdentifier.value",
         "path": "Extension.value[x].value",
-        "comment": "Z.B. PMID: 30016818",
+        "comment": "Identifikator zur Publikation, z.B. DOI: 10.1000/182 oder PMID: 30016818",
         "min": 1,
         "mustSupport": true
       },
