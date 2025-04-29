@@ -1,6 +1,6 @@
-Profile: MII_PR_MTB_Immunohistochemistry
+Profile: MII_PR_MTB_Immunohistochemistry_MMR_MSI
 Parent: MII_PR_MTB_Molekularer_Biomarker // Evtl von Observation von MolecularBiomarker erben
-Id: mii-pr-mtb-immunohistochemistry
+Id: mii-pr-mtb-immunohistochemistry-mmr-msi
 Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistorchemistry report"
 * insert PR_Header
@@ -28,7 +28,12 @@ Description: "Immunhistorchemistry report"
     msi 0..1 MS and
     mmr 0..1 MS
 // Prozent-werte als Value-Quantity mit Unit %
-
+* component[gene-studied] MS 
+/* component[gene-studied][0].valueCodeableConcept.coding = $HGNC#HGNC:7127 "MLH1"
+* component[gene-studied][1].valueCodeableConcept.coding = $HGNC#HGNC:7325 "MSH2"
+* component[gene-studied][2].valueCodeableConcept.coding = $HGNC#HGNC:7329 "MSH6"
+* component[gene-studied][3].valueCodeableConcept.coding = $HGNC#HGNC:9122 "PMS2"
+*/
 * component[msi] MS
 * component[msi].code MS // Code System noch spezifizieren
 * component[msi].valueCodeableConcept MS // Wie spezifiziere ich high and low? -> Übernehmen aus MolgenModul, gibt schon high-low-ValueSet

@@ -94,8 +94,10 @@
 [MII_PR_MTB_HRD_Score]: StructureDefinition-mii-pr-mtb-hrd-score.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
 [MII_PR_MTB_HISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-histochemistry.html
-[MII_PR_MTB_IMMUNOHISTOCHEMISTRY_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
-[MII_PR_MTB_IMMUNOHISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
+[MII_PR_MTB_Immunohistochemistry]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
+[MII_PR_MTB_Immunohistochemistry_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
+[MII_PR_MTB_Immunohistochemistry_MMR_MSI]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr-msi.html
+[MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
 [MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
 [MII_PR_MTB_Molekularer_Biomarker]: StructureDefinition-mii-pr-mtb-molekularer-biomarker.html
@@ -139,7 +141,6 @@
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html
 [mii-exa-mtb-medikation-dabrafenib]: Medication-mii-exa-mtb-medikation-dabrafenib.html
 [mii-exa-mtb-medikation-trametinib]: Medication-mii-exa-mtb-medikation-trametinib.html
-[MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar]: ServiceRequest-MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar.html
 [mii-exa-mtb-patient]: Patient-mii-exa-mtb-patient.html
 [mii-exa-mtb-therapieempfehlung-dabrafenib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.html
 [mii-exa-mtb-therapieempfehlung-kombinationstherapie]: RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.html
@@ -197,7 +198,6 @@
 [mii-exa-mtb-study-cldn6-location-7]: Location-mii-exa-mtb-study-cldn6-location-7.html
 [mii-exa-mtb-study-cldn6-location-8]: Location-mii-exa-mtb-study-cldn6-location-8.html
 [mii-exa-mtb-study-cldn6-location-9]: Location-mii-exa-mtb-study-cldn6-location-9.html
-[Observation-FISH-Analysis-for-Ewing-Sarcoma]: Observation-Observation-FISH-Analysis-for-Ewing-Sarcoma.html
 [PatientKimMusterperson]: Patient-PatientKimMusterperson.html
 [PatientKimMusterperson-AscitesSpecimen-2]: Specimen-PatientKimMusterperson-AscitesSpecimen-2.html
 [PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu]: Observation-PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu.html

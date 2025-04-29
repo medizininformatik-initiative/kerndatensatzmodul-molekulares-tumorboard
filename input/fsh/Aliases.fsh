@@ -82,6 +82,7 @@ Alias: $hl7-research-study-arm-type = http://hl7.org/fhir/research-study-arm-typ
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+Alias: $hl7-v3-observation-high-low-codes = http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
 Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status

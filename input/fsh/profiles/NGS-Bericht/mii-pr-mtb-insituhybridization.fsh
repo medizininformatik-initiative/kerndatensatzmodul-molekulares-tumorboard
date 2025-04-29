@@ -1,6 +1,6 @@
 // WARNING: Created using perplexity.ai and gofish
 // =========== DRAFT ONLY =========== 
-Instance: Observation-FISH-Analysis-for-Ewing-Sarcoma
+/*Instance: Observation-FISH-Analysis-for-Ewing-Sarcoma
 InstanceOf: Observation
 Usage: #example
 * status = #final
@@ -26,3 +26,10 @@ Usage: #example
 * interpretation = $hl7-v3-observation-interpretation#POS "Positive"
 * interpretation.text = "Positive for EWSR1-FLI1 fusion, consistent with Ewing Sarcoma"
  
+*/
+
+Profile: MII_PR_MTB_Biomarker_InSituHybridization
+Parent: MII_PR_MTB_Molekularer_Biomarker
+Id: mii-pr-mtb-insituhybridization
+Title: "MII PR MTB In Situ Hybridization"   
+Description: "Molekularer Biomarker - In Situ Hybridization Profil"

@@ -6,5 +6,6 @@ Description: "Beschreibt die Neigung zu Mutationen aufgrund einer gestörten Feh
 * insert PR_Header
 
 * interpretation MS
+* interpretation from $hl7-v3-observation-high-low-codes
 
 // Labels der Datenfelder ggf. aktualisieren

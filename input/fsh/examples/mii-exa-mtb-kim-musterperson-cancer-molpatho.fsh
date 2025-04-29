@@ -22,18 +22,21 @@ Usage: #example
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #fina
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
+* category[labCategory].coding = $fhir-observation-category#laboratory
+* category[geCategory].coding = $hl7-v2-0074#GE
+
 * code.coding = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding[+] = $LNC#LA11842-4 "2+"
 * component[+].code.coding.code = #gene-studied
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
 
 Instance: PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -45,7 +48,7 @@ Usage: #example
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -60,7 +63,7 @@ Usage: #example
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -73,7 +76,7 @@ Usage: #example
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-1-CA125
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 
 * status = #final
@@ -95,7 +98,7 @@ Die Tumorzellen sind partiell positiv für CA125, durchgehend nukleär für Pax 
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-2-Pax8
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -106,7 +109,7 @@ Usage: #example
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-3-WT1
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -122,7 +125,7 @@ Usage: #example
 * bodySite.text = "Nukleär"
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-4-ER
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -133,7 +136,7 @@ Usage: #example
 * valueQuantity.unit = "%"
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-5-PR
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -144,7 +147,7 @@ Usage: #example
 * valueQuantity.unit = "%"
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-6-p53
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
@@ -154,7 +157,7 @@ Usage: #example
 * valueCodeableConcept.text = "Kräftige nukleäre Überexpression von p53"
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-7-p53
-InstanceOf: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
+InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)

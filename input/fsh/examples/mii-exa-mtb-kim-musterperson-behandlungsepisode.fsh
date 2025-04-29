@@ -22,6 +22,10 @@ Usage: #example
 // Molekular Pathologiebefund
 * investigation[MolekularPathologieBefund].item = Reference(DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1)
 
+// hier aufnehmen: Den Allgemeinen Lebensqualität-Observation aus dem Onko Modul unter investigation
+
+
+// hier ggfs. nochmal slicen zwischen Imaging, Procedure und MedicationStatement? Wobei man gucken muss, dass die Zeitliche Reihenfolge passt
 // 10.06.2021 CT Abdomen (siehe KDS Erweiterungsmodul Onkologie)
 * supportingInfo[Vortherapie] = Reference(Procedure/PatientKimMusterperson-Procedure-1)
 * supportingInfo[Vorbefund] = Reference(Observation/PatientKimMusterperson-Observation-1)

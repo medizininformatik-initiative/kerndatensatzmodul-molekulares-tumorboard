@@ -8,7 +8,12 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 
 
 * status MS
-* status ^short = "Status"
+* status ^short = "not-done | in-progress | stopped | completed"
+* status ^definition = "
+        not-done: Die Therapie wurde nie angefangen und wird auch nicht mehr angefangen,
+        in-progress: Die Therapie hat noch nicht angefangen oder läuft bereits,
+        stopped: Die Therapie wurde bereits angefangen aber vorzeitig abgebrochen,
+        completed: Die Therapie wurde plangemäß abgeschlossen"
 * status from MII_VS_MTB_Systemische_Therapie_Status
 
 * statusReason MS
