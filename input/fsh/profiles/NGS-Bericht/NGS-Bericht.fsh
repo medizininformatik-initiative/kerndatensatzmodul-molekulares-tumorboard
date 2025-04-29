@@ -26,7 +26,7 @@ Description: "NGS-Bericht zu einer Probe"
 * result[TumorMutionalBurden] ^short = "Tumor Mutational Burden"
 * result[TumorMutionalBurden] ^definition = "Verweis auf Tumor Mutational Burden"
 * result[TumorMutionalBurden] 0..1 MS
-* result[TumorMutionalBurden] only Reference(Observation) // or MII_PR_Molgen_Mutationslast or MII_PR_MTB_Mutationslast
+* result[TumorMutionalBurden] only Reference(MII_PR_MTB_Mutationslast) // or MII_PR_Molgen_Mutationslast or MII_PR_MTB_Mutationslast
 // Ich darf hier keine Referenz zu den MII_PR_Molgen_Mutationslast or MII_PR_MTB_Mutationslast Profilen machen
 // obwohl ihr Basisprofil Observation ist .... - JG-IBSM
  
@@ -35,7 +35,7 @@ Description: "NGS-Bericht zu einer Probe"
 * result[MicroSatelliteInstabilities] ^short = "Micro-Satellite Instabilities"
 * result[MicroSatelliteInstabilities] ^definition = "Verweis auf Micro-Satellite Instabilities"
 * result[MicroSatelliteInstabilities] 0..1 MS
-* result[MicroSatelliteInstabilities] only Reference(Observation) //MII_PR_MTB_Mikrosatelliteninstabilitaet or MII_PR_MolGen_Mikrosatelliteninstabilitaet
+* result[MicroSatelliteInstabilities] only Reference(MII_PR_MTB_Mikrosatelliteninstabilitaet) //MII_PR_MTB_Mikrosatelliteninstabilitaet or MII_PR_MolGen_Mikrosatelliteninstabilitaet
 // Problem s.o. 
 
 * result contains Ploidie 0..1 MS
