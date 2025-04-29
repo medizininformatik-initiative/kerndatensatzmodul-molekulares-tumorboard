@@ -9,5 +9,5 @@ RuleSet: ClaimMapping
 * AntragKostenuebernahme -> "Claim"
   * Ausstellungsdatum -> "Claim.created"
   * TherapieEmpfehlung -> "Claim.prescription"
-  * Antragsstadium -> "Claim.extension"
-  * AntragsstellerZPMGeschaeftsstelle -> "Claim.careTeam.responsible"
+  * Antragsstadium -> "Claim.related.relationship.coding"
+  * AntragsstellerZPMGeschaeftsstelle -> "Claim.careTeam[ZPMBeteiligung].responsible"
