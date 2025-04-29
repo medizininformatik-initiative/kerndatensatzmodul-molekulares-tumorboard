@@ -1433,7 +1433,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure"
+            "map": "ClinicalImpression"
           }
         ]
       },
@@ -1452,7 +1452,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.performed"
+            "map": "ClinicalImpression.effective"
           }
         ]
       },
@@ -1471,7 +1471,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.followUp[Status].coding.code"
+            "map": "ClinicalImpression.status"
           }
         ]
       },
@@ -1490,7 +1490,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.followUp[GrundNichtUmsetzung].coding.code"
+            "map": "ClinicalImpression.statusReason"
           }
         ]
       },
@@ -1509,7 +1509,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "Procedure.basedOn"
+            "map": "ClinicalImpression.supportingInfo[UmgesetzteTherapien]"
           }
         ]
       },
@@ -1610,7 +1610,7 @@
         "short": "Dosisdichte",
         "definition": "Dosisdichte",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "type": [
           {
             "code": "code"
@@ -1680,6 +1680,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClinicalImpression.supportingInfo[AntraegeKostenuebernahme]"
+          }
         ]
       },
       {
@@ -1744,6 +1750,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClinicalImpression.supportingInfo[AntwortKostenuebernahme]"
           }
         ]
       },

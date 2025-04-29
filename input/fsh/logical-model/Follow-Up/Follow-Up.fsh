@@ -9,8 +9,10 @@ RuleSet: FollowUp
 
 
 RuleSet: FollowUpMapping
-* FollowUp -> "Procedure"
-  * Erfassungsdatum -> "Procedure.performed"
-  * FollowUpStatus -> "Procedure.followUp[Status].coding.code"
-  * GrundNichtUmsetzung -> "Procedure.followUp[GrundNichtUmsetzung].coding.code"
-  * SystemischeTherapie -> "Procedure.basedOn"
+* FollowUp -> "ClinicalImpression"
+  * Erfassungsdatum -> "ClinicalImpression.effective"
+  * FollowUpStatus -> "ClinicalImpression.status"
+  * GrundNichtUmsetzung -> "ClinicalImpression.statusReason"
+  * SystemischeTherapie -> "ClinicalImpression.supportingInfo[UmgesetzteTherapien]"
+  * AntragKostenuebernahme -> "ClinicalImpression.supportingInfo[AntraegeKostenuebernahme]"
+  * AntwortKostenuebernahme -> "ClinicalImpression.supportingInfo[AntwortKostenuebernahme]"
