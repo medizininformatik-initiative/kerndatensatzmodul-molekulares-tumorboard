@@ -81,4 +81,4 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * dosage[Dosisdichte].doseAndRate.doseQuantity.system = $mii-cs-mtb-dosisdichte
 * dosage[Dosisdichte].doseAndRate.doseQuantity.code from MII_VS_MTB_Dosisdichte
 * dosage contains Dosis 0..1 MS
-* dosage[Dosis] MS
+* dosage[Dosis] 0..1 MS
