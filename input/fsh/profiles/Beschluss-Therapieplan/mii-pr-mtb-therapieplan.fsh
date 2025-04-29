@@ -5,8 +5,8 @@ Title: "MII PR MTB Therapieplan"
 Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * insert PR_Header
 
-* status ^short = "Umsetzungsstatus"
-* status ^definition = "Status der Umsetzung des Therapieplans"
+* status ^short = "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+* status ^definition = "Status der Umsetzung des beschlossenen Therapieplans"
 * status ^comment = "
     active: Empfehlung bzw. Therapieoption in Umsetzung (Regelfall), 
     revoked: Molekularer Tumorboard-Fall ist abgeschlossen, 
