@@ -5,7 +5,7 @@ Title: "MII PR MTB Studieneinschluss Anfrage"
 Description: "Anfrage zum Studieneinschluss"
 * insert PR_Header
 
-* status ^short = "Umsetzungsstatus"
+* status ^short = "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
 * status ^definition = "Status der Umsetzung der Empfehlung"
 * status ^comment = "
     draft: Nicht umgesetzt, 
