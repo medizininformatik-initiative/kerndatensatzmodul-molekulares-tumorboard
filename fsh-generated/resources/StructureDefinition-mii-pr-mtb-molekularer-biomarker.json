@@ -68,6 +68,20 @@
         "patternCode": "laboratory"
       },
       {
+        "id": "Observation.category:biomarker-category",
+        "path": "Observation.category",
+        "sliceName": "biomarker-category",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category:biomarker-category.coding.system",
+        "path": "Observation.category.coding.system",
+        "min": 1,
+        "patternUri": "$molecular-biomarker-category"
+      },
+      {
         "id": "Observation.category:geCategory",
         "path": "Observation.category",
         "sliceName": "geCategory",
