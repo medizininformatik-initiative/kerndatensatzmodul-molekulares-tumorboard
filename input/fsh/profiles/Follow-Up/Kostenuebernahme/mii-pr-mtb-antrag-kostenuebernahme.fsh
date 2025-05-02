@@ -75,12 +75,13 @@ Description: "Antrag Kostenübernahme"
 * careTeam[ZPMBeteiligung].responsible ^definition = "Beteiliung des ZPM - Ja/Nein"
 
 * related MS
-* related ^slicing.discriminator.type = #value
+/* related ^slicing.discriminator.type = #value
 * related ^slicing.discriminator.path = "type"
 * related ^slicing.rules = #open
 * related ^slicing.description = "Stadium des Antrags auf Kostenübernahme"
-
+*/
 * related.claim 0..1 MS 
+
 * related.claim ^short = "bei Folgeantrag/Widerspruch: Verweis auf ursprünglichen Erstantrag"
 * related.claim ^definition = "Verweis auf ursprünglichen Erstantrag, der zu diesem Folgeantrag oder Widerspruch führt"
 * related.claim only Reference(MII_PR_MTB_Antrag_Kostenuebernahme)

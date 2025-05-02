@@ -12,4 +12,5 @@ Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample)
 * careTeam[ZPMBeteiligung].responsible = true
 * careTeam[ZPMBeteiligung].sequence = 1
+* 
 //* extension[Antragsstadium].valueCodeableConcept = #initial-claim
