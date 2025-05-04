@@ -84,31 +84,31 @@
             }
           ],
           "rules": "open",
-          "description": "Slice für Abbruchsgrund",
+          "description": "Slice für Grund des Therapiestatus",
           "ordered": false
         }
       },
       {
-        "id": "Procedure.outcome.coding:Abbruchsgrund",
+        "id": "Procedure.outcome.coding:Therapiestatusgrund",
         "path": "Procedure.outcome.coding",
-        "sliceName": "Abbruchsgrund",
-        "short": "Abbruchsgrund Systemische Therapie",
-        "definition": "Angabe zum Abbruchsgrund der Systemischen Therapie",
+        "sliceName": "Therapiestatusgrund",
+        "short": "Grund des Therapiestatus",
+        "definition": "Genaue Begründung für den aktuellen Therapiestatus",
         "min": 0,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Procedure.outcome.coding:Abbruchsgrund.system",
+        "id": "Procedure.outcome.coding:Therapiestatusgrund.system",
         "path": "Procedure.outcome.coding.system",
         "patternUri": "http://snomed.info/sct"
       },
       {
-        "id": "Procedure.outcome.coding:Abbruchsgrund.code",
+        "id": "Procedure.outcome.coding:Therapiestatusgrund.code",
         "path": "Procedure.outcome.coding.code",
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-abbruchsgrund"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund"
         }
       }
     ]

@@ -1,0 +1,25 @@
+CodeSystem: MII_CS_MTB_Therapiestatusgrund
+Id: mii-cs-mtb-therapiestatusgrund
+Title: "MII CS Therapiestatusgrund"
+Description: "Begründung für Therapiestatus"
+* insert CS_Header($mii-cs-mtb-therapiestatusgrund)
+
+* #payment-refused	                            "Kostenübernahme abgelehnt"
+* #payment-pending	                            "Kostenübernahme noch ausstehend"
+* #payment-ended	                            "Ende der Kostenübernahme"
+* #no-indication	                            "Klinisch keine Indikation"
+* #medical-reasons	                            "Medizinische Gründe"
+* #patient-refusal	                            "Therapie durch Patient abgelehnt"
+* #patient-wish	                                "Auf Wunsch des Patienten"
+* #patient-death	                            "Tod"
+* #lost-to-fu	                                "Lost to follow-up"
+* #chronic-remission	                        "Anhaltende Remission"
+* #progression	                                "Progression"
+* #toxicity	                                    "Toxizität"
+* #other-therapy-chosen	                        "Wahl einer anderen Therapie durch Behandler"
+* #best-supportive-care	                        "Best Supportive Care"
+* #deterioration	                            "Zustandsverschlechterung"
+* #regular-completion	                        "Reguläres Ende"
+* #regular-completion-with-dosage-reduction	    "Reguläres Ende mit Dosisreduktion"
+* #regular-completion-with-substance-change     "Reguläres Ende mit Substanzwechsel"
+* #other	                                    "Weitere Gründe"
