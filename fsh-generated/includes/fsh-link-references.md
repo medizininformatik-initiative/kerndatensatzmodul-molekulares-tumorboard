@@ -81,6 +81,7 @@
 [mii-ns-mtb-nct]: NamingSystem-mii-ns-mtb-nct.html
 [mii-ns-studie-drks]: NamingSystem-mii-ns-studie-drks.html
 [mii-ns-studie-eudract]: NamingSystem-mii-ns-studie-eudract.html
+[MII_PR_MTB_BIOMARKER_HER2_STATUS]: StructureDefinition-mii-pr-mtb-biomarker-her2-status.html
 [MII_PR_MTB_Antrag_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html
 [MII_PR_MTB_Antwort_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html
 [MII_PR_MTB_Behandlungsepisode]: StructureDefinition-mii-pr-mtb-behandlungsepisode.html
@@ -98,14 +99,17 @@
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
 [MII_PR_MTB_HISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-histochemistry.html
 [MII_PR_MTB_Immunohistochemistry]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
+[MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2]: StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.html
 [MII_PR_MTB_Immunohistochemistry_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
 [MII_PR_MTB_Immunohistochemistry_MMR_MSI]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr-msi.html
+[MII_PR_MTB_INSITUHYBRIDIZATION_HER2]: StructureDefinition-mii-pr-mtb-insituhybridization-her2.html
 [MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
 [MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
 [MII_PR_MTB_Molekularer_Biomarker]: StructureDefinition-mii-pr-mtb-molekularer-biomarker.html
 [MII_PR_MTB_Mutationslast]: StructureDefinition-mii-pr-mtb-mutationslast.html
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
+[MII_PR_MTB_Oncotree]: StructureDefinition-mii-pr-mtb-oncotree.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
 [MII_PR_MTB_RNA_Seq]: StructureDefinition-mii-pr-mtb-rna-seq.html
@@ -137,6 +141,7 @@
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
+[MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
 [MII_VS_MTB_Therapiestatusgrund]: ValueSet-mii-vs-mtb-therapiestatusgrund.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html

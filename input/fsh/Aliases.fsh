@@ -71,7 +71,7 @@ Alias: $mii-cs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhi
 Alias: $mii-vs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte
 Alias: $mii-cs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung
 Alias: $mii-vs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilung
-
+Alias: $mii-vs-mtb-oncotree = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-oncotree
 
 // Aliases für HL7 Terminologie
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
@@ -89,6 +89,7 @@ Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequ
 Alias: $request-status = http://hl7.org/fhir/request-status
 Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
 Alias: $systemtherapie-status = http://hl7.org/fhir/ValueSet/event-status
+Alias: $molecular-biomarker-category = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/molecular-biomarker-ontology-cs
 
 // Aliases für HL7 Extensions
 Alias: $fhir-ext-based-on = http://hl7.org/fhir/StructureDefinition/event-basedOn
