@@ -16,3 +16,6 @@ RuleSet: FollowUpMapping
   * SystemischeTherapie -> "ClinicalImpression.supportingInfo[UmgesetzteTherapien]"
   * AntragKostenuebernahme -> "ClinicalImpression.supportingInfo[AntraegeKostenuebernahme]"
   * AntwortKostenuebernahme -> "ClinicalImpression.supportingInfo[AntwortKostenuebernahme]"
+  * insert SystemischeTherapieMapping
+  * insert AntwortKostenuebernahmeMapping
+  * insert AntragKostenuebernahmeMapping

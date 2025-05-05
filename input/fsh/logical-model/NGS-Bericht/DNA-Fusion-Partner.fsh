@@ -5,7 +5,7 @@ RuleSet: DNAFusionPartner
   * Gen                         0..1   Reference              "Gen"
 
 RuleSet: DNAFusionPartnerMapping
-* DNAFusionPartner           ->      ""
+* DNAFusionPartner           ->      "MII_PR_MTB_DNA_Fusion"
   * Chromosom                ->      ""
   * Position                 ->      ""
   * Gen                      ->      ""
