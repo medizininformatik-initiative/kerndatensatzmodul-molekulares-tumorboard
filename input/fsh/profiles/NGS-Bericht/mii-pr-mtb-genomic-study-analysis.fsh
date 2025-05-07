@@ -2,7 +2,7 @@ Profile: MII_PR_MTB_Genomic_Study_Analysis
 Parent: GenomicStudyAnalysis
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
-Description: "A genomic study analysis is a component of a genomic study."
+Description: "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung."
 
 * extension MS
 * extension[method-type] MS
@@ -11,8 +11,10 @@ Description: "A genomic study analysis is a component of a genomic study."
 * extension[focus] MS
 * extension[specimen] MS
 * extension[device] MS
-* status MS
-
+* status 
+* identifier MS
+* category MS
+* performed[x] MS
 /* * extension contains GenomicStudyAnalysisMethodType named method-type 0..*
     and GenomicStudyAnalysisChangeType named change-type 0..*
     and GenomicStudyAnalysisGenomeBuild named genome-build 0..1

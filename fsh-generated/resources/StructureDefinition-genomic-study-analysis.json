@@ -5,7 +5,7 @@
   "name": "MII_PR_MTB_Genomic_Study_Analysis",
   "title": "Genomic Study Analysis",
   "status": "draft",
-  "description": "A genomic study analysis is a component of a genomic study.",
+  "description": "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -58,8 +58,18 @@
         "mustSupport": true
       },
       {
-        "id": "Procedure.status",
-        "path": "Procedure.status",
+        "id": "Procedure.identifier",
+        "path": "Procedure.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
         "mustSupport": true
       }
     ]

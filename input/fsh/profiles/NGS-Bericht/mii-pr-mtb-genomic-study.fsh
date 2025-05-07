@@ -5,7 +5,16 @@ Title: "MII PR MTB Genomic Study"
 Description: "Genomic Study beinhaltet und verweist über GenomicStudyAnalysis auf Details zu den einzelnen Untersuchungen einer NGS-Untersuchung (Sequenzierung, Variant Calling, CNV-Analyse, Fusions-Analysen etc.)"
 * insert PR_Header
 
+* ^status = #draft
 
+* identifier MS
+* status MS
+* code MS
+* subject MS
+* encounter MS
+* performed[x] MS
+* reasonReference MS
+* reasonReference only Reference(MII_PR_Onko_Diagnose_Primaertumor)
 /*
 // nachfolgend sind alle original-Definitionen aus GenomicStudy übernommen und können hier modifiziert werden
 
