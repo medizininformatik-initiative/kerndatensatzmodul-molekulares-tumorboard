@@ -48,6 +48,34 @@
         "mustSupport": true
       },
       {
+        "id": "ResearchStudy.extension:Therapieplan",
+        "path": "ResearchStudy.extension",
+        "sliceName": "Therapieplan",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/event-basedOn"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ResearchStudy.extension:Therapieplan.value[x]",
+        "path": "ResearchStudy.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+            ]
+          }
+        ]
+      },
+      {
         "id": "ResearchStudy.identifier",
         "path": "ResearchStudy.identifier",
         "slicing": {

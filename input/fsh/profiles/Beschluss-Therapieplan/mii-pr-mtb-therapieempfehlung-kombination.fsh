@@ -7,6 +7,18 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 
 * identifier MS
 
+* status ^short = "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+* status ^definition = "Status der Umsetzung der Therapieempfehlung"
+* status ^comment = "
+    draft: Nicht umgesetzt, 
+    active: In Umsetzung, 
+    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+
+// TODO Strictly Constrain intent to proposal and option? (Option is needed for RequestGroup)
+* intent ^short = "proposal | option"
+* intent ^definition = "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,
+diese Therapieempfehlung ist selbst nochmal Teil einer RequestGroup. In dem Fall muss hier 'option' stehen."
+
 * replaces only Reference(
     MII_PR_MTB_Therapieempfehlung_Kombination or
     MII_PR_MTB_Therapieempfehlung or

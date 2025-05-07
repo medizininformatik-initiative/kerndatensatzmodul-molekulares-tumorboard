@@ -3,38 +3,47 @@
   "id": "PatientKimMusterperson-Observation-27",
   "partOf": [
     {
-      "reference": "Procedure/PatientKimMusterperson-Procedure-3"
+      "reference": "Procedure/PatientKimMusterperson-Procedure-7"
     }
   ],
   "code": {
     "coding": [
       {
-        "code": "245276004",
+        "code": "237679004",
         "system": "http://snomed.info/sct",
-        "display": "Mediastinal lymph node group"
+        "display": "Status post (contextual qualifier) (qualifier value)"
+      },
+      {
+        "code": "246455001",
+        "system": "http://snomed.info/sct",
+        "display": "Recurrence"
       }
     ],
-    "text": "mediastinale Lymphknoten"
+    "text": "vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken"
   },
   "valueCodeableConcept": {
     "coding": [
       {
-        "code": "373067005",
+        "code": "246455001",
         "system": "http://snomed.info/sct",
-        "display": "No"
+        "display": "Recurrence"
       },
       {
-        "code": "385420005",
+        "code": "263920009",
         "system": "http://snomed.info/sct",
-        "display": "Contrast media"
-      },
-      {
-        "code": "151174005",
-        "system": "http://snomed.info/sct",
-        "display": "Drug intake observed"
+        "display": "Unrecordable"
       }
     ],
-    "text": "nicht mehr KM-aufnehmende"
+    "text": "aktuell metrisch nur noch schwer fassbar"
+  },
+  "bodySite": {
+    "coding": [
+      {
+        "code": "80266002",
+        "system": "http://snomed.info/sct",
+        "display": "True pelvis"
+      }
+    ]
   },
   "status": "final"
 }

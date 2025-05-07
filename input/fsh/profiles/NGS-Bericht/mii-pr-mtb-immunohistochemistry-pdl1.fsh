@@ -1,5 +1,5 @@
-Profile: MII_PR_MTB_IMMUNOHISTOCHEMISTRY_PDL1
-Parent: Observation // Evtl von Observation von MolecularBiomarker erben
+Profile: MII_PR_MTB_Immunohistochemistry_PDL1
+Parent: MII_PR_MTB_Immunohistochemistry 
 Id: mii-pr-mtb-immunohistochemistry-pdl1
 Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistorchemistry report"

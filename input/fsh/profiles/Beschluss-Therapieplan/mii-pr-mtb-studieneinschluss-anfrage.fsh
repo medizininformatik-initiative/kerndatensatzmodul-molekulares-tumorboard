@@ -5,6 +5,13 @@ Title: "MII PR MTB Studieneinschluss Anfrage"
 Description: "Anfrage zum Studieneinschluss"
 * insert PR_Header
 
+* status ^short = "Umsetzungsstatus"
+* status ^definition = "Status der Umsetzung der Empfehlung"
+* status ^comment = "
+    draft: Nicht umgesetzt, 
+    active: In Umsetzung, 
+    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+
 * intent = #proposal
 * category = $SCT#110465008 "Clinical trial (procedure)"
 * code = $SCT#709491003 "Enrollment in clinical trial (procedure)"

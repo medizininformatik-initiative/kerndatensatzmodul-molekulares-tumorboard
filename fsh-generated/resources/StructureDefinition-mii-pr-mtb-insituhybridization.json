@@ -1,0 +1,23 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-insituhybridization",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization",
+  "name": "MII_PR_MTB_Biomarker_InSituHybridization",
+  "title": "MII PR MTB In Situ Hybridization",
+  "status": "draft",
+  "description": "Molekularer Biomarker - In Situ Hybridization Profil",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation"
+      }
+    ]
+  }
+}

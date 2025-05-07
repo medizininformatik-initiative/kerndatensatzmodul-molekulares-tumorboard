@@ -318,7 +318,7 @@ package FollowUp {
         + Systemische_Therapie: Kode
     }
 
-    class MTB_Systemische_Therapie {
+    class MTB_Systemische_Vortherapie {
         + Therapie_Startdatum: Datum
         + Therapie_Enddatum: Datum
         + Systemische_Therapie_Ende_Grund: Kode
@@ -398,8 +398,8 @@ MTB_Beschluss_Therapieplan -- Rebiopsie_Auftrag
 MTB_Beschluss_Therapieplan -- Humagenetische_Beratung_Auftrag
 MTB_Beschluss_Therapieplan -- Histologie_Reevaluation_Auftrag
 
-MTB_Followup -- MTB_Systemische_Therapie
-MTB_Systemische_Therapie -- Response_Befund
+MTB_Followup -- MTB_Systemische_Vortherapie
+MTB_Systemische_Vortherapie -- Response_Befund
 MTB_Followup -- MTB_Antrag_Kostenuebernahme
 MTB_Followup -- MTB_Antwort_Kostenuebernahme
 
