@@ -1,7 +1,7 @@
 CodeSystem: MII_CS_MTB_Dosisdichte
 Id: mii-cs-mtb-dosisdichte
 Title: "MII CS Dosisdichte"
-Description: "Codesystem für die Dosisdichte einer Systemtheraptie"
+Description: "Codesystem für die Dosisdichte einer Medikamentengabe"
 * insert CS_Header($mii-cs-mtb-dosisdichte)
 
 * #volle-Dosis                                "Volle Dosis"

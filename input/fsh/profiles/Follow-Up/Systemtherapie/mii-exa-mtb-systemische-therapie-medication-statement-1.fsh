@@ -1,0 +1,17 @@
+Instance: MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1
+InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
+Usage: #example
+Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
+* status = #completed
+* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* subject = Reference(Patient/KimMusterperson)
+* effectivePeriod.start = "2023-06-24"
+* effectivePeriod.end = "2023-06-24"
+* note.text = "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage[Dosis].doseAndRate.doseQuantity.value = 6
+* dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
+* dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
+* dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
+* dosage[Dosisdichte].doseAndRate.doseQuantity.code = #volle-Dosis

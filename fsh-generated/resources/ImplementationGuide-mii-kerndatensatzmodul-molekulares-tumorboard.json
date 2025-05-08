@@ -197,6 +197,13 @@
       },
       {
         "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1"
+        },
+        "name": "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement"
+      },
+      {
+        "reference": {
           "reference": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-4"
         },
         "name": "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
@@ -236,35 +243,17 @@
       },
       {
         "reference": {
-          "reference": "Observation/MII-EXA-MTB-DNA-Fusion-1"
+          "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1"
         },
-        "name": "Beispiel DNA-Fusion",
-        "description": "Beispiel fuer eine DNA-Fusion in Tumorzellen.",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion"
+        "name": "Beispiel fuer eine Antwort auf den Antrag auf Kostenuebernahme",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
       },
       {
         "reference": {
-          "reference": "Observation/MII-EXA-MTB-Diagnostische-Implikation-1"
+          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1"
         },
-        "name": "Beispiel fuer BRAF Mutation MTB Diagnostische Implikation",
-        "description": "Beispiel fuer diagnostische Implikation im Kontext des Molecular Tumor Boards basierend auf einer BRAF-Mutation.",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation"
-      },
-      {
-        "reference": {
-          "reference": "Observation/MII-EXA-MTB-BRCAness-1"
-        },
-        "name": "Beispiel fuer BRCAness-Analyse",
-        "description": "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalten eines Tumors in Bezug auf BRCA-ähnliche Eigenschaften darstellt.",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness"
-      },
-      {
-        "reference": {
-          "reference": "Observation/MII-EXA-MTB-Copy-Number-Variant-1"
-        },
-        "name": "Beispiel fuer Copy Number Variant",
-        "description": "Beispiel fuer eine Copy Number Variant (CNV).",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant"
+        "name": "Beispiel fuer eine Follow-Up Clinical Impression ",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
       },
       {
         "reference": {
@@ -282,13 +271,6 @@
       },
       {
         "reference": {
-          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1"
-        },
-        "name": "Beispiel fuer einen Follow-Up Procedure",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
-      },
-      {
-        "reference": {
           "reference": "Procedure/MII-EXA-MTB-GenomicStudy-1"
         },
         "name": "Beispiel fuer einen GenomicStudy",
@@ -300,6 +282,13 @@
         },
         "name": "Beispiel fuer einen GenomicStudyAnalysis",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-Beispiel-1"
+        },
+        "name": "Beispiel fuer einen Response Befund",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
       },
       {
         "reference": {
@@ -550,7 +539,7 @@
           "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
-        "description": "Codesystem zum Stadium des Antrags zur Kostenuebernahme",
+        "description": "Codesystem zum Stadium des Antrags zur Kostenuebernahme nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -558,7 +547,7 @@
           "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung"
         },
         "name": "MII CS Antwort Kostenuebernahme Entscheidung",
-        "description": "Codesystem zum Status der Antwort zur Kostenuebernahme",
+        "description": "Codesystem zum Status der Antwort zur Kostenuebernahme nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -582,7 +571,7 @@
           "reference": "CodeSystem/mii-cs-mtb-dosisdichte"
         },
         "name": "MII CS Dosisdichte",
-        "description": "Codesystem für die Dosisdichte einer Systemtheraptie",
+        "description": "Codesystem für die Dosisdichte einer Medikamentengabe",
         "exampleBoolean": false
       },
       {
@@ -607,14 +596,6 @@
         },
         "name": "MII CS Empfehlung Status Begründung",
         "description": "Begründung bei fehlender Empfehlung im MTB-Beschluss",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
-        },
-        "name": "MII CS Follow-Up Grund Nicht-Umsetzung",
-        "description": "Codesystem zum Follow-Up Grund Nicht-Umsetzung",
         "exampleBoolean": false
       },
       {
@@ -646,7 +627,7 @@
           "reference": "CodeSystem/mii-cs-mtb-kostenuebernahme-ablehnungsgrund"
         },
         "name": "MII CS Kostenuebernahme Ablehnungsgrund",
-        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
+        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -671,6 +652,14 @@
         },
         "name": "MII CS Response Befund Beurteilung",
         "description": "Codesystem für die Beurteilung des Response Befund",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-systemische-therapie-status-grund"
+        },
+        "name": "MII CS Systemische Therapie Status Grund",
+        "description": "Codesystem zum Status Grund der Systemischen Therapie nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -878,7 +867,7 @@
           "reference": "StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
         },
         "name": "MII PR MTB Clinical Impresssion",
-        "description": "Follow-Up nach DNPM ",
+        "description": "Follow-Up als Prozess des Einholens von Informationen über durchgeführte Therapien & Kostenuebernahmen",
         "exampleBoolean": false
       },
       {
@@ -1238,7 +1227,7 @@
           "reference": "ValueSet/mii-vs-mtb-follow-grund-nicht-umsetzung"
         },
         "name": "MII VS Follow-Up Grund Nicht-Umsetzung",
-        "description": "ValueSet zum Follow-Up Grund Nicht-Umsetzung",
+        "description": "ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund",
         "exampleBoolean": false
       },
       {
@@ -1319,6 +1308,14 @@
         },
         "name": "MII VS Response Befund Beurteilung",
         "description": "ValueSet Response Befund Beurteilung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-systemische-therapie-status-grund"
+        },
+        "name": "MII VS Systemische Therapie Status Grund",
+        "description": "ValueSet zum Grund des Status der Systemischen Therapie",
         "exampleBoolean": false
       },
       {
