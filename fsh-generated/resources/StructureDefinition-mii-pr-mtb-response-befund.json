@@ -34,6 +34,8 @@
       {
         "id": "Observation.partOf",
         "path": "Observation.partOf",
+        "short": "Systemische Therapie",
+        "definition": "Daszugehoerige, uebergeordnete Systemische Therapie",
         "min": 1,
         "type": [
           {
@@ -56,6 +58,7 @@
         "path": "Observation.effective[x]",
         "sliceName": "effectiveDateTime",
         "short": "Zeitpunkt",
+        "definition": "Zeitpunkt des Response Befundes",
         "type": [
           {
             "code": "dateTime"
@@ -91,6 +94,7 @@
         "id": "Observation.method",
         "path": "Observation.method",
         "short": "Beurteilungsmethode",
+        "definition": "Beurteilungsmethode RECIST oder RANO",
         "min": 1,
         "mustSupport": true
       }

@@ -18,7 +18,7 @@ RuleSet: SystemischeTherapieMapping
   * TherapieEmpfehlung -> "Procedure.extension[causedBy]"
   * Bemerkungen -> "Procedure.note"
   * Status -> "Procedure.status"
-  * Wirkstoffe -> "MII_PR_MTB_Systemische_Therapie_Medication_Statement - Verweis von MedicationStatement.partOf auf Systemische Therapie"
-  * Dosisdichte -> "MII_PR_MTB_Systemische_Therapie_Medication_Statement.dosage"
+  * Wirkstoffe -> "MedicationStatement.partOf"
+  * Dosisdichte -> "MedicationStatement.dosage"
   
 

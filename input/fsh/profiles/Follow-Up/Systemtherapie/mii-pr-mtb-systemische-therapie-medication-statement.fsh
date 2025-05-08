@@ -68,9 +68,8 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * effectivePeriod.end ^short = "Enddatum"
 * note 0..* MS
 * note ^short = "Bemerkungen"
+
 * dosage MS
-// TODO: überlegen wie man die Codes aus ArtDecor als 'Dosage' data type darstellen kann
-// ist die Dosisdichte vielleicht eher eine Info für die Procedure?
 * dosage ^slicing.discriminator.type = #value
 * dosage ^slicing.discriminator.path = "system"
 * dosage ^slicing.rules = #open
@@ -78,7 +77,11 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * dosage ^slicing.ordered = false
 * dosage contains Dosisdichte 0..1 MS
 * dosage[Dosisdichte] 0..1 MS 
+* dosage[Dosisdichte] ^short = "Dosisdichte"
+* dosage[Dosisdichte] ^definition = "Die Dosisdichte gibt an ob, in welchem Ausmaß eine Dosisreduktion vorliegt."
 * dosage[Dosisdichte].doseAndRate.doseQuantity.system = $mii-cs-mtb-dosisdichte
 * dosage[Dosisdichte].doseAndRate.doseQuantity.code from MII_VS_MTB_Dosisdichte
 * dosage contains Dosis 0..1 MS
 * dosage[Dosis] 0..1 MS
+* dosage[Dosis] ^short = "Dosis"
+* dosage[Dosis] ^definition = "Dosis als absoluter Wert"
