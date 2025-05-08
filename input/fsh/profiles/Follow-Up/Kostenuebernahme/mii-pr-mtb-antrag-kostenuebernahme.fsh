@@ -87,7 +87,7 @@ Description: "Antrag Kostenübernahme"
 * related.relationship MS 
 * related.relationship.coding 1..* MS
 * related.relationship.coding ^short = "Antragsstadium"
-* related.relationship.coding ^definition = "Stadium des Antrags auf Kostenbeürnahme - Erstantrag, Widerspruch, Folgeantrag, Unbekannt. Bei Widerspruch oder Folgeantrag ist der Verweis auf den Erstantrag erforderlich"
+* related.relationship.coding ^definition = "Stadium des Antrags auf Kostenuebernahme - Erstantrag, Widerspruch, Folgeantrag, Unbekannt. Bei Widerspruch oder Folgeantrag ist der Verweis auf den Erstantrag erforderlich"
 * related.relationship.coding.system = $mii-cs-mtb-antrag-kostenuebernahme-antragsstadium
 * related.relationship.coding.code 1..1 MS
 

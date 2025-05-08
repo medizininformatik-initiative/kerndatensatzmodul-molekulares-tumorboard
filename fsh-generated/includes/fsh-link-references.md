@@ -9,16 +9,19 @@
 [MII-EXA-MTB-Response-Befund-2]: Observation-MII-EXA-MTB-Response-Befund-2.html
 [MII-EXA-MTB-Systemische-Therapie-1]: Procedure-MII-EXA-MTB-Systemische-Therapie-1.html
 [MII-EXA-MTB-Systemische-Therapie-Medication-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-1.html
+[MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1.html
 [MII-EXA-MTB-Systemische-Therapie-Medication-4]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-4.html
 [mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
+[MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1]: ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1.html
+[MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1.html
 [MII-EXA-MTB-Systemtherapie-Beispiel-1]: Procedure-MII-EXA-MTB-Systemtherapie-Beispiel-1.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html
-[MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1.html
 [MII-EXA-MTB-GenomicStudy-1]: Procedure-MII-EXA-MTB-GenomicStudy-1.html
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
+[MII-EXA-MTB-Response-Befund-Beispiel-1]: Observation-MII-EXA-MTB-Response-Befund-Beispiel-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
 [mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
 [mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
@@ -52,7 +55,6 @@
 [MII_CS_MTB_Empfehlung_Evidenzgrad]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.html
 [MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.html
 [MII_CS_MTB_Empfehlung_StatusBegruendung]: CodeSystem-mii-cs-mtb-empfehlung-status-begruendung.html
-[MII_CS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: CodeSystem-mii-cs-mtb-follow-up-grund-nicht-umsetzung.html
 [MII_CS_MTB_Follow_Up_Status]: CodeSystem-mii-cs-mtb-follow-up-status.html
 [MII_CS_MTB_Genomic_Analysis_Method_Type]: CodeSystem-mii-cs-mtb-genomic-analysis-method-type.html
 [MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction]: CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.html
@@ -60,6 +62,7 @@
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
+[MII_CS_MTB_Systemische_Therapie_Status_Grund]: CodeSystem-mii-cs-mtb-systemische-therapie-status-grund.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
@@ -138,6 +141,7 @@
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
+[MII_VS_MTB_Systemische_Therapie_Status_Grund]: ValueSet-mii-vs-mtb-systemische-therapie-status-grund.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html

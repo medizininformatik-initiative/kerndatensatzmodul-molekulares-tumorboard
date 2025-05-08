@@ -11,8 +11,10 @@ Description: "Response Beurteilung nach DNPM"
 * focus MS // jedes mal noch Primärtumor angeben?
 * effectiveDateTime MS
 * effectiveDateTime ^short = "Zeitpunkt"
+* effectiveDateTime ^definition = "Zeitpunkt des Response Befundes"
 * method 1..1 MS
 * method ^short = "Beurteilungsmethode"
+* method ^definition = "Beurteilungsmethode RECIST oder RANO"
 
 // für valueCodeableConcept eigenes CS & VS
 // https://simplifier.net/medizininformatikinitiative-modulonkologie/mii-cs-onko-verlauf-gesamtbeurteilung
@@ -24,4 +26,6 @@ Description: "Response Beurteilung nach DNPM"
 * valueCodeableConcept.coding.system = $mii-cs-mtb-response-befund-beurteilung
 * valueCodeableConcept.coding.code from MII_VS_MTB_Response_Befund_Beurteilung
 * partOf 1..* MS
+* partOf ^short = "Systemische Therapie"
+* partOf ^definition = "Daszugehoerige, uebergeordnete Systemische Therapie"
 * partOf only Reference(MII_PR_MTB_Systemische_Therapie or Procedure)
