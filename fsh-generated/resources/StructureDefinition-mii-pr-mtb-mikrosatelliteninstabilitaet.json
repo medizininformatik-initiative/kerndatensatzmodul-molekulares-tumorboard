@@ -39,6 +39,13 @@
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs"
         }
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "short": "PCR|NGS",
+        "definition": "Methode der Untersuchung (PCR oder NGS-basierte Untersuchung).",
+        "mustSupport": true
       }
     ]
   }

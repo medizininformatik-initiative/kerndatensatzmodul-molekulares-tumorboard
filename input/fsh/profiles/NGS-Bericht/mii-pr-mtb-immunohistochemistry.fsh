@@ -4,42 +4,30 @@ Id: mii-pr-mtb-immunohistochemistry
 Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistorchemistry report"
 * insert PR_Header
+* identifier MS 
+* code 1..1 MS
+* code.coding MS 
+* code ^short = "Code für Immunhistochemische Untersuchung"
+* code ^definition = "Kodierung für Immunhistochemische Untersuchung. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist über gene-studied "
+* code.coding ^slicing.discriminator.type = #type
+* code.coding  ^slicing.discriminator.path = "reference.reference"
+* code.coding  ^slicing.rules = #open
+* code.coding contains spezifisch 0..1 MS and generisch 0..1 MS
+* code.coding[spezifisch].system 1..1 MS
+* code.coding[spezifisch] ^short = "Immunhistochemische Untersuchung"
+* code.coding[spezifisch] ^definition = "Spezifischer Code SNOMED-CT- oder LOINC-Code für immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist, ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben."
+ 
+* code.coding[generisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
+* code.coding[generisch] ^short = "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist. "
 
-* identifier MS
 * specimen MS
-* specimen ^definition = "Probe"
-* specimen ^short = "Probe"
+* specimen ^definition = "Block-MAterial-Nr. der Probe. Da jede FHIR-Observation nur eine Referenz auf Specimen haben kann, Die gesamte Probe (z.B. Biopsie, Exzisat) wird von den Einzelschnitten referenziert. "
+* specimen ^short = "Block / Material-Nr. der Probe"
 // Eingangs/Journal-Nr -> DiagnosticReport(Identifier) kein Teil von Observationm
 // Block-/Material Nr -> Wie mache ich das am Besten?
 
 // wie erstelle ich ein eigenes CodeableConcept
 * value[x] MS
 * valueCodeableConcept MS
-//* valueCodeableConcept from 
 
-* component ^slicing.discriminator.type = #type
-* component ^slicing.discriminator.path = "reference.reference"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Immunohistochemische Ergebnisse"
-* component ^slicing.ordered = false
-// Evtl. Binding auf High-Low-ValueSet aus MolgenBefundbericht als preferred oder als CodeableConcept
 
-* component contains 
-    msi 0..1 MS and
-    mmr 0..1 MS
-// Prozent-werte als Value-Quantity mit Unit %
-
-* component[msi] MS
-* component[msi].code MS // Code System noch spezifizieren
-* component[msi].valueCodeableConcept MS // Wie spezifiziere ich high and low? -> Übernehmen aus MolgenModul, gibt schon high-low-ValueSet
-* component[msi].interpretation MS 
-* component[msi] ^short = "Mikrosateliteninstablilität" 
-
-* component[mmr] MS
-* component[mmr].code MS // Code System noch spezifizieren
-* component[mmr].valueCodeableConcept MS 
-* component[mmr].interpretation MS
-* component[mmr] ^short = "Mismatch-Repair" 
-
-// Evtl component gene-studied oder Erweiterung von Code (bei häufigen auch Loinc-Liste oder HGNC)
-// CodeSystem -> mii-molekulare-biomarker

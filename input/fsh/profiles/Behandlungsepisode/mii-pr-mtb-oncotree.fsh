@@ -15,7 +15,7 @@ Description: "Grad des Tumors nach MSKCC Oncotree Klassifikation"
 
 * encounter 0..1 MS
 
-// Grade from WHO Classification
+// Grade from Oncotree
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
 * valueCodeableConcept.coding 1..1 MS

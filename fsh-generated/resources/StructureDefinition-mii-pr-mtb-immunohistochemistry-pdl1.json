@@ -27,6 +27,27 @@
   "differential": {
     "element": [
       {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "short": "Probe",
+        "definition": "Probe"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "reference.reference"
+            }
+          ],
+          "rules": "open",
+          "description": "Immunohistochemische Ergebnisse",
+          "ordered": false
+        }
+      },
+      {
         "id": "Observation.component:tps-score",
         "path": "Observation.component",
         "sliceName": "tps-score",

@@ -33,3 +33,10 @@ Parent: MII_PR_MTB_Molekularer_Biomarker
 Id: mii-pr-mtb-insituhybridization
 Title: "MII PR MTB In Situ Hybridization"   
 Description: "Molekularer Biomarker - In Situ Hybridization Profil"
+
+* identifier MS 
+* code MS 
+* code.coding = $SCT#384715000 // "Nucleic acid hybridization procedure (procedure)"
+* code ^short = "In Situ Hybridization"
+* code ^definition = "In Situ Hybridization auf Gewebsschnitt "
+* valueQuantity MS

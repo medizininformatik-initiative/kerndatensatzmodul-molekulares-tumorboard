@@ -5,6 +5,10 @@ Title: "MII PR MTB Mikrosatelliteninstabilität"
 Description: "Beschreibt die Neigung zu Mutationen aufgrund einer gestörten Fehlpaarungsreparatur (DNA mismatch repair, MMR)."
 * insert PR_Header
 
+* method MS
+* method ^short = "PCR|NGS"
+* method ^definition = "Methode der Untersuchung (PCR oder NGS-basierte Untersuchung)."
+
 * interpretation MS
 * interpretation from $hl7-v3-observation-high-low-codes
 

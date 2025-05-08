@@ -32,6 +32,57 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Code für Immunhistochemische Untersuchung",
+        "definition": "Kodierung für Immunhistochemische Untersuchung. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist über gene-studied ",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "reference.reference"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:spezifisch",
+        "path": "Observation.code.coding",
+        "sliceName": "spezifisch",
+        "short": "Immunhistochemische Untersuchung",
+        "definition": "Spezifischer Code SNOMED-CT- oder LOINC-Code für immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist, ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:spezifisch.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:generisch",
+        "path": "Observation.code.coding",
+        "sliceName": "generisch",
+        "short": "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist. ",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "1234806008",
+          "system": "http://snomed.info/sct",
+          "display": "Observation using immunohistochemistry (observable entity)"
+        },
+        "mustSupport": true
+      },
+      {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
         "slicing": {
@@ -62,115 +113,8 @@
       {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
-        "short": "Probe",
-        "definition": "Probe",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component",
-        "path": "Observation.component",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "reference.reference"
-            }
-          ],
-          "rules": "open",
-          "description": "Immunohistochemische Ergebnisse",
-          "ordered": false
-        }
-      },
-      {
-        "id": "Observation.component:msi",
-        "path": "Observation.component",
-        "sliceName": "msi",
-        "short": "Mikrosateliteninstablilität",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:msi.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:msi.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.component:msi.value[x]:valueCodeableConcept",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueCodeableConcept",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:msi.interpretation",
-        "path": "Observation.component.interpretation",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:mmr",
-        "path": "Observation.component",
-        "sliceName": "mmr",
-        "short": "Mismatch-Repair",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:mmr.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:mmr.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.component:mmr.value[x]:valueCodeableConcept",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueCodeableConcept",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:mmr.interpretation",
-        "path": "Observation.component.interpretation",
+        "short": "Block / Material-Nr. der Probe",
+        "definition": "Block-MAterial-Nr. der Probe. Da jede FHIR-Observation nur eine Referenz auf Specimen haben kann, Die gesamte Probe (z.B. Biopsie, Exzisat) wird von den Einzelschnitten referenziert. ",
         "mustSupport": true
       }
     ]

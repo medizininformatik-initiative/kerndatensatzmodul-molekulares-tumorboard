@@ -72,7 +72,9 @@ Alias: $mii-vs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhi
 Alias: $mii-cs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung
 Alias: $mii-vs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilung
 Alias: $mii-vs-mtb-oncotree = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-oncotree
-
+Alias: $mii-vs-mtb-msi = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi
+Alias: $mii-vs-mtb-mmr-proficiency = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency
+Alias: $mii-vs-mtb-mmr-expression = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression
 // Aliases für HL7 Terminologie
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type
@@ -111,6 +113,8 @@ Alias: $TBD = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $UNII = http://fdasis.nlm.nih.gov
 Alias: $UNIPROT = http://www.uniprot.org
+Alias: $NCIT = https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html
+
 
 // Sonstige Aliases
 Alias: $bwhc-cnv-type = http://bwhc.de/mtb/genetics-copy-number-variant

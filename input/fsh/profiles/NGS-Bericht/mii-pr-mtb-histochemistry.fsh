@@ -1,3 +1,4 @@
+/*Not yet needed
 Profile: MII_PR_MTB_HISTOCHEMISTRY
 Parent: Observation // Evtl von Observation von MolecularBiomarker erben
 Id: mii-pr-mtb-histochemistry
@@ -67,3 +68,4 @@ Description: "Immunhistorchemistry report"
 
 // Evtl component gene-studied oder Erweiterung von Code (bei häufigen auch Loinc-Liste oder HGNC)
 // CodeSystem -> mii-molekulare-biomarker
+*/

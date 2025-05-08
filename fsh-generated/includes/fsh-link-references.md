@@ -94,11 +94,11 @@
 [MII_PR_MTB_Histologie_Evaluation_Auftrag]: StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html
 [MII_PR_MTB_HRD_Score]: StructureDefinition-mii-pr-mtb-hrd-score.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
-[MII_PR_MTB_HISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-histochemistry.html
 [MII_PR_MTB_Immunohistochemistry]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
 [MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2]: StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.html
 [MII_PR_MTB_Immunohistochemistry_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
-[MII_PR_MTB_Immunohistochemistry_MMR_MSI]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr-msi.html
+[MII_PR_MTB_Immunohistochemistry_MSI]: StructureDefinition-mii-pr-mtb-msi.html
+[MII_PR_MTB_Immunohistochemistry_MMR]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.html
 [MII_PR_MTB_INSITUHYBRIDIZATION_HER2]: StructureDefinition-mii-pr-mtb-insituhybridization-her2.html
 [MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
@@ -135,8 +135,11 @@
 [MII_VS_MTB_Genomic_Analysis_Method_Type]: ValueSet-mii-vs-mtb-genomic-analysis-method-type.html
 [MII_VS_MTB_Kostenuebernahme_Ablehnungsgrund]: ValueSet-mii-vs-mtb-kostenuebernahme-ablehnungsgrund.html
 [MII_VS_MTB_Leitlinienbehandlung_Status]: ValueSet-mii-vs-mtb-leitlinienbehandlung-status.html
+[MII_VS_MTB_MMR_Proficiency]: ValueSet-mii-vs-mtb-mmr-proficiency.html
+[MII_VS_MTB_MMR_Expression]: ValueSet-mii-vs-mtb-mmr-expression.html
 [MII_VS_MTB_Immunhistochemistry_Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
+[MII_VS_MTB_Microsatellite_Instability]: ValueSet-mii-vs-mtb-msi.html
 [MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
