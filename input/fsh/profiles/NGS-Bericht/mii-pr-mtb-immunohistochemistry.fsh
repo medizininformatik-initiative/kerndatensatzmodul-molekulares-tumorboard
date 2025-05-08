@@ -1,5 +1,5 @@
-Profile: MII_PR_MTB_IMMUNOHISTOCHEMISTRY
-Parent: Observation // Evtl von Observation von MolecularBiomarker erben
+Profile: MII_PR_MTB_Immunohistochemistry
+Parent: MII_PR_MTB_Molekularer_Biomarker // Evtl von Observation von MolecularBiomarker erben
 Id: mii-pr-mtb-immunohistochemistry
 Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistorchemistry report"

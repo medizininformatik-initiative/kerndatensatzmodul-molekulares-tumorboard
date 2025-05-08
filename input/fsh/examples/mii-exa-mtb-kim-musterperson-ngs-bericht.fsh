@@ -104,6 +104,10 @@ Usage: #example
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:8979 "PIK3R1"
 * component[protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[protein-hgvs].valueCodeableConcept = $HGVS#NM_181523.2:p.E160*
+// 
+
+// Add diagnostic implication for PIK3R1 mutation
+// clinical significance = oncogenic/pathogenic
 
 // Therapeutische Implikation der PIK3R1 Mutation
 Instance: mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1

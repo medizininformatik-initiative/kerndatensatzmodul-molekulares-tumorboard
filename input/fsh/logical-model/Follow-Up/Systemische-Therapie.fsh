@@ -7,18 +7,18 @@ RuleSet: SystemischeTherapie
   * Bemerkungen                             0..1 string                         "Bemerkungen"
   * Status                                  1..1 code                           "Status" "WENN STATUS COMPLETED ODER STOPPED -> SYSTEMISCHE THERAPIE ENDE GRUND AUSFÜLLEN"
   * Wirkstoffe                              0..* string                         "Wirkstoffe"
-  * Dosisdichte                             0..* code                           "Dosisdichte"
+  * Dosisdichte                             0..1 code                           "Dosisdichte"
   * insert ResponseBefund
 
 RuleSet: SystemischeTherapieMapping
-* SystemischeTherapie -> "MedicationStatement" 
-  * MTBTherapieStartdatum -> "MedicationStatement.effectivePeriod.start" 
-  * MTBTherapieEnddatum -> "MedicationStatement.effectivePeriod.end"
-  * SystemischeTherapieEndeGrund -> "MedicationStatement.statusReason"
-  * TherapieEmpfehlung -> "MedicationStatement.basedOn"
-  * Bemerkungen -> "MedicationStatement.note"
-  * Status -> "MedicationStatement.status"
-  * Wirkstoffe -> "MedicationStatement.medication[x]"
+* SystemischeTherapie -> "Procedure" 
+  * MTBTherapieStartdatum -> "Procedure.performedPeriod.start" 
+  * MTBTherapieEnddatum -> "Procedure.performedPeriod.end"
+  * SystemischeTherapieEndeGrund -> "Procedure.statusReason"
+  * TherapieEmpfehlung -> "Procedure.extension[causedBy]"
+  * Bemerkungen -> "Procedure.note"
+  * Status -> "Procedure.status"
+  * Wirkstoffe -> "MedicationStatement.partOf"
   * Dosisdichte -> "MedicationStatement.dosage"
   
 

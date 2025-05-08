@@ -1,9 +1,9 @@
 
-CodeSystem: MII_CS_MTB_Follow_Up_Grund_Nicht_Umsetzung
-Id: mii-cs-mtb-follow-up-grund-nicht-umsetzung
-Title: "MII CS Follow-Up Grund Nicht-Umsetzung"
-Description: "Codesystem zum Follow-Up Grund Nicht-Umsetzung"
-* insert CS_Header($mii-cs-mtb-follow-up-grund-nicht-umsetzung)
+CodeSystem: MII_CS_MTB_Systemische_Therapie_Status_Grund
+Id: mii-cs-mtb-systemische-therapie-status-grund
+Title: "MII CS Systemische Therapie Status Grund"
+Description: "Codesystem zum Status Grund der Systemischen Therapie nach DNPM"
+* insert CS_Header($mii-cs-mtb-systemische-therapie-status-grund)
 * #payment-refused                                "Kostenübernahme abgelehnt"
 * #payment-pending                                "Kostenübernahme noch ausstehend"
 * #payment-ended                                  "Ende der Kostenübernahme"

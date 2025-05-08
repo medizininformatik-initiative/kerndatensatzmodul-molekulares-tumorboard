@@ -11,18 +11,13 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * basedOn ^definition = "Referenz auf Therapieempfehlung in MTB-Therapieplan"
 
 * partOf 1..1 MS
-* partOf only Reference(MII_PR_MTB_Systemische_Therapie or MedicationStatement)
+* partOf only Reference(MII_PR_MTB_Systemische_Therapie or Procedure or MedicationStatement)
 * partOf ^short = "Systemische Therapie"
 * partOf ^definition = "Dazugehörige MTB Systemische Therapie"
 
 * status MS
-* status ^short = "Status"
-* status from MII_VS_MTB_Systemtherapie_Status
-// RULE: WENN STATUS COMPLETED ODER STOPPED -> MUSS SYSTEMISCHE THERAPIE ENDE GRUND AUSFÜLLEN
-* statusReason 0..1 MS
-* statusReason from https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/ValueSet/mii-vs-systemische-therapie-ende-grund
-* statusReason ^short = "Systemische Therapie Ende Grund" 
-* statusReason ^definition = "Gibt den Grund an, warum die Systemtherapie beendet wurde." 
+// * status ^short = "Status"
+// * status from MII_VS_MTB_Systemische_Therapie_Status
 
 * medication[x] MS
 * medication[x] ^short = "Wirkstoffe"
@@ -65,7 +60,7 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * subject MS
 * subject only Reference(Patient)
 * effective[x] 1..1 MS
-* effective[x] only Period
+* effective[x]
 * effectivePeriod MS
 * effectivePeriod.start 1..1 MS
 * effectivePeriod.start ^short = "Startdatum"
@@ -73,9 +68,8 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * effectivePeriod.end ^short = "Enddatum"
 * note 0..* MS
 * note ^short = "Bemerkungen"
+
 * dosage MS
-// TODO: überlegen wie man die Codes aus ArtDecor als 'Dosage' data type darstellen kann
-// ist die Dosisdichte vielleicht eher eine Info für die Procedure?
 * dosage ^slicing.discriminator.type = #value
 * dosage ^slicing.discriminator.path = "system"
 * dosage ^slicing.rules = #open
@@ -83,7 +77,11 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * dosage ^slicing.ordered = false
 * dosage contains Dosisdichte 0..1 MS
 * dosage[Dosisdichte] 0..1 MS 
+* dosage[Dosisdichte] ^short = "Dosisdichte"
+* dosage[Dosisdichte] ^definition = "Die Dosisdichte gibt an ob, in welchem Ausmaß eine Dosisreduktion vorliegt."
 * dosage[Dosisdichte].doseAndRate.doseQuantity.system = $mii-cs-mtb-dosisdichte
 * dosage[Dosisdichte].doseAndRate.doseQuantity.code from MII_VS_MTB_Dosisdichte
 * dosage contains Dosis 0..1 MS
-* dosage[Dosis] MS
+* dosage[Dosis] 0..1 MS
+* dosage[Dosis] ^short = "Dosis"
+* dosage[Dosis] ^definition = "Dosis als absoluter Wert"

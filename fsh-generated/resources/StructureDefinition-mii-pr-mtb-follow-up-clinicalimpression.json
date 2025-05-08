@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-pr-mtb-follow-up-clincalimpression",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clincalimpression",
+  "id": "mii-pr-mtb-follow-up-clinicalimpression",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression",
   "version": "2024.0.0-ballot",
   "name": "MII_PR_MTB_Follow_Up_ClinicalImpression",
   "title": "MII PR MTB Clinical Impresssion",
@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Follow-Up nach DNPM ",
+  "description": "Follow-Up als Prozess des Einholens von Informationen über durchgeführte Therapien & Kostenuebernahmen",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -41,7 +41,7 @@
         "id": "ClinicalImpression.statusReason",
         "path": "ClinicalImpression.statusReason",
         "short": "Grund Nicht-Umsetzung",
-        "definition": "Grund der Nicht-Umsetzung des gesamten Therapieplans",
+        "definition": "Grund für die Nicht-Umsetzung des gesamten Therapieplans",
         "mustSupport": true
       },
       {
@@ -53,7 +53,7 @@
       {
         "id": "ClinicalImpression.statusReason.coding.system",
         "path": "ClinicalImpression.statusReason.coding.system",
-        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund"
       },
       {
         "id": "ClinicalImpression.statusReason.coding.code",
@@ -62,7 +62,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung"
         }
       },
       {
@@ -86,7 +86,7 @@
         "id": "ClinicalImpression.investigation",
         "path": "ClinicalImpression.investigation",
         "short": "Status Follow-Up",
-        "definition": "Status des Patienten im Hinblick auf das Follow-Up",
+        "definition": "Status des Therapieplans im Hinblick auf das Follow-Up",
         "mustSupport": true
       },
       {
@@ -124,6 +124,7 @@
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "UmgesetzteTherapien",
         "short": "Umgesetzte Therapien",
+        "definition": "Umgesetzte Therapien mit oder auch ohne Bezug auf die MTB-Empfehlungen",
         "min": 0,
         "max": "*",
         "type": [
@@ -142,6 +143,7 @@
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "AntraegeKostenuebernahme",
         "short": "Anträge Kostenübernahme",
+        "definition": "Anträge Kostenübernahme für die empfohlenen Therapien",
         "min": 0,
         "max": "*",
         "type": [
@@ -159,6 +161,7 @@
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "AntwortenKostenuebernahme",
         "short": "Antworten Kostenübernahme",
+        "definition": "Antworten der Versicherungen auf die Anträge zur Kostenübernahme",
         "min": 0,
         "max": "*",
         "type": [

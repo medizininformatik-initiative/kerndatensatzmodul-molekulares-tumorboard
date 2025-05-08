@@ -8,13 +8,26 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 
 
 * status MS
+* status ^short = "not-done | in-progress | stopped | completed"
+* status ^definition = "
+        not-done: Die Therapie wurde nie angefangen und wird auch nicht mehr angefangen,
+        in-progress: Die Therapie hat noch nicht angefangen oder läuft bereits,
+        stopped: Die Therapie wurde bereits angefangen aber vorzeitig abgebrochen,
+        completed: Die Therapie wurde plangemäß abgeschlossen"
+* status from MII_VS_MTB_Systemische_Therapie_Status
+
 * statusReason MS
 * statusReason ^short = "Status Grund"
 * statusReason ^definition = "Grund des Status der Therapie"
 * statusReason.coding 1..1
-* statusReason.coding.system = $mii-cs-mtb-follow-up-grund-nicht-umsetzung
+* statusReason.coding.system = $mii-cs-mtb-systemische-therapie-status-grund
 * statusReason.coding.code 1..1 MS 
-* statusReason.coding.code from $mii-cs-mtb-follow-up-grund-nicht-umsetzung
+* statusReason.coding.code from MII_VS_MTB_Systemische_Therapie_Status_Grund
+
+* extension contains $fhir-ext-caused-by named causedBy 0..1 MS
+* extension[causedBy] ^short = "Therapieempfehlung"
+* extension[causedBy] ^definition = "Verweis auf die MTB Therapieempfehlung"
+* extension[causedBy].valueReference only Reference(MII_PR_Medikation_MedicationRequest or MII_PR_MTB_Therapieempfehlung or MedicationRequest)
 
 * subject MS
 
@@ -26,3 +39,6 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 * basedOn only Reference(MII_PR_MTB_Therapieplan)
 * basedOn ^short = "MTB Therapieplan"
 * basedOn ^definition = "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
+
+* note 0..1 MS 
+* note ^short = "Bemerkungen"

@@ -2,6 +2,7 @@ Instance: MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1
 InstanceOf: MII_PR_MTB_Antrag_Kostenuebernahme
 Usage: #example
 Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
+
 * type = #institutional
 * use = #claim
 * patient = Reference(Patient/example)
@@ -11,5 +12,4 @@ Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
 * insurance.coverage = Reference(Coverage/CoverageExample)
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample)
 * careTeam[ZPMBeteiligung].responsible = true
-* careTeam[ZPMBeteiligung].sequence = 1
-//* extension[Antragsstadium].valueCodeableConcept = #initial-claim
+* related.relationship.coding.code = #initial-claim

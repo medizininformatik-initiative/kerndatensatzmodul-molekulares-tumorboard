@@ -116,13 +116,14 @@
       {
         "id": "RequestGroup.status",
         "path": "RequestGroup.status",
-        "short": "Umsetzungsstatus",
         "definition": "Status der Umsetzung der Therapieempfehlung",
         "comment": "\r\n    draft: Nicht umgesetzt, \r\n    active: In Umsetzung, \r\n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
       },
       {
         "id": "RequestGroup.intent",
         "path": "RequestGroup.intent",
+        "short": "proposal | option",
+        "definition": "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,\ndiese Therapieempfehlung ist selbst nochmal Teil einer RequestGroup. In dem Fall muss hier 'option' stehen.",
         "mustSupport": true
       },
       {

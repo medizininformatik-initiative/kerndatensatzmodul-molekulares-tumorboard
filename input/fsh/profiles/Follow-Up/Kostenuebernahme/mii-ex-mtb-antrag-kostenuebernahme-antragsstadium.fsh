@@ -13,3 +13,4 @@ Description: "Stadium des Antrags zur Kostenuebernahme"
 * valueCodeableConcept.coding ^definition = "Stadium des Antrags auf Kostenuebernahme"
 * valueCodeableConcept.coding.system = $mii-cs-mtb-antrag-kostenuebernahme-antragsstadium
 * valueCodeableConcept.coding.code 1..1 MS
+* valueCodeableConcept.coding.code from MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium

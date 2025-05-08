@@ -34,7 +34,7 @@ Description: "Antwort auf Antrag Kostenübernahme"
     MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung named Entscheidung 0..1 MS and
     MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund named Ablehnungsgrund 0..1
 
-* extension[Entscheidung] ^short = "Entscheidung der Kosten"
+* extension[Entscheidung] ^short = "Entscheidung"
 * extension[Entscheidung] ^definition = "Stadium der Antwort auf den Antrag zur Kostenuebernahme"
 * extension[Ablehnungsgrund] ^short = "Ablehnungsgrund"
 * extension[Ablehnungsgrund] ^definition = "Stadium der Antwort auf den Antrag zur Kostenuebernahme"

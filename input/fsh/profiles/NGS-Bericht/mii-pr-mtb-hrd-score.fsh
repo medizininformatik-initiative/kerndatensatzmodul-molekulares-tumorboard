@@ -11,7 +11,10 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * subject only Reference(Patient or Group)
 * encounter MS
 * specimen MS
+* value[x] MS
+* value[x] only integer
 * interpretation MS
+* interpretation from $hl7-v3-observation-high-low-codes
 * component MS
 
 * code = $mii-cs-mtb-molekulare-biomarker#hrd

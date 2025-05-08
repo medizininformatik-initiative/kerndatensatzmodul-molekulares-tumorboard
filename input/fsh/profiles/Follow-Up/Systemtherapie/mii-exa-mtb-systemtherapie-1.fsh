@@ -3,11 +3,11 @@ InstanceOf: MII_PR_MTB_Systemische_Therapie
 Usage: #example
 Title: "Beispiel fuer eine Systemtherapie"
 
-
-* basedOn = Reference(MedicationRequest/Example)
-* status = #active
+* status = #completed
 * statusReason.coding.code = #regular-completion
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
+* extension[causedBy].valueReference = Reference(MedicationRequest/Example)
+* basedOn = Reference(CarePlan/Example)
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
 * subject = Reference(Patient/Example)
 * performedPeriod.start = "2014-02-12"

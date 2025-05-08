@@ -6,26 +6,16 @@ Description: "Verweis auf Publikation der (einzelnen) Empfehlung"
 * insert EX_Header($mii-ex-mtb-empfehlung-publikation)
 
 * value[x] 1..1 MS
-* value[x] only string or Identifier
-
-
-
+* value[x] only Identifier or string
 
 // Research database
 * valueIdentifier ^short = "Identifikator Publikation"
 * valueIdentifier ^definition = "Eindeutiger Identifikator zur Publikation in einer Publikationsdatenbank"
-
-// Achtung, es wird nur ein COmment gerendert! Anpassen! 
-* valueIdentifier ^comment = "Z.B. Document Object Identifier (DOI): https://doi.org/10.3414/ME18-03-0003"
-* valueIdentifier ^comment = "Z.B. PubMed Identifier (PMID): http://www.ncbi.nlm.nih.gov/pubmed/30016818"
+* valueIdentifier ^comment = "Z.B. Document Object Identifier (DOI): https://doi.org/10.3414/ME18-03-0003 oder PubMed Identifier (PMID): http://www.ncbi.nlm.nih.gov/pubmed/30016818"
 * valueIdentifier.system 1..1 MS
-// Achtung, es wird nur ein COmment gerendert! Anpassen! 
-* valueIdentifier.system ^comment = "Z.B. DOI: http://doi.org"
-* valueIdentifier.system ^comment = "Z.B. PMID: http://www.ncbi.nlm.nih.gov/pubmed"
+* valueIdentifier.system ^comment = "Publikationsdatenbank, z.B. DOI: http://doi.org oder PMID: http://www.ncbi.nlm.nih.gov/pubmed"
 * valueIdentifier.value 1..1 MS
-// Achtung, es wird nur ein COmment gerendert! Anpassen! 
-* valueIdentifier.value ^comment = "Z.B. DOI: 10.1000/182"
-* valueIdentifier.value ^comment = "Z.B. PMID: 30016818"
+* valueIdentifier.value ^comment = "Identifikator zur Publikation, z.B. DOI: 10.1000/182 oder PMID: 30016818"
 
 // Other publication source
 * valueString ^short = "Andere Publikationsquelle"

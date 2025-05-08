@@ -16,24 +16,3 @@ InstanceOf: MII_PR_MTB_Therapieplan
 
 * category.coding.code = $SCT#12345678 // Platzhalter
 * category.text = "Molekulares Tumorboard"
-* activity[+].reference = Reference(ServiceRequest/mii-exa-mtb-service-request-patho-sop-ovar)
-* activity[=].detail.code.coding.code = $SCT#12345678 // Platzhalter
-* activity[=].detail.code.coding.display = "Molekulare Diagnostik SOP Ovar inkl. IHC Her2ne, Folar-Ra, Trop2"
-* activity[=].detail.status = #completed
-* activity[=].reference = Reference(ServiceRequest/mii-exa-mtb-service-request-TSO500-panel)
-* activity[=].detail.code.coding.code = $SCT#12345678 // Platzhalter
-* activity[=].detail.code.coding.display = "TSO500 Panel incl. HLA-Status"
-* activity[=].detail.status = #completed
-/* Das ist so nicht 100% richtig. Formal wird erst die Claudin-6 Expression bestimmt und je nachdem die Studie empfohlen. Wird im 2. MTB mit dem Therapieplan nochmal aufgegriffen
-* activity[Studieneinschlussempfehlung].reference = Reference(mii-exa-mtb-study-request-cldn6)
-* activity[Studieneinschlussempfehlung].detail.code.coding.code = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ#SO
-* activity[Studieneinschlussempfehlung].detail.status = #not-started
-*/
-
-Instance: MII-EXA-MTB-Molekulare-Diagnostik-SOP-Ovar
-InstanceOf: ServiceRequest // eigentlich MolGen Service Request
-* status = #completed
-* intent = #order
-* subject = Reference(Patient/KimMusterperson)
-* authoredOn = 2023-01-20
-
