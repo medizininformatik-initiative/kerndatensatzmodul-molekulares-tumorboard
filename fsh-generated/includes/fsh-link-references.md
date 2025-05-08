@@ -15,6 +15,10 @@
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
+[MII-EXA-MTB-DNA-Fusion-1]: Observation-MII-EXA-MTB-DNA-Fusion-1.html
+[MII-EXA-MTB-Diagnostische-Implikation-1]: Observation-MII-EXA-MTB-Diagnostische-Implikation-1.html
+[MII-EXA-MTB-BRCAness-1]: Observation-MII-EXA-MTB-BRCAness-1.html
+[MII-EXA-MTB-Copy-Number-Variant-1]: Observation-MII-EXA-MTB-Copy-Number-Variant-1.html
 [MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1]: ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1.html
 [MII-EXA-MTB-Systemtherapie-Beispiel-1]: Procedure-MII-EXA-MTB-Systemtherapie-Beispiel-1.html
@@ -23,8 +27,12 @@
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Response-Befund-Beispiel-1]: Observation-MII-EXA-MTB-Response-Befund-Beispiel-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
+[MII-EXA-MTB-HRD-Score-1]: Observation-MII-EXA-MTB-HRD-Score-1.html
+[MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
+[MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
 [mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
 [mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
+[MII-EXA-MTB-Einfache-Variante]: Observation-MII-EXA-MTB-Einfache-Variante.html
 [MTBObservationCA125-1]: Observation-MTBObservationCA125-1.html
 [MTBObservationCA125-2]: Observation-MTBObservationCA125-2.html
 [MTBObservationCA125-3]: Observation-MTBObservationCA125-3.html
