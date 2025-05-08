@@ -26,6 +26,7 @@
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
 [MII-EXA-MTB-HRD-Score-1]: Observation-MII-EXA-MTB-HRD-Score-1.html
 [MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
+[MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
 [mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
 [mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
 [MII-EXA-MTB-Einfache-Variante]: Observation-MII-EXA-MTB-Einfache-Variante.html
