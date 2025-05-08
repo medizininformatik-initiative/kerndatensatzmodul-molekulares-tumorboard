@@ -37,7 +37,7 @@ Title: "Beispiel fuer einen Sequencer"
 Instance: MII-EXA-MTB-Device-SequencingKit-1
 InstanceOf: Device
 Usage: #example
-Title: "Cool"
+Title: "Device"
 
 Instance: MII-EXA-MTB-Device-LibraryPreparation-Kit-1
 InstanceOf: Device
