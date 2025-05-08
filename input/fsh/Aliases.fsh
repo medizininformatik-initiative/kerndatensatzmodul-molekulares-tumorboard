@@ -107,6 +107,7 @@ Alias: $ICDO3 = http://terminology.hl7.org/CodeSystem/icd-o-3
 Alias: $LNC = http://loinc.org
 Alias: $OPS = http://fhir.de/CodeSystem/bfarm/ops
 Alias: $SCT = http://snomed.info/sct
+Alias: $SNP = http://www.ncbi.nlm.nih.gov/projects/SNP
 Alias: $TBD = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $UNII = http://fdasis.nlm.nih.gov
