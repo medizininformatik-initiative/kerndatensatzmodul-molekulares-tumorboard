@@ -15,6 +15,7 @@
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
 [MII-EXA-MTB-DNA-Fusion-1]: Observation-MII-EXA-MTB-DNA-Fusion-1.html
+[MII-EXA-MTB-Diagnostische-Implikation-1]: Observation-MII-EXA-MTB-Diagnostische-Implikation-1.html
 [MII-EXA-MTB-Systemtherapie-Beispiel-1]: Procedure-MII-EXA-MTB-Systemtherapie-Beispiel-1.html
 [MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1]: Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html
 [MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1.html
