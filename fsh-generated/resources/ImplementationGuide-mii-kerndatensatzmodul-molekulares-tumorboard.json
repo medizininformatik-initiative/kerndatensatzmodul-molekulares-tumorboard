@@ -157,7 +157,7 @@
           "reference": "CarePlan/MolekularesTumorboardSession-1"
         },
         "name": "20.01.2023 Molekulares Tumorboard:",
-        "description": "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie\n2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.\n3. Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.\n4. Studiencheck (inkl. QuickQueck Suche): Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ). Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2). \n5. Wiedervorstellung nach Eingang der Befunde.\n",
+        "description": "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie\r\n2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.\r\n3. Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.\r\n4. Studiencheck (inkl. QuickQueck Suche): Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ). Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2). \r\n5. Wiedervorstellung nach Eingang der Befunde.\r\n",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
       },
       {
@@ -243,6 +243,38 @@
       },
       {
         "reference": {
+          "reference": "Observation/MII-EXA-MTB-DNA-Fusion-1"
+        },
+        "name": "Beispiel DNA-Fusion",
+        "description": "Beispiel fuer eine DNA-Fusion in Tumorzellen.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Diagnostische-Implikation-1"
+        },
+        "name": "Beispiel fuer BRAF Mutation MTB Diagnostische Implikation",
+        "description": "Beispiel fuer diagnostische Implikation im Kontext des Molecular Tumor Boards basierend auf einer BRAF-Mutation.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-BRCAness-1"
+        },
+        "name": "Beispiel fuer BRCAness-Analyse",
+        "description": "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalten eines Tumors in Bezug auf BRCA-ähnliche Eigenschaften darstellt.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Copy-Number-Variant-1"
+        },
+        "name": "Beispiel fuer Copy Number Variant",
+        "description": "Beispiel fuer eine Copy Number Variant (CNV).",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant"
+      },
+      {
+        "reference": {
           "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1"
         },
         "name": "Beispiel fuer eine Antwort auf den Antrag auf Kostenuebernahme",
@@ -299,6 +331,30 @@
       },
       {
         "reference": {
+          "reference": "Observation/MII-EXA-MTB-HRD-Score-1"
+        },
+        "name": "Beispiel HRD-Score",
+        "description": "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombinationsdefizienz beschreibt.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Mikrosatelliteninstabilitaet-1"
+        },
+        "name": "Beispiel Mikrosatelliteninstabilität",
+        "description": "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund von MMR-Störung.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Mutationslast-1"
+        },
+        "name": "Beispiel Mutationslast in Tumorprobe (MTB)",
+        "description": "Beispiel fuer die Mutationslast in einer Tumorprobe mit Bezug zu molekularem Tumorboard.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast"
+      },
+      {
+        "reference": {
           "reference": "Organization/mii-exa-mtb-study-sponsor-biontech"
         },
         "name": "BioNTech Cell & Gene Therapies GmbH",
@@ -312,6 +368,14 @@
         "name": "BioNTech Responsible Person",
         "description": "Investigator: BioNTech Responsible Person, BioNTech SE",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Einfache-Variante"
+        },
+        "name": "BRAF Variante",
+        "description": "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von NGS.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante"
       },
       {
         "reference": {
