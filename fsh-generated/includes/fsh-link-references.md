@@ -47,6 +47,8 @@
 [mii-exa-mtb-medication-lunresertib]: Medication-mii-exa-mtb-medication-lunresertib.html
 [mii-exa-mtb-medication-request-lunresertib]: MedicationRequest-mii-exa-mtb-medication-request-lunresertib.html
 [mii-exa-mtb-request-group-lunresertib-camonsertib]: RequestGroup-mii-exa-mtb-request-group-lunresertib-camonsertib.html
+[mii-cm-mtb-therapiestatusgrund-obds]: ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.html
+[mii-cm-mtb-therapiestatusgrund-sct]: ConceptMap-mii-cm-mtb-therapiestatusgrund-sct.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_CS_MTB_AuftragBegruendung]: CodeSystem-mii-cs-mtb-auftrag-begruendung.html
@@ -63,6 +65,7 @@
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
 [MII_CS_MTB_Systemische_Therapie_Status_Grund]: CodeSystem-mii-cs-mtb-systemische-therapie-status-grund.html
+[MII_CS_MTB_Therapiestatusgrund]: CodeSystem-mii-cs-mtb-therapiestatusgrund.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
@@ -81,6 +84,7 @@
 [mii-ns-mtb-nct]: NamingSystem-mii-ns-mtb-nct.html
 [mii-ns-studie-drks]: NamingSystem-mii-ns-studie-drks.html
 [mii-ns-studie-eudract]: NamingSystem-mii-ns-studie-eudract.html
+[MII_PR_MTB_BIOMARKER_HER2_STATUS]: StructureDefinition-mii-pr-mtb-biomarker-her2-status.html
 [MII_PR_MTB_Antrag_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html
 [MII_PR_MTB_Antwort_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html
 [MII_PR_MTB_Behandlungsepisode]: StructureDefinition-mii-pr-mtb-behandlungsepisode.html
@@ -98,8 +102,10 @@
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
 [MII_PR_MTB_HISTOCHEMISTRY]: StructureDefinition-mii-pr-mtb-histochemistry.html
 [MII_PR_MTB_Immunohistochemistry]: StructureDefinition-mii-pr-mtb-immunohistochemistry.html
+[MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2]: StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.html
 [MII_PR_MTB_Immunohistochemistry_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
 [MII_PR_MTB_Immunohistochemistry_MMR_MSI]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr-msi.html
+[MII_PR_MTB_INSITUHYBRIDIZATION_HER2]: StructureDefinition-mii-pr-mtb-insituhybridization-her2.html
 [MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
 [MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
@@ -121,7 +127,6 @@
 [MII_PR_MTB_Tumorausbreitung]: StructureDefinition-mii-pr-mtb-tumorausbreitung.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
 [MII_PR_MTB_WHO_Grad_Tumor_ZNS]: StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.html
-[MII_VS_MTB_Abbrungsgrund]: ValueSet-mii-vs-mtb-abbruchsgrund.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_VS_MTB_Antwort_Kostenuebernahme_Status]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-status.html
 [MII_VS_MTB_AuftragBegruendung]: ValueSet-mii-vs-mtb-auftrag-begruendung.html
@@ -142,6 +147,7 @@
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
 [MII_VS_MTB_Systemische_Therapie_Status_Grund]: ValueSet-mii-vs-mtb-systemische-therapie-status-grund.html
+[MII_VS_MTB_Therapiestatusgrund]: ValueSet-mii-vs-mtb-therapiestatusgrund.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html
