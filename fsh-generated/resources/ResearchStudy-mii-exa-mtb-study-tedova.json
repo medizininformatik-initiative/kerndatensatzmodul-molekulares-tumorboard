@@ -1,0 +1,24 @@
+{
+  "resourceType": "ResearchStudy",
+  "id": "mii-exa-mtb-study-tedova",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://www.medizininformatik-initiative.de/fhir/modul-mtb/sid/nct",
+      "value": "04713514"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/event-basedOn",
+      "valueReference": {
+        "reference": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
+      }
+    }
+  ],
+  "status": "draft"
+}
