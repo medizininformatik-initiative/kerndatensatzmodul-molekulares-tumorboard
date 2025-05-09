@@ -11,7 +11,6 @@
 [MII-EXA-MTB-Systemische-Therapie-Medication-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-1.html
 [MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1.html
 [MII-EXA-MTB-Systemische-Therapie-Medication-4]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-4.html
-[mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
@@ -31,7 +30,6 @@
 [MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
 [MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
 [mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
-[mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
 [MII-EXA-MTB-Einfache-Variante]: Observation-MII-EXA-MTB-Einfache-Variante.html
 [MTBObservationCA125-1]: Observation-MTBObservationCA125-1.html
 [MTBObservationCA125-2]: Observation-MTBObservationCA125-2.html
@@ -42,7 +40,6 @@
 [mii-exa-mtb-medication-camonsertib]: Medication-mii-exa-mtb-medication-camonsertib.html
 [mii-exa-mtb-medication-request-camonsertib]: MedicationRequest-mii-exa-mtb-medication-request-camonsertib.html
 [mii-exa-mtb-medication-request-carboplatin]: MedicationRequest-mii-exa-mtb-medication-request-carboplatin.html
-[mii-exa-mtb-study-ccne1]: ResearchStudy-mii-exa-mtb-study-ccne1.html
 [mii-exa-mtb-study-request-ccne1]: ServiceRequest-mii-exa-mtb-study-request-ccne1.html
 [mii-exa-mtb-kim-musterperson-CNVariante-CCNE1]: Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html
 [mii-exa-mtb-medication-cobimetinib]: Medication-mii-exa-mtb-medication-cobimetinib.html
@@ -124,7 +121,6 @@
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
 [MII_PR_MTB_RNA_Seq]: StructureDefinition-mii-pr-mtb-rna-seq.html
-[MII_PR_MTB_Studie]: StructureDefinition-mii-pr-mtb-studie.html
 [MII_PR_MTB_Studieneinschluss_Anfrage]: StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html
 [MII_PR_MTB_Systemische_Therapie]: StructureDefinition-mii-pr-mtb-systemische-therapie.html
 [MII_PR_MTB_Systemische_Vortherapie]: StructureDefinition-mii-pr-mtb-systemische-vortherapie.html
@@ -273,7 +269,6 @@
 [mii-exa-mtb-study-request-cldn6]: ServiceRequest-mii-exa-mtb-study-request-cldn6.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html
 [mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1.html
-[mii-exa-mtb-study-tedova]: ResearchStudy-mii-exa-mtb-study-tedova.html
 [mii-exa-mtb-study-request-tedova]: ServiceRequest-mii-exa-mtb-study-request-tedova.html
 [mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53]: Observation-mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53.html
