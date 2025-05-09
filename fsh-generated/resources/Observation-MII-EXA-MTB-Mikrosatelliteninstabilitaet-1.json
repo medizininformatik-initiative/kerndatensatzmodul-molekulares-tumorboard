@@ -42,10 +42,13 @@
   "subject": {
     "reference": "Patient/example"
   },
-  "valueQuantity": {
-    "value": 0.93,
-    "code": "percent",
-    "system": "http://unitsofmeasure.org",
-    "unit": "Percent unstable MSI sites"
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA26203-2",
+        "system": "http://loinc.org",
+        "display": "MSI-H"
+      }
+    ]
   }
 }

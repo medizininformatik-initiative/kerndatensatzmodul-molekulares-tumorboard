@@ -12,4 +12,4 @@ Description: "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund
 
 * interpretation = $hl7-v3-observation-high-low-codes#high "MSI-H"
 
-* valueQuantity = 0.93 $UCUM#percent "Percent unstable MSI sites"
+* valueCodeableConcept = $LNC#LA26203-2 "MSI-H"
