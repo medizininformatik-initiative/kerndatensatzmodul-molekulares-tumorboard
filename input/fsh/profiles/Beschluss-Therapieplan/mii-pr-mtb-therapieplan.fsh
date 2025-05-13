@@ -104,6 +104,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * supportingInfo ^slicing.description = "Slice für weitere Informationen"
 * supportingInfo ^slicing.ordered = false
 
+// Referenz zwischen Therapieplan und Behandlungsepisode klären
 * supportingInfo contains Behandlungsepisode 0..1 MS
 * supportingInfo[Behandlungsepisode] ^short = "Behandlungsepisode"
 * supportingInfo[Behandlungsepisode] ^definition = "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"

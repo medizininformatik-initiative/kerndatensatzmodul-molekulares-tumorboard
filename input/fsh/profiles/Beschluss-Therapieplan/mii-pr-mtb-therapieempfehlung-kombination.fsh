@@ -19,12 +19,12 @@ Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"
 * intent ^definition = "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,
 diese Therapieempfehlung ist selbst nochmal Teil einer RequestGroup. In dem Fall muss hier 'option' stehen."
 
-* replaces only Reference(
-    MII_PR_MTB_Therapieempfehlung_Kombination or
-    MII_PR_MTB_Therapieempfehlung or
-    RequestGroup or
-    MedicationRequest
-  )
+// * replaces only Reference(
+//     MII_PR_MTB_Therapieempfehlung_Kombination or
+//     MII_PR_MTB_Therapieempfehlung or
+//     RequestGroup or
+//     MedicationRequest
+//   )
 
 * intent MS
 //* intent = #proposal // wenn intent = option sein soll, kann das hier nicht gesetzt werden

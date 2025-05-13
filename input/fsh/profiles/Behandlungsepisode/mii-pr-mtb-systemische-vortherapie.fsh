@@ -19,7 +19,6 @@ Description: "Systemische Vortherapie zum Molekularen Tumorboard"
 
 * outcome.coding ^slicing.discriminator.type = #value
 * outcome.coding ^slicing.discriminator.path = "system"
-* outcome.coding ^slicing.discriminator.path = "code"
 * outcome.coding ^slicing.rules = #open
 * outcome.coding ^slicing.description = "Slice für Grund des Therapiestatus"
 * outcome.coding ^slicing.ordered = false

@@ -80,7 +80,7 @@
           "discriminator": [
             {
               "type": "value",
-              "path": "code"
+              "path": "system"
             }
           ],
           "rules": "open",
@@ -101,6 +101,7 @@
       {
         "id": "Procedure.outcome.coding:Therapiestatusgrund.system",
         "path": "Procedure.outcome.coding.system",
+        "min": 1,
         "patternUri": "http://snomed.info/sct"
       },
       {
