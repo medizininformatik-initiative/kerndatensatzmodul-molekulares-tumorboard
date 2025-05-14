@@ -77,7 +77,7 @@ Usage: #example
 
 // Diagnostische Implikation der TP53 Mutation (Pathogenität)
 Instance: mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53
-InstanceOf: $mii-pr-molgen-diagnostische-implikation
+InstanceOf: MII_PR_MTB_Diagnostische_Implikation
 Title: "TP53 Diagnostische Implikation"
 Description: "Diagnostische Bedeutung der festgestellten TP53 Mutation"
 Usage: #example
@@ -111,7 +111,7 @@ Usage: #example
 
 // Therapeutische Implikation der PIK3R1 Mutation
 Instance: mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1
-InstanceOf: $mii-pr-molgen-therapeutische-implikation
+InstanceOf: MII_PR_MTB_Therapeutische_Implikation
 Title: "PIK3R1 Therapeutische Implikation"
 Description: "Therapeutische Bedeutung der festgestellten PIK3R1 Mutation"
 Usage: #example
@@ -124,6 +124,7 @@ Usage: #example
 * component[conclusion-string].valueString = "Ausweislich praeklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3)."
 * component[medication-assessed].code = $LNC#51963-7 "Medication assessed [ID]"
 * component[medication-assessed].valueCodeableConcept = $ATC_DE#L01EE "Mitogen-akivierte Proteinkinase (MEK)-Inhibitoren"
+* extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #m3
 
 // Kopienzahlveränderung von CCNE1.
 Instance: mii-exa-mtb-kim-musterperson-CNVariante-CCNE1

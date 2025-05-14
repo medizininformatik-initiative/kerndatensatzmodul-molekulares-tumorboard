@@ -1,0 +1,64 @@
+{
+  "resourceType": "Observation",
+  "id": "MII-EXA-MTB-HRD-Score-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "GE",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/example"
+    }
+  ],
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "high",
+          "system": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs",
+          "display": "high HRD"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "hrd",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb--molekulare-biomarker",
+        "display": "HRD Score"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "specimen": {
+    "reference": "Specimen/example"
+  },
+  "valueInteger": 43
+}

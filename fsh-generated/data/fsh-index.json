@@ -1,5 +1,13 @@
 [
   {
+    "outputFile": "CapabilityStatement-mii-cps-mtb-capabilitystatement.json",
+    "fshName": "mii-cps-mtb-capabilitystatement",
+    "fshType": "Instance",
+    "fshFile": "capability-statement.fsh",
+    "startLine": 33,
+    "endLine": 339
+  },
+  {
     "outputFile": "CarePlan-MolekularesTumorboardSession-1.json",
     "fshName": "MolekularesTumorboardSession-1",
     "fshType": "Instance",
@@ -37,7 +45,7 @@
     "fshType": "Instance",
     "fshFile": "profiles\\Follow-Up\\Kostenuebernahme\\mii-exa-mtb-antrag-kostenuebernahme-1.fsh",
     "startLine": 1,
-    "endLine": 14
+    "endLine": 15
   },
   {
     "outputFile": "ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.json",
@@ -46,6 +54,14 @@
     "fshFile": "examples\\mii-exa-mtb-kim-musterperson-follow-up.fsh",
     "startLine": 186,
     "endLine": 195
+  },
+  {
+    "outputFile": "ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1.json",
+    "fshName": "MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/Follow-Up/Kostenuebernahme/mii-exa-mtb-antwort-kostenuebernahme-1.fsh",
+    "startLine": 1,
+    "endLine": 13
   },
   {
     "outputFile": "ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.json",
@@ -61,7 +77,7 @@
     "fshType": "Instance",
     "fshFile": "profiles\\Follow-Up\\mii-exa-mtb-follow-up-clinicalimpression.fsh",
     "startLine": 1,
-    "endLine": 10
+    "endLine": 12
   },
   {
     "outputFile": "ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.json",
@@ -136,6 +152,7 @@
     "endLine": 6
   },
   {
+<<<<<<< HEAD:fsh-generated/data/fsh-index.json
     "outputFile": "CodeSystem-mii-cs-mtb-follow-up-grund-nicht-umsetzung.json",
     "fshName": "MII_CS_MTB_Follow_Up_Grund_Nicht_Umsetzung",
     "fshType": "CodeSystem",
@@ -144,12 +161,14 @@
     "endLine": 26
   },
   {
+=======
+>>>>>>> dev:fsh-generated/fsh-index.json
     "outputFile": "CodeSystem-mii-cs-mtb-follow-up-status.json",
     "fshName": "MII_CS_MTB_Follow_Up_Status",
     "fshType": "CodeSystem",
     "fshFile": "profiles\\Follow-Up\\mii-cs-mtb-follow-up-status.fsh",
     "startLine": 2,
-    "endLine": 10
+    "endLine": 9
   },
   {
     "outputFile": "CodeSystem-mii-cs-mtb-genomic-analysis-method-type.json",
@@ -200,12 +219,44 @@
     "endLine": 14
   },
   {
+    "outputFile": "CodeSystem-mii-cs-mtb-systemische-therapie-status-grund.json",
+    "fshName": "MII_CS_MTB_Systemische_Therapie_Status_Grund",
+    "fshType": "CodeSystem",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-cs-mtb-systemische-therapie-status-grund.fsh",
+    "startLine": 2,
+    "endLine": 26
+  },
+  {
+    "outputFile": "CodeSystem-mii-cs-mtb-therapiestatusgrund.json",
+    "fshName": "MII_CS_MTB_Therapiestatusgrund",
+    "fshType": "CodeSystem",
+    "fshFile": "profiles/Behandlungsepisode/mii-cs-mtb-therapiestatusgrund-mvgenomseq.fsh",
+    "startLine": 1,
+    "endLine": 25
+  },
+  {
     "outputFile": "CodeSystem-mii-cs-mtb-zulassungsstatus.json",
     "fshName": "MII_CS_MTB_Zulassungsstatus",
     "fshType": "CodeSystem",
     "fshFile": "profiles\\Behandlungsepisode\\mii-cs-mtb-zulassungsstatus.fsh",
     "startLine": 1,
     "endLine": 9
+  },
+  {
+    "outputFile": "ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.json",
+    "fshName": "mii-cm-mtb-therapiestatusgrund-obds",
+    "fshType": "Instance",
+    "fshFile": "profiles/Behandlungsepisode/mii-cm-mtb-therapiestatusgrund-obds.fsh",
+    "startLine": 1,
+    "endLine": 81
+  },
+  {
+    "outputFile": "ConceptMap-mii-cm-mtb-therapiestatusgrund-sct.json",
+    "fshName": "mii-cm-mtb-therapiestatusgrund-sct",
+    "fshType": "Instance",
+    "fshFile": "profiles/Behandlungsepisode/mii-cm-mtb-therapiestatusgrund-sct.fsh",
+    "startLine": 1,
+    "endLine": 137
   },
   {
     "outputFile": "Consent-mii-exa-mtb-kim-musterperson-aufklaerung.json",
@@ -568,6 +619,14 @@
     "endLine": 148
   },
   {
+    "outputFile": "MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1.json",
+    "fshName": "MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-exa-mtb-systemische-therapie-medication-statement-1.fsh",
+    "startLine": 1,
+    "endLine": 17
+  },
+  {
     "outputFile": "MedicationStatement-MTBChemo1MedicationStatement1-1.json",
     "fshName": "MTBChemo1MedicationStatement1-1",
     "fshType": "Instance",
@@ -784,6 +843,70 @@
     "endLine": 45
   },
   {
+    "outputFile": "Observation-MII-EXA-MTB-BRCAness-1.json",
+    "fshName": "MII-EXA-MTB-BRCAness-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-brcaness.fsh",
+    "startLine": 1,
+    "endLine": 25
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-Copy-Number-Variant-1.json",
+    "fshName": "MII-EXA-MTB-Copy-Number-Variant-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-copy-number-variant.fsh",
+    "startLine": 1,
+    "endLine": 43
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-DNA-Fusion-1.json",
+    "fshName": "MII-EXA-MTB-DNA-Fusion-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-dna-fusion.fsh",
+    "startLine": 1,
+    "endLine": 35
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-Diagnostische-Implikation-1.json",
+    "fshName": "MII-EXA-MTB-Diagnostische-Implikation-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-diagnostische-implikation.fsh",
+    "startLine": 1,
+    "endLine": 15
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-Einfache-Variante.json",
+    "fshName": "MII-EXA-MTB-Einfache-Variante",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-einfache-variante.fsh",
+    "startLine": 1,
+    "endLine": 46
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-HRD-Score-1.json",
+    "fshName": "MII-EXA-MTB-HRD-Score-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-hrd-score.fsh",
+    "startLine": 1,
+    "endLine": 19
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.json",
+    "fshName": "MII-EXA-MTB-Mikrosatelliteninstabilitaet-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-mikrosatelliteninstabilitaet.fsh",
+    "startLine": 1,
+    "endLine": 15
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-Mutationslast-1.json",
+    "fshName": "MII-EXA-MTB-Mutationslast-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/NGS-Bericht/mii-exa-mtb-mutationslast.fsh",
+    "startLine": 1,
+    "endLine": 16
+  },
+  {
     "outputFile": "Observation-MII-EXA-MTB-Response-Befund-1.json",
     "fshName": "MII-EXA-MTB-Response-Befund-1",
     "fshType": "Instance",
@@ -798,6 +921,14 @@
     "fshFile": "examples\\mii-exa-mtb-kim-musterperson-follow-up.fsh",
     "startLine": 151,
     "endLine": 164
+  },
+  {
+    "outputFile": "Observation-MII-EXA-MTB-Response-Befund-Beispiel-1.json",
+    "fshName": "MII-EXA-MTB-Response-Befund-Beispiel-1",
+    "fshType": "Instance",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-exa-mtb-response-befund-1.fsh",
+    "startLine": 1,
+    "endLine": 16
   },
   {
     "outputFile": "Observation-MTBObservationCA125-1.json",
@@ -1171,9 +1302,15 @@
     "outputFile": "Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.json",
     "fshName": "mii-exa-mtb-kim-musterperson-CNVariante-CCNE1",
     "fshType": "Instance",
+<<<<<<< HEAD:fsh-generated/data/fsh-index.json
     "fshFile": "examples\\mii-exa-mtb-kim-musterperson-ngs-bericht.fsh",
     "startLine": 129,
     "endLine": 145
+=======
+    "fshFile": "examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh",
+    "startLine": 130,
+    "endLine": 146
+>>>>>>> dev:fsh-generated/fsh-index.json
   },
   {
     "outputFile": "Observation-mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53.json",
@@ -1205,7 +1342,7 @@
     "fshType": "Instance",
     "fshFile": "examples\\mii-exa-mtb-kim-musterperson-ngs-bericht.fsh",
     "startLine": 113,
-    "endLine": 126
+    "endLine": 127
   },
   {
     "outputFile": "Organization-mii-exa-mtb-study-sponsor-biontech.json",
@@ -1469,7 +1606,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\NGS-Bericht\\mii-pr-mtb-genomic-study-analysis.fsh",
     "startLine": 1,
-    "endLine": 14
+    "endLine": 17
   },
   {
     "outputFile": "StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.json",
@@ -1477,7 +1614,7 @@
     "fshType": "Extension",
     "fshFile": "profiles\\Follow-Up\\Kostenuebernahme\\mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.fsh",
     "startLine": 1,
-    "endLine": 15
+    "endLine": 16
   },
   {
     "outputFile": "StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.json",
@@ -1485,7 +1622,7 @@
     "fshType": "Extension",
     "fshFile": "profiles\\Follow-Up\\Kostenuebernahme\\mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.fsh",
     "startLine": 1,
-    "endLine": 14
+    "endLine": 15
   },
   {
     "outputFile": "StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-entscheidung.json",
@@ -1493,7 +1630,7 @@
     "fshType": "Extension",
     "fshFile": "profiles\\Follow-Up\\Kostenuebernahme\\mii-ex-mtb-antwort-kostenuebernahme-entscheidung.fsh",
     "startLine": 1,
-    "endLine": 15
+    "endLine": 16
   },
   {
     "outputFile": "StructureDefinition-mii-ex-mtb-diagnose.json",
@@ -1589,7 +1726,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\Follow-Up\\Kostenuebernahme\\mii-pr-mtb-antrag-kostenuebernahme.fsh",
     "startLine": 1,
-    "endLine": 92
+    "endLine": 93
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.json",
@@ -1645,7 +1782,11 @@
     "fshType": "Profile",
     "fshFile": "profiles\\Behandlungsepisode\\mii-pr-mtb-diagnose.fsh",
     "startLine": 1,
+<<<<<<< HEAD:fsh-generated/data/fsh-index.json
     "endLine": 42
+=======
+    "endLine": 54
+>>>>>>> dev:fsh-generated/fsh-index.json
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-diagnostische-implikation.json",
@@ -1677,7 +1818,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\Follow-Up\\mii-pr-mtb-follow-up-clinicalimpression.fsh",
     "startLine": 1,
-    "endLine": 53
+    "endLine": 56
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-genomic-study.json",
@@ -1685,7 +1826,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\NGS-Bericht\\mii-pr-mtb-genomic-study.fsh",
     "startLine": 1,
-    "endLine": 6
+    "endLine": 17
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.json",
@@ -1805,7 +1946,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\NGS-Bericht\\mii-pr-mtb-mutationslast.fsh",
     "startLine": 1,
-    "endLine": 8
+    "endLine": 9
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-ngs-bericht.json",
@@ -1829,7 +1970,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\Follow-Up\\Systemtherapie\\mii-pr-mtb-response-befund.fsh",
     "startLine": 1,
-    "endLine": 27
+    "endLine": 31
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-rna-fusion.json",
@@ -1877,7 +2018,11 @@
     "fshType": "Profile",
     "fshFile": "profiles\\Behandlungsepisode\\mii-pr-mtb-systemische-vortherapie.fsh",
     "startLine": 1,
+<<<<<<< HEAD:fsh-generated/data/fsh-index.json
     "endLine": 25
+=======
+    "endLine": 31
+>>>>>>> dev:fsh-generated/fsh-index.json
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.json",
@@ -1885,7 +2030,15 @@
     "fshType": "Profile",
     "fshFile": "profiles\\Follow-Up\\Systemtherapie\\mii-pr-mtb-systemische-therapie-medication-statement.fsh",
     "startLine": 1,
-    "endLine": 84
+    "endLine": 87
+  },
+  {
+    "outputFile": "StructureDefinition-mii-pr-mtb-therapeutische-implikation.json",
+    "fshName": "MII_PR_MTB_Therapeutische_Implikation",
+    "fshType": "Profile",
+    "fshFile": "profiles/NGS-Bericht/mii-pr-mtb-therapeutische-implikation.fsh",
+    "startLine": 1,
+    "endLine": 8
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.json",
@@ -1909,7 +2062,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\Beschluss-Therapieplan\\mii-pr-mtb-therapieplan.fsh",
     "startLine": 1,
-    "endLine": 110
+    "endLine": 111
   },
   {
     "outputFile": "StructureDefinition-mii-pr-mtb-tumorausbreitung.json",
@@ -1936,6 +2089,7 @@
     "endLine": 40
   },
   {
+<<<<<<< HEAD:fsh-generated/data/fsh-index.json
     "outputFile": "ValueSet-mii-vs-mtb-abbruchsgrund.json",
     "fshName": "MII_VS_MTB_Abbrungsgrund",
     "fshType": "ValueSet",
@@ -1944,6 +2098,8 @@
     "endLine": 20
   },
   {
+=======
+>>>>>>> dev:fsh-generated/fsh-index.json
     "outputFile": "ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.json",
     "fshName": "MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
     "fshType": "ValueSet",
@@ -2021,7 +2177,7 @@
     "fshType": "ValueSet",
     "fshFile": "profiles\\Follow-Up\\mii-vs-mtb-follow-up-grund-nicht-umsetzung.fsh",
     "startLine": 2,
-    "endLine": 7
+    "endLine": 24
   },
   {
     "outputFile": "ValueSet-mii-vs-mtb-follow-up-status.json",
@@ -2112,12 +2268,28 @@
     "endLine": 21
   },
   {
+    "outputFile": "ValueSet-mii-vs-mtb-systemische-therapie-status-grund.json",
+    "fshName": "MII_VS_MTB_Systemische_Therapie_Status_Grund",
+    "fshType": "ValueSet",
+    "fshFile": "profiles/Follow-Up/Systemtherapie/mii-vs-mtb-systemische-therapie-status-grund.fsh",
+    "startLine": 1,
+    "endLine": 6
+  },
+  {
     "outputFile": "ValueSet-mii-vs-mtb-systemische-therapie-status.json",
     "fshName": "MII_VS_MTB_Systemische_Therapie_Status",
     "fshType": "ValueSet",
     "fshFile": "profiles\\Follow-Up\\Systemtherapie\\mii-vs-mtb-systemische-therapie-status.fsh",
     "startLine": 1,
     "endLine": 10
+  },
+  {
+    "outputFile": "ValueSet-mii-vs-mtb-therapiestatusgrund.json",
+    "fshName": "MII_VS_MTB_Therapiestatusgrund",
+    "fshType": "ValueSet",
+    "fshFile": "profiles/Behandlungsepisode/mii-vs-mtb-therapiestatusgrund.fsh",
+    "startLine": 1,
+    "endLine": 52
   },
   {
     "outputFile": "ValueSet-mii-vs-mtb-tumorausbreitung.json",

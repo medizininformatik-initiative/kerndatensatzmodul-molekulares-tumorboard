@@ -99,6 +99,31 @@
         }
       },
       {
+        "id": "Condition.stage:OncoTree",
+        "path": "Condition.stage",
+        "sliceName": "OncoTree",
+        "short": "OncoTree Classification",
+        "definition": "Klassifizierung eines Tumors nach OncoTree",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:OncoTree.assessment",
+        "path": "Condition.stage.assessment",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Condition.stage:ErstdiagnoseZeitpunkt",
         "path": "Condition.stage",
         "sliceName": "ErstdiagnoseZeitpunkt",

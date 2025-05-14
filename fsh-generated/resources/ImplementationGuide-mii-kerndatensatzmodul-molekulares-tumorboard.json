@@ -197,6 +197,13 @@
       },
       {
         "reference": {
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1"
+        },
+        "name": "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement"
+      },
+      {
+        "reference": {
           "reference": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-4"
         },
         "name": "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
@@ -236,6 +243,52 @@
       },
       {
         "reference": {
+          "reference": "Observation/MII-EXA-MTB-DNA-Fusion-1"
+        },
+        "name": "Beispiel DNA-Fusion",
+        "description": "Beispiel fuer eine DNA-Fusion in Tumorzellen.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Diagnostische-Implikation-1"
+        },
+        "name": "Beispiel fuer BRAF Mutation MTB Diagnostische Implikation",
+        "description": "Beispiel fuer diagnostische Implikation im Kontext des Molecular Tumor Boards basierend auf einer BRAF-Mutation.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-BRCAness-1"
+        },
+        "name": "Beispiel fuer BRCAness-Analyse",
+        "description": "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalten eines Tumors in Bezug auf BRCA-ähnliche Eigenschaften darstellt.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Copy-Number-Variant-1"
+        },
+        "name": "Beispiel fuer Copy Number Variant",
+        "description": "Beispiel fuer eine Copy Number Variant (CNV).",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant"
+      },
+      {
+        "reference": {
+          "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1"
+        },
+        "name": "Beispiel fuer eine Antwort auf den Antrag auf Kostenuebernahme",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
+      },
+      {
+        "reference": {
+          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1"
+        },
+        "name": "Beispiel fuer eine Follow-Up Clinical Impression ",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
+      },
+      {
+        "reference": {
           "reference": "Procedure/MII-EXA-MTB-Systemtherapie-Beispiel-1"
         },
         "name": "Beispiel fuer eine Systemtherapie",
@@ -247,13 +300,6 @@
         },
         "name": "Beispiel fuer einen Antrag auf Kostenuebernahme",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
-      },
-      {
-        "reference": {
-          "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1"
-        },
-        "name": "Beispiel fuer einen Follow-Up Procedure",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
       },
       {
         "reference": {
@@ -271,10 +317,41 @@
       },
       {
         "reference": {
+          "reference": "Observation/MII-EXA-MTB-Response-Befund-Beispiel-1"
+        },
+        "name": "Beispiel fuer einen Response Befund",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      },
+      {
+        "reference": {
           "reference": "Device/MII-EXA-MTB-Device-Sequencer-1"
         },
         "name": "Beispiel fuer einen Sequencer",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-HRD-Score-1"
+        },
+        "name": "Beispiel HRD-Score",
+        "description": "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombinationsdefizienz beschreibt.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Mikrosatelliteninstabilitaet-1"
+        },
+        "name": "Beispiel Mikrosatelliteninstabilität",
+        "description": "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund von MMR-Störung.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Mutationslast-1"
+        },
+        "name": "Beispiel Mutationslast in Tumorprobe (MTB)",
+        "description": "Beispiel fuer die Mutationslast in einer Tumorprobe mit Bezug zu molekularem Tumorboard.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast"
       },
       {
         "reference": {
@@ -291,6 +368,14 @@
         "name": "BioNTech Responsible Person",
         "description": "Investigator: BioNTech Responsible Person, BioNTech SE",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-Einfache-Variante"
+        },
+        "name": "BRAF Variante",
+        "description": "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von NGS.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante"
       },
       {
         "reference": {
@@ -438,7 +523,7 @@
           "reference": "StructureDefinition/genomic-study-analysis"
         },
         "name": "Genomic Study Analysis",
-        "description": "A genomic study analysis is a component of a genomic study.",
+        "description": "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
         "exampleBoolean": false
       },
       {
@@ -467,10 +552,34 @@
       },
       {
         "reference": {
+          "reference": "ConceptMap/mii-cm-mtb-therapiestatusgrund-obds"
+        },
+        "name": "MII CM MTB Therapiestatusgrund oBDS Mapping",
+        "description": "Mapping der Codes zur Begründung des Therapiestatus nach oBDS",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/mii-cm-mtb-therapiestatusgrund-sct"
+        },
+        "name": "MII CM MTB Therapiestatusgrund SNOMED CT Mapping",
+        "description": "Mapping der Codes zur Begründung des Therapiestatus nach SNOMED CT",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/mii-cps-mtb-capabilitystatement"
+        },
+        "name": "MII CPS MTB CapabilityStatement",
+        "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul MTB der Medizininformatik Initiative zu implementieren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"
         },
         "name": "MII CS Antrag Kostenuebernahme Antragsstadium",
-        "description": "Codesystem zum Stadium des Antrags zur Kostenuebernahme",
+        "description": "Codesystem zum Stadium des Antrags zur Kostenuebernahme nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -478,7 +587,7 @@
           "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung"
         },
         "name": "MII CS Antwort Kostenuebernahme Entscheidung",
-        "description": "Codesystem zum Status der Antwort zur Kostenuebernahme",
+        "description": "Codesystem zum Status der Antwort zur Kostenuebernahme nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -502,7 +611,7 @@
           "reference": "CodeSystem/mii-cs-mtb-dosisdichte"
         },
         "name": "MII CS Dosisdichte",
-        "description": "Codesystem für die Dosisdichte einer Systemtheraptie",
+        "description": "Codesystem für die Dosisdichte einer Medikamentengabe",
         "exampleBoolean": false
       },
       {
@@ -527,14 +636,6 @@
         },
         "name": "MII CS Empfehlung Status Begründung",
         "description": "Begründung bei fehlender Empfehlung im MTB-Beschluss",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-follow-up-grund-nicht-umsetzung"
-        },
-        "name": "MII CS Follow-Up Grund Nicht-Umsetzung",
-        "description": "Codesystem zum Follow-Up Grund Nicht-Umsetzung",
         "exampleBoolean": false
       },
       {
@@ -566,7 +667,7 @@
           "reference": "CodeSystem/mii-cs-mtb-kostenuebernahme-ablehnungsgrund"
         },
         "name": "MII CS Kostenuebernahme Ablehnungsgrund",
-        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme",
+        "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -591,6 +692,22 @@
         },
         "name": "MII CS Response Befund Beurteilung",
         "description": "Codesystem für die Beurteilung des Response Befund",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-systemische-therapie-status-grund"
+        },
+        "name": "MII CS Systemische Therapie Status Grund",
+        "description": "Codesystem zum Status Grund der Systemischen Therapie nach DNPM",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-therapiestatusgrund"
+        },
+        "name": "MII CS Therapiestatusgrund",
+        "description": "Begründung für Therapiestatus",
         "exampleBoolean": false
       },
       {
@@ -790,7 +907,7 @@
           "reference": "StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
         },
         "name": "MII PR MTB Clinical Impresssion",
-        "description": "Follow-Up nach DNPM ",
+        "description": "Follow-Up als Prozess des Einholens von Informationen über durchgeführte Therapien & Kostenuebernahmen",
         "exampleBoolean": false
       },
       {
@@ -1043,6 +1160,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-therapeutische-implikation"
+        },
+        "name": "MII PR MTB Therapeutische Implikation",
+        "description": "Das Profil beschreibt den möglichen Einfluss genetischer Merkmale auf eine medikamentöse oder nicht-medikamentöse Therapie.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
         },
         "name": "MII PR MTB Therapieempfehlung Kombinationstherapie",
@@ -1087,14 +1212,6 @@
         },
         "name": "MII PR MTB WHO Grad Tumor ZNS",
         "description": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/mii-vs-mtb-abbruchsgrund"
-        },
-        "name": "MII VS Abbruchsgrund",
-        "description": "ValueSet zum Abbruchsgrund",
         "exampleBoolean": false
       },
       {
@@ -1166,7 +1283,7 @@
           "reference": "ValueSet/mii-vs-mtb-follow-grund-nicht-umsetzung"
         },
         "name": "MII VS Follow-Up Grund Nicht-Umsetzung",
-        "description": "ValueSet zum Follow-Up Grund Nicht-Umsetzung",
+        "description": "ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund",
         "exampleBoolean": false
       },
       {
@@ -1271,6 +1388,22 @@
         },
         "name": "MII VS Response Befund Beurteilung",
         "description": "ValueSet Response Befund Beurteilung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-systemische-therapie-status-grund"
+        },
+        "name": "MII VS Systemische Therapie Status Grund",
+        "description": "ValueSet zum Grund des Status der Systemischen Therapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-therapiestatusgrund"
+        },
+        "name": "MII VS Therapiestatusgrund",
+        "description": "ValueSet zum Therapiestatusgrund",
         "exampleBoolean": false
       },
       {
@@ -2161,7 +2294,7 @@
         },
         "name": "PIK3R1 Therapeutische Implikation",
         "description": "Therapeutische Bedeutung der festgestellten PIK3R1 Mutation",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapeutische-implikation"
       },
       {
         "reference": {
@@ -2185,7 +2318,7 @@
         },
         "name": "TP53 Diagnostische Implikation",
         "description": "Diagnostische Bedeutung der festgestellten TP53 Mutation",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation"
       },
       {
         "reference": {

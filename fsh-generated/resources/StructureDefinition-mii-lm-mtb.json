@@ -527,9 +527,9 @@
         ]
       },
       {
-        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Abbruchsgrund",
-        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Abbruchsgrund",
-        "short": "Abbruchsgrund",
+        "id": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Therapiestatusgrund",
+        "path": "mii-lm-mtb.Behandlungsepisode.Vortherapie.Therapiestatusgrund",
+        "short": "Therapiestatusgrund",
         "definition": "Gibt den Grund an, warum die Systemtherapie beendet wurde",
         "min": 0,
         "max": "1",
@@ -1459,8 +1459,8 @@
       {
         "id": "mii-lm-mtb.FollowUp.FollowUpStatus",
         "path": "mii-lm-mtb.FollowUp.FollowUpStatus",
-        "short": "FollowUpStatus",
-        "definition": "FollowUpStatus",
+        "short": "Follow-Up Status",
+        "definition": "Follow-Up Status",
         "min": 1,
         "max": "1",
         "type": [
@@ -1510,6 +1510,10 @@
           {
             "identity": "mii-map-mtb",
             "map": "ClinicalImpression.supportingInfo[UmgesetzteTherapien]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure"
           }
         ]
       },
@@ -1524,6 +1528,12 @@
           {
             "code": "dateTime"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.performedPeriod.start"
+          }
         ]
       },
       {
@@ -1536,6 +1546,12 @@
         "type": [
           {
             "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.performedPeriod.end"
           }
         ]
       },
@@ -1550,6 +1566,12 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.statusReason"
+          }
         ]
       },
       {
@@ -1562,6 +1584,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.extension[causedBy]"
           }
         ]
       },
@@ -1576,6 +1604,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.note"
+          }
         ]
       },
       {
@@ -1588,6 +1622,12 @@
         "type": [
           {
             "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Procedure.status"
           }
         ]
       },
@@ -1602,6 +1642,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationStatement.partOf"
+          }
         ]
       },
       {
@@ -1614,6 +1660,12 @@
         "type": [
           {
             "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "MedicationStatement.dosage"
           }
         ]
       },
@@ -1685,6 +1737,10 @@
           {
             "identity": "mii-map-mtb",
             "map": "ClinicalImpression.supportingInfo[AntraegeKostenuebernahme]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "Claim"
           }
         ]
       },
@@ -1699,6 +1755,12 @@
           {
             "code": "dateTime"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Claim.created"
+          }
         ]
       },
       {
@@ -1711,6 +1773,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Claim.prescription"
           }
         ]
       },
@@ -1725,6 +1793,12 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Claim.related.relationship.coding"
+          }
         ]
       },
       {
@@ -1737,6 +1811,12 @@
         "type": [
           {
             "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Claim.careTeam[ZPMBeteiligung].responsible"
           }
         ]
       },
@@ -1756,6 +1836,10 @@
           {
             "identity": "mii-map-mtb",
             "map": "ClinicalImpression.supportingInfo[AntwortKostenuebernahme]"
+          },
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClaimResponse"
           }
         ]
       },
@@ -1770,6 +1854,12 @@
           {
             "code": "dateTime"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClaimResponse.created"
+          }
         ]
       },
       {
@@ -1782,6 +1872,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClaimResponse.request"
           }
         ]
       },
@@ -1796,6 +1892,12 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClaimResponse.extension[Entscheidung]"
+          }
         ]
       },
       {
@@ -1808,6 +1910,12 @@
         "type": [
           {
             "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "ClaimResponse.extension[Ablehnungsgrund]"
           }
         ]
       },
@@ -2282,7 +2390,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "MII_PR_MTB_Einfache_Variante."
+            "map": "MII_PR_MTB_Einfache_Variante.component[ref-allele]"
           }
         ]
       },
@@ -2301,7 +2409,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "MII_PR_MTB_Einfache_Variante."
+            "map": "MII_PR_MTB_Einfache_Variante.component[alt-allele]"
           }
         ]
       },
@@ -2320,7 +2428,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "MII_PR_MTB_Einfache_Variante."
+            "map": "MII_PR_MTB_Einfache_Variante.component[coding-hgvs]"
           }
         ]
       },
@@ -2339,7 +2447,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "MII_PR_MTB_Einfache_Variante."
+            "map": "MII_PR_MTB_Einfache_Variante.component[protein-hgvs]"
           }
         ]
       },
@@ -2358,7 +2466,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "MII_PR_MTB_Einfache_Variante."
+            "map": "MII_PR_MTB_Einfache_Variante.component[allelic-read-depth]"
           }
         ]
       },
@@ -2377,7 +2485,7 @@
         "mapping": [
           {
             "identity": "mii-map-mtb",
-            "map": "MII_PR_MTB_Einfache_Variante."
+            "map": "MII_PR_MTB_Einfache_Variante.component[sample-allelic-frequency]"
           }
         ]
       },

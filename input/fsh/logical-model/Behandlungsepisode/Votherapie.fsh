@@ -6,7 +6,7 @@ RuleSet: Vortherapie
   * Startdatum           0..1      dateTime             "Startdatum"             "Startdatum der Vortherapie"
   * Enddatum             0..1      dateTime             "Enddatum"               "Enddatum der Vortherapie"
   * Wirkstoffe           0..*      code                 "Wirkstoffe"             "Wirkstoffe der systemischen Leitlinientherapie"
-  * Abbruchsgrund        0..1      code                 "Abbruchsgrund"          "Gibt den Grund an, warum die Systemtherapie beendet wurde"
+  * Therapiestatusgrund        0..1      code                 "Therapiestatusgrund"          "Gibt den Grund an, warum die Systemtherapie beendet wurde"
   * Kategorie            0..1      code                 "Kategorie"              "Kategorie der Leitlinientherapie (Prozedur)"
 
 RuleSet: VortherapieMapping
@@ -17,5 +17,5 @@ RuleSet: VortherapieMapping
   * Startdatum        -> "Procedure.performedPeriod.start"
   * Enddatum          -> "Procedure.performedPeriod.end"
   * Wirkstoffe        -> "MedicationStatement.medicationCodeableConcept"
-  * Abbruchsgrund     -> "Procedure.outcome.coding.code"
+  * Therapiestatusgrund     -> "Procedure.outcome.coding.code"
   * Kategorie         -> "Procedure.category"

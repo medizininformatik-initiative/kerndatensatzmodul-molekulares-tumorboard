@@ -7,20 +7,32 @@ package MII_Modul_Biobank {
 
 }
 
-package MII_Modul_Pathologiebefund {
-    object MII_Pathologie_Befundbericht
-    object MII_Patho_Finding
-    MII_Pathologie_Befundbericht -[hidden]down- MII_Patho_Finding
+' package MII_Modul_Pathologiebefund {
+'     object MII_Pathologie_Befundbericht
+'     ' object MII_Patho_Finding
+'     object MII_Patho_Service_Request
+'     MII_Pathologie_Befundbericht -[hidden]down- MII_Patho_Finding
    
+' }
+
+package MII_Modul_Studie {
+    object MII_Studie
+}
+
+package MII_Modul_Medikation {
+    object MII_MedicationRequest
 }
 
 package MII_Modul_Molekulargenetischer_Befundbericht {
-object MII_Molekulargenetischer_Befundbericht
-object MII_Variante
+    object MII_Molekulargenetischer_Befundbericht
+    object MII_Variante
+    object MII_Molekularer_Biomarker
 }
+
 package MII_Modul_Onkologie {
     object MII_Onko_Diagnose
     object MII_Onko_Systemische_Therapie
+    object MII_Onko_Tumorkonferenz
 }
 
 package MII_Modul_Molekulares_Tumorboard {
@@ -29,8 +41,10 @@ package MII_Modul_Molekulares_Tumorboard {
 
     object IHC_Befund
     object ISH_Befund
-    MII_Patho_Finding <|... IHC_Befund 
-    MII_Patho_Finding <|... ISH_Befund  
+    ' MII_Patho_Finding <|--- IHC_Befund 
+    ' MII_Patho_Finding <|... ISH_Befund  
+    MII_Molekularer_Biomarker <|--- IHC_Befund 
+    MII_Molekularer_Biomarker <|--- ISH_Befund  
 
     object NGS_Bericht 
     MII_Molekulargenetischer_Befundbericht <|-left-- NGS_Bericht
@@ -42,7 +56,28 @@ package MII_Modul_Molekulares_Tumorboard {
     object DNA_Fusion
     object CopyNumberVariation
     object FISH_Befund
+    object Studie
+    object Therapieplan
+    object Therapieempfehlung
+    object SystemischeTherapie
+    object BRCAness
+    object HRDScore
+    object TMB
+    object MSI
+    object MMR
+    object PDL1
+    object HER2
 
+    IHC_Befund <|--- PDL1
+    IHC_Befund <|--- HER2
+    MII_Molekularer_Biomarker <|--- MSI
+    MII_Molekularer_Biomarker <|--- MMR
+    MII_Molekularer_Biomarker <|--- TMB
+    MII_Molekularer_Biomarker <|--- BRCAness
+    MII_Molekularer_Biomarker <|--- HRDScore
+    MII_MedicationRequest <|--- Therapieempfehlung
+    MII_Onko_Tumorkonferenz <|--- Therapieplan
+    MII_Studie <|--- Studie
     MII_Variante <|--- Einfache_Variante
     MII_Variante <|--- RNA_Seq
     MII_Variante <|--- RNA_Fusion
@@ -57,28 +92,39 @@ package MII_Modul_Molekulares_Tumorboard {
 
     object Diagnose
     object Vortherapie
-    object MTB_Systemische_Vortherapie
-    MII_Onko_Diagnose <|... Diagnose
-    MII_Onko_Systemische_Therapie <|... Vortherapie
-    MII_Onko_Systemische_Therapie <|... MTB_Systemische_Vortherapie
+    MII_Onko_Diagnose <|--- Diagnose
+    MII_Onko_Systemische_Therapie <|--- SystemischeTherapie
+    MII_Onko_Systemische_Therapie <|--- Vortherapie
     ISH_Befund -[hidden]right- IHC_Befund 
     Diagnose  -[hidden]down-Vortherapie
-    Vortherapie -[hidden]down- MTB_Systemische_Vortherapie
     
 
 
 package MII_MTB_Neuprofilierungen {
-    object MTB_EpisodeOfCare
-    object Kostenübernahme
+    object MTB_Behandlungsepisode
+    object AntragKostenübernahme
+    object AntwortKostenübernahme
     object ResponseBefund
     object Followup
-    }
+    object OncoTree
+    object Tumorausbreitung
+    object WHO_Grad
+    object BiopsieAuftrag
+    object NGSAuftrag
+    object HistologieEvaluationAuftrag
+    object HumangenetischeBeratungAuftrag
+    object StudieneinschlussAnfrage
+    object Tumorzellgehalt
+    object TherapieempfehlungKombinationstherapie
+    object MolekularPathologieReport 
+}
+
 
 ISH_Befund -[hidden]down- MII_MTB_Neuprofilierungen
 }
 MII_Modul_Biobank -[hidden]left-  MII_Modul_Molekulares_Tumorboard
+
 MII_Modul_Onkologie -[hidden]left-  MII_Modul_Molekulares_Tumorboard
-MII_Modul_Onkologie -[hidden]left-  MTB_Systemische_Vortherapie
 MII_Modul_Onkologie -[hidden]left-   Diagnose
 MII_Onko_Diagnose -[hidden]down- MII_Onko_Systemische_Therapie
 

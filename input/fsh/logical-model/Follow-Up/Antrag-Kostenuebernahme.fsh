@@ -5,9 +5,9 @@ RuleSet: AntragKostenuebernahme
   * Antragsstadium                         1..1 code              "Antragsstadium" 
   * AntragsstellerZPMGeschaeftsstelle      0..1 boolean           "Antragssteller ZPM Geschäftsstelle" 
 
-RuleSet: ClaimMapping
+RuleSet: AntragKostenuebernahmeMapping
 * AntragKostenuebernahme -> "Claim"
   * Ausstellungsdatum -> "Claim.created"
   * TherapieEmpfehlung -> "Claim.prescription"
-  * Antragsstadium -> "Claim.extension"
-  * AntragsstellerZPMGeschaeftsstelle -> "Claim.careTeam.responsible"
+  * Antragsstadium -> "Claim.related.relationship.coding"
+  * AntragsstellerZPMGeschaeftsstelle -> "Claim.careTeam[ZPMBeteiligung].responsible"

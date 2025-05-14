@@ -21,6 +21,15 @@ Description: "Diagnose zum Primärtumor"
 * stage[WHOGradZNS].type 1..1 MS
 * stage[WHOGradZNS].type.coding = $SCT#396920006 "WHO grade for central nervous system tumour"
 
+// OncoTree
+* stage contains OncoTree 0..1 MS
+* stage[OncoTree] ^short = "OncoTree Classification"
+* stage[OncoTree] ^definition = "Klassifizierung eines Tumors nach OncoTree"
+* stage[OncoTree].assessment 1..1 MS
+* stage[OncoTree].assessment only Reference(MII_PR_MTB_Oncotree)
+// * stage[OncoTree].type 1..1 MS
+// * stage[OncoTree].type.coding = $SCT#396920006 "WHO grade for central nervous system tumour"
+
 // TODO: SCT prüfen
 // Tumor stage (spreading) first diagnosis date time
 * stage contains ErstdiagnoseZeitpunkt 1..1 MS
