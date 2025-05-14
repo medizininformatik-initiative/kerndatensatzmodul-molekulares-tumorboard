@@ -6,3 +6,5 @@ Description: "Codesystem, welches verschiedene Molekulare Biomarker enthält, di
 
 * #brcaness                                "BRCAness"
 * #hrd                                     "HRD-Score"
+* #phosphorylation-localization        "Phosphorylation localization"
+* #protein-isoform                        "Protein isoform"

@@ -34,9 +34,16 @@ Id: mii-pr-mtb-insituhybridization
 Title: "MII PR MTB In Situ Hybridization"   
 Description: "Molekularer Biomarker - In Situ Hybridization Profil"
 
-* identifier MS 
-* code MS 
+* identifier 0..1 MS 
+* identifier ^short = "Identifier zur Abgrenzung anderer gleichartiger Untersuchungen" 
+* identifier ^definition = "Identifier der Untersuchung, damit die Untersuchung auch außerhalb von FHIR eindeutig identifiziert werden kann. Sollte ISH oder vlg. beinhalten, um von anderen Biomarkeruntersuchungen abzugrenzen. "
+* code 1..1 MS 
 * code.coding = $SCT#384715000 // "Nucleic acid hybridization procedure (procedure)"
 * code ^short = "In Situ Hybridization"
-* code ^definition = "In Situ Hybridization auf Gewebsschnitt "
-* valueQuantity MS
+* code ^definition = "In Situ Hybridization auf Gewebsschnitt"
+* value[x] 1..1 MS
+* valueQuantity MS 
+* interpretation MS
+* interpretation ^short = "Interpretation "
+* interpretation ^definition = "Interpretation der ISH Signale. Die Interpretation kann auf Vergleich mit Referenzwerten basieren, die nicht zwingend vorliegen. " 
+ 

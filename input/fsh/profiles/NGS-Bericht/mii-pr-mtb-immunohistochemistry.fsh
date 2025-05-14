@@ -23,11 +23,14 @@ Description: "Immunhistorchemistry report"
 * specimen MS
 * specimen ^definition = "Block-MAterial-Nr. der Probe. Da jede FHIR-Observation nur eine Referenz auf Specimen haben kann, Die gesamte Probe (z.B. Biopsie, Exzisat) wird von den Einzelschnitten referenziert. "
 * specimen ^short = "Block / Material-Nr. der Probe"
-// Eingangs/Journal-Nr -> DiagnosticReport(Identifier) kein Teil von Observationm
-// Block-/Material Nr -> Wie mache ich das am Besten?
 
 // wie erstelle ich ein eigenes CodeableConcept
 * value[x] MS
 * valueCodeableConcept MS
+* valueCodeableConcept ^short = "Ergebnis der für immunhistochemische Untersuchung"
+* valueCodeableConcept ^definition = "Ergebnis der immunhistochemischen Untersuchung."
+* interpretation MS
+* component[gene-studied] 0..1 MS
+
 
 
