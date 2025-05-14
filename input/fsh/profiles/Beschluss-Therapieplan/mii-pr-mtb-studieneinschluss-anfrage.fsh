@@ -5,16 +5,26 @@ Title: "MII PR MTB Studieneinschluss Anfrage"
 Description: "Anfrage zum Studieneinschluss"
 * insert PR_Header
 
+* status MS
 * status ^short = "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
 * status ^definition = "Status des Studieneinschlusses"
 * status ^comment = "
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+* extension contains http://hl7.org/fhir/StructureDefinition/request-statusReason named statusReason 0..1 MS
+* extension[statusReason].value[x] only CodeableConcept
+* extension[statusReason].valueCodeableConcept.coding 1..1 MS
+* extension[statusReason].valueCodeableConcept.coding ^short = "Grund für Ablehnung"
+* extension[statusReason].valueCodeableConcept.coding ^definition = "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)"
 
+* intent MS
 * intent = #proposal
+* category MS
 * category = $SCT#110465008 "Clinical trial (procedure)"
-* code = $SCT#709491003 "Enrollment in clinical trial (procedure)"
+* code MS
+* code.coding 1..1 MS
+* code = $SCT#702475000 "Referral to clinical trial (procedure)"
 
 * reasonReference 0..* MS
 * reasonReference only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)

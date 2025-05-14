@@ -32,6 +32,31 @@
         "mustSupport": true
       },
       {
+        "id": "ServiceRequest.extension:statusReason",
+        "path": "ServiceRequest.extension",
+        "sliceName": "statusReason",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.extension:statusReason.value[x].coding",
+        "path": "ServiceRequest.extension.value[x].coding",
+        "short": "Grund für Ablehnung",
+        "definition": "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.extension:Prioritaet",
         "path": "ServiceRequest.extension",
         "sliceName": "Prioritaet",
@@ -67,12 +92,14 @@
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
         "definition": "Status des Studieneinschlusses",
-        "comment": "\r\n    draft: Nicht umgesetzt, \r\n    active: In Umsetzung, \r\n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+        "comment": "\r\n    draft: Nicht umgesetzt, \r\n    active: In Umsetzung, \r\n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)",
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.intent",
         "path": "ServiceRequest.intent",
-        "patternCode": "proposal"
+        "patternCode": "proposal",
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.category",
@@ -85,7 +112,8 @@
               "display": "Clinical trial (procedure)"
             }
           ]
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.code",
@@ -93,12 +121,20 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "code": "709491003",
+              "code": "702475000",
               "system": "http://snomed.info/sct",
-              "display": "Enrollment in clinical trial (procedure)"
+              "display": "Referral to clinical trial (procedure)"
             }
           ]
-        }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding",
+        "path": "ServiceRequest.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.reasonReference",
