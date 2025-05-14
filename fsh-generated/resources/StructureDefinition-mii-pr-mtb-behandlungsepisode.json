@@ -32,6 +32,22 @@
         "mustSupport": true
       },
       {
+        "id": "ClinicalImpression.extension:LeitlinenbehandlungStatus",
+        "path": "ClinicalImpression.extension",
+        "sliceName": "LeitlinenbehandlungStatus",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "ClinicalImpression.subject",
         "path": "ClinicalImpression.subject",
         "type": [

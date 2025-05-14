@@ -99,6 +99,7 @@
 [MII_PR_MTB_Immunohistochemistry_PDL1]: StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html
 [MII_PR_MTB_Immunohistochemistry_MSI]: StructureDefinition-mii-pr-mtb-msi.html
 [MII_PR_MTB_Immunohistochemistry_MMR]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.html
+[MII_PR_MTB_Immunohistochemistry_Phosphorylation]: StructureDefinition-mii-pr-mtb-immunohistochemistry-phosphorylation.html
 [MII_PR_MTB_INSITUHYBRIDIZATION_HER2]: StructureDefinition-mii-pr-mtb-insituhybridization-her2.html
 [MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html

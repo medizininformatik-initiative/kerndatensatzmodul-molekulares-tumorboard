@@ -92,3 +92,5 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Vorbefund] ^short = "Vorbefund"
 * supportingInfo[Vorbefund] ^definition = "Relevanter Vorbefund"
 * supportingInfo[Vorbefund] only Reference(DiagnosticReport or Observation)
+
+* extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS

@@ -41,5 +41,5 @@ Description: "Diagnose zum Primärtumor"
 * stage[MolekularesTumorboardZeitpunkt].type 1..1 MS
 * stage[MolekularesTumorboardZeitpunkt].type.coding = $SCT#93771000119109 "Diagnosis deferred"
 
-// Treatment Status according to Guideline
-* extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS
+// Treatment Status according to Guideline --> Das muss in die Behandlungsepisode 
+//* extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS
