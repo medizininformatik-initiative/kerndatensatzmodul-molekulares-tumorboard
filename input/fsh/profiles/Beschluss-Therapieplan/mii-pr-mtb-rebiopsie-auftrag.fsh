@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Biopsie_Auftrag
-Parent: MII_PR_Patho_Service_Request
+Parent: ServiceRequest
 Id: mii-pr-mtb-biopsie-auftrag
 Title: "MII PR MTB Biopsie Auftrag"
 Description: "Auftrag zur (erneuten) Biopsie"
@@ -12,8 +12,6 @@ Description: "Auftrag zur (erneuten) Biopsie"
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
-* reasonCode 0..1 MS
-* reasonCode from MII_VS_MTB_AuftragBegruendung (preferred)
 
 * reasonReference ^slicing.discriminator.type = #type
 * reasonReference ^slicing.discriminator.path = "reference.reference"
@@ -23,13 +21,13 @@ Description: "Auftrag zur (erneuten) Biopsie"
 
 * reasonReference contains Histologie 0..1 MS
 * reasonReference[Histologie] ^short = "Histologiebefund"
-* reasonReference[Histologie] ^definition = "Verweis auf Histologiebefund"
+* reasonReference[Histologie] ^definition = "Verweis auf Histologiebefund, der eine Rebiopsie begründet"
 * reasonReference[Histologie] 0..1 MS
 * reasonReference[Histologie] only Reference(MII_PR_Onko_Befund or DiagnosticReport)
 
 * reasonReference contains Tumorzellgehalt 0..1 MS
 * reasonReference[Tumorzellgehalt] ^short = "Tumorzellgehalt"
-* reasonReference[Tumorzellgehalt] ^definition = "Verweis auf bestimmten Tumorzellgehalt"
+* reasonReference[Tumorzellgehalt] ^definition = "Verweis auf bestimmten, häufig zu niedrigen Tumorzellgehalt, der eine Rebiopsie notwendig macht"
 * reasonReference[Tumorzellgehalt] 0..1 MS
 * reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt or Observation)
 

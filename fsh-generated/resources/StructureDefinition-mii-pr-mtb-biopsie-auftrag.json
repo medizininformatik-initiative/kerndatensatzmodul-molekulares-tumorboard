@@ -22,7 +22,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
-  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-service-request",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -36,15 +36,6 @@
         "path": "ServiceRequest.status",
         "definition": "Status der Umsetzung der Empfehlung",
         "comment": "\r\n    draft: Nicht umgesetzt, \r\n    active: In Umsetzung, \r\n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
-      },
-      {
-        "id": "ServiceRequest.reasonCode",
-        "path": "ServiceRequest.reasonCode",
-        "max": "1",
-        "binding": {
-          "strength": "preferred",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-auftrag-begruendung"
-        }
       },
       {
         "id": "ServiceRequest.reasonReference",
@@ -66,7 +57,7 @@
         "path": "ServiceRequest.reasonReference",
         "sliceName": "Histologie",
         "short": "Histologiebefund",
-        "definition": "Verweis auf Histologiebefund",
+        "definition": "Verweis auf Histologiebefund, der eine Rebiopsie begründet",
         "min": 0,
         "max": "1",
         "type": [
@@ -85,7 +76,7 @@
         "path": "ServiceRequest.reasonReference",
         "sliceName": "Tumorzellgehalt",
         "short": "Tumorzellgehalt",
-        "definition": "Verweis auf bestimmten Tumorzellgehalt",
+        "definition": "Verweis auf bestimmten, häufig zu niedrigen Tumorzellgehalt, der eine Rebiopsie notwendig macht",
         "min": 0,
         "max": "1",
         "type": [
@@ -112,7 +103,8 @@
               "http://hl7.org/fhir/StructureDefinition/Specimen"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       }
     ]
   }
