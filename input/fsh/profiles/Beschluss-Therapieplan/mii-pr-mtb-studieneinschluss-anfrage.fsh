@@ -6,7 +6,7 @@ Description: "Anfrage zum Studieneinschluss"
 * insert PR_Header
 
 * status ^short = "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
-* status ^definition = "Status der Umsetzung der Empfehlung"
+* status ^definition = "Status des Studieneinschlusses"
 * status ^comment = "
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
@@ -19,8 +19,15 @@ Description: "Anfrage zum Studieneinschluss"
 * reasonReference 0..* MS
 * reasonReference only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
-* supportingInfo 1..* MS
-* supportingInfo only Reference(
+* supportingInfo 0..* MS
+* supportingInfo ^slicing.discriminator.type = #value
+* supportingInfo ^slicing.discriminator.path = "system"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.description = "Slice für Referenz auf eine Studie"
+* supportingInfo ^slicing.ordered = false
+
+* supportingInfo contains Studie 0..* MS
+* supportingInfo[Studie] only Reference(
     MII_PR_MTB_Studie or
     MII_PR_Studie_Studie or
     ResearchStudy

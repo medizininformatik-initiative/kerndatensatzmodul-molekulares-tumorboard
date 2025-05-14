@@ -25,7 +25,3 @@ Description: "Onkologische Studie"
 * identifier[EudraCT].system = $mii-ns-studie-eudract
 * identifier[EudraCT].value 1..1 MS
 
-* extension contains MII_EX_MTB_Diagnose named OnkologischeDiagnose 0..* MS
-
-* extension contains $fhir-ext-based-on named Therapieplan 0..* MS
-* extension[Therapieplan].valueReference only Reference(MII_PR_MTB_Therapieplan)

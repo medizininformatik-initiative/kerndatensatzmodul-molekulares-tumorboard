@@ -66,8 +66,8 @@
       {
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
-        "definition": "Status der Umsetzung der Empfehlung",
-        "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+        "definition": "Status des Studieneinschlusses",
+        "comment": "\r\n    draft: Nicht umgesetzt, \r\n    active: In Umsetzung, \r\n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
       },
       {
         "id": "ServiceRequest.intent",
@@ -117,7 +117,25 @@
       {
         "id": "ServiceRequest.supportingInfo",
         "path": "ServiceRequest.supportingInfo",
-        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Referenz auf eine Studie",
+          "ordered": false
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:Studie",
+        "path": "ServiceRequest.supportingInfo",
+        "sliceName": "Studie",
+        "min": 0,
+        "max": "*",
         "type": [
           {
             "code": "Reference",

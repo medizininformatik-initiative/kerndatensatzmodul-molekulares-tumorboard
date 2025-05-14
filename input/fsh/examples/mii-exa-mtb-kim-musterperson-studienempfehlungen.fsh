@@ -69,7 +69,6 @@ Usage: #example
 * objective[=].name = "Disease control rate (DCR) defined as the proportion of patients in whom a CR or PR or stable disease (SD) (per RECIST 1.1, SD assessed at least 6 weeks after the first dose) is observed as best overall response"
 * objective[+].type = #secondary
 * objective[=].name = "Duration of response (DOR) defined as the time from first objective response (CR or PR per RECIST 1.1) to first occurrence of objective progressive disease (PD) per RECIST 1.1/recurrence or death from any cause, whichever occurs first"
-* extension[Therapieplan].valueReference = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 
 Instance: mii-exa-mtb-study-cldn6-eligibility-criteria
 InstanceOf: Group
@@ -322,7 +321,6 @@ Usage: #example
 * status = #draft
 * identifier[+].system = $mii-ns-mtb-nct
 * identifier[=].value = "04713514"
-* extension[Therapieplan].valueReference = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 
 Instance: mii-exa-mtb-study-request-tedova
 InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
@@ -342,7 +340,6 @@ Title: "CCNE1"
 Description: "Studie: CCNE1 ampl. OvCA"
 Usage: #example
 * status = #draft
-* extension[Therapieplan].valueReference = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 
 Instance: mii-exa-mtb-study-request-ccne1
 InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
