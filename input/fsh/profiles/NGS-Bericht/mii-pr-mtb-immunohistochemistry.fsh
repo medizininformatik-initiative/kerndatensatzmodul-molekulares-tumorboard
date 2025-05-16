@@ -5,6 +5,7 @@ Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistorchemistry report"
 * insert PR_Header
 * identifier MS 
+
 * code 1..1 MS
 * code.coding MS 
 * code ^short = "Code für Immunhistochemische Untersuchung"

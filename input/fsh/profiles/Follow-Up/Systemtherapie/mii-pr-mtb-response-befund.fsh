@@ -8,7 +8,8 @@ Description: "Response Beurteilung nach DNPM"
 * status MS
 * code MS
 * subject MS
-* focus MS // jedes mal noch Primärtumor angeben?
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 * effectiveDateTime MS
 * effectiveDateTime ^short = "Zeitpunkt"
 * effectiveDateTime ^definition = "Zeitpunkt des Response Befundes"
@@ -25,7 +26,7 @@ Description: "Response Beurteilung nach DNPM"
 * valueCodeableConcept ^short = "Response Beurteilung"
 * valueCodeableConcept.coding.system = $mii-cs-mtb-response-befund-beurteilung
 * valueCodeableConcept.coding.code from MII_VS_MTB_Response_Befund_Beurteilung
-* partOf 1..* MS
+* partOf 0..* MS
 * partOf ^short = "Systemische Therapie"
 * partOf ^definition = "Daszugehoerige, uebergeordnete Systemische Therapie"
 * partOf only Reference(MII_PR_MTB_Systemische_Therapie or Procedure)

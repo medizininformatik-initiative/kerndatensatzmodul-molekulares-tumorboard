@@ -5,6 +5,7 @@ Title: "MII PR MTB Immunohistochemistry Phosphorylation"
 Description: "Immunhistorchemistry report"
 * insert PR_Header
 
+
 * component contains 
     phosphorylation-localization 0..* MS and 
     protein-isoform 0..1 MS

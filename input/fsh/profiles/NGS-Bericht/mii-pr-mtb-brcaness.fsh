@@ -6,6 +6,9 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * insert PR_Header
 
 * identifier MS
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
+
 * category MS
 * subject 1..1 MS
 * subject only Reference(Patient or Group)

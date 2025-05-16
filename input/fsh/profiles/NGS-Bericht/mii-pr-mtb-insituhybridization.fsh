@@ -37,6 +37,9 @@ Description: "Molekularer Biomarker - In Situ Hybridization Profil"
 * identifier 0..1 MS 
 * identifier ^short = "Identifier zur Abgrenzung anderer gleichartiger Untersuchungen" 
 * identifier ^definition = "Identifier der Untersuchung, damit die Untersuchung auch außerhalb von FHIR eindeutig identifiziert werden kann. Sollte ISH oder vlg. beinhalten, um von anderen Biomarkeruntersuchungen abzugrenzen. "
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
+
 * code 1..1 MS 
 * code.coding = $SCT#384715000 // "Nucleic acid hybridization procedure (procedure)"
 * code ^short = "In Situ Hybridization"

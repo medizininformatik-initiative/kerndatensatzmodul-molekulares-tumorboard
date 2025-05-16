@@ -5,13 +5,16 @@ Title: "MII PR MTB RNA Seq"
 Description: "RNA Seq"
 * insert PR_Header
 
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
+
 * value[x] ^slicing.rules = #open
 
 * component[gene-studied] MS 
 * component[gene-studied] ^short = "Gen" 
 
 * component[variation-code] MS
-* component[variation-code] 2..2
+* component[variation-code] 0..2
 * component[variation-code] ^short = "Entrez ID & Ensemble ID"
 
 * component contains

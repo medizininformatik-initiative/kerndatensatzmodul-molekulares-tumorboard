@@ -32,9 +32,18 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.component",
-        "path": "Observation.component",
-        "min": 2
+        "id": "Observation.focus",
+        "path": "Observation.focus",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor"
+            ]
+          }
+        ],
+        "mustSupport": true
       },
       {
         "id": "Observation.component:gene-studied",
@@ -47,7 +56,6 @@
         "path": "Observation.component",
         "sliceName": "variation-code",
         "short": "Entrez ID & Ensemble ID",
-        "min": 2,
         "max": "2"
       },
       {

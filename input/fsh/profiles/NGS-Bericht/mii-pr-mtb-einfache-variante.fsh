@@ -5,6 +5,9 @@ Title: "MII PR MTB Einfache Variante"
 Description: "Beschreibt eine gefundene genetische Variante."
 * insert PR_Header
 
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
+
 * component[chromosome-identifier] MS
 * component[chromosome-identifier] ^definition = "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
 

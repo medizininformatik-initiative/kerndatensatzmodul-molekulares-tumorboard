@@ -5,7 +5,8 @@ Title: "MII PR MTB Copy Number Variant"
 Description: "Copy Number Variant (CNV)"
 * insert PR_Header
 
-* value[x] ^slicing.rules = #open
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 
 * component contains
     relative-copy-number 0..* MS and

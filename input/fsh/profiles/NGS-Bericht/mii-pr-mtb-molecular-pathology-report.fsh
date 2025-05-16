@@ -20,6 +20,15 @@ Description: "Molecular pathology report"
 * result ^definition = "Art der Diagnostik"
 * result ^short = "Diagnostik"
 
+* result ^slicing.discriminator.type = #pattern
+* result ^slicing.discriminator.path = "$this"
+* result ^slicing.rules = #open
+* result  ^slicing.description = "Slices für verschiedene Inhalte eines Molekularpathologischen Reports"
+* result contains Immunhistochemie 0..* MS and InSituHybridisierung 0..* MS
+* result[Immunhistochemie] only Reference(MII_PR_MTB_Immunohistochemistry)
+* result[InSituHybridisierung] only Reference(MII_PR_MTB_Biomarker_InSituHybridization)
+
+
 // Text = composition.text ->  Nicht auffindbar, war das eventuell R5?
 // Verlinkung aus Composition-Profil, sollte auf MolPatho und NGS-Bericht passen
 

@@ -6,7 +6,9 @@ Description: "RNA-Fusion"
 * insert PR_Header
 
 * identifier MS 
-* identifier ^short = "VariantenId"
+* identifier ^short = "VariantenId innerhalb des NGS-Befundes"
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 
 * component contains
     effect 1..1 MS and
