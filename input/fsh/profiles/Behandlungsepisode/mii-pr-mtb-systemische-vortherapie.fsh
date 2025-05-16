@@ -23,3 +23,5 @@ Description: "Systemische Vortherapie zum Molekularen Tumorboard"
 * statusReason ^short = "Abbruchsgrund Systemische Therapie"
 * statusReason ^definition = "Falls abgebrochen: Angabe zum Abbruchsgrund der Systemischen Therapie"
 * statusReason.coding.code from MII_VS_MTB_Therapiestatusgrund
+
+* extension contains MII_EX_MTB_Leitlinie_Dokumentation named Leitlinie 0..1 MS
