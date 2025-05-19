@@ -60,7 +60,6 @@
 [mii-cps-mtb-capabilitystatement]: CapabilityStatement-mii-cps-mtb-capabilitystatement.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.html
-[MII_CS_MTB_AuftragBegruendung]: CodeSystem-mii-cs-mtb-auftrag-begruendung.html
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_CS_MTB_Dosisdichte]: CodeSystem-mii-cs-mtb-dosisdichte.html
 [MII_CS_MTB_Empfehlung_Evidenzgrad]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.html
@@ -69,6 +68,7 @@
 [MII_CS_MTB_Follow_Up_Status]: CodeSystem-mii-cs-mtb-follow-up-status.html
 [MII_CS_MTB_Genomic_Analysis_Method_Type]: CodeSystem-mii-cs-mtb-genomic-analysis-method-type.html
 [MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction]: CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.html
+[MII_CS_MTB_AuftragBegruendung]: CodeSystem-mii-cs-mtb-auftrag-begruendung.html
 [MII_CS_MTB_Kostenuebernahme_Ablehnungsgrund]: CodeSystem-mii-cs-mtb-kostenuebernahme-ablehnungsgrund.html
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html

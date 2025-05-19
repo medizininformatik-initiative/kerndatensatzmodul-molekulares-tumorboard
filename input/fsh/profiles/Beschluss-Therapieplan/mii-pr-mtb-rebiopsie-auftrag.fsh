@@ -12,7 +12,6 @@ Description: "Auftrag zur (erneuten) Biopsie"
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
-
 * reasonReference ^slicing.discriminator.type = #type
 * reasonReference ^slicing.discriminator.path = "reference.reference"
 * reasonReference ^slicing.rules = #open

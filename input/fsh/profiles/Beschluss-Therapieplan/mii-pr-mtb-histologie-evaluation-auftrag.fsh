@@ -12,9 +12,6 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
-* reasonCode 0..1 MS
-* reasonCode from MII_VS_MTB_AuftragBegruendung (preferred)
-
 * reasonReference ^slicing.discriminator.type = #type
 * reasonReference ^slicing.discriminator.path = "reference.reference"
 * reasonReference ^slicing.rules = #open

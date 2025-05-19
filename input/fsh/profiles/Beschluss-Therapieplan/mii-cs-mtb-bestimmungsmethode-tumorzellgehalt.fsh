@@ -4,5 +4,5 @@ Id: mii-cs-mtb-bestimmungsmethode-tumorzellgehalt
 Title: "MII CS Bestimmungsmethode Tumorzellgehalt"
 Description: "Angewandte Methode zur Bestimmung des Tumorzellgehalts"
 * insert CS_Header($mii-cs-mtb-bestimmungsmethode-tumorzellgehalt)
-* #bioinformatic    "Bioinformatisch"
-* #histologic       "Histologisch"
+* #bioinformatic    "Bioinformatisch"   "Bioinformatische Bestimmung"
+* #histologic       "Histologisch"      "Histologische Bestimmung"
