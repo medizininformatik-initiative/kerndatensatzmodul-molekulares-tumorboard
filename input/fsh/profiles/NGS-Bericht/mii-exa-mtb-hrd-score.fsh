@@ -18,4 +18,6 @@ Description: "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombin
 
 * interpretation = $hl7-v3-observation-high-low-codes#high "high HRD"
 
-// component
+* component[LOH].valueInteger = 14
+* component[TAI].valueInteger = 12
+* component[LST].valueInteger = 17

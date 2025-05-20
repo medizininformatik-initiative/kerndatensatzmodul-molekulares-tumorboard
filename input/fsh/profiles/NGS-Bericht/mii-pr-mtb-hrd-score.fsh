@@ -28,15 +28,15 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * component contains TAI 1..1 MS
 * component contains LST 1..1 MS
 * component[LOH] ^short = "Loss of heterozygosity"
-* component[LOH].code = $NCIT#C18016
+* component[LOH].code = $NCIT#C18016 "Loss of Heterozygosity"
 * component[LOH].value[x] MS
 * component[LOH].value[x] only integer
 * component[TAI] ^short = "Telomeric allelic imbalance"
-* component[TAI].code = $NCIT#C129774
+* component[TAI].code = $NCIT#C129774 "Telomeric Allelic Imbalance Region"
 * component[TAI].value[x] MS
 * component[TAI].value[x] only integer
 * component[LST] ^short = "Large-scale state transitions"
-* component[LST].code = $NCIT#C120466
+* component[LST].code = $NCIT#C120466 "Large-Scale State Transition"
 * component[LST].value[x] MS
 * component[LST].value[x] only integer
 
