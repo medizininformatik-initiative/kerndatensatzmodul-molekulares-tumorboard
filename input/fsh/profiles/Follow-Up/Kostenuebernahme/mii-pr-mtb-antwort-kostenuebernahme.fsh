@@ -11,7 +11,7 @@ Description: "Antwort auf Antrag Kostenübernahme"
 * status ^definition = "Status der FHIR-Ressource, statisch auf #active gesetzt, da retrospektive Datenerschließung"
 
 * type MS
-* type from MII_VS_MTB_Antrag_Kostenuebernahme
+* type from MII_VS_MTB_Antrag_Kostenuebernahme_Type
 * type ^short = "Kategorie des Antragstellers" 
 * type ^definition = "Kategorie des Antragstellers - z.B. stationär, ambulant, Apotheke"
 * use MS

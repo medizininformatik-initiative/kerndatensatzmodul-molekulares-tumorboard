@@ -138,7 +138,7 @@
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
 [MII_PR_MTB_WHO_Grad_Tumor_ZNS]: StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.html
-[MII_VS_MTB_Antwort_Kostenuebernahme_Status]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-status.html
+[MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_VS_MTB_AuftragBegruendung]: ValueSet-mii-vs-mtb-auftrag-begruendung.html
 [MII_VS_MTB_BestimmungsmethodeTumorzellgehalt]: ValueSet-mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_VS_MTB_Dosisdichte]: ValueSet-mii-vs-mtb-dosisdichte.html
@@ -155,7 +155,7 @@
 [MII_VS_MTB_Immunhistochemistry_Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_Microsatellite_Instability]: ValueSet-mii-vs-mtb-msi.html
-[MII_VS_MTB_Antrag_Kostenuebernahme]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
+[MII_VS_MTB_Antrag_Kostenuebernahme_Type]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
