@@ -61,7 +61,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[MolekularPathologieBefund].item 1..1
 * investigation[MolekularPathologieBefund].item ^short = "Molekular Pathologie Befund"
 * investigation[MolekularPathologieBefund].item ^definition = "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund"
-* investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT or DiagnosticReport)
+* investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_Molecular_Pathology_Report or DiagnosticReport)
 
 * supportingInfo ^slicing.discriminator.type = #type
 * supportingInfo ^slicing.discriminator.path = "$this"

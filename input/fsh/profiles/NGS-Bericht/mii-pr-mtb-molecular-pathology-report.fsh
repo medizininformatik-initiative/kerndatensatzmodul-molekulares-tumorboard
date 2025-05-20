@@ -1,4 +1,4 @@
-Profile: MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT
+Profile: MII_PR_MTB_Molecular_Pathology_Report
 Parent: DiagnosticReport
 Id: mii-pr-mtb-molecular-pathology-report
 Title: "MII PR MTB Molecular Pathology Report"
@@ -23,9 +23,10 @@ Description: "Molecular pathology report"
 * result ^slicing.discriminator.type = #pattern
 * result ^slicing.discriminator.path = "$this"
 * result ^slicing.rules = #open
-* result  ^slicing.description = "Slices für verschiedene Inhalte eines Molekularpathologischen Reports"
+* result  ^slicing.description = "Slices für verschiedene Inhalte eines Molekularpathologischen Reports. Diese Slices sind beliebig erweiterbar"
 * result contains Immunhistochemie 0..* MS and InSituHybridisierung 0..* MS
 * result[Immunhistochemie] only Reference(MII_PR_MTB_Immunohistochemistry)
+* result[Immunhistochemie] ^short = "Immunhistochemie"
 * result[InSituHybridisierung] only Reference(MII_PR_MTB_Biomarker_InSituHybridization)
 
 

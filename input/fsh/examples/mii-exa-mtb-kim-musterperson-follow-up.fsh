@@ -175,6 +175,7 @@ Title: "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine"
 * created = "2023-03-10"
 * provider = Reference(Organization/InstitutionID) // Daten im Bsp nicht vorhanden, sollte die Klinik oder die verschreibende Einrichtung sein
 * prescription = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* insurance.sequence = 1 // Daten im Bsp nicht vorhanden
 * insurance.coverage = Reference(Coverage/CoverageExample) // Daten im Bsp nicht vorhanden
 * insurance.claimResponse = Reference(ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1)
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample) // Daten im Bsp nicht vorhanden

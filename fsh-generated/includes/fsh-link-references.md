@@ -118,7 +118,7 @@
 [MII_PR_MTB_INSITUHYBRIDIZATION_HER2]: StructureDefinition-mii-pr-mtb-insituhybridization-her2.html
 [MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
-[MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
+[MII_PR_MTB_Molecular_Pathology_Report]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
 [MII_PR_MTB_Molekularer_Biomarker]: StructureDefinition-mii-pr-mtb-molekularer-biomarker.html
 [MII_PR_MTB_Mutationslast]: StructureDefinition-mii-pr-mtb-mutationslast.html
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
