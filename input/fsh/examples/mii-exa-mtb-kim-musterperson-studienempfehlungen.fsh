@@ -13,7 +13,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-cldn6)
 * insert BeschlussSubPrioritaet(2.1)
-* insert BeschlussEvidenzPublikation($pmid, 37872225)
+* insert BeschlussEvidenzPublikation(http://www.ncbi.nlm.nih.gov/pubmed, 37872225)
 
 Instance: mii-exa-mtb-study-cldn6
 InstanceOf: MII_PR_MTB_Studie
