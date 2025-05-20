@@ -31,6 +31,7 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-06-24"
 * effectivePeriod.end = "2023-06-24"
@@ -49,6 +50,7 @@ Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-07-16"
 * effectivePeriod.end = "2023-07-16"
@@ -68,6 +70,7 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert"
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-08-07"
 * effectivePeriod.end = "2023-08-07"
@@ -102,6 +105,8 @@ Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
+
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-08-29"
 * effectivePeriod.end = "2023-08-29"
@@ -120,6 +125,7 @@ Title: "20.09.2023 Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-09-20"
 * effectivePeriod.end = "2023-09-20"
@@ -138,6 +144,7 @@ Title: "12.10.2023 Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-10-12"
 * effectivePeriod.end = "2023-10-12"
