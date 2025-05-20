@@ -16,8 +16,8 @@ Description: "NGS-Bericht zu einer Probe"
 * specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
 * specimen ^short = "Referenz auf Probe"
 
-* result ^slicing.discriminator.type = #type
-* result ^slicing.discriminator.path = "reference.reference"
+* result ^slicing.discriminator.type = #profile
+* result ^slicing.discriminator.path = "$this"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice für Varianten & Biomarker des NGS-Berichts"
 * result ^slicing.ordered = false
