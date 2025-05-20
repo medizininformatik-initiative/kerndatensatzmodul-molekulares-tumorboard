@@ -56,72 +56,50 @@ Description: "NGS-Bericht zu einer Probe"
 * result[BRCAness] 0..1 MS
 * result[BRCAness] only Reference(MII_PR_MTB_BRCAness) // or BRCAness-Profile
 
-* result contains EinfacheVariante 0..1 MS
+* result contains EinfacheVariante 0..* MS
 * result[EinfacheVariante] ^short = "Einfache Variante"
 * result[EinfacheVariante] ^definition = "Verweis auf Einfache Variante"
 * result[EinfacheVariante] 0..1 MS
 * result[EinfacheVariante] only Reference(MII_PR_MTB_Einfache_Variante) // or Einfache Variante Profile
 
-* result contains CopyNumberVariant 0..1 MS
+* result contains CopyNumberVariant 0..* MS
 * result[CopyNumberVariant] ^short = "Copy Number Variant"
 * result[CopyNumberVariant] ^definition = "Verweis auf Copy Number Variant"
 * result[CopyNumberVariant] 0..1 MS
 * result[CopyNumberVariant] only Reference(MII_PR_MTB_Copy_Number_Variant) // or Copy Number Variant Profile
 
-* result contains DNAFusion 0..1 MS
+* result contains DNAFusion 0..* MS
 * result[DNAFusion] ^short = "DNA-Fusion"
 * result[DNAFusion] ^definition = "Verweis auf DNA-Fusion"
 * result[DNAFusion] 0..1 MS
 * result[DNAFusion] only Reference(MII_PR_MTB_DNA_Fusion) // or MTB DNA-Fusion Profil
 
-* result contains RNAFusion 0..1 MS
+* result contains RNAFusion 0..* MS
 * result[RNAFusion] ^short = "RNA-Fusion"
 * result[RNAFusion] ^definition = "Verweis auf RNA-Fusion"
 * result[RNAFusion] 0..1 MS
 * result[RNAFusion] only Reference(MII_PR_MTB_RNA_Fusion) // or MTB RNA-Fusion Profile
 
-* result contains RNASeq 0..1 MS
+* result contains RNASeq 0..* MS
 * result[RNASeq] ^short = "RNASeq"
 * result[RNASeq] ^definition = "Verweis auf RNASeq"
 * result[RNASeq] 0..1 MS
 * result[RNASeq] only Reference(MII_PR_MTB_RNA_Seq) // or MTB RNASeq Profile
 
+* result contains Tumorzellgehalt 0..1 MS
 
-* extension contains MII_EX_MTB_NGS_Bericht_Metadaten named Metadaten 0..1 MS
-* extension[Metadaten] ^short = "Metadaten"
-
-* extension contains MII_EX_MTB_NGS_Bericht_QC named QC 0..1 MS
-* extension[Metadaten] ^short = "QC"
-
-Extension: MII_EX_MTB_NGS_Bericht_Metadaten
-Id: mii-ex-mtb-ngs-bericht-metadaten
+Extension: MII_EX_MTB_NGS_Bericht_Genomic_Study
+Id: mii-ex-mtb-ngs-bericht-genomic-study
 Context: DiagnosticReport
 Title: "MII EX MTB NGS Bericht Metadaten"
 Description: "Metadaten des NGS-Berichts"
-* insert EX_Header($mii-ex-mtb-ngs-bericht-metadaten)
+* insert EX_Header($mii-ex-mtb-ngs-bericht-genomic-study)
 
 * value[x] only Reference
 * value[x] 1..1 MS
 
-* valueReference
-* valueReference ^short = "Metadaten"
-* valueReference ^definition = "Metadaten des NGS-Berichts"
-// * valueReference only Reference(MII_PR_MTB_NGS_Bericht_Metadaten)
-
-
-Extension: MII_EX_MTB_NGS_Bericht_QC
-Id: mii-ex-mtb-ngs-bericht-qc
-Context: DiagnosticReport
-Title: "MII EX MTB NGS Bericht QC"
-Description: "QC des NGS-Berichts"
-* insert EX_Header($mii-ex-mtb-ngs-bericht-qc)
-
-* value[x] only Reference
-* value[x] 1..1 MS
-
-* valueReference
-* valueReference ^short = "QC"
-* valueReference ^definition = "QC des NGS-Berichts"
-// * valueReference only Reference(MII_PR_MTB_NGS_Bericht_Metadaten)
+* valueReference ^short = "Metadaten des NGS-Berichts"
+* valueReference ^definition = "Genomic-Study mit Metadaten als Genomic-Study-Analysis des NGS-Berichts"
+* valueReference only Reference(MII_PR_MTB_Genomic_Study)
 
 
