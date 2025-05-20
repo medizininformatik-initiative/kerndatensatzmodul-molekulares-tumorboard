@@ -15,7 +15,7 @@ Usage: #example
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX
 * insert BeschlussPrioritaet(1)
-* insert BeschlussEvidenzZweiQuellen(m1A, $doi, 10.1200/JCO.2022.40.16_suppl.5512, $pmid, 38055253)
+* insert BeschlussEvidenzZweiQuellen(m1A, http://doi.org, 10.1200/JCO.2022.40.16_suppl.5512, http://www.ncbi.nlm.nih.gov/pubmed, 38055253)
 
 // Prio 3: Trastuzumab deruxtecan (m1B)
 // Her2neu Score 2+: Bei Her2low in der immunhistochemischen Untersuchung besteht eine off-label Therapieoption mit
@@ -36,7 +36,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FD04
 * insert BeschlussPrioritaet(3)
-* insert BeschlussEvidenzDreiQuellen(m1B, $pmid, 35665782, $pmid, 37870536, $doi, 10.1200/JCO.2023.41.17_suppl.LBA3000)
+* insert BeschlussEvidenzDreiQuellen(m1B, http://www.ncbi.nlm.nih.gov/pubmed, 35665782, http://www.ncbi.nlm.nih.gov/pubmed, 37870536, http://doi.org, 10.1200/JCO.2023.41.17_suppl.LBA3000)
 
 // Prio 4: Adavosertib +/- Carboplatin (m1B) sofern verfügbar
 // Zudem bei CCNE1 ampl Rationale für Kombination aus WEE1-Inhibitor Adavosertib +/- Carboplatin
@@ -83,7 +83,7 @@ Usage: #example
 * action.resource = Reference(mii-exa-mtb-medication-request-adavosertib)
 * action.resource = Reference(mii-exa-mtb-medication-request-carboplatin)
 * insert BeschlussPrioritaet(4)
-* insert BeschlussEvidenz(m1B, $pmid, 37236033)
+* insert BeschlussEvidenz(m1B, http://www.ncbi.nlm.nih.gov/pubmed, 37236033)
 
 // 5. Lunresertib + Camonsertib (m1B) sofern verfügbar
 // Eine Phase I-Studie mit dem first-in-class PKMYT1-Inhibitor Lunresertib und dem ATR Inhibitor Camonsertib zeigte
@@ -142,7 +142,7 @@ Usage: #example
 * action.resource = Reference(mii-exa-mtb-medication-request-lunresertib)
 * action.resource = Reference(mii-exa-mtb-medication-request-camonsertib)
 * insert BeschlussPrioritaet(5)
-* insert BeschlussEvidenz(m1B, $doi, 10.1158/1535-7163.TARG-23-PR008)
+* insert BeschlussEvidenz(m1B, http://doi.org, 10.1158/1535-7163.TARG-23-PR008)
 * insert BeschlussEvidenzQuelle(https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf)
 
 // 6. MEKi, z.B. Cobimetinib (m3)
@@ -166,4 +166,4 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
 * insert BeschlussPrioritaet(6)
-* insert BeschlussEvidenz(m3, $pmid, 31209687)
+* insert BeschlussEvidenz(m3, http://www.ncbi.nlm.nih.gov/pubmed, 31209687)
