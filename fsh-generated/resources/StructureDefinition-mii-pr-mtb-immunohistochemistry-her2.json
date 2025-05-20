@@ -27,16 +27,6 @@
   "differential": {
     "element": [
       {
-        "id": "Observation.category:biomarker-category",
-        "path": "Observation.category",
-        "sliceName": "biomarker-category"
-      },
-      {
-        "id": "Observation.category:biomarker-category.coding.code",
-        "path": "Observation.category.coding.code",
-        "patternCode": "immuneStain"
-      },
-      {
         "id": "Observation.code.coding",
         "path": "Observation.code.coding",
         "patternCoding": {
@@ -95,6 +85,18 @@
               "display": "ERBB2"
             }
           ]
+        }
+      },
+      {
+        "id": "Observation.component:biomarker-category",
+        "path": "Observation.component",
+        "sliceName": "biomarker-category"
+      },
+      {
+        "id": "Observation.component:biomarker-category.value[x].coding",
+        "path": "Observation.component.value[x].coding",
+        "patternCoding": {
+          "code": "immuneStain"
         }
       }
     ]
