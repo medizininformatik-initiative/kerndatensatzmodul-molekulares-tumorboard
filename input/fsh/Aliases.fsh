@@ -24,9 +24,9 @@ Alias: $mii-pr-molgen-therapeutische-implikation = https://www.medizininformatik
 
 // Aliases für Profile des MII MTB-Moduls
 Alias: $mii-lm-mtb = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb
-Alias: $mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-kostenuebernahme-ablehnungsgrund
+Alias: $mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund
 Alias: $mii-cs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium
-Alias: $mii-cs-mtb-antwort-kostenuebernahme-entscheidung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium-entscheidung
+Alias: $mii-cs-mtb-antwort-kostenuebernahme-entscheidung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung
 Alias: $mii-cs-mtb-auftrag-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung
 Alias: $mii-cs-mtb-bestimmungsmethode-tumorzellgehalt = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt
 Alias: $mii-cs-mtb-systemische-therapie-status-grund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund

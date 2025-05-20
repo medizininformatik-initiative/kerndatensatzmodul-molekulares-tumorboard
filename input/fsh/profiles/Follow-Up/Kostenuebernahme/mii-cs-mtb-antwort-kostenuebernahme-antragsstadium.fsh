@@ -2,7 +2,7 @@ CodeSystem: MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung
 Id: mii-cs-mtb-antwort-kostenuebernahme-entscheidung
 Title: "MII CS Antwort Kostenuebernahme Entscheidung"
 Description: "Codesystem zum Status der Antwort zur Kostenuebernahme nach DNPM"
-// * insert CS_Header($mii-cs-mtb-antwort-kostenuebernahme-status)
+// * insert CS_Header($mii-cs-mtb-antwort-kostenuebernahme-entscheidung)
 * #accepted      "Angenommen"
 * #rejected      "Abgelehnt"
 * #unknown       "Unbekannt"
