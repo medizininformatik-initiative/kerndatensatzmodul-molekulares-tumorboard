@@ -1,4 +1,4 @@
-Instance: MolekularesTumorboardSession-1
+/*Instance: MolekularesTumorboardSession-1
 InstanceOf: MII_PR_MTB_Therapieplan
 * status = #completed
 * intent = #plan
@@ -16,3 +16,5 @@ InstanceOf: MII_PR_MTB_Therapieplan
 
 * category.coding.code = $SCT#12345678 // Platzhalter
 * category.text = "Molekulares Tumorboard"
+
+*/
