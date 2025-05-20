@@ -20,7 +20,7 @@ Description: "Molecular pathology report"
 * result ^definition = "Art der Diagnostik"
 * result ^short = "Diagnostik"
 
-* result ^slicing.discriminator.type = #pattern
+* result ^slicing.discriminator.type = #profile
 * result ^slicing.discriminator.path = "$this"
 * result ^slicing.rules = #open
 * result  ^slicing.description = "Slices für verschiedene Inhalte eines Molekularpathologischen Reports. Diese Slices sind beliebig erweiterbar"
@@ -28,6 +28,8 @@ Description: "Molecular pathology report"
 * result[Immunhistochemie] only Reference(MII_PR_MTB_Immunohistochemistry)
 * result[Immunhistochemie] ^short = "Immunhistochemie"
 * result[InSituHybridisierung] only Reference(MII_PR_MTB_Biomarker_InSituHybridization)
+* result[InSituHybridisierung] ^short = "Gewebasierte In-Situ-Hybridisierung"
+
 
 
 // Text = composition.text ->  Nicht auffindbar, war das eventuell R5?
