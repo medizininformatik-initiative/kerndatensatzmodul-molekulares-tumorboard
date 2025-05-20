@@ -33,7 +33,7 @@ RuleSet: SupportSearchParam (name, canonical, type, expectation)
 Instance: mii-cps-mtb-capabilitystatement
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "https://www.medizininformatik-initiative.de/fhir/modul-onko/CapabilityStatement/metadata" //ändern
+* url = "https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata" //ändern
 * insert Version
 * name = "MII_CPS_MTB_CapabilityStatement"
 * title = "MII CPS MTB CapabilityStatement"
