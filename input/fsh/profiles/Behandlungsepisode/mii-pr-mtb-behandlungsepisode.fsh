@@ -74,6 +74,11 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Einwilligung] ^definition = "Einwilligung zum Molekularen Tumorboard"
 * supportingInfo[Einwilligung] only Reference(Consent)
 
+* supportingInfo contains Vorbefund 0..* MS
+* supportingInfo[Vorbefund] ^short = "Vorbefund"
+* supportingInfo[Vorbefund] ^definition = "Relevanter Vorbefund"
+* supportingInfo[Vorbefund] only Reference(DiagnosticReport or Observation)
+
 * supportingInfo contains Vortherapie 0..* MS
 * supportingInfo[Vortherapie] ^short = "Vortherapie"
 * supportingInfo[Vortherapie] ^definition = "Relevante Leitlinien-basierte Vortherapie"
@@ -88,9 +93,9 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^short = "Leitlinie Dokumentation"
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^definition = "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur"
 
-* supportingInfo contains Vorbefund 0..* MS
-* supportingInfo[Vorbefund] ^short = "Vorbefund"
-* supportingInfo[Vorbefund] ^definition = "Relevanter Vorbefund"
-* supportingInfo[Vorbefund] only Reference(DiagnosticReport or Observation)
+* supportingInfo contains Therapieplan 0..1 MS
+* supportingInfo[Therapieplan] ^short = "Therapieplan"
+* supportingInfo[Therapieplan] ^definition = "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
+* supportingInfo[Therapieplan] only Reference(MII_PR_MTB_Therapieplan or CarePlan)
 
 * extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS

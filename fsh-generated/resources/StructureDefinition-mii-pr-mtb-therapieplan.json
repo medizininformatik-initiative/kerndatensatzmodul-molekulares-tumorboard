@@ -40,12 +40,14 @@
       {
         "id": "CarePlan.description",
         "path": "CarePlan.description",
+        "short": "Protokollauszug",
         "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
         "mustSupport": true
       },
       {
         "id": "CarePlan.created",
         "path": "CarePlan.created",
+        "short": "Erstellungsdatum",
         "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
       },
       {
@@ -75,7 +77,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode",
+              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
             ]
           }
         ],
