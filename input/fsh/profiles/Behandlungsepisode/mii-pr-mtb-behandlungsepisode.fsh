@@ -63,7 +63,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[MolekularPathologieBefund].item ^definition = "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund"
 * investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_Molecular_Pathology_Report or DiagnosticReport)
 
-* supportingInfo ^slicing.discriminator.type = #type
+* supportingInfo ^slicing.discriminator.type = #profile
 * supportingInfo ^slicing.discriminator.path = "$this"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für weitere Informationen"
@@ -72,7 +72,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo contains Einwilligung 0..1 MS
 * supportingInfo[Einwilligung] ^short = "Einwilligung"
 * supportingInfo[Einwilligung] ^definition = "Einwilligung zum Molekularen Tumorboard"
-* supportingInfo[Einwilligung] only Reference(Consent)
+* supportingInfo[Einwilligung] only Reference(MII_PR_MTB_Consent_Given)
 
 * supportingInfo contains Vortherapie 0..* MS
 * supportingInfo[Vortherapie] ^short = "Vortherapie"
@@ -81,8 +81,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
     MII_PR_MTB_Systemische_Vortherapie or 
     MII_PR_Onko_Strahlentherapie or 
     MII_PR_Onko_Operation or 
-    MII_PR_Prozedur_Procedure or
-    Procedure
+    MII_PR_Prozedur_Procedure
 )
 * supportingInfo[Vortherapie].extension contains MII_EX_MTB_Leitlinie_Dokumentation named LeitlinieDokumentation 0..1 MS
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^short = "Leitlinie Dokumentation"

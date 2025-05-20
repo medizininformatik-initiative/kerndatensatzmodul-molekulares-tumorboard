@@ -47,7 +47,7 @@
 [mii-exa-mtb-medication-cobimetinib]: Medication-mii-exa-mtb-medication-cobimetinib.html
 [mii-exa-mtb-medication-request-cobimetinib]: MedicationRequest-mii-exa-mtb-medication-request-cobimetinib.html
 [MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
-[mii-exa-mtb-kim-musterperson-aufklaerung]: Consent-mii-exa-mtb-kim-musterperson-aufklaerung.html
+[mii-exa-mtb-kim-musterperson-aufklaerung]: Observation-mii-exa-mtb-kim-musterperson-aufklaerung.html
 [MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
 [MII-EXA-MTB-Follow-Up-ClinicalImpression-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
@@ -99,6 +99,7 @@
 [MII_PR_MTB_Biopsie_Auftrag]: StructureDefinition-mii-pr-mtb-biopsie-auftrag.html
 [MII_PR_MTB_BRCAness]: StructureDefinition-mii-pr-mtb-brcaness.html
 [MII_PR_MTB_Follow_Up_ClinicalImpression]: StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html
+[MII_PR_MTB_Consent_Given]: StructureDefinition-mii-pr-mtb-consent-given.html
 [MII_PR_MTB_Copy_Number_Variant]: StructureDefinition-mii-pr-mtb-copy-number-variant.html
 [MII_PR_MTB_Diagnose_Primaertumor]: StructureDefinition-mii-pr-mtb-diagnose-primaertumor.html
 [MII_PR_MTB_Diagnostische_Implikation]: StructureDefinition-mii-pr-mtb-diagnostische-implikation.html

@@ -10,7 +10,7 @@ Usage: #definition
 * description = "Mapping der Codes zur Begründung des Therapiestatus nach SNOMED CT"
 * purpose = "Technische Mappings zur Transformation der Therapiestatusgründe nach SNOMED CT"
 
-* sourceUri = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb"
+* sourceUri = $mii-vs-mtb-therapiestatusgrund
 * targetUri[+] = "http://snomed.info/sct"
 
 * group[+].source = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-therapiestatusgrund"
