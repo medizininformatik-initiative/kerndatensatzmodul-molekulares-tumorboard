@@ -7,7 +7,7 @@ Description: "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombin
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * category[geCategory] = $hl7-v2-0074#GE
-* code = $mii-cs-mtb-molekulare-biomarker#hrd "HRD Score"
+* code = $LNC#107286-7 "HRD Score"
 
 * subject = Reference(Patient/example)
 * encounter = Reference(Encounter/example)

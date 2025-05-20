@@ -42,8 +42,8 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "code": "hrd",
-              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb--molekulare-biomarker"
+              "code": "107286-7",
+              "system": "http://loinc.org"
             }
           ]
         }
@@ -95,6 +95,110 @@
       {
         "id": "Observation.component",
         "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "closed",
+          "description": "Elements of the HRD Score",
+          "ordered": false
+        },
+        "min": 3
+      },
+      {
+        "id": "Observation.component:LOH",
+        "path": "Observation.component",
+        "sliceName": "LOH",
+        "short": "Loss of heterozygosity",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:LOH.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C18016",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:LOH.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:TAI",
+        "path": "Observation.component",
+        "sliceName": "TAI",
+        "short": "Telomeric allelic imbalance",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:TAI.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C129774",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:TAI.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:LST",
+        "path": "Observation.component",
+        "sliceName": "LST",
+        "short": "Large-scale state transitions",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:LST.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C120466",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:LST.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
         "mustSupport": true
       }
     ]

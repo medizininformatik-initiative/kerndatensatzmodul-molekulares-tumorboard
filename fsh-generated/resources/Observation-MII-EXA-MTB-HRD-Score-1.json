@@ -44,12 +44,44 @@
   "code": {
     "coding": [
       {
-        "code": "hrd",
-        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb--molekulare-biomarker",
+        "code": "107286-7",
+        "system": "http://loinc.org",
         "display": "HRD Score"
       }
     ]
   },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "C18016",
+            "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "C129774",
+            "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "C120466",
+            "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html"
+          }
+        ]
+      }
+    }
+  ],
   "status": "final",
   "subject": {
     "reference": "Patient/example"
