@@ -11,9 +11,9 @@ Usage: #definition
 * purpose = "Technische Mappings zur Transformation der Therapiestatusgründe nach SNOMED CT"
 
 * sourceUri = $mii-vs-mtb-therapiestatusgrund
-* targetUri[+] = "http://snomed.info/sct"
+* targetUri[+] = "http://snomed.info/sct/900000000000207008/version/20250501"
 
-* group[+].source = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-therapiestatusgrund"
+* group[+].source = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund"
 * group[=].target = "http://snomed.info/sct"
 
 * group[=].element[+].code = #payment-refused
