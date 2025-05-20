@@ -43,12 +43,15 @@ Description: "Antrag Kostenübernahme"
 * prescription only Reference(MedicationRequest)
 
 * insurance MS
-* insurance.sequence MS
-* insurance.sequence = 1
+* insurance.sequence MS 
+* insurance.sequence ^short = "Priorität der Versicherung"
+* insurance.sequence ^definition = "Priorität der Versicherung. In der Regel 1 für die Hauptkrankenversicherung, und fortlaufend für weitere freiwilligge Zusatzversicherungen. Wird vsl. selten relevant sein."
 * insurance.focal MS
 * insurance.focal = true
+* insurance.focal ^short = "Versicherung relevant für diesen Antrag" 
 * insurance.coverage MS
 * insurance.coverage only Reference(Coverage)
+* insurance.coverage ^short = "Versicherung relevant für diesen Antrag"
 * insurance.claimResponse MS
 
 * careTeam ^slicing.discriminator.type = #type
