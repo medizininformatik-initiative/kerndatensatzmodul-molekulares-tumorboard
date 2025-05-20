@@ -68,7 +68,7 @@
 [MII_CS_MTB_Genomic_Analysis_Method_Type]: CodeSystem-mii-cs-mtb-genomic-analysis-method-type.html
 [MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction]: CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.html
 [MII_CS_MTB_AuftragBegruendung]: CodeSystem-mii-cs-mtb-auftrag-begruendung.html
-[MII_CS_MTB_Kostenuebernahme_Ablehnungsgrund]: CodeSystem-mii-cs-mtb-kostenuebernahme-ablehnungsgrund.html
+[MII_CS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
@@ -148,7 +148,7 @@
 [MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.html
 [MII_VS_MTB_Follow_Up_Status]: ValueSet-mii-vs-mtb-follow-up-status.html
 [MII_VS_MTB_Genomic_Analysis_Method_Type]: ValueSet-mii-vs-mtb-genomic-analysis-method-type.html
-[MII_VS_MTB_Kostenuebernahme_Ablehnungsgrund]: ValueSet-mii-vs-mtb-kostenuebernahme-ablehnungsgrund.html
+[MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
 [MII_VS_MTB_Leitlinienbehandlung_Status]: ValueSet-mii-vs-mtb-leitlinienbehandlung-status.html
 [MII_VS_MTB_MMR_Proficiency]: ValueSet-mii-vs-mtb-mmr-proficiency.html
 [MII_VS_MTB_MMR_Expression]: ValueSet-mii-vs-mtb-mmr-expression.html

@@ -7,8 +7,8 @@ Description: "Codesystem zum Status der Antwort zur Kostenuebernahme nach DNPM"
 * #rejected      "Abgelehnt"
 * #unknown       "Unbekannt"
 
-CodeSystem: MII_CS_MTB_Kostenuebernahme_Ablehnungsgrund
-Id: mii-cs-mtb-kostenuebernahme-ablehnungsgrund
+CodeSystem: MII_CS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund
+Id: mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund
 Title: "MII CS Kostenuebernahme Ablehnungsgrund"
 Description: "Codesystem zum Grund der Ablehnung der Kostenuebernahme nach DNPM"
 // * insert CS_Header($mii-cs-mtb-ablehnung-kostenuebernahme-grund)
