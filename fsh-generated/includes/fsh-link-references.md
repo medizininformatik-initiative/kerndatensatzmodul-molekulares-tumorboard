@@ -122,6 +122,7 @@
 [MII_PR_MTB_Mutationslast]: StructureDefinition-mii-pr-mtb-mutationslast.html
 [MII_PR_MTB_NGS_Bericht]: StructureDefinition-mii-pr-mtb-ngs-bericht.html
 [MII_PR_MTB_Oncotree]: StructureDefinition-mii-pr-mtb-oncotree.html
+[MII_PR_MTB_Ploidie]: StructureDefinition-mii-pr-mtb-ploidie.html
 [MII_PR_MTB_Response_Befund]: StructureDefinition-mii-pr-mtb-response-befund.html
 [MII_PR_MTB_RNA_Fusion]: StructureDefinition-mii-pr-mtb-rna-fusion.html
 [MII_PR_MTB_RNA_Seq]: StructureDefinition-mii-pr-mtb-rna-seq.html
