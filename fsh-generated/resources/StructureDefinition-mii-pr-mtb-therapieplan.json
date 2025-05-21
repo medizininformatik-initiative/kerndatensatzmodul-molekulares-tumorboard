@@ -87,12 +87,12 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "outcomeReference.reference"
+              "type": "profile",
+              "path": "$this"
             }
           ],
           "rules": "open",
-          "description": "Slice für Dokumentation einer umgesetzten Empfehlung auf Basis des referenzierten Ressourcentyps",
+          "description": "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps",
           "ordered": false
         }
       },

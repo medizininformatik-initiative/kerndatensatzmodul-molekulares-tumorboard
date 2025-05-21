@@ -50,7 +50,7 @@ Usage: #example
 
 // Prio 5 - Therapieempfehlung: Lunresertib + Camonsertib (m1B) sofern verfügbar
 * activity[+].reference = Reference(mii-exa-mtb-request-group-lunresertib-camonsertib)
-* activity[=].detail.code = $mii-cs-onko-therapie-typ#ZS "zielgerichtete Substanz"
+* activity[=].detail.code = $mii-cs-onko-therapie-typ#ZS "zielgerichtete Substanzen"
 * activity[=].detail.status = #not-started
 
 // Prio 6 - Therapieempfehlung: MEKi, z.B. Cobimetinib (m3)

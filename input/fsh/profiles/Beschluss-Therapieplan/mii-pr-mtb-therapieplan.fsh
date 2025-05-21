@@ -19,8 +19,8 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * description ^definition = "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
 
 * activity 0..* MS
-* activity ^slicing.discriminator.type = #type
-* activity ^slicing.discriminator.path = "reference.reference"
+* activity ^slicing.discriminator.type = #profile
+* activity ^slicing.discriminator.path = "$this"
 * activity ^slicing.rules = #open
 * activity ^slicing.description = "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps"
 * activity ^slicing.ordered = false
@@ -64,12 +64,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage or ServiceRequest)
 
 // Siehe Konversion R5 nach R4: https://build.fhir.org/ig/HL7/fhir-cross-version/StructureMap-CarePlan5to4.html
-* activity 0..* MS
-* activity ^slicing.discriminator.type = #type
-* activity ^slicing.discriminator.path = "outcomeReference.reference"
-* activity ^slicing.rules = #open
-* activity ^slicing.description = "Slice für Dokumentation einer umgesetzten Empfehlung auf Basis des referenzierten Ressourcentyps"
-* activity ^slicing.ordered = false
+
 
 // TODO: Allgemeine Ressourcen vs. konkrete Profile besprechen
 // NOTE: Umgesetzte "Therapieempfehlung" -> Procedure, MedicationStatement
