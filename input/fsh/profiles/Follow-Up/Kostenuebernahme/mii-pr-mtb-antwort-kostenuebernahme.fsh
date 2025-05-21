@@ -29,7 +29,10 @@ Description: "Antwort auf Antrag Kostenübernahme"
 * request only Reference(MII_PR_MTB_Antrag_Kostenuebernahme)
 * outcome MS
 * outcome = http://hl7.org/fhir/remittance-outcome#complete
+* outcome ^short = "Ergebnis der Kostenübernahme"
+* outcome ^definition = "Ergebnis der Kostenübernahme. Für den Fall der Sekundärdatenenutzung ist davon auszugehen, dass die Kostenerstattung bereits erfolgt ist. Daher ist der Status auf #complete gesetzt."
 
+* extension MS
 * extension contains 
     MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung named Entscheidung 0..1 MS and
     MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund named Ablehnungsgrund 0..1
