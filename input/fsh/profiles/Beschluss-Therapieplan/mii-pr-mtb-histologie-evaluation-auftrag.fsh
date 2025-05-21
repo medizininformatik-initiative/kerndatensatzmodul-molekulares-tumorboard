@@ -1,5 +1,6 @@
 Profile: MII_PR_MTB_Histologie_Evaluation_Auftrag
-Parent: MII_PR_Patho_Service_Request
+Parent: ServiceRequest
+//Parent: MII_PR_Patho_Service_Request -> requester and encounter required, but probably unknown (only recommendation)
 Id: mii-pr-mtb-histologie-evaluation-auftrag
 Title: "MII PR MTB Histologie-Evaluation Auftrag"
 Description: "Auftrag zur (erneuten) Histologie-Evaluation"

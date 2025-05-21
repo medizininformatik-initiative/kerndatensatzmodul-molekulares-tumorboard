@@ -21,7 +21,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * description ^definition = "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
 
 * activity 0..* MS
-* activity ^slicing.discriminator.type = #type
+* activity ^slicing.discriminator.type = #profile
 * activity ^slicing.discriminator.path = "reference.reference"
 * activity ^slicing.rules = #open
 * activity ^slicing.description = "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps"
@@ -53,11 +53,11 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[HistologieEvaluation].reference 1..1 MS
 * activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag or ServiceRequest)
 
-* activity contains Biopsy 0..* MS
-* activity[Biopsy] ^short = "Empfehlung Biopsie"
-* activity[Biopsy] ^definition = "Auftrag zur (erneuten) Biopsie"
-* activity[Biopsy].reference 1..1 MS
-* activity[Biopsy].reference only Reference(MII_PR_MTB_Biopsie_Auftrag or ServiceRequest)
+* activity contains Biopsie 0..* MS
+* activity[Biopsie] ^short = "Empfehlung Biopsie"
+* activity[Biopsie] ^definition = "Auftrag zur (erneuten) Biopsie"
+* activity[Biopsie].reference 1..1 MS
+* activity[Biopsie].reference only Reference(MII_PR_MTB_Biopsie_Auftrag or ServiceRequest)
 
 * activity contains Studieneinschlussempfehlung 0..* MS
 * activity[Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"

@@ -22,7 +22,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
-  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/anforderung-genetischer-test",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -41,6 +41,7 @@
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
         "max": "1",
+        "mustSupport": true,
         "binding": {
           "strength": "preferred",
           "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-auftrag-begruendung"

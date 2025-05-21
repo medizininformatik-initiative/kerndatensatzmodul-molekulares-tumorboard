@@ -5,19 +5,20 @@ Title: "MII PR MTB Tumorzellgehalt"
 Description: "Bestimmter Tumorzellgehalt"
 * insert PR_Header
 
-// TODO: Zuordnung "Additional documentation" prüfen
-//* category[laboratory-category].coding = $fhir-observation-category#laboratory
-//* category[section-type].coding = $LNC#77599-9
+// TODO: Zuordnung prüfen
+* category[laboratory-category].coding = $fhir-observation-category#laboratory "Laboratory"
+* category[section-type].coding = $LNC#22637-3 "Pathology report diagnosis"
 
 // TODO: Zuordnung prüfen
+//* code = $SCT#762656009 "Abnormal blood cell count"
 * code = $LNC#93356-4 "Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method"
 
 * value[x] 1..1 MS
 * value[x] only Quantity
 * valueQuantity.value 1..1 MS
-* valueQuantity.unit = "percent / 100"
+* valueQuantity.unit = "percent"
 * valueQuantity.system = $UCUM
-* valueQuantity.code = #%/100
+* valueQuantity.code = #%
 
 * method 1..1 MS
 * method from MII_VS_MTB_BestimmungsmethodeTumorzellgehalt (preferred)
