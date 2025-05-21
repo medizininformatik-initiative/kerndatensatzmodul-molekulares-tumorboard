@@ -33,6 +33,7 @@ Parent: MII_PR_MTB_Molekularer_Biomarker
 Id: mii-pr-mtb-insituhybridization
 Title: "MII PR MTB In Situ Hybridization"   
 Description: "Molekularer Biomarker - In Situ Hybridization Profil"
+* insert PR_Header
 
 * identifier 0..1 MS 
 * identifier ^short = "Identifier zur Abgrenzung anderer gleichartiger Untersuchungen" 
