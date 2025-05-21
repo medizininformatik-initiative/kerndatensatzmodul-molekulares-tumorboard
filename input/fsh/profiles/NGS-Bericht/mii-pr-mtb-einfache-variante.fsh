@@ -9,6 +9,22 @@ Description: "Beschreibt eine gefundene genetische Variante."
 * identifier ^short = "VariantenId im Kontext des NGS-Befundes"
 * identifier ^definition = "Eindeutige ID der Variante im Kontext des NGS-Befundes."
 
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Slices for category"
+* category ^slicing.ordered = false
+
+
+// * category contains labCategory 1..1 MS -> already in parent
+// TODO Fhir comment about missing category and component
+
+* category contains geCategory 1..1
+* category[geCategory].coding 1..1 
+* category[geCategory].coding = $hl7-v2-0074#GE
+// to include in every Observation, copy:  * category[geCategory].coding= $hl7-v2-0074#GE
+
+
 * focus MS 
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 
