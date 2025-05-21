@@ -12,7 +12,10 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
-
+* code 1..1 MS
+* code.coding = $SCT#183825009  "Refer for histology (procedure)"
+* code ^short = "Empfehlung zur histologischen (Re-)Evaluation"
+* code ^definition = "Empfehlung zur histologischen (Re-)Evaluation"
 * reasonReference ^slicing.discriminator.type = #type
 * reasonReference ^slicing.discriminator.path = "reference.reference"
 * reasonReference ^slicing.rules = #open

@@ -11,6 +11,10 @@ Description: "Auftrag zur (erneuten) Human-genetischen Beratung"
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+* code 1..1 MS
+* code.coding = $SCT#788339009 "Genetic consultation (procedure)"
+* code ^short = "Empfehlung zur Humangenetischen Beratung"
+* code ^definition = "Empfehlung zur Humangenetischen Beratung"
 
 * reasonCode 0..1 MS
 * reasonCode from MII_VS_MTB_AuftragBegruendung (preferred)

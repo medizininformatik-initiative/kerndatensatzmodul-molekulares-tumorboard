@@ -8,8 +8,10 @@ Description: "Beschreibt die Gesamtzahl von in Krebszellen gefundenen Mutationen
 * status MS
 * category MS
 * code MS
-* subject 1.. MS
-* subject only Reference(Patient or Group)
+* code.coding MS
+* code.coding = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
+* subject 1..1 MS
+* subject only Reference(Patient)
 * encounter MS
 * value[x] MS
 * value[x] 0..1
