@@ -7763,6 +7763,14 @@
             "valueDateTime": "2021-06-10"
           }
         ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        },
         "verificationStatus": {
           "coding": [
             {
@@ -7780,7 +7788,8 @@
             {
               "code": "C48.2",
               "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
-              "display": "Bösartige Neubildung des Retroperitoneums und Peritoneums - Peritoneum, nicht näher bezeichnet"
+              "display": "Bösartige Neubildung des Retroperitoneums und Peritoneums - Peritoneum, nicht näher bezeichnet",
+              "version": "2023"
             }
           ]
         },
@@ -7823,13 +7832,6 @@
         "recordedDate": "2021-06-10",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
-        },
-        "clinicalStatus": {
-          "coding": [
-            {
-              "code": "active"
-            }
-          ]
         }
       },
       "fullUrl": "urn:uuid:mii-exa-mtb-kim-diagnose"
