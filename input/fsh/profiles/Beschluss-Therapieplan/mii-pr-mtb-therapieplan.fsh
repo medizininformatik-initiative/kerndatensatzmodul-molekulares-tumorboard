@@ -78,25 +78,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 // NOTE: Umgesetzte "Biopsie" -> DiagnosticReport, Observation
 // NOTE: Umgesetzte "Studieneinschlussempfehlung" -> MedicationStatement, Consent
 // NOTE: Umgesetzte begleitende Maßnahmen, z.B. Monitoring -> Procedure
-* activity contains UmgesetzteEmpfehlung 0..* MS
-* activity[UmgesetzteEmpfehlung] ^short = "Umgesetzte Empfehlung"
-* activity[UmgesetzteEmpfehlung] ^definition = "Dokumentation einer umgesetzten Empfehlung"
-* activity[UmgesetzteEmpfehlung].outcomeReference 1..1 MS
-* activity[UmgesetzteEmpfehlung].outcomeReference only Reference(
-    MII_PR_Consent_Einwilligung or
-    MII_PR_MTB_Studie or
-    MII_PR_Onko_Befund or
-    MII_PR_Onko_Systemische_Therapie or
-    MII_PR_Onko_Systemische_Therapie_Medikation or
-    MII_PR_Patho_Finding or
-    MII_PR_Patho_Report or
-    MII_PR_Prozedur_Procedure or
-    Consent or
-    DiagnosticReport or
-    MedicationStatement or
-    Observation or
-    Procedure
-)
+
 
 * supportingInfo ^slicing.discriminator.type = #type
 * supportingInfo ^slicing.discriminator.path = "$this"

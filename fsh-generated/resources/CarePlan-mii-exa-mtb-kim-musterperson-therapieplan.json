@@ -21,12 +21,131 @@
       "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
     }
   ],
-  "supportingInfo": [
-    {
-      "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
-    }
-  ],
   "activity": [
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "IZ",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+            }
+          ]
+        },
+        "status": "completed"
+      },
+      "outcomeReference": [
+        {
+          "reference": "Procedure/MTBChemo2Procedure"
+        }
+      ],
+      "reference": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "IZ",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "ServiceRequest/mii-exa-mtb-study-request-cldn6"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "IZ",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "ServiceRequest/mii-exa-mtb-study-request-tedova"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "ZS",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "zielgerichtete Substanzen"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "ServiceRequest/mii-exa-mtb-study-request-ccne1"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "IZ",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "CZ",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Chemotherapie + zielgerichtete Substanzen"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "ZS",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "zielgerichtete Substanz"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "RequestGroup/mii-exa-mtb-request-group-lunresertib-camonsertib"
+      }
+    },
     {
       "detail": {
         "code": {
@@ -42,25 +161,6 @@
       },
       "reference": {
         "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
-      }
-    },
-    {
-      "outcomeReference": [
-        {
-          "reference": "Procedure/MTBChemo2Procedure"
-        }
-      ],
-      "detail": {
-        "code": {
-          "coding": [
-            {
-              "code": "IZ",
-              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-              "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-            }
-          ]
-        },
-        "status": "completed"
       }
     }
   ],
