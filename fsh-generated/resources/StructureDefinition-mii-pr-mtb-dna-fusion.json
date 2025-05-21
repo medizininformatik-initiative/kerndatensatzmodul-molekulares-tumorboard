@@ -32,9 +32,15 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.meta.profile",
+        "path": "Observation.meta.profile",
+        "mustSupport": true
+      },
+      {
         "id": "Observation.identifier",
         "path": "Observation.identifier",
         "short": "VariantenId im Kontext des NGS-Befundes",
+        "definition": "Eindeutige ID der Variante im Kontext des NGS-Befundes.",
         "mustSupport": true
       },
       {
@@ -84,7 +90,14 @@
       {
         "id": "Observation.component:five-prime-chromosome.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-chromosome",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:five-prime-chromosome.value[x]",
@@ -125,6 +138,14 @@
       {
         "id": "Observation.component:three-prime-chromosome.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-chromosome",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -166,6 +187,14 @@
       {
         "id": "Observation.component:five-prime-position.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-position",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -207,6 +236,14 @@
       {
         "id": "Observation.component:three-prime-position.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-position",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -221,6 +258,14 @@
       {
         "id": "Observation.component:five-prime-gene.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-gene",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -235,6 +280,14 @@
       {
         "id": "Observation.component:three-prime-gene.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-gene",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {

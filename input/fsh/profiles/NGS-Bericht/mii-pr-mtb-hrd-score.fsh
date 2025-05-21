@@ -17,6 +17,9 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * specimen MS
 * value[x] MS
 * value[x] only integer
+* valueInteger MS
+* valueInteger ^short = "HRD-Score"
+* valueInteger ^definition = "HRD-Score als Summe der LOH, TAI und LST-Werte"
 * interpretation MS
 * interpretation from $hl7-v3-observation-high-low-codes
 
@@ -24,9 +27,9 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #closed
 * component ^slicing.description = "Elements of the HRD Score"
-* component contains LOH 1..1 MS
-* component contains TAI 1..1 MS
-* component contains LST 1..1 MS
+* component contains LOH 0..1 MS
+* component contains TAI 0..1 MS
+* component contains LST 0..1 MS
 * component[LOH] ^short = "Loss of heterozygosity"
 * component[LOH].code = $NCIT#C18016 "Loss of Heterozygosity"
 * component[LOH].value[x] MS

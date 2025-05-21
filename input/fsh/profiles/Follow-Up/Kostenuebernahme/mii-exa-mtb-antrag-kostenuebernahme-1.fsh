@@ -9,6 +9,7 @@ Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
 * created = "2024-07-07"
 * provider = Reference(Organization/InstitutionID)
 * prescription = Reference(MedicationRequest/TherapieempfehlungExample)
+* insurance.sequence = 1
 * insurance.coverage = Reference(Coverage/CoverageExample)
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample)
 * careTeam[ZPMBeteiligung].responsible = true

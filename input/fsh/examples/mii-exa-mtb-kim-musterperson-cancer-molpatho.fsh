@@ -1,5 +1,5 @@
 Instance: PatientKimMusterperson-MolecularPathologyReport-1
-InstanceOf: MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT
+InstanceOf: MII_PR_MTB_Molecular_Pathology_Report
 Usage: #example
 * status = #final
 

@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2
-Parent: MII_PR_MTB_Immunohistochemistry // Evtl von Observation von MolecularBiomarker erben
+Parent: MII_PR_MTB_Immunohistochemistry // 
 Id: mii-pr-mtb-immunohistochemistry-her2
 Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistrchemistry report"
@@ -11,7 +11,7 @@ Description: "Immunhistrchemistry report"
 * valueCodeableConcept.coding ^short =  "0|1+|2+|3+|Indeterminate"
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:2064 "ERBB2"
 //* component[protein-studied].valueCodeableConcept = $UNIPROT#P04626 "Receptor tyrosine-protein kinase erbB-2"
-* category[biomarker-category].coding.code = #immuneStain // alternative: protein
+* component[biomarker-category].valueCodeableConcept.coding = #immuneStain // alternative: protein
 
 
 
@@ -26,7 +26,7 @@ Description: "In Situ Hybridization report"
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL360-9-9 //
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:2064 "ERBB2"
 //* component[protein-studied].valueCodeableConcept = $UNIPROT#P04626 "Receptor tyrosine-protein kinase erbB-2"
-* category[biomarker-category].coding.code = #inSituHybridization //new code for method, otherwise 
+* component[biomarker-category].valueCodeableConcept.coding.code = #inSituHybridization //new code for method, otherwise 
 /* additional optional components from (LOINC Panel)
 74885-5	ERBB2 gene (HER2) duplication associated observations panel - Tissue by FISH			
  31150-6	ERBB2 gene duplication [Presence] in Tissue by FISH	 --> this is already valueCodeableConcept		
@@ -50,5 +50,5 @@ Description: "..."
 
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:2064 "ERBB2"
 //* component[protein-studied].valueCodeableConcept = $UNIPROT#P04626 "Receptor tyrosine-protein kinase erbB-2"
-* category[biomarker-category].coding.code = #molgen  //derived Biomarker or implication?  
+* component[biomarker-category].valueCodeableConcept.coding.code = #molgen  //derived Biomarker or implication?  
 

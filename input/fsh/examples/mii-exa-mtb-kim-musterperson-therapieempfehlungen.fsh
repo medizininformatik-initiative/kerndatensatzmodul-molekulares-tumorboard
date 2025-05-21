@@ -48,7 +48,7 @@ InstanceOf: Medication
 Title: "Adavosertib"
 Description: "Medikament: Adavosertib"
 Usage: #example
-* status = #draft
+* status = #active
 * code.coding = $UNII#K2T6HJX3I3
 * code.text = "ADAVOSERTIB"
 
@@ -97,7 +97,7 @@ InstanceOf: Medication
 Title: "Lunresertib"
 Description: "Medikament: Lunresertib"
 Usage: #example
-* status = #draft
+* status = #active
 * code.coding = $UNII#N95U3A7N57
 * code.text = "Lunresertib"
 
@@ -117,7 +117,7 @@ InstanceOf: Medication
 Title: "Camonsertib"
 Description: "Medikament: Camonsertib"
 Usage: #example
-* status = #draft
+* status = #active
 * code.coding = $UNII#S1Z7Y5G56T
 * code.text = "Camonsertib"
 
@@ -152,7 +152,7 @@ InstanceOf: Medication
 Title: "Cobimetinib"
 Description: "Medikament: Cobimetinib"
 Usage: #example
-* status = #draft
+* status = #active
 * code.coding = $UNII#ER29L26N1X
 * code.text = "COBIMETINIB"
 

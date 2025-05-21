@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Mikrosatelliteninstabilitaet
-Parent: MII_PR_MolGen_Mikrosatelliteninstabilitaet
+Parent: MII_PR_MTB_Molekularer_Biomarker
 Id: mii-pr-mtb-mikrosatelliteninstabilitaet
 Title: "MII PR MTB Mikrosatelliteninstabilität"
 Description: "Beschreibt die Neigung zu Mutationen aufgrund einer gestörten Fehlpaarungsreparatur (DNA mismatch repair, MMR)."

@@ -32,36 +32,8 @@
         "mustSupport": true
       },
       {
-        "id": "DiagnosticReport.extension:Metadaten",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "Metadaten",
-        "short": "QC",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-metadaten"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "DiagnosticReport.extension:QC",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "QC",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-qc"
-            ]
-          }
-        ],
+        "id": "DiagnosticReport.meta.profile",
+        "path": "DiagnosticReport.meta.profile",
         "mustSupport": true
       },
       {
@@ -107,8 +79,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "reference.reference"
+              "type": "profile",
+              "path": "$this"
             }
           ],
           "rules": "open",
@@ -124,16 +96,32 @@
         "definition": "Verweis auf Tumor Mutational Burden",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
-        "id": "DiagnosticReport.result:MicroSatelliteInstabilities",
+        "id": "DiagnosticReport.result:MSI",
         "path": "DiagnosticReport.result",
-        "sliceName": "MicroSatelliteInstabilities",
+        "sliceName": "MSI",
         "short": "Micro-Satellite Instabilities",
         "definition": "Verweis auf Micro-Satellite Instabilities",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -144,6 +132,14 @@
         "definition": "Ploidie",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ploidie"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -270,6 +266,14 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:Tumorzellgehalt",
+        "path": "DiagnosticReport.result",
+        "sliceName": "Tumorzellgehalt",
+        "min": 0,
+        "max": "1",
         "mustSupport": true
       }
     ]

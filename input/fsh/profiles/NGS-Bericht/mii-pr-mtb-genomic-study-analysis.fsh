@@ -3,6 +3,7 @@ Parent: GenomicStudyAnalysis
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
 Description: "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung."
+* insert PR_Header
 
 * extension MS
 * extension[method-type] MS

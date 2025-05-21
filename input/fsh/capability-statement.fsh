@@ -33,7 +33,7 @@ RuleSet: SupportSearchParam (name, canonical, type, expectation)
 Instance: mii-cps-mtb-capabilitystatement
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "https://www.medizininformatik-initiative.de/fhir/modul-onko/CapabilityStatement/metadata" //ändern
+* url = "https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata" //ändern
 * insert Version
 * name = "MII_CPS_MTB_CapabilityStatement"
 * title = "MII CPS MTB CapabilityStatement"
@@ -62,7 +62,7 @@ Usage: #definition
 * insert SupportSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, #SHALL)
 * insert SupportSearchParam(_profile, http://hl7.org/fhir/SearchParameter/Resource-profile, #uri, #SHALL)
 * insert SupportSearchParam(patient, http://hl7.org/fhir/SearchParameter/clinical-patient, #reference, #SHALL)
-* insert SupportSearchParam(problem, http://hl7.org/fhir/SearchParameter/ClinicalImpression-problem, #token, #SHALL)
+* insert SupportSearchParam(problem, http://hl7.org/fhir/SearchParameter/ClinicalImpression-problem, #reference, #SHALL)
 * insert SupportSearchParam(investigation, http://hl7.org/fhir/SearchParameter/ClinicalImpression-investigation, #reference, #SHALL)
 * insert SupportSearchParam(supporting-info, http://hl7.org/fhir/SearchParameter/ClinicalImpression-supporting-info, #reference, #SHALL)
 * insert SupportSearchParam(period-start, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-clinicalimpression-effectiveperiod-start , #date, #SHALL)
@@ -92,8 +92,7 @@ Usage: #definition
 * insert SupportSearchParam(prioritaet, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-request-group-extension-prioritaet, #number, #SHALL)
 * insert SupportSearchParam(evidenzgraduierung, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-extension-evidenzgraduierung, #token, #SHALL)
 * insert SupportSearchParam(publikation, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-request-group-extension-publikation, #token, #SHALL)
-
-* insert SupportSearchParam(code-concept, ,#token, #SHALL)
+//* insert SupportSearchParam(code-concept, ,#token, #SHALL)
 
 // ResearchStudy requirements
 * insert SupportResource(ResearchStudy, #SHALL)
@@ -145,7 +144,7 @@ Usage: #definition
 * insert SupportSearchParam(prioritaet, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-request-group-extension-prioritaet, #number, #SHALL) //new
 * insert SupportSearchParam(evidenzgraduierung, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-extension-evidenzgraduierung, #token, #SHALL) //new
 * insert SupportSearchParam(publikation, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-request-group-extension-publikation, #token, #SHALL) //new
-// hier noch supportingInfo?
+// hier noch supportingInfo? Ja!
 
 
 // Claim requirements
@@ -224,7 +223,6 @@ Usage: #definition
 * insert SupportSearchParam(subject, http://hl7.org/fhir/SearchParameter/DiagnosticReport-subject, #reference, #SHALL)
 * insert SupportSearchParam(performer, http://hl7.org/fhir/SearchParameter/DiagnosticReport-performer, #reference, #SHALL)
 * insert SupportSearchParam(specimen, http://hl7.org/fhir/SearchParameter/DiagnosticReport-specimen, #reference, #SHALL)
-* insert SupportSearchParam(date, http://hl7.org/fhir/SearchParameter/DiagnosticReport-issued, #reference, #SHALL)
 * insert SupportSearchParam(issued, http://hl7.org/fhir/SearchParameter/DiagnosticReport-issued, #date, #SHALL)
 * insert SupportSearchParam(result, http://hl7.org/fhir/SearchParameter/DiagnosticReport-result, #reference, #SHALL)
 // * insert SupportSearchParam(code, http://hl7.org/fhir/SearchParameter/clinical-code, #token, #SHALL)

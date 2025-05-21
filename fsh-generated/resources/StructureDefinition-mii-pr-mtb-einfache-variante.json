@@ -32,6 +32,51 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.meta.profile",
+        "path": "Observation.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "short": "VariantenId im Kontext des NGS-Befundes",
+        "definition": "Eindeutige ID der Variante im Kontext des NGS-Befundes.",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding"
+            }
+          ],
+          "description": "Slices for category",
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.category:geCategory",
+        "path": "Observation.category",
+        "sliceName": "geCategory",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.category:geCategory.coding",
+        "path": "Observation.category.coding",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "GE",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      },
+      {
         "id": "Observation.focus",
         "path": "Observation.focus",
         "type": [
