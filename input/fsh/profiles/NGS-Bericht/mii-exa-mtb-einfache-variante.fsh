@@ -19,7 +19,7 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = #HGNC:1097 "BRAF"
 
-* component[transcript-ref-seq].valueCodeableConcept = RefSeq#NM_133433.4
+* component[transcript-ref-seq].valueCodeableConcept = https://www.ncbi.nlm.nih.gov/refseq/#NM_133433.4
 
 * component[dna-region][+].code = $LNC#47999-8 "DNA region name [Identifier]"
 * component[dna-region][=].valueString = "Exon #15"
