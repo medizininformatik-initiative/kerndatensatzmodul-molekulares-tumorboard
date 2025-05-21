@@ -6,12 +6,22 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
     ]
   },
+  "code": {
+    "coding": [
+      {
+        "code": "390906007",
+        "system": "http://snomed.info/sct",
+        "display": "Follow-up encounter (procedure)"
+      }
+    ]
+  },
   "investigation": [
     {
       "code": {
         "coding": [
           {
-            "code": "on-going"
+            "code": "ongoing",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status"
           }
         ]
       }
@@ -28,16 +38,12 @@
       "reference": "MII_PR_MTB_Antwort_Kostenuebernahme/Example"
     }
   ],
-  "status": "completed",
   "subject": {
     "reference": "Patient/PatientExample"
   },
+  "status": "completed",
   "effectiveDateTime": "2024-07-07",
-  "statusReason": {
-    "coding": [
-      {
-        "code": "no-indication"
-      }
-    ]
+  "previous": {
+    "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
   }
 }
