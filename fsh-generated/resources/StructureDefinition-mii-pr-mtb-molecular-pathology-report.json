@@ -3,7 +3,7 @@
   "id": "mii-pr-mtb-molecular-pathology-report",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report",
   "version": "2024.0.0-ballot",
-  "name": "MII_PR_MTB_MOLECULAR_PATHOLOGY_REPORT",
+  "name": "MII_PR_MTB_Molecular_Pathology_Report",
   "title": "MII PR MTB Molecular Pathology Report",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
@@ -78,12 +78,12 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "pattern",
+              "type": "profile",
               "path": "$this"
             }
           ],
           "rules": "open",
-          "description": "Slices für verschiedene Inhalte eines Molekularpathologischen Reports"
+          "description": "Slices für verschiedene Inhalte eines Molekularpathologischen Reports. Diese Slices sind beliebig erweiterbar"
         },
         "short": "Diagnostik",
         "definition": "Art der Diagnostik"
@@ -92,6 +92,7 @@
         "id": "DiagnosticReport.result:Immunhistochemie",
         "path": "DiagnosticReport.result",
         "sliceName": "Immunhistochemie",
+        "short": "Immunhistochemie",
         "min": 0,
         "max": "*",
         "type": [
@@ -108,6 +109,7 @@
         "id": "DiagnosticReport.result:InSituHybridisierung",
         "path": "DiagnosticReport.result",
         "sliceName": "InSituHybridisierung",
+        "short": "Gewebasierte In-Situ-Hybridisierung",
         "min": 0,
         "max": "*",
         "type": [

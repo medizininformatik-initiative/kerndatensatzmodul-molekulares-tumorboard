@@ -188,6 +188,7 @@ Usage: #example
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-06-24"
 * note.text = "Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
@@ -204,6 +205,7 @@ Usage: #example
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-07-16"
 * note.text = "Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
@@ -220,6 +222,7 @@ Usage: #example
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-08-07"
 * note.text = "Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
@@ -236,6 +239,7 @@ Usage: #example
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-08-29"
 * note.text = "Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
@@ -252,6 +256,7 @@ Usage: #example
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-09-20"
 * note.text = "Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
@@ -268,6 +273,7 @@ Usage: #example
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/KimMusterperson)
 * effectiveDateTime = "2023-10-12"
 * note.text = "Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"

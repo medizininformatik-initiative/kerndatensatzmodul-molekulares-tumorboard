@@ -1,8 +1,9 @@
 Profile: MII_PR_MTB_Systemische_Therapie_Medication_Statement
-Parent: MedicationStatement
+Parent: MII_PR_Onko_Systemische_Therapie_Medikation
 Id: mii-pr-mtb-systemtherapie-medication-statement
 Title: "MII PR MTB Systemtherapie Medication Statement"
 Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosis"
+/*
 * insert PR_Header
 
 * basedOn 0..1 MS
@@ -69,19 +70,13 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 * note 0..* MS
 * note ^short = "Bemerkungen"
 
-* dosage MS
-* dosage ^slicing.discriminator.type = #value
-* dosage ^slicing.discriminator.path = "system"
-* dosage ^slicing.rules = #open
-* dosage ^slicing.description = "Slice für das Ermöglichen der Angabe der Dosisdichte"
-* dosage ^slicing.ordered = false
-* dosage contains Dosisdichte 0..1 MS
-* dosage[Dosisdichte] 0..1 MS 
-* dosage[Dosisdichte] ^short = "Dosisdichte"
-* dosage[Dosisdichte] ^definition = "Die Dosisdichte gibt an ob, in welchem Ausmaß eine Dosisreduktion vorliegt."
-* dosage[Dosisdichte].doseAndRate.doseQuantity.system = $mii-cs-mtb-dosisdichte
-* dosage[Dosisdichte].doseAndRate.doseQuantity.code from MII_VS_MTB_Dosisdichte
-* dosage contains Dosis 0..1 MS
-* dosage[Dosis] 0..1 MS
-* dosage[Dosis] ^short = "Dosis"
-* dosage[Dosis] ^definition = "Dosis als absoluter Wert"
+*/
+
+* dosage 0..1 MS 
+* dosage.doseAndRate MS
+* dosage.doseAndRate.type 0..1 MS
+* dosage.doseAndRate.type ^short = "Dosisdichte"
+* dosage.doseAndRate.type ^definition = "Die Dosisdichte gibt an ob, in welchem Ausmaß eine Dosisreduktion vorliegt."
+* dosage.doseAndRate.type.coding.system = $mii-cs-mtb-dosisdichte
+* dosage.doseAndRate.type.coding.code from MII_VS_MTB_Dosisdichte
+

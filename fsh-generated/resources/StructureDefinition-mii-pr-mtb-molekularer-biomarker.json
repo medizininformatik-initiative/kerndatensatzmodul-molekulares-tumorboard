@@ -45,7 +45,7 @@
           "description": "Slices for category",
           "ordered": false
         },
-        "min": 2
+        "min": 3
       },
       {
         "id": "Observation.category:labCategory",
@@ -56,30 +56,14 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.category:labCategory.coding.system",
-        "path": "Observation.category.coding.system",
+        "id": "Observation.category:labCategory.coding",
+        "path": "Observation.category.coding",
         "min": 1,
-        "patternUri": "http://terminology.hl7.org/CodeSystem/observation-category"
-      },
-      {
-        "id": "Observation.category:labCategory.coding.code",
-        "path": "Observation.category.coding.code",
-        "min": 1,
-        "patternCode": "laboratory"
-      },
-      {
-        "id": "Observation.category:biomarker-category",
-        "path": "Observation.category",
-        "sliceName": "biomarker-category",
-        "min": 0,
         "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.category:biomarker-category.coding.system",
-        "path": "Observation.category.coding.system",
-        "min": 1,
-        "patternUri": "$molecular-biomarker-category"
+        "patternCoding": {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
       },
       {
         "id": "Observation.category:geCategory",
@@ -89,16 +73,31 @@
         "max": "1"
       },
       {
-        "id": "Observation.category:geCategory.coding.system",
-        "path": "Observation.category.coding.system",
+        "id": "Observation.category:geCategory.coding",
+        "path": "Observation.category.coding",
         "min": 1,
-        "patternUri": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        "max": "1",
+        "patternCoding": {
+          "code": "GE",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
       },
       {
-        "id": "Observation.category:geCategory.coding.code",
-        "path": "Observation.category.coding.code",
+        "id": "Observation.category:mbCategory",
+        "path": "Observation.category",
+        "sliceName": "mbCategory",
         "min": 1,
-        "patternCode": "GE"
+        "max": "1"
+      },
+      {
+        "id": "Observation.category:mbCategory.coding",
+        "path": "Observation.category.coding",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "biomarker-category",
+          "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
+        }
       },
       {
         "id": "Observation.code",
@@ -240,6 +239,39 @@
             "code": "CodeableConcept"
           }
         ]
+      },
+      {
+        "id": "Observation.component:biomarker-category",
+        "path": "Observation.component",
+        "sliceName": "biomarker-category",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:biomarker-category.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "biomarker-category",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:biomarker-category.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-biomarker-category-vs"
+        }
       }
     ]
   }

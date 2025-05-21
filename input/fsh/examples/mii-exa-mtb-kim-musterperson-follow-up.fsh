@@ -31,14 +31,15 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-06-24"
 * effectivePeriod.end = "2023-06-24"
 * note.text = "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* dosage[Dosis].doseAndRate.doseQuantity.value = 6
-* dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
-* dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
-* dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
+* dosage.doseAndRate.doseQuantity.value = 6
+* dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
+* dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
+* dosage.doseAndRate.doseQuantity.system = $UCUM
 
 
 Instance: MII-EXA-MTB-Systemische-Therapie-Medication-2
@@ -46,18 +47,19 @@ InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
-* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
+* partOf[systemischeTherapie] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-07-16"
 * effectivePeriod.end = "2023-07-16"
 * note.text = "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * statusReason = #E // Daten im Bsp nicht vorhanden
-* dosage[Dosis].doseAndRate.doseQuantity.value = 6
-* dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
-* dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
-* dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
+* dosage.doseAndRate.doseQuantity.value = 6
+* dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
+* dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
+* dosage.doseAndRate.doseQuantity.system = $UCUM
 
 
 Instance: MII-EXA-MTB-Systemische-Therapie-Medication-3
@@ -68,15 +70,16 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert"
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-08-07"
 * effectivePeriod.end = "2023-08-07"
 * note.text = "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * statusReason = #E // Daten im Bsp nicht vorhanden
-* dosage[Dosis].doseAndRate.doseQuantity.value = 6
-* dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
-* dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
-* dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
+* dosage.doseAndRate.doseQuantity.value = 6
+* dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
+* dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
+* dosage.doseAndRate.doseQuantity.system = $UCUM
 
 Instance: MII-EXA-MTB-Response-Befund-1
 InstanceOf: MII_PR_MTB_Response_Befund
@@ -102,14 +105,16 @@ Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
+
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-08-29"
 * effectivePeriod.end = "2023-08-29"
 * note.text = "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* dosage[Dosis].doseAndRate.doseQuantity.value = 6
-* dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
-* dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
-* dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
+* dosage.doseAndRate.doseQuantity.value = 6
+* dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
+* dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
+* dosage.doseAndRate.doseQuantity.system = $UCUM
 
 
 Instance: MII-EXA-MTB-Systemische-Therapie-Medication-5
@@ -120,15 +125,16 @@ Title: "20.09.2023 Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-09-20"
 * effectivePeriod.end = "2023-09-20"
 * note.text = "20.09.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * statusReason = #E // Daten im Bsp nicht vorhanden
-* dosage[Dosis].doseAndRate.doseQuantity.value = 6
-* dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
-* dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
-* dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
+* dosage.doseAndRate.doseQuantity.value = 6
+* dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
+* dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
+* dosage.doseAndRate.doseQuantity.system = $UCUM
 
 Instance: MII-EXA-MTB-Systemische-Therapie-Medication-6
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
@@ -138,14 +144,15 @@ Title: "12.10.2023 Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
 * subject = Reference(Patient/KimMusterperson)
 * effectivePeriod.start = "2023-10-12"
 * effectivePeriod.end = "2023-10-12"
 * note.text = "12.10.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* dosage[Dosis].doseAndRate.doseQuantity.value = 6
-* dosage[Dosis].doseAndRate.doseQuantity.unit = "mg/kg KG"
-* dosage[Dosis].doseAndRate.doseQuantity.code = #mg/kg{KG}
-* dosage[Dosis].doseAndRate.doseQuantity.system = $UCUM
+* dosage.doseAndRate.doseQuantity.value = 6
+* dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
+* dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
+* dosage.doseAndRate.doseQuantity.system = $UCUM
 
 
 Instance: MII-EXA-MTB-Response-Befund-2
@@ -175,6 +182,7 @@ Title: "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine"
 * created = "2023-03-10"
 * provider = Reference(Organization/InstitutionID) // Daten im Bsp nicht vorhanden, sollte die Klinik oder die verschreibende Einrichtung sein
 * prescription = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
+* insurance.sequence = 1 // Daten im Bsp nicht vorhanden
 * insurance.coverage = Reference(Coverage/CoverageExample) // Daten im Bsp nicht vorhanden
 * insurance.claimResponse = Reference(ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1)
 * careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample) // Daten im Bsp nicht vorhanden

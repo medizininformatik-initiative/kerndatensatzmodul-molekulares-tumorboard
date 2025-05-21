@@ -1,7 +1,7 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "mii-cps-mtb-capabilitystatement",
-  "url": "https://www.medizininformatik-initiative.de/fhir/modul-onko/CapabilityStatement/metadata",
+  "url": "https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata",
   "contact": [
     {
       "telecom": [
@@ -133,7 +133,7 @@
               ],
               "name": "problem",
               "definition": "http://hl7.org/fhir/SearchParameter/ClinicalImpression-problem",
-              "type": "token"
+              "type": "reference"
             },
             {
               "extension": [
@@ -400,17 +400,6 @@
               ],
               "name": "publikation",
               "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-request-group-extension-publikation",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ],
-              "name": "code-concept",
-              "definition": "",
               "type": "token"
             }
           ],
@@ -1475,17 +1464,6 @@
               ],
               "name": "specimen",
               "definition": "http://hl7.org/fhir/SearchParameter/DiagnosticReport-specimen",
-              "type": "reference"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ],
-              "name": "date",
-              "definition": "http://hl7.org/fhir/SearchParameter/DiagnosticReport-issued",
               "type": "reference"
             },
             {

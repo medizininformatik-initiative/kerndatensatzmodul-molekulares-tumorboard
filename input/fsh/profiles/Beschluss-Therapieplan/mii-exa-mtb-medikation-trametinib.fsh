@@ -22,6 +22,7 @@ Usage: #example
 Description: "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)"
 // Repräsentation Trametinib
 * code.coding[+] = $ATC_DE#L01EE01 "Trametinib 2 mg O"
+* code.coding[=].version = "2023"
 // Einnahme jeweils als Tablette
 * form.coding[+] = $EDQM#10219000 "Tablette"
 // Zweites Medikament der Kombinationstherapie: Trametinib, 1x 2mg, 1-0-0 oder 0-0-1

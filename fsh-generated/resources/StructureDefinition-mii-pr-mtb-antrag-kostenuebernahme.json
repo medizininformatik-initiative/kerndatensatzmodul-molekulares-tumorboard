@@ -213,18 +213,21 @@
       {
         "id": "Claim.insurance.sequence",
         "path": "Claim.insurance.sequence",
-        "patternPositiveInt": 1,
+        "short": "Priorität der Versicherung",
+        "definition": "Priorität der Versicherung. In der Regel 1 für die Hauptkrankenversicherung, und fortlaufend für weitere freiwilligge Zusatzversicherungen. Wird vsl. selten relevant sein.",
         "mustSupport": true
       },
       {
         "id": "Claim.insurance.focal",
         "path": "Claim.insurance.focal",
+        "short": "Versicherung relevant für diesen Antrag",
         "patternBoolean": true,
         "mustSupport": true
       },
       {
         "id": "Claim.insurance.coverage",
         "path": "Claim.insurance.coverage",
+        "short": "Versicherung relevant für diesen Antrag",
         "mustSupport": true
       },
       {

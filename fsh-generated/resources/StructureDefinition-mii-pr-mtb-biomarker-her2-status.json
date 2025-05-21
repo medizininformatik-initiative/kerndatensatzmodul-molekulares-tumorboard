@@ -27,16 +27,6 @@
   "differential": {
     "element": [
       {
-        "id": "Observation.category:biomarker-category",
-        "path": "Observation.category",
-        "sliceName": "biomarker-category"
-      },
-      {
-        "id": "Observation.category:biomarker-category.coding.code",
-        "path": "Observation.category.coding.code",
-        "patternCode": "molgen"
-      },
-      {
         "id": "Observation.code.coding",
         "path": "Observation.code.coding",
         "patternCoding": {
@@ -107,6 +97,16 @@
             }
           ]
         }
+      },
+      {
+        "id": "Observation.component:biomarker-category",
+        "path": "Observation.component",
+        "sliceName": "biomarker-category"
+      },
+      {
+        "id": "Observation.component:biomarker-category.value[x].coding.code",
+        "path": "Observation.component.value[x].coding.code",
+        "patternCode": "molgen"
       }
     ]
   }

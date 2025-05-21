@@ -5,5 +5,19 @@ Description: "Codesystem, welches verschiedene Molekulare Biomarker enthält, di
 * insert CS_Header($mii-cs-mtb-molekulare-biomarker)
 
 * #brcaness                                "BRCAness"
+// Immunohistochemistry
 * #phosphorylation-localization        "Phosphorylation localization"
 * #protein-isoform                        "Protein isoform"
+// Copy Number Variant
+* #relative-copy-number "Relative Copy Number of Allele A and B"
+* #copy-number-allele-a "Copy Number of Allele B"
+* #copy-number-allele-b "Copy Number of Allele A"
+* #reported-focality "Reported focality"
+* #copy-number-neutral-loh "Copy Number Neutral Loss of Heterozygosity"
+// Gene Fusion
+* #five-prime-chromosome "Five Prime Chromosome"
+* #five-prime-position "Five Prime Start"
+* #five-prime-gene "Five Prime Gene"
+* #three-prime-chromosome "Three Prime Chromosome"
+* #three-prime-position "Three Prime Start"
+* #three-prime-gene "Three Prime Gene"
