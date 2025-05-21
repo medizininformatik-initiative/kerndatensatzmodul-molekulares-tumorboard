@@ -13,9 +13,14 @@ Description: "Response Beurteilung nach DNPM"
 * effectiveDateTime MS
 * effectiveDateTime ^short = "Zeitpunkt"
 * effectiveDateTime ^definition = "Zeitpunkt des Response Befundes"
+// Es stellt sich die Frage ob es sinnvoll ist überhaupt vom MII_PR_Onko_Verlauf zu erben
+// entweder muss man method und dann auch value slicen, um beides zu ermöglichen
+// oder ein alleinstehendes MTB Profil mit unabhänigen Elementen method und value
 * method 1..1 MS
 * method ^short = "Beurteilungsmethode"
 * method ^definition = "Beurteilungsmethode RECIST oder RANO"
+// * method.coding.system = $mii-cs-mtb-response-befund-beurteilungsmethode
+// * method.coding.code from MII_VS_MTB_Response_Befund_Beurteilungsmethode
 
 // für valueCodeableConcept eigenes CS & VS
 // https://simplifier.net/medizininformatikinitiative-modulonkologie/mii-cs-onko-verlauf-gesamtbeurteilung
