@@ -93,8 +93,8 @@ Title: "20.08.2023 CT T/A"
 * focus = Reference(MII_PR_Onko_Diagnose_Primaertumor/example)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1) 
 * valueCodeableConcept.coding.code = #CR
-* component[Lymphknoten_Verlauf].code.coding.code = #399656008
-* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K
+* component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
+* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K "kein Lymphknotenbefall nachweisbar"
 
 
 Instance: MII-EXA-MTB-Systemische-Therapie-Medication-4
@@ -166,9 +166,9 @@ Title: "22.10.2023 CT T/A"
 * subject = Reference(Patient/KimMusterperson)
 * focus = Reference(MII_PR_Onko_Diagnose_Primaertumor/example)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
-* valueCodeableConcept.coding.code = #PR
-* component[Lymphknoten_Verlauf].code.coding.code = #399656008
-* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K
+* valueCodeableConcept.coding.code = #T "Teilremission (partial remission, PR)"
+* component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
+* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K "kein Lymphknotenbefall nachweisbar"
 
 
 
