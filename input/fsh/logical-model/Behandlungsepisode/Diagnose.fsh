@@ -2,10 +2,10 @@ RuleSet: Diagnose
 * Diagnose                      1..1      BackboneElement     "Diagnose"
   * WHOGradZNS                  0..1      code                "WHO-Grad ZNS Tumor"               "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)"
   * OncoTree                    0..1      code                "OncoTree Classification"          "Klassifizierung eines Tumor nach OncoTree"
-  * TumorausbreitungED          1..1      BackboneElement     "Tumorausbreitung ED"              "Tumorausbreitung zum Zeitpunkt der Erstdiagnose"
+  * TumorausbreitungED          0..1      BackboneElement     "Tumorausbreitung ED"              "Tumorausbreitung zum Zeitpunkt der Erstdiagnose"
     * Wert                      1..1      code                "Wert"                             "Wert Tumorausbreitung"
     * Zeitpunkt                 1..1      dateTime            "Zeitpunkt"                        "Zeitpunkt der Tumorausbreitung"
-  * TumorausbreitungMTB         1..1      BackboneElement     "Tumorausbreitung MTB"             "Tumorausbreitung zum Zeitpunkt der MTB-Anmeldung"
+  * TumorausbreitungMTB         0..1      BackboneElement     "Tumorausbreitung MTB"             "Tumorausbreitung zum Zeitpunkt der MTB-Anmeldung"
     * Wert                      1..1      code                "Wert"                             "Wert Tumorausbreitung"
     * Zeitpunkt                 1..1      dateTime            "Zeitpunkt"                        "Zeitpunkt der Tumorausbreitung"
 

@@ -30,7 +30,7 @@ Description: "Diagnose zum Primärtumor"
 
 // TODO: SCT prüfen
 // Tumor stage (spreading) first diagnosis date time
-* stage contains ErstdiagnoseZeitpunkt 1..1 MS
+* stage contains ErstdiagnoseZeitpunkt 0..1 MS
 * stage[ErstdiagnoseZeitpunkt] ^short = "Tumorausbreitung Erstdiagnose"
 * stage[ErstdiagnoseZeitpunkt] ^definition = "Tumorausbreitung zum Zeitpunkt der Erstdiagnose"
 * stage[ErstdiagnoseZeitpunkt].assessment 1..1 MS
@@ -40,7 +40,7 @@ Description: "Diagnose zum Primärtumor"
 
 // TODO: SCT prüfen
 // Tumor stage (spreading) molecular tumor board date time
-* stage contains MolekularesTumorboardZeitpunkt 1..1 MS
+* stage contains MolekularesTumorboardZeitpunkt 0..1 MS
 * stage[MolekularesTumorboardZeitpunkt] ^short = "Tumorausbreitung Molekulares Tumorboard"
 * stage[MolekularesTumorboardZeitpunkt] ^definition = "Tumorausbreitung zum Zeitpunkt des Molekularen Tumorboard"
 * stage[MolekularesTumorboardZeitpunkt].assessment 1..1 MS

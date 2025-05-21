@@ -161,6 +161,8 @@ Usage: #example
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-humangenetische-beratung-aszites)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-histologie-evaluation-aszites)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-rebiopsie-aszites)
+* insert BundleResource(Condition, mii-exa-mtb-kim-diagnose)
+* insert BundleResource(Observation, mii-exa-mtb-kim-tumorausbreitung)
 // External resources
 * insert BundleResource(Condition, PatientKimMusterperson-PrimaryDiagnosis-2)
 * insert BundleResource(Observation, mii-exa-onko-allgemeiner-leistungszustand-ecog)

@@ -21,7 +21,7 @@
         },
         "problem": [
           {
-            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+            "reference": "Condition/mii-exa-mtb-kim-diagnose"
           }
         ],
         "investigation": [
@@ -7470,6 +7470,138 @@
         }
       },
       "fullUrl": "urn:uuid:mii-exa-mtb-kim-rebiopsie-aszites"
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Condition/mii-exa-mtb-kim-diagnose"
+      },
+      "resource": {
+        "resourceType": "Condition",
+        "id": "mii-exa-mtb-kim-diagnose",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+            "valueDateTime": "2021-06-10"
+          }
+        ],
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed"
+            },
+            {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-primaertumor-diagnosesicherung",
+              "code": "2"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "C48.2",
+              "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "display": "Bösartige Neubildung des Retroperitoneums und Peritoneums - Peritoneum, nicht näher bezeichnet"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+                "code": "C56.9",
+                "display": "Ovar"
+              }
+            ]
+          }
+        ],
+        "stage": [
+          {
+            "assessment": [
+              {
+                "reference": "Observation/mii-exa-mtb-kim-tumorausbreitung"
+              }
+            ],
+            "type": {
+              "coding": [
+                {
+                  "code": "473302008",
+                  "system": "http://snomed.info/sct",
+                  "display": "Aware of diagnosis"
+                }
+              ]
+            }
+          }
+        ],
+        "recordedDate": "2021-06-10",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        }
+      },
+      "fullUrl": "urn:uuid:mii-exa-mtb-kim-diagnose"
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation/mii-exa-mtb-kim-tumorausbreitung"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mii-exa-mtb-kim-tumorausbreitung",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung"
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "473302008",
+                "system": "http://snomed.info/sct"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "371508000",
+              "system": "http://snomed.info/sct",
+              "display": "Tumor stage"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255127006",
+              "display": "Local tumor spread"
+            }
+          ]
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "effectiveDateTime": "2021-06-10"
+      },
+      "fullUrl": "urn:uuid:mii-exa-mtb-kim-tumorausbreitung"
     },
     {
       "request": {
