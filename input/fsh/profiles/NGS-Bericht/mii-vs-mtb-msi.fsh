@@ -1,9 +1,9 @@
 
 ValueSet: MII_VS_MTB_Microsatellite_Instability
 Id: mii-vs-mtb-msi
-Title: "MII VS Molekulare Biomarker"
+Title: "MII VS Mikrosatelliteninstabilität"
 Description: "ValueSet zum MSI-Status auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL1057-0 Stable|Unstable|Indeterminate"
-* insert VS_Header($mii-vs-mtb-molekulare-biomarker)
+* insert VS_Header($mii-vs-mtb-msi)
 * $LNC#LA14122-8 "Stable"
 * $LNC#LA14123-6 "Instable"
 * $LNC#LA11884-6 "Indeterminate"

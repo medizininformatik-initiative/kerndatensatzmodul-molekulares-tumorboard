@@ -155,11 +155,11 @@
 [MII_VS_MTB_Genomic_Analysis_Method_Type]: ValueSet-mii-vs-mtb-genomic-analysis-method-type.html
 [MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
 [MII_VS_MTB_Leitlinienbehandlung_Status]: ValueSet-mii-vs-mtb-leitlinienbehandlung-status.html
+[MII_VS_MTB_Microsatellite_Instability]: ValueSet-mii-vs-mtb-msi.html
 [MII_VS_MTB_MMR_Proficiency]: ValueSet-mii-vs-mtb-mmr-proficiency.html
 [MII_VS_MTB_MMR_Expression]: ValueSet-mii-vs-mtb-mmr-expression.html
 [MII_VS_MTB_Immunhistochemistry_Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
-[MII_VS_MTB_Microsatellite_Instability]: ValueSet-mii-vs-mtb-msi.html
 [MII_VS_MTB_MSI_Method_Type]: ValueSet-mii-vs-mtb-msi-method-type.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Type]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
