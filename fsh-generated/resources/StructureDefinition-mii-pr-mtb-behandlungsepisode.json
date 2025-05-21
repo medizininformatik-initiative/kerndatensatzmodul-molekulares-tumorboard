@@ -37,20 +37,6 @@
         "mustSupport": true
       },
       {
-        "id": "ClinicalImpression.extension",
-        "path": "ClinicalImpression.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
         "id": "ClinicalImpression.extension:LeitlinenbehandlungStatus",
         "path": "ClinicalImpression.extension",
         "sliceName": "LeitlinenbehandlungStatus",
