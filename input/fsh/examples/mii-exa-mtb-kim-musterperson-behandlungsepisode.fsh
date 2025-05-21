@@ -102,12 +102,12 @@ Usage: #example
 
 // Aufklärung Molekulares Tumorboard
 Instance: mii-exa-mtb-kim-musterperson-aufklaerung
-InstanceOf: Consent
+InstanceOf: Observation
 Title: "Einwilligung zur MTB-Besprechung Kim Musterperson"
 Description: "Einwilligung von Kim Musterperson zur Besprechung im Molekularen Tumorboard vom 02.01.2023"
 Usage: #example
-* status = #active
-* scope = #patient-privacy
-* category = $LNC#57084-0 "Patient Consent"
-* patient = Reference(Procedure/PatientKimMusterperson)
-* dateTime = 2023-01-02
+* status = #final
+* code = $LNC#105511-0 "Was consent given"
+* subject = Reference(Procedure/PatientKimMusterperson)
+* effectiveDateTime = 2023-01-02
+* valueCodeableConcept.coding.code = $SCT#373066001 "Yes (qualifier value)"

@@ -6,6 +6,9 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * insert PR_Header
 
 * identifier MS
+* identifier ^short = "Biomarker-ID im Kontext des NGS-Befundes"
+* identifier ^definition = "Eindeutige Biomarker-ID im Kontext des NGS-Befundes."
+
 * focus MS 
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 
@@ -19,3 +22,11 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * component MS
 
 * code = $mii-cs-mtb-molekulare-biomarker#brcaness
+* code ^short = "BRCAness"
+* code ^definition = "BRCAness der Tumormutationsmuster"
+* value[x] MS
+* valueQuantity MS
+* valueQuantity.value MS
+* valueQuantity.unit = "Score"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #1

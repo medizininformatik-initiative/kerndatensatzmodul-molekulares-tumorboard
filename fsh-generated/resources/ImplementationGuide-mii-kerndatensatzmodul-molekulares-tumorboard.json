@@ -38,73 +38,73 @@
   "dependsOn": [
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.biobank",
-      "version": "2025.0.3",
+      "version": "2025.0.x",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.biobank/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.biobank",
       "id": "de_medizininformatikinitiative_kerndatensatz_biobank"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.consent",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.consent/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.consent",
       "id": "de_medizininformatikinitiative_kerndatensatz_consent"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
       "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ImplementationGuide/mii-ig-fall",
       "id": "de_medizininformatikinitiative_kerndatensatz_fall"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation",
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.meta/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.meta",
       "id": "de_medizininformatikinitiative_kerndatensatz_meta"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
-      "version": "2025.0.0",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.molgen/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.molgen",
+      "version": "2025.0.x",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/ImplementationGuide/mii-ig-molgen-v2025-DE",
       "id": "de_medizininformatikinitiative_kerndatensatz_molgen"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2025.0.3",
+      "version": "2025.1.0-beta",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.patho",
-      "version": "2025.0.2",
+      "version": "2025.0.x",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.patho/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.patho",
       "id": "de_medizininformatikinitiative_kerndatensatz_patho"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.person",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ImplementationGuide/mii-ig-person",
       "id": "de_medizininformatikinitiative_kerndatensatz_person"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.prozedur",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ImplementationGuide/mii-ig-prozedur",
       "id": "de_medizininformatikinitiative_kerndatensatz_prozedur"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
-      "version": "2025.0.0",
+      "version": "2025.0.x",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.studie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.studie",
       "id": "de_medizininformatikinitiative_kerndatensatz_studie"
     },
@@ -151,14 +151,6 @@
         },
         "name": "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement"
-      },
-      {
-        "reference": {
-          "reference": "CarePlan/MolekularesTumorboardSession-1"
-        },
-        "name": "20.01.2023 Molekulares Tumorboard:",
-        "description": "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie\n2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.\n3. Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.\n4. Studiencheck (inkl. QuickQueck Suche): Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ). Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2). \n5. Wiedervorstellung nach Eingang der Befunde.\n",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
       },
       {
         "reference": {
@@ -498,7 +490,7 @@
       },
       {
         "reference": {
-          "reference": "Consent/mii-exa-mtb-kim-musterperson-aufklaerung"
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-aufklaerung"
         },
         "name": "Einwilligung zur MTB-Besprechung Kim Musterperson",
         "description": "Einwilligung von Kim Musterperson zur Besprechung im Molekularen Tumorboard vom 02.01.2023",
@@ -688,7 +680,7 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/mii-cs-mtb-kostenuebernahme-ablehnungsgrund"
+          "reference": "CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund"
         },
         "name": "MII CS Kostenuebernahme Ablehnungsgrund",
         "description": "Codesystem zum Grund der Ablehnung der Kostenuebernahme nach DNPM",
@@ -816,18 +808,10 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-ngs-bericht-metadaten"
+          "reference": "StructureDefinition/mii-ex-mtb-ngs-bericht-genomic-study"
         },
         "name": "MII EX MTB NGS Bericht Metadaten",
         "description": "Metadaten des NGS-Berichts",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-ex-mtb-ngs-bericht-qc"
-        },
-        "name": "MII EX MTB NGS Bericht QC",
-        "description": "QC des NGS-Berichts",
         "exampleBoolean": false
       },
       {
@@ -932,6 +916,14 @@
         },
         "name": "MII PR MTB Clinical Impresssion",
         "description": "Follow-Up als Prozess des Einholens von Informationen über durchgeführte Therapien & Kostenuebernahmen",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-consent-given"
+        },
+        "name": "MII PR MTB Consent",
+        "description": "Beschreibt, ob und wann der Consent zum Einschluss ins MTB gegeben wurde.",
         "exampleBoolean": false
       },
       {
@@ -1120,6 +1112,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-ploidie"
+        },
+        "name": "MII PR MTB Ploidie",
+        "description": "Beschreibt die Gesamtploidie des Tumors. Die Ploidie ist ein Indikator für die Tumorproliferation und die Tumoraggressivität.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-response-befund"
         },
         "name": "MII PR MTB Response Befund",
@@ -1248,10 +1248,10 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-antwort-kostenuebernahme-status"
+          "reference": "ValueSet/mii-vs-mtb-antwort-kostenuebernahme-entscheidung"
         },
-        "name": "MII VS Antwort Kostenuebernahme Status",
-        "description": "ValueSet zum Status der Antwort auf den Antrags zur Kostenuebernahme",
+        "name": "MII VS Antwort Kostenuebernahme Entscheidung",
+        "description": "ValueSet zur Entscheidung der Antwort auf den Antrags zur Kostenuebernahme",
         "exampleBoolean": false
       },
       {
@@ -1328,7 +1328,7 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-kostenuebernahme-ablehnungsgrund"
+          "reference": "ValueSet/mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund"
         },
         "name": "MII VS Kostenuebernahme Ablehnungsgrund",
         "description": "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
@@ -1563,7 +1563,7 @@
           "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-3"
         },
         "name": "MTB-NGS-Bericht Kim Musterperson",
-        "description": "Diagnostische Prozeduren  MolPatho-Bericht von Kim Musterperson - Immunhistochemie",
+        "description": "Diagnostische Prozeduren - MolPatho-Bericht von Kim Musterperson - Immunhistochemie",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
       },
       {
@@ -1571,7 +1571,7 @@
           "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2"
         },
         "name": "MTB-NGS-Bericht Kim Musterperson HLA Status",
-        "description": "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben weil Beispiel",
+        "description": "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben in Beispiel",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
       },
       {

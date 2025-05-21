@@ -1,6 +1,4 @@
 // Aliases für dieses Komplexbeispiel
-Alias: $doi = http://doi.org
-Alias: $pmid = http://www.ncbi.nlm.nih.gov/pubmed
 Alias: $mii-cs-consent-category = https://www.medizininformatik-initiative.de/fhir/modul-consent/CodeSystem/mii-cs-consent-consent_category
 Alias: $ngs-category = http://terminology.hl7.org/CodeSystem/v2-0074
 

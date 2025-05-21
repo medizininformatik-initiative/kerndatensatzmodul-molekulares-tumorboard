@@ -5,6 +5,10 @@ Title: "MII PR MTB Copy Number Variant"
 Description: "Copy Number Variant (CNV)"
 * insert PR_Header
 
+* identifier MS
+* identifier ^short = "VariantenId im Kontext des NGS-Befundes"
+* identifier ^definition = "Eindeutige ID der Variante im Kontext des NGS-Befundes."
+
 * focus MS 
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 
@@ -15,6 +19,13 @@ Description: "Copy Number Variant (CNV)"
     reported-focality 0..* MS and
     cnv-type 0..* MS and
     copy-number-neutral-loh 0..* MS
+
+
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slicing der Copy Number Variation (CNV) Komponenten"
+* component ^slicing.ordered = false
 
 * component[chromosome-identifier] MS
 * component[chromosome-identifier] ^definition = "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."

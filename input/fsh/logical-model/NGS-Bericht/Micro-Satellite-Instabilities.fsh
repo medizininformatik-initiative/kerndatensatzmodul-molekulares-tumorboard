@@ -1,5 +1,5 @@
 RuleSet: MicroSatelliteInstabilities
-* MicroSatelliteInstabilities     0..*   BackboneElement      "Micro-Satellite Instabilities"
+* MicroSatelliteInstabilities     0..*   BackboneElement      "Mikrosatelliteninstabilität"
   * Interpretation                0..1   code                 "Interpretation"
   * Wert                          0..1   decimal              "Wert"
 

@@ -1,4 +1,4 @@
-ValueSet: MII_VS_MTB_Antrag_Kostenuebernahme
+ValueSet: MII_VS_MTB_Antrag_Kostenuebernahme_Type
 Id: mii-vs-mtb-antrag-kostenuebernahme
 Title: "MII VS MTB Antrag Kostenuebernahme"
 Description: "MII Logical Model Modul Molekulares Tumorboard"

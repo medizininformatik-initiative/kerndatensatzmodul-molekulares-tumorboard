@@ -10,10 +10,10 @@ Usage: #definition
 * description = "Mapping der Codes zur Begründung des Therapiestatus nach oBDS"
 * purpose = "Technische Mappings zur Transformation der Therapiestatusgründe nach oBDS"
 
-* sourceUri = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb"
+* sourceUri = $mii-vs-mtb-therapiestatusgrund
 * targetUri[+] = "https://basisdatensatz.de"
 
-* group[+].source = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-therapiestatusgrund"
+* group[+].source = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund"
 * group[=].target = "https://basisdatensatz.de"
 
 * group[=].element[+].code = #patient-refusal

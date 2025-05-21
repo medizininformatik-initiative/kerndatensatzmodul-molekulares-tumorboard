@@ -1,0 +1,18 @@
+Profile: MII_PR_MTB_Ploidie
+Parent: MII_PR_MTB_Molekularer_Biomarker
+Id: mii-pr-mtb-ploidie
+Title: "MII PR MTB Ploidie"
+Description: "Beschreibt die Gesamtploidie des Tumors. Die Ploidie ist ein Indikator für die Tumorproliferation und die Tumoraggressivität."
+* insert PR_Header
+
+* focus MS 
+* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
+* code.coding = $NCIT#C18303 "DNA Ploidy Analysis"
+* code ^short = "Ploidie"
+* code ^definition = "Ploidie der Tumorprobe"
+* value[x] MS
+* valueQuantity MS
+* interpretation MS
+* interpretation from $hl7-v3-observation-high-low-codes
+
+// Labels der Datenfelder ggf. aktualisieren

@@ -11,6 +11,6 @@ Description: "Entscheidung zum Antrag zur Kostenuebernahme"
 
 * valueCodeableConcept.coding ^short = "Status"
 * valueCodeableConcept.coding ^definition = "Status der Antwort auf den Antrag zur Kostenuebernahme"
-* valueCodeableConcept.coding.system = $mii-cs-mtb-antwort-kostenuebernahme-status
+* valueCodeableConcept.coding.system = $mii-cs-mtb-antwort-kostenuebernahme-entscheidung
 * valueCodeableConcept.coding.code 1..1 MS
-* valueCodeableConcept.coding.code from MII_VS_MTB_Antwort_Kostenuebernahme_Status
+* valueCodeableConcept.coding.code from MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung
