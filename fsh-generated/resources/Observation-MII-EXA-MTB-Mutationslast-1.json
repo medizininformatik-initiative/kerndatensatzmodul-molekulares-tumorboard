@@ -3,8 +3,7 @@
   "id": "MII-EXA-MTB-Mutationslast-1",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast",
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mutationslast"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast"
     ]
   },
   "category": [
@@ -34,11 +33,6 @@
       ]
     }
   ],
-  "performer": [
-    {
-      "reference": "Practitioner/example"
-    }
-  ],
   "interpretation": [
     {
       "coding": [
@@ -62,6 +56,9 @@
   },
   "subject": {
     "reference": "Patient/example"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
   },
   "valueQuantity": {
     "value": 21,

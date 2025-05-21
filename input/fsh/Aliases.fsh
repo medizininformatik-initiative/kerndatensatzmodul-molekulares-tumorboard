@@ -76,6 +76,8 @@ Alias: $mii-cs-mtb-response-befund-beurteilung = https://www.medizininformatik-i
 Alias: $mii-vs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilung
 Alias: $mii-vs-mtb-oncotree = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-oncotree
 Alias: $mii-vs-mtb-msi = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi
+Alias: $mii-cs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type
+Alias: $mii-vs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi-method-type
 Alias: $mii-vs-mtb-mmr-proficiency = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency
 Alias: $mii-vs-mtb-mmr-expression = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression
 // Aliases für HL7 Terminologie
