@@ -108,6 +108,6 @@ Description: "Einwilligung von Kim Musterperson zur Besprechung im Molekularen T
 Usage: #example
 * status = #final
 * code = $LNC#105511-0 "Was consent given"
-* subject = Reference(Procedure/PatientKimMusterperson)
+* patient = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = 2023-01-02
 * valueCodeableConcept.coding.code = $SCT#373066001 "Yes (qualifier value)"

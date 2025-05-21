@@ -7,7 +7,7 @@ Description: "22.04.2022 CA 125 42,3 IU/ml"
 * category[0] = $LNC#26436-6 "Laboratory studies (set)"
 * category[1] = $fhir-observation-category#laboratory
 * code = $LNC#11210-2 "Cancer Ag 125 [Units/volume] in Body fluid"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2022-04-22"
 * valueQuantity.value = 42.3
 * valueQuantity.unit = "IU/ml"
@@ -23,7 +23,7 @@ Description: "18.07.2022 CA 125 45,8 IU/ml"
 * category[0] = $LNC#26436-6 "Laboratory studies (set)"
 * category[1] = $fhir-observation-category#laboratory
 * code = $LNC#11210-2 "Cancer Ag 125 [Units/volume] in Body fluid"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2022-07-18"
 * valueQuantity.value = 45.8
 * valueQuantity.unit = "IU/ml"
@@ -39,7 +39,7 @@ Description: "24.10.2022 CA 125 49,7 IU/ml"
 * category[0] = $LNC#26436-6 "Laboratory studies (set)"
 * category[1] = $fhir-observation-category#laboratory
 * code = $LNC#11210-2 "Cancer Ag 125 [Units/volume] in Body fluid"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2022-10-24"
 * valueQuantity.value = 49.7
 * valueQuantity.unit = "IU/ml"
@@ -55,7 +55,7 @@ Description: "27.12.2022 CA 125 67,2 IU/ml"
 * category[0] = $LNC#26436-6 "Laboratory studies (set)"
 * category[1] = $fhir-observation-category#laboratory
 * code = $LNC#11210-2 "Cancer Ag 125 [Units/volume] in Body fluid"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2022-12-27"
 * valueQuantity.value = 67.2
 * valueQuantity.unit = "IU/ml"
@@ -71,7 +71,7 @@ Description: "24.03.2023 CA 125 43,7 IU/ml"
 * category[0] = $LNC#26436-6 "Laboratory studies (set)"
 * category[1] = $fhir-observation-category#laboratory
 * code = $LNC#11210-2 "Cancer Ag 125 [Units/volume] in Body fluid"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-03-24"
 * valueQuantity.value = 43.7
 * valueQuantity.unit = "IU/ml"
@@ -87,7 +87,7 @@ Description: "20.06.2023 CA 125 78,2 IU/ml"
 * category[0] = $LNC#26436-6 "Laboratory studies (set)"
 * category[1] = $fhir-observation-category#laboratory
 * code = $LNC#11210-2 "Cancer Ag 125 [Units/volume] in Body fluid"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-06-20"
 * valueQuantity.value = 78.2
 * valueQuantity.unit = "IU/ml"

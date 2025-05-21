@@ -4,7 +4,7 @@ RuleSet: SystemTherapyMedicationStatement(text, dateTime, procedure, parent, atc
 * partOf[+] = Reference(MedicationStatement/{parent})
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE{atc}
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = {dateTime}
 * note.text = {text}
 * dosage.doseAndRate.doseQuantity.value = {doseValue}
@@ -22,7 +22,7 @@ Description: "Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh.
 * category.coding[sct] = $SCT#277132007 // Therapeutic procedure | alternativ 18629005 Administration of medicine?
 * code.coding[sct] = $SCT#367336001 // Chemotherapy
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * performedPeriod.start = "2023-01-04"
 * performedPeriod.end = "2023-05-24"
 * outcome.coding[+] = $mii-cs-onko-therapie-grund-ende#W
@@ -35,7 +35,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
 * status = #completed
 * medicationCodeableConcept.text = "Z1 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-01-04"
 
 Instance: MTBChemo1MedicationStatement1-1
@@ -57,7 +57,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
 * status = #completed
 * medicationCodeableConcept.text = "Z2 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-02-01"
 
 Instance: MTBChemo1MedicationStatement2-1
@@ -79,7 +79,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
 * status = #completed
 * medicationCodeableConcept.text = "Z3 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-03-01"
 
 Instance: MTBChemo1MedicationStatement3-1
@@ -101,7 +101,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
 * status = #completed
 * medicationCodeableConcept.text = "Z4 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-03-29"
 
 Instance: MTBChemo1MedicationStatement4-1
@@ -123,7 +123,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
 * status = #completed
 * medicationCodeableConcept.text = "Z5 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-04-26"
 
 Instance: MTBChemo1MedicationStatement5-1
@@ -145,7 +145,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo1Procedure)
 * status = #completed
 * medicationCodeableConcept.text = "Z6 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-05-24"
 
 Instance: MTBChemo1MedicationStatement6-1
@@ -172,7 +172,7 @@ Description: "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.0
 * category.coding[sct] = $SCT#277132007 // Therapeutic procedure | alternativ 18629005 Administration of medicine?
 * code.coding[sct] = $SCT#367336001 // Chemotherapy
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * performedPeriod.start = "2023-06-24"
 * performedPeriod.end = "2023-10-12"
 * outcome.coding[+] = $mii-cs-onko-therapie-grund-ende#E
@@ -189,7 +189,7 @@ Usage: #example
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-06-24"
 * note.text = "Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage.doseAndRate.doseQuantity.value = 6
@@ -206,7 +206,7 @@ Usage: #example
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-07-16"
 * note.text = "Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage.doseAndRate.doseQuantity.value = 6
@@ -223,7 +223,7 @@ Usage: #example
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-08-07"
 * note.text = "Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage.doseAndRate.doseQuantity.value = 6
@@ -240,7 +240,7 @@ Usage: #example
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-08-29"
 * note.text = "Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage.doseAndRate.doseQuantity.value = 6
@@ -257,7 +257,7 @@ Usage: #example
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-09-20"
 * note.text = "Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage.doseAndRate.doseQuantity.value = 6
@@ -274,7 +274,7 @@ Usage: #example
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-10-12"
 * note.text = "Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * dosage.doseAndRate.doseQuantity.value = 6

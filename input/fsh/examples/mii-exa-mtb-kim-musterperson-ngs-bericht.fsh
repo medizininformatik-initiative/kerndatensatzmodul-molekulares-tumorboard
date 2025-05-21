@@ -9,7 +9,7 @@ Usage: #example
 * code = $LNC#51969-4 "Genetic analysis report"
 * issued = "2023-03-28T00:00:00.000Z" // Ist das Datum des NGS-Berichts irgendwo angegeben?
 * subject = Reference(Patient/PatientKimMusterperson)
-* specimen = Reference(Specimen/PatientKimMusterperson-Ascites )
+* specimen = Reference(Specimen/PatientKimMusterperson-AscitesSpecimen-2)
 * result[+] = Reference(mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53)
 * result[+] = Reference(mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1)
 * result[+] = Reference(mii-exa-mtb-kim-musterperson-CNVariante-CCNE1)
@@ -72,7 +72,7 @@ Usage: #example
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:11998 "TP53"
 * component[protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
@@ -102,7 +102,7 @@ Usage: #example
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:8979 "PIK3R1"
 * component[protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
@@ -139,7 +139,7 @@ Usage: #example
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:1589 "CCNE1"
 * component[cnv-type].code = $bwhc-cnv-type#type

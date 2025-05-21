@@ -7,7 +7,7 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-06-24"
 * effectivePeriod.end = "2023-06-24"
 * note.text = "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
