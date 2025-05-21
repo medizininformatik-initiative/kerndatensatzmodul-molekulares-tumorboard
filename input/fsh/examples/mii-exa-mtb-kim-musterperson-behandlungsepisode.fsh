@@ -14,7 +14,7 @@ Usage: #example
 * effectivePeriod.end = 2023-03-28
 
 // Primärdiagnosie (siehe KDS Erweiterungsmodul Onkologie)
-* problem = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
+* problem = Reference(Condition/mii-exa-mtb-kim-diagnose)
 
 // NGS Bericht
 * investigation[NgsBericht][+].item = Reference(DiagnosticReport/mii-exa-mtb-kim-musterperson-ngs-bericht)
