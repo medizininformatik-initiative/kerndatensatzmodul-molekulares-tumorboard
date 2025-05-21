@@ -5,6 +5,5 @@ Description: "Codesystem, welches verschiedene Molekulare Biomarker enthält, di
 * insert CS_Header($mii-cs-mtb-molekulare-biomarker)
 
 * #brcaness                                "BRCAness"
-* #hrd                                     "HRD-Score"
 * #phosphorylation-localization        "Phosphorylation localization"
 * #protein-isoform                        "Protein isoform"

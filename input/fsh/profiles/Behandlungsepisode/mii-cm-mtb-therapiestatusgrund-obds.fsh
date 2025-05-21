@@ -11,10 +11,10 @@ Usage: #definition
 * purpose = "Technische Mappings zur Transformation der Therapiestatusgründe nach oBDS"
 
 * sourceUri = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb"
-* targetUri[+] = "http://snomed.info/sct"
+* targetUri[+] = "https://basisdatensatz.de"
 
 * group[+].source = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-therapiestatusgrund"
-* group[=].target = "http://snomed.info/sct"
+* group[=].target = "https://basisdatensatz.de"
 
 * group[=].element[+].code = #patient-refusal
 * group[=].element[=].display = "Therapie durch Patient abgelehnt"
