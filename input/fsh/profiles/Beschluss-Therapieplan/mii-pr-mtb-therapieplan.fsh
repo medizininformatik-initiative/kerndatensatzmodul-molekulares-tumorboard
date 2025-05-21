@@ -45,25 +45,25 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[HumangenetischeBeratung] ^short = "Empfehlung Human-genetische Beratung"
 * activity[HumangenetischeBeratung] ^definition = "Auftrag zur (erneuten) Human-genetischen Beratung"
 * activity[HumangenetischeBeratung].reference 1..1 MS
-* activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag or ServiceRequest)
+* activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag)
 
 * activity contains HistologieEvaluation 0..1 MS
 * activity[HistologieEvaluation] ^short = "Empfehlung Histologie-Evaluation"
 * activity[HistologieEvaluation] ^definition = "Auftrag zur (erneuten) Histologie-Evaluation"
 * activity[HistologieEvaluation].reference 1..1 MS
-* activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag or ServiceRequest)
+* activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag)
 
 * activity contains Biopsie 0..* MS
 * activity[Biopsie] ^short = "Empfehlung Biopsie"
 * activity[Biopsie] ^definition = "Auftrag zur (erneuten) Biopsie"
 * activity[Biopsie].reference 1..1 MS
-* activity[Biopsie].reference only Reference(MII_PR_MTB_Biopsie_Auftrag or ServiceRequest)
+* activity[Biopsie].reference only Reference(MII_PR_MTB_Biopsie_Auftrag)
 
 * activity contains Studieneinschlussempfehlung 0..* MS
 * activity[Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"
 * activity[Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
 * activity[Studieneinschlussempfehlung].reference 1..1 MS
-* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage or ServiceRequest)
+* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage)
 
 // Siehe Konversion R5 nach R4: https://build.fhir.org/ig/HL7/fhir-cross-version/StructureMap-CarePlan5to4.html
 
