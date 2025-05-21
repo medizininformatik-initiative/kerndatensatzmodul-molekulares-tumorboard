@@ -1,0 +1,99 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "genomic-study-analysis",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Genomic_Study_Analysis",
+  "title": "Genomic Study Analysis",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.meta",
+        "path": "Procedure.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.meta.profile",
+        "path": "Procedure.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:method-type",
+        "path": "Procedure.extension",
+        "sliceName": "method-type",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:method-type.value[x]",
+        "path": "Procedure.extension.value[x]",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-genomic-analysis-method-type"
+        }
+      },
+      {
+        "id": "Procedure.extension:genome-build",
+        "path": "Procedure.extension",
+        "sliceName": "genome-build",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:focus",
+        "path": "Procedure.extension",
+        "sliceName": "focus",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:specimen",
+        "path": "Procedure.extension",
+        "sliceName": "specimen",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:device",
+        "path": "Procedure.extension",
+        "sliceName": "device",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.identifier",
+        "path": "Procedure.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "mustSupport": true
+      }
+    ]
+  }
+}

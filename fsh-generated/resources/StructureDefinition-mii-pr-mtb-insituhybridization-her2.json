@@ -1,0 +1,113 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-insituhybridization-her2",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_INSITUHYBRIDIZATION_HER2",
+  "title": "MII PR MTB In Situ Hybridization",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "In Situ Hybridization report",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "patternCoding": {
+          "code": "18474-7",
+          "system": "http://loinc.org",
+          "display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding.system",
+        "path": "Observation.value[x].coding.system",
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding.code",
+        "path": "Observation.value[x].coding.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://loinc.org/vs/LL360-9-9"
+        }
+      },
+      {
+        "id": "Observation.component:gene-studied",
+        "path": "Observation.component",
+        "sliceName": "gene-studied"
+      },
+      {
+        "id": "Observation.component:gene-studied.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "HGNC:2064",
+              "system": "http://www.genenames.org/geneId",
+              "display": "ERBB2"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:biomarker-category",
+        "path": "Observation.component",
+        "sliceName": "biomarker-category"
+      },
+      {
+        "id": "Observation.component:biomarker-category.value[x].coding.code",
+        "path": "Observation.component.value[x].coding.code",
+        "patternCode": "inSituHybridization"
+      }
+    ]
+  }
+}

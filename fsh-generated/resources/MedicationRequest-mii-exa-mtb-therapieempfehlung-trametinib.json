@@ -1,0 +1,39 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "mii-exa-mtb-therapieempfehlung-trametinib",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+    ]
+  },
+  "dosageInstruction": [
+    {
+      "timing": {
+        "repeat": {
+          "when": [
+            "MORN"
+          ],
+          "frequency": 1
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "system": "http://unitsofmeasure.org",
+            "code": "{Tablet}",
+            "unit": "Tablet"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "option",
+  "subject": {
+    "reference": "Patient/mii-exa-mtb-patient"
+  },
+  "medicationReference": {
+    "reference": "Medication/mii-exa-mtb-medikation-trametinib"
+  }
+}

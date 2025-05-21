@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "id": "MTBObservationCA125-2",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "26436-6",
+          "system": "http://loinc.org",
+          "display": "Laboratory studies (set)"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "value": 45.8,
+    "unit": "IU/ml",
+    "code": "[iU]/ml",
+    "system": "http://unitsofmeasure.org"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "11210-2",
+        "system": "http://loinc.org",
+        "display": "Cancer Ag 125 [Units/volume] in Body fluid"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime": "2022-07-18"
+}

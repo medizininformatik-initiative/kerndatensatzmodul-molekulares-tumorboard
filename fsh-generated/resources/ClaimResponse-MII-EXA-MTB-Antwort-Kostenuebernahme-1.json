@@ -1,0 +1,29 @@
+{
+  "resourceType": "ClaimResponse",
+  "id": "MII-EXA-MTB-Antwort-Kostenuebernahme-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
+    ]
+  },
+  "status": "active",
+  "outcome": "complete",
+  "type": {
+    "coding": [
+      {
+        "code": "institutional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "created": "2023-05-01",
+  "insurer": {
+    "reference": "Organization/MyHospital"
+  },
+  "request": {
+    "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-hrd-score",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_HRD_Score",
+  "title": "MII PR MTB HRD Score",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizienz bei Zellen beschreibt.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "107286-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/Group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "HRD-Score",
+        "definition": "HRD-Score als Summe der LOH, TAI und LST-Werte",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs"
+        }
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "closed",
+          "description": "Elements of the HRD Score",
+          "ordered": false
+        }
+      },
+      {
+        "id": "Observation.component:LOH",
+        "path": "Observation.component",
+        "sliceName": "LOH",
+        "short": "Loss of heterozygosity",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:LOH.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C18016",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "Loss of Heterozygosity"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:LOH.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:TAI",
+        "path": "Observation.component",
+        "sliceName": "TAI",
+        "short": "Telomeric allelic imbalance",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:TAI.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C129774",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "Telomeric Allelic Imbalance Region"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:TAI.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:LST",
+        "path": "Observation.component",
+        "sliceName": "LST",
+        "short": "Large-scale state transitions",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:LST.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C120466",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "Large-Scale State Transition"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:LST.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

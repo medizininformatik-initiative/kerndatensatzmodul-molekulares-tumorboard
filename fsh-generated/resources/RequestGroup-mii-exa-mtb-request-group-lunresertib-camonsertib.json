@@ -1,0 +1,49 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "mii-exa-mtb-request-group-lunresertib-camonsertib",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
+    ]
+  },
+  "action": [
+    {
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-camonsertib"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "valuePositiveInt": 5
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+            "code": "m1B"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://doi.org",
+        "value": "10.1158/1535-7163.TARG-23-PR008"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+      "valueString": "https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf"
+    }
+  ],
+  "status": "draft",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

@@ -11,7 +11,7 @@ Usage: #example
 
 * type = #transaction
 * insert BundleResource(ClinicalImpression, mii-exa-mtb-kim-musterperson-behandlungsepisode)
-* insert BundleResource(Consent,mii-exa-mtb-kim-musterperson-aufklaerung)
+* insert BundleResource(Observation,mii-exa-mtb-kim-musterperson-aufklaerung)
 * insert BundleResource(Patient,PatientKimMusterperson)
 * insert BundleResource(Observation, MTBObservationCA125-1)
 * insert BundleResource(Observation, MTBObservationCA125-2)
@@ -107,7 +107,6 @@ Usage: #example
 * insert BundleResource(MedicationStatement, MTBChemo2MedicationStatement4)
 * insert BundleResource(MedicationStatement, MTBChemo2MedicationStatement5)
 * insert BundleResource(MedicationStatement, MTBChemo2MedicationStatement6)
-* insert BundleResource(CarePlan, MolekularesTumorboardSession-1)
 * insert BundleResource(DiagnosticReport, mii-exa-mtb-kim-musterperson-ngs-bericht)
 * insert BundleResource(Procedure, mii-exa-mtb-kim-musterperson-genomic-study)
 * insert BundleResource(Procedure, mii-exa-mtb-kim-musterperson-genomic-study-analysis-1)
@@ -158,8 +157,13 @@ Usage: #example
 * insert BundleResource(Medication, mii-exa-mtb-medication-cobimetinib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-cobimetinib)
 * insert BundleResource(CarePlan, mii-exa-mtb-kim-musterperson-therapieplan)
+* insert BundleResource(Observation, mii-exa-mtb-kim-tumorzellgehalt-aszites)
+* insert BundleResource(ServiceRequest, mii-exa-mtb-kim-humangenetische-beratung-aszites)
+* insert BundleResource(ServiceRequest, mii-exa-mtb-kim-histologie-evaluation-aszites)
+* insert BundleResource(ServiceRequest, mii-exa-mtb-kim-rebiopsie-aszites)
 // External resources
 * insert BundleResource(Condition, PatientKimMusterperson-PrimaryDiagnosis-2)
+* insert BundleResource(Observation, mii-exa-onko-allgemeiner-leistungszustand-ecog)
 // Addendums
 * insert BundleResource(Organization, MyHospital)
 * insert BundleResource(Organization, MyInsurer)

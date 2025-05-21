@@ -1,0 +1,32 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "mii-exa-mtb-study-request-cldn6",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
+    ]
+  },
+  "supportingInfo": [
+    {
+      "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "valueDecimal": 2.1
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://www.ncbi.nlm.nih.gov/pubmed",
+        "value": "37872225"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    }
+  ],
+  "intent": "proposal",
+  "status": "draft",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

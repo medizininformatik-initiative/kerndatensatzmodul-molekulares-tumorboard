@@ -1,0 +1,80 @@
+{
+  "resourceType": "Observation",
+  "id": "PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "55229-9",
+        "system": "http://loinc.org",
+        "display": "Immune stain study"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA6576-8",
+        "system": "http://loinc.org",
+        "display": "Positive"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "gene-studied"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "P09758",
+            "system": "http://www.uniprot.org",
+            "display": "Tumor-associated calcium signal transducer 2"
+          }
+        ]
+      }
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "GE",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "biomarker-category",
+          "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "specimen": {
+    "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+  }
+}

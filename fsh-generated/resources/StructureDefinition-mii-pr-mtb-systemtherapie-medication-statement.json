@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-systemtherapie-medication-statement",
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/spdx-license",
+            "code": "CC-BY-4.0",
+            "display": "Creative Commons Attribution 4.0 International"
+          }
+        ]
+      }
+    }
+  ],
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Systemische_Therapie_Medication_Statement",
+  "title": "MII PR MTB Systemtherapie Medication Statement",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosis",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-systemische-therapie-medikation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement.dosage",
+        "path": "MedicationStatement.dosage",
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.type",
+        "path": "MedicationStatement.dosage.doseAndRate.type",
+        "short": "Dosisdichte",
+        "definition": "Die Dosisdichte gibt an ob, in welchem Ausmaß eine Dosisreduktion vorliegt.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.type.coding.system",
+        "path": "MedicationStatement.dosage.doseAndRate.type.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.type.coding.code",
+        "path": "MedicationStatement.dosage.doseAndRate.type.coding.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte"
+        }
+      }
+    ]
+  }
+}

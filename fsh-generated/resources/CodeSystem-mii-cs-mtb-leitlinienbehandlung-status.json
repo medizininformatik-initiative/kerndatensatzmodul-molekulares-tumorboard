@@ -1,0 +1,53 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "MII_CS_MTB_Leitlinienbehandlung_Status",
+  "id": "mii-cs-mtb-leitlinienbehandlung-status",
+  "title": "MII CS Leitlinienbehandlung Status",
+  "description": "Status der Behandlung nach Leitlinie",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-leitlinienbehandlung-status",
+  "concept": [
+    {
+      "code": "exhausted",
+      "display": "Leitlinien ausgeschöpft",
+      "definition": "Behandlung nach Leitline ausgeschöpft"
+    },
+    {
+      "code": "non-exhausted",
+      "display": "Leitlinien nicht ausgeschöpft",
+      "definition": "Behandlung nach Leitline nicht ausgeschöpft"
+    },
+    {
+      "code": "impossible",
+      "display": "Leitlinientherapie nicht möglich",
+      "definition": "Behandlung nach Leitline nicht möglich"
+    },
+    {
+      "code": "no-guidelines-available",
+      "display": "Keine Leitlinien vorhanden",
+      "definition": "Keine Leitlinie zur Behandlung vorhanden"
+    },
+    {
+      "code": "unknown",
+      "display": "Unbekannt",
+      "definition": "Status zur Behandlung nach Leitline unbekannt"
+    }
+  ],
+  "version": "2024.0.0-ballot",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "language": "de-DE",
+  "caseSensitive": true,
+  "count": 5
+}

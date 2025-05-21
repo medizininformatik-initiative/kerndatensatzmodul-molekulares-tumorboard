@@ -1,0 +1,156 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-antwort-kostenuebernahme",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Antwort_Kostenuebernahme",
+  "title": "MII PR MTB Anwort Kostenuebernahme",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Antwort auf Antrag Kostenübernahme",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ClaimResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ClaimResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ClaimResponse.meta",
+        "path": "ClaimResponse.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.meta.profile",
+        "path": "ClaimResponse.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.extension",
+        "path": "ClaimResponse.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.extension:Entscheidung",
+        "path": "ClaimResponse.extension",
+        "sliceName": "Entscheidung",
+        "short": "Entscheidung",
+        "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.extension:Ablehnungsgrund",
+        "path": "ClaimResponse.extension",
+        "sliceName": "Ablehnungsgrund",
+        "short": "Ablehnungsgrund",
+        "definition": "Stadium der Antwort auf den Antrag zur Kostenuebernahme",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ClaimResponse.status",
+        "path": "ClaimResponse.status",
+        "short": "Status der FHIR-Ressource",
+        "definition": "Status der FHIR-Ressource, statisch auf #active gesetzt, da retrospektive Datenerschließung",
+        "patternCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.type",
+        "path": "ClaimResponse.type",
+        "short": "Kategorie des Antragstellers",
+        "definition": "Kategorie des Antragstellers - z.B. stationär, ambulant, Apotheke",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme"
+        }
+      },
+      {
+        "id": "ClaimResponse.use",
+        "path": "ClaimResponse.use",
+        "short": "Art des Kostenerstattungsantrags (claim, predetermination, preauthorization)",
+        "definition": "folgt den Definitionen wie im amerikanischen Gesundsheitswesen gebräuchlich. claim: Erstattungsantrag nach erfolgter Therapie; predetermination: unverbindliche Anfrage, insb. zu Anteilen der Kostenübernahme;  preauthorization: Anfrage nach möglicher Erstattung für zukünftige Therapie",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.patient",
+        "path": "ClaimResponse.patient",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.created",
+        "path": "ClaimResponse.created",
+        "short": "Datum der Zusage / des Widerspruchs",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.insurer",
+        "path": "ClaimResponse.insurer",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.request",
+        "path": "ClaimResponse.request",
+        "short": "Antrag",
+        "definition": "Dazugehöriger Antrag zur Kostenübernahme",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.outcome",
+        "path": "ClaimResponse.outcome",
+        "short": "Ergebnis der Kostenübernahme",
+        "definition": "Ergebnis der Kostenübernahme. Für den Fall der Sekundärdatenenutzung ist davon auszugehen, dass die Kostenerstattung bereits erfolgt ist. Daher ist der Status auf #complete gesetzt.",
+        "patternCode": "complete",
+        "mustSupport": true
+      }
+    ]
+  }
+}

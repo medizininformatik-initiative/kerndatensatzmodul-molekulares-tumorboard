@@ -1,0 +1,50 @@
+{
+  "resourceType": "Procedure",
+  "id": "MII-EXA-MTB-Systemische-Therapie-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie"
+    ]
+  },
+  "extension": [
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-intention",
+            "code": "K"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "CH",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ"
+      }
+    ]
+  },
+  "performedPeriod": {
+    "start": "2023-06-24",
+    "end": "2023-10-12"
+  },
+  "basedOn": [
+    {
+      "reference": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
+    }
+  ],
+  "status": "completed",
+  "statusReason": {
+    "coding": [
+      {
+        "code": "regular-completion"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "resourceType": "Observation",
+  "id": "MII-EXA-MTB-Response-Befund-Beispiel-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "396432002",
+        "display": "Status of regression of tumor (observable entity)"
+      }
+    ]
+  },
+  "focus": [
+    {
+      "reference": "Condition/Example"
+    }
+  ],
+  "method": {
+    "coding": [
+      {
+        "code": "RECIST"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "PP"
+      }
+    ]
+  },
+  "partOf": [
+    {
+      "reference": "Procedure/Example"
+    }
+  ],
+  "component": [
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "K"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "445200009",
+            "display": "Status of residual neoplasm (observable entity)",
+            "version": "1"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "registered",
+  "subject": {
+    "reference": "Patient/Example"
+  },
+  "effectiveDateTime": "2014-02-12"
+}

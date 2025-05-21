@@ -1,0 +1,67 @@
+{
+  "resourceType": "Claim",
+  "id": "MII-EXA-MTB-Antrag-Kostenuebernahme-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+    ]
+  },
+  "insurance": [
+    {
+      "focal": true,
+      "sequence": 1,
+      "coverage": {
+        "reference": "Coverage/MyCoverage"
+      },
+      "claimResponse": {
+        "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"
+      }
+    }
+  ],
+  "careTeam": [
+    {
+      "sequence": 1,
+      "provider": {
+        "reference": "Organization/MyInsurer"
+      },
+      "responsible": true
+    }
+  ],
+  "related": [
+    {
+      "relationship": {
+        "coding": [
+          {
+            "code": "initial-claim"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "active",
+  "priority": {
+    "coding": [
+      {
+        "code": "normal"
+      }
+    ]
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "institutional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "created": "2023-03-10",
+  "provider": {
+    "reference": "Organization/MyHospital"
+  },
+  "prescription": {
+    "reference": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
+  }
+}

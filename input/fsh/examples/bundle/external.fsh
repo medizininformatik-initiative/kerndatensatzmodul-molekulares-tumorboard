@@ -11,3 +11,12 @@ Description: "bestätigte Primärdiagnose"
 * code.coding  = $ICD10GM|2020#C48.2 "Bösartige Neubildung: Peritoneum, nicht näher bezeichnet"
 // 389026000 | Ascites (disorder) |
 * bodySite = $ICDO3#C56.9 "Ovar" // mögliche Lokalisation des Haupttumors?
+
+Instance: mii-exa-onko-allgemeiner-leistungszustand-ecog
+InstanceOf: mii-pr-onko-allgemeiner-leistungszustand-ecog
+Usage: #example
+* status = #final
+* code = $SCT#423740007
+* subject = Reference(Patient/PatientKimMusterperson)
+
+* valueCodeableConcept.coding =  https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-allgemeiner-leistungszustand-ecog#2 "Gehfähig, Selbstversorgung möglich, aber nicht arbeitsfähig; kann mehr als 50 % der Wachzeit aufstehen (50 - 60 % nach Karnofsky)"

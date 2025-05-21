@@ -1,0 +1,27 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "PatientKimMusterperson-MolecularPathologyReport-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report"
+    ]
+  },
+  "result": [
+    {
+      "reference": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "11526-1",
+        "system": "http://loinc.org",
+        "display": "Pathology study"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "resourceType": "Observation",
+  "id": "MII-EXA-MTB-Response-Befund-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "396432002",
+        "display": "Status of regression of tumor (observable entity)"
+      }
+    ]
+  },
+  "focus": [
+    {
+      "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+    }
+  ],
+  "partOf": [
+    {
+      "reference": "Procedure/MII-EXA-MTB-Systemische-Therapie-1"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "CR"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "399656008",
+            "display": "Presence of metastatic neoplasm in regional lymph node (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "K"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "method": {
+    "coding": [
+      {
+        "code": "312251004",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "effectiveDateTime": "2023-08-20",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

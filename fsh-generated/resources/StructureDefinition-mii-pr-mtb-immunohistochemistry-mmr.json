@@ -1,0 +1,396 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-immunohistochemistry-mmr",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-mmr",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Immunohistochemistry_MMR",
+  "title": "MII PR MTB Immunohistochemistry Mismatch Repair Status",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Immunhistorchemistry report",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency"
+        }
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "short": "Probe",
+        "definition": "Probe",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Immunohistochemische Ergebnisse",
+          "ordered": false
+        }
+      },
+      {
+        "id": "Observation.component:mmr-mlh1",
+        "path": "Observation.component",
+        "sliceName": "mmr-mlh1",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:mmr-mlh1.code.coding",
+        "path": "Observation.component.code.coding",
+        "patternCoding": {
+          "code": "81691-8",
+          "system": "http://loinc.org",
+          "display": "DNA mismatch repair protein Mlh1 [Presence] in Cancer specimen by Immune stain"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-mlh1.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-mlh1.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:mmr-mlh1.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.component.value[x].coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh2",
+        "path": "Observation.component",
+        "sliceName": "mmr-msh2",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:mmr-msh2.code.coding",
+        "path": "Observation.component.code.coding",
+        "patternCoding": {
+          "code": "81692-",
+          "system": "http://loinc.org",
+          "display": "DNA mismatch repair protein Msh2 [Presence] in Cancer specimen by Immune stain"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh2.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh2.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:mmr-msh2.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.component.value[x].coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh6",
+        "path": "Observation.component",
+        "sliceName": "mmr-msh6",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:mmr-msh6.code.coding",
+        "path": "Observation.component.code.coding",
+        "patternCoding": {
+          "code": "81693-4",
+          "system": "http://loinc.org",
+          "display": "DNA mismatch repair protein Msh6 [Presence] in Cancer specimen by Immune stain"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh6.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh6.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:mmr-msh6.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.component.value[x].coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-pms2",
+        "path": "Observation.component",
+        "sliceName": "mmr-pms2",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:mmr-pms2.code.coding",
+        "path": "Observation.component.code.coding",
+        "patternCoding": {
+          "code": "81694-2",
+          "system": "http://loinc.org",
+          "display": "DNA mismatch repair protein PMS2 [Presence] in Cancer specimen by Immune stain"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-pms2.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-pms2.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:mmr-pms2.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.component.value[x].coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh3",
+        "path": "Observation.component",
+        "sliceName": "mmr-msh3",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:mmr-msh3.code.coding",
+        "path": "Observation.component.code.coding",
+        "patternCoding": {
+          "code": "96271-2",
+          "system": "http://loinc.org",
+          "display": "DNA mismatch repair protein Msh3 [Presence] in Cancer specimen by Immune stain"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh3.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-msh3.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:mmr-msh3.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.component.value[x].coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-mlh3",
+        "path": "Observation.component",
+        "sliceName": "mmr-mlh3",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:mmr-mlh3.code.coding",
+        "path": "Observation.component.code.coding",
+        "patternCoding": {
+          "code": "96272-0",
+          "system": "http://loinc.org",
+          "display": "DNA mismatch repair protein Mlh3 [Presence] in Cancer specimen by Immune stain"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-mlh3.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:mmr-mlh3.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:mmr-mlh3.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.component.value[x].coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression"
+        }
+      }
+    ]
+  }
+}

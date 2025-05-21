@@ -1,0 +1,45 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "mii-exa-mtb-request-group-adavosertib-carboplatin",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
+    ]
+  },
+  "action": [
+    {
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-carboplatin"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "valuePositiveInt": 4
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+            "code": "m1B"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://www.ncbi.nlm.nih.gov/pubmed",
+        "value": "37236033"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    }
+  ],
+  "status": "draft",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

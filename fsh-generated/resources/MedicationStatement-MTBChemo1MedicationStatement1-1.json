@@ -1,0 +1,49 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "MTBChemo1MedicationStatement1-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-systemische-therapie-medikation"
+    ]
+  },
+  "partOf": [
+    {
+      "reference": "Procedure/MTBChemo1Procedure"
+    },
+    {
+      "reference": "MedicationStatement/MTBChemo1MedicationStatement1"
+    }
+  ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "code": "L01XA02"
+      }
+    ]
+  },
+  "note": [
+    {
+      "text": "Z1 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2 d1"
+    }
+  ],
+  "dosage": [
+    {
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "system": "http://unitsofmeasure.org",
+            "value": 5,
+            "unit": "AUC",
+            "code": "mg.min/ml"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime": "2023-01-04"
+}

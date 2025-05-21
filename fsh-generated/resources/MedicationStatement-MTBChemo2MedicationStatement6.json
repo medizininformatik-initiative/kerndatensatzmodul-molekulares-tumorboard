@@ -1,0 +1,52 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "MTBChemo2MedicationStatement6",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement"
+    ]
+  },
+  "partOf": [
+    {
+      "reference": "Procedure/MTBChemo2Procedure"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
+    }
+  ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "code": "L01FX26",
+        "version": "2025"
+      }
+    ]
+  },
+  "note": [
+    {
+      "text": "Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+    }
+  ],
+  "dosage": [
+    {
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "system": "http://unitsofmeasure.org",
+            "value": 6,
+            "unit": "mg/kg KG",
+            "code": "mg/kg{KG}"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime": "2023-10-12"
+}

@@ -1,0 +1,83 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung",
+  "id": "mii-vs-mtb-follow-grund-nicht-umsetzung",
+  "title": "MII VS Follow-Up Grund Nicht-Umsetzung",
+  "description": "ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung",
+  "version": "2024.0.0-ballot",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "language": "de-DE",
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund",
+        "concept": [
+          {
+            "code": "payment-refused"
+          },
+          {
+            "code": "payment-pending"
+          },
+          {
+            "code": "payment-ended"
+          },
+          {
+            "code": "no-indication"
+          },
+          {
+            "code": "medical-reason"
+          },
+          {
+            "code": "patient-refusal"
+          },
+          {
+            "code": "patient-wish"
+          },
+          {
+            "code": "patient-death"
+          },
+          {
+            "code": "lost-to-fu"
+          },
+          {
+            "code": "chronic-remission"
+          },
+          {
+            "code": "progression"
+          },
+          {
+            "code": "toxicity"
+          },
+          {
+            "code": "other-therapy-chosen"
+          },
+          {
+            "code": "best-supportive-care"
+          },
+          {
+            "code": "deterioration"
+          },
+          {
+            "code": "other"
+          },
+          {
+            "code": "unknown"
+          }
+        ]
+      }
+    ]
+  }
+}

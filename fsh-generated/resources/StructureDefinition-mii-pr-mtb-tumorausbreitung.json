@@ -1,0 +1,211 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-tumorausbreitung",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung",
+  "version": "2024.0.0-ballot",
+  "name": "MII_PR_MTB_Tumorausbreitung",
+  "title": "MII PR MTB Tumorausbreitung",
+  "status": "draft",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Angabe zur Tumorausbreitung",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.meta",
+        "path": "Observation.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.meta.profile",
+        "path": "Observation.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding",
+        "path": "Observation.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Coding",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:ErstdiagnoseZeitpunkt",
+        "path": "Observation.category.coding",
+        "sliceName": "ErstdiagnoseZeitpunkt",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "473302008",
+          "system": "http://snomed.info/sct",
+          "display": "Aware of diagnosis"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:MolekularesTumorboardZeitpunkt",
+        "path": "Observation.category.coding",
+        "sliceName": "MolekularesTumorboardZeitpunkt",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "93771000119109",
+          "system": "http://snomed.info/sct",
+          "display": "Diagnosis deferred"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "min": 1,
+        "patternCoding": {
+          "code": "371508000",
+          "system": "http://snomed.info/sct",
+          "display": "Tumor stage"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
+              "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Zeitpunkt Tumorausbreitung",
+        "definition": "Zeitpunkt der Feststellung der Tumorausbreitung",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding",
+        "path": "Observation.value[x].coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für Tumorausbreitung",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding.system",
+        "path": "Observation.value[x].coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding.code",
+        "path": "Observation.value[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding:Tumorausbreitung",
+        "path": "Observation.value[x].coding",
+        "sliceName": "Tumorausbreitung",
+        "short": "Tumorausbreitung",
+        "definition": "Angabe zur Tumorausbreitung",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding:Tumorausbreitung.system",
+        "path": "Observation.value[x].coding.system",
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.value[x].coding:Tumorausbreitung.code",
+        "path": "Observation.value[x].coding.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-tumorausbreitung"
+        }
+      }
+    ]
+  }
+}
