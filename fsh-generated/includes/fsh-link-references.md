@@ -73,6 +73,7 @@
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
+[MII_CS_MTB_Response_Befund_Beurteilungsmethode]: CodeSystem-mii-cs-mtb-response-befund-beurteilungsmethode.html
 [MII_CS_MTB_Systemische_Therapie_Status_Grund]: CodeSystem-mii-cs-mtb-systemische-therapie-status-grund.html
 [MII_CS_MTB_Therapiestatusgrund]: CodeSystem-mii-cs-mtb-therapiestatusgrund.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
@@ -160,6 +161,7 @@
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
+[MII_VS_MTB_Response_Befund_Beurteilungsmethode]: ValueSet-mii-vs-mtb-response-befund-beurteilungsmethode.html
 [MII_VS_MTB_Systemische_Therapie_Status_Grund]: ValueSet-mii-vs-mtb-systemische-therapie-status-grund.html
 [MII_VS_MTB_Therapiestatusgrund]: ValueSet-mii-vs-mtb-therapiestatusgrund.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
