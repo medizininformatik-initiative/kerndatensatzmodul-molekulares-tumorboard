@@ -16,6 +16,13 @@ Description: "Copy Number Variant (CNV)"
     cnv-type 0..* MS and
     copy-number-neutral-loh 0..* MS
 
+
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slicing der Copy Number Variation (CNV) Komponenten"
+* component ^slicing.ordered = false
+
 * component[chromosome-identifier] MS
 * component[chromosome-identifier] ^definition = "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
 

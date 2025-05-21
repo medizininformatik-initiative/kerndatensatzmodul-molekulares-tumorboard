@@ -19,3 +19,11 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * component MS
 
 * code = $mii-cs-mtb-molekulare-biomarker#brcaness
+* code ^short = "BRCAness"
+* code ^definition = "BRCAness der Tumormutationsmuster"
+* value[x] MS
+* valueQuantity MS
+* valueQuantity.value MS
+* valueQuantity.unit = "Score"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #1

@@ -21,35 +21,39 @@ Description: "DNA-Fusion"
 
 * component[five-prime-chromosome] MS
 * component[five-prime-chromosome] ^short = "5' Domain - Chromosom"
-* component[five-prime-chromosome].code MS
+* component[five-prime-chromosome].code = $mii-cs-mtb-molekulare-biomarker#five-prime-chromosome
 * component[five-prime-chromosome].valueCodeableConcept MS
 
 * component[three-prime-chromosome] MS
 * component[three-prime-chromosome] ^short = "3' Domain - Chromosom"
 * component[three-prime-chromosome].code MS
+* component[three-prime-chromosome].code = $mii-cs-mtb-molekulare-biomarker#three-prime-chromosome
 * component[three-prime-chromosome].valueCodeableConcept MS
 
 * component[five-prime-position] MS
 * component[five-prime-position] ^short = "5' Domain - Position"
 * component[five-prime-position].code MS
+* component[five-prime-position].code = $mii-cs-mtb-molekulare-biomarker#five-prime-position
 * component[five-prime-position].valueRange MS
 
 * component[three-prime-position] MS
 * component[three-prime-position] ^short = "3' Domain - Position"
 * component[three-prime-position].code MS
+* component[three-prime-position].code = $mii-cs-mtb-molekulare-biomarker#three-prime-position
 * component[three-prime-position].valueRange
 
 * component[five-prime-gene] MS
 * component[five-prime-gene] ^short = "5' Domain - Gen"
 * component[five-prime-gene].code MS
+* component[five-prime-gene].code = $mii-cs-mtb-molekulare-biomarker#five-prime-gene
 * component[five-prime-gene].valueCodeableConcept
 
 * component[three-prime-gene] MS
 * component[three-prime-gene] ^short = "3' Domain - Gen"
 * component[three-prime-gene].code MS
+* component[three-prime-gene].code = $mii-cs-mtb-molekulare-biomarker#three-prime-gene
 * component[three-prime-gene].valueCodeableConcept MS
 
-// allelic depth wirklich richtig? - JG-IBSM
 * component[allelic-read-depth] MS
 * component[allelic-read-depth].code MS
 * component[allelic-read-depth].valueQuantity MS
