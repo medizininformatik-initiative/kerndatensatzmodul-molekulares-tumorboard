@@ -27,19 +27,73 @@
   "differential": {
     "element": [
       {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/Group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Observation.interpretation",
         "path": "Observation.interpretation",
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-molekulare-biomarker"
         }
       },
       {
         "id": "Observation.method",
         "path": "Observation.method",
-        "short": "PCR|NGS",
-        "definition": "Methode der Untersuchung (PCR oder NGS-basierte Untersuchung).",
+        "short": "IHC|PCR|bioinformatic",
+        "definition": "Methode der Untersuchung (IHC, PCR oder NGS-basierte Untersuchung).",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi-method-type"
+        }
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
         "mustSupport": true
       }
     ]

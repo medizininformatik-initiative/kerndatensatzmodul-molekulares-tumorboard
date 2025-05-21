@@ -3,8 +3,7 @@
   "id": "MII-EXA-MTB-Mikrosatelliteninstabilitaet-1",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet",
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mikrosatelliteninstabilitaet"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"
     ]
   },
   "category": [
@@ -38,9 +37,9 @@
     {
       "coding": [
         {
-          "code": "high",
-          "system": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs",
-          "display": "MSI-H"
+          "code": "LA14122-8",
+          "system": "http://loinc.org",
+          "display": "Stable"
         }
       ]
     }
@@ -58,13 +57,23 @@
   "subject": {
     "reference": "Patient/example"
   },
-  "valueCodeableConcept": {
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "valueQuantity": {
+    "value": 2.61,
+    "code": "%"
+  },
+  "method": {
     "coding": [
       {
-        "code": "LA26203-2",
-        "system": "http://loinc.org",
-        "display": "MSI-H"
+        "code": "bioinformatic",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type",
+        "display": "Sequenzierung"
       }
     ]
+  },
+  "specimen": {
+    "reference": "Specimen/example"
   }
 }

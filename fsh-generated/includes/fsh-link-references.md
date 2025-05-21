@@ -74,6 +74,7 @@
 [MII_CS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
 [MII_CS_MTB_Leitlinienbehandlung_Status]: CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.html
 [MII_CS_MTB_Molekulare_Biomarker]: CodeSystem-mii-cs-mtb-molekulare-biomarker.html
+[MII_CS_MTB_MSI_Method_Type]: CodeSystem-mii-cs-mtb-msi-method-type.html
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
 [MII_CS_MTB_Systemische_Therapie_Status_Grund]: CodeSystem-mii-cs-mtb-systemische-therapie-status-grund.html
 [MII_CS_MTB_Therapiestatusgrund]: CodeSystem-mii-cs-mtb-therapiestatusgrund.html
@@ -159,6 +160,7 @@
 [MII_VS_MTB_Immunhistochemistry_Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_Microsatellite_Instability]: ValueSet-mii-vs-mtb-msi.html
+[MII_VS_MTB_MSI_Method_Type]: ValueSet-mii-vs-mtb-msi-method-type.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Type]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
