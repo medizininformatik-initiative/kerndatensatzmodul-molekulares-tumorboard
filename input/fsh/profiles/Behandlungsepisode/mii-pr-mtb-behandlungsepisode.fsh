@@ -65,7 +65,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_Molecular_Pathology_Report or DiagnosticReport)
 
 * supportingInfo ^slicing.discriminator.type = #profile
-* supportingInfo ^slicing.discriminator.path = "$this"
+* supportingInfo ^slicing.discriminator.path = "$this.resolve()"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für weitere Informationen"
 * supportingInfo ^slicing.ordered = false

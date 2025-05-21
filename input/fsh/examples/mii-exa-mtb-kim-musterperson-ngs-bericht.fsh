@@ -21,9 +21,9 @@ Description: "Details zur Durchführung NGS-Bericht von Kim Musterperson"
 Usage: #example
 * status = #completed
 * subject = Reference(Patient/PatientKimMusterperson)
-* extension[genomic-study-analysis].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-1)
-* extension[genomic-study-analysis].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-2)
-* extension[genomic-study-analysis].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-3)
+* extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-1)
+* extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-2)
+* extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-3)
 Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-1
 InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Title: "MTB-NGS-Bericht Kim Musterperson"
