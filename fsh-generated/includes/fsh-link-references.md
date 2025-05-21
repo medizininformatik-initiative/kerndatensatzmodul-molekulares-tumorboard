@@ -55,6 +55,7 @@
 [MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
 [MII-EXA-MTB-Follow-Up-ClinicalImpression-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
+[mii-exa-mtb-kim-oncotree]: Observation-mii-exa-mtb-kim-oncotree.html
 [mii-exa-mtb-kim-tumorausbreitung]: Observation-mii-exa-mtb-kim-tumorausbreitung.html
 [mii-exa-mtb-medication-lunresertib]: Medication-mii-exa-mtb-medication-lunresertib.html
 [mii-exa-mtb-medication-request-lunresertib]: MedicationRequest-mii-exa-mtb-medication-request-lunresertib.html
