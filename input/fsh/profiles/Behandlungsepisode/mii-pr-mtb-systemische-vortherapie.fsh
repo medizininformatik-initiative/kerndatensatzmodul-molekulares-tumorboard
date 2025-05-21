@@ -17,8 +17,7 @@ Description: "Systemische Vortherapie zum Molekularen Tumorboard"
 * basedOn[Therapieplan] ^definition = "Verweis auf den im Molekularen Tumorboard beschlossenen Therpieplan"
 * basedOn[Therapieplan] only Reference(MII_PR_MTB_Therapieplan)
 
-
-// hier nochmal überlegen, ob man das in Onko auch doppelt darstellen kann - > die Trennung zwischen Status und Grund.
+// TODO: Nochmal überlegen, ob man das in Onko auch doppelt darstellen kann -> die Trennung zwischen Status und Grund
 * statusReason 0..1 MS
 * statusReason ^short = "Abbruchsgrund Systemische Therapie"
 * statusReason ^definition = "Falls abgebrochen: Angabe zum Abbruchsgrund der Systemischen Therapie"

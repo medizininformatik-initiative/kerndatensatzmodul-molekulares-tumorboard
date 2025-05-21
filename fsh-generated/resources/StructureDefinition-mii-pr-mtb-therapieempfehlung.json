@@ -102,8 +102,8 @@
         "definition": "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,\r\n        diese Therapieempfehlung ist Teil einer RequestGroup (z.B. Kombinationstherapie). In dem Fall muss hier 'option' stehen."
       },
       {
-        "id": "MedicationRequest.supportingInformation",
-        "path": "MedicationRequest.supportingInformation",
+        "id": "MedicationRequest.reasonReference",
+        "path": "MedicationRequest.reasonReference",
         "slicing": {
           "discriminator": [
             {
@@ -114,12 +114,11 @@
           "rules": "open",
           "description": "Slice für stützende Angaben zur Systemischen Therapie auf Basis des referenzierten Ressourcentyps",
           "ordered": false
-        },
-        "mustSupport": true
+        }
       },
       {
-        "id": "MedicationRequest.supportingInformation:StuetzendeMolekulareAlteration",
-        "path": "MedicationRequest.supportingInformation",
+        "id": "MedicationRequest.reasonReference:StuetzendeMolekulareAlteration",
+        "path": "MedicationRequest.reasonReference",
         "sliceName": "StuetzendeMolekulareAlteration",
         "short": "Stützende molekulare Alteration(en)",
         "definition": "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)",
@@ -139,8 +138,8 @@
         "mustSupport": true
       },
       {
-        "id": "MedicationRequest.supportingInformation:StuetzendeEntitaet",
-        "path": "MedicationRequest.supportingInformation",
+        "id": "MedicationRequest.reasonReference:StuetzendeEntitaet",
+        "path": "MedicationRequest.reasonReference",
         "sliceName": "StuetzendeEntitaet",
         "short": "Stützende Entität",
         "definition": "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht",

@@ -21,6 +21,11 @@
       "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
     }
   ],
+  "supportingInfo": [
+    {
+      "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
+    }
+  ],
   "activity": [
     {
       "detail": {
@@ -136,7 +141,7 @@
             {
               "code": "ZS",
               "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-              "display": "zielgerichtete Substanzen"
+              "display": "zielgerichtete Substanz"
             }
           ]
         },
@@ -161,6 +166,57 @@
       },
       "reference": {
         "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "SO",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Sonstiges"
+            }
+          ]
+        },
+        "status": "completed"
+      },
+      "reference": {
+        "reference": "ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "SO",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Sonstiges"
+            }
+          ]
+        },
+        "status": "not-started"
+      },
+      "reference": {
+        "reference": "ServiceRequest/mii-exa-mtb-kim-histologie-evaluation-aszites"
+      }
+    },
+    {
+      "detail": {
+        "code": {
+          "coding": [
+            {
+              "code": "SO",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Sonstiges"
+            }
+          ]
+        },
+        "status": "completed"
+      },
+      "reference": {
+        "reference": "ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites"
       }
     }
   ],

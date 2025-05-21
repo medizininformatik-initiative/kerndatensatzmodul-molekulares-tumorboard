@@ -27,8 +27,6 @@ Description: "Diagnose zum Primärtumor"
 * stage[OncoTree] ^definition = "Klassifizierung eines Tumors nach OncoTree"
 * stage[OncoTree].assessment 1..1 MS
 * stage[OncoTree].assessment only Reference(MII_PR_MTB_Oncotree)
-// * stage[OncoTree].type 1..1 MS
-// * stage[OncoTree].type.coding = $SCT#396920006 "WHO grade for central nervous system tumour"
 
 // TODO: SCT prüfen
 // Tumor stage (spreading) first diagnosis date time
@@ -49,6 +47,3 @@ Description: "Diagnose zum Primärtumor"
 * stage[MolekularesTumorboardZeitpunkt].assessment only Reference(MII_PR_MTB_Tumorausbreitung)
 * stage[MolekularesTumorboardZeitpunkt].type 1..1 MS
 * stage[MolekularesTumorboardZeitpunkt].type.coding = $SCT#93771000119109 "Diagnosis deferred"
-
-// Treatment Status according to Guideline --> Das muss in die Behandlungsepisode 
-//* extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS

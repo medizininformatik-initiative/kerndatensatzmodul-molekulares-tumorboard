@@ -12,10 +12,12 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
     revoked: Molekularer Tumorboard-Fall ist abgeschlossen, 
     completed: Alle Empfehlungen bzw. Therapieoptionen ausgeschöpft oder Patient verstorben"
 
-* created MS 
+* created 1..1 MS 
+* created ^short = "Erstellungsdatum"
 * created ^definition = "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
 
 * description 0..1 MS
+* description ^short = "Protokollauszug"
 * description ^definition = "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
 
 * activity 0..* MS
@@ -51,11 +53,11 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity[HistologieEvaluation].reference 1..1 MS
 * activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag or ServiceRequest)
 
-* activity contains Biopsy 0..* MS
-* activity[Biopsy] ^short = "Empfehlung Biopsie"
-* activity[Biopsy] ^definition = "Auftrag zur (erneuten) Biopsie"
-* activity[Biopsy].reference 1..1 MS
-* activity[Biopsy].reference only Reference(MII_PR_MTB_Biopsie_Auftrag or ServiceRequest)
+* activity contains Biopsie 0..* MS
+* activity[Biopsie] ^short = "Empfehlung Biopsie"
+* activity[Biopsie] ^definition = "Auftrag zur (erneuten) Biopsie"
+* activity[Biopsie].reference 1..1 MS
+* activity[Biopsie].reference only Reference(MII_PR_MTB_Biopsie_Auftrag or ServiceRequest)
 
 * activity contains Studieneinschlussempfehlung 0..* MS
 * activity[Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"
@@ -81,8 +83,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * supportingInfo ^slicing.description = "Slice für weitere Informationen"
 * supportingInfo ^slicing.ordered = false
 
-// Referenz zwischen Therapieplan und Behandlungsepisode klären
 * supportingInfo contains Behandlungsepisode 0..1 MS
 * supportingInfo[Behandlungsepisode] ^short = "Behandlungsepisode"
 * supportingInfo[Behandlungsepisode] ^definition = "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
-* supportingInfo[Behandlungsepisode] only Reference(MII_PR_MTB_Behandlungsepisode)
+* supportingInfo[Behandlungsepisode] only Reference(MII_PR_MTB_Behandlungsepisode or ClinicalImpression)
