@@ -41,7 +41,7 @@ Usage: #example
 * activity[Studieneinschlussempfehlung].detail.status = #not-started
 
 // Prio 3 - Therapieempfehlung: Trastuzumab deruxtecan (m1B)
-* activity[Therapieempfehlung].reference = Reference(mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan)
+* activity[Therapieempfehlung].reference = Reference(mii-exa-mtb-medication-request-trastuzumab-deruxtecan)
 * activity[Therapieempfehlung].detail.code = $mii-cs-onko-therapie-typ#IZ "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
 * activity[Therapieempfehlung].detail.status = #not-started
 

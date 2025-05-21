@@ -10,7 +10,7 @@ Usage: #example
 * status = #completed
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
-* basedOn = Reference(MII_PR_MTB_Therapieplan/mii-exa-mtb-kim-musterperson-therapieplan)
+* basedOn = Reference(CarePlan/mii-exa-mtb-kim-musterperson-therapieplan)
 // Hier sonst auch wirkstoffgruppe angeben - nur bei targeted therapy macht das evtl. keinen Sinn 
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX
@@ -26,7 +26,7 @@ Usage: #example
 // zentralem Assessment auch Score1+-Patient*innen eingeschlossen worden waren. 57% vom Patientinnen mit HER2-pos
 // Endometrium Karzinom haben auf die Therapie mit Trastuzumab- Deruxtecan angesprochen
 // (10.1200/JCO.2023.41.17_suppl.LBA3000, PMID: 37870536, EL m1B).
-Instance: mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan
+Instance: mii-exa-mtb-medication-request-trastuzumab-deruxtecan
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Trastuzumab deruxtecan"
 Description: "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenzgrad: m1B"

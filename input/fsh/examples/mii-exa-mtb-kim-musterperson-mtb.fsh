@@ -3,7 +3,7 @@ InstanceOf: MII_PR_MTB_Therapieplan
 * status = #completed
 * intent = #plan
 * title = "20.01.2023 Molekulares Tumorboard:"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * created = 2023-01-20
 * description = "1. Vorstellungsgrund: absehbare Ausschöpfung der leitliniengerechten Therapie
 2. Die MTB-Aufklärung vom 02.01.2025 liegt vor.

@@ -170,6 +170,7 @@
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html
+[mii-exa-mtb-kim-musterperson-bundle]: Bundle-mii-exa-mtb-kim-musterperson-bundle.html
 [mii-exa-mtb-medikation-dabrafenib]: Medication-mii-exa-mtb-medikation-dabrafenib.html
 [mii-exa-mtb-medikation-trametinib]: Medication-mii-exa-mtb-medikation-trametinib.html
 [mii-exa-mtb-patient]: Patient-mii-exa-mtb-patient.html
@@ -177,6 +178,7 @@
 [mii-exa-mtb-therapieempfehlung-kombinationstherapie]: RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.html
 [mii-exa-mtb-therapieempfehlung-trametinib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-trametinib.html
 [mii-exa-mtb-therapieplan-kombinationstherapie]: CarePlan-mii-exa-mtb-therapieplan-kombinationstherapie.html
+[mii-exa-onko-allgemeiner-leistungszustand-ecog]: Observation-mii-exa-onko-allgemeiner-leistungszustand-ecog.html
 [mii-exa-mtb-medication-request-mirvetuximab]: MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html
 [mii-exa-mtb-kim-musterperson-behandlungsepisode]: ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html
 [mii-exa-mtb-kim-musterperson-therapieplan]: CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.html
@@ -211,6 +213,9 @@
 [MTBChemo2MedicationStatement5]: MedicationStatement-MTBChemo2MedicationStatement5.html
 [MTBChemo2MedicationStatement6]: MedicationStatement-MTBChemo2MedicationStatement6.html
 [MTBChemo2Procedure]: Procedure-MTBChemo2Procedure.html
+[MyCoverage]: Coverage-MyCoverage.html
+[MyHospital]: Organization-MyHospital.html
+[MyInsurer]: Organization-MyInsurer.html
 [mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups]: Group-mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups.html
 [mii-exa-mtb-study-cldn6-evidence-variable-0]: EvidenceVariable-mii-exa-mtb-study-cldn6-evidence-variable-0.html
 [mii-exa-mtb-study-cldn6-evidence-variable-1]: EvidenceVariable-mii-exa-mtb-study-cldn6-evidence-variable-1.html
@@ -272,6 +277,7 @@
 [PatientKimMusterperson-Observation-7]: Observation-PatientKimMusterperson-Observation-7.html
 [PatientKimMusterperson-Observation-8]: Observation-PatientKimMusterperson-Observation-8.html
 [PatientKimMusterperson-Observation-9]: Observation-PatientKimMusterperson-Observation-9.html
+[PatientKimMusterperson-PrimaryDiagnosis-2]: Condition-PatientKimMusterperson-PrimaryDiagnosis-2.html
 [PatientKimMusterperson-Procedure-1]: Procedure-PatientKimMusterperson-Procedure-1.html
 [PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
 [PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html
@@ -287,5 +293,5 @@
 [mii-exa-mtb-study-request-tedova]: ServiceRequest-mii-exa-mtb-study-request-tedova.html
 [mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53]: Observation-mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53.html
-[mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan]: MedicationRequest-mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan.html
+[mii-exa-mtb-medication-request-trastuzumab-deruxtecan]: MedicationRequest-mii-exa-mtb-medication-request-trastuzumab-deruxtecan.html
 [mii-exa-mtb-kim-tumorzellgehalt-aszites]: Observation-mii-exa-mtb-kim-tumorzellgehalt-aszites.html

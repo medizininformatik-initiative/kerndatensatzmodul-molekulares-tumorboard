@@ -1472,6 +1472,13 @@
       },
       {
         "reference": {
+          "reference": "Bundle/mii-exa-mtb-kim-musterperson-bundle"
+        },
+        "name": "mii-exa-mtb-kim-musterperson-bundle",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Medication/mii-exa-mtb-medikation-dabrafenib"
         },
         "name": "mii-exa-mtb-medikation-dabrafenib",
@@ -1525,6 +1532,13 @@
         "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
         "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-onko-allgemeiner-leistungszustand-ecog"
+        },
+        "name": "mii-exa-onko-allgemeiner-leistungszustand-ecog",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -1773,6 +1787,27 @@
         "name": "MTBChemo2Procedure",
         "description": "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.06.2023",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie"
+      },
+      {
+        "reference": {
+          "reference": "Coverage/MyCoverage"
+        },
+        "name": "MyCoverage",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/MyHospital"
+        },
+        "name": "MyHospital",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/MyInsurer"
+        },
+        "name": "MyInsurer",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -2250,6 +2285,14 @@
       },
       {
         "reference": {
+          "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+        },
+        "name": "PatientKimMusterperson-PrimaryDiagnosis-2",
+        "description": "bestätigte Primärdiagnose",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Procedure/PatientKimMusterperson-Procedure-1"
         },
         "name": "PatientKimMusterperson-Procedure-1",
@@ -2370,7 +2413,7 @@
       },
       {
         "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan"
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
         },
         "name": "Trastuzumab deruxtecan",
         "description": "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenzgrad: m1B",
