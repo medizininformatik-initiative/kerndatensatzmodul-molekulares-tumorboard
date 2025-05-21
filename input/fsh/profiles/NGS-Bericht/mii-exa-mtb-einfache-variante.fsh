@@ -7,8 +7,9 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
+
 * code = $LNC#69548-6 "Genetic variant assessment"
-* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 
 * subject = Reference(Patient/example)

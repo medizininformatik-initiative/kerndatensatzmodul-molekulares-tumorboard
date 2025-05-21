@@ -5,8 +5,10 @@ Title: "MII PR MTB DNA Fusion"
 Description: "DNA-Fusion"
 * insert PR_Header
 
-* identifier MS 
+* identifier MS
 * identifier ^short = "VariantenId im Kontext des NGS-Befundes"
+* identifier ^definition = "Eindeutige ID der Variante im Kontext des NGS-Befundes."
+
 * focus MS 
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 

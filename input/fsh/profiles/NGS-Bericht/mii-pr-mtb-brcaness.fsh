@@ -6,6 +6,9 @@ Description: "Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zei
 * insert PR_Header
 
 * identifier MS
+* identifier ^short = "Biomarker-ID im Kontext des NGS-Befundes"
+* identifier ^definition = "Eindeutige Biomarker-ID im Kontext des NGS-Befundes."
+
 * focus MS 
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 
