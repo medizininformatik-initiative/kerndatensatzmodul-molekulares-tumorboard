@@ -19,22 +19,22 @@ Description: "Beispiel fuer eine Copy Number Variant (CNV)."
 * component[exact-start-end].valueRange.high.value = 43125364
 
 * component[copy-number].code = $LNC#82155-3
-* component[copy-number].valueQuantity = 3 UCUM#1 "Copy Number"
+* component[copy-number].valueQuantity = 3 '1' "Copy Number"
 
 * component[relative-copy-number].code = $mii-cs-mtb-molekulare-biomarker#relative-copy-number
-* component[relative-copy-number].valueQuantity = 1.5 UCUM#1 "Relative Copy Number"
+* component[relative-copy-number].valueQuantity = 1.5 '1' "Relative Copy Number"
 
 * component[cna].code = $mii-cs-mtb-molekulare-biomarker#copy-number-allele-a // TODO We need LOINC codes
-* component[cna].valueQuantity = 1 UCUM#1 "Copy Number Allel A"
+* component[cna].valueQuantity = 1 '1' "Copy Number Allel A"
 
 * component[cnb].code = $mii-cs-mtb-molekulare-biomarker#copy-number-allele-b // TODO We need LOINC codes
-* component[cnb].valueQuantity = 2 UCUM#1 "Copy Number Allel B"
+* component[cnb].valueQuantity = 2 '1' "Copy Number Allel B"
 
 * component[gene-studied].code = $LNC#48018-6
 * component[gene-studied].valueCodeableConcept = #HGNC:1100 "BRCA1"
 
 * component[reported-focality].code = $mii-cs-mtb-molekulare-biomarker#reported-focality // TODO We need LOINC codes
-* component[reported-focality].valueQuantity = 100 UCUM#% "Reported focality"
+* component[reported-focality].valueQuantity = 100 '%' "Reported focality"
 
 * component[cnv-type].code = $bwhc-cnv-type#type
 * component[cnv-type].valueCodeableConcept = $bwhc-cnv-type#high-level-gain "high-level-gain"
