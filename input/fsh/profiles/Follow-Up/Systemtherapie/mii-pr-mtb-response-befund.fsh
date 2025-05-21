@@ -24,7 +24,7 @@ Description: "Response Beurteilung nach DNPM"
 
 // für valueCodeableConcept eigenes CS & VS
 // https://simplifier.net/medizininformatikinitiative-modulonkologie/mii-cs-onko-verlauf-gesamtbeurteilung
-// entspricht nicht ganz dem was DNPM vorsieht
+// entspricht nicht ganz dem was DNPM vorsieht ...
 
 //ACHTUNG, nicht einfach überschreiben. Dann muss Onko entweder erweitert werden, oder es wird geslicet, dass entwerder das eine oder das andere genommen werden kann
 * valueCodeableConcept 0..1 MS
