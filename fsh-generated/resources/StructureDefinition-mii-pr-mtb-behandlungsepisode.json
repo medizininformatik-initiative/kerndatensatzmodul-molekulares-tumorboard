@@ -331,6 +331,25 @@
         "mustSupport": true
       },
       {
+        "id": "ClinicalImpression.supportingInfo:Vorbefund",
+        "path": "ClinicalImpression.supportingInfo",
+        "sliceName": "Vorbefund",
+        "short": "Vorbefund",
+        "definition": "Relevanter Vorbefund",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "ClinicalImpression.supportingInfo:Vortherapie",
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "Vortherapie",
@@ -370,19 +389,19 @@
         "mustSupport": true
       },
       {
-        "id": "ClinicalImpression.supportingInfo:Vorbefund",
+        "id": "ClinicalImpression.supportingInfo:Therapieplan",
         "path": "ClinicalImpression.supportingInfo",
-        "sliceName": "Vorbefund",
-        "short": "Vorbefund",
-        "definition": "Relevanter Vorbefund",
+        "sliceName": "Therapieplan",
+        "short": "Therapieplan",
+        "definition": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
-              "http://hl7.org/fhir/StructureDefinition/Observation"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
+              "http://hl7.org/fhir/StructureDefinition/CarePlan"
             ]
           }
         ],
