@@ -13,7 +13,10 @@ Usage: #example
 * basedOn = Reference(CarePlan/mii-exa-mtb-kim-musterperson-therapieplan)
 // Hier sonst auch wirkstoffgruppe angeben - nur bei targeted therapy macht das evtl. keinen Sinn 
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX26
+* medicationCodeableConcept.coding[=].version = "2025"
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX
+* medicationCodeableConcept.coding[=].version = "2025"
+
 * insert BeschlussPrioritaet(1)
 * insert BeschlussEvidenzZweiQuellen(m1A, http://doi.org, 10.1200/JCO.2022.40.16_suppl.5512, http://www.ncbi.nlm.nih.gov/pubmed, 38055253)
 
