@@ -14,6 +14,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * effectivePeriod.start ^definition = "Einschlussdatum Molekulares Tumorboard"
 * effectivePeriod.end ^short = "Abschlussdatum"
 * effectivePeriod.end ^definition = "Abschlussdatum Molekulares Tumorboard"
+* effectivePeriod.end MS
 
 * problem 0..* MS
 * problem ^slicing.discriminator.type = #type
