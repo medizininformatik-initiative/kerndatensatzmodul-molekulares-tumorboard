@@ -17,8 +17,7 @@ Description: "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalte
 * encounter = Reference(Encounter/example)
 * specimen = Reference(Specimen/example)
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#high "High BRCAness"
-
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 // Components
 * component[gene-studied].code.coding.system = $LNC
 * component[gene-studied].code.coding.code = $LNC#48018-6 "Gene studied"

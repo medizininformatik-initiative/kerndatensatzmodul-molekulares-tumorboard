@@ -28,6 +28,7 @@ Description: "Diagnose zum Primärtumor"
 * stage[OncoTree].assessment 1..1 MS
 * stage[OncoTree].assessment only Reference(MII_PR_MTB_Oncotree)
 
+
 // TODO: SCT prüfen
 // Tumor stage (spreading) first diagnosis date time
 * stage contains ErstdiagnoseZeitpunkt 0..1 MS
@@ -36,7 +37,7 @@ Description: "Diagnose zum Primärtumor"
 * stage[ErstdiagnoseZeitpunkt].assessment 1..1 MS
 * stage[ErstdiagnoseZeitpunkt].assessment only Reference(MII_PR_MTB_Tumorausbreitung)
 * stage[ErstdiagnoseZeitpunkt].type 1..1 MS
-* stage[ErstdiagnoseZeitpunkt].type.coding = $SCT#473302008 "Aware of diagnosis"
+* stage[ErstdiagnoseZeitpunkt].type.coding = $NCIT#C19251 "Stage at Diagnosis"
 
 // TODO: SCT prüfen
 // Tumor stage (spreading) molecular tumor board date time

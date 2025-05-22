@@ -56,10 +56,9 @@ Description: "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis v
 
 * component contains gene-studied 0..* 
 
-* component[gene-studied].code.coding.system = $LNC
-* component[gene-studied].code.coding.code = #48018-6
+* component[gene-studied].code.coding = $LNC#48018-6
 * component[gene-studied].valueCodeableConcept ^short = "The HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
-//* component[gene-studied].valueCodeableConcept from http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs (extensible)
+* component[gene-studied].valueCodeableConcept from http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs (extensible)
 
 * component contains biomarker-category 0..* MS
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
