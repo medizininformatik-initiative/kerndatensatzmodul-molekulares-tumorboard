@@ -1,7 +1,7 @@
 CodeSystem: MII_CS_MTB_Therapiestatusgrund
 Id: mii-cs-mtb-therapiestatusgrund
 Title: "MII CS Therapiestatusgrund"
-Description: "Begründung für Therapiestatus"
+Description: "Codesystem zum Status Grund der Systemischen Therapie nach DNPM"
 * insert CS_Header($mii-cs-mtb-therapiestatusgrund)
 
 * #payment-refused	                            "Kostenübernahme abgelehnt"                     "Kostenübernahme abgelehnt"
@@ -23,3 +23,4 @@ Description: "Begründung für Therapiestatus"
 * #regular-completion-with-dosage-reduction	    "Reguläres Ende mit Dosisreduktion"             "Reguläres Ende mit Dosisreduktion"
 * #regular-completion-with-substance-change     "Reguläres Ende mit Substanzwechsel"            "Reguläres Ende mit Substanzwechsel"
 * #other	                                    "Weitere Gründe"                                "Weitere Gründe"
+* #unknown                                      "Unbekannt"                                     "Unbekannt"
