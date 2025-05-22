@@ -58,7 +58,7 @@ Description: "Z.n. atypischer Lebersegmentresektion, kein eindeutiger Hinweis au
 * partOf = Reference(PatientKimMusterperson-Procedure-1)
 * status = #final
 * code.coding[+] = $SCT#237679004 "Status post (contextual qualifier) (qualifier value)"
-* code.coding[+] = $SCT#112231000 "Atypical (qualifier value) "
+* code.coding[+] = $SCT#112231000 "Atypical (qualifier value)"
 * code.coding[+] = $SCT#174430004 "Resection of segment of liver (procedure)"
 * valueCodeableConcept.coding[+] = $SCT#801911000000107 "Collection of fluid"
 * valueCodeableConcept.coding[+] = $SCT#262061000 "After surgery"

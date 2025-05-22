@@ -776,7 +776,9 @@
             "code": {
               "coding": [
                 {
-                  "code": "48018-6"
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
                 }
               ]
             },
@@ -852,7 +854,8 @@
         "valueQuantity": {
           "code": "{/100}",
           "value": 70,
-          "unit": "%"
+          "unit": "%",
+          "system": "http://unitsofmeasure.org"
         },
         "component": [
           {
@@ -953,7 +956,9 @@
             "code": {
               "coding": [
                 {
-                  "code": "48018-6"
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
                 }
               ]
             },
@@ -1046,7 +1051,9 @@
             "code": {
               "coding": [
                 {
-                  "code": "48018-6"
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
                 }
               ]
             },
@@ -1186,9 +1193,9 @@
         "code": {
           "coding": [
             {
-              "code": "73910-2",
-              "system": "http://loinc.org",
-              "display": "WT1 Ag [Presence] in Tissue by Immune stain"
+              "code": "1234806008",
+              "system": "http://snomed.info/sct",
+              "display": "Observation using immunohistochemistry (observable entity)"
             }
           ]
         },
@@ -1214,8 +1221,9 @@
             "valueCodeableConcept": {
               "coding": [
                 {
-                  "code": "HGNC:WT1",
-                  "system": "http://www.genenames.org/geneId"
+                  "code": "HGNC:12796",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "WT1"
                 },
                 {
                   "code": "LP65352-4",
@@ -1290,14 +1298,15 @@
             {
               "code": "14228-1",
               "system": "http://loinc.org",
-              "display": "Cells.estrogen receptor/cells in Tissue by Immune stain"
+              "display": "Cells.progesterone receptor/cells in Tissue by Immune stain"
             }
           ]
         },
         "valueQuantity": {
           "code": "/100",
           "value": 70,
-          "unit": "%"
+          "unit": "%",
+          "system": "http://unitsofmeasure.org"
         },
         "category": [
           {
@@ -1360,7 +1369,8 @@
         "valueQuantity": {
           "code": "/100",
           "value": 30,
-          "unit": "%"
+          "unit": "%",
+          "system": "http://unitsofmeasure.org"
         },
         "category": [
           {
@@ -2015,7 +2025,7 @@
             {
               "code": "112231000",
               "system": "http://snomed.info/sct",
-              "display": "Atypical (qualifier value) "
+              "display": "Atypical (qualifier value)"
             },
             {
               "code": "174430004",
@@ -5988,14 +5998,15 @@
           {
             "valueQuantity": {
               "value": 7,
-              "system": "http://unitsofmeasure.org"
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
             },
             "code": {
               "coding": [
                 {
                   "system": "http://loinc.org",
                   "code": "82155-3",
-                  "display": "Total Copy Number"
+                  "display": "Genomic structural variant copy number"
                 }
               ]
             }

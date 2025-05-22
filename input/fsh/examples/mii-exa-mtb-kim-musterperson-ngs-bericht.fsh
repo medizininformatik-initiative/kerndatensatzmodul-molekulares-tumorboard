@@ -144,7 +144,8 @@ Usage: #example
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:1589 "CCNE1"
 * component[cnv-type].code = $bwhc-cnv-type#type
 * component[cnv-type].valueCodeableConcept = $bwhc-cnv-type#high-level-gain "high-level-gain"
-* component[copy-number].code = $LNC#82155-3 "Total Copy Number"
+* component[copy-number].code = $LNC#82155-3 "Genomic structural variant copy number"
 * component[copy-number].valueQuantity.value = 7
 * component[copy-number].valueQuantity.system = $UCUM
+* component[copy-number].valueQuantity.code = #1
 
