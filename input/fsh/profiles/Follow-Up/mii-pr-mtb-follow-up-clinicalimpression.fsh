@@ -44,8 +44,8 @@ Description: "Follow-Up als Prozess des Einholens von Informationen über durchg
 * effective[x] ^definition = "Erfassungsdatum Durchführung Follow-Up"
 
 * supportingInfo 0..* MS
-* supportingInfo ^slicing.discriminator.type = #profile
-* supportingInfo ^slicing.discriminator.path = "reference.resolve()"
+* supportingInfo ^slicing.discriminator.type = #type
+* supportingInfo ^slicing.discriminator.path = "$this.resolve"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für die durch das Follow-Up gewonnenen Informationen"
 * supportingInfo ^slicing.ordered = false
@@ -56,11 +56,11 @@ Description: "Follow-Up als Prozess des Einholens von Informationen über durchg
 
 * supportingInfo[UmgesetzteTherapien] ^short = "Umgesetzte Therapien"
 * supportingInfo[UmgesetzteTherapien] ^definition = "Umgesetzte Therapien mit oder auch ohne Bezug auf die MTB-Empfehlungen"
-* supportingInfo[UmgesetzteTherapien] only Reference(MII_PR_MTB_Systemische_Therapie or Procedure)
+* supportingInfo[UmgesetzteTherapien] only Reference(Procedure)
 * supportingInfo[AntraegeKostenuebernahme] ^short = "Anträge Kostenübernahme"
 * supportingInfo[AntraegeKostenuebernahme] ^definition = "Anträge Kostenübernahme für die empfohlenen Therapien"
-* supportingInfo[AntraegeKostenuebernahme] only Reference(MII_PR_MTB_Antrag_Kostenuebernahme)
+* supportingInfo[AntraegeKostenuebernahme] only Reference(Claim)
 * supportingInfo[AntwortenKostenuebernahme] ^short = "Antworten Kostenübernahme"
 * supportingInfo[AntwortenKostenuebernahme] ^definition = "Antworten der Versicherungen auf die Anträge zur Kostenübernahme"
-* supportingInfo[AntwortenKostenuebernahme] only Reference(MII_PR_MTB_Antwort_Kostenuebernahme)
+* supportingInfo[AntwortenKostenuebernahme] only Reference(ClaimResponse)
  

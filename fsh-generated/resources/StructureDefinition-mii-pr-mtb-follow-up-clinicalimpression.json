@@ -145,8 +145,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "profile",
-              "path": "reference.resolve()"
+              "type": "type",
+              "path": "$this.resolve"
             }
           ],
           "rules": "open",
@@ -167,7 +167,6 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie",
               "http://hl7.org/fhir/StructureDefinition/Procedure"
             ]
           }
@@ -186,7 +185,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"
+              "http://hl7.org/fhir/StructureDefinition/Claim"
             ]
           }
         ],
@@ -204,7 +203,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"
+              "http://hl7.org/fhir/StructureDefinition/ClaimResponse"
             ]
           }
         ]
