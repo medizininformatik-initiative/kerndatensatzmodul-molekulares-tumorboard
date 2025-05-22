@@ -6,13 +6,14 @@ Description: "Bestätigte Primärdiagnose C48.2 für Kim Musterperson"
 * extension[Feststellungsdatum].valueDateTime = 2021-06-10
 * recordedDate = 2021-06-10
 * subject = Reference(Patient/PatientKimMusterperson)
-* clinicalStatus = #active
-* verificationStatus.coding[condition-ver-status] = $condition-ver-status#unconfirmed
-* verificationStatus.coding[primaertumorDiagnosesicherung] = $mii-cs-onko-primaertumor-diagnosesicherung#2
-* code.coding  = $ICD10GM#C48.2 "Bösartige Neubildung des Retroperitoneums und Peritoneums - Peritoneum, nicht näher bezeichnet"
+* clinicalStatus.coding = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* verificationStatus.coding[condition-ver-status][+] = $condition-ver-status#unconfirmed
+* verificationStatus.coding[primaertumorDiagnosesicherung][+] = $mii-cs-onko-primaertumor-diagnosesicherung#2
+* code.coding[+]  = $ICD10GM#C48.2 "Bösartige Neubildung des Retroperitoneums und Peritoneums - Peritoneum, nicht näher bezeichnet"
+* code.coding[=].version = "2023"
 * bodySite = $ICDO3#C56.9 "Ovar"
-* stage[ErstdiagnoseZeitpunkt].assessment = Reference(Observation/mii-exa-mtb-kim-tumorausbreitung)
-* stage[OncoTree].assessment = Reference(Observation/mii-exa-mtb-kim-oncotree)
+* stage[ErstdiagnoseZeitpunkt].assessment[+] = Reference(Observation/mii-exa-mtb-kim-tumorausbreitung)
+* stage[OncoTree].assessment[+] = Reference(Observation/mii-exa-mtb-kim-oncotree)
 
 Instance: mii-exa-mtb-kim-tumorausbreitung
 InstanceOf: MII_PR_MTB_Tumorausbreitung

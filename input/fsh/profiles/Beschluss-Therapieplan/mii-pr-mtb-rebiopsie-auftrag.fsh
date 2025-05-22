@@ -11,7 +11,10 @@ Description: "Auftrag zur (erneuten) Biopsie"
     draft: Geplant, nicht angefragt, 
     active: Biopsie, 
     completed: Abgeschlossen"
-
+* code 1..1 MS
+* code.coding = $SCT#86273004  "Biopsy (procedure)"
+* code ^short = "Empfehlung zur (Re-)Biopsie"
+* code ^definition = "Empfehlung zur (Re-)Biopsie"
 * reasonReference ^slicing.discriminator.type = #type
 * reasonReference ^slicing.discriminator.path = "reference.reference"
 * reasonReference ^slicing.rules = #open

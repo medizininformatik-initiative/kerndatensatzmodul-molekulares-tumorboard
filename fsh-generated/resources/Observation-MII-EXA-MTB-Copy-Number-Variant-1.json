@@ -31,6 +31,7 @@
         "coding": [
           {
             "code": "LA21270-6",
+            "system": "http://loinc.org",
             "display": "Chromosome 17"
           }
         ]
@@ -55,6 +56,11 @@
       }
     },
     {
+      "valueQuantity": {
+        "value": 3,
+        "code": "1",
+        "system": "http://unitsofmeasure.org"
+      },
       "code": {
         "coding": [
           {
@@ -62,60 +68,39 @@
             "code": "82155-3"
           }
         ]
-      },
-      "valueQuantity": {
-        "value": 3,
-        "code": "1",
-        "system": "http://unitsofmeasure.org",
-        "unit": "Copy Number"
       }
     },
     {
-      "code": {
-        "coding": [
-          {
-            "code": "relative-copy-number",
-            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
-          }
-        ]
-      },
       "valueQuantity": {
         "value": 1.5,
         "code": "1",
-        "system": "http://unitsofmeasure.org",
-        "unit": "Relative Copy Number"
+        "system": "http://unitsofmeasure.org"
+      },
+      "code": {
+        "code": "relative-copy-number",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
       }
     },
     {
-      "code": {
-        "coding": [
-          {
-            "code": "copy-number-allele-a",
-            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
-          }
-        ]
-      },
       "valueQuantity": {
         "value": 1,
         "code": "1",
-        "system": "http://unitsofmeasure.org",
-        "unit": "Copy Number Allel A"
+        "system": "http://unitsofmeasure.org"
+      },
+      "code": {
+        "code": "copy-number-allele-a",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
       }
     },
     {
-      "code": {
-        "coding": [
-          {
-            "code": "copy-number-allele-b",
-            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
-          }
-        ]
-      },
       "valueQuantity": {
         "value": 2,
         "code": "1",
-        "system": "http://unitsofmeasure.org",
-        "unit": "Copy Number Allel B"
+        "system": "http://unitsofmeasure.org"
+      },
+      "code": {
+        "code": "copy-number-allele-b",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
       }
     },
     {
@@ -137,19 +122,14 @@
       }
     },
     {
-      "code": {
-        "coding": [
-          {
-            "code": "reported-focality",
-            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
-          }
-        ]
-      },
       "valueQuantity": {
         "value": 100,
         "code": "%",
-        "system": "http://unitsofmeasure.org",
-        "unit": "Reported focality"
+        "system": "http://unitsofmeasure.org"
+      },
+      "code": {
+        "code": "reported-focality",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
       }
     },
     {
@@ -173,12 +153,8 @@
     },
     {
       "code": {
-        "coding": [
-          {
-            "code": "copy-number-neutral-loh",
-            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
-          }
-        ]
+        "code": "copy-number-neutral-loh",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
       },
       "valueCodeableConcept": {
         "coding": [

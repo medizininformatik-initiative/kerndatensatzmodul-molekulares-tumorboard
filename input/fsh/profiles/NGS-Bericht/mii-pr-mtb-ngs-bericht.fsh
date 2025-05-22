@@ -17,7 +17,7 @@ Description: "NGS-Bericht zu einer Probe"
 * specimen ^short = "Referenz auf Probe"
 
 * result ^slicing.discriminator.type = #profile
-* result ^slicing.discriminator.path = "$this"
+* result ^slicing.discriminator.path = "$this.resolve()"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice für Varianten & Biomarker des NGS-Berichts"
 * result ^slicing.ordered = false

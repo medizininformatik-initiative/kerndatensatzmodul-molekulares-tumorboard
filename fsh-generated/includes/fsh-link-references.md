@@ -8,7 +8,7 @@
 [MII-EXA-MTB-Response-Befund-2]: Observation-MII-EXA-MTB-Response-Befund-2.html
 [MII-EXA-MTB-Systemische-Therapie-1]: Procedure-MII-EXA-MTB-Systemische-Therapie-1.html
 [MII-EXA-MTB-Systemische-Therapie-Medication-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-1.html
-[MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1.html
+[MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1.html
 [MII-EXA-MTB-Systemische-Therapie-Medication-4]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-4.html
 [mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
 [mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html

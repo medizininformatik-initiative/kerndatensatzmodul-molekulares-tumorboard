@@ -10,7 +10,7 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 * category[geCategory] = $hl7-v2-0074#GE
 
 * code = $LNC#69548-6 "Genetic variant assessment"
-* valueCodeableConcept.coding.code = #LA9633-4 "Present"
+* valueCodeableConcept.coding.code = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 
 * subject = Reference(Patient/example)
@@ -18,7 +18,7 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 * component[chromosome-identifier].valueCodeableConcept.coding = $LNC#LA21270-6 "Chromosome 17"
 
 * component[gene-studied].code.coding = $LNC#48018-6 "Gene studied [ID]"
-* component[gene-studied].valueCodeableConcept = #HGNC:1097 "BRAF"
+* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:1097 "BRAF"
 
 * component[transcript-ref-seq].valueCodeableConcept = https://www.ncbi.nlm.nih.gov/refseq/#NM_133433.4
 
@@ -34,10 +34,10 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 // alt-allele
 
 * component[coding-hgvs].code = $LNC#48004-6 "DNA change (c.HGVS)"
-* component[coding-hgvs].valueCodeableConcept.coding.code = #HGVS:NM_004333.4:c.1799T>A
+* component[coding-hgvs].valueCodeableConcept.coding.code = $HGVS#HGVS:NM_004333.4:c.1799T>A
 
 * component[protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[protein-hgvs].valueCodeableConcept.coding.code = #HGVS:p.(Val600Glu)
+* component[protein-hgvs].valueCodeableConcept.coding.code = $HGVS#HGVS:p.(Val600Glu)
 
 // allellic read-depth
 

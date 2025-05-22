@@ -21,7 +21,7 @@ Description: "Molecular pathology report"
 * result ^short = "Diagnostik"
 
 * result ^slicing.discriminator.type = #profile
-* result ^slicing.discriminator.path = "$this"
+* result ^slicing.discriminator.path = "$this.resolve()"
 * result ^slicing.rules = #open
 * result  ^slicing.description = "Slices für verschiedene Inhalte eines Molekularpathologischen Reports. Diese Slices sind beliebig erweiterbar"
 * result contains Immunhistochemie 0..* MS and InSituHybridisierung 0..* MS

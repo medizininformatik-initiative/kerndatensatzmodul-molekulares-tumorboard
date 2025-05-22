@@ -3,11 +3,14 @@ InstanceOf: MII_PR_MTB_Follow_Up_ClinicalImpression
 Usage: #example
 Title: "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen"
 * status = #completed
-* investigation.code.coding.code = #completed // Daten im Bsp nicht vorhanden
+* code.coding = $SCT#390906007 "Follow-up encounter (procedure)"
+* effectiveDateTime = "2023-10-22"
+* previous = Reference(mii-exa-mtb-kim-musterperson-behandlungsepisode)
+* investigation.code.coding = $mii-cs-mtb-follow-up-status#completed // Daten im Bsp nicht vorhanden
 * subject = Reference(Patient/PatientKimMusterperson)
-* supportingInfo[UmgesetzteTherapien][0] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
-* supportingInfo[AntraegeKostenuebernahme][0] = Reference(MII-EXA-MTB-Antrag-Kostenuebernahme-1)
-* supportingInfo[AntwortenKostenuebernahme][0] = Reference(MII-EXA-MTB-Antwort-Kostenuebernahme-1)
+* supportingInfo[UmgesetzteTherapien][+] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
+* supportingInfo[AntraegeKostenuebernahme][+] = Reference(MII-EXA-MTB-Antrag-Kostenuebernahme-1)
+* supportingInfo[AntwortenKostenuebernahme][+] = Reference(MII-EXA-MTB-Antwort-Kostenuebernahme-1)
 
 
 Instance: MII-EXA-MTB-Systemische-Therapie-1
@@ -93,8 +96,8 @@ Title: "20.08.2023 CT T/A"
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1) 
 * valueCodeableConcept.coding.code = #CR
-* component[Lymphknoten_Verlauf].code.coding.code = #399656008
-* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K
+* component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
+* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K "kein Lymphknotenbefall nachweisbar"
 
 
 Instance: MII-EXA-MTB-Systemische-Therapie-Medication-4
@@ -166,9 +169,9 @@ Title: "22.10.2023 CT T/A"
 * subject = Reference(Patient/PatientKimMusterperson)
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
-* valueCodeableConcept.coding.code = #PR
-* component[Lymphknoten_Verlauf].code.coding.code = #399656008
-* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K
+* valueCodeableConcept.coding.code = #T "Teilremission (partial remission, PR)"
+* component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
+* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K "kein Lymphknotenbefall nachweisbar"
 
 
 

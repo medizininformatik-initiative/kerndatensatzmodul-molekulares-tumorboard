@@ -21,7 +21,7 @@ Id: mii-pr-mtb-insituhybridization-her2
 Title: "MII PR MTB In Situ Hybridization"
 Description: "In Situ Hybridization report"
 * insert PR_Header
-* code.coding = $LNC#18474-7 "ERBB2 gene duplication [Presence] in Tissue by FISH"
+* code.coding = $LNC#31150-6 "ERBB2 gene duplication [Presence] in Tissue by FISH"
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL360-9-9 //
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:2064 "ERBB2"

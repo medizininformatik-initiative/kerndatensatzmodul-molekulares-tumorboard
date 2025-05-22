@@ -14,6 +14,7 @@ Title: "Empfehlung Human-genetische Beratung"
 Description: "Empfehlung erneute Human-genetische Beratung wegen progrediente Aszites"
 * status = #completed
 * intent = #proposal
+* code.coding = $SCT#788339009 "Genetic consultation (procedure)"
 * subject = Reference(PatientKimMusterperson)
 * reasonCode = $mii-cs-mtb-auftrag-begruendung#secondary-tumor
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -25,6 +26,7 @@ Title: "Empfehlung Histologie-Evaluation"
 Description: "Empfehlung erneute histologische Evaluation wegen progrediente Aszites"
 * status = #draft
 * intent = #proposal
+* code.coding = $SCT#183825009 "Refer for histology (procedure)"
 * subject = Reference(PatientKimMusterperson)
 * reasonReference = Reference(mii-exa-mtb-kim-tumorzellgehalt-aszites)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -36,6 +38,7 @@ Title: "Empfehlung Biopsie"
 Description: "Empfehlung erneute Biopsie wegen progrediente Aszites"
 * status = #completed
 * intent = #proposal
+* code.coding = $SCT#86273004 "Biopsy (procedure)"
 * subject = Reference(PatientKimMusterperson)
 * reasonReference = Reference(mii-exa-mtb-kim-tumorzellgehalt-aszites)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)

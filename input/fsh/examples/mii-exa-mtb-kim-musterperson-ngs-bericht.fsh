@@ -21,9 +21,9 @@ Description: "Details zur Durchführung NGS-Bericht von Kim Musterperson"
 Usage: #example
 * status = #completed
 * subject = Reference(Patient/PatientKimMusterperson)
-* extension[genomic-study-analysis].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-1)
-* extension[genomic-study-analysis].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-2)
-* extension[genomic-study-analysis].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-3)
+* extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-1)
+* extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-2)
+* extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-3)
 Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-1
 InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Title: "MTB-NGS-Bericht Kim Musterperson"
@@ -144,7 +144,8 @@ Usage: #example
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:1589 "CCNE1"
 * component[cnv-type].code = $bwhc-cnv-type#type
 * component[cnv-type].valueCodeableConcept = $bwhc-cnv-type#high-level-gain "high-level-gain"
-* component[copy-number].code = $LNC#82155-3 "Total Copy Number"
+* component[copy-number].code = $LNC#82155-3 "Genomic structural variant copy number"
 * component[copy-number].valueQuantity.value = 7
 * component[copy-number].valueQuantity.system = $UCUM
+* component[copy-number].valueQuantity.code = #1
 

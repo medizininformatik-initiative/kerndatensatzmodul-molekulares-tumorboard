@@ -42,6 +42,16 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "patternCoding": {
+          "code": "94076-7",
+          "system": "http://loinc.org",
+          "display": "Mutations/Megabase [# Ratio] in Tumor"
+        },
+        "mustSupport": true
+      },
+      {
         "id": "Observation.subject",
         "path": "Observation.subject",
         "min": 1,
@@ -49,8 +59,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Patient",
-              "http://hl7.org/fhir/StructureDefinition/Group"
+              "http://hl7.org/fhir/StructureDefinition/Patient"
             ]
           }
         ],
