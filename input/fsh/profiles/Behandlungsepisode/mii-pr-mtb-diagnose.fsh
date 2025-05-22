@@ -19,7 +19,7 @@ Description: "Diagnose zum Primärtumor"
 * stage[WHOGradZNS].assessment 1..1 MS
 * stage[WHOGradZNS].assessment only Reference(MII_PR_MTB_WHO_Grad_Tumor_ZNS)
 * stage[WHOGradZNS].type 1..1 MS
-* stage[WHOGradZNS].type.coding = $SCT#396920006 "WHO grade for central nervous system tumour"
+* stage[WHOGradZNS].type.coding = $SCT#396920006 "WHO grade for central nervous system tumor"
 
 // OncoTree
 * stage contains OncoTree 0..1 MS

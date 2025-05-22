@@ -6,7 +6,9 @@ Description: "Priorität der (einzelnen) Empfehlung"
 * insert EX_Header($mii-ex-mtb-empfehlung-prioritaet)
 
 * value[x] only decimal or positiveInt
-* valuePositiveInt 1..1 MS
+* value[x] 1..1 MS
+* valueDecimal 0..1 MS
+* valuePositiveInt 0..1 MS
 
 * value[x] ^short = "Priorität"
 * value[x] ^definition = "Priorität dieser Empfehlung"
