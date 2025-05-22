@@ -24,7 +24,7 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
-* status = #fina
+* status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * category[labCategory].coding = $fhir-observation-category#laboratory
@@ -32,7 +32,7 @@ Usage: #example
 
 * code.coding = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding[+] = $LNC#LA11842-4 "2+"
-* component[+].code.coding.code = #gene-studied
+* component[+].code.coding = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
 
 Instance: PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu
@@ -43,7 +43,7 @@ Usage: #example
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * code.coding = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Her2low"
-* component[+].code.coding.code = #gene-studied
+* component[+].code.coding.code = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
 
 
@@ -57,9 +57,9 @@ Usage: #example
 * valueQuantity.code = #{/100}
 * valueQuantity.value = 70
 * valueQuantity.unit = "%"
-* component[+].code.coding.code = #gene-studied
-* component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:3791 "FOLR1"
-* component[=].valueCodeableConcept[=].coding = $LNC#LP440974-6 "Folate receptor alpha" //extra LOINC Part!
+* component[+].code.coding = $LNC#48018-6 "Gene studied"
+* component[=].valueCodeableConcept[+].coding[+] = $HGNC#HGNC:3791 "FOLR1"
+* component[=].valueCodeableConcept[=].coding[+] = $LNC#LP440974-6 "Folate receptor alpha" //extra LOINC Part!
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2
@@ -70,9 +70,9 @@ Usage: #example
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * code.coding = $LNC#55229-9 "Immune stain study" 
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
-* component[+].code.coding.code = #gene-studied
-* component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:11530 "TACSTD2"
-* component[=].valueCodeableConcept[=].coding = $UNIPROT#P09758  "Tumor-associated calcium signal transducer 2" 
+* component[+].code.coding.code = $LNC#48018-6 "Gene studied"
+* component[=].valueCodeableConcept[+].coding[+] = $HGNC#HGNC:11530 "TACSTD2"
+* component[=].valueCodeableConcept[=].coding[+] = $UNIPROT#P09758  "Tumor-associated calcium signal transducer 2" 
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-1-CA125
@@ -85,9 +85,9 @@ Usage: #example
 * code.coding = $LNC#48677-9 "Cancer Ag 125 [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.text = "Die Tumorzellen sind partiell positiv für CA125,..."
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
-* component[+].code.coding.code = #gene-studied
-* component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:11530 "TACSTD2"
-* component[=].valueCodeableConcept[=].coding = $UNIPROT#P09758  "Tumor-associated calcium signal transducer 2" 
+* component[+].code.coding.code = $LNC#48018-6 "Gene studied"
+* component[=].valueCodeableConcept[+].coding[+] = $HGNC#HGNC:11530 "TACSTD2"
+* component[=].valueCodeableConcept[=].coding[+] = $UNIPROT#P09758  "Tumor-associated calcium signal transducer 2" 
 
 
 

@@ -12,4 +12,4 @@ Description: "Beispiel fuer die Mutationslast in einer Tumorprobe mit Bezug zu m
 * encounter = Reference(Encounter/example)
 * valueQuantity = 21 $UCUM#1/1000000{Base} "Mutations/Megabase"
 * specimen = Reference(Specimen/example)
-* interpretation = $hl7-v3-observation-high-low-codes#high "TMB-H"
+* interpretation = $hl7-v3-observation-interpretation#H "TMB-H"
