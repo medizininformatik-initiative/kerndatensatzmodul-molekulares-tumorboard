@@ -318,7 +318,7 @@ InstanceOf: MII_PR_MTB_Studie
 Title: "TEDOVA"
 Description: "Studie: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA"
 Usage: #example
-* status = #draft
+* status = #active
 * identifier[+].system = $mii-ns-mtb-nct
 * identifier[=].value = "04713514"
 
@@ -339,7 +339,7 @@ InstanceOf: MII_PR_MTB_Studie
 Title: "CCNE1"
 Description: "Studie: CCNE1 ampl. OvCA"
 Usage: #example
-* status = #draft
+* status = #active
 
 Instance: mii-exa-mtb-study-request-ccne1
 InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
