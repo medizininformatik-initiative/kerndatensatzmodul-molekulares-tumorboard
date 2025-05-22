@@ -22,8 +22,8 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * medicationReference only Reference(MII_PR_Medikation_Medication) // + Medication (restricted by parent profile to profile only)
 
 * reasonReference 0..* MS
-* reasonReference ^slicing.discriminator.type = #type
-* reasonReference ^slicing.discriminator.path = "reference.reference"
+* reasonReference ^slicing.discriminator.type = #profile
+* reasonReference ^slicing.discriminator.path = "$this.resolve()"
 * reasonReference ^slicing.rules = #open
 * reasonReference ^slicing.description = "Slice für stützende Angaben zur Systemischen Therapie auf Basis des referenzierten Ressourcentyps"
 * reasonReference ^slicing.ordered = false

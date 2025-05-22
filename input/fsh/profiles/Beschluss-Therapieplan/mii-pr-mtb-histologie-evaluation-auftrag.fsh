@@ -16,8 +16,8 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * code.coding = $SCT#183825009  "Refer for histology (procedure)"
 * code ^short = "Empfehlung zur histologischen (Re-)Evaluation"
 * code ^definition = "Empfehlung zur histologischen (Re-)Evaluation"
-* reasonReference ^slicing.discriminator.type = #type
-* reasonReference ^slicing.discriminator.path = "reference.reference"
+* reasonReference ^slicing.discriminator.type = #profile
+* reasonReference ^slicing.discriminator.path = "$this.resolve()"
 * reasonReference ^slicing.rules = #open
 * reasonReference ^slicing.description = "Slice für referenzierten Histologiebefund oder bestimmten Tumorzellgehalt"
 * reasonReference ^slicing.ordered = false
@@ -26,13 +26,13 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * reasonReference[Histologie] ^short = "Histologiebefund"
 * reasonReference[Histologie] ^definition = "Verweis auf Histologiebefund"
 * reasonReference[Histologie] 0..1 MS
-* reasonReference[Histologie] only Reference(MII_PR_Onko_Befund or DiagnosticReport)
+* reasonReference[Histologie] only Reference(MII_PR_Onko_Befund)
 
 * reasonReference contains Tumorzellgehalt 0..1 MS
 * reasonReference[Tumorzellgehalt] ^short = "Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] ^definition = "Verweis auf bestimmten Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] 0..1 MS
-* reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt or Observation)
+* reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt)
 
 * specimen 0..* MS
 * specimen only Reference(

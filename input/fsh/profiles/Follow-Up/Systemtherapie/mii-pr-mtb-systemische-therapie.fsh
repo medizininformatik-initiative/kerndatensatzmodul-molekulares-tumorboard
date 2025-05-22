@@ -5,16 +5,15 @@ Title: "MII PR MTB Systemische Therapie"
 Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 * insert PR_Header
 
-
-
 * status MS
+* status from MII_VS_MTB_Systemische_Therapie_Status
 * status ^short = "not-done | in-progress | stopped | completed"
-* status ^definition = "
+* status ^definition = "Status der Systemischen Therapie"
+* status ^comment = "
         not-done: Die Therapie wurde nie angefangen und wird auch nicht mehr angefangen,
         in-progress: Die Therapie hat noch nicht angefangen oder läuft bereits,
         stopped: Die Therapie wurde bereits angefangen aber vorzeitig abgebrochen,
         completed: Die Therapie wurde plangemäß abgeschlossen"
-* status from MII_VS_MTB_Systemische_Therapie_Status
 
 * statusReason MS
 * statusReason ^short = "Status Grund"
@@ -24,21 +23,22 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 * statusReason.coding.code 1..1 MS 
 * statusReason.coding.code from MII_VS_MTB_Therapiestatusgrund
 
-* extension contains $fhir-ext-caused-by named causedBy 0..1 MS
-* extension[causedBy] ^short = "Therapieempfehlung"
-* extension[causedBy] ^definition = "Verweis auf die MTB Therapieempfehlung"
-* extension[causedBy].valueReference only Reference(MII_PR_Medikation_MedicationRequest or MII_PR_MTB_Therapieempfehlung or MedicationRequest)
-
 * subject MS
 
 * performed[x] MS
 * performed[x] only Period
-* performed[x] ^short = "Durchführungszeitraum"
-* performed[x] ^definition = "Durchführungszeitraum der Therapie"
+* performedPeriod ^short = "Durchführungszeitraum"
+* performedPeriod ^definition = "Durchführungszeitraum der Therapie"
+
 * basedOn 0..1 MS
-* basedOn only Reference(MII_PR_MTB_Therapieplan)
+* basedOn only Reference(MII_PR_MTB_Therapieplan or CarePlan)
 * basedOn ^short = "MTB Therapieplan"
 * basedOn ^definition = "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 
 * note 0..1 MS 
 * note ^short = "Bemerkungen"
+
+* extension contains $fhir-ext-caused-by named causedBy 0..1 MS
+* extension[causedBy] ^short = "Therapieempfehlung"
+* extension[causedBy] ^definition = "Verweis auf die MTB Therapieempfehlung"
+* extension[causedBy].valueReference only Reference(MII_PR_Medikation_MedicationRequest or MII_PR_MTB_Therapieempfehlung or MedicationRequest)

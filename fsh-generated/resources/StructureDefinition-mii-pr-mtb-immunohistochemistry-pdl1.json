@@ -70,10 +70,14 @@
       {
         "id": "Observation.component:tps-score.code",
         "path": "Observation.component.code",
-        "patternCoding": {
-          "code": "C184941",
-          "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
-          "display": "PD-L1 Tumor Proportion Score"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C184941",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "PD-L1 Tumor Proportion Score"
+            }
+          ]
         },
         "mustSupport": true
       },
@@ -122,10 +126,14 @@
       {
         "id": "Observation.component:cps-score.code",
         "path": "Observation.component.code",
-        "patternCoding": {
-          "code": "C176582",
-          "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
-          "display": "PD-L1 Combined Positive Score"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C176582",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "PD-L1 Combined Positive Score"
+            }
+          ]
         },
         "mustSupport": true
       },
@@ -174,10 +182,14 @@
       {
         "id": "Observation.component:ics-score.code",
         "path": "Observation.component.code",
-        "patternCoding": {
-          "code": "C199175",
-          "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
-          "display": "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C199175",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+            }
+          ]
         },
         "mustSupport": true
       },
@@ -226,10 +238,14 @@
       {
         "id": "Observation.component:tc-score.code",
         "path": "Observation.component.code",
-        "patternCoding": {
-          "code": "83053-9",
-          "system": "http://loinc.org",
-          "display": "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "83053-9",
+              "system": "http://loinc.org",
+              "display": "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+            }
+          ]
         },
         "mustSupport": true
       },

@@ -24,7 +24,7 @@ Description: "Lokale Tumorausbreitung bei Kim Musterperson"
 * category = $SCT#473302008
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = 2021-06-10 
-* valueCodeableConcept = $SCT#255127006 "Local tumor spread"
+* valueCodeableConcept = $SCT#255127006
 
 Instance: mii-exa-mtb-kim-oncotree
 InstanceOf: MII_PR_MTB_Oncotree

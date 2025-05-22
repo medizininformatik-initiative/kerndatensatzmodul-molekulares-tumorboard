@@ -65,8 +65,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "reference.reference"
+              "type": "profile",
+              "path": "$this.resolve()"
             }
           ],
           "rules": "open",

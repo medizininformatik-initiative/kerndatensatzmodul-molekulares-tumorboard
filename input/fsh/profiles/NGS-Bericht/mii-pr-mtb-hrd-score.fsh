@@ -23,7 +23,7 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * interpretation MS
 * interpretation from $hl7-v3-observation-high-low-codes
 
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #closed
 * component ^slicing.description = "Elements of the HRD Score"

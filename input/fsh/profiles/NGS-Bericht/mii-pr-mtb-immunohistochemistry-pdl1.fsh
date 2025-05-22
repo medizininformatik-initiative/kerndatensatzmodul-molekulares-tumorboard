@@ -31,14 +31,14 @@ Description: "Immunhistorchemistry report"
 
 * component[tps-score] MS
 * component[tps-score].code MS // Code System noch spezifizieren
-* component[tps-score].code ^patternCoding = $NCIT#C184941	"PD-L1 Tumor Proportion Score"	 
+* component[tps-score].code = $NCIT#C184941	"PD-L1 Tumor Proportion Score"	 
 * component[tps-score].valueQuantity MS 
 * component[tps-score] ^short = "TPS-Score"
 * component[tps-score] ^definition = "Tumor Proportion Score (TPS) - Score für PD-L1-Expression in Tumorzellen. Der TPS ist der Anteil der PD-L1-positiven Tumorzellen im Verhältnis zu den Gesamtzellen. Der TPS wird in Prozent angegeben. Ein TPS von 1% oder mehr gilt als positiv." 
 * component[tps-score].interpretation MS
 * component[cps-score] MS
 * component[cps-score].code MS 
-* component[cps-score].code ^patternCoding = $NCIT#C176582 "PD-L1 Combined Positive Score" 
+* component[cps-score].code = $NCIT#C176582 "PD-L1 Combined Positive Score" 
 * component[cps-score].valueQuantity MS 
 * component[cps-score].interpretation MS
 
@@ -47,7 +47,7 @@ Description: "Immunhistorchemistry report"
 
 * component[ics-score] MS
 * component[ics-score].code MS 
-* component[ics-score].code ^patternCoding = $NCIT#C199175 "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+* component[ics-score].code = $NCIT#C199175 "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
 * component[ics-score].valueQuantity MS // Wie spezifiziere ich high and low?
 * component[ics-score].interpretation MS
 
@@ -56,7 +56,7 @@ Description: "Immunhistorchemistry report"
 
 * component[tc-score] MS
 * component[tc-score].code MS
-* component[tc-score].code ^patternCoding = $LNC#83053-9 "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+* component[tc-score].code = $LNC#83053-9 "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
 * component[tc-score].valueQuantity MS // Wie spezifiziere ich high and low?
 * component[tc-score].interpretation MS
 * component[tc-score] ^short = "TC-Score / TPS-Score"

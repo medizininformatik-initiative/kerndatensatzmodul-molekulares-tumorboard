@@ -19,7 +19,7 @@ Description: "Immunhistorchemistry report"
 
 //* valueCodeableConcept from 
 
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Immunohistochemische Ergebnisse"
