@@ -144,7 +144,7 @@ Usage: #definition
 * insert SupportSearchParam(prioritaet, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-request-group-extension-prioritaet, #number, #SHALL) //new
 * insert SupportSearchParam(evidenzgraduierung, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-extension-evidenzgraduierung, #token, #SHALL) //new
 * insert SupportSearchParam(publikation, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-request-group-extension-publikation, #token, #SHALL) //new
-// hier noch supportingInfo?
+* insert SupportSearchParam(supporting-info, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-medicationrequest-supporting-info, #reference, #SHALL) //new
 
 
 // Claim requirements
@@ -262,6 +262,10 @@ Usage: #definition
 * insert SupportSearchParam(component-value-range-high, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-observation-valuerange-high, #quantity, #SHALL) //new
 * insert SupportSearchParam(component-value-range-low,  https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-observation-valuerange-low, #quantity, #SHALL) //new
 * insert SupportSearchParam(interpretation, https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-observation-interpretation,  #token, #SHALL)
+* insert SupportSearchParam(hrd-component-lst, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-hrd-score-lst, #number, #SHALL) //new
+* insert SupportSearchParam(hrd-component-tai, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-hrd-score-tai, #number, #SHALL) //new
+* insert SupportSearchParam(hrd-component-loh, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-hrd-score-loh, #number, #SHALL) //new
+
 // * insert SupportSearchParam(component-value-ratio, , #token, #SHALL) // gibts noch nicht
 // * insert SupportSearchParam(reasonReference, , #reference, #SHALL) gibt es nicht
 // * insert SupportSearchParam(note, https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-observation-note, #string, #SHALL)

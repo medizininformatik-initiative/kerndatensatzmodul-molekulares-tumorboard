@@ -20,5 +20,5 @@ RuleSet: SystemischeTherapieMapping
   * Status -> "Procedure.status"
   * Wirkstoffe -> "MedicationStatement.partOf"
   * Dosisdichte -> "MedicationStatement.dosage"
-  
+  * insert ResponseBefundMapping
 
