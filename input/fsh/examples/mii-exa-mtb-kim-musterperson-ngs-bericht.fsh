@@ -31,15 +31,14 @@ Description: "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500"
 Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
-* extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#ngs-mps "Next Generation Sequencing / Massively Parallel Sequencing" 
+* extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#ngs-mps "Next-Generation (NGS)/Massively parallel sequencing (MPS)" 
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
 * extension[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "SNV" 
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
 * extension[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "MNV" 
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build"
-* extension[=].valueCodeableConcept = $LNC#LA30107-3 "GRCh38"
-* extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build"
-* extension[=].valueCodeableConcept = $LNC#LA30107-3 "GRCh38"
+* extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+
 
 
 
