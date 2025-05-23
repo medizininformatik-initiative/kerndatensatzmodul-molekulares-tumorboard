@@ -81,6 +81,7 @@
 [MII_CS_MTB_Response_Befund_Beurteilung]: CodeSystem-mii-cs-mtb-response-befund-beurteilung.html
 [MII_CS_MTB_Therapiestatusgrund]: CodeSystem-mii-cs-mtb-therapiestatusgrund.html
 [MII_CS_MTB_Zulassungsstatus]: CodeSystem-mii-cs-mtb-zulassungsstatus.html
+[MII_EX_MTB_GenomicStudyAnalysis_QC]: StructureDefinition-mii-ex-mtb-genomic-study-analysis-qc.html
 [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium]: StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
 [MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung]: StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-entscheidung.html

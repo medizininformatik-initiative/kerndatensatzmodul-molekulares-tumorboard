@@ -12,7 +12,11 @@ Description: "Die Genomic Data analysis beschreibt die Methodik einer bestimmten
 * extension[focus] MS
 * extension[specimen] MS
 * extension[device] MS
-* status 
+* extension[regions] MS
+
+* extension contains MII_EX_MTB_GenomicStudyAnalysis_QC named qc 0..1 MS
+
+* status MS 
 * identifier MS
 * category MS
 * performed[x] MS
