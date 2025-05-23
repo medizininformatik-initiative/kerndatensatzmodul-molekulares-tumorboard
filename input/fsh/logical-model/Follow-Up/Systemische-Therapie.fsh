@@ -18,7 +18,7 @@ RuleSet: SystemischeTherapieMapping
   * TherapieEmpfehlung -> "Procedure.extension[causedBy]"
   * Bemerkungen -> "Procedure.note"
   * Status -> "Procedure.status"
-  * Wirkstoffe -> "MedicationStatement.partOf"
+  * Wirkstoffe -> "MedicationStatement.medication"
   * Dosisdichte -> "MedicationStatement.dosage"
   * insert ResponseBefundMapping
 
