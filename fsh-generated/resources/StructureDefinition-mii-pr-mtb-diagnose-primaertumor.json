@@ -54,7 +54,6 @@
           "description": "Slice für Stage/Grad",
           "ordered": false
         },
-        "min": 2,
         "mustSupport": true
       },
       {
@@ -95,7 +94,7 @@
         "patternCoding": {
           "code": "396920006",
           "system": "http://snomed.info/sct",
-          "display": "WHO grade for central nervous system tumour"
+          "display": "WHO grade for central nervous system tumor"
         }
       },
       {
@@ -129,7 +128,7 @@
         "sliceName": "ErstdiagnoseZeitpunkt",
         "short": "Tumorausbreitung Erstdiagnose",
         "definition": "Tumorausbreitung zum Zeitpunkt der Erstdiagnose",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "mustSupport": true
       },
@@ -159,9 +158,9 @@
         "path": "Condition.stage.type.coding",
         "min": 1,
         "patternCoding": {
-          "code": "473302008",
-          "system": "http://snomed.info/sct",
-          "display": "Aware of diagnosis"
+          "code": "C19251",
+          "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+          "display": "Stage at Diagnosis"
         }
       },
       {
@@ -170,7 +169,7 @@
         "sliceName": "MolekularesTumorboardZeitpunkt",
         "short": "Tumorausbreitung Molekulares Tumorboard",
         "definition": "Tumorausbreitung zum Zeitpunkt des Molekularen Tumorboard",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "mustSupport": true
       },

@@ -27,6 +27,16 @@
   "differential": {
     "element": [
       {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
         "short": "Probe",
@@ -38,8 +48,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "reference.reference"
+              "type": "value",
+              "path": "code"
             }
           ],
           "rules": "open",
@@ -52,6 +62,7 @@
         "path": "Observation.component",
         "sliceName": "tps-score",
         "short": "TPS-Score",
+        "definition": "Tumor Proportion Score (TPS) - Score für PD-L1-Expression in Tumorzellen. Der TPS ist der Anteil der PD-L1-positiven Tumorzellen im Verhältnis zu den Gesamtzellen. Der TPS wird in Prozent angegeben. Ein TPS von 1% oder mehr gilt als positiv.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -59,6 +70,15 @@
       {
         "id": "Observation.component:tps-score.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C184941",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "PD-L1 Tumor Proportion Score"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -76,16 +96,21 @@
         }
       },
       {
-        "id": "Observation.component:tps-score.value[x]:valueInteger",
+        "id": "Observation.component:tps-score.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
-        "sliceName": "valueInteger",
+        "sliceName": "valueQuantity",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "integer"
+            "code": "Quantity"
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:tps-score.interpretation",
+        "path": "Observation.component.interpretation",
         "mustSupport": true
       },
       {
@@ -93,6 +118,7 @@
         "path": "Observation.component",
         "sliceName": "cps-score",
         "short": "CPS-Score",
+        "definition": "Combined Positive Score (CPS) - Score für PD-L1-Expression in Tumorzellen und Immunzellen. Der CPS ist der Anteil der PD-L1-positiven Tumorzellen und Immunzellen im Verhältnis zu den Gesamtzellen. Der CPS wird in Prozent angegeben. Ein CPS von 1% oder mehr gilt als positiv.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -100,6 +126,15 @@
       {
         "id": "Observation.component:cps-score.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C176582",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "PD-L1 Combined Positive Score"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -117,16 +152,21 @@
         }
       },
       {
-        "id": "Observation.component:cps-score.value[x]:valueInteger",
+        "id": "Observation.component:cps-score.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
-        "sliceName": "valueInteger",
+        "sliceName": "valueQuantity",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "integer"
+            "code": "Quantity"
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:cps-score.interpretation",
+        "path": "Observation.component.interpretation",
         "mustSupport": true
       },
       {
@@ -134,6 +174,7 @@
         "path": "Observation.component",
         "sliceName": "ics-score",
         "short": "ICS-Score",
+        "definition": "Immune Cell Score (ICS) - Score für PD-L1-Expression in Immunzellen. Der ICS ist der Anteil der PD-L1-positiven Immunzellen im Verhältnis zu den Gesamtzellen. Der ICS wird in Prozent angegeben. Ein ICS von 1% oder mehr gilt als positiv.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -141,6 +182,15 @@
       {
         "id": "Observation.component:ics-score.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C199175",
+              "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
+              "display": "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -158,23 +208,29 @@
         }
       },
       {
-        "id": "Observation.component:ics-score.value[x]:valueRange",
+        "id": "Observation.component:ics-score.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
-        "sliceName": "valueRange",
+        "sliceName": "valueQuantity",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "Range"
+            "code": "Quantity"
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:ics-score.interpretation",
+        "path": "Observation.component.interpretation",
         "mustSupport": true
       },
       {
         "id": "Observation.component:tc-score",
         "path": "Observation.component",
         "sliceName": "tc-score",
-        "short": "TC-Score",
+        "short": "TC-Score / TPS-Score",
+        "definition": "Tumor Cell Score (TC-Score) - Score für PD-L1-Expression in Tumorzellen. Der TC-Score ist der Anteil der PD-L1-positiven Tumorzellen im Verhältnis zu den Gesamtzellen. Der TC-Score wird in Prozent angegeben. Ein TC-Score von 1% oder mehr gilt als positiv.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -182,6 +238,15 @@
       {
         "id": "Observation.component:tc-score.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "83053-9",
+              "system": "http://loinc.org",
+              "display": "Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -199,16 +264,21 @@
         }
       },
       {
-        "id": "Observation.component:tc-score.value[x]:valueRange",
+        "id": "Observation.component:tc-score.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
-        "sliceName": "valueRange",
+        "sliceName": "valueQuantity",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "Range"
+            "code": "Quantity"
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:tc-score.interpretation",
+        "path": "Observation.component.interpretation",
         "mustSupport": true
       }
     ]

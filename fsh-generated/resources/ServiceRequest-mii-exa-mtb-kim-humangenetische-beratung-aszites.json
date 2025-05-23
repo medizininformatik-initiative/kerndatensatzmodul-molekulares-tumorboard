@@ -1,0 +1,38 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "mii-exa-mtb-kim-humangenetische-beratung-aszites",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "788339009",
+        "system": "http://snomed.info/sct",
+        "display": "Genetic consultation (procedure)"
+      }
+    ]
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "secondary-tumor",
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung"
+        }
+      ]
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+    }
+  ],
+  "status": "completed",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

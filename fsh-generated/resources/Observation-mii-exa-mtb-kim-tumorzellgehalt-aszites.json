@@ -1,0 +1,31 @@
+{
+  "resourceType": "Observation",
+  "id": "mii-exa-mtb-kim-tumorzellgehalt-aszites",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "93356-4",
+        "system": "http://loinc.org",
+        "display": "Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method"
+      }
+    ]
+  },
+  "status": "final",
+  "valueQuantity": {
+    "value": 0.028,
+    "code": "%"
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "histologic",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt"
+      }
+    ]
+  }
+}

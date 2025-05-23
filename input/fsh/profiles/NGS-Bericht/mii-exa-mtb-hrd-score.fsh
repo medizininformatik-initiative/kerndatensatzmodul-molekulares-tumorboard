@@ -7,7 +7,7 @@ Description: "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombin
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * category[geCategory] = $hl7-v2-0074#GE
-* code = $LNC#107286-7 "Homologous recombination deficiency status analysis [Presence] in Tissue by Molecular genetics method'"
+* code = $LNC#107286-7 "Homologous recombination deficiency status analysis [Presence] in Tissue by Molecular genetics method"
 
 * subject = Reference(Patient/example)
 * encounter = Reference(Encounter/example)
@@ -16,7 +16,7 @@ Description: "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombin
 
 * valueInteger = 43
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#high 
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H
 
 * component[LOH].valueInteger = 14
 * component[TAI].valueInteger = 12

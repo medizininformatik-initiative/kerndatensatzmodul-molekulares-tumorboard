@@ -1,0 +1,41 @@
+{
+  "resourceType": "Observation",
+  "id": "mii-exa-mtb-kim-tumorausbreitung",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "473302008",
+          "system": "http://snomed.info/sct"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "371508000",
+        "system": "http://snomed.info/sct",
+        "display": "Tumor stage"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "255127006"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime": "2021-06-10"
+}

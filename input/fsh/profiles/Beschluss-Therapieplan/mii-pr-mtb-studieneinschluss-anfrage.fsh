@@ -12,6 +12,7 @@ Description: "Anfrage zum Studieneinschluss"
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+
 * extension contains http://hl7.org/fhir/StructureDefinition/request-statusReason named statusReason 0..1 MS
 * extension[statusReason].value[x] only CodeableConcept
 * extension[statusReason].valueCodeableConcept.coding 1..1 MS
@@ -20,8 +21,10 @@ Description: "Anfrage zum Studieneinschluss"
 
 * intent MS
 * intent = #proposal
+
 * category MS
 * category = $SCT#110465008 "Clinical trial (procedure)"
+
 * code MS
 * code.coding 1..1 MS
 * code = $SCT#702475000 "Referral to clinical trial (procedure)"
@@ -30,8 +33,8 @@ Description: "Anfrage zum Studieneinschluss"
 * reasonReference only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
 * supportingInfo 0..* MS
-* supportingInfo ^slicing.discriminator.type = #value
-* supportingInfo ^slicing.discriminator.path = "system"
+* supportingInfo ^slicing.discriminator.type = #type
+* supportingInfo ^slicing.discriminator.path = "$this"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für Referenz auf eine Studie"
 * supportingInfo ^slicing.ordered = false

@@ -134,4 +134,10 @@ Usage: #definition
 * group[=].element[=].display = "Weitere Gründe"
 * group[=].element[=].target.code = #74964007
 * group[=].element[=].target.display = "Other (qualifier value)"
-* group[=].element[=].target.equivalence = #equivalent 
+* group[=].element[=].target.equivalence = #equivalent
+
+* group[=].element[+].code = #unknown
+* group[=].element[=].display = "Unbekannt"
+* group[=].element[=].target.code = #261665006
+* group[=].element[=].target.display = "Unknown (qualifier value)"
+* group[=].element[=].target.equivalence = #equivalent

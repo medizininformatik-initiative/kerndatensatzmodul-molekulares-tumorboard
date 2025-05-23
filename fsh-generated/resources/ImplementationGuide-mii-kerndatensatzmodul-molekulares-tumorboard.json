@@ -51,19 +51,19 @@
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
       "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.diagnose/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.diagnose",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
       "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
       "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.fall/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.fall",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ImplementationGuide/mii-ig-fall",
       "id": "de_medizininformatikinitiative_kerndatensatz_fall"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
       "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.medikation/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.medikation",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation",
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
@@ -93,13 +93,13 @@
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.person",
       "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.person/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.person",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ImplementationGuide/mii-ig-person",
       "id": "de_medizininformatikinitiative_kerndatensatz_person"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.prozedur",
       "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.prozedur/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.prozedur",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ImplementationGuide/mii-ig-prozedur",
       "id": "de_medizininformatikinitiative_kerndatensatz_prozedur"
     },
     {
@@ -189,7 +189,7 @@
       },
       {
         "reference": {
-          "reference": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1"
+          "reference": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1"
         },
         "name": "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement"
@@ -347,6 +347,14 @@
       },
       {
         "reference": {
+          "reference": "Condition/mii-exa-mtb-kim-diagnose"
+        },
+        "name": "Bestätigte Primärdiagnose",
+        "description": "Bestätigte Primärdiagnose C48.2 für Kim Musterperson",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor"
+      },
+      {
+        "reference": {
           "reference": "Organization/mii-exa-mtb-study-sponsor-biontech"
         },
         "name": "BioNTech Cell & Gene Therapies GmbH",
@@ -494,7 +502,31 @@
         },
         "name": "Einwilligung zur MTB-Besprechung Kim Musterperson",
         "description": "Einwilligung von Kim Musterperson zur Besprechung im Molekularen Tumorboard vom 02.01.2023",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites"
+        },
+        "name": "Empfehlung Biopsie",
+        "description": "Empfehlung erneute Biopsie wegen progrediente Aszites",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/mii-exa-mtb-kim-histologie-evaluation-aszites"
+        },
+        "name": "Empfehlung Histologie-Evaluation",
+        "description": "Empfehlung erneute histologische Evaluation wegen progrediente Aszites",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites"
+        },
+        "name": "Empfehlung Human-genetische Beratung",
+        "description": "Empfehlung erneute Human-genetische Beratung wegen progrediente Aszites",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag"
       },
       {
         "reference": {
@@ -517,6 +549,22 @@
         "name": "Genomic Study Analysis",
         "description": "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-oncotree"
+        },
+        "name": "High-Grade Neuroendocrine Carcinoma of the Ovary",
+        "description": "High-Grade Neuroendocrine Carcinoma of the Ovary (HGONEC) bei Kim Musterperson",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-tumorausbreitung"
+        },
+        "name": "Lokale Tumorausbreitung",
+        "description": "Lokale Tumorausbreitung bei Kim Musterperson",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung"
       },
       {
         "reference": {
@@ -680,6 +728,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-msi-method-type"
+        },
+        "name": "MII CS MSI Method Type",
+        "description": "Codesystem, welches die verwendete MSI-Bestimmungsmethode gemäß dnpm-Kodierung auflistet.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/mii-cs-mtb-response-befund-beurteilung"
         },
         "name": "MII CS Response Befund Beurteilung",
@@ -688,6 +744,7 @@
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode"
         },
         "name": "MII CS Response Befund Beurteilungsmethode",
@@ -704,10 +761,12 @@
       },
       {
         "reference": {
+=======
+>>>>>>> dev
           "reference": "CodeSystem/mii-cs-mtb-therapiestatusgrund"
         },
         "name": "MII CS Therapiestatusgrund",
-        "description": "Begründung für Therapiestatus",
+        "description": "Codesystem zum Status Grund der Systemischen Therapie nach DNPM",
         "exampleBoolean": false
       },
       {
@@ -1328,6 +1387,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-msi"
+        },
+        "name": "MII VS Mikrosatelliteninstabilität",
+        "description": "ValueSet zum MSI-Status auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL1057-0 Stable|Unstable|Indeterminate",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-mmr-proficiency"
         },
         "name": "MII VS Mismatch Repair Protein Proficiency",
@@ -1360,10 +1427,10 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-msi"
+          "reference": "ValueSet/mii-vs-mtb-msi-method-type"
         },
-        "name": "MII VS Molekulare Biomarker",
-        "description": "ValueSet zum MSI-Status auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL1057-0 Stable|Unstable|Indeterminate",
+        "name": "MII VS MSI Method Type",
+        "description": "ValueSet zum CS MSI Method Type",
         "exampleBoolean": false
       },
       {
@@ -1400,6 +1467,7 @@
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "ValueSet/mii-vs-mtb-response-befund-beurteilungsmethode"
         },
         "name": "MII VS Response Befund Beurteilungsmethode",
@@ -1416,6 +1484,8 @@
       },
       {
         "reference": {
+=======
+>>>>>>> dev
           "reference": "ValueSet/mii-vs-mtb-therapiestatusgrund"
         },
         "name": "MII VS Therapiestatusgrund",
@@ -1445,6 +1515,13 @@
         "name": "MII VS Zulassungsstatus",
         "description": "ValueSet zum Zulassungsstatus",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/mii-exa-mtb-kim-musterperson-bundle"
+        },
+        "name": "mii-exa-mtb-kim-musterperson-bundle",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -1501,6 +1578,13 @@
         "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
         "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-onko-allgemeiner-leistungszustand-ecog"
+        },
+        "name": "mii-exa-onko-allgemeiner-leistungszustand-ecog",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -1749,6 +1833,27 @@
         "name": "MTBChemo2Procedure",
         "description": "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.06.2023",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie"
+      },
+      {
+        "reference": {
+          "reference": "Coverage/MyCoverage"
+        },
+        "name": "MyCoverage",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/MyHospital"
+        },
+        "name": "MyHospital",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/MyInsurer"
+        },
+        "name": "MyInsurer",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -2226,6 +2331,14 @@
       },
       {
         "reference": {
+          "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+        },
+        "name": "PatientKimMusterperson-PrimaryDiagnosis-2",
+        "description": "bestätigte Primärdiagnose",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Procedure/PatientKimMusterperson-Procedure-1"
         },
         "name": "PatientKimMusterperson-Procedure-1",
@@ -2346,11 +2459,19 @@
       },
       {
         "reference": {
-          "reference": "MedicationRequest/mii-exa-mtb-medication-requestion-trastuzumab-deruxtecan"
+          "reference": "MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
         },
         "name": "Trastuzumab deruxtecan",
         "description": "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenzgrad: m1B",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites"
+        },
+        "name": "Tumorzellgehalt Aszites",
+        "description": "Tumorzellgehalt progrediente Aszites (20ml/700ml maligne Tumorzellen)",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
       }
     ],
     "page": {

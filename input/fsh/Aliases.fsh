@@ -14,6 +14,8 @@ Alias: $mii-cs-onko-therapieplanung-typ = https://www.medizininformatik-initiati
 Alias: $mii-cs-onko-therapie-grund-ende = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-therapie-grund-ende
 Alias: $mii-pr-onko-specimen = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen
 Alias: $mii-ex-onko-systemische-therapie-intention = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention
+Alias: $mii-cs-onko-verlauf-lymphknoten = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-lymphknoten
+Alias: $mii-cs-onko-verlauf-gesamtbeurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-gesamtbeurteilung
 
 // Aliases für Profile des MII Medikation-Moduls
 Alias: $mii-pr-medikation-medication-request = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest
@@ -24,7 +26,7 @@ Alias: $mii-pr-molgen-therapeutische-implikation = https://www.medizininformatik
 
 // Aliases für Profile des MII MTB-Moduls
 Alias: $mii-lm-mtb = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb
-Alias: $mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund
+Alias: $mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund
 Alias: $mii-cs-mtb-antrag-kostenuebernahme-antragsstadium = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium
 Alias: $mii-cs-mtb-antwort-kostenuebernahme-entscheidung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung
 Alias: $mii-cs-mtb-auftrag-begruendung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung
@@ -74,6 +76,8 @@ Alias: $mii-cs-mtb-response-befund-beurteilung = https://www.medizininformatik-i
 Alias: $mii-vs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilung
 Alias: $mii-vs-mtb-oncotree = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-oncotree
 Alias: $mii-vs-mtb-msi = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi
+Alias: $mii-cs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type
+Alias: $mii-vs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi-method-type
 Alias: $mii-vs-mtb-mmr-proficiency = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency
 Alias: $mii-vs-mtb-mmr-expression = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression
 Alias: $mii-cs-mtb-response-befund-beurteilungsmethode = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode
@@ -94,7 +98,7 @@ Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequ
 Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
 Alias: $request-status = http://hl7.org/fhir/request-status
 Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
-Alias: $systemtherapie-status = http://hl7.org/fhir/ValueSet/event-status
+Alias: $systemtherapie-status = http://hl7.org/fhir/event-status
 Alias: $molecular-biomarker-category = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/molecular-biomarker-ontology-cs
 
 // Aliases für HL7 Extensions

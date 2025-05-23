@@ -101,8 +101,20 @@
       {
         "id": "Observation.value[x].coding",
         "path": "Observation.value[x].coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für mögliche Antwort zum Consent",
+          "ordered": false
+        },
+        "short": "Dokumentierter Consent",
+        "definition": "Dokumentation der Zustimmung der Ablehnung eines Consents",
         "min": 1,
-        "max": "1",
         "mustSupport": true
       },
       {
@@ -116,6 +128,40 @@
         "path": "Observation.value[x].coding.code",
         "min": 1,
         "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding:LNC",
+        "path": "Observation.value[x].coding",
+        "sliceName": "LNC",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.value[x].coding:LNC.system",
+        "path": "Observation.value[x].coding.system",
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.value[x].coding:LNC.code",
+        "path": "Observation.value[x].coding.code",
+        "comment": "LOINC: Yes - LA33-6, No - LA32-8"
+      },
+      {
+        "id": "Observation.value[x].coding:SCT",
+        "path": "Observation.value[x].coding",
+        "sliceName": "SCT",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.value[x].coding:SCT.system",
+        "path": "Observation.value[x].coding.system",
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.value[x].coding:SCT.code",
+        "path": "Observation.value[x].coding.code",
+        "comment": "SNOMED CT: Yes (qualifier value) - 373066001, No (qualifier value) - 373067005"
       }
     ]
   }

@@ -22,7 +22,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
-  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/anforderung-genetischer-test",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -43,9 +43,27 @@
         "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
       },
       {
+        "id": "ServiceRequest.code",
+        "path": "ServiceRequest.code",
+        "short": "Empfehlung zur Humangenetischen Beratung",
+        "definition": "Empfehlung zur Humangenetischen Beratung",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding",
+        "path": "ServiceRequest.code.coding",
+        "patternCoding": {
+          "code": "788339009",
+          "system": "http://snomed.info/sct",
+          "display": "Genetic consultation (procedure)"
+        }
+      },
+      {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
         "max": "1",
+        "mustSupport": true,
         "binding": {
           "strength": "preferred",
           "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-auftrag-begruendung"

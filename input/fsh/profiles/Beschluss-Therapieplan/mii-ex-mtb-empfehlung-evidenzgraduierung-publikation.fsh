@@ -6,7 +6,7 @@ Description: "Verweis auf Publikation der (einzelnen) Empfehlung"
 * insert EX_Header($mii-ex-mtb-empfehlung-publikation)
 
 * value[x] 1..1 MS
-* value[x] only Identifier or string
+* value[x] only string or Identifier
 
 // Research database
 * valueIdentifier ^short = "Identifikator Publikation"

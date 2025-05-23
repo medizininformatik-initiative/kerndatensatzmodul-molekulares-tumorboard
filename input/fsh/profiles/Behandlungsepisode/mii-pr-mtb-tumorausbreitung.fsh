@@ -9,8 +9,8 @@ Description: "Angabe zur Tumorausbreitung"
 * category 1..* MS
 * category.coding 1..* MS
 
-* category.coding ^slicing.discriminator.type = #pattern
-* category.coding ^slicing.discriminator.path = "code"
+* category.coding ^slicing.discriminator.type = #value
+* category.coding ^slicing.discriminator.path = "$this"
 * category.coding ^slicing.rules = #open
 * category.coding ^slicing.description = "Slice für Coding"
 * category.coding ^slicing.ordered = false

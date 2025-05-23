@@ -5,10 +5,17 @@ Title: "MII PR MTB Mutationslast"
 Description: "Beschreibt die Gesamtzahl von in Krebszellen gefundenen Mutationen pro 1 Mio. Basen."
 * insert PR_Header
 
-* focus MS 
-* focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
-
+* status MS
+* category MS
+* code MS
+* code.coding MS
+* code.coding = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
+* subject 1..1 MS
+* subject only Reference(Patient)
+* encounter MS
+* value[x] MS
+* value[x] 0..1
+* value[x] only Quantity
+* specimen MS
 * interpretation MS
 * interpretation from $hl7-v3-observation-high-low-codes
-
-// Labels der Datenfelder ggf. aktualisieren

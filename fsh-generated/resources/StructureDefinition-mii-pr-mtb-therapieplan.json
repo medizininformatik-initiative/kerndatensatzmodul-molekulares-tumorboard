@@ -40,12 +40,14 @@
       {
         "id": "CarePlan.description",
         "path": "CarePlan.description",
+        "short": "Protokollauszug",
         "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
         "mustSupport": true
       },
       {
         "id": "CarePlan.created",
         "path": "CarePlan.created",
+        "short": "Erstellungsdatum",
         "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
       },
       {
@@ -75,7 +77,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode",
+              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
             ]
           }
         ],
@@ -87,12 +90,12 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "outcomeReference.reference"
+              "type": "profile",
+              "path": "reference.resolve()"
             }
           ],
           "rules": "open",
-          "description": "Slice für Dokumentation einer umgesetzten Empfehlung auf Basis des referenzierten Ressourcentyps",
+          "description": "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps",
           "ordered": false
         }
       },
@@ -124,14 +127,6 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Therapieempfehlung.detail.statusReason",
-        "path": "CarePlan.activity.detail.statusReason",
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-status-begruendung"
-        }
-      },
-      {
         "id": "CarePlan.activity:HumangenetischeBeratung",
         "path": "CarePlan.activity",
         "sliceName": "HumangenetischeBeratung",
@@ -149,8 +144,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag",
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag"
             ]
           }
         ],
@@ -174,17 +168,16 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag",
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
             ]
           }
         ],
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Biopsy",
+        "id": "CarePlan.activity:Biopsie",
         "path": "CarePlan.activity",
-        "sliceName": "Biopsy",
+        "sliceName": "Biopsie",
         "short": "Empfehlung Biopsie",
         "definition": "Auftrag zur (erneuten) Biopsie",
         "min": 0,
@@ -192,15 +185,14 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Biopsy.reference",
+        "id": "CarePlan.activity:Biopsie.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag",
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag"
             ]
           }
         ],
@@ -224,45 +216,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage",
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "CarePlan.activity:UmgesetzteEmpfehlung",
-        "path": "CarePlan.activity",
-        "sliceName": "UmgesetzteEmpfehlung",
-        "short": "Umgesetzte Empfehlung",
-        "definition": "Dokumentation einer umgesetzten Empfehlung",
-        "min": 0,
-        "max": "*",
-        "mustSupport": true
-      },
-      {
-        "id": "CarePlan.activity:UmgesetzteEmpfehlung.outcomeReference",
-        "path": "CarePlan.activity.outcomeReference",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-einwilligung",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-befund",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-systemische-therapie",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-systemische-therapie-medikation",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report",
-              "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
-              "http://hl7.org/fhir/StructureDefinition/Consent",
-              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
-              "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
-              "http://hl7.org/fhir/StructureDefinition/Observation",
-              "http://hl7.org/fhir/StructureDefinition/Procedure"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
             ]
           }
         ],

@@ -1,5 +1,6 @@
 Profile: MII_PR_MTB_Histologie_Evaluation_Auftrag
-Parent: MII_PR_Patho_Service_Request
+Parent: ServiceRequest
+//Parent: MII_PR_Patho_Service_Request -> requester and encounter required, but probably unknown (only recommendation)
 Id: mii-pr-mtb-histologie-evaluation-auftrag
 Title: "MII PR MTB Histologie-Evaluation Auftrag"
 Description: "Auftrag zur (erneuten) Histologie-Evaluation"
@@ -11,9 +12,12 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
-
-* reasonReference ^slicing.discriminator.type = #type
-* reasonReference ^slicing.discriminator.path = "reference.reference"
+* code 1..1 MS
+* code.coding = $SCT#183825009  "Refer for histology (procedure)"
+* code ^short = "Empfehlung zur histologischen (Re-)Evaluation"
+* code ^definition = "Empfehlung zur histologischen (Re-)Evaluation"
+* reasonReference ^slicing.discriminator.type = #profile
+* reasonReference ^slicing.discriminator.path = "$this.resolve()"
 * reasonReference ^slicing.rules = #open
 * reasonReference ^slicing.description = "Slice für referenzierten Histologiebefund oder bestimmten Tumorzellgehalt"
 * reasonReference ^slicing.ordered = false
@@ -22,13 +26,13 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * reasonReference[Histologie] ^short = "Histologiebefund"
 * reasonReference[Histologie] ^definition = "Verweis auf Histologiebefund"
 * reasonReference[Histologie] 0..1 MS
-* reasonReference[Histologie] only Reference(MII_PR_Onko_Befund or DiagnosticReport)
+* reasonReference[Histologie] only Reference(MII_PR_Onko_Befund)
 
 * reasonReference contains Tumorzellgehalt 0..1 MS
 * reasonReference[Tumorzellgehalt] ^short = "Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] ^definition = "Verweis auf bestimmten Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] 0..1 MS
-* reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt or Observation)
+* reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt)
 
 * specimen 0..* MS
 * specimen only Reference(

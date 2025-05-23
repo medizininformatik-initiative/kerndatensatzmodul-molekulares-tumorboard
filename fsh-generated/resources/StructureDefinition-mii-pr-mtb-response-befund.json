@@ -81,7 +81,6 @@
         "id": "Observation.value[x]:valueCodeableConcept",
         "path": "Observation.value[x]",
         "sliceName": "valueCodeableConcept",
-        "short": "Response Beurteilung",
         "type": [
           {
             "code": "CodeableConcept"
@@ -90,12 +89,59 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x]:valueCodeableConcept.coding.system",
+        "id": "Observation.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.value[x].coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für die Verwendung der verschiedenen Codesysteme für Beurteilung von Response"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding:oBDS",
+        "path": "Observation.value[x].coding",
+        "sliceName": "oBDS",
+        "short": "Response Beurteilung nach oBDS-Kriterien",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding:oBDS.system",
         "path": "Observation.value[x].coding.system",
+        "min": 1,
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-gesamtbeurteilung"
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding:oBDS.code",
+        "path": "Observation.value[x].coding.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/ValueSet/mii-vs-onko-verlauf-gesamtbeurteilung"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding:MTB",
+        "path": "Observation.value[x].coding",
+        "sliceName": "MTB",
+        "short": "Response Beurteilung nach Recist oder Rano iM Rahmen des MTB",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding:MTB.system",
+        "path": "Observation.value[x].coding.system",
+        "min": 1,
         "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung"
       },
       {
-        "id": "Observation.value[x]:valueCodeableConcept.coding.code",
+        "id": "Observation.value[x]:valueCodeableConcept.coding:MTB.code",
         "path": "Observation.value[x].coding.code",
         "binding": {
           "strength": "required",

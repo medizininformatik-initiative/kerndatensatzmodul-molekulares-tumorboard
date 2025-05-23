@@ -9,5 +9,5 @@ Title: "Beispiel fuer eine Antwort auf den Antrag auf Kostenuebernahme"
 * insurer = Reference(Organization/InstitutionID)
 * request = Reference(MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1)
 
-* extension[Entscheidung].valueCodeableConcept.coding.code = #rejected
-* extension[Ablehnungsgrund].valueCodeableConcept.coding.code = #other-therapy-recommended
+* extension[Entscheidung].valueCodeableConcept.coding = $mii-cs-mtb-antwort-kostenuebernahme-entscheidung#rejected
+* extension[Ablehnungsgrund].valueCodeableConcept.coding = $mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund#other-therapy-recommended

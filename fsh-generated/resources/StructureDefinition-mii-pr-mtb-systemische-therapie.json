@@ -82,7 +82,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
+              "http://hl7.org/fhir/StructureDefinition/CarePlan"
             ]
           }
         ]
@@ -91,7 +92,8 @@
         "id": "Procedure.status",
         "path": "Procedure.status",
         "short": "not-done | in-progress | stopped | completed",
-        "definition": "\n        not-done: Die Therapie wurde nie angefangen und wird auch nicht mehr angefangen,\n        in-progress: Die Therapie hat noch nicht angefangen oder läuft bereits,\n        stopped: Die Therapie wurde bereits angefangen aber vorzeitig abgebrochen,\n        completed: Die Therapie wurde plangemäß abgeschlossen",
+        "definition": "Status der Systemischen Therapie",
+        "comment": "\n        not-done: Die Therapie wurde nie angefangen und wird auch nicht mehr angefangen,\n        in-progress: Die Therapie hat noch nicht angefangen oder läuft bereits,\n        stopped: Die Therapie wurde bereits angefangen aber vorzeitig abgebrochen,\n        completed: Die Therapie wurde plangemäß abgeschlossen",
         "binding": {
           "strength": "required",
           "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemische-therapie-status"
@@ -113,7 +115,7 @@
       {
         "id": "Procedure.statusReason.coding.system",
         "path": "Procedure.statusReason.coding.system",
-        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund"
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund"
       },
       {
         "id": "Procedure.statusReason.coding.code",
@@ -122,14 +124,19 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemische-therapie-status-grund"
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund"
         }
       },
       {
-        "id": "Procedure.performed[x]",
+        "id": "Procedure.performed[x]:performedPeriod",
         "path": "Procedure.performed[x]",
-        "short": "Durchführungszeitraum",
-        "definition": "Durchführungszeitraum der Therapie"
+        "sliceName": "performedPeriod",
+        "definition": "Durchführungszeitraum der Therapie",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
       },
       {
         "id": "Procedure.note",

@@ -19,7 +19,7 @@ Description: "Diagnose zum Primärtumor"
 * stage[WHOGradZNS].assessment 1..1 MS
 * stage[WHOGradZNS].assessment only Reference(MII_PR_MTB_WHO_Grad_Tumor_ZNS)
 * stage[WHOGradZNS].type 1..1 MS
-* stage[WHOGradZNS].type.coding = $SCT#396920006 "WHO grade for central nervous system tumour"
+* stage[WHOGradZNS].type.coding = $SCT#396920006 "WHO grade for central nervous system tumor"
 
 // OncoTree
 * stage contains OncoTree 0..1 MS
@@ -27,28 +27,24 @@ Description: "Diagnose zum Primärtumor"
 * stage[OncoTree] ^definition = "Klassifizierung eines Tumors nach OncoTree"
 * stage[OncoTree].assessment 1..1 MS
 * stage[OncoTree].assessment only Reference(MII_PR_MTB_Oncotree)
-// * stage[OncoTree].type 1..1 MS
-// * stage[OncoTree].type.coding = $SCT#396920006 "WHO grade for central nervous system tumour"
+
 
 // TODO: SCT prüfen
 // Tumor stage (spreading) first diagnosis date time
-* stage contains ErstdiagnoseZeitpunkt 1..1 MS
+* stage contains ErstdiagnoseZeitpunkt 0..1 MS
 * stage[ErstdiagnoseZeitpunkt] ^short = "Tumorausbreitung Erstdiagnose"
 * stage[ErstdiagnoseZeitpunkt] ^definition = "Tumorausbreitung zum Zeitpunkt der Erstdiagnose"
 * stage[ErstdiagnoseZeitpunkt].assessment 1..1 MS
 * stage[ErstdiagnoseZeitpunkt].assessment only Reference(MII_PR_MTB_Tumorausbreitung)
 * stage[ErstdiagnoseZeitpunkt].type 1..1 MS
-* stage[ErstdiagnoseZeitpunkt].type.coding = $SCT#473302008 "Aware of diagnosis"
+* stage[ErstdiagnoseZeitpunkt].type.coding = $NCIT#C19251 "Stage at Diagnosis"
 
 // TODO: SCT prüfen
 // Tumor stage (spreading) molecular tumor board date time
-* stage contains MolekularesTumorboardZeitpunkt 1..1 MS
+* stage contains MolekularesTumorboardZeitpunkt 0..1 MS
 * stage[MolekularesTumorboardZeitpunkt] ^short = "Tumorausbreitung Molekulares Tumorboard"
 * stage[MolekularesTumorboardZeitpunkt] ^definition = "Tumorausbreitung zum Zeitpunkt des Molekularen Tumorboard"
 * stage[MolekularesTumorboardZeitpunkt].assessment 1..1 MS
 * stage[MolekularesTumorboardZeitpunkt].assessment only Reference(MII_PR_MTB_Tumorausbreitung)
 * stage[MolekularesTumorboardZeitpunkt].type 1..1 MS
 * stage[MolekularesTumorboardZeitpunkt].type.coding = $SCT#93771000119109 "Diagnosis deferred"
-
-// Treatment Status according to Guideline --> Das muss in die Behandlungsepisode 
-//* extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS

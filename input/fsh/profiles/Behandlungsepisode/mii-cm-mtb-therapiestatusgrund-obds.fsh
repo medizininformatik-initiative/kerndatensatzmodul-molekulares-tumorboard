@@ -74,7 +74,13 @@ Usage: #definition
 * group[=].element[=].display = "Weitere Gründe"
 * group[=].element[=].target.code = #S
 * group[=].element[=].target.display = "Abbruch aus sonstigen Gründen"
-* group[=].element[=].target.equivalence = #equivalent 
+* group[=].element[=].target.equivalence = #equivalent
+
+* group[=].element[+].code = #unknown
+* group[=].element[=].display = "Unbekannt"
+* group[=].element[=].target.code = #U
+* group[=].element[=].target.display = "unbekannt"
+* group[=].element[=].target.equivalence = #equivalent
 
 * group[=].unmapped.mode = #fixed
 * group[=].unmapped.code = #U

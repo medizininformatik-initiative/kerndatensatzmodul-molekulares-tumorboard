@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "mii-exa-mtb-kim-oncotree",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree"
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "371469007",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime": "2021-06-10",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "HGONEC",
+        "system": "http://data.mskcc.org/ontologies/oncotree"
+      }
+    ]
+  }
+}

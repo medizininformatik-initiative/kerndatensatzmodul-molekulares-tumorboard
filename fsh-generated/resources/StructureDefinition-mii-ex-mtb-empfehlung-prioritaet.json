@@ -80,13 +80,27 @@
           {
             "code": "positiveInt"
           }
-        ]
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x]:valueDecimal",
+        "path": "Extension.value[x]",
+        "sliceName": "valueDecimal",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mustSupport": true
       },
       {
         "id": "Extension.value[x]:valuePositiveInt",
         "path": "Extension.value[x]",
         "sliceName": "valuePositiveInt",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {

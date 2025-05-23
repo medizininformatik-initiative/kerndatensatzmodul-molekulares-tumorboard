@@ -3,5 +3,5 @@ RuleSet: Einwilligung
   * Status          1..1      code                "Status Einwilligung"    "Status der Einwilligung zum Molekularen Tumorboard"
 
 RuleSet: EinwilligungMapping
-* Einwilligung      -> "Consent"
-  * Status          -> "Consent.status"
+* Einwilligung      -> "Observation"
+  * Status          -> "Observation.status"

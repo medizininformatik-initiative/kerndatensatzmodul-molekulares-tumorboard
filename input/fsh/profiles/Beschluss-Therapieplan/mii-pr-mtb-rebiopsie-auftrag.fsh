@@ -8,12 +8,16 @@ Description: "Auftrag zur (erneuten) Biopsie"
 * status ^short = "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
 * status ^definition = "Status der Umsetzung der Empfehlung"
 * status ^comment = "
-    draft: Nicht umgesetzt, 
-    active: In Umsetzung, 
-    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+    draft: Geplant, nicht angefragt, 
+    active: Biopsie, 
+    completed: Abgeschlossen"
+* code 1..1 MS
+* code.coding = $SCT#86273004 "Biopsy (procedure)"
+* code ^short = "Empfehlung zur (Re-)Biopsie"
+* code ^definition = "Empfehlung zur (Re-)Biopsie"
 
-* reasonReference ^slicing.discriminator.type = #type
-* reasonReference ^slicing.discriminator.path = "reference.reference"
+* reasonReference ^slicing.discriminator.type = #profile
+* reasonReference ^slicing.discriminator.path = "$this.resolve()"
 * reasonReference ^slicing.rules = #open
 * reasonReference ^slicing.description = "Slice für referenzierten Histologiebefund oder bestimmten Tumorzellgehalt"
 * reasonReference ^slicing.ordered = false

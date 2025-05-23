@@ -4,12 +4,13 @@ Usage: #example
 Title: "Beispiel Mikrosatelliteninstabilität"
 Description: "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund von MMR-Störung."
 
-* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mikrosatelliteninstabilitaet"
+* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
 * subject = Reference(Patient/example)
-
-* interpretation = $hl7-v3-observation-high-low-codes#high "MSI-H"
-
-* valueCodeableConcept = $LNC#LA26203-2 "MSI-H"
+* encounter = Reference(Encounter/example)
+* valueQuantity = 2.61 $UCUM#% 
+* method = $mii-cs-mtb-msi-method-type#bioinformatic "Sequenzierung"
+* specimen = Reference(Specimen/example)
+* interpretation = $LNC#LA14122-8 "Stable"

@@ -1,13 +1,13 @@
-Instance: MII-EXA-MTB-Systemische-Therapie-Medication-Besipiel-1
+Instance: MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
-* basedOn = Reference(MedicationRequest/TherapieempfehlungExample) // hier auf Empfehlung des MTB vom 28.03.2023 verweisen
-* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
+* basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
+* partOf[systemischeTherapie] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
-* subject = Reference(Patient/KimMusterperson)
+* subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-06-24"
 * effectivePeriod.end = "2023-06-24"
 * note.text = "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"

@@ -12,15 +12,17 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
     revoked: Molekularer Tumorboard-Fall ist abgeschlossen, 
     completed: Alle Empfehlungen bzw. Therapieoptionen ausgeschöpft oder Patient verstorben"
 
-* created MS 
+* created 1..1 MS 
+* created ^short = "Erstellungsdatum"
 * created ^definition = "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
 
 * description 0..1 MS
+* description ^short = "Protokollauszug"
 * description ^definition = "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
 
 * activity 0..* MS
-* activity ^slicing.discriminator.type = #type
-* activity ^slicing.discriminator.path = "reference.reference"
+* activity ^slicing.discriminator.type = #profile
+* activity ^slicing.discriminator.path = "reference.resolve()"
 * activity ^slicing.rules = #open
 * activity ^slicing.description = "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps"
 * activity ^slicing.ordered = false
@@ -37,39 +39,34 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
     RequestGroup
 )
 * activity[Therapieempfehlung].detail MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbet
-* activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_Empfehlung_StatusBegruendung (required)
+//* activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_Empfehlung_StatusBegruendung (required)
 
 * activity contains HumangenetischeBeratung 0..1 MS
 * activity[HumangenetischeBeratung] ^short = "Empfehlung Human-genetische Beratung"
 * activity[HumangenetischeBeratung] ^definition = "Auftrag zur (erneuten) Human-genetischen Beratung"
 * activity[HumangenetischeBeratung].reference 1..1 MS
-* activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag or ServiceRequest)
+* activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag)
 
 * activity contains HistologieEvaluation 0..1 MS
 * activity[HistologieEvaluation] ^short = "Empfehlung Histologie-Evaluation"
 * activity[HistologieEvaluation] ^definition = "Auftrag zur (erneuten) Histologie-Evaluation"
 * activity[HistologieEvaluation].reference 1..1 MS
-* activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag or ServiceRequest)
+* activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag)
 
-* activity contains Biopsy 0..* MS
-* activity[Biopsy] ^short = "Empfehlung Biopsie"
-* activity[Biopsy] ^definition = "Auftrag zur (erneuten) Biopsie"
-* activity[Biopsy].reference 1..1 MS
-* activity[Biopsy].reference only Reference(MII_PR_MTB_Biopsie_Auftrag or ServiceRequest)
+* activity contains Biopsie 0..* MS
+* activity[Biopsie] ^short = "Empfehlung Biopsie"
+* activity[Biopsie] ^definition = "Auftrag zur (erneuten) Biopsie"
+* activity[Biopsie].reference 1..1 MS
+* activity[Biopsie].reference only Reference(MII_PR_MTB_Biopsie_Auftrag)
 
 * activity contains Studieneinschlussempfehlung 0..* MS
 * activity[Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"
 * activity[Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
 * activity[Studieneinschlussempfehlung].reference 1..1 MS
-* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage or ServiceRequest)
+* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage)
 
 // Siehe Konversion R5 nach R4: https://build.fhir.org/ig/HL7/fhir-cross-version/StructureMap-CarePlan5to4.html
-* activity 0..* MS
-* activity ^slicing.discriminator.type = #type
-* activity ^slicing.discriminator.path = "outcomeReference.reference"
-* activity ^slicing.rules = #open
-* activity ^slicing.description = "Slice für Dokumentation einer umgesetzten Empfehlung auf Basis des referenzierten Ressourcentyps"
-* activity ^slicing.ordered = false
+
 
 // TODO: Allgemeine Ressourcen vs. konkrete Profile besprechen
 // NOTE: Umgesetzte "Therapieempfehlung" -> Procedure, MedicationStatement
@@ -78,25 +75,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 // NOTE: Umgesetzte "Biopsie" -> DiagnosticReport, Observation
 // NOTE: Umgesetzte "Studieneinschlussempfehlung" -> MedicationStatement, Consent
 // NOTE: Umgesetzte begleitende Maßnahmen, z.B. Monitoring -> Procedure
-* activity contains UmgesetzteEmpfehlung 0..* MS
-* activity[UmgesetzteEmpfehlung] ^short = "Umgesetzte Empfehlung"
-* activity[UmgesetzteEmpfehlung] ^definition = "Dokumentation einer umgesetzten Empfehlung"
-* activity[UmgesetzteEmpfehlung].outcomeReference 1..1 MS
-* activity[UmgesetzteEmpfehlung].outcomeReference only Reference(
-    MII_PR_Consent_Einwilligung or
-    MII_PR_MTB_Studie or
-    MII_PR_Onko_Befund or
-    MII_PR_Onko_Systemische_Therapie or
-    MII_PR_Onko_Systemische_Therapie_Medikation or
-    MII_PR_Patho_Finding or
-    MII_PR_Patho_Report or
-    MII_PR_Prozedur_Procedure or
-    Consent or
-    DiagnosticReport or
-    MedicationStatement or
-    Observation or
-    Procedure
-)
+
 
 * supportingInfo ^slicing.discriminator.type = #type
 * supportingInfo ^slicing.discriminator.path = "$this"
@@ -104,8 +83,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * supportingInfo ^slicing.description = "Slice für weitere Informationen"
 * supportingInfo ^slicing.ordered = false
 
-// Referenz zwischen Therapieplan und Behandlungsepisode klären
 * supportingInfo contains Behandlungsepisode 0..1 MS
 * supportingInfo[Behandlungsepisode] ^short = "Behandlungsepisode"
 * supportingInfo[Behandlungsepisode] ^definition = "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
-* supportingInfo[Behandlungsepisode] only Reference(MII_PR_MTB_Behandlungsepisode)
+* supportingInfo[Behandlungsepisode] only Reference(MII_PR_MTB_Behandlungsepisode or ClinicalImpression)

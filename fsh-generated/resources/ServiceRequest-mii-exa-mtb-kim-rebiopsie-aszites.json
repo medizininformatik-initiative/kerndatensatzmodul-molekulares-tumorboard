@@ -1,0 +1,33 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "mii-exa-mtb-kim-rebiopsie-aszites",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "86273004",
+        "system": "http://snomed.info/sct",
+        "display": "Biopsy (procedure)"
+      }
+    ]
+  },
+  "reasonReference": [
+    {
+      "reference": "Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites"
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+    }
+  ],
+  "status": "completed",
+  "intent": "proposal",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

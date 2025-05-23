@@ -14,6 +14,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * effectivePeriod.start ^definition = "Einschlussdatum Molekulares Tumorboard"
 * effectivePeriod.end ^short = "Abschlussdatum"
 * effectivePeriod.end ^definition = "Abschlussdatum Molekulares Tumorboard"
+* effectivePeriod.end MS
 
 * problem 0..* MS
 * problem ^slicing.discriminator.type = #type
@@ -64,7 +65,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_Molecular_Pathology_Report or DiagnosticReport)
 
 * supportingInfo ^slicing.discriminator.type = #profile
-* supportingInfo ^slicing.discriminator.path = "$this"
+* supportingInfo ^slicing.discriminator.path = "$this.resolve()"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für weitere Informationen"
 * supportingInfo ^slicing.ordered = false
@@ -73,6 +74,11 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Einwilligung] ^short = "Einwilligung"
 * supportingInfo[Einwilligung] ^definition = "Einwilligung zum Molekularen Tumorboard"
 * supportingInfo[Einwilligung] only Reference(MII_PR_MTB_Consent_Given)
+
+* supportingInfo contains Vorbefund 0..* MS
+* supportingInfo[Vorbefund] ^short = "Vorbefund"
+* supportingInfo[Vorbefund] ^definition = "Relevanter Vorbefund"
+* supportingInfo[Vorbefund] only Reference(DiagnosticReport or Observation)
 
 * supportingInfo contains Vortherapie 0..* MS
 * supportingInfo[Vortherapie] ^short = "Vortherapie"
@@ -87,9 +93,9 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^short = "Leitlinie Dokumentation"
 * supportingInfo[Vortherapie].extension[LeitlinieDokumentation] ^definition = "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur"
 
-* supportingInfo contains Vorbefund 0..* MS
-* supportingInfo[Vorbefund] ^short = "Vorbefund"
-* supportingInfo[Vorbefund] ^definition = "Relevanter Vorbefund"
-* supportingInfo[Vorbefund] only Reference(DiagnosticReport or Observation)
+* supportingInfo contains Therapieplan 0..1 MS
+* supportingInfo[Therapieplan] ^short = "Therapieplan"
+* supportingInfo[Therapieplan] ^definition = "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
+* supportingInfo[Therapieplan] only Reference(MII_PR_MTB_Therapieplan or CarePlan)
 
 * extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS
