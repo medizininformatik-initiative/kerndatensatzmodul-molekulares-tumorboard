@@ -31,7 +31,6 @@ Description: "Follow-Up als Prozess des Einholens von Informationen über durchg
 * statusReason.coding.code 1..1 MS 
 * statusReason.coding.code from MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung
 
-
 * subject MS
 
 * previous 1..1 MS
@@ -45,7 +44,7 @@ Description: "Follow-Up als Prozess des Einholens von Informationen über durchg
 
 * supportingInfo 0..* MS
 * supportingInfo ^slicing.discriminator.type = #type
-* supportingInfo ^slicing.discriminator.path = "$this.resolve"
+* supportingInfo ^slicing.discriminator.path = "$this.resolve()"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für die durch das Follow-Up gewonnenen Informationen"
 * supportingInfo ^slicing.ordered = false
