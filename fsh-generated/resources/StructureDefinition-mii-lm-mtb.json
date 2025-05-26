@@ -3289,6 +3289,209 @@
             "map": "MII_PR_MTB_RNA_Seq.component[cohort-ranking]"
           }
         ]
+      },
+      {
+        "id": "mii-lm-mtb.MolelularpathologischerBefund",
+        "path": "mii-lm-mtb.MolelularpathologischerBefund",
+        "short": "Molekularpathologischer Befund",
+        "definition": "Molekularpathologischer Befund",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.IHCBefund",
+        "path": "mii-lm-mtb.IHCBefund",
+        "short": "Immunhistochemischer Befund",
+        "definition": "Immunhistochemischer Befund",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.IHCBefund.Code",
+        "path": "mii-lm-mtb.IHCBefund.Code",
+        "short": "Code der Untersuchung (z.B. LOINC)",
+        "definition": "Code der Untersuchung (z.B. LOINC)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.IHCBefund.Interpretation",
+        "path": "mii-lm-mtb.IHCBefund.Interpretation",
+        "short": "Interpretation",
+        "definition": "Interpretation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.interpretation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.IHCBefund.Wert",
+        "path": "mii-lm-mtb.IHCBefund.Wert",
+        "short": "Wert",
+        "definition": "Wert",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.IHCBefund.UntersuchtesProtein",
+        "path": "mii-lm-mtb.IHCBefund.UntersuchtesProtein",
+        "short": "Untersuchtes Protein (kodiert durch den HGNC-Gennamen)",
+        "definition": "Untersuchtes Protein (kodiert durch den HGNC-Gennamen)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.component[gene-studied].valueCodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.ISHBefund",
+        "path": "mii-lm-mtb.ISHBefund",
+        "short": "In-Situ-Hybridisierungs-Befund",
+        "definition": "In-Situ-Hybridisierungs-Befund",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.ISHBefund.Code",
+        "path": "mii-lm-mtb.ISHBefund.Code",
+        "short": "Code der Untersuchung (z.B. LOINC)",
+        "definition": "Code der Untersuchung (z.B. LOINC)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.code"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.ISHBefund.Interpretation",
+        "path": "mii-lm-mtb.ISHBefund.Interpretation",
+        "short": "Interpretation",
+        "definition": "Interpretation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.interpretation"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.ISHBefund.Wert",
+        "path": "mii-lm-mtb.ISHBefund.Wert",
+        "short": "Wert",
+        "definition": "Wert",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.value"
+          }
+        ]
+      },
+      {
+        "id": "mii-lm-mtb.ISHBefund.UntersuchtesGen",
+        "path": "mii-lm-mtb.ISHBefund.UntersuchtesGen",
+        "short": "Untersuchtes Gen (kodiert durch den HGNC-Gennamen)",
+        "definition": "Untersuchtes Gen (kodiert durch den HGNC-Gennamen)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mii-map-mtb",
+            "map": "Observation.component[gene-studied].valueCodeableConcept"
+          }
+        ]
       }
     ]
   }
