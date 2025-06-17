@@ -92,8 +92,6 @@
 [MII_EX_MTB_Leitlinie_Dokumentation]: StructureDefinition-mii-ex-mtb-leitlinie-dokumentation.html
 [MII_EX_MTB_Leitlinienbehandlung_Status]: StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.html
 [MII_EX_MTB_NGS_Bericht_Genomic_Study]: StructureDefinition-mii-ex-mtb-ngs-bericht-genomic-study.html
-[MII_EX_MTB_Therapielinie]: StructureDefinition-mii-ex-mtb-therapielinie.html
-[MII_EX_MTB_Zulassungsstatus]: StructureDefinition-mii-ex-mtb-zulassungsstatus.html
 [MII_LM_MTB]: StructureDefinition-mii-lm-mtb.html
 [mii-ns-mtb-nct]: NamingSystem-mii-ns-mtb-nct.html
 [mii-ns-studie-drks]: NamingSystem-mii-ns-studie-drks.html

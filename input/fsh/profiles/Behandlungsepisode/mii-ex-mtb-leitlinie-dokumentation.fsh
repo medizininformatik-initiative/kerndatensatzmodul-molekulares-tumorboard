@@ -4,5 +4,18 @@ Context: Element
 Title: "MII EX MTB Leitlinie Dokumentation"
 Description: "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur"
 * insert EX_Header($mii-ex-mtb-leitlinie-dokumentation)
-* extension contains MII_EX_MTB_Therapielinie named Therapielinie 0..1 MS
-* extension contains MII_EX_MTB_Zulassungsstatus named Zulassungsstatus 0..1 MS
+* extension contains Therapielinie 0..1 MS
+* extension contains Zulassungsstatus 0..1 MS
+
+* extension[Therapielinie].value[x] 1..1 MS
+* extension[Therapielinie].value[x] only unsignedInt
+* extension[Therapielinie].valueUnsignedInt ^short = "Therapielinie"
+* extension[Therapielinie].valueUnsignedInt ^definition = "Therapielinie 0 bis 9"
+
+* extension[Zulassungsstatus].valueCodeableConcept.coding 1..1 MS
+* extension[Zulassungsstatus].valueCodeableConcept.coding.code 1..1 MS
+* extension[Zulassungsstatus].valueCodeableConcept.coding.system = $mii-cs-mtb-zulassungsstatus
+* extension[Zulassungsstatus].valueCodeableConcept.coding.code from MII_VS_MTB_Zulassungsstatus
+* extension[Zulassungsstatus].valueCodeableConcept.coding ^short = "Zulassungsstatus"
+* extension[Zulassungsstatus].valueCodeableConcept.coding ^definition = "Zulassungsstatus der Leitlinientherapie"
+
