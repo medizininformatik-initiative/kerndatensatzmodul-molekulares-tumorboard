@@ -1,0 +1,147 @@
+@startuml references-mtb
+
+!$colors = {"CarePlan": "#6a6cf8", "Claim": "#f26f6f", "ClaimResponse": "#a4b1f7", "ClinicalImpression": "#69f683", "Condition": "#6d7198", "DiagnosticReport": "#fa92bb", "MedicationRequest": "#ba6bf9", "MedicationStatement": "#74f8dc", "Observation": "#fbca69", "Procedure": "#70a68c", "RequestGroup": "#fee0b0", "ResearchStudy": "#d96ac5", "ServiceRequest": "#a3c16d"}
+
+legend right
+    |Color|Type|
+    |<$colors.CarePlan>|CarePlan|
+    |<$colors.Claim>|Claim|
+    |<$colors.ClaimResponse>|ClaimResponse|
+    |<$colors.ClinicalImpression>|ClinicalImpression|
+    |<$colors.Condition>|Condition|
+    |<$colors.DiagnosticReport>|DiagnosticReport|
+    |<$colors.MedicationRequest>|MedicationRequest|
+    |<$colors.MedicationStatement>|MedicationStatement|
+    |<$colors.Observation>|Observation|
+    |<$colors.Procedure>|Procedure|
+    |<$colors.RequestGroup>|RequestGroup|
+    |<$colors.ResearchStudy>|ResearchStudy|
+    |<$colors.ServiceRequest>|ServiceRequest|
+    
+endlegend
+
+package profiles.Beschluss-Therapieplan <<Rectangle>> {
+    object MII_PR_MTB_Humangenetische_Beratung_Auftrag $colors.ServiceRequest
+    object MII_PR_MTB_Biopsie_Auftrag $colors.ServiceRequest
+    object MII_PR_MTB_Studieneinschluss_Anfrage $colors.ServiceRequest
+    object MII_PR_MTB_Therapieempfehlung_Kombination $colors.RequestGroup
+    object MII_PR_MTB_Tumorzellgehalt $colors.Observation
+    object MII_PR_MTB_Studie $colors.ResearchStudy
+    object MII_PR_MTB_Therapieempfehlung $colors.MedicationRequest
+    object MII_PR_MTB_Therapieplan $colors.CarePlan
+    object MII_PR_MTB_Histologie_Evaluation_Auftrag $colors.ServiceRequest
+    
+}
+
+package profiles.NGS-Bericht <<Rectangle>> {
+    object MII_PR_MTB_Immunohistochemistry_PDL1 $colors.Observation
+    object MII_PR_MTB_Genomic_Study_Analysis $colors.Procedure
+    object MII_PR_MTB_NGS_Bericht $colors.DiagnosticReport
+    object MII_PR_MTB_Immunohistochemistry_MMR $colors.Observation
+    object MII_PR_MTB_Immunohistochemistry_Phosphorylation $colors.Observation
+    object MII_PR_MTB_Copy_Number_Variant $colors.Observation
+    object MII_PR_MTB_Mutationslast $colors.Observation
+    object MII_PR_MTB_Ploidie $colors.Observation
+    object MII_PR_MTB_RNA_Fusion $colors.Observation
+    object MII_PR_MTB_Einfache_Variante $colors.Observation
+    object MII_PR_MTB_RNA_Seq $colors.Observation
+    object MII_PR_MTB_DNA_Fusion $colors.Observation
+    object MII_PR_MTB_INSITUHYBRIDIZATION_HER2 $colors.Observation
+    object MII_PR_MTB_Therapeutische_Implikation $colors.Observation
+    object MII_PR_MTB_BIOMARKER_HER2_STATUS $colors.Observation
+    object MII_PR_MTB_Molecular_Pathology_Report $colors.DiagnosticReport
+    object MII_PR_MTB_Diagnostische_Implikation $colors.Observation
+    object MII_PR_MTB_Immunohistochemistry_MSI $colors.Observation
+    object MII_PR_MTB_HRD_Score $colors.Observation
+    object MII_PR_MTB_Biomarker_InSituHybridization $colors.Observation
+    object MII_PR_MTB_Immunohistochemistry $colors.Observation
+    object MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2 $colors.Observation
+    object MII_PR_MTB_Mikrosatelliteninstabilitaet $colors.Observation
+    object MII_PR_MTB_BRCAness $colors.Observation
+    object MII_PR_MTB_Molekularer_Biomarker $colors.Observation
+    object MII_PR_MTB_Genomic_Study $colors.Procedure
+    
+}
+
+package profiles.Follow-Up <<Rectangle>> {
+    object MII_PR_MTB_Follow_Up_ClinicalImpression $colors.ClinicalImpression
+    
+}
+
+package profiles.Follow-Up.Systemtherapie <<Rectangle>> {
+    object MII_PR_MTB_Response_Befund $colors.Observation
+    object MII_PR_MTB_Systemische_Therapie $colors.Procedure
+    object MII_PR_MTB_Systemische_Therapie_Medication_Statement $colors.MedicationStatement
+    
+}
+
+package profiles.Behandlungsepisode <<Rectangle>> {
+    object MII_PR_MTB_Tumorausbreitung $colors.Observation
+    object MII_PR_MTB_WHO_Grad_Tumor_ZNS $colors.Observation
+    object MII_PR_MTB_Oncotree $colors.Observation
+    object MII_PR_MTB_Consent_Given $colors.Observation
+    object MII_PR_MTB_Diagnose_Primaertumor $colors.Condition
+    object MII_PR_MTB_Behandlungsepisode $colors.ClinicalImpression
+    object MII_PR_MTB_Systemische_Vortherapie $colors.Procedure
+    
+}
+
+package profiles.Follow-Up.Kostenuebernahme <<Rectangle>> {
+    object MII_PR_MTB_Antwort_Kostenuebernahme $colors.ClaimResponse
+    object MII_PR_MTB_Antrag_Kostenuebernahme $colors.Claim
+    
+}
+
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Mutationslast : DiagnosticReport.result:TumorMutionalBurden
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Mikrosatelliteninstabilitaet : DiagnosticReport.result:MSI
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Ploidie : DiagnosticReport.result:Ploidie
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_HRD_Score : DiagnosticReport.result:HRDScore
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_BRCAness : DiagnosticReport.result:BRCAness
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Einfache_Variante : DiagnosticReport.result:EinfacheVariante
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Copy_Number_Variant : DiagnosticReport.result:CopyNumberVariant
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_DNA_Fusion : DiagnosticReport.result:DNAFusion
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Fusion : DiagnosticReport.result:RNAFusion
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Seq : DiagnosticReport.result:RNASeq
+MII_PR_MTB_Biopsie_Auftrag --> MII_PR_MTB_Tumorzellgehalt : ServiceRequest.reasonReference:Tumorzellgehalt
+MII_PR_MTB_Follow_Up_ClinicalImpression --> MII_PR_MTB_Behandlungsepisode : ClinicalImpression.previous
+MII_PR_MTB_Copy_Number_Variant --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_Studieneinschluss_Anfrage --> MII_PR_MTB_Diagnose_Primaertumor : ServiceRequest.reasonReference
+MII_PR_MTB_Studieneinschluss_Anfrage --> MII_PR_MTB_Studie : ServiceRequest.supportingInfo:Studie
+MII_PR_MTB_Response_Befund --> MII_PR_MTB_Systemische_Therapie : Observation.partOf
+MII_PR_MTB_Response_Befund --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_RNA_Fusion --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_Systemische_Therapie --> MII_PR_MTB_Therapieempfehlung : Procedure.extension:causedBy.value[x]
+MII_PR_MTB_Systemische_Therapie --> MII_PR_MTB_Therapieplan : Procedure.basedOn
+MII_PR_MTB_Einfache_Variante --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_RNA_Seq --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_DNA_Fusion --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_Therapeutische_Implikation --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry : DiagnosticReport.result:Immunhistochemie
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Biomarker_InSituHybridization : DiagnosticReport.result:InSituHybridisierung
+MII_PR_MTB_Diagnostische_Implikation --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_WHO_Grad_Tumor_ZNS : Condition.stage:WHOGradZNS.assessment
+MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_Oncotree : Condition.stage:OncoTree.assessment
+MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_Tumorausbreitung : Condition.stage:ErstdiagnoseZeitpunkt.assessment
+MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_Tumorausbreitung : Condition.stage:MolekularesTumorboardZeitpunkt.assessment
+MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Diagnose_Primaertumor : ClinicalImpression.problem:PrimaertumorDiagnose
+MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_NGS_Bericht : ClinicalImpression.investigation:NgsBericht.item
+MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Molecular_Pathology_Report : ClinicalImpression.investigation:MolekularPathologieBefund.item
+MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Consent_Given : ClinicalImpression.supportingInfo:Einwilligung
+MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Systemische_Vortherapie : ClinicalImpression.supportingInfo:Vortherapie
+MII_PR_MTB_Behandlungsepisode --> MII_PR_MTB_Therapieplan : ClinicalImpression.supportingInfo:Therapieplan
+MII_PR_MTB_Systemische_Vortherapie --> MII_PR_MTB_Therapieplan : Procedure.basedOn:Therapieplan
+MII_PR_MTB_Therapieempfehlung_Kombination --> MII_PR_MTB_Therapieempfehlung : RequestGroup.action.resource
+MII_PR_MTB_Antwort_Kostenuebernahme --> MII_PR_MTB_Antrag_Kostenuebernahme : ClaimResponse.request
+MII_PR_MTB_Therapieempfehlung --> MII_PR_MTB_Diagnose_Primaertumor : MedicationRequest.reasonReference:StuetzendeEntitaet
+MII_PR_MTB_Molekularer_Biomarker --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+MII_PR_MTB_Therapieplan --> MII_PR_MTB_Behandlungsepisode : CarePlan.supportingInfo:Behandlungsepisode
+MII_PR_MTB_Therapieplan --> MII_PR_MTB_Therapieempfehlung : CarePlan.activity:Therapieempfehlung.reference
+MII_PR_MTB_Therapieplan --> MII_PR_MTB_Therapieempfehlung_Kombination : CarePlan.activity:Therapieempfehlung.reference
+MII_PR_MTB_Therapieplan --> MII_PR_MTB_Humangenetische_Beratung_Auftrag : CarePlan.activity:HumangenetischeBeratung.reference
+MII_PR_MTB_Therapieplan --> MII_PR_MTB_Histologie_Evaluation_Auftrag : CarePlan.activity:HistologieEvaluation.reference
+MII_PR_MTB_Therapieplan --> MII_PR_MTB_Biopsie_Auftrag : CarePlan.activity:Biopsie.reference
+MII_PR_MTB_Therapieplan --> MII_PR_MTB_Studieneinschluss_Anfrage : CarePlan.activity:Studieneinschlussempfehlung.reference
+MII_PR_MTB_Antrag_Kostenuebernahme --> MII_PR_MTB_Antrag_Kostenuebernahme : Claim.related.claim
+MII_PR_MTB_Histologie_Evaluation_Auftrag --> MII_PR_MTB_Tumorzellgehalt : ServiceRequest.reasonReference:Tumorzellgehalt
+
+@enduml
