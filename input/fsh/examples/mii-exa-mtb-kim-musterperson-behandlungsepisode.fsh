@@ -4,6 +4,9 @@ InstanceOf: MII_PR_MTB_Behandlungsepisode
 Title: "MTB-Behandlungsepisode Kim Musterperson"
 Description: "Molekulares Tumorboard-Behandlungsepisode von Kim Musterperson ab 01.03.2022"
 Usage: #example
+
+* meta.profile[0] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+
 * status = #completed
 
 // Patientin Kim Musterperson (siehe KDS Erweiterungsmodul Onkologie)
