@@ -21,7 +21,7 @@ Usage: #example
 Title: "Lokale Tumorausbreitung"
 Description: "Lokale Tumorausbreitung bei Kim Musterperson"
 * status = #final
-* category = $SCT#473302008
+* category = $SCT#473302008 "Aware of diagnosis"
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = 2021-06-10 
 * valueCodeableConcept = $SCT#255127006

@@ -1,0 +1,34 @@
+{
+  "resourceType": "Observation",
+  "id": "mii-exa-mtb-who-grad-tumor-zns",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "396921005",
+        "system": "http://snomed.info/sct",
+        "display": "WHO grade finding for central nervous system tumor"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "396923008",
+        "display": "World Health Organization grade II central nervous system tumor (finding)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  }
+}

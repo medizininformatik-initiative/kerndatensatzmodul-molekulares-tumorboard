@@ -38,26 +38,26 @@ Usage: #example
 * entry[=].resource.note.text = "This is just a technical example that may contain traces of not making sense"
 // Systemische Vortherapie erledigt
 * insert BundleResource(Observation,mii-exa-mtb-kim-musterperson-aufklaerung)
-* entry[=].resource.meta.profile[0] = $mii-pr-mtb-consent-given
+* entry[=].resource.meta.profile[0] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given"
 * entry[=].resource.code = $LNC#105511-0 "Was consent given"
-* entry[=].resource.encounter = Reference(Encounter/example
+* entry[=].resource.encounter = Reference(Encounter/example)
 // Consent erledigt
 * insert BundleResource(Condition, mii-exa-mtb-kim-diagnose)
-* entry[=].resource.extension[ReferenzPrimaerdiagnose] = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
+* entry[=].resource.extension[ReferenzPrimaerdiagnose].valueReference = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 * entry[=].resource.extension[morphology-behavior-icdo3].valueCodeableConcept = $ICDO3#C44.7
 * entry[=].resource.extension[morphology-behavior-icdo3].valueCodeableConcept.text = "Basalzelltumor"
 * entry[=].resource.code.coding[alpha-id].code = #I6158
 * entry[=].resource.code.coding[sct].version = "20250604"
 * entry[=].resource.code.coding[sct].code = #1240414004
 * entry[=].resource.code.coding[orphanet].code = #183500
-* entry[=].resource.bodySite[primaertumorSeitenlokalisation].code = #L
-* entry[=].resource.bodySite[sct] = $SCT#39607008
-* entry[=].resource.bodySite[sct].version = "20250604"
+* entry[=].resource.bodySite.coding[primaertumorSeitenlokalisation].code = #L
+* entry[=].resource.bodySite.coding[snomed-ct] = $SCT#39607008
+* entry[=].resource.bodySite.coding[snomed-ct].version = "20250604"
 * entry[=].resource.encounter = Reference(Encounter/example)
 //* entry[=].resource.onsetPeriod.start = "2022-02-02" // Must either have extensions or value, not both
 * entry[=].resource.onsetPeriod.start.extension[lebensphase-von].valueCodeableConcept = $SCT#263659003
 //* entry[=].resource.onsetPeriod.start = "2025-01-19"
-* entry[=].resource.onsetPeriod.start.extension[lebensphase-bis].valueCodeableConcept = $SCT#41847000
+* entry[=].resource.onsetPeriod.end.extension[lebensphase-bis].valueCodeableConcept = $SCT#41847000
 // onsetDateTime not covered, but it's not subject to invariants.
 * entry[=].resource.stage[MolekularesTumorboardZeitpunkt].assessment[+] = Reference(Observation/mii-exa-mtb-kim-tumorausbreitung)
 * entry[=].resource.stage[WHOGradZNS].assessment[+] = Reference(Observation/mii-exa-mtb-who-grad-tumor-zns)
@@ -69,6 +69,22 @@ Usage: #example
 * insert BundleResource(Observation, mii-exa-mtb-kim-oncotree)
 * entry[=].resource.encounter = Reference(Encounter/example)
 // Oncotree erledigt
+* insert BundleResource(Observation, mii-exa-mtb-kim-tumorausbreitung)
+* entry[=].resource.meta.profile[+] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung"
+* entry[=].resource.category[0] = $SCT#473302008 "Aware of diagnosis"
+* entry[=].resource.category[1] = $SCT#93771000119109 "Diagnosis deferred"
+* entry[=].resource.code = $SCT#371508000 "Tumor stage"
+* entry[=].resource.encounter = Reference(Encounter/example)
+// Tumorausbreitung erledigt
+// * entry[=].resource.
+// * entry[=].resource.
+// * entry[=].resource.
+// * entry[=].resource.
+// * entry[=].resource.
+// * entry[=].resource.
+// * entry[=].resource.
+// * entry[=].resource.
+// * entry[=].resource.
 
 
 
@@ -220,7 +236,6 @@ Usage: #example
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-humangenetische-beratung-aszites)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-histologie-evaluation-aszites)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-rebiopsie-aszites)
-* insert BundleResource(Observation, mii-exa-mtb-kim-tumorausbreitung)
 // External resources
 * insert BundleResource(Condition, PatientKimMusterperson-PrimaryDiagnosis-2)
 * insert BundleResource(Observation, mii-exa-onko-allgemeiner-leistungszustand-ecog)
@@ -233,6 +248,7 @@ Instance: mii-exa-mtb-who-grad-tumor-zns
 InstanceOf: MII_PR_MTB_WHO_Grad_Tumor_ZNS
 Usage: #example
 * meta.profile[+] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
+* status = #final
 * code.coding = $SCT#396921005 "WHO grade finding for central nervous system tumor"
 * subject = Reference(Patient/PatientKimMusterperson)
 * encounter = Reference(Encounter/example)
