@@ -807,6 +807,486 @@
     {
       "request": {
         "method": "PUT",
+        "url": "Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mii-exa-mtb-kim-tumorzellgehalt-aszites",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "93356-4",
+              "system": "http://loinc.org",
+              "display": "Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method"
+            }
+          ]
+        },
+        "status": "final",
+        "valueQuantity": {
+          "value": 0.028,
+          "code": "%"
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "histologic",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt"
+            }
+          ]
+        }
+      },
+      "fullUrl": "urn:uuid:mii-exa-mtb-kim-tumorzellgehalt-aszites"
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
+      },
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "mii-exa-mtb-kim-musterperson-therapieplan",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ",
+                "code": "praeth"
+              }
+            ]
+          }
+        ],
+        "addresses": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
+          }
+        ],
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "IZ",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "completed"
+            },
+            "outcomeReference": [
+              {
+                "reference": "Procedure/MTBChemo2Procedure"
+              }
+            ],
+            "reference": {
+              "reference": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "IZ",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "ServiceRequest/mii-exa-mtb-study-request-cldn6"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "IZ",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "ServiceRequest/mii-exa-mtb-study-request-tedova"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "ZS",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "ServiceRequest/mii-exa-mtb-study-request-ccne1"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "IZ",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "CZ",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Chemotherapie + zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "ZS",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "RequestGroup/mii-exa-mtb-request-group-lunresertib-camonsertib"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "ZS",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "zielgerichtete Substanzen"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "SO",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Sonstiges"
+                  }
+                ]
+              },
+              "status": "completed"
+            },
+            "reference": {
+              "reference": "ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "SO",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Sonstiges"
+                  }
+                ]
+              },
+              "status": "not-started"
+            },
+            "reference": {
+              "reference": "ServiceRequest/mii-exa-mtb-kim-histologie-evaluation-aszites"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "SO",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+                    "display": "Sonstiges"
+                  }
+                ]
+              },
+              "status": "completed"
+            },
+            "reference": {
+              "reference": "ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites"
+            }
+          },
+          {
+            "detail": {
+              "statusReason": {
+                "coding": [
+                  {
+                    "code": "J",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieabweichung"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "detail": {
+              "statusReason": {
+                "coding": [
+                  {
+                    "code": "U",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieabweichung"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "intent": "plan",
+        "status": "active",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "created": "2023-03-28",
+        "description": "What exactly do you expect to see here? A funny joke?",
+        "encounter": {
+          "reference": "Encounter/example"
+        }
+      },
+      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-therapieplan"
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation/mii-exa-mtb-therapieempfehlung-trametinib"
+      },
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "mii-exa-mtb-therapieempfehlung-trametinib",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "when": [
+                  "MORN"
+                ],
+                "frequency": 1
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{Tablet}",
+                  "unit": "Tablet"
+                }
+              }
+            ],
+            "sequence": 1,
+            "text": "1 Tablet every morning"
+          }
+        ],
+        "status": "active",
+        "intent": "option",
+        "subject": {
+          "reference": "Patient/mii-exa-mtb-patient"
+        },
+        "medicationReference": {
+          "reference": "Medication/mii-exa-mtb-medikation-trametinib"
+        },
+        "extension": [
+          {
+            "valueDecimal": 1.5
+          },
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "m2C"
+                },
+                {
+                  "code": "iv"
+                }
+              ]
+            }
+          },
+          {
+            "valueIdentifier": {
+              "system": "http://doi.org",
+              "value": "10.1200/JCO.2022.40.16_suppl.5512"
+            }
+          }
+        ],
+        "encounter": {
+          "reference": "Encounter/example"
+        },
+        "authoredOn": "2024-12-12",
+        "requester": {
+          "reference": "Organization/MyHospital"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "code": "160245001",
+                "system": "http://snomed.info/sct"
+              }
+            ]
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Observation/mii-exa-mtb-kim-musterperson-CNVariante-CCNE1"
+          },
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
+          }
+        ],
+        "note": [
+          {
+            "text": "Meow. :3"
+          }
+        ]
+      },
+      "fullUrl": "urn:uuid:mii-exa-mtb-therapieempfehlung-trametinib"
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
+      },
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "mii-exa-mtb-medication-request-mirvetuximab",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+          ]
+        },
+        "basedOn": [
+          {
+            "reference": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
+          }
+        ],
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "L01FX26",
+              "system": "http://www.whocc.no/atc",
+              "version": "2025"
+            },
+            {
+              "code": "L01FX",
+              "system": "http://fhir.de/CodeSystem/bfarm/atc",
+              "version": "2025"
+            }
+          ],
+          "text": "Mirvetuximab soravtansin"
+        },
+        "extension": [
+          {
+            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+            "valuePositiveInt": 1
+          },
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+                  "code": "m1A"
+                }
+              ]
+            },
+            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+          },
+          {
+            "valueIdentifier": {
+              "system": "http://doi.org",
+              "value": "10.1200/JCO.2022.40.16_suppl.5512"
+            },
+            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+          },
+          {
+            "valueIdentifier": {
+              "system": "http://www.ncbi.nlm.nih.gov/pubmed",
+              "value": "38055253"
+            },
+            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+          }
+        ],
+        "status": "completed",
+        "intent": "proposal",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        }
+      },
+      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-mirvetuximab"
+    },
+    {
+      "request": {
+        "method": "PUT",
         "url": "Patient/PatientKimMusterperson"
       },
       "resource": {
@@ -7360,77 +7840,6 @@
     {
       "request": {
         "method": "PUT",
-        "url": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
-      },
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "mii-exa-mtb-medication-request-mirvetuximab",
-        "meta": {
-          "profile": [
-            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-          ]
-        },
-        "basedOn": [
-          {
-            "reference": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
-          }
-        ],
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "code": "L01FX26",
-              "system": "http://fhir.de/CodeSystem/bfarm/atc",
-              "version": "2025"
-            },
-            {
-              "code": "L01FX",
-              "system": "http://fhir.de/CodeSystem/bfarm/atc",
-              "version": "2025"
-            }
-          ]
-        },
-        "extension": [
-          {
-            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
-            "valuePositiveInt": 1
-          },
-          {
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
-                  "code": "m1A"
-                }
-              ]
-            },
-            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
-          },
-          {
-            "valueIdentifier": {
-              "system": "http://doi.org",
-              "value": "10.1200/JCO.2022.40.16_suppl.5512"
-            },
-            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
-          },
-          {
-            "valueIdentifier": {
-              "system": "http://www.ncbi.nlm.nih.gov/pubmed",
-              "value": "38055253"
-            },
-            "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
-          }
-        ],
-        "status": "completed",
-        "intent": "proposal",
-        "subject": {
-          "reference": "Patient/PatientKimMusterperson"
-        }
-      },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-mirvetuximab"
-    },
-    {
-      "request": {
-        "method": "PUT",
         "url": "MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
       },
       "resource": {
@@ -7832,280 +8241,6 @@
         }
       },
       "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-cobimetinib"
-    },
-    {
-      "request": {
-        "method": "PUT",
-        "url": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
-      },
-      "resource": {
-        "resourceType": "CarePlan",
-        "id": "mii-exa-mtb-kim-musterperson-therapieplan",
-        "meta": {
-          "profile": [
-            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ",
-                "code": "praeth"
-              }
-            ]
-          }
-        ],
-        "addresses": [
-          {
-            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
-          }
-        ],
-        "supportingInfo": [
-          {
-            "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
-          }
-        ],
-        "activity": [
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "completed"
-            },
-            "outcomeReference": [
-              {
-                "reference": "Procedure/MTBChemo2Procedure"
-              }
-            ],
-            "reference": {
-              "reference": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "ServiceRequest/mii-exa-mtb-study-request-cldn6"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "ServiceRequest/mii-exa-mtb-study-request-tedova"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "ZS",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "ServiceRequest/mii-exa-mtb-study-request-ccne1"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "CZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Chemotherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "ZS",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "RequestGroup/mii-exa-mtb-request-group-lunresertib-camonsertib"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "ZS",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "SO",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Sonstiges"
-                  }
-                ]
-              },
-              "status": "completed"
-            },
-            "reference": {
-              "reference": "ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "SO",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Sonstiges"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
-            "reference": {
-              "reference": "ServiceRequest/mii-exa-mtb-kim-histologie-evaluation-aszites"
-            }
-          },
-          {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "SO",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Sonstiges"
-                  }
-                ]
-              },
-              "status": "completed"
-            },
-            "reference": {
-              "reference": "ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites"
-            }
-          }
-        ],
-        "intent": "plan",
-        "status": "active",
-        "subject": {
-          "reference": "Patient/PatientKimMusterperson"
-        },
-        "created": "2023-03-28"
-      },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-therapieplan"
-    },
-    {
-      "request": {
-        "method": "PUT",
-        "url": "Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites"
-      },
-      "resource": {
-        "resourceType": "Observation",
-        "id": "mii-exa-mtb-kim-tumorzellgehalt-aszites",
-        "meta": {
-          "profile": [
-            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "93356-4",
-              "system": "http://loinc.org",
-              "display": "Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method"
-            }
-          ]
-        },
-        "status": "final",
-        "valueQuantity": {
-          "value": 0.028,
-          "code": "%"
-        },
-        "method": {
-          "coding": [
-            {
-              "code": "histologic",
-              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt"
-            }
-          ]
-        }
-      },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-tumorzellgehalt-aszites"
     },
     {
       "request": {

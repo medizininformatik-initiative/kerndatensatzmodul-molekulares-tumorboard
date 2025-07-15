@@ -105,6 +105,7 @@ Alias: $fhir-ext-caused-by = http://hl7.org/fhir/StructureDefinition/procedure-c
 // Aliases für internationale Nomenklaturen und Klassifikationen
 Alias: $ASK = http://fhir.de/CodeSystem/ask
 Alias: $ATC_DE = http://fhir.de/CodeSystem/bfarm/atc
+Alias: $ATC_EN = http://www.whocc.no/atc
 Alias: $EDQM = http://standardterms.edqm.eu
 Alias: $ENS = http://ensembl.org
 Alias: $HGNC = http://www.genenames.org/geneId

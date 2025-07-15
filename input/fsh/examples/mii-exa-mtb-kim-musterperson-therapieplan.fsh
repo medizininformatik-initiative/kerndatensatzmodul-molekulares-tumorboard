@@ -3,6 +3,7 @@ InstanceOf: MII_PR_MTB_Therapieplan
 Title: "MTB-Beschluss Kim Musterperson"
 Description: "Beschluss MTB-Fall Kim Musterperson vom 28.03.2023"
 Usage: #example
+* meta.profile[+] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
 * status = #active
 
 // Prätherapeutische Tumorkonferenz (Festlegung der Therapiestrategie)

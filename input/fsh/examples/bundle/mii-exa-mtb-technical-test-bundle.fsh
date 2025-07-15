@@ -76,16 +76,45 @@ Usage: #example
 * entry[=].resource.code = $SCT#371508000 "Tumor stage"
 * entry[=].resource.encounter = Reference(Encounter/example)
 // Tumorausbreitung erledigt
-// * entry[=].resource.
-// * entry[=].resource.
-// * entry[=].resource.
-// * entry[=].resource.
-// * entry[=].resource.
-// * entry[=].resource.
-// * entry[=].resource.
-// * entry[=].resource.
-// * entry[=].resource.
-
+* insert BundleResource(Observation, mii-exa-mtb-kim-tumorzellgehalt-aszites)
+// Tumorzellgehalt erledigt
+* insert BundleResource(CarePlan, mii-exa-mtb-kim-musterperson-therapieplan)
+* entry[=].resource.description = "What exactly do you expect to see here? A funny joke?"
+* entry[=].resource.encounter = Reference(Encounter/example)
+* entry[=].resource.activity[HumangenetischeBeratung].detail.statusReason = $mii-cs-onko-therapieabweichung#J
+* entry[=].resource.activity[HistologieEvaluation].detail.statusReason = $mii-cs-onko-therapieabweichung#U
+// Therapieplan erledigt
+* insert BundleResource(Observation, mii-exa-mtb-therapieempfehlung-trametinib)
+* entry[=].resource.extension[Prioritaet].valueDecimal = 1.5
+* entry[=].resource.extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad].code = #m2C
+* entry[=].resource.extension[Evidenzgraduierung].valueCodeableConcept.coding[Zusatzverweis].code = #iv
+* entry[=].resource.extension[Publikation].valueIdentifier.system = "http://doi.org"
+* entry[=].resource.extension[Publikation].valueIdentifier.value = "10.1200/JCO.2022.40.16_suppl.5512"
+* entry[=].resource.encounter = Reference(Encounter/example)
+* entry[=].resource.authoredOn = "2024-12-12"
+* entry[=].resource.requester = Reference(Organization/MyHospital)
+* entry[=].resource.reasonCode = $SCT#160245001
+* entry[=].resource.reasonReference[StuetzendeMolekulareAlteration] = Reference(Observation/mii-exa-mtb-kim-musterperson-CNVariante-CCNE1)
+* entry[=].resource.reasonReference[StuetzendeEntitaet] = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
+* entry[=].resource.basedOn = Reference(CarePlan/mii-exa-mtb-kim-musterperson-therapieplan)
+* entry[=].resource.note.text = "Meow. :3"
+* entry[=].resource.dosageInstruction.sequence = 1
+* entry[=].resource.dosageInstruction.text = "1 Tablet every morning"
+//* entry[=].resource.
+//* entry[=].resource.
+//* entry[=].resource.
+//* entry[=].resource.
+//* entry[=].resource.
+* insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-mirvetuximab)
+* entry[=].resource.medicationCodeableConcept.coding[+] = $ATC_EN#L01FX26
+//* entry[=].resource.medicationCodeableConcept.coding[+] = $PZN#00624605
+* entry[=].resource.medicationCodeableConcept.text = "Mirvetuximab soravtansin"
+//* entry[=].resource.
+//* entry[=].resource.
+//* entry[=].resource.
+//* entry[=].resource.
+//* entry[=].resource.
+//* entry[=].resource.
 
 
 * insert BundleResource(Patient,PatientKimMusterperson)
@@ -218,7 +247,6 @@ Usage: #example
 * insert BundleResource(ServiceRequest, mii-exa-mtb-study-request-tedova)
 * insert BundleResource(ResearchStudy, mii-exa-mtb-study-ccne1)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-study-request-ccne1)
-* insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-mirvetuximab)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-trastuzumab-deruxtecan)
 * insert BundleResource(Medication, mii-exa-mtb-medication-adavosertib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-adavosertib)
@@ -231,8 +259,6 @@ Usage: #example
 * insert BundleResource(RequestGroup, mii-exa-mtb-request-group-lunresertib-camonsertib)
 * insert BundleResource(Medication, mii-exa-mtb-medication-cobimetinib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-cobimetinib)
-* insert BundleResource(CarePlan, mii-exa-mtb-kim-musterperson-therapieplan)
-* insert BundleResource(Observation, mii-exa-mtb-kim-tumorzellgehalt-aszites)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-humangenetische-beratung-aszites)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-histologie-evaluation-aszites)
 * insert BundleResource(ServiceRequest, mii-exa-mtb-kim-rebiopsie-aszites)
