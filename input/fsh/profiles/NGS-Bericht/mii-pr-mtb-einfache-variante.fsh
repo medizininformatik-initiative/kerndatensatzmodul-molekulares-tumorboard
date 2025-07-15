@@ -19,11 +19,6 @@ Description: "Beschreibt eine gefundene genetische Variante."
 // * category contains labCategory 1..1 MS -> already in parent
 // TODO Fhir comment about missing category and component
 
-* category contains geCategory 1..1
-* category[geCategory].coding 1..1 
-* category[geCategory].coding = $hl7-v2-0074#GE
-// to include in every Observation, copy:  * category[geCategory].coding= $hl7-v2-0074#GE
-
 
 * focus MS 
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
@@ -34,10 +29,10 @@ Description: "Beschreibt eine gefundene genetische Variante."
 * component[gene-studied] MS
 * component[gene-studied] ^definition = "Gen auf dem sich die Variante befindet."
 
-* component[transcript-ref-seq] MS
-* component[transcript-ref-seq].valueCodeableConcept from $ENS (required)
-* component[transcript-ref-seq] ^short = "Transcript ID"
-* component[transcript-ref-seq] ^definition = "Ensemble Transcript ID ('ENST...')."
+* component[representative-transcript-ref-seq] MS
+* component[representative-transcript-ref-seq].valueCodeableConcept from $ENS (required)
+* component[representative-transcript-ref-seq] ^short = "Transcript ID"
+* component[representative-transcript-ref-seq] ^definition = "Ensemble Transcript ID ('ENST...')."
 
 * component[dna-region] MS
 * component[dna-region] ^short = "Exon"
@@ -56,11 +51,11 @@ Description: "Beschreibt eine gefundene genetische Variante."
 * component[alt-allele] MS
 * component[alt-allele] ^definition = "Veränderte Sequenz."
 
-* component[coding-hgvs] MS
-* component[coding-hgvs] ^definition = "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf DNA-Baseneben."
+* component[representative-coding-hgvs] MS
+* component[representative-coding-hgvs] ^definition = "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf DNA-Baseneben."
 
-* component[protein-hgvs] MS
-* component[protein-hgvs] ^definition = "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf Aminosäuren-Ebene."
+* component[representative-protein-hgvs] MS
+* component[representative-protein-hgvs] ^definition = "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf Aminosäuren-Ebene."
 
 * component[allelic-read-depth] MS
 * component[allelic-read-depth] ^definition = "Lesetiefe am Ort der Variante."

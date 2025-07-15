@@ -90,6 +90,12 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.component:chromosome-identifier",
+        "path": "Observation.component",
+        "sliceName": "chromosome-identifier",
+        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
+      },
+      {
         "id": "Observation.component:exact-start-end",
         "path": "Observation.component",
         "sliceName": "exact-start-end",
@@ -107,12 +113,6 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.component:chromosome-identifier",
-        "path": "Observation.component",
-        "sliceName": "chromosome-identifier",
-        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
-      },
-      {
         "id": "Observation.component:copy-number",
         "path": "Observation.component",
         "sliceName": "copy-number",
@@ -127,6 +127,28 @@
       {
         "id": "Observation.component:copy-number.value[x]",
         "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:copy-number.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
         "mustSupport": true
       },
       {

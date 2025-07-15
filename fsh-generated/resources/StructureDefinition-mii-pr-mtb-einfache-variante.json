@@ -56,24 +56,6 @@
           "description": "Slices for category",
           "ordered": false,
           "rules": "open"
-        },
-        "min": 2
-      },
-      {
-        "id": "Observation.category:geCategory",
-        "path": "Observation.category",
-        "sliceName": "geCategory",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "Observation.category:geCategory.coding",
-        "path": "Observation.category.coding",
-        "min": 1,
-        "max": "1",
-        "patternCoding": {
-          "code": "GE",
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
         }
       },
       {
@@ -97,20 +79,26 @@
         "definition": "Gen auf dem sich die Variante befindet."
       },
       {
-        "id": "Observation.component:coding-hgvs",
+        "id": "Observation.component:chromosome-identifier",
         "path": "Observation.component",
-        "sliceName": "coding-hgvs",
+        "sliceName": "chromosome-identifier",
+        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
+      },
+      {
+        "id": "Observation.component:representative-coding-hgvs",
+        "path": "Observation.component",
+        "sliceName": "representative-coding-hgvs",
         "definition": "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf DNA-Baseneben."
       },
       {
-        "id": "Observation.component:transcript-ref-seq",
+        "id": "Observation.component:representative-transcript-ref-seq",
         "path": "Observation.component",
-        "sliceName": "transcript-ref-seq",
+        "sliceName": "representative-transcript-ref-seq",
         "short": "Transcript ID",
         "definition": "Ensemble Transcript ID ('ENST...')."
       },
       {
-        "id": "Observation.component:transcript-ref-seq.value[x]",
+        "id": "Observation.component:representative-transcript-ref-seq.value[x]",
         "path": "Observation.component.value[x]",
         "binding": {
           "strength": "required",
@@ -165,15 +153,9 @@
         "definition": "Code der Variante in einer öffentlichen Datenbank (z.B. ClinVar)."
       },
       {
-        "id": "Observation.component:chromosome-identifier",
+        "id": "Observation.component:representative-protein-hgvs",
         "path": "Observation.component",
-        "sliceName": "chromosome-identifier",
-        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
-      },
-      {
-        "id": "Observation.component:protein-hgvs",
-        "path": "Observation.component",
-        "sliceName": "protein-hgvs",
+        "sliceName": "representative-protein-hgvs",
         "definition": "HGVS-kodierte Variantenbeschreibung im kodierenden Bereich auf Aminosäuren-Ebene."
       },
       {

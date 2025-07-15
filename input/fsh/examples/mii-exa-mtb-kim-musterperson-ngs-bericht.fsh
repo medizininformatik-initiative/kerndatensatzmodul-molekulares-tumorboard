@@ -74,8 +74,8 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:11998 "TP53"
-* component[protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[protein-hgvs].valueCodeableConcept = $HGVS#NP_000537.3:p.Arg213Ter
+* component[representative-protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
+* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000537.3:p.Arg213Ter
 
 // Diagnostische Implikation der TP53 Mutation (Pathogenität)
 Instance: mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53
@@ -104,8 +104,8 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:8979 "PIK3R1"
-* component[protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[protein-hgvs].valueCodeableConcept = $HGVS#NM_181523.2:p.E160*
+* component[representative-protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
+* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NM_181523.2:p.E160*
 // 
 
 // Add diagnostic implication for PIK3R1 mutation
