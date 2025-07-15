@@ -325,6 +325,20 @@
           "reference": "Device/MII-EXA-MTB-Device-Sequencer-1"
         },
         "name": "Beispiel fuer einen Sequencer",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device"
+      },
+      {
+        "reference": {
+          "reference": "Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1"
+        },
+        "name": "Beispiel für ein Library Preparation Kit",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Device/MII-EXA-MTB-Device-SequencingKit-1"
+        },
+        "name": "Beispiel für ein SequencingKit",
         "exampleBoolean": true
       },
       {
@@ -497,13 +511,6 @@
       },
       {
         "reference": {
-          "reference": "Device/MII-EXA-MTB-Device-SequencingKit-1"
-        },
-        "name": "Device",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Observation/mii-exa-mtb-kim-musterperson-aufklaerung"
         },
         "name": "Einwilligung zur MTB-Besprechung Kim Musterperson",
@@ -536,13 +543,6 @@
       },
       {
         "reference": {
-          "reference": "Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1"
-        },
-        "name": "ExampleDefinition",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1"
         },
         "name": "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen",
@@ -553,7 +553,15 @@
           "reference": "StructureDefinition/genomic-study-analysis"
         },
         "name": "Genomic Study Analysis",
-        "description": "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
+        "description": "Die Genomic Study Analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/genomic-study-device"
+        },
+        "name": "Genomic Study Device",
+        "description": "Profil für die Abbildung von Geräten, Labormaterialien und Pipelines, die in der Genomic Study Analysis verwendet werden.",
         "exampleBoolean": false
       },
       {

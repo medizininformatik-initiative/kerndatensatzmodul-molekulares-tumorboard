@@ -13,7 +13,7 @@ subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Structur
 Dieses Profil beschreibt die Genomics Study Analysis.
 
 Dieses Profil beschreibt die Genomics Study.
-Da sich der Aufbau, Umfang und Inhakt von genomischen Analysereport von anderen Diagnostischen Reports (Labor, Bildgebung, Pathologie, Mikrobiologie...) deutlich unterscheidet, wurde in FHIR R5 eine GenomicStudyRessource eingeführt, die alle relevanten Datenelemente beinhaltet. 
+Da sich der Aufbau, Umfang und Inhalt von genomischen Analysereport von anderen Diagnostischen Reports (Labor, Bildgebung, Pathologie, Mikrobiologie...) deutlich unterscheidet, wurde in FHIR R5 eine GenomicStudyRessource eingeführt, die alle relevanten Datenelemente beinhaltet. 
 * https://hl7.org/fhir/R5/genomicstudy.html
 * https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html
 
@@ -24,6 +24,10 @@ Die GenomicStudyAnalysis beinhaltet dabei präzise Daten zu eingesetzen Geräten
 ---
 
 ### Verknüpfungen zu anderen Ressourcen
+
+Die GenomicStudyAnalysis ist über die GenomicStudy mit dem NGS-Befundbericht verknüpft. 
+Die GenomicStudyAnalysis selbst beinhaltet Referenzen auf andere Geräte und Materialien, die in FHIR als Device-Ressource abgebildet werden. Hierfür wurde in der vorliegenden 
+
 
 ---
 
@@ -161,7 +165,7 @@ Folgende Suchparameter sind für das Modul Onkologie relevant, auch in Kombinati
 
 ---
 **Beispiele**
-
+### GenomicStudy
 <tabs>
     <tab title="Tabelle">{{table: MII-EXA-MTB-GenomicStudyAnalysis-1}}</tab>
     <tab title="JSON">{{json: MII-EXA-MTB-GenomicStudyAnalysis-1}}</tab>

@@ -26,20 +26,25 @@ Title: "Beispiel fuer einen GenomicStudyAnalysis"
 * extension[genome-build].valueCodeableConcept =  $LNC#LA26806-2 "GRCh38"
 
 Instance: MII-EXA-MTB-Device-Sequencer-1
-InstanceOf: Device
+InstanceOf: MII_PR_MTB_Genomic_Study_Device
 Usage: #example
 Title: "Beispiel fuer einen Sequencer"
-
-* manufacturer = "Sequenziergerät-Hersteller"
-* deviceName.name = "Sequenziergerät-Name in Umgangssprache"
+* manufacturer = "Illumina"
+* deviceName.name = "Illumina NovaSeq X Plus"
 * deviceName.type = #user-friendly-name
 
 Instance: MII-EXA-MTB-Device-SequencingKit-1
 InstanceOf: Device
 Usage: #example
-Title: "Device"
+Title: "Beispiel für ein SequencingKit"
+* manufacturer = "Illumina"
+* deviceName.name = "NovaSeq X Reagent Kit (300 cycles)"
+* deviceName.type = #user-friendly-name
 
 Instance: MII-EXA-MTB-Device-LibraryPreparation-Kit-1
 InstanceOf: Device
 Usage: #example
-Title: "ExampleDefinition"
+Title: "Beispiel für ein Library Preparation Kit"
+* manufacturer = "Illumina"
+* deviceName.name = " Illumina TruSeq DNA PCR-Free"
+* deviceName.type = #user-friendly-name

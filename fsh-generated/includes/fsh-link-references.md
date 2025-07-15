@@ -26,6 +26,8 @@
 [MII-EXA-MTB-GenomicStudyAnalysis-1]: Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.html
 [MII-EXA-MTB-Response-Befund-Beispiel-1]: Observation-MII-EXA-MTB-Response-Befund-Beispiel-1.html
 [MII-EXA-MTB-Device-Sequencer-1]: Device-MII-EXA-MTB-Device-Sequencer-1.html
+[MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
+[MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
 [MII-EXA-MTB-HRD-Score-1]: Observation-MII-EXA-MTB-HRD-Score-1.html
 [MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
 [MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
@@ -47,14 +49,13 @@
 [mii-exa-mtb-kim-musterperson-CNVariante-CCNE1]: Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html
 [mii-exa-mtb-medication-cobimetinib]: Medication-mii-exa-mtb-medication-cobimetinib.html
 [mii-exa-mtb-medication-request-cobimetinib]: MedicationRequest-mii-exa-mtb-medication-request-cobimetinib.html
-[MII-EXA-MTB-Device-SequencingKit-1]: Device-MII-EXA-MTB-Device-SequencingKit-1.html
 [mii-exa-mtb-kim-musterperson-aufklaerung]: Observation-mii-exa-mtb-kim-musterperson-aufklaerung.html
 [mii-exa-mtb-kim-rebiopsie-aszites]: ServiceRequest-mii-exa-mtb-kim-rebiopsie-aszites.html
 [mii-exa-mtb-kim-histologie-evaluation-aszites]: ServiceRequest-mii-exa-mtb-kim-histologie-evaluation-aszites.html
 [mii-exa-mtb-kim-humangenetische-beratung-aszites]: ServiceRequest-mii-exa-mtb-kim-humangenetische-beratung-aszites.html
-[MII-EXA-MTB-Device-LibraryPreparation-Kit-1]: Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html
 [MII-EXA-MTB-Follow-Up-ClinicalImpression-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
+[MII_PR_MTB_Genomic_Study_Device]: StructureDefinition-genomic-study-device.html
 [mii-exa-mtb-kim-oncotree]: Observation-mii-exa-mtb-kim-oncotree.html
 [mii-exa-mtb-kim-tumorausbreitung]: Observation-mii-exa-mtb-kim-tumorausbreitung.html
 [mii-exa-mtb-medication-lunresertib]: Medication-mii-exa-mtb-medication-lunresertib.html

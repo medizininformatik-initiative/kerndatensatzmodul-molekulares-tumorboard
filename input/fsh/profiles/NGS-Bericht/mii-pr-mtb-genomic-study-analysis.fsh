@@ -2,17 +2,17 @@ Profile: MII_PR_MTB_Genomic_Study_Analysis
 Parent: GenomicStudyAnalysis
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
-Description: "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung."
+Description: "Die Genomic Study Analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung."
 * insert PR_Header
 
 * extension MS
-* extension[method-type] MS
+* extension[method-type] MS 
 * extension[method-type].valueCodeableConcept from MII_VS_MTB_Genomic_Analysis_Method_Type
 * extension[genome-build] MS
 * extension[focus] MS
 * extension[specimen] MS
 * extension[device] MS
-* extension[regions] MS
+* extension[regions] MS 
 
 * extension contains MII_EX_MTB_GenomicStudyAnalysis_QC named qc 0..1 MS
 

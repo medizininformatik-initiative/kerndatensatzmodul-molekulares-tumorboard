@@ -9,3 +9,4 @@ Description: "Codesystem, welches die verwendeten NGS-Methodiken gemäß dnpm-Ko
 * #fusion-detection-panel               "Fusions-Detektions-Panel"
 * #whole-genom-sequencing               "Whole Genom Sequencing (WGS)"
 * #whole-exom-sequencing                "Whole Exom Sequencing (WES)"
+* #rnaseq-transcriptomics               "RNA Sequencing (RNA-Seq)"
