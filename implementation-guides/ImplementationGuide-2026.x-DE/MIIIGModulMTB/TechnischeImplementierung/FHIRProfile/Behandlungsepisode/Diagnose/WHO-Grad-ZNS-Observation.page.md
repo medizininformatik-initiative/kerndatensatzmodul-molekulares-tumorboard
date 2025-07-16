@@ -144,15 +144,15 @@ Folgende Suchparameter sind für diese Modul relevant, auch in Kombination:
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "combo-value-concept" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-<!--
+
 ---
 **Beispiele**
 
 <tabs>
-    <tab title="Tabelle">{{table:mii-exa-mtb-kim-tumorausbreitung}}</tab>
-    <tab title="JSON">{{json:mii-exa-mtb-kim-tumorausbreitung}}</tab>
+    <tab title="Tabelle">{{table:mii-exa-mtb-who-grad-tumor-zns}}</tab>
+    <tab title="JSON">{{json:mii-exa-mtb-who-grad-tumor-zns}}</tab>
 </tabs>
--->
+
 ---
 
 {{render:mii-vs-mtb-who-grad-tumor-zns}}

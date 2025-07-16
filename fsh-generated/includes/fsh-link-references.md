@@ -145,6 +145,7 @@
 [MII_PR_MTB_Tumorausbreitung]: StructureDefinition-mii-pr-mtb-tumorausbreitung.html
 [MII_PR_MTB_Tumorzellgehalt]: StructureDefinition-mii-pr-mtb-tumorzellgehalt.html
 [MII_PR_MTB_WHO_Grad_Tumor_ZNS]: StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.html
+[mii-exa-mtb-who-grad-tumor-zns-1]: Observation-mii-exa-mtb-who-grad-tumor-zns-1.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_VS_MTB_AuftragBegruendung]: ValueSet-mii-vs-mtb-auftrag-begruendung.html
