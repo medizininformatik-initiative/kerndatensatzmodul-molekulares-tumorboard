@@ -3,7 +3,7 @@ InstanceOf: MII_PR_MTB_Molecular_Pathology_Report
 Usage: #example
 * status = #final
 
-* code = $LNC#11526-1 "Pathology study" // not correct, have to do research here
+* code = $LNC#60568-3 "Pathology synoptic report" 
 * subject = Reference(PatientKimMusterperson)
 * result[+] = Reference(PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu)
 

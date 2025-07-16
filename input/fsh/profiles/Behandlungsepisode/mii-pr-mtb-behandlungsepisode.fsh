@@ -58,7 +58,7 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 
 // TODO: SCT prüfen
 * investigation contains MolekularPathologieBefund 0..* MS
-* investigation[MolekularPathologieBefund].code.coding = $SCT#721967005 "Tissue pathology biopsy report"
+* investigation[MolekularPathologieBefund].code.coding = $LNC#60568-3 "Pathology synoptic report"
 * investigation[MolekularPathologieBefund].item 1..1
 * investigation[MolekularPathologieBefund].item ^short = "Molekular Pathologie Befund"
 * investigation[MolekularPathologieBefund].item ^definition = "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund"
@@ -98,4 +98,4 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * supportingInfo[Therapieplan] ^definition = "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * supportingInfo[Therapieplan] only Reference(MII_PR_MTB_Therapieplan or CarePlan)
 
-* extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinenbehandlungStatus 0..1 MS
+* extension contains MII_EX_MTB_Leitlinienbehandlung_Status named LeitlinienbehandlungStatus 0..1 MS

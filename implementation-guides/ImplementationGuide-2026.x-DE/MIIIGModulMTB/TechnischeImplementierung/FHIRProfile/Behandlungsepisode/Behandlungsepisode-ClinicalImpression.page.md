@@ -157,8 +157,8 @@ Folgende Suchparameter sind für dieses Modul relevant, auch in Kombination:
 Beispiel: Beschluss MTB-Fall für Kim Musterperson vom 28.03.2023 (siehe {{pagelink:Szenarien}})
 
 <tabs>
-    <tab title="Tabelle">{{table:mii-exa-mtb-kim-musterperson-therapieplan}}</tab>
-    <tab title="JSON">{{json:mii-exa-mtb-kim-musterperson-therapieplan}}</tab>
+    <tab title="Tabelle">{{table:mii-exa-mtb-behandlungsepisode-1}}</tab>
+    <tab title="JSON">{{json:mii-exa-mtb-behandlungsepisode-1}}</tab>
 </tabs>
 
 

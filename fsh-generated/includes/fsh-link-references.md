@@ -101,6 +101,7 @@
 [MII_PR_MTB_Antrag_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html
 [MII_PR_MTB_Antwort_Kostenuebernahme]: StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html
 [MII_PR_MTB_Behandlungsepisode]: StructureDefinition-mii-pr-mtb-behandlungsepisode.html
+[mii-exa-mtb-behandlungsepisode-1]: ClinicalImpression-mii-exa-mtb-behandlungsepisode-1.html
 [MII_PR_MTB_Biopsie_Auftrag]: StructureDefinition-mii-pr-mtb-biopsie-auftrag.html
 [MII_PR_MTB_BRCAness]: StructureDefinition-mii-pr-mtb-brcaness.html
 [MII_PR_MTB_Follow_Up_ClinicalImpression]: StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html

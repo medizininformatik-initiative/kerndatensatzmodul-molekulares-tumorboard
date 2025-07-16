@@ -37,6 +37,22 @@
         "mustSupport": true
       },
       {
+        "id": "DiagnosticReport.code",
+        "path": "DiagnosticReport.code",
+        "short": "Molekular-Pathologie-Befund",
+        "definition": "Molekular-Pathologie-Befund, der im Kontext des Molekularen Tumorboards erstellt wurde.",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.code.coding",
+        "path": "DiagnosticReport.code.coding",
+        "patternCoding": {
+          "code": "60568-3",
+          "system": "http://loinc.org",
+          "display": "Pathology synoptic report"
+        }
+      },
+      {
         "id": "DiagnosticReport.subject",
         "path": "DiagnosticReport.subject",
         "min": 1,
@@ -75,7 +91,8 @@
         "id": "DiagnosticReport.specimen",
         "path": "DiagnosticReport.specimen",
         "short": "Probe",
-        "definition": "Dem Bericht zugrunde liegende Probe"
+        "definition": "Dem Bericht zugrunde liegende Probe",
+        "mustSupport": true
       },
       {
         "id": "DiagnosticReport.result",
@@ -90,14 +107,16 @@
           "rules": "open",
           "description": "Slices für verschiedene Inhalte eines Molekularpathologischen Reports. Diese Slices sind beliebig erweiterbar"
         },
-        "short": "Diagnostik",
-        "definition": "Art der Diagnostik"
+        "short": "Ergebnisse",
+        "definition": "Strukturierte Ergebnisse des Molekular-Pathologie-Befunds",
+        "mustSupport": true
       },
       {
         "id": "DiagnosticReport.result:Immunhistochemie",
         "path": "DiagnosticReport.result",
         "sliceName": "Immunhistochemie",
         "short": "Immunhistochemie",
+        "definition": "Ergebnisse der Immunhistochemie, die im Kontext des Molekularen Tumorboards erstellt wurden. Umfasst neben regulärer IHC auch die Phospo-IHC, sowie komplexere IHC-Untersuchungen wie PDL1-Expression, Her2-Expression, etc.",
         "min": 0,
         "max": "*",
         "type": [
@@ -114,7 +133,7 @@
         "id": "DiagnosticReport.result:InSituHybridisierung",
         "path": "DiagnosticReport.result",
         "sliceName": "InSituHybridisierung",
-        "short": "Gewebasierte In-Situ-Hybridisierung",
+        "short": "Gewebebasierte In-Situ-Hybridisierung",
         "min": 0,
         "max": "*",
         "type": [

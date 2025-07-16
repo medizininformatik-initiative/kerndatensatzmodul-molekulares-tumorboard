@@ -1,0 +1,192 @@
+{
+  "resourceType": "ClinicalImpression",
+  "id": "mii-exa-mtb-behandlungsepisode-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+    ]
+  },
+  "effectivePeriod": {
+    "start": "2023-03-01",
+    "end": "2023-05-31"
+  },
+  "problem": [
+    {
+      "reference": "Condition/PrimaertumorDiagnose-1"
+    }
+  ],
+  "investigation": [
+    {
+      "item": [
+        {
+          "reference": "FamilyMemberHistory/KrankengeschichteFamilie-1"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "410551005",
+            "system": "http://snomed.info/sct",
+            "display": "Family history taking (procedure)"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "Observation/ECOG-1"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "273437007",
+            "system": "http://snomed.info/sct",
+            "display": "Eastern Cooperative Oncology Group scale for physical assessment (assessment scale)"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "DiagnosticReport/NgsBericht-1"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "396927009",
+            "system": "http://snomed.info/sct",
+            "display": "Molecular testing, diagnostic (procedure)"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "DiagnosticReport/NgsBericht-2"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "396927009",
+            "system": "http://snomed.info/sct",
+            "display": "Molecular testing, diagnostic (procedure)"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "DiagnosticReport/MolekularPathologieBefund-1"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "108257001",
+            "system": "http://snomed.info/sct",
+            "display": "Anatomic pathology procedure (procedure)"
+          }
+        ]
+      }
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "Observation/ConsentGiven-1"
+    },
+    {
+      "reference": "DiagnosticReport/Bildbefund-1"
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "Therapielinie",
+              "valueUnsignedInt": 1
+            },
+            {
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "leitlinie",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-zulassungsstatus"
+                  }
+                ]
+              },
+              "url": "Zulassungsstatus"
+            }
+          ],
+          "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
+        }
+      ],
+      "reference": "Procedure/SystemischeVortherapie-1"
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "Therapielinie",
+              "valueUnsignedInt": 2
+            }
+          ],
+          "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
+        }
+      ],
+      "reference": "Procedure/OperativeVortherapie-1"
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "Therapielinie",
+              "valueUnsignedInt": 3
+            },
+            {
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "in-label",
+                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-zulassungsstatus"
+                  }
+                ]
+              },
+              "url": "Zulassungsstatus"
+            }
+          ],
+          "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
+        }
+      ],
+      "reference": "Procedure/SystemischeVortherapie-2"
+    },
+    {
+      "reference": "CarePlan/Therapieplan-1"
+    }
+  ],
+  "extension": [
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "exhausted",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-leitlinienbehandlung-status"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  }
+}
