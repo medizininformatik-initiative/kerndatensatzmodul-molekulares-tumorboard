@@ -241,7 +241,15 @@ Folgende Suchparameter sind für dieses Modul relevant, auch in Kombination:
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "extension-intention" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
-<span style="color:red;font-weight:bold">TODO: SP Stellung Extension</span>
+18.  Der Suchparameter "extension-intention" MUSS unterstützt werden:
+
+    Beispiele:
+
+    ```GET [base]/Procedure?extension-stellung=https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-stellung-zur-op|N```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "extension-intention" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+
+
 
 **Beispiele**
 
