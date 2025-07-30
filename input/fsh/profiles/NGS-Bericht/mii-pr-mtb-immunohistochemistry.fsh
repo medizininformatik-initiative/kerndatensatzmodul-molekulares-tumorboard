@@ -7,12 +7,12 @@ Description: "Immunhistorchemistry report"
 * identifier MS 
 
 * code 1..1 MS
-* code.coding MS 
+* code.coding 0..1 MS
 * code ^short = "Code für Immunhistochemische Untersuchung"
 * code ^definition = "Kodierung für Immunhistochemische Untersuchung. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist über gene-studied "
 * code.coding ^slicing.discriminator.type = #value
 * code.coding  ^slicing.discriminator.path = "code"
-* code.coding  ^slicing.rules = #open
+* code.coding  ^slicing.rules = #closed
 * code.coding contains spezifisch 0..1 MS and generisch 0..1 MS
 * code.coding[spezifisch].system 1..1 MS
 * code.coding[spezifisch] ^short = "Immunhistochemische Untersuchung"

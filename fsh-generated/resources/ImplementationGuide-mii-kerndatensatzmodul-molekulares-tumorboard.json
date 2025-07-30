@@ -57,19 +57,19 @@
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
       "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.diagnose/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.diagnose",
       "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
       "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ImplementationGuide/mii-ig-fall",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.fall/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.fall",
       "id": "de_medizininformatikinitiative_kerndatensatz_fall"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
       "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.medikation/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.medikation",
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
@@ -80,8 +80,8 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
-      "version": "2026.0.0-alpha",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.molgen/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.molgen",
+      "version": "2026.0.0-alpha.1",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/ImplementationGuide/mii-ig-molgen-v2025-DE",
       "id": "de_medizininformatikinitiative_kerndatensatz_molgen"
     },
     {
@@ -99,13 +99,13 @@
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.person",
       "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ImplementationGuide/mii-ig-person",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.person/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.person",
       "id": "de_medizininformatikinitiative_kerndatensatz_person"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.prozedur",
       "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ImplementationGuide/mii-ig-prozedur",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.prozedur/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.prozedur",
       "id": "de_medizininformatikinitiative_kerndatensatz_prozedur"
     },
     {
@@ -364,6 +364,14 @@
         "name": "Beispiel Mutationslast in Tumorprobe (MTB)",
         "description": "Beispiel fuer die Mutationslast in einer Tumorprobe mit Bezug zu molekularem Tumorboard.",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast"
+      },
+      {
+        "reference": {
+          "reference": "Observation/MII-EXA-MTB-RNA-Fusion-1"
+        },
+        "name": "Beispiel RNA-Fusion",
+        "description": "Beispiel fuer eine RNA-Fusion in Tumorzellen.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion"
       },
       {
         "reference": {

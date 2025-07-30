@@ -30,7 +30,7 @@ Usage: #example
 * category[labCategory].coding = $fhir-observation-category#laboratory
 * category[geCategory].coding = $hl7-v2-0074#GE
 
-* code.coding = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
+* code.coding[spezifisch] = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding[+] = $LNC#LA11842-4 "2+"
 * component[+].code.coding = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
@@ -41,7 +41,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
+* code.coding[spezifisch] = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Her2low"
 * component[+].code.coding = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
@@ -53,7 +53,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#55229-9 "Immune stain study" // LOINC 105010-3 Folate receptor alpha [Interpretation] in Tissue by Immune stain Narrative -> does not fit, because data type is narraitve
+* code.coding[spezifisch] = $LNC#55229-9 "Immune stain study" // LOINC 105010-3 Folate receptor alpha [Interpretation] in Tissue by Immune stain Narrative -> does not fit, because data type is narraitve
 * valueQuantity.code = #{/100}
 * valueQuantity.value = 70
 * valueQuantity.unit = "%"
@@ -69,7 +69,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#55229-9 "Immune stain study" 
+* code.coding[spezifisch] = $LNC#55229-9 "Immune stain study"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
 * component[+].code.coding = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept[+].coding[+] = $HGNC#HGNC:11530 "TACSTD2"
@@ -83,7 +83,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#48677-9 "Cancer Ag 125 [Presence] in Tissue by Immune stain"
+* code.coding[spezifisch] = $LNC#48677-9 "Cancer Ag 125 [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.text = "Die Tumorzellen sind partiell positiv für CA125,..."
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
 * component[+].code.coding = $LNC#48018-6 "Gene studied"
@@ -104,7 +104,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#73910-2 "PAX8 Ag [Presence] in Tissue by Immune stain"
+* code.coding[spezifisch] = $LNC#73910-2 "PAX8 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
 * valueCodeableConcept.text = "Tumorzellen durchgehend nukleär für Pax 8"
 
@@ -115,7 +115,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
+* code.coding[spezifisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
 * valueCodeableConcept.text = "Tumorzellen durchgehend nukleär für WT1" //durchgehend ist ein modifier? 
 * component[+].code.coding.code = #protein-studied
@@ -130,7 +130,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#14228-1 "Cells.progesterone receptor/cells in Tissue by Immune stain" 
+* code.coding[spezifisch] = $LNC#14228-1 "Cells.progesterone receptor/cells in Tissue by Immune stain"
 * valueQuantity.code = #/100
 * valueQuantity.value = 70
 * valueQuantity.unit = "%"
@@ -142,7 +142,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#14230-7 "Cells.progesteron receptor/cells in Tissue by Immune stain" 
+* code.coding[spezifisch] = $LNC#14230-7 "Cells.progesteron receptor/cells in Tissue by Immune stain"
 * valueQuantity.code = #/100
 * valueQuantity.value = 30
 * valueQuantity.unit = "%"
@@ -154,7 +154,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#14229-9 "P53 protein Ag [Presence] in Tissue by Immune stain" 
+* code.coding[spezifisch] = $LNC#14229-9 "P53 protein Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
 * valueCodeableConcept.text = "Kräftige nukleäre Überexpression von p53"
 
@@ -164,7 +164,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding = $LNC#14229-9 "P53 protein Ag [Presence] in Tissue by Immune stain" 
+* code.coding[spezifisch] = $LNC#14229-9 "P53 protein Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
 * valueCodeableConcept.text = "Kräftige nukleäre Überexpression von p53"
 
