@@ -35,11 +35,31 @@
       {
         "id": "Observation.code.coding",
         "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slices for code.coding",
+          "ordered": false
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.code.coding:NCIT",
+        "path": "Observation.code.coding",
+        "sliceName": "NCIT",
+        "min": 1,
+        "max": "1",
         "patternCoding": {
           "code": "C18303",
           "system": "https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html",
           "display": "DNA Ploidy Analysis"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Observation.value[x]",
