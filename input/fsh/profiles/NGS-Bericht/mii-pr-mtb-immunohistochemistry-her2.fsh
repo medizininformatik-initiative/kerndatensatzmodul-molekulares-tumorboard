@@ -5,7 +5,13 @@ Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistrchemistry report"
 * insert PR_Header
 
-* code.coding = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding ^slicing.description = "Slices for the coding"
+* code.coding ^slicing.ordered = false
+* code.coding contains LNC 1..1 MS
+* code.coding[LNC] = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL4396-9 //
 * valueCodeableConcept.coding ^short =  "0|1+|2+|3+|Indeterminate"
