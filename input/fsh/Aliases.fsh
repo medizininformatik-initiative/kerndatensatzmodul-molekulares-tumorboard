@@ -93,6 +93,7 @@ Alias: $hl7-v3-observation-high-low-codes = http://hl7.org/fhir/uv/genomics-repo
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
 Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
+Alias: $process-priority = http://terminology.hl7.org/CodeSystem/processpriority
 Alias: $request-status = http://hl7.org/fhir/request-status
 Alias: $request-intent = http://hl7.org/fhir/CodeSystem/request-intent
 Alias: $systemtherapie-status = http://hl7.org/fhir/event-status

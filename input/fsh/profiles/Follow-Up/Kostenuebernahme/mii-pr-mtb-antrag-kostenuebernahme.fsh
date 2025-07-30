@@ -6,7 +6,7 @@ Description: "Antrag Kostenübernahme"
 * insert PR_Header
 
 * status MS
-* status = #active
+* status = #active (exactly)
 * status ^short = "Antrag"
 * status ^definition = "Status der FHIR-Ressource - statisch auf #active gesetzt"
 * type MS
@@ -32,7 +32,7 @@ Description: "Antrag Kostenübernahme"
 //* provider only Reference(Organization)
 
 * priority MS
-* priority = #normal
+* priority = $process-priority#normal
 * priority ^short = "Priorität des Antrags"
 * priority ^definition = "Priorität des Antrags. Pflichtfeld in FHIR, aber nicht in der MII-Logik relevant"
 

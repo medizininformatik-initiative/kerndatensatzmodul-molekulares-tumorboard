@@ -41,7 +41,7 @@
         "path": "Claim.status",
         "short": "Antrag",
         "definition": "Status der FHIR-Ressource - statisch auf #active gesetzt",
-        "patternCode": "active",
+        "fixedCode": "active",
         "mustSupport": true
       },
       {
@@ -89,7 +89,8 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "code": "normal"
+              "code": "normal",
+              "system": "http://terminology.hl7.org/CodeSystem/processpriority"
             }
           ]
         },
