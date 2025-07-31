@@ -1,23 +1,23 @@
-Instance: MII-EXA-MTB-RNA-Fusion-1
-InstanceOf: MII_PR_MTB_RNA_Fusion
-Usage: #example
-Title: "Beispiel RNA-Fusion"
-Description: "Beispiel fuer eine RNA-Fusion in Tumorzellen."
-
-* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/rna-fusion"
-* status = #final
-* category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
-* code = $LNC#69548-6 "Genetic variant assessment"
-* valueCodeableConcept = $LNC#LA6572-3 "Present"
-* subject = Reference(Patient/example)
-
-* component[five-prime-chromosome].valueCodeableConcept = $LNC#LA21255-7 "Chromosome 2"
-* component[three-prime-chromosome].valueCodeableConcept = $LNC#LA21258-1 "Chromosome 5"
-* component[five-prime-position].valueRange.low.value = 12345678
-* component[five-prime-position].valueRange.high.value = 12345680
-* component[three-prime-position].valueRange.low.value = 87654321
-* component[three-prime-position].valueRange.high.value = 87654323
-* component[five-prime-gene].valueCodeableConcept = #HGNC:1100 "BRCA1"
-* component[three-prime-gene].valueCodeableConcept = #HGNC:9967 "RET"
-* component[allelic-read-depth].valueQuantity = 150 $UCUM#1 "Number of reported reads"
-* component[allelic-read-depth].code = $LNC#82121-5
+//Instance: MII-EXA-MTB-RNA-Fusion-1
+//InstanceOf: MII_PR_MTB_RNA_Fusion
+//Usage: #example
+//Title: "Beispiel RNA-Fusion"
+//Description: "Beispiel fuer eine RNA-Fusion in Tumorzellen."
+//
+//* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/rna-fusion"
+//* status = #final
+//* category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
+//* code = $LNC#69548-6 "Genetic variant assessment"
+//* valueCodeableConcept = $LNC#LA6572-3 "Present"
+//* subject = Reference(Patient/example)
+//
+//* component[five-prime-chromosome].valueCodeableConcept = $LNC#LA21255-7 "Chromosome 2"
+//* component[three-prime-chromosome].valueCodeableConcept = $LNC#LA21258-1 "Chromosome 5"
+//* component[five-prime-position].valueRange.low.value = 12345678
+//* component[five-prime-position].valueRange.high.value = 12345680
+//* component[three-prime-position].valueRange.low.value = 87654321
+//* component[three-prime-position].valueRange.high.value = 87654323
+//* component[five-prime-gene].valueCodeableConcept = #HGNC:1100 "BRCA1"
+//* component[three-prime-gene].valueCodeableConcept = #HGNC:9967 "RET"
+//* component[allelic-read-depth].valueQuantity = 150 $UCUM#1 "Number of reported reads"
+//* component[allelic-read-depth].code = $LNC#82121-5

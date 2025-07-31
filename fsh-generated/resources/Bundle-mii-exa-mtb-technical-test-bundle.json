@@ -445,15 +445,6 @@
         },
         "resourceType": "Observation",
         "id": "mii-exa-mtb-kim-musterperson-aufklaerung",
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "code": "373066001",
-              "system": "http://snomed.info/sct",
-              "display": "Yes (qualifier value)"
-            }
-          ]
-        },
         "status": "final",
         "code": {
           "coding": [
@@ -461,6 +452,15 @@
               "code": "105511-0",
               "system": "http://loinc.org",
               "display": "Was consent given"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "373066001",
+              "display": "Yes (qualifier value)"
             }
           ]
         },

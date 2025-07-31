@@ -110,4 +110,4 @@ Description: "Einwilligung von Kim Musterperson zur Besprechung im Molekularen T
 Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = 2023-01-02
-* valueCodeableConcept.coding = $SCT#373066001 "Yes (qualifier value)"
+* valueCodeableConcept = $SCT#373066001 "Yes (qualifier value)"
