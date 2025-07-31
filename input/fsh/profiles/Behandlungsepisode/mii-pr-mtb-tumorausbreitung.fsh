@@ -17,16 +17,16 @@ Description: "Angabe zur Tumorausbreitung"
 
 // TODO: SCT prüfen
 * category.coding contains ErstdiagnoseZeitpunkt 0..1 MS
-* category.coding[ErstdiagnoseZeitpunkt] = $SCT#473302008 "Aware of diagnosis"
+* category.coding[ErstdiagnoseZeitpunkt] = $SCT#473302008 "Aware of diagnosis" (exactly)
 
 // TODO: SCT prüfen
 * category.coding contains MolekularesTumorboardZeitpunkt 0..1 MS
-* category.coding[MolekularesTumorboardZeitpunkt] = $SCT#93771000119109 "Diagnosis deferred"
+* category.coding[MolekularesTumorboardZeitpunkt] = $SCT#93771000119109 "Diagnosis deferred" (exactly)
 
 // Observation represents simplified tumor stage
 * code 1..1 MS
 * code.coding 1..* MS
-* code.coding = $SCT#371508000 "Tumor stage"
+* code.coding = $SCT#371508000 "Tumor stage" (exactly)
 
 // Patient from Module Person
 * subject 1..1 MS
@@ -45,7 +45,8 @@ Description: "Angabe zur Tumorausbreitung"
 // Tumor stage (spreading)
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
-* valueCodeableConcept.coding 1..1 MS
+
+* valueCodeableConcept.coding 1..* MS
 * valueCodeableConcept.coding.system 1..1 MS
 * valueCodeableConcept.coding.code 1..1 MS
 
@@ -58,5 +59,5 @@ Description: "Angabe zur Tumorausbreitung"
 * valueCodeableConcept.coding contains Tumorausbreitung 1..1 MS
 * valueCodeableConcept.coding[Tumorausbreitung] ^short = "Tumorausbreitung"
 * valueCodeableConcept.coding[Tumorausbreitung] ^definition = "Angabe zur Tumorausbreitung"
-* valueCodeableConcept.coding[Tumorausbreitung].system = $SCT
-* valueCodeableConcept.coding[Tumorausbreitung].code from MII_VS_MTB_Tumorausbreitung
+* valueCodeableConcept.coding[Tumorausbreitung].system = $SCT (exactly)
+* valueCodeableConcept.coding[Tumorausbreitung] from MII_VS_MTB_Tumorausbreitung (required)
