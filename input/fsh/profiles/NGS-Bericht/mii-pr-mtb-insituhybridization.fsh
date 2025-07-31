@@ -42,11 +42,29 @@ Description: "Molekularer Biomarker - In Situ Hybridization Profil"
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
 
 * code 1..1 MS 
-* code.coding = $SCT#384715000 // "Nucleic acid hybridization procedure (procedure)"
 * code ^short = "In Situ Hybridization"
 * code ^definition = "In Situ Hybridization auf Gewebsschnitt"
+
+* code.coding 1..* MS
+* code.coding.system 1..1 MS
+* code.coding.code 1..1 MS
+
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding ^slicing.description = "Slice für In Situ Hybridization Finding"
+* code.coding ^slicing.ordered = false
+
+* code.coding contains SCT 1..1 MS
+* code.coding[SCT].system = $SCT (exactly)
+* code.coding[SCT] = $SCT#384715000 "Nucleic acid hybridization procedure (procedure)" (exactly)
+
+* code.coding contains LNC 0..1 MS
+* code.coding[LNC].system = $LNC (exactly)
+
 * value[x] 1..1 MS
-* valueQuantity MS 
+* valueQuantity MS
+
 * interpretation MS
 * interpretation ^short = "Interpretation "
 * interpretation ^definition = "Interpretation der ISH Signale. Die Interpretation kann auf Vergleich mit Referenzwerten basieren, die nicht zwingend vorliegen. " 
