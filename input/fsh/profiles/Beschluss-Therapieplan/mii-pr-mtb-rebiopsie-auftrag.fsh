@@ -11,10 +11,13 @@ Description: "Auftrag zur (erneuten) Biopsie"
     draft: Geplant, nicht angefragt, 
     active: Biopsie, 
     completed: Abgeschlossen"
+
+* intent = #proposal (exactly)
+
 * code 1..1 MS
-* code.coding = $SCT#86273004 "Biopsy (procedure)"
 * code ^short = "Empfehlung zur (Re-)Biopsie"
 * code ^definition = "Empfehlung zur (Re-)Biopsie"
+* code = $SCT#86273004 "Biopsy (procedure)" (exactly)
 
 * reasonReference ^slicing.discriminator.type = #profile
 * reasonReference ^slicing.discriminator.path = "$this.resolve()"

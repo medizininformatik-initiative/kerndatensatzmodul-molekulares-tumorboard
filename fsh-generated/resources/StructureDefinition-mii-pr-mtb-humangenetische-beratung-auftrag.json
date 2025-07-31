@@ -43,21 +43,26 @@
         "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
       },
       {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "fixedCode": "proposal"
+      },
+      {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Empfehlung zur Humangenetischen Beratung",
         "definition": "Empfehlung zur Humangenetischen Beratung",
         "min": 1,
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "788339009",
+              "system": "http://snomed.info/sct",
+              "display": "Genetic consultation (procedure)"
+            }
+          ]
+        },
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.code.coding",
-        "path": "ServiceRequest.code.coding",
-        "patternCoding": {
-          "code": "788339009",
-          "system": "http://snomed.info/sct",
-          "display": "Genetic consultation (procedure)"
-        }
       },
       {
         "id": "ServiceRequest.reasonCode",

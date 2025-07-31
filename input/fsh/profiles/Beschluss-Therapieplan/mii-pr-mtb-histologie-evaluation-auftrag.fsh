@@ -12,10 +12,14 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
     draft: Nicht umgesetzt, 
     active: In Umsetzung, 
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+
+* intent = #proposal (exactly)
+
 * code 1..1 MS
-* code.coding = $SCT#183825009  "Refer for histology (procedure)"
 * code ^short = "Empfehlung zur histologischen (Re-)Evaluation"
 * code ^definition = "Empfehlung zur histologischen (Re-)Evaluation"
+* code = $SCT#183825009  "Refer for histology (procedure)" (exactly)
+
 * reasonReference ^slicing.discriminator.type = #profile
 * reasonReference ^slicing.discriminator.path = "$this.resolve()"
 * reasonReference ^slicing.rules = #open

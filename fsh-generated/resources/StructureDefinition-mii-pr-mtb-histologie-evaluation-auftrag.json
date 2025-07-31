@@ -43,21 +43,26 @@
         "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
       },
       {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "fixedCode": "proposal"
+      },
+      {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Empfehlung zur histologischen (Re-)Evaluation",
         "definition": "Empfehlung zur histologischen (Re-)Evaluation",
         "min": 1,
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "183825009",
+              "system": "http://snomed.info/sct",
+              "display": "Refer for histology (procedure)"
+            }
+          ]
+        },
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.code.coding",
-        "path": "ServiceRequest.code.coding",
-        "patternCoding": {
-          "code": "183825009",
-          "system": "http://snomed.info/sct",
-          "display": "Refer for histology (procedure)"
-        }
       },
       {
         "id": "ServiceRequest.reasonReference",

@@ -19,7 +19,6 @@ Description: "Anfrage zum Studieneinschluss"
 * extension[statusReason].valueCodeableConcept.coding ^short = "Grund für Ablehnung"
 * extension[statusReason].valueCodeableConcept.coding ^definition = "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)"
 
-* intent MS
 * intent = #proposal (exactly)
 
 * category 1..1 MS

@@ -43,21 +43,26 @@
         "comment": "\n    draft: Geplant, nicht angefragt, \n    active: Biopsie, \n    completed: Abgeschlossen"
       },
       {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "fixedCode": "proposal"
+      },
+      {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Empfehlung zur (Re-)Biopsie",
         "definition": "Empfehlung zur (Re-)Biopsie",
         "min": 1,
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "86273004",
+              "system": "http://snomed.info/sct",
+              "display": "Biopsy (procedure)"
+            }
+          ]
+        },
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.code.coding",
-        "path": "ServiceRequest.code.coding",
-        "patternCoding": {
-          "code": "86273004",
-          "system": "http://snomed.info/sct",
-          "display": "Biopsy (procedure)"
-        }
       },
       {
         "id": "ServiceRequest.reasonReference",
