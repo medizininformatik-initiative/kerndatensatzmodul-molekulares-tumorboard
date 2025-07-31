@@ -6,6 +6,14 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree"
     ]
   },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://data.mskcc.org/ontologies/oncotree",
+        "code": "HGONEC"
+      }
+    ]
+  },
   "status": "final",
   "code": {
     "coding": [
@@ -18,13 +26,5 @@
   "subject": {
     "reference": "Patient/PatientKimMusterperson"
   },
-  "effectiveDateTime": "2021-06-10",
-  "valueCodeableConcept": {
-    "coding": [
-      {
-        "code": "HGONEC",
-        "system": "http://data.mskcc.org/ontologies/oncotree"
-      }
-    ]
-  }
+  "effectiveDateTime": "2021-06-10"
 }

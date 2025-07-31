@@ -106,7 +106,9 @@
       {
         "id": "Observation.value[x].coding.system",
         "path": "Observation.value[x].coding.system",
-        "patternUri": "http://data.mskcc.org/ontologies/oncotree"
+        "min": 1,
+        "fixedUri": "http://data.mskcc.org/ontologies/oncotree",
+        "mustSupport": true
       },
       {
         "id": "Observation.value[x].coding.code",

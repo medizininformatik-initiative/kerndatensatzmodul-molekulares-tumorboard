@@ -122,6 +122,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 Alias: $UNII = http://fdasis.nlm.nih.gov
 Alias: $UNIPROT = http://www.uniprot.org
 Alias: $NCIT = https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html
+Alias: $OT = http://data.mskcc.org/ontologies/oncotree
 
 
 // Sonstige Aliases

@@ -23,6 +23,9 @@ Description: "Grad des Tumors nach MSKCC Oncotree Klassifikation"
 // Grade from OncoTree
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
+
 * valueCodeableConcept.coding 1..1 MS
-* valueCodeableConcept.coding.system = "http://data.mskcc.org/ontologies/oncotree" 
+* valueCodeableConcept.coding.system 1..1 MS
 * valueCodeableConcept.coding.code 1..1 MS
+
+* valueCodeableConcept.coding.system = $OT (exactly)
