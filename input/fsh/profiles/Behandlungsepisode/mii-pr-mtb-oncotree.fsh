@@ -7,8 +7,7 @@ Description: "Grad des Tumors nach MSKCC Oncotree Klassifikation"
 
 // Observation represents OncoTree classification
 * code 1..1 MS
-* code.coding.system = $SCT
-* code.coding = #371469007 // 371469007 |Histologic grade of neoplasm (observable entity)|
+* code = $SCT#371469007 "Histologic grade of neoplasm (observable entity)" (exactly)
 
 // Patient from Module Person
 * subject 1..1 MS

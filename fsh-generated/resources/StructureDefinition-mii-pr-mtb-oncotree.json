@@ -39,19 +39,16 @@
       {
         "id": "Observation.code",
         "path": "Observation.code",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "371469007",
+              "system": "http://snomed.info/sct",
+              "display": "Histologic grade of neoplasm (observable entity)"
+            }
+          ]
+        },
         "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding",
-        "path": "Observation.code.coding",
-        "patternCoding": {
-          "code": "371469007"
-        }
-      },
-      {
-        "id": "Observation.code.coding.system",
-        "path": "Observation.code.coding.system",
-        "patternUri": "http://snomed.info/sct"
       },
       {
         "id": "Observation.subject",

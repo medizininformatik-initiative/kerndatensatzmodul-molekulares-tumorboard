@@ -33,7 +33,6 @@ Title: "High-Grade Neuroendocrine Carcinoma of the Ovary"
 Description: "High-Grade Neuroendocrine Carcinoma of the Ovary (HGONEC) bei Kim Musterperson"
 * meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree"
 * status = #final
-* code = $SCT#371469007
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = 2021-06-10 
-* valueCodeableConcept = http://data.mskcc.org/ontologies/oncotree#HGONEC
+* valueCodeableConcept = $OT#HGONEC
