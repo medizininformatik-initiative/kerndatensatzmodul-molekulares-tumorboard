@@ -20,7 +20,7 @@ Description: "Auftrag zur (erneuten) Human-genetischen Beratung"
 * code = $SCT#788339009 "Genetic consultation (procedure)" (exactly)
 
 * reasonCode 0..1 MS
-* reasonCode from MII_VS_MTB_AuftragBegruendung (preferred)
+* reasonCode from MII_VS_MTB_AuftragBegruendung (extensible)
 
 * specimen 0..* MS
 * specimen only Reference(
