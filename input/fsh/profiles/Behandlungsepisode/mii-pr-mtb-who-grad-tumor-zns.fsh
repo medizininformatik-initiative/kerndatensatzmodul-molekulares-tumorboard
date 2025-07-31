@@ -28,13 +28,13 @@ Description: "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen 
 * valueCodeableConcept.coding.code 1..1 MS
 
 * valueCodeableConcept.coding ^slicing.discriminator.type = #value
-* valueCodeableConcept.coding ^slicing.discriminator.path = "system"
-* valueCodeableConcept.coding ^slicing.rules = #open
+* valueCodeableConcept.coding ^slicing.discriminator.path = "code"
+* valueCodeableConcept.coding ^slicing.rules = #closed
 * valueCodeableConcept.coding ^slicing.description = "Slice für Klassifikation des Tumors"
 * valueCodeableConcept.coding ^slicing.ordered = false
 
 * valueCodeableConcept.coding contains SCT 1..1 MS
 * valueCodeableConcept.coding[SCT] ^short = "WHO-Klassifikation gemäß SNOMED CT"
 * valueCodeableConcept.coding[SCT] ^definition = "Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems gemäß SNOMED CT"
-* valueCodeableConcept.coding[SCT].system = $SCT
-* valueCodeableConcept.coding[SCT].code from MII_VS_MTB_WHO_Grad_Tumor_ZNS
+* valueCodeableConcept.coding[SCT].system = $SCT (exactly)
+* valueCodeableConcept.coding[SCT] from MII_VS_MTB_WHO_Grad_Tumor_ZNS (required)
