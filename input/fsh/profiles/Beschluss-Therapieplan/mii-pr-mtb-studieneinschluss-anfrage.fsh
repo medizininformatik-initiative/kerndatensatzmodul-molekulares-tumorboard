@@ -20,14 +20,15 @@ Description: "Anfrage zum Studieneinschluss"
 * extension[statusReason].valueCodeableConcept.coding ^definition = "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)"
 
 * intent MS
-* intent = #proposal
+* intent = #proposal (exactly)
 
-* category MS
-* category = $SCT#110465008 "Clinical trial (procedure)"
+* category 1..1 MS
+* category = $SCT#110465008 "Clinical trial (procedure)" (exactly)
 
-* code MS
-* code.coding 1..1 MS
-* code = $SCT#702475000 "Referral to clinical trial (procedure)"
+* code 1..1 MS
+* code ^short = "Studieneinschlussempfehlung"
+* code ^definition = "Empfehlung zum Einschluss in eine Studie"
+* code = $SCT#702475000 "Referral to clinical trial (procedure)" (exactly)
 
 * reasonReference 0..* MS
 * reasonReference only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
