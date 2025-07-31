@@ -6,11 +6,10 @@ Description: "Status der Behandlung nach Leitlinie"
 * insert EX_Header($mii-ex-mtb-leitlinienbehandlung-status)
 
 * value[x] 1..1 MS
-* value[x] only CodeableConcept
-
-* valueCodeableConcept.coding 1..1 MS
-* valueCodeableConcept.coding ^short = "Leitlinienbehandlungsstatus"
-* valueCodeableConcept.coding ^definition = "Status der Behandlung nach Leitline zum Zeitpunkt des Einschlusses ins MTB"
-* valueCodeableConcept.coding.code 1..1 MS
-* valueCodeableConcept.coding.system = $mii-cs-mtb-leitlinienbehandlung-status
-* valueCodeableConcept.coding.code from MII_VS_MTB_Leitlinienbehandlung_Status
+* value[x] only Coding
+* valueCoding ^short = "Leitlinienbehandlungsstatus"
+* valueCoding ^definition = "Status der Behandlung nach Leitline zum Zeitpunkt des Einschlusses ins MTB"
+* valueCoding.system 1..1 MS
+* valueCoding.code 1..1 MS
+* valueCoding.system = $mii-cs-mtb-leitlinienbehandlung-status (exactly)
+* valueCoding.code from MII_VS_MTB_Leitlinienbehandlung_Status (required)

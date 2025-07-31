@@ -41,4 +41,4 @@ Description: "Beispiel für aktuellen Gesundheitszustand und bisherige Behandlun
 * supportingInfo[Vortherapie][=].extension[LeitlinieDokumentation].extension[Therapielinie].valueUnsignedInt = 3
 * supportingInfo[Vortherapie][=].extension[LeitlinieDokumentation].extension[Zulassungsstatus].valueCodeableConcept.coding = $mii-cs-mtb-zulassungsstatus#in-label
 * supportingInfo[Therapieplan] = Reference(CarePlan/Therapieplan-1)
-* extension[LeitlinienbehandlungStatus].valueCodeableConcept.coding = $mii-cs-mtb-leitlinienbehandlung-status#exhausted
+* extension[LeitlinienbehandlungStatus].valueCoding = $mii-cs-mtb-leitlinienbehandlung-status#exhausted
