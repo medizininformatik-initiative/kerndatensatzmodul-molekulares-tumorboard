@@ -269,6 +269,42 @@
         "mustSupport": true
       },
       {
+        "id": "DiagnosticReport.result:MolekularerBiomarkerHER2Status",
+        "path": "DiagnosticReport.result",
+        "sliceName": "MolekularerBiomarkerHER2Status",
+        "short": "Molekularer Biomarker HER2 Status",
+        "definition": "Verweis auf Molekularer Biomarker HER2 Status",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biomarker-her2-status"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:MolekularerBiomarker",
+        "path": "DiagnosticReport.result",
+        "sliceName": "MolekularerBiomarker",
+        "short": "Molekularer Biomarker",
+        "definition": "Verweis auf Molekularer Biomarker",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "DiagnosticReport.result:Tumorzellgehalt",
         "path": "DiagnosticReport.result",
         "sliceName": "Tumorzellgehalt",

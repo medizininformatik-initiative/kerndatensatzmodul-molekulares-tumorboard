@@ -86,6 +86,22 @@ Description: "NGS-Bericht zu einer Probe"
 * result[RNASeq] 0..1 MS
 * result[RNASeq] only Reference(MII_PR_MTB_RNA_Seq) // or MTB RNASeq Profile
 
+* result contains MolekularerBiomarkerHER2Status 0..* MS
+* result[MolekularerBiomarkerHER2Status] ^short = "Molekularer Biomarker HER2 Status"
+* result[MolekularerBiomarkerHER2Status] ^definition = "Verweis auf Molekularer Biomarker HER2 Status"
+* result[MolekularerBiomarkerHER2Status] 0..* MS
+* result[MolekularerBiomarkerHER2Status] only Reference(
+    MII_PR_MTB_BIOMARKER_HER2_STATUS)
+
+// für andere Biomarker
+* result contains MolekularerBiomarker 0..* MS
+* result[MolekularerBiomarker] ^short = "Molekularer Biomarker"
+* result[MolekularerBiomarker] ^definition = "Verweis auf Molekularer Biomarker"
+* result[MolekularerBiomarker] 0..* MS
+* result[MolekularerBiomarker] only Reference(
+    MII_PR_MTB_Molekularer_Biomarker)
+
+
 * result contains Tumorzellgehalt 0..1 MS
 
 Extension: MII_EX_MTB_NGS_Bericht_Genomic_Study

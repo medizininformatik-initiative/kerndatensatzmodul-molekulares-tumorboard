@@ -34,11 +34,8 @@ package profiles.Beschluss-Therapieplan <<Rectangle>> {
 }
 
 package profiles.NGS-Bericht <<Rectangle>> {
-    object MII_PR_MTB_Immunohistochemistry_PDL1 $colors.Observation
     object MII_PR_MTB_Genomic_Study_Analysis $colors.Procedure
     object MII_PR_MTB_NGS_Bericht $colors.DiagnosticReport
-    object MII_PR_MTB_Immunohistochemistry_MMR $colors.Observation
-    object MII_PR_MTB_Immunohistochemistry_Phosphorylation $colors.Observation
     object MII_PR_MTB_Copy_Number_Variant $colors.Observation
     object MII_PR_MTB_Mutationslast $colors.Observation
     object MII_PR_MTB_Ploidie $colors.Observation
@@ -46,22 +43,29 @@ package profiles.NGS-Bericht <<Rectangle>> {
     object MII_PR_MTB_Einfache_Variante $colors.Observation
     object MII_PR_MTB_RNA_Seq $colors.Observation
     object MII_PR_MTB_DNA_Fusion $colors.Observation
-    object MII_PR_MTB_INSITUHYBRIDIZATION_HER2 $colors.Observation
-    object MII_PR_MTB_Therapeutische_Implikation $colors.Observation
     object MII_PR_MTB_BIOMARKER_HER2_STATUS $colors.Observation
-    object MII_PR_MTB_Molecular_Pathology_Report $colors.DiagnosticReport
-    object MII_PR_MTB_Diagnostische_Implikation $colors.Observation
-    object MII_PR_MTB_Immunohistochemistry_MSI $colors.Observation
     object MII_PR_MTB_HRD_Score $colors.Observation
-    object MII_PR_MTB_Biomarker_InSituHybridization $colors.Observation
-    object MII_PR_MTB_Immunohistochemistry $colors.Observation
-    object MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2 $colors.Observation
     object MII_PR_MTB_Mikrosatelliteninstabilitaet $colors.Observation
     object MII_PR_MTB_BRCAness $colors.Observation
     object MII_PR_MTB_Molekularer_Biomarker $colors.Observation
     object MII_PR_MTB_Genomic_Study $colors.Procedure
     
 }
+
+package profiles.MolekularPathologieBefund <<Rectangle>> {
+    object MII_PR_MTB_Immunohistochemistry_MSI $colors.Observation
+    object MII_PR_MTB_Molecular_Pathology_Report $colors.DiagnosticReport
+    object MII_PR_MTB_Immunohistochemistry $colors.Observation
+    object MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2 $colors.Observation
+    object MII_PR_MTB_Immunohistochemistry_PDL1 $colors.Observation
+    object MII_PR_MTB_Immunohistochemistry_MMR $colors.Observation
+    object MII_PR_MTB_Immunohistochemistry_Phosphorylation $colors.Observation
+    object MII_PR_MTB_INSITUHYBRIDIZATION_HER2 $colors.Observation
+    object MII_PR_MTB_Biomarker_InSituHybridization $colors.Observation
+
+}
+
+
 
 package profiles.Follow-Up <<Rectangle>> {
     object MII_PR_MTB_Follow_Up_ClinicalImpression $colors.ClinicalImpression
@@ -83,7 +87,8 @@ package profiles.Behandlungsepisode <<Rectangle>> {
     object MII_PR_MTB_Diagnose_Primaertumor $colors.Condition
     object MII_PR_MTB_Behandlungsepisode $colors.ClinicalImpression
     object MII_PR_MTB_Systemische_Vortherapie $colors.Procedure
-    
+    object MII_PR_MTB_Therapeutische_Implikation $colors.Observation
+    object MII_PR_MTB_Diagnostische_Implikation $colors.Observation    
 }
 
 package profiles.Follow-Up.Kostenuebernahme <<Rectangle>> {
@@ -102,6 +107,10 @@ MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Copy_Number_Variant : DiagnosticReport.res
 MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_DNA_Fusion : DiagnosticReport.result:DNAFusion
 MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Fusion : DiagnosticReport.result:RNAFusion
 MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Seq : DiagnosticReport.result:RNASeq
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_BIOMARKER_HER2_STATUS : DiagnosticReport.result:MolekularerBiomarkerHER2Status
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Molekularer_Biomarker : DiagnosticReport.result:MolekularerBiomarker
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Genomic_Study : DiagnosticReport.extension:MII_EX_MTB_NGS_Bericht_Genomic_Study.valueReference
+MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Genomic_Study_Analysis : DiagnosticReport.extension:MII_EX_MTB_NGS_Bericht_Genomic_Study.valueReference
 MII_PR_MTB_Biopsie_Auftrag --> MII_PR_MTB_Tumorzellgehalt : ServiceRequest.reasonReference:Tumorzellgehalt
 MII_PR_MTB_Follow_Up_ClinicalImpression --> MII_PR_MTB_Behandlungsepisode : ClinicalImpression.previous
 MII_PR_MTB_Copy_Number_Variant --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
@@ -117,7 +126,13 @@ MII_PR_MTB_RNA_Seq --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_DNA_Fusion --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Therapeutische_Implikation --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry : DiagnosticReport.result:Immunhistochemie
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_MMR : DiagnosticReport.result:Immunhistochemie
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2 : DiagnosticReport.result:Immunhistochemie
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_MSI : DiagnosticReport.result:Immunhistochemie
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_PDL1 : DiagnosticReport.result:Immunhistochemie
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_Phosphorylation : DiagnosticReport.result:Immunhistochemie
 MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Biomarker_InSituHybridization : DiagnosticReport.result:InSituHybridisierung
+MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_INSITUHYBRIDIZATION_HER2 : DiagnosticReport.result:InSituHybridisierung
 MII_PR_MTB_Diagnostische_Implikation --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_WHO_Grad_Tumor_ZNS : Condition.stage:WHOGradZNS.assessment
 MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_Oncotree : Condition.stage:OncoTree.assessment
