@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Genomic_Study_Analysis
-Parent: GenomicStudyAnalysis
+Parent: MII_PR_MolGen_GenomicStudyAnalysis
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
 Description: "Die Genomic Study Analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung."

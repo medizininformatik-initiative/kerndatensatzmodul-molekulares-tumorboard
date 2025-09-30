@@ -35,7 +35,7 @@
         "id": "CarePlan.status",
         "path": "CarePlan.status",
         "definition": "Status der Umsetzung des beschlossenen Therapieplans",
-        "comment": "\n    active: Empfehlung bzw. Therapieoption in Umsetzung (Regelfall), \n    revoked: Molekularer Tumorboard-Fall ist abgeschlossen, \n    completed: Alle Empfehlungen bzw. Therapieoptionen ausgeschöpft oder Patient verstorben"
+        "comment": "\r\n    active: Empfehlung bzw. Therapieoption in Umsetzung (Regelfall), \r\n    revoked: Molekularer Tumorboard-Fall ist abgeschlossen, \r\n    completed: Alle Empfehlungen bzw. Therapieoptionen ausgeschöpft oder Patient verstorben"
       },
       {
         "id": "CarePlan.description",
@@ -124,6 +124,11 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:Therapieempfehlung.detail",
+        "path": "CarePlan.activity.detail",
         "mustSupport": true
       },
       {

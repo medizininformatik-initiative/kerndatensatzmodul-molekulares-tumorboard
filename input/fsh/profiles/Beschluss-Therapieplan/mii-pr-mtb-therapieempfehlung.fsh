@@ -33,7 +33,7 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * reasonReference[StuetzendeMolekulareAlteration] ^definition = "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)"
 * reasonReference[StuetzendeMolekulareAlteration] only Reference(
     MII_PR_Patho_Finding or
-    MII_PR_MolGen_Variante or
+    https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante or
     MII_PR_Onko_Genetische_Variante or
     Observation
 )

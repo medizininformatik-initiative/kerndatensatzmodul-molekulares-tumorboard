@@ -1,5 +1,6 @@
+
 Profile: MII_PR_MTB_Molekularer_Biomarker
-Parent: molecular-biomarker
+Parent: MII_PR_MolGen_MolekularerBiomarker
 Id: mii-pr-mtb-molekularer-biomarker
 Title: "MII PR MTB Molekularer Biomarker"
 Description: "Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis von https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-molecular-biomarker.html nachgebaut."
