@@ -17,6 +17,11 @@ RuleSet: ISHBefund
   * Wert                    0..1   decimal              "Wert"
   * UntersuchtesGen  0..1   code                   "Untersuchtes Gen (kodiert durch den HGNC-Gennamen)"
 
+RuleSet: MolekularpathologieMapping
+* MolelularpathologischerBefund -> "DiagnosticReport"
+* insert IHCBefundMapping
+* insert ISHBefundMapping
+
 RuleSet: IHCBefundMapping
 * IHCBefund     ->      "Observation"
   * Code                  ->        "Observation.code"
