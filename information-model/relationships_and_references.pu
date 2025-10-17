@@ -36,18 +36,8 @@ package profiles.Beschluss-Therapieplan <<Rectangle>> {
 package profiles.NGS-Bericht <<Rectangle>> {
     object MII_PR_MTB_Genomic_Study_Analysis $colors.Procedure
     object MII_PR_MTB_NGS_Bericht $colors.DiagnosticReport
-    object MII_PR_MTB_Copy_Number_Variant $colors.Observation
+    object Referenzen_auf_Varianten_und_Biomarker_des_NGS-Berichts $colors.Observation
     object MII_PR_MTB_Mutationslast $colors.Observation
-    object MII_PR_MTB_Ploidie $colors.Observation
-    object MII_PR_MTB_RNA_Fusion $colors.Observation
-    object MII_PR_MTB_Einfache_Variante $colors.Observation
-    object MII_PR_MTB_RNA_Seq $colors.Observation
-    object MII_PR_MTB_DNA_Fusion $colors.Observation
-    object MII_PR_MTB_BIOMARKER_HER2_STATUS $colors.Observation
-    object MII_PR_MTB_HRD_Score $colors.Observation
-    object MII_PR_MTB_Mikrosatelliteninstabilitaet $colors.Observation
-    object MII_PR_MTB_BRCAness $colors.Observation
-    object MII_PR_MTB_Molekularer_Biomarker $colors.Observation
     object MII_PR_MTB_Genomic_Study $colors.Procedure
     
 }
@@ -97,18 +87,7 @@ package profiles.Follow-Up.Kostenuebernahme <<Rectangle>> {
     
 }
 
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Mutationslast : DiagnosticReport.result:TumorMutionalBurden
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Mikrosatelliteninstabilitaet : DiagnosticReport.result:MSI
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Ploidie : DiagnosticReport.result:Ploidie
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_HRD_Score : DiagnosticReport.result:HRDScore
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_BRCAness : DiagnosticReport.result:BRCAness
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Einfache_Variante : DiagnosticReport.result:EinfacheVariante
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Copy_Number_Variant : DiagnosticReport.result:CopyNumberVariant
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_DNA_Fusion : DiagnosticReport.result:DNAFusion
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Fusion : DiagnosticReport.result:RNAFusion
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Seq : DiagnosticReport.result:RNASeq
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_BIOMARKER_HER2_STATUS : DiagnosticReport.result:MolekularerBiomarkerHER2Status
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Molekularer_Biomarker : DiagnosticReport.result:MolekularerBiomarker
+MII_PR_MTB_NGS_Bericht --> Referenzen_auf_Varianten_und_Biomarker_des_NGS-Berichts : DiagnosticReport.result
 MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Genomic_Study : DiagnosticReport.extension:MII_EX_MTB_NGS_Bericht_Genomic_Study.valueReference
 MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Genomic_Study_Analysis : DiagnosticReport.extension:MII_EX_MTB_NGS_Bericht_Genomic_Study.valueReference
 MII_PR_MTB_Biopsie_Auftrag --> MII_PR_MTB_Tumorzellgehalt : ServiceRequest.reasonReference:Tumorzellgehalt
