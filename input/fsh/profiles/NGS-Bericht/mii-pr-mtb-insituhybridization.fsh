@@ -57,7 +57,10 @@ Description: "Molekularer Biomarker - In Situ Hybridization Profil"
 
 * code.coding contains SCT 1..1 MS
 * code.coding[SCT].system = $SCT (exactly)
-* code.coding[SCT] = $SCT#384715000 "Nucleic acid hybridization procedure (procedure)" (exactly)
+* code.coding[SCT] = $SCT#51864006  // "Nucleic acid hybridization, function (observable entity)" 
+* code.coding[SCT] ^short = "Nucleic acid hybridization"
+
+
 
 * code.coding contains LNC 0..1 MS
 * code.coding[LNC].system = $LNC (exactly)

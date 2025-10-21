@@ -53,6 +53,7 @@
 [mii-exa-mtb-kim-rebiopsie-aszites]: ServiceRequest-mii-exa-mtb-kim-rebiopsie-aszites.html
 [mii-exa-mtb-kim-histologie-evaluation-aszites]: ServiceRequest-mii-exa-mtb-kim-histologie-evaluation-aszites.html
 [mii-exa-mtb-kim-humangenetische-beratung-aszites]: ServiceRequest-mii-exa-mtb-kim-humangenetische-beratung-aszites.html
+[PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-]: Observation-PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-.html
 [MII-EXA-MTB-Follow-Up-ClinicalImpression-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.html
 [MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
 [MII_PR_MTB_Genomic_Study_Device]: StructureDefinition-genomic-study-device.html

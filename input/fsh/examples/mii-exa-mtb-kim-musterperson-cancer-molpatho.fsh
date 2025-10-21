@@ -35,6 +35,28 @@ Usage: #example
 * component[+].code.coding = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
 
+Instance: PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-
+InstanceOf: MII_PR_MTB_Biomarker_InSituHybridization
+Usage: #example
+Title: "Example In Situ Hybridization HER2/ERBB2"
+Description: "Example of HER2 in situ hybridization with ratio measurement for patient Kim Musterperson"
+* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization"
+* status = #final
+* category[labCategory] = $fhir-observation-category#laboratory
+* category[mbCategory] = $TBD#biomarker-category
+
+* code = $SCT#1365744007 "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
+* subject = Reference(PatientKimMusterperson)
+* specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
+* valueRatio.numerator.value = 2.5
+* valueRatio.denominator.value = 1
+* interpretation = $SCT#12645001 "Gene amplification (finding)"
+* component[+].code = $LNC#48018-6 "Gene studied"
+* component[=].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
+//* component[+].code = $LNC#48018-6 "Gene studied"
+//* component[=].valueCodeableConcept = $HGNC#HGNC:CEN17 "centromere chromosome 17"
+
+
 Instance: PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
