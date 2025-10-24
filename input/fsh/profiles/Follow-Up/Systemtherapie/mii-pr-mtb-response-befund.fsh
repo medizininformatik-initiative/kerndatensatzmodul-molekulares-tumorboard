@@ -16,6 +16,7 @@ Description: "Response Beurteilung nach DNPM"
 * method 1..1 MS
 * method ^short = "Beurteilungsmethode"
 * method ^definition = "Beurteilungsmethode RECIST oder RANO"
+* method from MII_VS_MTB_Beurteilungsmethode
 
 // für valueCodeableConcept eigenes CS & VS
 // https://simplifier.net/medizininformatikinitiative-modulonkologie/mii-cs-onko-verlauf-gesamtbeurteilung

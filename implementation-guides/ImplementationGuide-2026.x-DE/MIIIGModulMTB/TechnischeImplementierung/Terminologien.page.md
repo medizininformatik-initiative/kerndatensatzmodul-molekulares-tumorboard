@@ -215,6 +215,27 @@ select
 
 ---
 
+#### Follow-Up: Response Befund Beurteilungsmethode
+
+Wird im Befund Response verwendet.
+Quelle: [DNPM v2.0](https://ibmi-ut.atlassian.net/wiki/spaces/DAM/pages/2589011/Datenmodell+V2.0)
+
+<fql output="table">
+from 
+    CodeSystem 
+where 
+    url.endsWith('CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode') 
+for 
+    concept
+select
+    Code: code,
+    Display: display,
+    Definition: definition
+</fql>
+
+---
+
+
 #### Follow-Up: Systemische Therapie Status Grund
 
 Wird für die systemische Therapie (sowohl Vortherapie als auch Follow-Up verwendet).
