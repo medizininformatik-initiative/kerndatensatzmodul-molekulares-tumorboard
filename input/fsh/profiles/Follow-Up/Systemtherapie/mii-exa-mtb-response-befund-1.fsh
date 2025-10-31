@@ -9,7 +9,7 @@ Title: "Beispiel fuer einen Response Befund"
 * subject = Reference(Patient/Example)
 * focus = Reference(Condition/Example)
 * effectiveDateTime = "2014-02-12"
-* method.coding.code = #RECIST
+* method = #RECIST
 * valueCodeableConcept.coding.code = #PP
 * partOf = Reference(Procedure/Example)
 * component[Tumor_Verlauf].valueCodeableConcept.coding.code = #K

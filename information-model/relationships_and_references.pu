@@ -36,32 +36,15 @@ package profiles.Beschluss-Therapieplan <<Rectangle>> {
 package profiles.NGS-Bericht <<Rectangle>> {
     object MII_PR_MTB_Genomic_Study_Analysis $colors.Procedure
     object MII_PR_MTB_NGS_Bericht $colors.DiagnosticReport
-    object MII_PR_MTB_Copy_Number_Variant $colors.Observation
+    object Referenzen_auf_Varianten_und_Biomarker_des_NGS_Berichts $colors.Observation
     object MII_PR_MTB_Mutationslast $colors.Observation
-    object MII_PR_MTB_Ploidie $colors.Observation
-    object MII_PR_MTB_RNA_Fusion $colors.Observation
-    object MII_PR_MTB_Einfache_Variante $colors.Observation
-    object MII_PR_MTB_RNA_Seq $colors.Observation
-    object MII_PR_MTB_DNA_Fusion $colors.Observation
-    object MII_PR_MTB_BIOMARKER_HER2_STATUS $colors.Observation
-    object MII_PR_MTB_HRD_Score $colors.Observation
-    object MII_PR_MTB_Mikrosatelliteninstabilitaet $colors.Observation
-    object MII_PR_MTB_BRCAness $colors.Observation
-    object MII_PR_MTB_Molekularer_Biomarker $colors.Observation
     object MII_PR_MTB_Genomic_Study $colors.Procedure
     
 }
 
 package profiles.MolekularPathologieBefund <<Rectangle>> {
-    object MII_PR_MTB_Immunohistochemistry_MSI $colors.Observation
     object MII_PR_MTB_Molecular_Pathology_Report $colors.DiagnosticReport
-    object MII_PR_MTB_Immunohistochemistry $colors.Observation
-    object MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2 $colors.Observation
-    object MII_PR_MTB_Immunohistochemistry_PDL1 $colors.Observation
-    object MII_PR_MTB_Immunohistochemistry_MMR $colors.Observation
-    object MII_PR_MTB_Immunohistochemistry_Phosphorylation $colors.Observation
-    object MII_PR_MTB_INSITUHYBRIDIZATION_HER2 $colors.Observation
-    object MII_PR_MTB_Biomarker_InSituHybridization $colors.Observation
+    object Inhalte_eines_Molekularpathologischen_Reports $colors.Observation
 
 }
 
@@ -97,42 +80,18 @@ package profiles.Follow-Up.Kostenuebernahme <<Rectangle>> {
     
 }
 
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Mutationslast : DiagnosticReport.result:TumorMutionalBurden
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Mikrosatelliteninstabilitaet : DiagnosticReport.result:MSI
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Ploidie : DiagnosticReport.result:Ploidie
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_HRD_Score : DiagnosticReport.result:HRDScore
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_BRCAness : DiagnosticReport.result:BRCAness
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Einfache_Variante : DiagnosticReport.result:EinfacheVariante
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Copy_Number_Variant : DiagnosticReport.result:CopyNumberVariant
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_DNA_Fusion : DiagnosticReport.result:DNAFusion
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Fusion : DiagnosticReport.result:RNAFusion
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_RNA_Seq : DiagnosticReport.result:RNASeq
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_BIOMARKER_HER2_STATUS : DiagnosticReport.result:MolekularerBiomarkerHER2Status
-MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Molekularer_Biomarker : DiagnosticReport.result:MolekularerBiomarker
+MII_PR_MTB_NGS_Bericht --> Referenzen_auf_Varianten_und_Biomarker_des_NGS_Berichts : DiagnosticReport.result
 MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Genomic_Study : DiagnosticReport.extension:MII_EX_MTB_NGS_Bericht_Genomic_Study.valueReference
 MII_PR_MTB_NGS_Bericht --> MII_PR_MTB_Genomic_Study_Analysis : DiagnosticReport.extension:MII_EX_MTB_NGS_Bericht_Genomic_Study.valueReference
 MII_PR_MTB_Biopsie_Auftrag --> MII_PR_MTB_Tumorzellgehalt : ServiceRequest.reasonReference:Tumorzellgehalt
 MII_PR_MTB_Follow_Up_ClinicalImpression --> MII_PR_MTB_Behandlungsepisode : ClinicalImpression.previous
-MII_PR_MTB_Copy_Number_Variant --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Studieneinschluss_Anfrage --> MII_PR_MTB_Diagnose_Primaertumor : ServiceRequest.reasonReference
 MII_PR_MTB_Studieneinschluss_Anfrage --> MII_PR_MTB_Studie : ServiceRequest.supportingInfo:Studie
 MII_PR_MTB_Response_Befund --> MII_PR_MTB_Systemische_Therapie : Observation.partOf
 MII_PR_MTB_Response_Befund --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
-MII_PR_MTB_RNA_Fusion --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Systemische_Therapie --> MII_PR_MTB_Therapieempfehlung : Procedure.extension:causedBy.value[x]
-MII_PR_MTB_Systemische_Therapie --> MII_PR_MTB_Therapieplan : Procedure.basedOn
-MII_PR_MTB_Einfache_Variante --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
-MII_PR_MTB_RNA_Seq --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
-MII_PR_MTB_DNA_Fusion --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Therapeutische_Implikation --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry : DiagnosticReport.result:Immunhistochemie
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_MMR : DiagnosticReport.result:Immunhistochemie
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2 : DiagnosticReport.result:Immunhistochemie
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_MSI : DiagnosticReport.result:Immunhistochemie
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_PDL1 : DiagnosticReport.result:Immunhistochemie
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Immunohistochemistry_Phosphorylation : DiagnosticReport.result:Immunhistochemie
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_Biomarker_InSituHybridization : DiagnosticReport.result:InSituHybridisierung
-MII_PR_MTB_Molecular_Pathology_Report --> MII_PR_MTB_INSITUHYBRIDIZATION_HER2 : DiagnosticReport.result:InSituHybridisierung
+MII_PR_MTB_Molecular_Pathology_Report --> Inhalte_eines_Molekularpathologischen_Reports : DiagnosticReport.result
 MII_PR_MTB_Diagnostische_Implikation --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_WHO_Grad_Tumor_ZNS : Condition.stage:WHOGradZNS.assessment
 MII_PR_MTB_Diagnose_Primaertumor --> MII_PR_MTB_Oncotree : Condition.stage:OncoTree.assessment
@@ -148,7 +107,7 @@ MII_PR_MTB_Systemische_Vortherapie --> MII_PR_MTB_Therapieplan : Procedure.based
 MII_PR_MTB_Therapieempfehlung_Kombination --> MII_PR_MTB_Therapieempfehlung : RequestGroup.action.resource
 MII_PR_MTB_Antwort_Kostenuebernahme --> MII_PR_MTB_Antrag_Kostenuebernahme : ClaimResponse.request
 MII_PR_MTB_Therapieempfehlung --> MII_PR_MTB_Diagnose_Primaertumor : MedicationRequest.reasonReference:StuetzendeEntitaet
-MII_PR_MTB_Molekularer_Biomarker --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
+Referenzen_auf_Varianten_und_Biomarker_des_NGS_Berichts --> MII_PR_MTB_Diagnose_Primaertumor : Observation.focus
 MII_PR_MTB_Therapieplan --> MII_PR_MTB_Behandlungsepisode : CarePlan.supportingInfo:Behandlungsepisode
 MII_PR_MTB_Therapieplan --> MII_PR_MTB_Therapieempfehlung : CarePlan.activity:Therapieempfehlung.reference
 MII_PR_MTB_Therapieplan --> MII_PR_MTB_Therapieempfehlung_Kombination : CarePlan.activity:Therapieempfehlung.reference
