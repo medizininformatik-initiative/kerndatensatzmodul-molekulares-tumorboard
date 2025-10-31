@@ -116,6 +116,8 @@ MII_PR_MTB_Therapieplan --> MII_PR_MTB_Histologie_Evaluation_Auftrag : CarePlan.
 MII_PR_MTB_Therapieplan --> MII_PR_MTB_Biopsie_Auftrag : CarePlan.activity:Biopsie.reference
 MII_PR_MTB_Therapieplan --> MII_PR_MTB_Studieneinschluss_Anfrage : CarePlan.activity:Studieneinschlussempfehlung.reference
 MII_PR_MTB_Antrag_Kostenuebernahme --> MII_PR_MTB_Antrag_Kostenuebernahme : Claim.related.claim
+MII_PR_MTB_Antrag_Kostenuebernahme --> MII_PR_MTB_Therapieempfehlung : Claim.prescription
+MII_PR_MTB_Systemische_Therapie_Medication_Statement --> MII_PR_MTB_Systemische_Therapie : MedicationStatement.partOf
 MII_PR_MTB_Histologie_Evaluation_Auftrag --> MII_PR_MTB_Tumorzellgehalt : ServiceRequest.reasonReference:Tumorzellgehalt
 
 @enduml

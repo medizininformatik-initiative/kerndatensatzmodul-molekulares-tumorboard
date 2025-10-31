@@ -17,5 +17,4 @@ Description: "MII Mappings Modul Molekulares Tumorboard"
 * insert BehandlungsepisodeMapping
 * insert FollowUpMapping
 * insert NGSBerichtMapping
-* insert IHCBefundMapping
-* insert ISHBefundMapping
+* insert MolekularpathologieMapping
