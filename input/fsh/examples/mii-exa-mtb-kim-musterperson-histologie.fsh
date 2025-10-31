@@ -18,6 +18,7 @@ Instance: PatientKimMusterperson-Specimen-1
 InstanceOf: MII_PR_Patho_Specimen
 Usage: #example
 Description: "02.01.2023 Histologie (Z 230201/23)"
+* identifier.value = "Z 230201/23"
 * accessionIdentifier.value = "Z 230201/23"
 * status = http://hl7.org/fhir/specimen-status#available
 * type.coding[sct] = $SCT#3955077

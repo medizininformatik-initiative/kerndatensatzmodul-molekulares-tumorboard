@@ -13,7 +13,7 @@ Description: "NGS-Bericht zu einer Probe"
 * subject ^short = "Referenz auf Patient"
 
 * specimen MS
-* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or ProfileSpecimenBioprobe or Specimen)
+* specimen only Reference(MII_PR_Onko_Specimen or MII_PR_Patho_Specimen or MII_PR_Biobank_Specimen_Bioprobe_Core or Specimen)
 * specimen ^short = "Referenz auf Probe"
 
 * result ^slicing.discriminator.type = #profile

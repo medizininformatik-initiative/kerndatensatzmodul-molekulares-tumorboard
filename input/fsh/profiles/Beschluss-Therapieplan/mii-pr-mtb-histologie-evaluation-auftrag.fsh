@@ -42,6 +42,6 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * specimen only Reference(
     MII_PR_Onko_Specimen or
     MII_PR_Patho_Specimen or
-    ProfileSpecimenBioprobe or
+    MII_PR_Biobank_Specimen_Bioprobe_Core or
     Specimen
 )

@@ -17,8 +17,7 @@ Usage: #example
 * entry[=].resource.supportingInfo[Therapieplan] = Reference(CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie)
 // Behandlungsepisode erledigt, abgesehen von Problem MolGen Referenz
 * insert BundleResource(Procedure, MTBChemo1Procedure)
-* entry[=].resource.extension[Dokumentationsdatum].url = "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"
-* entry[=].resource.extension[Dokumentationsdatum].valueDateTime = "2025-07-01"
+// * entry[=].resource.effective.effectiveDateTime = "2025-07-01"
 * entry[=].resource.extension[durchfuehrungsabsicht].valueCoding = $SCT#262202000
 * entry[=].resource.extension[Intention].valueCodeableConcept.text = "Kurativ"
 * entry[=].resource.extension[StellungZurOp].valueCodeableConcept = #O "ohne Bezug zur operativen Therapie"
