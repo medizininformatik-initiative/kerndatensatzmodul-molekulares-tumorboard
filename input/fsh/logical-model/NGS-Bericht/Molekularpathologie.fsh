@@ -1,7 +1,7 @@
 RuleSet: Molekularpathologie
 * MolelularpathologischerBefund 0..* BackboneElement "Molekularpathologischer Befund"
-* insert IHCBefund
-* insert ISHBefund
+  * insert IHCBefund
+  * insert ISHBefund
   
   
 RuleSet: IHCBefund  
@@ -19,8 +19,8 @@ RuleSet: ISHBefund
 
 RuleSet: MolekularpathologieMapping
 * MolelularpathologischerBefund -> "DiagnosticReport"
-* insert IHCBefundMapping
-* insert ISHBefundMapping
+  * insert IHCBefundMapping
+  * insert ISHBefundMapping
 
 RuleSet: IHCBefundMapping
 * IHCBefund     ->      "Observation"
