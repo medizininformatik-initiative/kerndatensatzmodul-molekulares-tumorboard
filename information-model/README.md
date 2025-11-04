@@ -18,3 +18,5 @@ Das zugrundeliegende Datenmodell von dnpm wurde zu 100% integriert. In kommenden
 
 ## Anhang
 Es gibt keine Änderungen am Logischen Modell. Zusätzlich stellen wir eine Grafik mit den Beziehungen der FHIR-Profile bereit. 
+Logisches Modell
+https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/refs/heads/dev/information-model/MII_MTB_LM_wo_cardinalities.svg
