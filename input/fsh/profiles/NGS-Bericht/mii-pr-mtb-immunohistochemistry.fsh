@@ -17,7 +17,7 @@ Description: "Immunhistorchemistry report"
 * code.coding[spezifisch].system 1..1 MS
 * code.coding[spezifisch] ^short = "Immunhistochemische Untersuchung"
 * code.coding[spezifisch] ^definition = "Spezifischer Code SNOMED-CT- oder LOINC-Code für immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist, ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben."
- 
+
 * code.coding[generisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
 * code.coding[generisch] ^short = "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist. "
 
