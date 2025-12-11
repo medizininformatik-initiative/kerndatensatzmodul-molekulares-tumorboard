@@ -299,6 +299,40 @@
         ]
       },
       {
+        "id": "ClinicalImpression.investigation:Einwilligung",
+        "path": "ClinicalImpression.investigation",
+        "sliceName": "Einwilligung",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.investigation:Einwilligung.code.coding",
+        "path": "ClinicalImpression.investigation.code.coding",
+        "min": 1,
+        "patternCoding": {
+          "code": "105511-0",
+          "system": "http://loinc.org",
+          "display": "Was consent given"
+        }
+      },
+      {
+        "id": "ClinicalImpression.investigation:Einwilligung.item",
+        "path": "ClinicalImpression.investigation.item",
+        "short": "Einwilligung",
+        "definition": "Einwilligung zum Molekularen Tumorboard",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given"
+            ]
+          }
+        ]
+      },
+      {
         "id": "ClinicalImpression.supportingInfo",
         "path": "ClinicalImpression.supportingInfo",
         "slicing": {
@@ -312,24 +346,6 @@
           "description": "Slice für weitere Informationen",
           "ordered": false
         }
-      },
-      {
-        "id": "ClinicalImpression.supportingInfo:Einwilligung",
-        "path": "ClinicalImpression.supportingInfo",
-        "sliceName": "Einwilligung",
-        "short": "Einwilligung",
-        "definition": "Einwilligung zum Molekularen Tumorboard",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given"
-            ]
-          }
-        ],
-        "mustSupport": true
       },
       {
         "id": "ClinicalImpression.supportingInfo:Vorbefund",
