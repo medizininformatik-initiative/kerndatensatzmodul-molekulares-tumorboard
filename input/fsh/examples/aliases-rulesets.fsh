@@ -12,9 +12,7 @@ RuleSet: BeschlussSubPrioritaet(prio)
 RuleSet: BeschlussEvidenzgrad(grad)
 * extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #{grad}
 
-RuleSet: BeschlussEvidenzQuelle(quelle)
-* extension[Publikation][+].valueString = "{quelle}"
-
+// Publikation als Identifier: system = Datenbank (DOI/PMID) oder urn:ietf:rfc:3986 für URLs
 RuleSet: BeschlussEvidenzPublikation(quelle, id)
 * extension[Publikation][+].valueIdentifier.system = "{quelle}"
 * extension[Publikation][=].valueIdentifier.value = "{id}"

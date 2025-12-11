@@ -64,16 +64,18 @@ Description: "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
 * investigation[MolekularPathologieBefund].item ^definition = "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund"
 * investigation[MolekularPathologieBefund].item only Reference(MII_PR_MTB_Molecular_Pathology_Report or DiagnosticReport)
 
+* investigation contains Einwilligung 0..1 MS
+* investigation[Einwilligung].code.coding = $LNC#105511-0 "Was consent given"
+* investigation[Einwilligung].item 1..1
+* investigation[Einwilligung].item ^short = "Einwilligung"
+* investigation[Einwilligung].item ^definition = "Einwilligung zum Molekularen Tumorboard"
+* investigation[Einwilligung].item only Reference(MII_PR_MTB_Consent_Given)
+
 * supportingInfo ^slicing.discriminator.type = #profile
 * supportingInfo ^slicing.discriminator.path = "$this.resolve()"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für weitere Informationen"
 * supportingInfo ^slicing.ordered = false
-
-* supportingInfo contains Einwilligung 0..1 MS
-* supportingInfo[Einwilligung] ^short = "Einwilligung"
-* supportingInfo[Einwilligung] ^definition = "Einwilligung zum Molekularen Tumorboard"
-* supportingInfo[Einwilligung] only Reference(MII_PR_MTB_Consent_Given)
 
 * supportingInfo contains Vorbefund 0..* MS
 * supportingInfo[Vorbefund] ^short = "Vorbefund"

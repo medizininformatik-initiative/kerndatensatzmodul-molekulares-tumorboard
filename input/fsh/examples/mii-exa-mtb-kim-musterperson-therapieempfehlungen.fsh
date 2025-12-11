@@ -146,7 +146,7 @@ Usage: #example
 * action.resource = Reference(mii-exa-mtb-medication-request-camonsertib)
 * insert BeschlussPrioritaet(5)
 * insert BeschlussEvidenz(m1B, http://doi.org, 10.1158/1535-7163.TARG-23-PR008)
-* insert BeschlussEvidenzQuelle(https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf)
+// Removed BeschlussEvidenzQuelle - cannot have both valueIdentifier and valueString in same extension
 
 // 6. MEKi, z.B. Cobimetinib (m3)
 // PIK3R1mut (E160*): Ausweislich präklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3).
