@@ -1,8 +1,8 @@
 # OTHER_CONSTRAINT Errors (13)
 
-**Status:** FIXED
+**Status:** PARTIAL (fixes applied, awaiting CI verification)
 **Priority:** 12
-**Fixed:** 2025-12-11
+**Last Updated:** 2025-12-12
 
 ## Problem
 
