@@ -22,7 +22,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "RequestGroup",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/RequestGroup",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-therapieempfehlung-kombinationstherapie",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -32,9 +32,18 @@
         "mustSupport": true
       },
       {
-        "id": "RequestGroup.meta.profile",
-        "path": "RequestGroup.meta.profile",
-        "mustSupport": true
+        "id": "RequestGroup.extension",
+        "path": "RequestGroup.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "RequestGroup.extension:Prioritaet",
@@ -85,11 +94,6 @@
         "mustSupport": true
       },
       {
-        "id": "RequestGroup.identifier",
-        "path": "RequestGroup.identifier",
-        "mustSupport": true
-      },
-      {
         "id": "RequestGroup.status",
         "path": "RequestGroup.status",
         "definition": "Status der Umsetzung der Therapieempfehlung",
@@ -99,21 +103,7 @@
         "id": "RequestGroup.intent",
         "path": "RequestGroup.intent",
         "short": "proposal | option",
-        "definition": "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,\ndiese Therapieempfehlung ist selbst nochmal Teil einer RequestGroup. In dem Fall muss hier 'option' stehen.",
-        "mustSupport": true
-      },
-      {
-        "id": "RequestGroup.subject",
-        "path": "RequestGroup.subject",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Patient"
-            ]
-          }
-        ],
-        "mustSupport": true
+        "definition": "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,\ndiese Therapieempfehlung ist selbst nochmal Teil einer RequestGroup. In dem Fall muss hier 'option' stehen."
       },
       {
         "id": "RequestGroup.author",
@@ -131,8 +121,7 @@
       {
         "id": "RequestGroup.action",
         "path": "RequestGroup.action",
-        "min": 1,
-        "mustSupport": true
+        "min": 1
       },
       {
         "id": "RequestGroup.action.resource",

@@ -283,7 +283,7 @@
           }
         ]
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-behandlungsepisode"
+      "fullUrl": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
     },
     {
       "request": {
@@ -438,7 +438,7 @@
           }
         ]
       },
-      "fullUrl": "urn:uuid:MTBChemo1Procedure"
+      "fullUrl": "Procedure/MTBChemo1Procedure"
     },
     {
       "request": {
@@ -481,7 +481,7 @@
           "reference": "Encounter/example"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-aufklaerung"
+      "fullUrl": "Observation/mii-exa-mtb-kim-musterperson-aufklaerung"
     },
     {
       "request": {
@@ -668,7 +668,7 @@
           }
         ]
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-diagnose"
+      "fullUrl": "Condition/mii-exa-mtb-kim-diagnose"
     },
     {
       "request": {
@@ -709,7 +709,7 @@
           "reference": "Encounter/example"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-who-grad-tumor-zns"
+      "fullUrl": "Observation/mii-exa-mtb-who-grad-tumor-zns"
     },
     {
       "request": {
@@ -750,7 +750,7 @@
           "reference": "Encounter/example"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-oncotree"
+      "fullUrl": "Observation/mii-exa-mtb-kim-oncotree"
     },
     {
       "request": {
@@ -812,7 +812,7 @@
           "reference": "Encounter/example"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-tumorausbreitung"
+      "fullUrl": "Observation/mii-exa-mtb-kim-tumorausbreitung"
     },
     {
       "request": {
@@ -851,7 +851,7 @@
           ]
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-tumorzellgehalt-aszites"
+      "fullUrl": "Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites"
     },
     {
       "request": {
@@ -888,18 +888,6 @@
         ],
         "activity": [
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "completed"
-            },
             "outcomeReference": [
               {
                 "reference": "Procedure/MTBChemo2Procedure"
@@ -910,197 +898,53 @@
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "ServiceRequest/mii-exa-mtb-study-request-cldn6"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "ServiceRequest/mii-exa-mtb-study-request-tedova"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "ZS",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "ServiceRequest/mii-exa-mtb-study-request-ccne1"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "IZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "CZ",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Chemotherapie + zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "ZS",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "RequestGroup/mii-exa-mtb-request-group-lunresertib-camonsertib"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "ZS",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "zielgerichtete Substanzen"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "SO",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Sonstiges"
-                  }
-                ]
-              },
-              "status": "completed"
-            },
             "reference": {
               "reference": "ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "SO",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Sonstiges"
-                  }
-                ]
-              },
-              "status": "not-started"
-            },
             "reference": {
               "reference": "ServiceRequest/mii-exa-mtb-kim-histologie-evaluation-aszites"
             }
           },
           {
-            "detail": {
-              "code": {
-                "coding": [
-                  {
-                    "code": "SO",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
-                    "display": "Sonstiges"
-                  }
-                ]
-              },
-              "status": "completed"
-            },
             "reference": {
               "reference": "ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites"
-            }
-          },
-          {
-            "detail": {
-              "statusReason": {
-                "coding": [
-                  {
-                    "code": "J",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieabweichung"
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "detail": {
-              "statusReason": {
-                "coding": [
-                  {
-                    "code": "U",
-                    "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieabweichung"
-                  }
-                ]
-              }
             }
           }
         ],
@@ -1115,7 +959,7 @@
           "reference": "Encounter/example"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-therapieplan"
+      "fullUrl": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
     },
     {
       "request": {
@@ -1154,8 +998,9 @@
             "text": "1 Tablet every morning"
           }
         ],
+        "intent": "proposal",
         "status": "active",
-        "intent": "option",
+        "authoredOn": "2024-12-12",
         "subject": {
           "reference": "Patient/mii-exa-mtb-patient"
         },
@@ -1188,7 +1033,6 @@
         "encounter": {
           "reference": "Encounter/example"
         },
-        "authoredOn": "2024-12-12",
         "requester": {
           "reference": "Organization/MyHospital"
         },
@@ -1221,7 +1065,7 @@
           }
         ]
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-therapieempfehlung-trametinib"
+      "fullUrl": "Observation/mii-exa-mtb-therapieempfehlung-trametinib"
     },
     {
       "request": {
@@ -1294,13 +1138,14 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "status": "completed",
         "intent": "proposal",
+        "status": "completed",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-mirvetuximab"
+      "fullUrl": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
     },
     {
       "request": {
@@ -1320,7 +1165,7 @@
         ],
         "birthDate": "1956-03-14"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson"
+      "fullUrl": "Patient/PatientKimMusterperson"
     },
     {
       "request": {
@@ -1370,7 +1215,7 @@
         },
         "effectiveDateTime": "2022-04-22"
       },
-      "fullUrl": "urn:uuid:MTBObservationCA125-1"
+      "fullUrl": "Observation/MTBObservationCA125-1"
     },
     {
       "request": {
@@ -1420,7 +1265,7 @@
         },
         "effectiveDateTime": "2022-07-18"
       },
-      "fullUrl": "urn:uuid:MTBObservationCA125-2"
+      "fullUrl": "Observation/MTBObservationCA125-2"
     },
     {
       "request": {
@@ -1470,7 +1315,7 @@
         },
         "effectiveDateTime": "2022-10-24"
       },
-      "fullUrl": "urn:uuid:MTBObservationCA125-3"
+      "fullUrl": "Observation/MTBObservationCA125-3"
     },
     {
       "request": {
@@ -1520,7 +1365,7 @@
         },
         "effectiveDateTime": "2022-12-27"
       },
-      "fullUrl": "urn:uuid:MTBObservationCA125-4"
+      "fullUrl": "Observation/MTBObservationCA125-4"
     },
     {
       "request": {
@@ -1570,7 +1415,7 @@
         },
         "effectiveDateTime": "2023-03-24"
       },
-      "fullUrl": "urn:uuid:MTBObservationCA125-5"
+      "fullUrl": "Observation/MTBObservationCA125-5"
     },
     {
       "request": {
@@ -1620,7 +1465,7 @@
         },
         "effectiveDateTime": "2023-06-20"
       },
-      "fullUrl": "urn:uuid:MTBObservationCA125-6"
+      "fullUrl": "Observation/MTBObservationCA125-6"
     },
     {
       "request": {
@@ -1654,7 +1499,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyReport-1"
+      "fullUrl": "DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1"
     },
     {
       "request": {
@@ -1688,7 +1533,7 @@
           ]
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-AscitesSpecimen-2"
+      "fullUrl": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
     },
     {
       "request": {
@@ -1777,7 +1622,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu"
     },
     {
       "request": {
@@ -1858,7 +1703,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu"
     },
     {
       "request": {
@@ -1941,7 +1786,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra"
     },
     {
       "request": {
@@ -2027,7 +1872,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2"
     },
     {
       "request": {
@@ -2114,7 +1959,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-1-CA125"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-1-CA125"
     },
     {
       "request": {
@@ -2174,7 +2019,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-2-Pax8"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-2-Pax8"
     },
     {
       "request": {
@@ -2269,7 +2114,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-3-WT1"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-3-WT1"
     },
     {
       "request": {
@@ -2325,7 +2170,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-4-ER"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-4-ER"
     },
     {
       "request": {
@@ -2381,7 +2226,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-5-PR"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-5-PR"
     },
     {
       "request": {
@@ -2441,7 +2286,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-6-p53"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-6-p53"
     },
     {
       "request": {
@@ -2501,7 +2346,7 @@
           "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-MolecularPathologyObservation-7-p53"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-7-p53"
     },
     {
       "request": {
@@ -2516,12 +2361,22 @@
             "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
           ]
         },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
         "code": {
           "coding": [
             {
               "code": "3-20",
               "system": "http://fhir.de/CodeSystem/bfarm/ops",
-              "display": "Computertomographie [CT], nativ"
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
             }
           ]
         },
@@ -2551,7 +2406,7 @@
         },
         "performedDateTime": "2022-04-20"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Procedure-1"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-1"
     },
     {
       "request": {
@@ -2566,12 +2421,22 @@
             "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
           ]
         },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
         "code": {
           "coding": [
             {
               "code": "3-20",
               "system": "http://fhir.de/CodeSystem/bfarm/ops",
-              "display": "Computertomographie [CT], nativ"
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
             }
           ]
         },
@@ -2601,7 +2466,7 @@
         },
         "performedDateTime": "2022-07-15"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Procedure-2"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-2"
     },
     {
       "request": {
@@ -2616,12 +2481,22 @@
             "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
           ]
         },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
         "code": {
           "coding": [
             {
               "code": "3-20",
               "system": "http://fhir.de/CodeSystem/bfarm/ops",
-              "display": "Computertomographie [CT], nativ"
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
             }
           ]
         },
@@ -2651,7 +2526,7 @@
         },
         "performedDateTime": "2022-10-22"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Procedure-3"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-3"
     },
     {
       "request": {
@@ -2666,12 +2541,22 @@
             "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
           ]
         },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
         "code": {
           "coding": [
             {
               "code": "3-20",
               "system": "http://fhir.de/CodeSystem/bfarm/ops",
-              "display": "Computertomographie [CT], nativ"
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
             }
           ]
         },
@@ -2701,7 +2586,7 @@
         },
         "performedDateTime": "2022-12-19"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Procedure-4"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-4"
     },
     {
       "request": {
@@ -2716,12 +2601,22 @@
             "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
           ]
         },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
         "code": {
           "coding": [
             {
               "code": "3-20",
               "system": "http://fhir.de/CodeSystem/bfarm/ops",
-              "display": "Computertomographie [CT], nativ"
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
             }
           ]
         },
@@ -2751,7 +2646,7 @@
         },
         "performedDateTime": "2023-03-20"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Procedure-5"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-5"
     },
     {
       "request": {
@@ -2766,12 +2661,22 @@
             "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
           ]
         },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
         "code": {
           "coding": [
             {
               "code": "3-20",
               "system": "http://fhir.de/CodeSystem/bfarm/ops",
-              "display": "Computertomographie [CT], nativ"
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
             }
           ]
         },
@@ -2801,7 +2706,7 @@
         },
         "performedDateTime": "2023-08-20"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Procedure-6"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-6"
     },
     {
       "request": {
@@ -2816,12 +2721,22 @@
             "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
           ]
         },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
         "code": {
           "coding": [
             {
               "code": "3-20",
               "system": "http://fhir.de/CodeSystem/bfarm/ops",
-              "display": "Computertomographie [CT], nativ"
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
             }
           ]
         },
@@ -2851,7 +2766,7 @@
         },
         "performedDateTime": "2023-10-22"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Procedure-7"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-7"
     },
     {
       "request": {
@@ -2887,7 +2802,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-1"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-1"
     },
     {
       "request": {
@@ -2923,7 +2838,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-2"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-2"
     },
     {
       "request": {
@@ -2959,7 +2874,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-3"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-3"
     },
     {
       "request": {
@@ -3019,7 +2934,7 @@
           ]
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-4"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-4"
     },
     {
       "request": {
@@ -3079,7 +2994,7 @@
           ]
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-5"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-5"
     },
     {
       "request": {
@@ -3115,7 +3030,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-6"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-6"
     },
     {
       "request": {
@@ -3151,7 +3066,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-7"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-7"
     },
     {
       "request": {
@@ -3203,7 +3118,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-8"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-8"
     },
     {
       "request": {
@@ -3263,7 +3178,7 @@
           ]
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-9"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-9"
     },
     {
       "request": {
@@ -3323,7 +3238,7 @@
           ]
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-10"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-10"
     },
     {
       "request": {
@@ -3359,7 +3274,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-11"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-11"
     },
     {
       "request": {
@@ -3395,7 +3310,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-12"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-12"
     },
     {
       "request": {
@@ -3447,7 +3362,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-13"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-13"
     },
     {
       "request": {
@@ -3499,7 +3414,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-14"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-14"
     },
     {
       "request": {
@@ -3541,7 +3456,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-15"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-15"
     },
     {
       "request": {
@@ -3573,7 +3488,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-16"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-16"
     },
     {
       "request": {
@@ -3625,7 +3540,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-17"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-17"
     },
     {
       "request": {
@@ -3662,7 +3577,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-18"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-18"
     },
     {
       "request": {
@@ -3699,7 +3614,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-19"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-19"
     },
     {
       "request": {
@@ -3736,7 +3651,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-20"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-20"
     },
     {
       "request": {
@@ -3778,7 +3693,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-21"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-21"
     },
     {
       "request": {
@@ -3820,7 +3735,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-22"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-22"
     },
     {
       "request": {
@@ -3857,7 +3772,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-23"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-23"
     },
     {
       "request": {
@@ -3893,7 +3808,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-24"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-24"
     },
     {
       "request": {
@@ -3945,7 +3860,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-25"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-25"
     },
     {
       "request": {
@@ -3987,7 +3902,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-26"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-26"
     },
     {
       "request": {
@@ -4043,7 +3958,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-27"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-27"
     },
     {
       "request": {
@@ -4080,7 +3995,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-29"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-29"
     },
     {
       "request": {
@@ -4127,7 +4042,7 @@
         },
         "status": "final"
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Observation-30"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-30"
     },
     {
       "request": {
@@ -4183,7 +4098,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Follow-Up-ClinicalImpression-1"
+      "fullUrl": "ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1"
     },
     {
       "request": {
@@ -4240,7 +4155,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Systemische-Therapie-1"
+      "fullUrl": "Procedure/MII-EXA-MTB-Systemische-Therapie-1"
     },
     {
       "request": {
@@ -4275,7 +4190,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -4308,7 +4223,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Systemische-Therapie-Medication-1"
+      "fullUrl": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-1"
     },
     {
       "request": {
@@ -4343,7 +4258,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -4385,7 +4300,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Systemische-Therapie-Medication-2"
+      "fullUrl": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-2"
     },
     {
       "request": {
@@ -4420,7 +4335,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -4462,7 +4377,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Systemische-Therapie-Medication-3"
+      "fullUrl": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-3"
     },
     {
       "request": {
@@ -4497,7 +4412,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -4530,7 +4445,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Systemische-Therapie-Medication-4"
+      "fullUrl": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-4"
     },
     {
       "request": {
@@ -4565,7 +4480,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -4607,7 +4522,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Systemische-Therapie-Medication-5"
+      "fullUrl": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-5"
     },
     {
       "request": {
@@ -4642,7 +4557,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -4675,7 +4590,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Systemische-Therapie-Medication-6"
+      "fullUrl": "MedicationStatement/MII-EXA-MTB-Systemische-Therapie-Medication-6"
     },
     {
       "request": {
@@ -4753,7 +4668,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Response-Befund-1"
+      "fullUrl": "Observation/MII-EXA-MTB-Response-Befund-1"
     },
     {
       "request": {
@@ -4831,7 +4746,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Response-Befund-2"
+      "fullUrl": "Observation/MII-EXA-MTB-Response-Befund-2"
     },
     {
       "request": {
@@ -4906,7 +4821,7 @@
           "reference": "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Antrag-Kostenuebernahme-1"
+      "fullUrl": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
     },
     {
       "request": {
@@ -4942,7 +4857,7 @@
           "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
         }
       },
-      "fullUrl": "urn:uuid:MII-EXA-MTB-Antwort-Kostenuebernahme-1"
+      "fullUrl": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"
     },
     {
       "request": {
@@ -4993,7 +4908,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-Specimen-1"
+      "fullUrl": "Specimen/PatientKimMusterperson-Specimen-1"
     },
     {
       "request": {
@@ -5022,7 +4937,7 @@
         },
         "effectiveDateTime": "2023-01-04"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement1"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement1"
     },
     {
       "request": {
@@ -5078,7 +4993,7 @@
         },
         "effectiveDateTime": "2023-01-04"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement1-1"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement1-1"
     },
     {
       "request": {
@@ -5134,7 +5049,7 @@
         },
         "effectiveDateTime": "2023-01-04"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement1-2"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement1-2"
     },
     {
       "request": {
@@ -5163,7 +5078,7 @@
         },
         "effectiveDateTime": "2023-02-01"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement2"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement2"
     },
     {
       "request": {
@@ -5219,7 +5134,7 @@
         },
         "effectiveDateTime": "2023-02-01"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement2-1"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement2-1"
     },
     {
       "request": {
@@ -5275,7 +5190,7 @@
         },
         "effectiveDateTime": "2023-02-01"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement2-2"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement2-2"
     },
     {
       "request": {
@@ -5304,7 +5219,7 @@
         },
         "effectiveDateTime": "2023-03-01"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement3"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement3"
     },
     {
       "request": {
@@ -5360,7 +5275,7 @@
         },
         "effectiveDateTime": "2023-03-01"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement3-1"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement3-1"
     },
     {
       "request": {
@@ -5416,7 +5331,7 @@
         },
         "effectiveDateTime": "2023-03-01"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement3-2"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement3-2"
     },
     {
       "request": {
@@ -5445,7 +5360,7 @@
         },
         "effectiveDateTime": "2023-03-29"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement4"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement4"
     },
     {
       "request": {
@@ -5501,7 +5416,7 @@
         },
         "effectiveDateTime": "2023-03-29"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement4-1"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement4-1"
     },
     {
       "request": {
@@ -5557,7 +5472,7 @@
         },
         "effectiveDateTime": "2023-03-29"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement4-2"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement4-2"
     },
     {
       "request": {
@@ -5586,7 +5501,7 @@
         },
         "effectiveDateTime": "2023-04-26"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement5"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement5"
     },
     {
       "request": {
@@ -5642,7 +5557,7 @@
         },
         "effectiveDateTime": "2023-04-26"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement5-1"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement5-1"
     },
     {
       "request": {
@@ -5698,7 +5613,7 @@
         },
         "effectiveDateTime": "2023-04-26"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement5-2"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement5-2"
     },
     {
       "request": {
@@ -5727,7 +5642,7 @@
         },
         "effectiveDateTime": "2023-05-24"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement6"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement6"
     },
     {
       "request": {
@@ -5783,7 +5698,7 @@
         },
         "effectiveDateTime": "2023-05-24"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement6-1"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement6-1"
     },
     {
       "request": {
@@ -5839,7 +5754,7 @@
         },
         "effectiveDateTime": "2023-05-24"
       },
-      "fullUrl": "urn:uuid:MTBChemo1MedicationStatement6-2"
+      "fullUrl": "MedicationStatement/MTBChemo1MedicationStatement6-2"
     },
     {
       "request": {
@@ -5910,7 +5825,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MTBChemo2Procedure"
+      "fullUrl": "Procedure/MTBChemo2Procedure"
     },
     {
       "request": {
@@ -5945,7 +5860,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -5975,7 +5890,7 @@
         },
         "effectiveDateTime": "2023-06-24"
       },
-      "fullUrl": "urn:uuid:MTBChemo2MedicationStatement1"
+      "fullUrl": "MedicationStatement/MTBChemo2MedicationStatement1"
     },
     {
       "request": {
@@ -6010,7 +5925,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -6040,7 +5955,7 @@
         },
         "effectiveDateTime": "2023-07-16"
       },
-      "fullUrl": "urn:uuid:MTBChemo2MedicationStatement2"
+      "fullUrl": "MedicationStatement/MTBChemo2MedicationStatement2"
     },
     {
       "request": {
@@ -6075,7 +5990,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -6105,7 +6020,7 @@
         },
         "effectiveDateTime": "2023-08-07"
       },
-      "fullUrl": "urn:uuid:MTBChemo2MedicationStatement3"
+      "fullUrl": "MedicationStatement/MTBChemo2MedicationStatement3"
     },
     {
       "request": {
@@ -6140,7 +6055,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -6170,7 +6085,7 @@
         },
         "effectiveDateTime": "2023-08-29"
       },
-      "fullUrl": "urn:uuid:MTBChemo2MedicationStatement4"
+      "fullUrl": "MedicationStatement/MTBChemo2MedicationStatement4"
     },
     {
       "request": {
@@ -6205,7 +6120,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -6235,7 +6150,7 @@
         },
         "effectiveDateTime": "2023-09-20"
       },
-      "fullUrl": "urn:uuid:MTBChemo2MedicationStatement5"
+      "fullUrl": "MedicationStatement/MTBChemo2MedicationStatement5"
     },
     {
       "request": {
@@ -6270,7 +6185,7 @@
             {
               "system": "http://fhir.de/CodeSystem/bfarm/atc",
               "code": "L01FX26",
-              "display": "Mirvetuximab soravtansine",
+              "display": "Mirvetuximab soravtansin",
               "version": "2025"
             }
           ]
@@ -6300,7 +6215,7 @@
         },
         "effectiveDateTime": "2023-10-12"
       },
-      "fullUrl": "urn:uuid:MTBChemo2MedicationStatement6"
+      "fullUrl": "MedicationStatement/MTBChemo2MedicationStatement6"
     },
     {
       "request": {
@@ -6357,7 +6272,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-ngs-bericht"
+      "fullUrl": "DiagnosticReport/mii-exa-mtb-kim-musterperson-ngs-bericht"
     },
     {
       "request": {
@@ -6405,7 +6320,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-genomic-study"
+      "fullUrl": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study"
     },
     {
       "request": {
@@ -6483,7 +6398,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-genomic-study-analysis-1"
+      "fullUrl": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-1"
     },
     {
       "request": {
@@ -6511,7 +6426,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-genomic-study-analysis-2"
+      "fullUrl": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2"
     },
     {
       "request": {
@@ -6553,7 +6468,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-genomic-study-analysis-3"
+      "fullUrl": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-3"
     },
     {
       "request": {
@@ -6651,7 +6566,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53"
+      "fullUrl": "Observation/mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53"
     },
     {
       "request": {
@@ -6725,7 +6640,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53"
+      "fullUrl": "Observation/mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53"
     },
     {
       "request": {
@@ -6823,7 +6738,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1"
+      "fullUrl": "Observation/mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1"
     },
     {
       "request": {
@@ -6922,7 +6837,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1"
+      "fullUrl": "Observation/mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1"
     },
     {
       "request": {
@@ -7036,7 +6951,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-musterperson-CNVariante-CCNE1"
+      "fullUrl": "Observation/mii-exa-mtb-kim-musterperson-CNVariante-CCNE1"
     },
     {
       "request": {
@@ -7095,7 +7010,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-request-cldn6"
+      "fullUrl": "ServiceRequest/mii-exa-mtb-study-request-cldn6"
     },
     {
       "request": {
@@ -7264,7 +7179,7 @@
           "reference": "PractitionerRole/mii-exa-mtb-study-investigator-biontech"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6"
+      "fullUrl": "ResearchStudy/mii-exa-mtb-study-cldn6"
     },
     {
       "request": {
@@ -7319,7 +7234,7 @@
         "actual": false,
         "quantity": 145
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-eligibility-criteria"
+      "fullUrl": "Group/mii-exa-mtb-study-cldn6-eligibility-criteria"
     },
     {
       "request": {
@@ -7364,7 +7279,7 @@
         "type": "person",
         "actual": false
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups"
+      "fullUrl": "Group/mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups"
     },
     {
       "request": {
@@ -7389,7 +7304,7 @@
         "type": "person",
         "actual": false
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-comparison-group-0"
+      "fullUrl": "Group/mii-exa-mtb-study-cldn6-comparison-group-0"
     },
     {
       "request": {
@@ -7426,7 +7341,7 @@
         ],
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-evidence-variable-0"
+      "fullUrl": "EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-0"
     },
     {
       "request": {
@@ -7451,7 +7366,7 @@
         "type": "person",
         "actual": false
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-comparison-group-1"
+      "fullUrl": "Group/mii-exa-mtb-study-cldn6-comparison-group-1"
     },
     {
       "request": {
@@ -7488,7 +7403,7 @@
         ],
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-evidence-variable-1"
+      "fullUrl": "EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-1"
     },
     {
       "request": {
@@ -7511,7 +7426,7 @@
         ],
         "name": "BioNTech Cell & Gene Therapies GmbH"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-sponsor-biontech"
+      "fullUrl": "Organization/mii-exa-mtb-study-sponsor-biontech"
     },
     {
       "request": {
@@ -7538,7 +7453,7 @@
           }
         ]
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-investigator-biontech"
+      "fullUrl": "PractitionerRole/mii-exa-mtb-study-investigator-biontech"
     },
     {
       "request": {
@@ -7560,7 +7475,7 @@
         },
         "name": "Peter MacCallum Cancer Centre"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-0"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-0"
     },
     {
       "request": {
@@ -7581,7 +7496,7 @@
         },
         "name": "Charité - Universitätsmedizin Berlin - Campus Benjamin Franklin"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-1"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-1"
     },
     {
       "request": {
@@ -7602,7 +7517,7 @@
         },
         "name": "Universitätsklinikum Erlangen - Hämatologie & Intrinsische Onkologie - Medizinische Klinik 5"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-2"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-2"
     },
     {
       "request": {
@@ -7623,7 +7538,7 @@
         },
         "name": "Universitätsklinikum Hamburg Eppendorf - II Medizinische Klinik und Poliklinik"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-3"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-3"
     },
     {
       "request": {
@@ -7644,7 +7559,7 @@
         },
         "name": "Medizinische Hochschule Hannover - Klinik für Hämatologie, Hämostaseologie, Onkologie und Stammzelltransplantation"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-4"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-4"
     },
     {
       "request": {
@@ -7665,7 +7580,7 @@
         },
         "name": "Nationales Centrum für Tumorerkrankungen (NCT) Heidelberg"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-5"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-5"
     },
     {
       "request": {
@@ -7686,7 +7601,7 @@
         },
         "name": "Universitätsklinikum Köln AÖR-Centrum für Integrierte Onkologie (CIO)-Studienzentrum der Klinik I für Innere Medizin (CTU Cologne)"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-6"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-6"
     },
     {
       "request": {
@@ -7707,7 +7622,7 @@
         },
         "name": "Universitätsmedizin Mainz - III Medizinische Klinik und Poliklinik"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-7"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-7"
     },
     {
       "request": {
@@ -7728,7 +7643,7 @@
         },
         "name": "Universitätsklinikum Regensburg - Klinik und Poliklinik für Innere Medizin III"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-8"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-8"
     },
     {
       "request": {
@@ -7749,7 +7664,7 @@
         },
         "name": "He Nederlands Kanker Instituut (The Netherlands Cancer Institute) - Antoni van Leeuwenhoek Ziekenhuis (NKI-AVL)"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-9"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-9"
     },
     {
       "request": {
@@ -7770,7 +7685,7 @@
         },
         "name": "Erasmus MC - Universitair Medisch Centrum - Medical oncology"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-10"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-10"
     },
     {
       "request": {
@@ -7791,7 +7706,7 @@
         },
         "name": "Karolinska Comprehensive Cancer Center Cancerstudieenheten Huddinge Karolinska Universitetssjukhuset"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-cldn6-location-11"
+      "fullUrl": "Location/mii-exa-mtb-study-cldn6-location-11"
     },
     {
       "request": {
@@ -7814,7 +7729,7 @@
         ],
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-tedova"
+      "fullUrl": "ResearchStudy/mii-exa-mtb-study-tedova"
     },
     {
       "request": {
@@ -7866,7 +7781,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-request-tedova"
+      "fullUrl": "ServiceRequest/mii-exa-mtb-study-request-tedova"
     },
     {
       "request": {
@@ -7883,7 +7798,7 @@
         },
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-ccne1"
+      "fullUrl": "ResearchStudy/mii-exa-mtb-study-ccne1"
     },
     {
       "request": {
@@ -7935,7 +7850,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-study-request-ccne1"
+      "fullUrl": "ServiceRequest/mii-exa-mtb-study-request-ccne1"
     },
     {
       "request": {
@@ -7996,13 +7911,14 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "status": "draft",
         "intent": "proposal",
+        "status": "draft",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
+      "fullUrl": "MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"
     },
     {
       "request": {
@@ -8023,7 +7939,7 @@
         },
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-adavosertib"
+      "fullUrl": "Medication/mii-exa-mtb-medication-adavosertib"
     },
     {
       "request": {
@@ -8038,8 +7954,9 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
+        "intent": "proposal",
         "status": "draft",
-        "intent": "option",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
         },
@@ -8047,7 +7964,7 @@
           "reference": "Medication/mii-exa-mtb-medication-adavosertib"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-adavosertib"
+      "fullUrl": "MedicationRequest/mii-exa-mtb-medication-request-adavosertib"
     },
     {
       "request": {
@@ -8070,13 +7987,14 @@
             }
           ]
         },
+        "intent": "proposal",
         "status": "draft",
-        "intent": "option",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-carboplatin"
+      "fullUrl": "MedicationRequest/mii-exa-mtb-medication-request-carboplatin"
     },
     {
       "request": {
@@ -8122,13 +8040,23 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "status": "draft",
         "intent": "proposal",
+        "status": "draft",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "CZ",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "Chemotherapie + zielgerichtete Substanzen"
+            }
+          ]
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-request-group-adavosertib-carboplatin"
+      "fullUrl": "RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin"
     },
     {
       "request": {
@@ -8149,7 +8077,7 @@
         },
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-lunresertib"
+      "fullUrl": "Medication/mii-exa-mtb-medication-lunresertib"
     },
     {
       "request": {
@@ -8164,8 +8092,9 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
+        "intent": "proposal",
         "status": "draft",
-        "intent": "option",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
         },
@@ -8173,7 +8102,7 @@
           "reference": "Medication/mii-exa-mtb-medication-lunresertib"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-lunresertib"
+      "fullUrl": "MedicationRequest/mii-exa-mtb-medication-request-lunresertib"
     },
     {
       "request": {
@@ -8194,7 +8123,7 @@
         },
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-camonsertib"
+      "fullUrl": "Medication/mii-exa-mtb-medication-camonsertib"
     },
     {
       "request": {
@@ -8209,8 +8138,9 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
+        "intent": "proposal",
         "status": "draft",
-        "intent": "option",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
         },
@@ -8218,7 +8148,7 @@
           "reference": "Medication/mii-exa-mtb-medication-camonsertib"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-camonsertib"
+      "fullUrl": "MedicationRequest/mii-exa-mtb-medication-request-camonsertib"
     },
     {
       "request": {
@@ -8264,13 +8194,23 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "status": "draft",
         "intent": "proposal",
+        "status": "draft",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "ZS",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "display": "zielgerichtete Substanzen"
+            }
+          ]
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-request-group-lunresertib-camonsertib"
+      "fullUrl": "RequestGroup/mii-exa-mtb-request-group-lunresertib-camonsertib"
     },
     {
       "request": {
@@ -8291,7 +8231,7 @@
         },
         "status": "active"
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-cobimetinib"
+      "fullUrl": "Medication/mii-exa-mtb-medication-cobimetinib"
     },
     {
       "request": {
@@ -8330,8 +8270,9 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
+        "intent": "proposal",
         "status": "draft",
-        "intent": "option",
+        "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
         },
@@ -8339,7 +8280,7 @@
           "reference": "Medication/mii-exa-mtb-medication-cobimetinib"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-medication-request-cobimetinib"
+      "fullUrl": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
     },
     {
       "request": {
@@ -8384,7 +8325,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-humangenetische-beratung-aszites"
+      "fullUrl": "ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites"
     },
     {
       "request": {
@@ -8424,7 +8365,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-histologie-evaluation-aszites"
+      "fullUrl": "ServiceRequest/mii-exa-mtb-kim-histologie-evaluation-aszites"
     },
     {
       "request": {
@@ -8464,7 +8405,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-mtb-kim-rebiopsie-aszites"
+      "fullUrl": "ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites"
     },
     {
       "request": {
@@ -8531,7 +8472,7 @@
           ]
         }
       },
-      "fullUrl": "urn:uuid:PatientKimMusterperson-PrimaryDiagnosis-2"
+      "fullUrl": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
     },
     {
       "request": {
@@ -8568,7 +8509,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:mii-exa-onko-allgemeiner-leistungszustand-ecog"
+      "fullUrl": "Observation/mii-exa-onko-allgemeiner-leistungszustand-ecog"
     },
     {
       "request": {
@@ -8602,7 +8543,7 @@
         ],
         "name": "Example General Hospital"
       },
-      "fullUrl": "urn:uuid:MyHospital"
+      "fullUrl": "Organization/MyHospital"
     },
     {
       "request": {
@@ -8636,7 +8577,7 @@
         ],
         "name": "Example Health Insurance Co."
       },
-      "fullUrl": "urn:uuid:MyInsurer"
+      "fullUrl": "Organization/MyInsurer"
     },
     {
       "request": {
@@ -8669,7 +8610,7 @@
           "reference": "Patient/PatientKimMusterperson"
         }
       },
-      "fullUrl": "urn:uuid:MyCoverage"
+      "fullUrl": "Coverage/MyCoverage"
     }
   ],
   "type": "transaction"

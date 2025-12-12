@@ -37,9 +37,19 @@
       "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
     }
   ],
-  "status": "draft",
   "intent": "proposal",
+  "status": "draft",
+  "authoredOn": "2023-03-28",
   "subject": {
     "reference": "Patient/PatientKimMusterperson"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "CZ",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+        "display": "Chemotherapie + zielgerichtete Substanzen"
+      }
+    ]
   }
 }

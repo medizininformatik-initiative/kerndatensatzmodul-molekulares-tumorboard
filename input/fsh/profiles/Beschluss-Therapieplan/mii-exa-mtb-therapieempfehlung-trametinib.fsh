@@ -23,6 +23,7 @@ Description: "Therapieempfehlung für Trametinib"
 // Erforderliche Angaben
 * status = #active
 * intent = #option // Gefordert von RequestGroup.action.resource!
+* authoredOn = 2024-01-01
 // Referenz Patient
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Medikation

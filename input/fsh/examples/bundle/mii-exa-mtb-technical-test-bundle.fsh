@@ -80,8 +80,6 @@ Usage: #example
 * insert BundleResource(CarePlan, mii-exa-mtb-kim-musterperson-therapieplan)
 * entry[=].resource.description = "What exactly do you expect to see here? A funny joke?"
 * entry[=].resource.encounter = Reference(Encounter/example)
-* entry[=].resource.activity[HumangenetischeBeratung].detail.statusReason = $mii-cs-onko-therapieabweichung#J
-* entry[=].resource.activity[HistologieEvaluation].detail.statusReason = $mii-cs-onko-therapieabweichung#U
 // Therapieplan erledigt
 * insert BundleResource(Observation, mii-exa-mtb-therapieempfehlung-trametinib)
 * entry[=].resource.extension[Prioritaet].valueDecimal = 1.5

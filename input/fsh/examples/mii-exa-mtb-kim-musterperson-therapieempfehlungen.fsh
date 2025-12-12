@@ -9,6 +9,7 @@ Description: "Therapieempfehlung: Mirvetuximab soravtansine, Priorität: 1, Evid
 Usage: #example
 * status = #completed
 * intent = #proposal
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * basedOn = Reference(CarePlan/mii-exa-mtb-kim-musterperson-therapieplan)
 // Hier sonst auch wirkstoffgruppe angeben - nur bei targeted therapy macht das evtl. keinen Sinn
@@ -37,6 +38,7 @@ Description: "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenz
 Usage: #example
 * status = #draft
 * intent = #proposal
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FD04
 * insert BeschlussPrioritaet(3)
@@ -63,6 +65,7 @@ Description: "Therapieempfehlung: Adavosertib"
 Usage: #example
 * status = #draft
 * intent = #option
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-adavosertib)
 
@@ -73,6 +76,7 @@ Description: "Therapieempfehlung: Carboplatin"
 Usage: #example
 * status = #draft
 * intent = #option
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01XA02
 
@@ -83,6 +87,7 @@ Description: "Therapieempfehlung Kombinationstherapie: Adavosertib +/- Carboplat
 Usage: #example
 * status = #draft
 * intent = #proposal
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * code = $mii-cs-onko-therapie-typ#CZ "Chemotherapie + zielgerichtete Substanzen"
 * action.resource = Reference(mii-exa-mtb-medication-request-adavosertib)
@@ -113,6 +118,7 @@ Description: "Therapieempfehlung: Lunresertib"
 Usage: #example
 * status = #draft
 * intent = #option
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-lunresertib)
 
@@ -133,6 +139,7 @@ Description: "Therapieempfehlung: Camonsertib"
 Usage: #example
 * status = #draft
 * intent = #option
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-camonsertib)
 
@@ -143,6 +150,7 @@ Description: "Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib
 Usage: #example
 * status = #draft
 * intent = #proposal
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * code = $mii-cs-onko-therapie-typ#ZS "zielgerichtete Substanzen"
 * action.resource = Reference(mii-exa-mtb-medication-request-lunresertib)
@@ -169,6 +177,7 @@ Description: "Therapieempfehlung: Cobimetinib, Priorität: 6, Evidenzgrad: m3"
 Usage: #example
 * status = #draft
 * intent = #option
+* authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
 * insert BeschlussPrioritaet(6)

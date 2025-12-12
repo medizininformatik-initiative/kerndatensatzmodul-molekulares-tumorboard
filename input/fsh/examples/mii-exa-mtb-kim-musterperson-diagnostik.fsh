@@ -15,6 +15,7 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "20.04.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
@@ -75,6 +76,7 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "15.07.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
@@ -139,6 +141,7 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "19.10.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
@@ -243,6 +246,7 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "19.12.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
@@ -308,6 +312,7 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "20.03.2023 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
@@ -368,6 +373,7 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "20.08.2023 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
@@ -407,6 +413,7 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "22.10.2023 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
