@@ -17,6 +17,7 @@ Description: "20.04.22 CT T/A"
 * status = #completed
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-04-20
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -76,6 +77,7 @@ Description: "15.07.22 CT T/A"
 * status = #completed
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-07-15
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax" 
@@ -139,6 +141,7 @@ Description: "19.10.22 CT T/A"
 * status = #completed
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-10-22
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax" 
@@ -242,6 +245,7 @@ Description: "19.12.22 CT T/A"
 * status = #completed
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-12-19
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -306,6 +310,7 @@ Description: "20.03.2023 CT T/A"
 * status = #completed
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2023-03-20
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -365,6 +370,7 @@ Description: "20.08.2023 CT T/A"
 * status = #completed
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2023-08-20
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -403,6 +409,7 @@ Description: "22.10.2023 CT T/A"
 * status = #completed
 * subject = Reference(PatientKimMusterperson)
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2023-10-22
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
