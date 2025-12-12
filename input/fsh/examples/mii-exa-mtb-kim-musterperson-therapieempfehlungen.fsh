@@ -11,10 +11,11 @@ Usage: #example
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
 * basedOn = Reference(CarePlan/mii-exa-mtb-kim-musterperson-therapieplan)
-// Hier sonst auch wirkstoffgruppe angeben - nur bei targeted therapy macht das evtl. keinen Sinn 
-* medicationCodeableConcept.coding[+] = $ATC_DE#L01FX26
+// Hier sonst auch wirkstoffgruppe angeben - nur bei targeted therapy macht das evtl. keinen Sinn
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $ATC_DE#L01FX26 "Mirvetuximab soravtansine"
 * medicationCodeableConcept.coding[=].version = "2025"
-* medicationCodeableConcept.coding[+] = $ATC_DE#L01FX
+* medicationCodeableConcept.coding[+] = $ATC_DE#L01FX "Andere monoklonale Antikörper und Antikörper-Wirkstoff-Konjugate"
 * medicationCodeableConcept.coding[=].version = "2025"
 
 * insert BeschlussPrioritaet(1)

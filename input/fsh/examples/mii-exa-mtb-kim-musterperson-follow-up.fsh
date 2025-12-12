@@ -33,8 +33,9 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
-* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-06-24"
 * effectivePeriod.end = "2023-06-24"
@@ -52,8 +53,9 @@ Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf[systemischeTherapie] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
-* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-07-16"
 * effectivePeriod.end = "2023-07-16"
@@ -72,8 +74,9 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
-* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-08-07"
 * effectivePeriod.end = "2023-08-07"
@@ -90,14 +93,14 @@ Usage: #example
 Title: "20.08.2023 CT T/A"
 * status = #final
 * code.coding.code = #396432002
-* method = $SCT#312251004 // Computed tomography
+* method = $mii-cs-mtb-response-befund-beurteilungsmethode#RECIST "RECIST"
 * effectiveDateTime = "2023-08-20"
 * subject = Reference(Patient/PatientKimMusterperson)
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1) 
 * valueCodeableConcept.coding.code = #CR
 * component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
-* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K "kein Lymphknotenbefall nachweisbar"
+* component[Lymphknoten_Verlauf].valueCodeableConcept.coding = $mii-cs-onko-verlauf-lymphknoten#K "kein Lymphknotenbefall nachweisbar"
 
 
 Instance: MII-EXA-MTB-Systemische-Therapie-Medication-4
@@ -107,9 +110,9 @@ Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
-* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
-
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-08-29"
 * effectivePeriod.end = "2023-08-29"
@@ -127,8 +130,9 @@ Title: "20.09.2023 Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
-* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-09-20"
 * effectivePeriod.end = "2023-09-20"
@@ -146,8 +150,9 @@ Title: "12.10.2023 Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26
-* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existert
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectivePeriod.start = "2023-10-12"
 * effectivePeriod.end = "2023-10-12"
@@ -164,14 +169,14 @@ Usage: #example
 Title: "22.10.2023 CT T/A"
 * status = #final
 * code.coding.code = #396432002
-* method = $SCT#312251004 // Computed tomography
+* method = $mii-cs-mtb-response-befund-beurteilungsmethode#RECIST "RECIST"
 * effectiveDateTime = "2023-10-22"
 * subject = Reference(Patient/PatientKimMusterperson)
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * valueCodeableConcept.coding.code = #T "Teilremission (partial remission, PR)"
 * component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
-* component[Lymphknoten_Verlauf].valueCodeableConcept.coding.code = #K "kein Lymphknotenbefall nachweisbar"
+* component[Lymphknoten_Verlauf].valueCodeableConcept.coding = $mii-cs-onko-verlauf-lymphknoten#K "kein Lymphknotenbefall nachweisbar"
 
 
 
