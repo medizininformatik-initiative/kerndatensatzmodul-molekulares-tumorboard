@@ -1,6 +1,6 @@
 Extension: MII_EX_MTB_Leitlinienbehandlung_Status
 Id: mii-ex-mtb-leitlinienbehandlung-status
-Context: Condition
+Context: ClinicalImpression
 Title: "MII EX MTB Leitlinienbehandlung Status"
 Description: "Status der Behandlung nach Leitlinie"
 * insert EX_Header($mii-ex-mtb-leitlinienbehandlung-status)

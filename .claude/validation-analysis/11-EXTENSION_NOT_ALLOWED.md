@@ -1,7 +1,8 @@
 # EXTENSION_NOT_ALLOWED Errors (18)
 
-**Status:** TODO
+**Status:** FIXED
 **Priority:** 11
+**Fixed:** 2025-12-12
 
 ## Problem
 

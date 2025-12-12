@@ -90,8 +90,6 @@ Usage: #example
 * characteristic[+].code.text = "Age Group"
 * characteristic[=].valueReference = Reference(mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups)
 * characteristic[=].exclude = false
-* member.entity = Reference(mii-exa-mtb-study-cldn6-comparison-group-0)
-* member.entity = Reference(mii-exa-mtb-study-cldn6-comparison-group-1)
 
 Instance: mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups
 InstanceOf: Group
@@ -156,6 +154,7 @@ Title: "BioNTech Cell & Gene Therapies GmbH"
 Description: "Sponsor: BioNTech Cell & Gene Therapies GmbH"
 Usage: #example
 * type = $hl7-organization-type#crs "Clinical Research Sponsor"
+* name = "BioNTech Cell & Gene Therapies GmbH"
 
 Instance: mii-exa-mtb-study-investigator-biontech
 InstanceOf: MII_PR_Studie_Beteiligte_Person

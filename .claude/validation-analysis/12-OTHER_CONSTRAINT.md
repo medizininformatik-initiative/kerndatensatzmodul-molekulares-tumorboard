@@ -1,7 +1,8 @@
 # OTHER_CONSTRAINT Errors (13)
 
-**Status:** TODO
+**Status:** FIXED
 **Priority:** 12
+**Fixed:** 2025-12-11
 
 ## Problem
 
