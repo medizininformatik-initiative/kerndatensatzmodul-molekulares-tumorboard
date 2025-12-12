@@ -827,6 +827,11 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
           ]
         },
+        "valueQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "value": 0.028,
+          "code": "%"
+        },
         "code": {
           "coding": [
             {
@@ -837,10 +842,6 @@
           ]
         },
         "status": "final",
-        "valueQuantity": {
-          "value": 0.028,
-          "code": "%"
-        },
         "method": {
           "coding": [
             {
@@ -7229,13 +7230,6 @@
             "exclude": false
           }
         ],
-        "member": [
-          {
-            "entity": {
-              "reference": "Group/mii-exa-mtb-study-cldn6-comparison-group-1"
-            }
-          }
-        ],
         "type": "person",
         "actual": false,
         "quantity": 145
@@ -7429,7 +7423,8 @@
               }
             ]
           }
-        ]
+        ],
+        "name": "BioNTech Cell & Gene Therapies GmbH"
       },
       "fullUrl": "urn:uuid:mii-exa-mtb-study-sponsor-biontech"
     },
