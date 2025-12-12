@@ -30,7 +30,6 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * activity contains Therapieempfehlung 0..* MS
 * activity[Therapieempfehlung] ^short = "Therapieempfehlung Systemische Therapie"
 * activity[Therapieempfehlung] ^definition = "Therapieempfehlung für eine medikamentöse Systemische Therapie"
-* activity[Therapieempfehlung] ^comment = "Kann keine Therapieempfehlung für eine Systemische Therapie gegeben werden, muss dies als Begründung unter `detail.statusReason` angegeben werden"
 * activity[Therapieempfehlung].reference 0..1 MS
 * activity[Therapieempfehlung].reference only Reference(
     MII_PR_MTB_Therapieempfehlung or
@@ -38,14 +37,16 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
     MedicationRequest or
     RequestGroup
 )
-* activity[Therapieempfehlung].detail MS // NOTE: Kartinalität min = 1 aus Elterprofil geerbet
-//* activity[Therapieempfehlung].detail.statusReason from MII_VS_MTB_Empfehlung_StatusBegruendung (required)
+* activity[Therapieempfehlung].detail 0..0  // Disabled to avoid FHIR invariant cpl-3
+* activity[Therapieempfehlung].detail ^short = "Not used - therapy details in referenced resource"
+* activity[Therapieempfehlung].detail ^definition = "Constrained to 0..0 to avoid cpl-3 violation. Therapy type and status are captured in the referenced MedicationRequest/RequestGroup."
 
 * activity contains HumangenetischeBeratung 0..1 MS
 * activity[HumangenetischeBeratung] ^short = "Empfehlung Human-genetische Beratung"
 * activity[HumangenetischeBeratung] ^definition = "Auftrag zur (erneuten) Human-genetischen Beratung"
 * activity[HumangenetischeBeratung].reference 1..1 MS
 * activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag)
+* activity[HumangenetischeBeratung].detail 0..0  // Disabled to avoid FHIR invariant cpl-3
 
 * activity contains HistologieEvaluation 0..1 MS
 * activity[HistologieEvaluation] ^short = "Empfehlung Histologie-Evaluation"

@@ -84,6 +84,7 @@ Usage: #example
 * status = #draft
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
+* code = $mii-cs-onko-therapie-typ#CZ "Chemotherapie + zielgerichtete Substanzen"
 * action.resource = Reference(mii-exa-mtb-medication-request-adavosertib)
 * action.resource = Reference(mii-exa-mtb-medication-request-carboplatin)
 * insert BeschlussPrioritaet(4)
@@ -143,6 +144,7 @@ Usage: #example
 * status = #draft
 * intent = #proposal
 * subject = Reference(Patient/PatientKimMusterperson)
+* code = $mii-cs-onko-therapie-typ#ZS "zielgerichtete Substanzen"
 * action.resource = Reference(mii-exa-mtb-medication-request-lunresertib)
 * action.resource = Reference(mii-exa-mtb-medication-request-camonsertib)
 * insert BeschlussPrioritaet(5)

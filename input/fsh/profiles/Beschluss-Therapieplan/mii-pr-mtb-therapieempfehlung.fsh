@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Therapieempfehlung
-Parent: MII_PR_Medikation_MedicationRequest
+Parent: MII_PR_Onko_Therapieempfehlung_Medikation
 Id: mii-pr-mtb-therapieempfehlung
 Title: "MII PR MTB Therapieempfehlung Systemische Therapie"
 Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
