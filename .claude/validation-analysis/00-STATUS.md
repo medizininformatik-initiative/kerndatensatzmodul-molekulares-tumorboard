@@ -54,6 +54,7 @@
 ## Notes
 
 - **`validation.json` is a snapshot downloaded from CI** - not live validation. Re-download after each push to get updated error counts.
+- **Last validation.json download:** 2025-12-11 (commit ce16ebf baseline)
 - Validation artifacts saved to `/tmp/mtb-validation/`
 - CI Run: https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/actions/runs/20142184276
 - Analysis files created: 2025-12-11
