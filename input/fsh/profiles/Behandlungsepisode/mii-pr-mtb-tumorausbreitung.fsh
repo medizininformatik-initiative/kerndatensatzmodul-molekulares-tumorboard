@@ -47,8 +47,6 @@ Description: "Angabe zur Tumorausbreitung"
 * value[x] only CodeableConcept
 
 * valueCodeableConcept.coding 1..* MS
-* valueCodeableConcept.coding.system 1..1 MS
-* valueCodeableConcept.coding.code 1..1 MS
 
 * valueCodeableConcept.coding ^slicing.discriminator.type = #value
 * valueCodeableConcept.coding ^slicing.discriminator.path = "system"

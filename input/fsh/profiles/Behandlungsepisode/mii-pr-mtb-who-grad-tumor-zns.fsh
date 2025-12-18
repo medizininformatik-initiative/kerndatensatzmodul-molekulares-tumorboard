@@ -24,11 +24,9 @@ Description: "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen 
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
 * valueCodeableConcept.coding 1..1 MS
-* valueCodeableConcept.coding.system 1..1 MS
-* valueCodeableConcept.coding.code 1..1 MS
 
 * valueCodeableConcept.coding ^slicing.discriminator.type = #value
-* valueCodeableConcept.coding ^slicing.discriminator.path = "code"
+* valueCodeableConcept.coding ^slicing.discriminator.path = "system"
 * valueCodeableConcept.coding ^slicing.rules = #closed
 * valueCodeableConcept.coding ^slicing.description = "Slice für Klassifikation des Tumors"
 * valueCodeableConcept.coding ^slicing.ordered = false

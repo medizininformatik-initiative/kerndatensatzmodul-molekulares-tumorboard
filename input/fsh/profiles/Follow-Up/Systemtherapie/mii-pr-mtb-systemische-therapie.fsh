@@ -18,10 +18,10 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 * statusReason MS
 * statusReason ^short = "Status Grund"
 * statusReason ^definition = "Grund des Status der Therapie"
-* statusReason.coding 1..1
+* statusReason.coding 1..1 MS
+* statusReason.coding from MII_VS_MTB_Therapiestatusgrund (required)
 * statusReason.coding.system = $mii-cs-mtb-therapiestatusgrund
-* statusReason.coding.code 1..1 MS 
-* statusReason.coding.code from MII_VS_MTB_Therapiestatusgrund
+* statusReason.coding.code 1..1 MS
 
 * subject MS
 

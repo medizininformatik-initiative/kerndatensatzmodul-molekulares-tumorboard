@@ -21,11 +21,7 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * description ^definition = "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
 
 * activity 0..* MS
-* activity ^slicing.discriminator.type = #profile
-* activity ^slicing.discriminator.path = "reference.resolve()"
-* activity ^slicing.rules = #open
-* activity ^slicing.description = "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps"
-* activity ^slicing.ordered = false
+// Note: Slicing inherited from parent MII_PR_Onko_Tumorkonferenz - cannot redefine discriminator
 
 * activity contains Therapieempfehlung 0..* MS
 * activity[Therapieempfehlung] ^short = "Therapieempfehlung Systemische Therapie"

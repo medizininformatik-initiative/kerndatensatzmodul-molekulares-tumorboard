@@ -85,21 +85,6 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity",
-        "path": "CarePlan.activity",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "profile",
-              "path": "reference.resolve()"
-            }
-          ],
-          "rules": "open",
-          "description": "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps",
-          "ordered": false
-        }
-      },
-      {
         "id": "CarePlan.activity:Therapieempfehlung",
         "path": "CarePlan.activity",
         "sliceName": "Therapieempfehlung",
