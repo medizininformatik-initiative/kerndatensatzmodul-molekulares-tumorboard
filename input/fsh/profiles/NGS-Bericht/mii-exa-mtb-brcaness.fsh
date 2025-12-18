@@ -20,5 +20,5 @@ Description: "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalte
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 // Components
 * component[gene-studied].code.coding.system = $LNC
-* component[gene-studied].code.coding.code = $LNC#48018-6 "Gene studied"
+* component[gene-studied].code.coding.code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = #HGNC:1100 "BRCA1"

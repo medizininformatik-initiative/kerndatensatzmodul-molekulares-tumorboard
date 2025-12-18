@@ -9,7 +9,7 @@ Description: "Immunhistrchemistry report"
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL4396-9 //
 * valueCodeableConcept.coding ^short =  "0|1+|2+|3+|Indeterminate"
-* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:2064 "ERBB2"
+* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
 //* component[protein-studied].valueCodeableConcept = $UNIPROT#P04626 "Receptor tyrosine-protein kinase erbB-2"
 * component[biomarker-category].valueCodeableConcept.coding = #immuneStain // alternative: protein
 
@@ -24,7 +24,7 @@ Description: "In Situ Hybridization report"
 * code.coding = $LNC#31150-6 "ERBB2 gene duplication [Presence] in Tissue by FISH"
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL360-9-9 //
-* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:2064 "ERBB2"
+* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
 //* component[protein-studied].valueCodeableConcept = $UNIPROT#P04626 "Receptor tyrosine-protein kinase erbB-2"
 * component[biomarker-category].valueCodeableConcept.coding.code = #inSituHybridization //new code for method, otherwise 
 /* additional optional components from (LOINC Panel)
@@ -48,7 +48,7 @@ Description: "..."
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL3593-2 //Pos|Weak pos|Neg -> maybe also Her2low as explicit response option in self-defined value set
 
-* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:2064 "ERBB2"
+* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
 //* component[protein-studied].valueCodeableConcept = $UNIPROT#P04626 "Receptor tyrosine-protein kinase erbB-2"
 * component[biomarker-category].valueCodeableConcept.coding.code = #molgen  //derived Biomarker or implication?  
 
