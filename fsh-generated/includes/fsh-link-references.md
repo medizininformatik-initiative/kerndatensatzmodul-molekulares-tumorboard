@@ -180,7 +180,6 @@
 [mii-exa-mtb-medikation-dabrafenib]: Medication-mii-exa-mtb-medikation-dabrafenib.html
 [mii-exa-mtb-medikation-trametinib]: Medication-mii-exa-mtb-medikation-trametinib.html
 [mii-exa-mtb-patient]: Patient-mii-exa-mtb-patient.html
-[mii-exa-mtb-technical-test-bundle]: Bundle-mii-exa-mtb-technical-test-bundle.html
 [mii-exa-mtb-therapieempfehlung-dabrafenib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.html
 [mii-exa-mtb-therapieempfehlung-kombinationstherapie]: RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.html
 [mii-exa-mtb-therapieempfehlung-trametinib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-trametinib.html
