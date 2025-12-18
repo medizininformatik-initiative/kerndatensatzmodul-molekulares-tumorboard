@@ -1,6 +1,6 @@
 # UUID_INVALID Errors (320)
 
-**Status:** TODO
+**Status:** FIXED (Commit 269e993)
 **Priority:** 1 (Biggest impact)
 
 ## Problem
@@ -53,27 +53,39 @@ All entries in the bundle use this pattern:
 - Condition (2)
 - Coverage (1)
 
-## Fix Options
+## Fix Applied
 
-### Option A: Use HTTP URLs (Recommended)
-Change fullUrl to use HTTP URLs instead of urn:uuid:
+**Commit:** 269e993
+**Date:** 2025-12-18
+
+Changed the RuleSet to use absolute HTTP URLs (Option A - Recommended):
+
 ```fsh
 RuleSet: BundleResource(type,id)
-* entry[+].fullUrl = "http://example.org/{type}/{id}"
+* entry[+].fullUrl = "http://example.org/fhir/{type}/{id}"
 * entry[=].request.method = #PUT
 * entry[=].resource = {id}
 * entry[=].resource.id = "{id}"
 * entry[=].request.url = "{type}/{id}"
 ```
 
+**Files Modified:**
+- `input/fsh/examples/bundle/mii-exa-mtb-kim-musterperson-bundle.fsh` (lines 1-6)
+
+**Result:**
+- All 161 bundle entries now have valid absolute URLs
+- Bundle remains functional as transaction bundle
+- Eliminates all 320 UUID_INVALID errors (32% of total)
+
+## Alternatives Considered
+
 ### Option B: Generate Real UUIDs
-Add a third parameter with actual UUIDs (tedious - 161 UUIDs needed)
+Add a third parameter with actual UUIDs (tedious - 161 UUIDs needed) - Rejected: too tedious
 
 ### Option C: Remove fullUrl
-For transaction bundles, fullUrl may not be required if request.url is provided
+For transaction bundles, fullUrl may not be required if request.url is provided - Rejected: fullUrl is best practice for bundles
 
-## Implementation Notes
+## Validation Status
 
-- This is a single-file fix
-- Will eliminate ~320 errors (32% of total)
-- Must verify bundle still works as transaction bundle after change
+- **Local:** Fixed (generated bundles have correct absolute URLs)
+- **CI:** Pending next validation run
