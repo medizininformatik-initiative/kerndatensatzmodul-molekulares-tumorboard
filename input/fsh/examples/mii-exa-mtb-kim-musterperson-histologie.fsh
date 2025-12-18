@@ -21,7 +21,7 @@ Description: "02.01.2023 Histologie (Z 230201/23)"
 * identifier.value = "Z 230201/23"
 * accessionIdentifier.value = "Z 230201/23"
 * status = http://hl7.org/fhir/specimen-status#available
-* type.coding[sct] = $SCT#3955077
+* type.coding[sct] = $SCT#309201001 "Ascitic fluid specimen"
 * subject = Reference(PatientKimMusterperson)
 * collection.collectedDateTime = 2023-01-02
 * collection.quantity.unit = "ml"

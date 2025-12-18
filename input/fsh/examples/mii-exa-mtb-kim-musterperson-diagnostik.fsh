@@ -20,8 +20,8 @@ Description: "20.04.22 CT T/A"
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-04-20
-* bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax"
+* bodySite[+] = $SCT#818983003 "Abdomen"
+* bodySite[+] = $SCT#51185008 "Thoracic structure"
 
 Instance: PatientKimMusterperson-Observation-1
 InstanceOf: Observation
@@ -62,7 +62,7 @@ Description: "Z.n. atypischer Lebersegmentresektion, kein eindeutiger Hinweis au
 * code.coding[+] = $SCT#237679004 "Status post (contextual qualifier) (qualifier value)"
 * code.coding[+] = $SCT#112231000 "Atypical (qualifier value)"
 * code.coding[+] = $SCT#174430004 "Resection of segment of liver (procedure)"
-* valueCodeableConcept.coding[+] = $SCT#801911000000107 "Collection of fluid"
+* valueCodeableConcept.coding[+] = $SCT#309201001 "Ascitic fluid specimen"
 * valueCodeableConcept.coding[+] = $SCT#262061000 "After surgery"
 * valueCodeableConcept.text = "Flüssigkeitskollektion angrenzend DD postoperativ"
 * bodySite = $SCT#181247007 "Entire duodenum"
@@ -81,8 +81,8 @@ Description: "15.07.22 CT T/A"
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-07-15
-* bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax" 
+* bodySite[+] = $SCT#818983003 "Abdomen"
+* bodySite[+] = $SCT#51185008 "Thoracic structure" 
 
 Instance: PatientKimMusterperson-Observation-5
 InstanceOf: Observation
@@ -94,7 +94,7 @@ Description: "konstante Flüssigkeitskollektion angrenzend bei Z.n. atpyischer L
 * code.coding[+] = $SCT#112231000 "Atypical"
 * code.coding[+] = $SCT#174430004 "Resection of segment of liver (procedure)"
 * valueCodeableConcept.coding[+] = $SCT#420341009 "Constant"
-* valueCodeableConcept.coding[+] = $SCT#801911000000107 "Collection of fluid"
+* valueCodeableConcept.coding[+] = $SCT#309201001 "Ascitic fluid specimen"
 * valueCodeableConcept.text = "konstante Flüssigkeitskollektion angrenzend"
 * bodySite = $SCT#181247007 "Entire duodenum"
 
@@ -146,8 +146,8 @@ Description: "19.10.22 CT T/A"
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-10-22
-* bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax" 
+* bodySite[+] = $SCT#818983003 "Abdomen"
+* bodySite[+] = $SCT#51185008 "Thoracic structure" 
 
 Instance: PatientKimMusterperson-Observation-9
 InstanceOf: Observation
@@ -158,7 +158,7 @@ Description: "regrediente Flüssigkeitskollektion am Leberrand, Z.n. atypische L
 * code.coding[+] = $SCT#237679004 "Status post (contextual qualifier) (qualifier value)"
 * code.coding[+] = $SCT#112231000 "Atypical"
 * code.coding[+] = $SCT#174430004 "Resection of segment of liver (procedure)"
-* valueCodeableConcept.coding[+] = $SCT#801911000000107 "Collection of fluid"
+* valueCodeableConcept.coding[+] = $SCT#309201001 "Ascitic fluid specimen"
 * valueCodeableConcept.coding[+] = $SCT#249567002 "Liver edge (finding)"
 * valueCodeableConcept.text = "regrediente Flüssigkeitskollektion am Leberrand"
 * bodySite = $SCT#181268008 "Entire liver"
@@ -251,8 +251,8 @@ Description: "19.12.22 CT T/A"
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-12-19
-* bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax"
+* bodySite[+] = $SCT#818983003 "Abdomen"
+* bodySite[+] = $SCT#51185008 "Thoracic structure"
 
 Instance: PatientKimMusterperson-Observation-16
 InstanceOf: Observation
@@ -317,8 +317,8 @@ Description: "20.03.2023 CT T/A"
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2023-03-20
-* bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax"
+* bodySite[+] = $SCT#818983003 "Abdomen"
+* bodySite[+] = $SCT#51185008 "Thoracic structure"
 
 Instance: PatientKimMusterperson-Observation-20
 InstanceOf: Observation
@@ -378,8 +378,8 @@ Description: "20.08.2023 CT T/A"
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2023-08-20
-* bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax"
+* bodySite[+] = $SCT#818983003 "Abdomen"
+* bodySite[+] = $SCT#51185008 "Thoracic structure"
 
 Instance: PatientKimMusterperson-Observation-24
 InstanceOf: Observation
@@ -418,8 +418,8 @@ Description: "22.10.2023 CT T/A"
 * code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2023-10-22
-* bodySite[+] = $SCT#4120138 "Abdomen"
-* bodySite[+] = $SCT#37542245 "Thorax"
+* bodySite[+] = $SCT#818983003 "Abdomen"
+* bodySite[+] = $SCT#51185008 "Thoracic structure"
 
 Instance: PatientKimMusterperson-Observation-26
 InstanceOf: Observation
