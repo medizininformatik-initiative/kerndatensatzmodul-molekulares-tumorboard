@@ -3,7 +3,7 @@ InstanceOf: MII_PR_MTB_Behandlungsepisode
 Title: "MII PR MTB Behandlungsepisode Beispiel"
 Description: "Beispiel für aktuellen Gesundheitszustand und bisherige Behandlungsmaßnahmen"
 
-* status = #final
+* status = #completed
 
 * subject = Reference(Patient/example)
 

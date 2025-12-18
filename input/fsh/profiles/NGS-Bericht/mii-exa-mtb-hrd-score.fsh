@@ -16,7 +16,7 @@ Description: "Beispiel fuer einen HRD-Score, der den Grad der homologen Rekombin
 
 * valueInteger = 43
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 
 * component[LOH].valueInteger = 14
 * component[TAI].valueInteger = 12

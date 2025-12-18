@@ -9,8 +9,8 @@ Title: "Beispiel fuer einen Response Befund"
 * subject = Reference(Patient/Example)
 * focus = Reference(Condition/Example)
 * effectiveDateTime = "2014-02-12"
-* method = #RECIST
-* valueCodeableConcept.coding.code = #PP
+* method = $mii-cs-mtb-response-befund-beurteilungsmethode#RECIST "RECIST"
+* valueCodeableConcept.coding = $mii-cs-mtb-response-befund-beurteilung#PD "Progressive Disease"
 * partOf = Reference(Procedure/Example)
-* component[Tumor_Verlauf].valueCodeableConcept.coding.code = #K
-* component[Tumor_Verlauf].code.coding.version = "1"
+* component[Tumor_Verlauf].valueCodeableConcept.coding = $mii-cs-onko-verlauf-primaertumor#K "Kein Tumor nachweisbar"
+* component[Tumor_Verlauf].code.coding.version = "2026"

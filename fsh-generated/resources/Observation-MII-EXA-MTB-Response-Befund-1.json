@@ -6,15 +6,6 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
     ]
   },
-  "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "396432002",
-        "display": "Status of regression of tumor (observable entity)"
-      }
-    ]
-  },
   "focus": [
     {
       "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
@@ -28,7 +19,9 @@
   "valueCodeableConcept": {
     "coding": [
       {
-        "code": "CR"
+        "code": "CR",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung",
+        "display": "Complete Response"
       }
     ]
   },
@@ -55,6 +48,15 @@
     }
   ],
   "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "396432002",
+        "system": "http://snomed.info/sct",
+        "display": "Status of regression of tumor (observable entity)"
+      }
+    ]
+  },
   "method": {
     "coding": [
       {

@@ -92,13 +92,13 @@ InstanceOf: MII_PR_MTB_Response_Befund
 Usage: #example
 Title: "20.08.2023 CT T/A"
 * status = #final
-* code.coding.code = #396432002
+* code = $SCT#396432002 "Status of regression of tumor (observable entity)"
 * method = $mii-cs-mtb-response-befund-beurteilungsmethode#RECIST "RECIST"
 * effectiveDateTime = "2023-08-20"
 * subject = Reference(Patient/PatientKimMusterperson)
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
-* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1) 
-* valueCodeableConcept.coding.code = #CR
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
+* valueCodeableConcept.coding = $mii-cs-mtb-response-befund-beurteilung#CR "Complete Response"
 * component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
 * component[Lymphknoten_Verlauf].valueCodeableConcept.coding = $mii-cs-onko-verlauf-lymphknoten#K "kein Lymphknotenbefall nachweisbar"
 
@@ -168,13 +168,13 @@ InstanceOf: MII_PR_MTB_Response_Befund
 Usage: #example
 Title: "22.10.2023 CT T/A"
 * status = #final
-* code.coding.code = #396432002
+* code = $SCT#396432002 "Status of regression of tumor (observable entity)"
 * method = $mii-cs-mtb-response-befund-beurteilungsmethode#RECIST "RECIST"
 * effectiveDateTime = "2023-10-22"
 * subject = Reference(Patient/PatientKimMusterperson)
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
-* valueCodeableConcept.coding.code = #T "Teilremission (partial remission, PR)"
+* valueCodeableConcept.coding = $mii-cs-mtb-response-befund-beurteilung#PR "Partial Response"
 * component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
 * component[Lymphknoten_Verlauf].valueCodeableConcept.coding = $mii-cs-onko-verlauf-lymphknoten#K "kein Lymphknotenbefall nachweisbar"
 
