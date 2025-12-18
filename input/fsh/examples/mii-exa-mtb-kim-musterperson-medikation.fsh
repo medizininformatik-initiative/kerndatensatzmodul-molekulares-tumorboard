@@ -187,7 +187,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -205,7 +205,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -223,7 +223,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -241,7 +241,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -259,7 +259,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -277,7 +277,7 @@ Usage: #example
 * partOf[+] = Reference(Procedure/MTBChemo2Procedure)
 * status = #completed
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025"
 * subject = Reference(Patient/PatientKimMusterperson)

@@ -13,7 +13,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * basedOn = Reference(CarePlan/mii-exa-mtb-kim-musterperson-therapieplan)
 // Hier sonst auch wirkstoffgruppe angeben - nur bei targeted therapy macht das evtl. keinen Sinn
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[=].version = "2025"
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX "Andere monoklonale Antikörper und Antikörper-Wirkstoff-Konjugate"

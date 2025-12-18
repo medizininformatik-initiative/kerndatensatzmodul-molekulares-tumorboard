@@ -21,10 +21,10 @@ InstanceOf: MII_PR_Medikation_Medication
 Usage: #example
 Description: "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)"
 // Repräsentation Trametinib
-* code.coding[+] = $ATC_DE#L01EE01 "Trametinib 2 mg O"
+* code.coding[+] = $ATC_DE#L01EE01 "Trametinib"
 * code.coding[=].version = "2023"
 // Einnahme jeweils als Tablette
-* form.coding[+] = $EDQM#10219000 "Tablette"
+* form.coding[+] = $EDQM#10219000 "Tablet"
 // Zweites Medikament der Kombinationstherapie: Trametinib, 1x 2mg, 1-0-0 oder 0-0-1
 * ingredient[+].itemCodeableConcept.coding[+] = $ASK#41418 "Trametinib-Dimethylsulfoxid (1:1)"
 * ingredient[=].itemCodeableConcept.coding[=] = $SCT#895671007 "Trametinib (as trametinib dimethyl sulfoxide) 2 mg oral tablet"

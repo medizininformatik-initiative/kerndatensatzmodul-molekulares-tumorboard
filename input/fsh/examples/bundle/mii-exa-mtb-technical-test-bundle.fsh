@@ -103,7 +103,7 @@ Usage: #example
 //* entry[=].resource.
 //* entry[=].resource.
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-mirvetuximab)
-* entry[=].resource.medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* entry[=].resource.medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * entry[=].resource.medicationCodeableConcept.coding[+] = $ATC_EN#L01FX26 "Mirvetuximab soravtansine"
 //* entry[=].resource.medicationCodeableConcept.coding[+] = $PZN#00624605
 * entry[=].resource.medicationCodeableConcept.text = "Mirvetuximab soravtansine"

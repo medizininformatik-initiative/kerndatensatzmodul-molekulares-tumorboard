@@ -153,7 +153,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding[spezifisch] = $LNC#14228-1 "Cells.progesterone receptor/cells in Tissue by Immune stain"
+* code.coding[spezifisch] = $LNC#14228-1 "Cells.estrogen receptor/cells in Tissue by Immune stain"
 * valueQuantity.code = #/100
 * valueQuantity.value = 70
 * valueQuantity.unit = "%"
@@ -165,7 +165,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding[spezifisch] = $LNC#14230-7 "Cells.progesteron receptor/cells in Tissue by Immune stain"
+* code.coding[spezifisch] = $LNC#14230-7 "Cells.progesterone receptor/cells in Tissue by Immune stain"
 * valueQuantity.code = #/100
 * valueQuantity.value = 30
 * valueQuantity.unit = "%"

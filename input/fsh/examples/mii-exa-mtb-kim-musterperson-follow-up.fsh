@@ -33,7 +33,7 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -53,7 +53,7 @@ Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf[systemischeTherapie] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -74,7 +74,7 @@ Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -110,7 +110,7 @@ Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -130,7 +130,7 @@ Title: "20.09.2023 Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
@@ -150,7 +150,7 @@ Title: "12.10.2023 Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
-* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "Mirvetuximab soravtansine"
+* medicationCodeableConcept.coding[+] = $UNII#98DE7VN88D "MIRVETUXIMAB SORAVTANSINE"
 * medicationCodeableConcept.coding[atcClassDe] = $ATC_DE#L01FX26 "Mirvetuximab soravtansin"
 * medicationCodeableConcept.coding[atcClassDe].version = "2025" //erste ATC-Version wo Code existiert
 * subject = Reference(Patient/PatientKimMusterperson)
