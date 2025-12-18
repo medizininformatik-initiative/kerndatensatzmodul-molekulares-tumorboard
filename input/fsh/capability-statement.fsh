@@ -5,10 +5,10 @@ RuleSet: SupportResource (resource, expectation)
 * rest.resource[=].extension[0].url = $exp
 * rest.resource[=].extension[0].valueCode = {expectation}
 
-RuleSet: Profile (profile, expectation)
-* rest.resource[=].profile[+] = "{profile}"
-* rest.resource[=].profile[=].extension[0].url = $exp
-* rest.resource[=].profile[=].extension[0].valueCode = {expectation}
+RuleSet: Profile (profile)
+// Note: profile element doesn't support capabilitystatement-expectation extension in FHIR R4
+// Use SupportProfile for profiles that need expectation declarations
+* rest.resource[=].profile = "{profile}"
 
 RuleSet: SupportProfile (profile, expectation)
 // This rule set must follow a SupportResource rule set, and applies to that resource.
@@ -53,7 +53,7 @@ Usage: #definition
 
 // ClinicalImpression requirements
 * insert SupportResource(ClinicalImpression, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/ClinicalImpression, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/ClinicalImpression)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode, #SHALL)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
@@ -71,7 +71,7 @@ Usage: #definition
 
 // ServiceRequest requirements
 * insert SupportResource(ServiceRequest, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/ServiceRequest, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag, #SHALL)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag, #SHALL)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag, #SHALL)
@@ -96,7 +96,7 @@ Usage: #definition
 
 // ResearchStudy requirements
 * insert SupportResource(ResearchStudy, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/ResearchStudy, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/ResearchStudy)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -111,7 +111,7 @@ Usage: #definition
 
 // RequestGroup requirements
 * insert SupportResource(RequestGroup, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/RequestGroup, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/RequestGroup)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -130,7 +130,7 @@ Usage: #definition
 
 // MedicationRequest requirements
 * insert SupportResource(MedicationRequest, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/MedicationRequest, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/MedicationRequest)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -149,7 +149,7 @@ Usage: #definition
 
 // Claim requirements
 * insert SupportResource(Claim, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/Claim, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/Claim)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -171,7 +171,7 @@ Usage: #definition
 
 // ClaimResponse requirements
 * insert SupportResource(ClaimResponse, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/ClaimResponse, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/ClaimResponse)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -191,7 +191,7 @@ Usage: #definition
 
 // Condition requirements
 * insert SupportResource(Condition, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/Condition, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/Condition)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -213,7 +213,7 @@ Usage: #definition
 
 // DiagnosticReport requirements
 * insert SupportResource(DiagnosticReport, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/DiagnosticReport, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/DiagnosticReport)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-befund, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -232,7 +232,7 @@ Usage: #definition
 
 // // Observation requirements
 * insert SupportResource(Observation, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/Observation, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/Observation)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree, #SHALL)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung, #SHALL)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns, #SHALL)
@@ -272,7 +272,7 @@ Usage: #definition
 
 // Procedure requirements
 * insert SupportResource(Procedure, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/Procedure, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/Procedure)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -304,7 +304,7 @@ Usage: #definition
 
 // Medication Statement requirements
 * insert SupportResource(MedicationStatement, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/MedicationStatement, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/MedicationStatement)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
@@ -322,7 +322,7 @@ Usage: #definition
 // CarePlan requirements
 // description SP?
 * insert SupportResource(CarePlan, #SHALL)
-* insert Profile(http://hl7.org/fhir/StructureDefinition/CarePlan, #SHALL)
+* insert Profile(http://hl7.org/fhir/StructureDefinition/CarePlan)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-tumorkonferenz, #SHALL)
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
