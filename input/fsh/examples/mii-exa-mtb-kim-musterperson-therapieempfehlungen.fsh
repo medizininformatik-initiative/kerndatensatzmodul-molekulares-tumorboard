@@ -18,6 +18,7 @@ Usage: #example
 * medicationCodeableConcept.coding[=].version = "2025"
 * medicationCodeableConcept.coding[+] = $ATC_DE#L01FX "Andere monoklonale Antikörper und Antikörper-Wirkstoff-Konjugate"
 * medicationCodeableConcept.coding[=].version = "2025"
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 * insert BeschlussPrioritaet(1)
 * insert BeschlussEvidenzZweiQuellen(m1A, http://doi.org, 10.1200/JCO.2022.40.16_suppl.5512, http://www.ncbi.nlm.nih.gov/pubmed, 38055253)
@@ -41,6 +42,7 @@ Usage: #example
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01FD04
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 * insert BeschlussPrioritaet(3)
 * insert BeschlussEvidenzDreiQuellen(m1B, http://www.ncbi.nlm.nih.gov/pubmed, 35665782, http://www.ncbi.nlm.nih.gov/pubmed, 37870536, http://doi.org, 10.1200/JCO.2023.41.17_suppl.LBA3000)
 
@@ -68,6 +70,7 @@ Usage: #example
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-adavosertib)
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-medication-request-carboplatin
 InstanceOf: MII_PR_MTB_Therapieempfehlung
@@ -79,6 +82,7 @@ Usage: #example
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationCodeableConcept.coding = $ATC_DE#L01XA02
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-request-group-adavosertib-carboplatin
 InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
@@ -121,6 +125,7 @@ Usage: #example
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-lunresertib)
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 // TODO: MII_PR_Medikation_Medication nicht möglich, da Medication.ingredient 1..*
 Instance: mii-exa-mtb-medication-camonsertib
@@ -142,6 +147,7 @@ Usage: #example
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-camonsertib)
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-request-group-lunresertib-camonsertib
 InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
@@ -180,5 +186,6 @@ Usage: #example
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
 * medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 * insert BeschlussPrioritaet(6)
 * insert BeschlussEvidenz(m3, http://www.ncbi.nlm.nih.gov/pubmed, 31209687)

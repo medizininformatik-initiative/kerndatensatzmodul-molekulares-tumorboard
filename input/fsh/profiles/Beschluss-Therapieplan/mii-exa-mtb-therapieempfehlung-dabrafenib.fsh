@@ -28,6 +28,7 @@ Description: "Therapieempfehlung für Dabrafenib"
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Medikation
 * medicationReference = Reference(mii-exa-mtb-medikation-dabrafenib)
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 * dosageInstruction.timing.repeat.frequency = 1
 * dosageInstruction.timing.repeat.when[0] = #MORN
 * dosageInstruction.timing.repeat.when[1] = #EVE

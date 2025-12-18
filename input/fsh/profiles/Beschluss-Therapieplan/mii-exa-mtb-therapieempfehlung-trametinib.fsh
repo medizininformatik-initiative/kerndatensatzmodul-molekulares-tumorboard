@@ -28,6 +28,7 @@ Description: "Therapieempfehlung für Trametinib"
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Medikation
 * medicationReference = Reference(mii-exa-mtb-medikation-trametinib)
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 * dosageInstruction.timing.repeat.frequency = 1
 * dosageInstruction.timing.repeat.when[0] = #MORN
 * dosageInstruction.doseAndRate.doseQuantity.value = 1

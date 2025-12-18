@@ -48,9 +48,9 @@ Description: "Example of HER2 in situ hybridization with ratio measurement for p
 * code = $SCT#1365744007 "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* valueRatio.numerator.value = 2.5
+* valueRatio.numerator.value = 1.2
 * valueRatio.denominator.value = 1
-* interpretation = $SCT#12645001 "Gene amplification (finding)"
+* interpretation = $SCT#260385009 "Negative (qualifier value)"
 * component[+].code = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
 //* component[+].code = $LNC#48018-6 "Gene studied"
@@ -64,7 +64,8 @@ Usage: #example
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * code.coding[spezifisch] = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
-* valueCodeableConcept.coding = $LNC#LA6576-8 "Her2low"
+* valueCodeableConcept.coding = $SCT#1381317004 "Human epidermal growth factor receptor 2 low"
+* valueCodeableConcept.text = "HER2-low (IHC 2+/ISH negative)"
 * component[+].code.coding = $LNC#48018-6 "Gene studied"
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
 

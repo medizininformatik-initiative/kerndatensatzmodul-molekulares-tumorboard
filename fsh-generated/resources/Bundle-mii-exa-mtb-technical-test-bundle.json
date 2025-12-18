@@ -392,7 +392,7 @@
           "coding": [
             {
               "code": "W",
-              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-therapie-grund-ende"
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-ende-grund"
             }
           ],
           "text": "Reguläres Ende mit Substanzwechsel"
@@ -974,6 +974,17 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          },
+          {
+            "reference": "Observation/mii-exa-mtb-kim-musterperson-CNVariante-CCNE1"
+          },
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "dosageInstruction": [
           {
             "timing": {
@@ -998,8 +1009,8 @@
             "text": "1 Tablet every morning"
           }
         ],
-        "intent": "proposal",
         "status": "active",
+        "intent": "option",
         "authoredOn": "2024-12-12",
         "subject": {
           "reference": "Patient/mii-exa-mtb-patient"
@@ -1044,14 +1055,6 @@
                 "system": "http://snomed.info/sct"
               }
             ]
-          }
-        ],
-        "reasonReference": [
-          {
-            "reference": "Observation/mii-exa-mtb-kim-musterperson-CNVariante-CCNE1"
-          },
-          {
-            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
           }
         ],
         "basedOn": [
@@ -1107,6 +1110,11 @@
           ],
           "text": "Mirvetuximab soravtansine"
         },
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "extension": [
           {
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
@@ -1138,8 +1146,8 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "intent": "proposal",
         "status": "completed",
+        "intent": "proposal",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -1649,11 +1657,12 @@
         "valueCodeableConcept": {
           "coding": [
             {
-              "code": "LA6576-8",
-              "system": "http://loinc.org",
-              "display": "Her2low"
+              "code": "1381317004",
+              "system": "http://snomed.info/sct",
+              "display": "Human epidermal growth factor receptor 2 low"
             }
-          ]
+          ],
+          "text": "HER2-low (IHC 2+/ISH negative)"
         },
         "component": [
           {
@@ -5815,7 +5824,7 @@
           "coding": [
             {
               "code": "E",
-              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-therapie-grund-ende"
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-ende-grund"
             }
           ],
           "text": "Reguläres Ende"
@@ -7873,6 +7882,11 @@
             }
           ]
         },
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "extension": [
           {
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
@@ -7911,8 +7925,8 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "intent": "proposal",
         "status": "draft",
+        "intent": "proposal",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -7954,8 +7968,13 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -7987,8 +8006,13 @@
             }
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -8092,8 +8116,13 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -8138,8 +8167,13 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -8246,6 +8280,11 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "extension": [
           {
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
@@ -8270,8 +8309,8 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "intent": "proposal",
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -8490,8 +8529,8 @@
         "valueCodeableConcept": {
           "coding": [
             {
-              "code": "2",
               "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-allgemeiner-leistungszustand-ecog",
+              "code": "2",
               "display": "Gehfähig, Selbstversorgung möglich, aber nicht arbeitsfähig; kann mehr als 50 % der Wachzeit aufstehen (50 - 60 % nach Karnofsky)"
             }
           ]

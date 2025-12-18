@@ -279,362 +279,2036 @@
     {
       "request": {
         "method": "PUT",
-        "url": "Patient/patientkimmusterperson"
+        "url": "Patient/PatientKimMusterperson"
       },
       "resource": {
-        "id": "patientkimmusterperson"
+        "resourceType": "Patient",
+        "id": "PatientKimMusterperson",
+        "name": [
+          {
+            "given": [
+              "Kim"
+            ],
+            "family": "Musterperson"
+          }
+        ],
+        "birthDate": "1956-03-14"
       },
-      "fullUrl": "Patient/patientkimmusterperson"
+      "fullUrl": "Patient/PatientKimMusterperson"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/mtbobservationca125-1"
+        "url": "Observation/MTBObservationCA125-1"
       },
       "resource": {
-        "id": "mtbobservationca125-1"
+        "resourceType": "Observation",
+        "id": "MTBObservationCA125-1",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "valueQuantity": {
+          "value": 42.3,
+          "unit": "IU/ml",
+          "code": "[iU]/ml",
+          "system": "http://unitsofmeasure.org"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "11210-2",
+              "system": "http://loinc.org",
+              "display": "Cancer Ag 125 [Units/volume] in Body fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "effectiveDateTime": "2022-04-22"
       },
-      "fullUrl": "Observation/mtbobservationca125-1"
+      "fullUrl": "Observation/MTBObservationCA125-1"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/mtbobservationca125-2"
+        "url": "Observation/MTBObservationCA125-2"
       },
       "resource": {
-        "id": "mtbobservationca125-2"
+        "resourceType": "Observation",
+        "id": "MTBObservationCA125-2",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "valueQuantity": {
+          "value": 45.8,
+          "unit": "IU/ml",
+          "code": "[iU]/ml",
+          "system": "http://unitsofmeasure.org"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "11210-2",
+              "system": "http://loinc.org",
+              "display": "Cancer Ag 125 [Units/volume] in Body fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "effectiveDateTime": "2022-07-18"
       },
-      "fullUrl": "Observation/mtbobservationca125-2"
+      "fullUrl": "Observation/MTBObservationCA125-2"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/mtbobservationca125-3"
+        "url": "Observation/MTBObservationCA125-3"
       },
       "resource": {
-        "id": "mtbobservationca125-3"
+        "resourceType": "Observation",
+        "id": "MTBObservationCA125-3",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "valueQuantity": {
+          "value": 49.7,
+          "unit": "IU/ml",
+          "code": "[iU]/ml",
+          "system": "http://unitsofmeasure.org"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "11210-2",
+              "system": "http://loinc.org",
+              "display": "Cancer Ag 125 [Units/volume] in Body fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "effectiveDateTime": "2022-10-24"
       },
-      "fullUrl": "Observation/mtbobservationca125-3"
+      "fullUrl": "Observation/MTBObservationCA125-3"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/mtbobservationca125-4"
+        "url": "Observation/MTBObservationCA125-4"
       },
       "resource": {
-        "id": "mtbobservationca125-4"
+        "resourceType": "Observation",
+        "id": "MTBObservationCA125-4",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "valueQuantity": {
+          "value": 67.2,
+          "unit": "IU/ml",
+          "code": "[iU]/ml",
+          "system": "http://unitsofmeasure.org"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "11210-2",
+              "system": "http://loinc.org",
+              "display": "Cancer Ag 125 [Units/volume] in Body fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "effectiveDateTime": "2022-12-27"
       },
-      "fullUrl": "Observation/mtbobservationca125-4"
+      "fullUrl": "Observation/MTBObservationCA125-4"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/mtbobservationca125-5"
+        "url": "Observation/MTBObservationCA125-5"
       },
       "resource": {
-        "id": "mtbobservationca125-5"
+        "resourceType": "Observation",
+        "id": "MTBObservationCA125-5",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "valueQuantity": {
+          "value": 43.7,
+          "unit": "IU/ml",
+          "code": "[iU]/ml",
+          "system": "http://unitsofmeasure.org"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "11210-2",
+              "system": "http://loinc.org",
+              "display": "Cancer Ag 125 [Units/volume] in Body fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "effectiveDateTime": "2023-03-24"
       },
-      "fullUrl": "Observation/mtbobservationca125-5"
+      "fullUrl": "Observation/MTBObservationCA125-5"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/mtbobservationca125-6"
+        "url": "Observation/MTBObservationCA125-6"
       },
       "resource": {
-        "id": "mtbobservationca125-6"
+        "resourceType": "Observation",
+        "id": "MTBObservationCA125-6",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "valueQuantity": {
+          "value": 78.2,
+          "unit": "IU/ml",
+          "code": "[iU]/ml",
+          "system": "http://unitsofmeasure.org"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "11210-2",
+              "system": "http://loinc.org",
+              "display": "Cancer Ag 125 [Units/volume] in Body fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "effectiveDateTime": "2023-06-20"
       },
-      "fullUrl": "Observation/mtbobservationca125-6"
+      "fullUrl": "Observation/MTBObservationCA125-6"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "DiagnosticReport/patientkimmusterperson-molecularpathologyreport-1"
+        "url": "DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyreport-1"
+        "resourceType": "DiagnosticReport",
+        "id": "PatientKimMusterperson-MolecularPathologyReport-1",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report"
+          ]
+        },
+        "result": [
+          {
+            "reference": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "60568-3",
+              "system": "http://loinc.org",
+              "display": "Pathology synoptic report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        }
       },
-      "fullUrl": "DiagnosticReport/patientkimmusterperson-molecularpathologyreport-1"
+      "fullUrl": "DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Specimen/patientkimmusterperson-ascitesspecimen-2"
+        "url": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
       },
       "resource": {
-        "id": "patientkimmusterperson-ascitesspecimen-2"
+        "resourceType": "Specimen",
+        "id": "PatientKimMusterperson-AscitesSpecimen-2",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen"
+          ]
+        },
+        "collection": {
+          "collectedDateTime": "2023-02-01"
+        },
+        "accessionIdentifier": {
+          "value": "Z230201/23"
+        },
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "309201001",
+              "system": "http://snomed.info/sct",
+              "display": "Ascitic fluid specimen (specimen)"
+            }
+          ]
+        }
       },
-      "fullUrl": "Specimen/patientkimmusterperson-ascitesspecimen-2"
+      "fullUrl": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-0a-her2neu"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-0a-her2neu"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "GE"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "18474-7",
+              "system": "http://loinc.org",
+              "display": "HER2 Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA11842-4",
+              "system": "http://loinc.org",
+              "display": "2+"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:2064",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "ERBB2"
+                }
+              ]
+            }
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-0a-her2neu"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyinterpret-0a-her2neu"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyinterpret-0a-her2neu"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "48676-1",
+              "system": "http://loinc.org",
+              "display": "HER2 [Interpretation] in Tissue"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "1381317004",
+              "system": "http://snomed.info/sct",
+              "display": "Human epidermal growth factor receptor 2 low"
+            }
+          ],
+          "text": "HER2-low (IHC 2+/ISH negative)"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:2064",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "ERBB2"
+                }
+              ]
+            }
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyinterpret-0a-her2neu"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-0b-folat-ra"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-0b-folat-ra"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "55229-9",
+              "system": "http://loinc.org",
+              "display": "Immune stain study"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "code": "{/100}",
+          "value": 70,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:3791",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "FOLR1"
+                },
+                {
+                  "code": "LP440974-6",
+                  "system": "http://loinc.org",
+                  "display": "Folate receptor alpha"
+                }
+              ]
+            }
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-0b-folat-ra"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-0c-trop2"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-0c-trop2"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "55229-9",
+              "system": "http://loinc.org",
+              "display": "Immune stain study"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA6576-8",
+              "system": "http://loinc.org",
+              "display": "Positive"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:11530",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "TACSTD2"
+                },
+                {
+                  "code": "P09758",
+                  "system": "http://www.uniprot.org",
+                  "display": "Tumor-associated calcium signal transducer 2"
+                }
+              ]
+            }
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-0c-trop2"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-1-ca125"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-1-CA125"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-1-ca125"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-1-CA125",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "48677-9",
+              "system": "http://loinc.org",
+              "display": "Cancer Ag 125 [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA6576-8",
+              "system": "http://loinc.org",
+              "display": "Positive"
+            }
+          ],
+          "text": "Die Tumorzellen sind partiell positiv für CA125,..."
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:11530",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "TACSTD2"
+                },
+                {
+                  "code": "P09758",
+                  "system": "http://www.uniprot.org",
+                  "display": "Tumor-associated calcium signal transducer 2"
+                }
+              ]
+            }
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-1-ca125"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-1-CA125"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-2-pax8"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-2-Pax8"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-2-pax8"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-2-Pax8",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "73910-2",
+              "system": "http://loinc.org",
+              "display": "PAX8 Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA6576-8",
+              "system": "http://loinc.org",
+              "display": "Positive"
+            }
+          ],
+          "text": "Tumorzellen durchgehend nukleär für Pax 8"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-2-pax8"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-2-Pax8"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-3-wt1"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-3-WT1"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-3-wt1"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-3-WT1",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "1234806008",
+              "system": "http://snomed.info/sct",
+              "display": "Observation using immunohistochemistry (observable entity)"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA6576-8",
+              "system": "http://loinc.org",
+              "display": "Positive"
+            }
+          ],
+          "text": "Tumorzellen durchgehend nukleär für WT1"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "protein-studied"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:12796",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "WT1"
+                },
+                {
+                  "code": "LP65352-4",
+                  "system": "http://loinc.org",
+                  "display": "WT-1 Ag"
+                }
+              ]
+            }
+          }
+        ],
+        "bodySite": {
+          "coding": [
+            {
+              "code": "84640000",
+              "system": "http://snomed.info/sct",
+              "display": "Nucleus (cell structure)"
+            }
+          ],
+          "text": "Nukleär"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-3-wt1"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-3-WT1"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-4-er"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-4-ER"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-4-er"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-4-ER",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "14228-1",
+              "system": "http://loinc.org",
+              "display": "Cells.progesterone receptor/cells in Tissue by Immune stain"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "code": "/100",
+          "value": 70,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-4-er"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-4-ER"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-5-pr"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-5-PR"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-5-pr"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-5-PR",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "14230-7",
+              "system": "http://loinc.org",
+              "display": "Cells.progesteron receptor/cells in Tissue by Immune stain"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "code": "/100",
+          "value": 30,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-5-pr"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-5-PR"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-6-p53"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-6-p53"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-6-p53"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-6-p53",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "14229-9",
+              "system": "http://loinc.org",
+              "display": "P53 protein Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA6576-8",
+              "system": "http://loinc.org",
+              "display": "Positive"
+            }
+          ],
+          "text": "Kräftige nukleäre Überexpression von p53"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-6-p53"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-6-p53"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-molecularpathologyobservation-7-p53"
+        "url": "Observation/PatientKimMusterperson-MolecularPathologyObservation-7-p53"
       },
       "resource": {
-        "id": "patientkimmusterperson-molecularpathologyobservation-7-p53"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-MolecularPathologyObservation-7-p53",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "14229-9",
+              "system": "http://loinc.org",
+              "display": "P53 protein Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA6576-8",
+              "system": "http://loinc.org",
+              "display": "Positive"
+            }
+          ],
+          "text": "Kräftige nukleäre Überexpression von p53"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+                "code": "biomarker-category"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "specimen": {
+          "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-molecularpathologyobservation-7-p53"
+      "fullUrl": "Observation/PatientKimMusterperson-MolecularPathologyObservation-7-p53"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Procedure/patientkimmusterperson-procedure-1"
+        "url": "Procedure/PatientKimMusterperson-Procedure-1"
       },
       "resource": {
-        "id": "patientkimmusterperson-procedure-1"
+        "resourceType": "Procedure",
+        "id": "PatientKimMusterperson-Procedure-1",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "3-20",
+              "system": "http://fhir.de/CodeSystem/bfarm/ops",
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "4120138",
+                "system": "http://snomed.info/sct",
+                "display": "Abdomen"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "37542245",
+                "system": "http://snomed.info/sct",
+                "display": "Thorax"
+              }
+            ]
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "performedDateTime": "2022-04-20"
       },
-      "fullUrl": "Procedure/patientkimmusterperson-procedure-1"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-1"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Procedure/patientkimmusterperson-procedure-2"
+        "url": "Procedure/PatientKimMusterperson-Procedure-2"
       },
       "resource": {
-        "id": "patientkimmusterperson-procedure-2"
+        "resourceType": "Procedure",
+        "id": "PatientKimMusterperson-Procedure-2",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "3-20",
+              "system": "http://fhir.de/CodeSystem/bfarm/ops",
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "4120138",
+                "system": "http://snomed.info/sct",
+                "display": "Abdomen"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "37542245",
+                "system": "http://snomed.info/sct",
+                "display": "Thorax"
+              }
+            ]
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "performedDateTime": "2022-07-15"
       },
-      "fullUrl": "Procedure/patientkimmusterperson-procedure-2"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-2"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Procedure/patientkimmusterperson-procedure-3"
+        "url": "Procedure/PatientKimMusterperson-Procedure-3"
       },
       "resource": {
-        "id": "patientkimmusterperson-procedure-3"
+        "resourceType": "Procedure",
+        "id": "PatientKimMusterperson-Procedure-3",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "3-20",
+              "system": "http://fhir.de/CodeSystem/bfarm/ops",
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "4120138",
+                "system": "http://snomed.info/sct",
+                "display": "Abdomen"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "37542245",
+                "system": "http://snomed.info/sct",
+                "display": "Thorax"
+              }
+            ]
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "performedDateTime": "2022-10-22"
       },
-      "fullUrl": "Procedure/patientkimmusterperson-procedure-3"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-3"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Procedure/patientkimmusterperson-procedure-4"
+        "url": "Procedure/PatientKimMusterperson-Procedure-4"
       },
       "resource": {
-        "id": "patientkimmusterperson-procedure-4"
+        "resourceType": "Procedure",
+        "id": "PatientKimMusterperson-Procedure-4",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "3-20",
+              "system": "http://fhir.de/CodeSystem/bfarm/ops",
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "4120138",
+                "system": "http://snomed.info/sct",
+                "display": "Abdomen"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "37542245",
+                "system": "http://snomed.info/sct",
+                "display": "Thorax"
+              }
+            ]
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "performedDateTime": "2022-12-19"
       },
-      "fullUrl": "Procedure/patientkimmusterperson-procedure-4"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-4"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Procedure/patientkimmusterperson-procedure-5"
+        "url": "Procedure/PatientKimMusterperson-Procedure-5"
       },
       "resource": {
-        "id": "patientkimmusterperson-procedure-5"
+        "resourceType": "Procedure",
+        "id": "PatientKimMusterperson-Procedure-5",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "3-20",
+              "system": "http://fhir.de/CodeSystem/bfarm/ops",
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "4120138",
+                "system": "http://snomed.info/sct",
+                "display": "Abdomen"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "37542245",
+                "system": "http://snomed.info/sct",
+                "display": "Thorax"
+              }
+            ]
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "performedDateTime": "2023-03-20"
       },
-      "fullUrl": "Procedure/patientkimmusterperson-procedure-5"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-5"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Procedure/patientkimmusterperson-procedure-6"
+        "url": "Procedure/PatientKimMusterperson-Procedure-6"
       },
       "resource": {
-        "id": "patientkimmusterperson-procedure-6"
+        "resourceType": "Procedure",
+        "id": "PatientKimMusterperson-Procedure-6",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "3-20",
+              "system": "http://fhir.de/CodeSystem/bfarm/ops",
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "4120138",
+                "system": "http://snomed.info/sct",
+                "display": "Abdomen"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "37542245",
+                "system": "http://snomed.info/sct",
+                "display": "Thorax"
+              }
+            ]
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "performedDateTime": "2023-08-20"
       },
-      "fullUrl": "Procedure/patientkimmusterperson-procedure-6"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-6"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Procedure/patientkimmusterperson-procedure-7"
+        "url": "Procedure/PatientKimMusterperson-Procedure-7"
       },
       "resource": {
-        "id": "patientkimmusterperson-procedure-7"
+        "resourceType": "Procedure",
+        "id": "PatientKimMusterperson-Procedure-7",
+        "meta": {
+          "profile": [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363680008",
+              "display": "Radiographic imaging procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "3-20",
+              "system": "http://fhir.de/CodeSystem/bfarm/ops",
+              "display": "Computertomographie (CT), nativ",
+              "version": "2025"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "4120138",
+                "system": "http://snomed.info/sct",
+                "display": "Abdomen"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "37542245",
+                "system": "http://snomed.info/sct",
+                "display": "Thorax"
+              }
+            ]
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/PatientKimMusterperson"
+        },
+        "performedDateTime": "2023-10-22"
       },
-      "fullUrl": "Procedure/patientkimmusterperson-procedure-7"
+      "fullUrl": "Procedure/PatientKimMusterperson-Procedure-7"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-1"
+        "url": "Observation/PatientKimMusterperson-Observation-1"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-1"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-1",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-1"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "128462008",
+              "system": "http://snomed.info/sct",
+              "display": "Metastatic malignant neoplasm (disorder)"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "41647002",
+              "system": "http://snomed.info/sct",
+              "display": "No evidence of (contextual qualifier) (qualifier value)"
+            }
+          ],
+          "text": "kein Hinweis auf thorakale Metastasierung"
+        },
+        "status": "final"
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-1"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-1"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-2"
+        "url": "Observation/PatientKimMusterperson-Observation-2"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-2"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-2",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-1"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "255227004",
+              "system": "http://snomed.info/sct",
+              "display": "Recurrent"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "41647002",
+              "system": "http://snomed.info/sct",
+              "display": "No evidence of (contextual qualifier) (qualifier value)"
+            }
+          ],
+          "text": "kein Hinweis auf Lokalrezidiv"
+        },
+        "status": "final"
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-2"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-2"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-3"
+        "url": "Observation/PatientKimMusterperson-Observation-3"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-3"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-3",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-1"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "389026000",
+              "system": "http://snomed.info/sct",
+              "display": "Acites"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "860638000",
+              "system": "http://snomed.info/sct",
+              "display": "No ascites"
+            }
+          ],
+          "text": "kein Aszites"
+        },
+        "status": "final"
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-3"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-3"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-4"
+        "url": "Observation/PatientKimMusterperson-Observation-4"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-4"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-4",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-1"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "237679004",
+              "system": "http://snomed.info/sct",
+              "display": "Status post (contextual qualifier) (qualifier value)"
+            },
+            {
+              "code": "112231000",
+              "system": "http://snomed.info/sct",
+              "display": "Atypical (qualifier value)"
+            },
+            {
+              "code": "174430004",
+              "system": "http://snomed.info/sct",
+              "display": "Resection of segment of liver (procedure)"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "801911000000107",
+              "system": "http://snomed.info/sct",
+              "display": "Collection of fluid"
+            },
+            {
+              "code": "262061000",
+              "system": "http://snomed.info/sct",
+              "display": "After surgery"
+            }
+          ],
+          "text": "Flüssigkeitskollektion angrenzend DD postoperativ"
+        },
+        "status": "final",
+        "bodySite": {
+          "coding": [
+            {
+              "code": "181247007",
+              "system": "http://snomed.info/sct",
+              "display": "Entire duodenum"
+            }
+          ]
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-4"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-4"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-5"
+        "url": "Observation/PatientKimMusterperson-Observation-5"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-5"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-5",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "237679004",
+              "system": "http://snomed.info/sct",
+              "display": "Status post (contextual qualifier) (qualifier value)"
+            },
+            {
+              "code": "112231000",
+              "system": "http://snomed.info/sct",
+              "display": "Atypical (qualifier value) "
+            },
+            {
+              "code": "174430004",
+              "system": "http://snomed.info/sct",
+              "display": "Resection of segment of liver (procedure)"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "420341009",
+              "system": "http://snomed.info/sct",
+              "display": "Constant"
+            },
+            {
+              "code": "801911000000107",
+              "system": "http://snomed.info/sct",
+              "display": "Collection of fluid"
+            }
+          ],
+          "text": "konstante Flüssigkeitskollektion angrenzend"
+        },
+        "status": "final",
+        "bodySite": {
+          "coding": [
+            {
+              "code": "181247007",
+              "system": "http://snomed.info/sct",
+              "display": "Entire duodenum"
+            }
+          ]
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-5"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-5"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-6"
+        "url": "Observation/PatientKimMusterperson-Observation-6"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-6"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-6",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "389026000",
+              "system": "http://snomed.info/sct",
+              "display": "Acites"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "860638000",
+              "system": "http://snomed.info/sct",
+              "display": "No ascites"
+            }
+          ],
+          "text": "kein Aszites"
+        },
+        "status": "final"
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-6"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-6"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-7"
+        "url": "Observation/PatientKimMusterperson-Observation-7"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-7"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-7",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "255227004",
+              "system": "http://snomed.info/sct",
+              "display": "Recurrent"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "41647002",
+              "system": "http://snomed.info/sct",
+              "display": "No evidence of (contextual qualifier) (qualifier value)"
+            }
+          ],
+          "text": "kein Hinweis auf Lokalrezidiv"
+        },
+        "status": "final"
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-7"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-7"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-8"
+        "url": "Observation/PatientKimMusterperson-Observation-8"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-8"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-8",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "112231000",
+              "system": "http://snomed.info/sct",
+              "display": "Atypical"
+            },
+            {
+              "code": "1217294009",
+              "system": "http://snomed.info/sct",
+              "display": "Ground glass opacity"
+            },
+            {
+              "code": "44714003",
+              "system": "http://snomed.info/sct",
+              "display": "Structure of upper lobe of left lung"
+            }
+          ],
+          "text": "im linken Oberlappen der Lunge diskrete milchglasartige Trübung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "41647002",
+              "system": "http://snomed.info/sct",
+              "display": "No evidence of (contextual qualifier) (qualifier value)"
+            },
+            {
+              "code": "255058005",
+              "system": "http://snomed.info/sct",
+              "display": "Neoplasm of thorax"
+            }
+          ],
+          "text": "kein Hinweis auf thorakale Filiae"
+        },
+        "status": "final"
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-8"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-8"
     },
     {
       "request": {
         "method": "PUT",
-        "url": "Observation/patientkimmusterperson-observation-9"
+        "url": "Observation/PatientKimMusterperson-Observation-9"
       },
       "resource": {
-        "id": "patientkimmusterperson-observation-9"
+        "resourceType": "Observation",
+        "id": "PatientKimMusterperson-Observation-9",
+        "partOf": [
+          {
+            "reference": "Procedure/PatientKimMusterperson-Procedure-3"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "237679004",
+              "system": "http://snomed.info/sct",
+              "display": "Status post (contextual qualifier) (qualifier value)"
+            },
+            {
+              "code": "112231000",
+              "system": "http://snomed.info/sct",
+              "display": "Atypical (qualifier value) "
+            },
+            {
+              "code": "174430004",
+              "system": "http://snomed.info/sct",
+              "display": "Resection of segment of liver (procedure)"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "801911000000107",
+              "system": "http://snomed.info/sct",
+              "display": "Collection of fluid"
+            },
+            {
+              "code": "249567002",
+              "system": "http://snomed.info/sct",
+              "display": "Liver edge (finding)"
+            }
+          ],
+          "text": "regrediente Flüssigkeitskollektion am Leberrand"
+        },
+        "status": "final",
+        "bodySite": {
+          "coding": [
+            {
+              "code": "181268008",
+              "system": "http://snomed.info/sct",
+              "display": "Entire liver"
+            }
+          ]
+        }
       },
-      "fullUrl": "Observation/patientkimmusterperson-observation-9"
+      "fullUrl": "Observation/PatientKimMusterperson-Observation-9"
     },
     {
       "request": {
@@ -2420,7 +4094,7 @@
           "coding": [
             {
               "code": "W",
-              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-therapie-grund-ende"
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-ende-grund"
             }
           ],
           "text": "Reguläres Ende mit Substanzwechsel"
@@ -3337,7 +5011,7 @@
           "coding": [
             {
               "code": "E",
-              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-therapie-grund-ende"
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-ende-grund"
             }
           ],
           "text": "Reguläres Ende"
@@ -5413,6 +7087,11 @@
             }
           ]
         },
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "extension": [
           {
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
@@ -5444,8 +7123,8 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "intent": "proposal",
         "status": "completed",
+        "intent": "proposal",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -5474,6 +7153,11 @@
             }
           ]
         },
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "extension": [
           {
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
@@ -5512,8 +7196,8 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "intent": "proposal",
         "status": "draft",
+        "intent": "proposal",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -5555,8 +7239,13 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -5588,8 +7277,13 @@
             }
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -5693,8 +7387,13 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -5739,8 +7438,13 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
-        "intent": "proposal",
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -5847,6 +7551,11 @@
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
           ]
         },
+        "reasonReference": [
+          {
+            "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+          }
+        ],
         "extension": [
           {
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
@@ -5871,8 +7580,8 @@
             "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
           }
         ],
-        "intent": "proposal",
         "status": "draft",
+        "intent": "option",
         "authoredOn": "2023-03-28",
         "subject": {
           "reference": "Patient/PatientKimMusterperson"
@@ -6413,8 +8122,8 @@
         "valueCodeableConcept": {
           "coding": [
             {
-              "code": "2",
               "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-allgemeiner-leistungszustand-ecog",
+              "code": "2",
               "display": "Gehfähig, Selbstversorgung möglich, aber nicht arbeitsfähig; kann mehr als 50 % der Wachzeit aufstehen (50 - 60 % nach Karnofsky)"
             }
           ]

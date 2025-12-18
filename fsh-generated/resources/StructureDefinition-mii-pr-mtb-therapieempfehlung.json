@@ -41,20 +41,6 @@
   "differential": {
     "element": [
       {
-        "id": "MedicationRequest.extension",
-        "path": "MedicationRequest.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
         "id": "MedicationRequest.extension:Prioritaet",
         "path": "MedicationRequest.extension",
         "sliceName": "Prioritaet",
@@ -112,7 +98,6 @@
       {
         "id": "MedicationRequest.intent",
         "path": "MedicationRequest.intent",
-        "short": "proposal | option",
         "definition": "Da das MTB nur Empfehlungen abgibt, wird hier typischerweise 'proposal' stehen. Es sei denn,\n        diese Therapieempfehlung ist Teil einer RequestGroup (z.B. Kombinationstherapie). In dem Fall muss hier 'option' stehen."
       },
       {
@@ -125,9 +110,9 @@
               "path": "$this.resolve()"
             }
           ],
+          "ordered": false,
           "rules": "open",
-          "description": "Slice für stützende Angaben zur Systemischen Therapie auf Basis des referenzierten Ressourcentyps",
-          "ordered": false
+          "description": "Slice für stützende Angaben zur Systemischen Therapie auf Basis des referenzierten Ressourcentyps"
         }
       },
       {
@@ -138,6 +123,17 @@
         "definition": "Verweis auf entsprechendes Feld in NGS Bericht und/oder IHC (Verweis auf KDS Molekular-Pathologischer Befundbericht)",
         "min": 0,
         "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-genetische-variante",
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -148,6 +144,15 @@
         "definition": "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht",
         "min": 0,
         "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor",
+              "http://hl7.org/fhir/StructureDefinition/Condition"
+            ]
+          }
+        ],
         "mustSupport": true
       }
     ]
