@@ -6,6 +6,11 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
     ]
   },
+  "reasonReference": [
+    {
+      "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+    }
+  ],
   "dosageInstruction": [
     {
       "timing": {
@@ -31,6 +36,7 @@
   ],
   "status": "active",
   "intent": "option",
+  "authoredOn": "2024-01-01",
   "subject": {
     "reference": "Patient/mii-exa-mtb-patient"
   },

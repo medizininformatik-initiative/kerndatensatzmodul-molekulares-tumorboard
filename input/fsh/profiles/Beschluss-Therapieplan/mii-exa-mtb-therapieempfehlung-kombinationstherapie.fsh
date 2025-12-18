@@ -22,7 +22,8 @@ Usage: #example
 Description: "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
 // Erforderliche Angaben
 * status = #active
-* intent = #proposal 
+* intent = #proposal
+* authoredOn = 2024-01-01
 // Optional: Referenz Patient
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Kombinationstherapie

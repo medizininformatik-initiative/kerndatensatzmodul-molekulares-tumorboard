@@ -1,6 +1,6 @@
 Extension: MII_EX_MTB_Empfehlung_Evidenzgraduierung
 Id: mii-ex-mtb-empfehlung-evidenzgraduierung
-Context: RequestGroup, MedicationRequest
+Context: RequestGroup, MedicationRequest, Observation
 Title: "MII EX MTB Empfehlung Evidenzgraduierung"
 Description: "Evidenzgraduierung der (einzelnen) Empfehlung"
 * insert EX_Header($mii-ex-mtb-empfehlung-evidenzgraduierung)

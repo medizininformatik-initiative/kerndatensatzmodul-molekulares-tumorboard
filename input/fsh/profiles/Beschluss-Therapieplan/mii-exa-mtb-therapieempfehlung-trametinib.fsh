@@ -23,10 +23,12 @@ Description: "Therapieempfehlung für Trametinib"
 // Erforderliche Angaben
 * status = #active
 * intent = #option // Gefordert von RequestGroup.action.resource!
+* authoredOn = 2024-01-01
 // Referenz Patient
 * subject = Reference(mii-exa-mtb-patient)
 // Referenz Medikation
 * medicationReference = Reference(mii-exa-mtb-medikation-trametinib)
+* reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 * dosageInstruction.timing.repeat.frequency = 1
 * dosageInstruction.timing.repeat.when[0] = #MORN
 * dosageInstruction.doseAndRate.doseQuantity.value = 1

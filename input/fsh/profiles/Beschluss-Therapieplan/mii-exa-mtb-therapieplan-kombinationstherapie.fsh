@@ -28,6 +28,5 @@ Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kom
 * created = "2024-08-09"
 // Therapieempfehlungen
 * activity.reference = Reference(mii-exa-mtb-therapieempfehlung-kombinationstherapie)
-// Nachfolgende Attribute aufgrund Elternprofile erforderlich
-* activity.detail.code = $mii-cs-onko-therapie-typ#ZS "Zielgerichtete Substanzen"
-* activity.detail.status = #not-started
+// Note: activity.detail removed to comply with FHIR constraint cpl-3
+// (Provide a reference or detail, not both)

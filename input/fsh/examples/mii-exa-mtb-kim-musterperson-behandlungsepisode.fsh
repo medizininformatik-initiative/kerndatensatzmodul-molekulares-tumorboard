@@ -74,7 +74,7 @@ Usage: #example
 * supportingInfo[Vortherapie][+] = Reference(Procedure/PatientKimMusterperson-SystemicTherapy-3)
 
 // 02.01.23 Aufklärung Molekulares Tumorboard
-* supportingInfo[Einwilligung][+] = Reference(mii-exa-mtb-kim-musterperson-aufklaerung)
+* investigation[Einwilligung].item = Reference(mii-exa-mtb-kim-musterperson-aufklaerung)
 
 // 04.01.23-24.05.23 Chemotherapie Carboplatin/Doxorubicin
 * supportingInfo[Vortherapie][+] = Reference(Procedure/MTBChemo1Procedure)

@@ -5,7 +5,8 @@ Title: "Tumorzellgehalt Aszites"
 Description: "Tumorzellgehalt progrediente Aszites (20ml/700ml maligne Tumorzellen)"
 * meta.profile[+] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
 * status = #final
-* valueQuantity = 0.028 #%
+* valueQuantity = 0.028 '%'
+* valueQuantity.system = "http://unitsofmeasure.org"
 * method = $mii-cs-mtb-bestimmungsmethode-tumorzellgehalt#histologic
 
 Instance: mii-exa-mtb-kim-humangenetische-beratung-aszites

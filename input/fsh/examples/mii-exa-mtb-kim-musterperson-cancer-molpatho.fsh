@@ -32,8 +32,8 @@ Usage: #example
 
 * code.coding[spezifisch] = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding[+] = $LNC#LA11842-4 "2+"
-* component[+].code.coding = $LNC#48018-6 "Gene studied"
-* component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
+* component[+].code.coding = $LNC#48018-6 "Gene studied [ID]"
+* component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:3430 "ERBB2"
 
 Instance: PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-
 InstanceOf: MII_PR_MTB_Biomarker_InSituHybridization
@@ -48,10 +48,10 @@ Description: "Example of HER2 in situ hybridization with ratio measurement for p
 * code = $SCT#1365744007 "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* valueRatio.numerator.value = 2.5
+* valueRatio.numerator.value = 1.2
 * valueRatio.denominator.value = 1
-* interpretation = $SCT#12645001 "Gene amplification (finding)"
-* component[+].code = $LNC#48018-6 "Gene studied"
+* interpretation = $SCT#260385009 "Negative (qualifier value)"
+* component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
 //* component[+].code = $LNC#48018-6 "Gene studied"
 //* component[=].valueCodeableConcept = $HGNC#HGNC:CEN17 "centromere chromosome 17"
@@ -64,9 +64,10 @@ Usage: #example
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * code.coding[spezifisch] = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
-* valueCodeableConcept.coding = $LNC#LA6576-8 "Her2low"
-* component[+].code.coding = $LNC#48018-6 "Gene studied"
-* component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:2064 "ERBB2"
+* valueCodeableConcept.coding = $SCT#1381317004 "Human epidermal growth factor receptor 2 low"
+* valueCodeableConcept.text = "HER2-low (IHC 2+/ISH negative)"
+* component[+].code.coding = $LNC#48018-6 "Gene studied [ID]"
+* component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:3430 "ERBB2"
 
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra
@@ -80,7 +81,7 @@ Usage: #example
 * valueQuantity.value = 70
 * valueQuantity.unit = "%"
 * valueQuantity.system = $UCUM
-* component[+].code.coding = $LNC#48018-6 "Gene studied"
+* component[+].code.coding = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept[+].coding[+] = $HGNC#HGNC:3791 "FOLR1"
 * component[=].valueCodeableConcept[=].coding[+] = $LNC#LP440974-6 "Folate receptor alpha" //extra LOINC Part!
 
@@ -92,8 +93,8 @@ Usage: #example
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * code.coding[spezifisch] = $LNC#55229-9 "Immune stain study"
-* valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
-* component[+].code.coding = $LNC#48018-6 "Gene studied"
+* valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
+* component[+].code.coding = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept[+].coding[+] = $HGNC#HGNC:11530 "TACSTD2"
 * component[=].valueCodeableConcept[=].coding[+] = $UNIPROT#P09758  "Tumor-associated calcium signal transducer 2" 
 
@@ -108,7 +109,7 @@ Usage: #example
 * code.coding[spezifisch] = $LNC#48677-9 "Cancer Ag 125 [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.text = "Die Tumorzellen sind partiell positiv für CA125,..."
 * valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
-* component[+].code.coding = $LNC#48018-6 "Gene studied"
+* component[+].code.coding = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept[+].coding[+] = $HGNC#HGNC:11530 "TACSTD2"
 * component[=].valueCodeableConcept[=].coding[+] = $UNIPROT#P09758  "Tumor-associated calcium signal transducer 2" 
 
@@ -152,7 +153,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding[spezifisch] = $LNC#14228-1 "Cells.progesterone receptor/cells in Tissue by Immune stain"
+* code.coding[spezifisch] = $LNC#14228-1 "Cells.estrogen receptor/cells in Tissue by Immune stain"
 * valueQuantity.code = #/100
 * valueQuantity.value = 70
 * valueQuantity.unit = "%"
@@ -164,7 +165,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding[spezifisch] = $LNC#14230-7 "Cells.progesteron receptor/cells in Tissue by Immune stain"
+* code.coding[spezifisch] = $LNC#14230-7 "Cells.progesterone receptor/cells in Tissue by Immune stain"
 * valueQuantity.code = #/100
 * valueQuantity.value = 30
 * valueQuantity.unit = "%"

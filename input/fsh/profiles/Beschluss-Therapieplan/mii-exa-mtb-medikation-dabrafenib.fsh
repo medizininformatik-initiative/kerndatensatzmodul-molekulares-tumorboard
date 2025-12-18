@@ -21,10 +21,10 @@ InstanceOf: MII_PR_Medikation_Medication
 Usage: #example
 Description: "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)"
 // Repräsentation Dabrafenib
-* code.coding[+] = $ATC_DE#L01EC02 "Dabrafenib 0,3 g O"
+* code.coding[+] = $ATC_DE#L01EC02 "Dabrafenib"
 * code.coding[=].version = "2023"
 // Einnahme jeweils als Tablette
-* form.coding[+] = $EDQM#10219000 "Tablette"
+* form.coding[+] = $EDQM#10219000 "Tablet"
 // Erstes Medikament der Kombinationstherapie: Dabrafenib, 4x 75mg, 2-0-2
 * ingredient[+].itemCodeableConcept.coding[+] = $ASK#39606 "Dabrafenibmesilat"
 * ingredient[=].itemCodeableConcept.coding[=] = $SCT#703648007 "Dabrafenib (as dabrafenib mesilate) 75 mg oral capsule"

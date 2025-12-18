@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Therapieempfehlung
-Parent: MII_PR_Medikation_MedicationRequest
+Parent: MII_PR_Onko_Therapieempfehlung_Medikation
 Id: mii-pr-mtb-therapieempfehlung
 Title: "MII PR MTB Therapieempfehlung Systemische Therapie"
 Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
@@ -21,7 +21,6 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
 * medication[x] 1..1 MS
 * medicationReference only Reference(MII_PR_Medikation_Medication) // + Medication (restricted by parent profile to profile only)
 
-* reasonReference 0..* MS
 * reasonReference ^slicing.discriminator.type = #profile
 * reasonReference ^slicing.discriminator.path = "$this.resolve()"
 * reasonReference ^slicing.rules = #open

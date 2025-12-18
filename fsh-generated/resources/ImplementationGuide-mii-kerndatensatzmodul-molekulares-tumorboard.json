@@ -38,7 +38,7 @@
   "dependsOn": [
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.3",
+      "version": "1.5.x",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
@@ -55,16 +55,10 @@
       "id": "de_medizininformatikinitiative_kerndatensatz_consent"
     },
     {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
-      "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ImplementationGuide/mii-ig-diagnose",
-      "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
-    },
-    {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
-      "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ImplementationGuide/mii-ig-fall",
-      "id": "de_medizininformatikinitiative_kerndatensatz_fall"
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.base",
+      "version": "2026.0.x",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
+      "id": "de_medizininformatikinitiative_kerndatensatz_base"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
@@ -74,19 +68,19 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
-      "version": "2025.0.x",
+      "version": "2026.0.x",
       "uri": "https://www.medizininformatik-initiative.de/fhir/modul-meta/ImplementationGuide/mii-ig-meta",
       "id": "de_medizininformatikinitiative_kerndatensatz_meta"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
-      "version": "2026.0.0-ballot.2",
+      "version": "2026.0.x",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.molgen/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.molgen",
       "id": "de_medizininformatikinitiative_kerndatensatz_molgen"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2026.0.0-ballot",
+      "version": "2026.0.0-rc.8",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
@@ -95,18 +89,6 @@
       "version": "2026.0.0-ballot",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.patho/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.patho",
       "id": "de_medizininformatikinitiative_kerndatensatz_patho"
-    },
-    {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.person",
-      "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ImplementationGuide/mii-ig-person",
-      "id": "de_medizininformatikinitiative_kerndatensatz_person"
-    },
-    {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.prozedur",
-      "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ImplementationGuide/mii-ig-prozedur",
-      "id": "de_medizininformatikinitiative_kerndatensatz_prozedur"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
@@ -1526,13 +1508,6 @@
       },
       {
         "reference": {
-          "reference": "Bundle/mii-exa-mtb-kim-musterperson-bundle"
-        },
-        "name": "mii-exa-mtb-kim-musterperson-bundle",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Medication/mii-exa-mtb-medikation-dabrafenib"
         },
         "name": "mii-exa-mtb-medikation-dabrafenib",
@@ -1553,13 +1528,6 @@
         },
         "name": "mii-exa-mtb-patient",
         "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Bundle/mii-exa-mtb-technical-test-bundle"
-        },
-        "name": "mii-exa-mtb-technical-test-bundle",
         "exampleBoolean": true
       },
       {

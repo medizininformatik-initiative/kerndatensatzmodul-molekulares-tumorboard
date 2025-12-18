@@ -58,21 +58,6 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.component",
-        "path": "Observation.component",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "pattern",
-              "path": "code"
-            }
-          ],
-          "description": "Slicing der Copy Number Variation (CNV) Komponenten",
-          "rules": "open",
-          "ordered": false
-        }
-      },
-      {
         "id": "Observation.component:gene-studied",
         "path": "Observation.component",
         "sliceName": "gene-studied",

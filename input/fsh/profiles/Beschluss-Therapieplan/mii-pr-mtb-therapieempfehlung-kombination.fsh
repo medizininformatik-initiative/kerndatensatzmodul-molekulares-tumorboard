@@ -1,5 +1,5 @@
 Profile: MII_PR_MTB_Therapieempfehlung_Kombination
-Parent: RequestGroup
+Parent: MII_PR_Onko_Therapieempfehlung_Kombinationstherapie
 Id: mii-pr-mtb-therapieempfehlung-kombination
 Title: "MII PR MTB Therapieempfehlung Kombinationstherapie"
 Description: "Therapieempfehlung für eine medikamentöse Kombinationstherapie"

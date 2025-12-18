@@ -28,7 +28,7 @@ Description: "Beispiel für aktuellen Gesundheitszustand und bisherige Behandlun
 * investigation[+].item = Reference(DiagnosticReport/MolekularPathologieBefund-1) 
 * investigation[=].code = $SCT#108257001 "Anatomic pathology procedure (procedure)" // change to patho
 
-* supportingInfo[Einwilligung] = Reference(Observation/ConsentGiven-1)
+* investigation[Einwilligung].item = Reference(Observation/ConsentGiven-1)
 
 * supportingInfo[Vorbefund] = Reference(DiagnosticReport/Bildbefund-1)
 

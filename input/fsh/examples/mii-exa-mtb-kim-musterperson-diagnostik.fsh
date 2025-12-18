@@ -15,8 +15,10 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "20.04.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Native Computertomographie"
+* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-04-20
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -47,7 +49,7 @@ Usage: #example
 Description: "kein Aszites"
 * partOf = Reference(PatientKimMusterperson-Procedure-1)
 * status = #final
-* code.coding = $SCT#389026000 "Acites"
+* code.coding = $SCT#389026000 "Ascites"
 * valueCodeableConcept.coding = $SCT#860638000 "No ascites"
 * valueCodeableConcept.text = "kein Aszites"
 
@@ -74,8 +76,10 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "15.07.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Native Computertomographie"
+* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-07-15
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax" 
@@ -87,7 +91,7 @@ Description: "konstante Flüssigkeitskollektion angrenzend bei Z.n. atpyischer L
 * partOf = Reference(PatientKimMusterperson-Procedure-2)
 * status = #final
 * code.coding[+] = $SCT#237679004 "Status post (contextual qualifier) (qualifier value)"
-* code.coding[+] = $SCT#112231000 "Atypical (qualifier value) "
+* code.coding[+] = $SCT#112231000 "Atypical"
 * code.coding[+] = $SCT#174430004 "Resection of segment of liver (procedure)"
 * valueCodeableConcept.coding[+] = $SCT#420341009 "Constant"
 * valueCodeableConcept.coding[+] = $SCT#801911000000107 "Collection of fluid"
@@ -100,7 +104,7 @@ Usage: #example
 Description: "kein Aszites"
 * partOf = Reference(PatientKimMusterperson-Procedure-2)
 * status = #final
-* code.coding = $SCT#389026000 "Acites"
+* code.coding = $SCT#389026000 "Ascites"
 * valueCodeableConcept.coding = $SCT#860638000 "No ascites"
 * valueCodeableConcept.text = "kein Aszites"
 
@@ -137,8 +141,10 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "19.10.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Native Computertomographie"
+* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-10-22
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax" 
@@ -150,7 +156,7 @@ Description: "regrediente Flüssigkeitskollektion am Leberrand, Z.n. atypische L
 * partOf = Reference(PatientKimMusterperson-Procedure-3)
 * status = #final
 * code.coding[+] = $SCT#237679004 "Status post (contextual qualifier) (qualifier value)"
-* code.coding[+] = $SCT#112231000 "Atypical (qualifier value) "
+* code.coding[+] = $SCT#112231000 "Atypical"
 * code.coding[+] = $SCT#174430004 "Resection of segment of liver (procedure)"
 * valueCodeableConcept.coding[+] = $SCT#801911000000107 "Collection of fluid"
 * valueCodeableConcept.coding[+] = $SCT#249567002 "Liver edge (finding)"
@@ -164,7 +170,7 @@ Description: "regrediente Flüssigkeitskollektion am Leberrand, Z.n. atypische L
 * partOf = Reference(PatientKimMusterperson-Procedure-3)
 * status = #final
 * code.coding[+] = $SCT#237679004 "Status post (contextual qualifier) (qualifier value)"
-* code.coding[+] = $SCT#112231000 "Atypical (qualifier value) "
+* code.coding[+] = $SCT#112231000 "Atypical"
 * code.coding[+] = $SCT#174430004 "Resection of segment of liver (procedure)"
 * valueCodeableConcept.coding[+] = $SCT#94381002 "Metastatic malignant neoplasm to liver (disorder)"
 * valueCodeableConcept.coding[+] = $SCT#41647002 "No evidence of (contextual qualifier) (qualifier value)"
@@ -177,7 +183,7 @@ Usage: #example
 Description: "kein Aszites"
 * partOf = Reference(PatientKimMusterperson-Procedure-3)
 * status = #final
-* code.coding = $SCT#389026000 "Acites"
+* code.coding = $SCT#389026000 "Ascites"
 * valueCodeableConcept.coding = $SCT#860638000 "No ascites"
 * valueCodeableConcept.text = "kein Aszites"
 
@@ -229,7 +235,7 @@ Description: "Leicht vermehrter mediastinaler Lymphknotenbesatz ohne pathologisc
 * code.coding = $SCT#245276004 "Mediastinal lymph node group"
 * code.text = "mediastinaler Lymphknoten"
 * valueCodeableConcept.coding[+] = $SCT#373067005 "No"
-* valueCodeableConcept.coding[+] = $SCT#15454001 "Increased Size"
+* valueCodeableConcept.coding[+] = $SCT#15454001 "Increased size"
 * valueCodeableConcept.text = "ohne pathologische Vergrößerung"
 
 // 19.12.22 CT T/A
@@ -240,8 +246,10 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "19.12.22 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Native Computertomographie"
+* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2022-12-19
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -252,7 +260,7 @@ Usage: #example
 Description: "progredienter Aszites (ca. 700ml)"
 * partOf = Reference(PatientKimMusterperson-Procedure-4)
 * status = #final
-* code.coding = $SCT#389026000 "Acites"
+* code.coding = $SCT#389026000 "Ascites"
 * code.coding = $SCT#255314001 "Progressive"
 * code.text = "Progredienter Aszites"
 * valueQuantity.value = 700
@@ -304,8 +312,10 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "20.03.2023 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Native Computertomographie"
+* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2023-03-20
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -316,7 +326,7 @@ Usage: #example
 Description: "regredienter Aszites"
 * partOf = Reference(PatientKimMusterperson-Procedure-5)
 * status = #final
-* code.coding = $SCT#389026000 "Acites"
+* code.coding = $SCT#389026000 "Ascites"
 * code.text = "Aszites"
 * valueCodeableConcept.coding = $SCT#37865006 "Regressive"
 * valueCodeableConcept.text = "Regredient"
@@ -363,8 +373,10 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "20.08.2023 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Native Computertomographie"
+* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2023-08-20
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -375,7 +387,7 @@ Usage: #example
 Description: "kein Aszites"
 * partOf = Reference(PatientKimMusterperson-Procedure-6)
 * status = #final
-* code.coding = $SCT#389026000 "Acites"
+* code.coding = $SCT#389026000 "Ascites"
 * valueCodeableConcept.coding = $SCT#860638000 "No ascites"
 * valueCodeableConcept.text = "kein Aszites"
 
@@ -401,8 +413,10 @@ InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
 Description: "22.10.2023 CT T/A"
 * status = #completed
+* category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Native Computertomographie"
+* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding.version = "2025"
 * performedDateTime = 2023-10-22
 * bodySite[+] = $SCT#4120138 "Abdomen"
 * bodySite[+] = $SCT#37542245 "Thorax"
@@ -416,7 +430,7 @@ Description: "geringer Aszites im kleinen Becken"
 * code.coding = $SCT#80266002 "True pelvis"
 * code.text = "kleinen Becken"
 * valueCodeableConcept.coding[+] = $SCT#255606000 "Minor"
-* valueCodeableConcept.coding[+] = $SCT#389026000 "Acites"
+* valueCodeableConcept.coding[+] = $SCT#389026000 "Ascites"
 * valueCodeableConcept.text = "geringer Aszites"
 
 Instance: PatientKimMusterperson-Observation-27

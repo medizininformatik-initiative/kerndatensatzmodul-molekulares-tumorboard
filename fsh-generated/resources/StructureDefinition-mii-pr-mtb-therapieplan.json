@@ -105,7 +105,6 @@
         "sliceName": "Therapieempfehlung",
         "short": "Therapieempfehlung Systemische Therapie",
         "definition": "Therapieempfehlung für eine medikamentöse Systemische Therapie",
-        "comment": "Kann keine Therapieempfehlung für eine Systemische Therapie gegeben werden, muss dies als Begründung unter `detail.statusReason` angegeben werden",
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -129,7 +128,9 @@
       {
         "id": "CarePlan.activity:Therapieempfehlung.detail",
         "path": "CarePlan.activity.detail",
-        "mustSupport": true
+        "short": "Not used - therapy details in referenced resource",
+        "definition": "Constrained to 0..0 to avoid cpl-3 violation. Therapy type and status are captured in the referenced MedicationRequest/RequestGroup.",
+        "max": "0"
       },
       {
         "id": "CarePlan.activity:HumangenetischeBeratung",
@@ -154,6 +155,11 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:HumangenetischeBeratung.detail",
+        "path": "CarePlan.activity.detail",
+        "max": "0"
       },
       {
         "id": "CarePlan.activity:HistologieEvaluation",

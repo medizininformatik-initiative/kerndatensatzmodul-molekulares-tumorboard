@@ -35,7 +35,7 @@ Usage: #example
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
 * extension[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "SNV" 
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
-* extension[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "MNV" 
+* extension[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "SNV" 
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build"
 * extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
 
@@ -85,7 +85,7 @@ Description: "Diagnostische Bedeutung der festgestellten TP53 Mutation"
 Usage: #example
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
-* code = $TBD#diagnostic-implication "Diagnostische Implikation"
+* code = $TBD#diagnostic-implication "Diagnostic Implication"
 * subject = Reference(Patient/PatientKimMusterperson)
 * derivedFrom = Reference(mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53)
 * component[clinical-significance].code = $LNC#53037-8
@@ -119,13 +119,13 @@ Description: "Therapeutische Bedeutung der festgestellten PIK3R1 Mutation"
 Usage: #example
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
-* code = $TBD#therapeutic-implication "Therapeutische Implikation"
+* code = $TBD#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(Patient/PatientKimMusterperson)
 * derivedFrom = Reference(mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1)
 * component[conclusion-string].code = $TBD#conclusion-string
 * component[conclusion-string].valueString = "Ausweislich praeklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3)."
 * component[medication-assessed].code = $LNC#51963-7 "Medication assessed [ID]"
-* component[medication-assessed].valueCodeableConcept = $ATC_DE#L01EE "Mitogen-akivierte Proteinkinase (MEK)-Inhibitoren"
+* component[medication-assessed].valueCodeableConcept = $ATC_DE#L01EE "Mitogen-aktivierte Proteinkinase (MEK)-Inhibitoren"
 * extension[Evidenzgraduierung].valueCodeableConcept.coding[Evidenzgrad] = #m3
 
 // Kopienzahlveränderung von CCNE1.
