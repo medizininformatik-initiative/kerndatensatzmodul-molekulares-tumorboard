@@ -1,5 +1,5 @@
 RuleSet: BundleResource(type,id)
-* entry[+].fullUrl = "{type}/{id}"
+* entry[+].fullUrl = "http://example.org/fhir/{type}/{id}"
 * entry[=].request.method = #PUT
 * entry[=].resource = {id}
 * entry[=].resource.id = "{id}"
