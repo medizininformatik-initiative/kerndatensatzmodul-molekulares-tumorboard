@@ -17,7 +17,7 @@ Description: "20.04.22 CT T/A"
 * status = #completed
 * category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding = $OPS#3-20 "Computertomographie [CT], nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-04-20
 * bodySite[+] = $SCT#818983003 "Abdomen"
@@ -78,7 +78,7 @@ Description: "15.07.22 CT T/A"
 * status = #completed
 * category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding = $OPS#3-20 "Computertomographie [CT], nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-07-15
 * bodySite[+] = $SCT#818983003 "Abdomen"
@@ -143,7 +143,7 @@ Description: "19.10.22 CT T/A"
 * status = #completed
 * category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding = $OPS#3-20 "Computertomographie [CT], nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-10-22
 * bodySite[+] = $SCT#818983003 "Abdomen"
@@ -248,7 +248,7 @@ Description: "19.12.22 CT T/A"
 * status = #completed
 * category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding = $OPS#3-20 "Computertomographie [CT], nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2022-12-19
 * bodySite[+] = $SCT#818983003 "Abdomen"
@@ -265,7 +265,8 @@ Description: "progredienter Aszites (ca. 700ml)"
 * code.text = "Progredienter Aszites"
 * valueQuantity.value = 700
 * valueQuantity.unit = "ml"
-* valueQuantity.code = $SCT#258773002 "mL"
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #mL
 
 Instance: PatientKimMusterperson-Observation-17
 InstanceOf: Observation
@@ -314,7 +315,7 @@ Description: "20.03.2023 CT T/A"
 * status = #completed
 * category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding = $OPS#3-20 "Computertomographie [CT], nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2023-03-20
 * bodySite[+] = $SCT#818983003 "Abdomen"
@@ -375,7 +376,7 @@ Description: "20.08.2023 CT T/A"
 * status = #completed
 * category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding = $OPS#3-20 "Computertomographie [CT], nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2023-08-20
 * bodySite[+] = $SCT#818983003 "Abdomen"
@@ -415,7 +416,7 @@ Description: "22.10.2023 CT T/A"
 * status = #completed
 * category.coding[sct] = $SCT#363680008 "Radiographic imaging procedure"
 * subject = Reference(PatientKimMusterperson)
-* code.coding = $OPS#3-20 "Computertomographie (CT), nativ"
+* code.coding = $OPS#3-20 "Computertomographie [CT], nativ"
 * code.coding.version = "2025"
 * performedDateTime = 2023-10-22
 * bodySite[+] = $SCT#818983003 "Abdomen"
