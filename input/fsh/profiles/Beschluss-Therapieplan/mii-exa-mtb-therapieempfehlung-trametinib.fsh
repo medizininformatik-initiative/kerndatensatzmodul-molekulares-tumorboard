@@ -30,9 +30,3 @@ Description: "Therapieempfehlung für Trametinib"
 * medicationCodeableConcept.coding = $ATC_DE#L01EE01 "Trametinib"
 * medicationCodeableConcept.coding.version = "2025"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
-* dosageInstruction.timing.repeat.frequency = 1
-* dosageInstruction.timing.repeat.when[0] = #MORN
-* dosageInstruction.doseAndRate.doseQuantity.value = 1
-* dosageInstruction.doseAndRate.doseQuantity.system = $UCUM
-* dosageInstruction.doseAndRate.doseQuantity.code = #{Tablet}
-* dosageInstruction.doseAndRate.doseQuantity.unit = "Tablet"
