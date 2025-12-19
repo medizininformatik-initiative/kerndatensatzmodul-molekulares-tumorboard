@@ -11,7 +11,6 @@
 [MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1.html
 [MII-EXA-MTB-Systemische-Therapie-Medication-4]: MedicationStatement-MII-EXA-MTB-Systemische-Therapie-Medication-4.html
 [mii-exa-mtb-study-cldn6]: ResearchStudy-mii-exa-mtb-study-cldn6.html
-[mii-exa-mtb-medication-adavosertib]: Medication-mii-exa-mtb-medication-adavosertib.html
 [mii-exa-mtb-medication-request-adavosertib]: MedicationRequest-mii-exa-mtb-medication-request-adavosertib.html
 [mii-exa-mtb-request-group-adavosertib-carboplatin]: RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html
 [MII-EXA-MTB-DNA-Fusion-1]: Observation-MII-EXA-MTB-DNA-Fusion-1.html
@@ -41,13 +40,11 @@
 [MTBObservationCA125-4]: Observation-MTBObservationCA125-4.html
 [MTBObservationCA125-5]: Observation-MTBObservationCA125-5.html
 [MTBObservationCA125-6]: Observation-MTBObservationCA125-6.html
-[mii-exa-mtb-medication-camonsertib]: Medication-mii-exa-mtb-medication-camonsertib.html
 [mii-exa-mtb-medication-request-camonsertib]: MedicationRequest-mii-exa-mtb-medication-request-camonsertib.html
 [mii-exa-mtb-medication-request-carboplatin]: MedicationRequest-mii-exa-mtb-medication-request-carboplatin.html
 [mii-exa-mtb-study-ccne1]: ResearchStudy-mii-exa-mtb-study-ccne1.html
 [mii-exa-mtb-study-request-ccne1]: ServiceRequest-mii-exa-mtb-study-request-ccne1.html
 [mii-exa-mtb-kim-musterperson-CNVariante-CCNE1]: Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html
-[mii-exa-mtb-medication-cobimetinib]: Medication-mii-exa-mtb-medication-cobimetinib.html
 [mii-exa-mtb-medication-request-cobimetinib]: MedicationRequest-mii-exa-mtb-medication-request-cobimetinib.html
 [mii-exa-mtb-kim-musterperson-aufklaerung]: Observation-mii-exa-mtb-kim-musterperson-aufklaerung.html
 [mii-exa-mtb-kim-rebiopsie-aszites]: ServiceRequest-mii-exa-mtb-kim-rebiopsie-aszites.html
@@ -59,7 +56,6 @@
 [MII_PR_MTB_Genomic_Study_Device]: StructureDefinition-genomic-study-device.html
 [mii-exa-mtb-kim-oncotree]: Observation-mii-exa-mtb-kim-oncotree.html
 [mii-exa-mtb-kim-tumorausbreitung]: Observation-mii-exa-mtb-kim-tumorausbreitung.html
-[mii-exa-mtb-medication-lunresertib]: Medication-mii-exa-mtb-medication-lunresertib.html
 [mii-exa-mtb-medication-request-lunresertib]: MedicationRequest-mii-exa-mtb-medication-request-lunresertib.html
 [mii-exa-mtb-request-group-lunresertib-camonsertib]: RequestGroup-mii-exa-mtb-request-group-lunresertib-camonsertib.html
 [mii-cm-mtb-therapiestatusgrund-obds]: ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.html

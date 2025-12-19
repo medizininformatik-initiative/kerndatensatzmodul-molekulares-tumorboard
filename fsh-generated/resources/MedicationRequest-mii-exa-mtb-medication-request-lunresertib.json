@@ -6,6 +6,15 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
     ]
   },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "N95U3A7N57",
+        "system": "http://fdasis.nlm.nih.gov",
+        "display": "Lunresertib"
+      }
+    ]
+  },
   "reasonReference": [
     {
       "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
@@ -16,8 +25,5 @@
   "authoredOn": "2023-03-28",
   "subject": {
     "reference": "Patient/PatientKimMusterperson"
-  },
-  "medicationReference": {
-    "reference": "Medication/mii-exa-mtb-medication-lunresertib"
   }
 }

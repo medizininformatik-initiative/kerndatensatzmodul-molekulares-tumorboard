@@ -50,16 +50,6 @@ Usage: #example
 // Zudem bei CCNE1 ampl Rationale für Kombination aus WEE1-Inhibitor Adavosertib +/- Carboplatin
 // (PMID: 37236033, EL m1B), Verfügbarkeit prüfen, jeweils nach Ausschöpfung der LL-Therapie.
 
-// TODO: MII_PR_Medikation_Medication nicht möglich, da Medication.ingredient 1..*
-Instance: mii-exa-mtb-medication-adavosertib
-InstanceOf: Medication
-Title: "Adavosertib"
-Description: "Medikament: Adavosertib"
-Usage: #example
-* status = #active
-* code.coding = $UNII#K2T6HJX3I3
-* code.text = "ADAVOSERTIB"
-
 Instance: mii-exa-mtb-medication-request-adavosertib
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Adavosertib"
@@ -69,7 +59,7 @@ Usage: #example
 * intent = #option
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationReference = Reference(mii-exa-mtb-medication-adavosertib)
+* medicationCodeableConcept.coding = $UNII#K2T6HJX3I3 "ADAVOSERTIB"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-medication-request-carboplatin
@@ -105,16 +95,6 @@ Usage: #example
 // https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf und
 // https://doi.org/10.1158/1535-7163.TARG-23-PR008, EL m1B). Verfügbarkeit prüfen.
 
-// TODO: MII_PR_Medikation_Medication nicht möglich, da Medication.ingredient 1..*
-Instance: mii-exa-mtb-medication-lunresertib
-InstanceOf: Medication
-Title: "Lunresertib"
-Description: "Medikament: Lunresertib"
-Usage: #example
-* status = #active
-* code.coding = $UNII#N95U3A7N57
-* code.text = "Lunresertib"
-
 Instance: mii-exa-mtb-medication-request-lunresertib
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Lunresertib"
@@ -124,18 +104,8 @@ Usage: #example
 * intent = #option
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationReference = Reference(mii-exa-mtb-medication-lunresertib)
+* medicationCodeableConcept.coding = $UNII#N95U3A7N57 "Lunresertib"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
-
-// TODO: MII_PR_Medikation_Medication nicht möglich, da Medication.ingredient 1..*
-Instance: mii-exa-mtb-medication-camonsertib
-InstanceOf: Medication
-Title: "Camonsertib"
-Description: "Medikament: Camonsertib"
-Usage: #example
-* status = #active
-* code.coding = $UNII#S1Z7Y5G56T
-* code.text = "Camonsertib"
 
 Instance: mii-exa-mtb-medication-request-camonsertib
 InstanceOf: MII_PR_MTB_Therapieempfehlung
@@ -146,7 +116,7 @@ Usage: #example
 * intent = #option
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationReference = Reference(mii-exa-mtb-medication-camonsertib)
+* medicationCodeableConcept.coding = $UNII#S1Z7Y5G56T "Camonsertib"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-request-group-lunresertib-camonsertib
@@ -167,15 +137,6 @@ Usage: #example
 
 // 6. MEKi, z.B. Cobimetinib (m3)
 // PIK3R1mut (E160*): Ausweislich präklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3).
-Instance: mii-exa-mtb-medication-cobimetinib
-InstanceOf: Medication
-Title: "Cobimetinib"
-Description: "Medikament: Cobimetinib"
-Usage: #example
-* status = #active
-* code.coding = $UNII#ER29L26N1X
-* code.text = "COBIMETINIB"
-
 Instance: mii-exa-mtb-medication-request-cobimetinib
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Cobimetinib"
@@ -185,7 +146,7 @@ Usage: #example
 * intent = #option
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationReference = Reference(mii-exa-mtb-medication-cobimetinib)
+* medicationCodeableConcept.coding = $UNII#ER29L26N1X "COBIMETINIB"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 * insert BeschlussPrioritaet(6)
 * insert BeschlussEvidenz(m3, http://www.ncbi.nlm.nih.gov/pubmed, 31209687)

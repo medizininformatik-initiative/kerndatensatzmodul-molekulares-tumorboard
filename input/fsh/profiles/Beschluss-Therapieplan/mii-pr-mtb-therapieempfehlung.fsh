@@ -19,7 +19,7 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
         diese Therapieempfehlung ist Teil einer RequestGroup (z.B. Kombinationstherapie). In dem Fall muss hier 'option' stehen."
 
 * medication[x] 1..1 MS
-* medicationReference only Reference(MII_PR_Medikation_Medication) // + Medication (restricted by parent profile to profile only)
+// Parent profile requires medicationCodeableConcept 1..1, so medicationReference is not allowed
 
 * reasonReference ^slicing.discriminator.type = #profile
 * reasonReference ^slicing.discriminator.path = "$this.resolve()"
