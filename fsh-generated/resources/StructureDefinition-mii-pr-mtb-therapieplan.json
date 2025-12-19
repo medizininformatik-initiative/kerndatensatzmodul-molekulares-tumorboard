@@ -85,9 +85,23 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Therapieempfehlung",
+        "id": "CarePlan.activity:extended",
         "path": "CarePlan.activity",
-        "sliceName": "Therapieempfehlung",
+        "sliceName": "extended",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "reference.resolve()"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "CarePlan.activity:extended/Therapieempfehlung",
+        "path": "CarePlan.activity",
+        "sliceName": "extended/Therapieempfehlung",
         "short": "Therapieempfehlung Systemische Therapie",
         "definition": "Therapieempfehlung für eine medikamentöse Systemische Therapie",
         "min": 0,
@@ -95,8 +109,9 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Therapieempfehlung.reference",
+        "id": "CarePlan.activity:extended/Therapieempfehlung.reference",
         "path": "CarePlan.activity.reference",
+        "min": 1,
         "type": [
           {
             "code": "Reference",
@@ -111,16 +126,9 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Therapieempfehlung.detail",
-        "path": "CarePlan.activity.detail",
-        "short": "Not used - therapy details in referenced resource",
-        "definition": "Constrained to 0..0 to avoid cpl-3 violation. Therapy type and status are captured in the referenced MedicationRequest/RequestGroup.",
-        "max": "0"
-      },
-      {
-        "id": "CarePlan.activity:HumangenetischeBeratung",
+        "id": "CarePlan.activity:extended/HumangenetischeBeratung",
         "path": "CarePlan.activity",
-        "sliceName": "HumangenetischeBeratung",
+        "sliceName": "extended/HumangenetischeBeratung",
         "short": "Empfehlung Human-genetische Beratung",
         "definition": "Auftrag zur (erneuten) Human-genetischen Beratung",
         "min": 0,
@@ -128,7 +136,7 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:HumangenetischeBeratung.reference",
+        "id": "CarePlan.activity:extended/HumangenetischeBeratung.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -142,14 +150,9 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:HumangenetischeBeratung.detail",
-        "path": "CarePlan.activity.detail",
-        "max": "0"
-      },
-      {
-        "id": "CarePlan.activity:HistologieEvaluation",
+        "id": "CarePlan.activity:extended/HistologieEvaluation",
         "path": "CarePlan.activity",
-        "sliceName": "HistologieEvaluation",
+        "sliceName": "extended/HistologieEvaluation",
         "short": "Empfehlung Histologie-Evaluation",
         "definition": "Auftrag zur (erneuten) Histologie-Evaluation",
         "min": 0,
@@ -157,7 +160,7 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:HistologieEvaluation.reference",
+        "id": "CarePlan.activity:extended/HistologieEvaluation.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -171,14 +174,9 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:HistologieEvaluation.detail",
-        "path": "CarePlan.activity.detail",
-        "max": "0"
-      },
-      {
-        "id": "CarePlan.activity:Biopsie",
+        "id": "CarePlan.activity:extended/Biopsie",
         "path": "CarePlan.activity",
-        "sliceName": "Biopsie",
+        "sliceName": "extended/Biopsie",
         "short": "Empfehlung Biopsie",
         "definition": "Auftrag zur (erneuten) Biopsie",
         "min": 0,
@@ -186,7 +184,7 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Biopsie.reference",
+        "id": "CarePlan.activity:extended/Biopsie.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -200,14 +198,9 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Biopsie.detail",
-        "path": "CarePlan.activity.detail",
-        "max": "0"
-      },
-      {
-        "id": "CarePlan.activity:Studieneinschlussempfehlung",
+        "id": "CarePlan.activity:extended/Studieneinschlussempfehlung",
         "path": "CarePlan.activity",
-        "sliceName": "Studieneinschlussempfehlung",
+        "sliceName": "extended/Studieneinschlussempfehlung",
         "short": "Studieneinschlussempfehlung",
         "definition": "Anfrage zum Studieneinschluss",
         "min": 0,
@@ -215,7 +208,7 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Studieneinschlussempfehlung.reference",
+        "id": "CarePlan.activity:extended/Studieneinschlussempfehlung.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -227,11 +220,6 @@
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "CarePlan.activity:Studieneinschlussempfehlung.detail",
-        "path": "CarePlan.activity.detail",
-        "max": "0"
       }
     ]
   }

@@ -21,49 +21,46 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * description ^definition = "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
 
 * activity 0..* MS
-// Note: Slicing inherited from parent MII_PR_Onko_Tumorkonferenz - cannot redefine discriminator
 
-* activity contains Therapieempfehlung 0..* MS
-* activity[Therapieempfehlung] ^short = "Therapieempfehlung Systemische Therapie"
-* activity[Therapieempfehlung] ^definition = "Therapieempfehlung für eine medikamentöse Systemische Therapie"
-* activity[Therapieempfehlung].reference 0..1 MS
-* activity[Therapieempfehlung].reference only Reference(
+// Reslice parent's extended slice by profile to differentiate MTB activity types
+* activity[extended] ^slicing.discriminator.type = #profile
+* activity[extended] ^slicing.discriminator.path = "reference.resolve()"
+* activity[extended] ^slicing.rules = #open
+
+* activity[extended] contains Therapieempfehlung 0..* MS
+* activity[extended][Therapieempfehlung] ^short = "Therapieempfehlung Systemische Therapie"
+* activity[extended][Therapieempfehlung] ^definition = "Therapieempfehlung für eine medikamentöse Systemische Therapie"
+* activity[extended][Therapieempfehlung].reference 1..1 MS
+* activity[extended][Therapieempfehlung].reference only Reference(
     MII_PR_MTB_Therapieempfehlung or
     MII_PR_MTB_Therapieempfehlung_Kombination or
     MedicationRequest or
     RequestGroup
 )
-* activity[Therapieempfehlung].detail 0..0  // Disabled to avoid FHIR invariant cpl-3
-* activity[Therapieempfehlung].detail ^short = "Not used - therapy details in referenced resource"
-* activity[Therapieempfehlung].detail ^definition = "Constrained to 0..0 to avoid cpl-3 violation. Therapy type and status are captured in the referenced MedicationRequest/RequestGroup."
 
-* activity contains HumangenetischeBeratung 0..1 MS
-* activity[HumangenetischeBeratung] ^short = "Empfehlung Human-genetische Beratung"
-* activity[HumangenetischeBeratung] ^definition = "Auftrag zur (erneuten) Human-genetischen Beratung"
-* activity[HumangenetischeBeratung].reference 1..1 MS
-* activity[HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag)
-* activity[HumangenetischeBeratung].detail 0..0  // Disabled to avoid FHIR invariant cpl-3
+* activity[extended] contains HumangenetischeBeratung 0..1 MS
+* activity[extended][HumangenetischeBeratung] ^short = "Empfehlung Human-genetische Beratung"
+* activity[extended][HumangenetischeBeratung] ^definition = "Auftrag zur (erneuten) Human-genetischen Beratung"
+* activity[extended][HumangenetischeBeratung].reference 1..1 MS
+* activity[extended][HumangenetischeBeratung].reference only Reference(MII_PR_MTB_Humangenetische_Beratung_Auftrag)
 
-* activity contains HistologieEvaluation 0..1 MS
-* activity[HistologieEvaluation] ^short = "Empfehlung Histologie-Evaluation"
-* activity[HistologieEvaluation] ^definition = "Auftrag zur (erneuten) Histologie-Evaluation"
-* activity[HistologieEvaluation].reference 1..1 MS
-* activity[HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag)
-* activity[HistologieEvaluation].detail 0..0  // Required for exists:detail discriminator
+* activity[extended] contains HistologieEvaluation 0..1 MS
+* activity[extended][HistologieEvaluation] ^short = "Empfehlung Histologie-Evaluation"
+* activity[extended][HistologieEvaluation] ^definition = "Auftrag zur (erneuten) Histologie-Evaluation"
+* activity[extended][HistologieEvaluation].reference 1..1 MS
+* activity[extended][HistologieEvaluation].reference only Reference(MII_PR_MTB_Histologie_Evaluation_Auftrag)
 
-* activity contains Biopsie 0..* MS
-* activity[Biopsie] ^short = "Empfehlung Biopsie"
-* activity[Biopsie] ^definition = "Auftrag zur (erneuten) Biopsie"
-* activity[Biopsie].reference 1..1 MS
-* activity[Biopsie].reference only Reference(MII_PR_MTB_Biopsie_Auftrag)
-* activity[Biopsie].detail 0..0  // Required for exists:detail discriminator
+* activity[extended] contains Biopsie 0..* MS
+* activity[extended][Biopsie] ^short = "Empfehlung Biopsie"
+* activity[extended][Biopsie] ^definition = "Auftrag zur (erneuten) Biopsie"
+* activity[extended][Biopsie].reference 1..1 MS
+* activity[extended][Biopsie].reference only Reference(MII_PR_MTB_Biopsie_Auftrag)
 
-* activity contains Studieneinschlussempfehlung 0..* MS
-* activity[Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"
-* activity[Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
-* activity[Studieneinschlussempfehlung].reference 1..1 MS
-* activity[Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage)
-* activity[Studieneinschlussempfehlung].detail 0..0  // Required for exists:detail discriminator
+* activity[extended] contains Studieneinschlussempfehlung 0..* MS
+* activity[extended][Studieneinschlussempfehlung] ^short = "Studieneinschlussempfehlung"
+* activity[extended][Studieneinschlussempfehlung] ^definition = "Anfrage zum Studieneinschluss"
+* activity[extended][Studieneinschlussempfehlung].reference 1..1 MS
+* activity[extended][Studieneinschlussempfehlung].reference only Reference(MII_PR_MTB_Studieneinschluss_Anfrage)
 
 // Siehe Konversion R5 nach R4: https://build.fhir.org/ig/HL7/fhir-cross-version/StructureMap-CarePlan5to4.html
 

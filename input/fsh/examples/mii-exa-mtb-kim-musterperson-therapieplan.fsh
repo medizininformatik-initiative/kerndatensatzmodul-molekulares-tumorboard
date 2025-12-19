@@ -22,34 +22,34 @@ Usage: #example
 * supportingInfo[Behandlungsepisode] = Reference(mii-exa-mtb-kim-musterperson-behandlungsepisode)
 
 // Prio 1 - Therapieempfehlung: Mirvetuximab soravtansine (m1A)
-* activity[Therapieempfehlung][+].reference = Reference(mii-exa-mtb-medication-request-mirvetuximab)
-* activity[Therapieempfehlung][=].outcomeReference = Reference(MTBChemo2Procedure)
+* activity[extended][Therapieempfehlung][+].reference = Reference(mii-exa-mtb-medication-request-mirvetuximab)
+* activity[extended][Therapieempfehlung][=].outcomeReference = Reference(MTBChemo2Procedure)
 
 // Prio 2.1 - Studieneinschlussempfehlung: Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs, PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg)
-* activity[Studieneinschlussempfehlung][+].reference = Reference(mii-exa-mtb-study-request-cldn6)
+* activity[extended][Studieneinschlussempfehlung][+].reference = Reference(mii-exa-mtb-study-request-cldn6)
 
 // Prio 2.2 - Studieneinschlussempfehlung: TEDOVA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2)
-* activity[Studieneinschlussempfehlung][+].reference = Reference(mii-exa-mtb-study-request-tedova)
+* activity[extended][Studieneinschlussempfehlung][+].reference = Reference(mii-exa-mtb-study-request-tedova)
 
 // Prio 2.3 - Studieneinschlussempfehlung: Studie bei CCNE1 ampl. OvCA (UKF, PI Prof. Duque, ID ausstehend)
-* activity[Studieneinschlussempfehlung][+].reference = Reference(mii-exa-mtb-study-request-ccne1)
+* activity[extended][Studieneinschlussempfehlung][+].reference = Reference(mii-exa-mtb-study-request-ccne1)
 
 // Prio 3 - Therapieempfehlung: Trastuzumab deruxtecan (m1B)
-* activity[Therapieempfehlung][+].reference = Reference(mii-exa-mtb-medication-request-trastuzumab-deruxtecan)
+* activity[extended][Therapieempfehlung][+].reference = Reference(mii-exa-mtb-medication-request-trastuzumab-deruxtecan)
 
 // Prio 4 - Therapieempfehlung: Adavosertib +/- Carboplatin (m1B) sofern verfügbar
-* activity[Therapieempfehlung][+].reference = Reference(mii-exa-mtb-request-group-adavosertib-carboplatin)
+* activity[extended][Therapieempfehlung][+].reference = Reference(mii-exa-mtb-request-group-adavosertib-carboplatin)
 
 // Prio 5 - Therapieempfehlung: Lunresertib + Camonsertib (m1B) sofern verfügbar
-* activity[Therapieempfehlung][+].reference = Reference(mii-exa-mtb-request-group-lunresertib-camonsertib)
+* activity[extended][Therapieempfehlung][+].reference = Reference(mii-exa-mtb-request-group-lunresertib-camonsertib)
 
 // Prio 6 - Therapieempfehlung: MEKi, z.B. Cobimetinib (m3)
-* activity[Therapieempfehlung][+].reference = Reference(mii-exa-mtb-medication-request-cobimetinib)
+* activity[extended][Therapieempfehlung][+].reference = Reference(mii-exa-mtb-medication-request-cobimetinib)
 
 
 // NOTE: Zusätzliche Angaben, die nicht zum fiktiven Therapieverlauf passen und nur der Veranschaulichung dienen
-* activity[HumangenetischeBeratung][+].reference = Reference(mii-exa-mtb-kim-humangenetische-beratung-aszites)
+* activity[extended][HumangenetischeBeratung][+].reference = Reference(mii-exa-mtb-kim-humangenetische-beratung-aszites)
 
-* activity[HistologieEvaluation][+].reference = Reference(mii-exa-mtb-kim-histologie-evaluation-aszites)
+* activity[extended][HistologieEvaluation][+].reference = Reference(mii-exa-mtb-kim-histologie-evaluation-aszites)
 
-* activity[Biopsie][+].reference = Reference(mii-exa-mtb-kim-rebiopsie-aszites)
+* activity[extended][Biopsie][+].reference = Reference(mii-exa-mtb-kim-rebiopsie-aszites)
