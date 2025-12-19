@@ -41,7 +41,8 @@ Usage: #example
 * intent = #proposal
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationCodeableConcept.coding = $ATC_DE#L01FD04
+* medicationCodeableConcept.coding = $ATC_DE#L01FD04 "Trastuzumab deruxtecan"
+* medicationCodeableConcept.coding.version = "2025"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 * insert BeschlussPrioritaet(3)
 * insert BeschlussEvidenzDreiQuellen(m1B, http://www.ncbi.nlm.nih.gov/pubmed, 35665782, http://www.ncbi.nlm.nih.gov/pubmed, 37870536, http://doi.org, 10.1200/JCO.2023.41.17_suppl.LBA3000)
@@ -71,7 +72,8 @@ Usage: #example
 * intent = #option
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationCodeableConcept.coding = $ATC_DE#L01XA02
+* medicationCodeableConcept.coding = $ATC_DE#L01XA02 "Carboplatin"
+* medicationCodeableConcept.coding.version = "2025"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-request-group-adavosertib-carboplatin

@@ -11,9 +11,9 @@
         - Evidenzgraduierung = m1C
         - Publikation = https://doi.org/10.1002/gcc.23222
         - Dabrafenib (RequestGroup.action.resource -> MedicationRequest)
-          - Dabrafenib (MedicationRequest.medicationReference -> Medication.ingredient)
+          - Dabrafenib (MedicationRequest.medicationCodeableConcept)
         - Trametinib (RequestGroup.action.resource -> MedicationRequest)
-          - Trametinib (MedicationRequest.medicationReference -> Medication.ingredient)
+          - Trametinib (MedicationRequest.medicationCodeableConcept)
 */
 
 Instance: mii-exa-mtb-medikation-trametinib

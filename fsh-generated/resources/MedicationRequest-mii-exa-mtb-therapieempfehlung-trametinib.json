@@ -6,6 +6,16 @@
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
     ]
   },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "L01EE01",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "display": "Trametinib",
+        "version": "2025"
+      }
+    ]
+  },
   "reasonReference": [
     {
       "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
@@ -38,8 +48,5 @@
   "authoredOn": "2024-01-01",
   "subject": {
     "reference": "Patient/mii-exa-mtb-patient"
-  },
-  "medicationReference": {
-    "reference": "Medication/mii-exa-mtb-medikation-trametinib"
   }
 }
