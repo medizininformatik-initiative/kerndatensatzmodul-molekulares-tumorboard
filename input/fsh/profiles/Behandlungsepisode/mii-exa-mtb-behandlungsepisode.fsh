@@ -1,8 +1,10 @@
 Instance: mii-exa-mtb-behandlungsepisode-1
 InstanceOf: MII_PR_MTB_Behandlungsepisode
+Usage: #example
 Title: "MII PR MTB Behandlungsepisode Beispiel"
 Description: "Beispiel für aktuellen Gesundheitszustand und bisherige Behandlungsmaßnahmen"
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode)
 * status = #completed
 
 * subject = Reference(Patient/example)

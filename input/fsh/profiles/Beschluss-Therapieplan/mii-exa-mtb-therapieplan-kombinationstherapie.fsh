@@ -20,6 +20,8 @@ Instance: mii-exa-mtb-therapieplan-kombinationstherapie
 InstanceOf: MII_PR_MTB_Therapieplan
 Usage: #example
 Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan)
 // Erforderliche Angaben
 * status = #active
 // * intent = #proposal im Onko wird Plan gesetzt

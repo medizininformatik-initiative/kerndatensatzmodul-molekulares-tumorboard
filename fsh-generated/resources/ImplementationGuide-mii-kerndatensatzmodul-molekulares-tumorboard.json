@@ -80,7 +80,7 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2026.0.0-rc.8",
+      "version": "2026.0.0-rc.9",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
@@ -1052,18 +1052,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization-her2"
+          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization"
         },
         "name": "MII PR MTB In Situ Hybridization",
-        "description": "In Situ Hybridization report",
+        "description": "Molekularer Biomarker - In Situ Hybridization Profil. Unterstützt FISH, CISH und SISH Methoden.",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization"
+          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization-her2"
         },
-        "name": "MII PR MTB In Situ Hybridization",
-        "description": "Molekularer Biomarker - In Situ Hybridization Profil",
+        "name": "MII PR MTB In Situ Hybridization HER2",
+        "description": "HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC Panel 74885-5.",
         "exampleBoolean": false
       },
       {
@@ -1408,6 +1408,14 @@
         },
         "name": "MII VS MTB Antrag Kostenuebernahme",
         "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-ish-method"
+        },
+        "name": "MII VS MTB ISH Method",
+        "description": "In Situ Hybridization technique methods (FISH, CISH, SISH)",
         "exampleBoolean": false
       },
       {

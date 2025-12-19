@@ -20,6 +20,8 @@ Instance: mii-exa-mtb-therapieempfehlung-dabrafenib
 InstanceOf: MII_PR_MTB_Therapieempfehlung
 Usage: #example
 Description: "Therapieempfehlung für Dabrafenib"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 // Erforderliche Angaben
 * status = #active
 * intent = #option // Gefordert von RequestGroup.action.resource!

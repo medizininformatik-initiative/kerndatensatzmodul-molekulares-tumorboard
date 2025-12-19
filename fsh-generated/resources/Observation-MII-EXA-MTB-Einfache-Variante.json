@@ -3,8 +3,7 @@
   "id": "MII-EXA-MTB-Einfache-Variante",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante",
-      "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante|2026.0.0"
     ]
   },
   "category": [
@@ -26,13 +25,6 @@
       ]
     }
   ],
-  "valueCodeableConcept": {
-    "coding": [
-      {
-        "code": "LA9633-4"
-      }
-    ]
-  },
   "component": [
     {
       "valueCodeableConcept": {
@@ -134,13 +126,6 @@
       }
     },
     {
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "code": "HGVS:NM_004333.4:c.1799T>A"
-          }
-        ]
-      },
       "code": {
         "coding": [
           {
@@ -149,22 +134,31 @@
             "display": "DNA change (c.HGVS)"
           }
         ]
-      }
-    },
-    {
+      },
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "HGVS:p.(Val600Glu)"
+            "code": "NM_004333.4:c.1799T>A",
+            "system": "http://varnomen.hgvs.org"
           }
         ]
-      },
+      }
+    },
+    {
       "code": {
         "coding": [
           {
             "system": "http://loinc.org",
             "code": "48005-3",
             "display": "Amino acid change (pHGVS)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "p.(Val600Glu)",
+            "system": "http://varnomen.hgvs.org"
           }
         ]
       }
@@ -215,6 +209,15 @@
     ]
   },
   "status": "final",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA9633-4",
+        "system": "http://loinc.org",
+        "display": "Present"
+      }
+    ]
+  },
   "method": {
     "coding": [
       {

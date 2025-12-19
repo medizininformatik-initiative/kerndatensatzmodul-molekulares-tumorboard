@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-insituhybridization",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Biomarker_InSituHybridization",
   "title": "MII PR MTB In Situ Hybridization",
   "status": "draft",
@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Molekularer Biomarker - In Situ Hybridization Profil",
+  "description": "Molekularer Biomarker - In Situ Hybridization Profil. Unterstützt FISH, CISH und SISH Methoden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -30,15 +30,15 @@
         "id": "Observation.identifier",
         "path": "Observation.identifier",
         "short": "Identifier zur Abgrenzung anderer gleichartiger Untersuchungen",
-        "definition": "Identifier der Untersuchung, damit die Untersuchung auch außerhalb von FHIR eindeutig identifiziert werden kann. Sollte ISH oder vlg. beinhalten, um von anderen Biomarkeruntersuchungen abzugrenzen. ",
+        "definition": "Identifier der Untersuchung, damit die Untersuchung auch außerhalb von FHIR eindeutig identifiziert werden kann. Sollte ISH oder vlg. beinhalten, um von anderen Biomarkeruntersuchungen abzugrenzen.",
         "max": "1",
         "mustSupport": true
       },
       {
         "id": "Observation.code",
         "path": "Observation.code",
-        "short": "In Situ Hybridization",
-        "definition": "In Situ Hybridization auf Gewebsschnitt"
+        "short": "Code für In Situ Hybridization Untersuchung",
+        "definition": "Kodierung für In Situ Hybridization. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist der generische Code mit Textbeschreibung zu verwenden."
       },
       {
         "id": "Observation.code.coding",
@@ -47,58 +47,50 @@
           "discriminator": [
             {
               "type": "value",
-              "path": "system"
+              "path": "code"
             }
           ],
           "rules": "open",
-          "description": "Slice für In Situ Hybridization Finding",
+          "description": "Slice für spezifischen und generischen ISH Code",
           "ordered": false
-        },
-        "min": 1,
-        "mustSupport": true
+        }
       },
       {
-        "id": "Observation.code.coding.system",
-        "path": "Observation.code.coding.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding.code",
-        "path": "Observation.code.coding.code",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding:SCT",
+        "id": "Observation.code.coding:spezifisch",
         "path": "Observation.code.coding",
-        "sliceName": "SCT",
-        "short": "Nucleic acid hybridization",
-        "min": 1,
-        "max": "1",
-        "patternCoding": {
-          "code": "51864006",
-          "system": "http://snomed.info/sct"
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding:SCT.system",
-        "path": "Observation.code.coding.system",
-        "fixedUri": "http://snomed.info/sct"
-      },
-      {
-        "id": "Observation.code.coding:LNC",
-        "path": "Observation.code.coding",
-        "sliceName": "LNC",
+        "sliceName": "spezifisch",
+        "short": "Spezifischer ISH Code",
+        "definition": "Spezifischer SNOMED-CT oder LOINC Code für die ISH-Untersuchung. Wenn kein spezifischer Code vorhanden ist, generischen Code verwenden.",
         "min": 0,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Observation.code.coding:LNC.system",
+        "id": "Observation.code.coding:spezifisch.system",
         "path": "Observation.code.coding.system",
-        "fixedUri": "http://loinc.org"
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:spezifisch.code",
+        "path": "Observation.code.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:generisch",
+        "path": "Observation.code.coding",
+        "sliceName": "generisch",
+        "short": "Generischer ISH Code",
+        "definition": "Generischer Code für ISH. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist.",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "51864006",
+          "system": "http://snomed.info/sct",
+          "display": "Nucleic acid hybridization, function (observable entity)"
+        },
+        "mustSupport": true
       },
       {
         "id": "Observation.value[x]",
@@ -113,13 +105,13 @@
           "ordered": false,
           "rules": "open"
         },
-        "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.value[x]:valueQuantity",
         "path": "Observation.value[x]",
         "sliceName": "valueQuantity",
+        "short": "Quantitatives Ergebnis (z.B. Signalanzahl)",
         "min": 0,
         "max": "1",
         "type": [
@@ -130,11 +122,200 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.value[x]:valueRatio",
+        "path": "Observation.value[x]",
+        "sliceName": "valueRatio",
+        "short": "Ratio-Ergebnis (z.B. HER2/CEP17)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Ratio"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "short": "Kategorisches Ergebnis (z.B. positiv/negativ)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Observation.interpretation",
         "path": "Observation.interpretation",
-        "short": "Interpretation ",
-        "definition": "Interpretation der ISH Signale. Die Interpretation kann auf Vergleich mit Referenzwerten basieren, die nicht zwingend vorliegen. ",
+        "short": "Interpretation",
+        "definition": "Interpretation der ISH Signale. Die Interpretation kann auf Vergleich mit Referenzwerten basieren.",
         "mustSupport": true
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "short": "FISH | CISH | SISH",
+        "definition": "In Situ Hybridization Methode: Fluoreszenz (FISH), Chromogen (CISH), oder Silber (SISH)",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "description": "Komponenten für ISH Signalzählungen",
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:gene-studied",
+        "path": "Observation.component",
+        "sliceName": "gene-studied",
+        "definition": "Das mit der Target-Sonde untersuchte Gen (z.B. ERBB2)",
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:target-signals",
+        "path": "Observation.component",
+        "sliceName": "target-signals",
+        "short": "Target Probe Signale pro Zellkern",
+        "definition": "Anzahl der Signale der Ziel-Sonde (z.B. ERBB2 Gen) pro Zellkern",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:target-signals.code",
+        "path": "Observation.component.code",
+        "short": "Code für Target-Signale (kann in Kindprofilen überschrieben werden)",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "74860-8",
+              "system": "http://loinc.org",
+              "display": "ERBB2 gene copy number/nucleus in Tissue by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:target-signals.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:target-signals.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "#"
+      },
+      {
+        "id": "Observation.component:target-signals.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:reference-signals",
+        "path": "Observation.component",
+        "sliceName": "reference-signals",
+        "short": "Referenz Probe Signale pro Zellkern",
+        "definition": "Anzahl der Signale der Referenz-Sonde (z.B. CEP17 für Chromosom 17) pro Zellkern",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:reference-signals.code",
+        "path": "Observation.component.code",
+        "short": "Code für Referenz-Signale (z.B. CEP17)",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "74861-6",
+              "system": "http://loinc.org",
+              "display": "Chromosome 17 copy number/nucleus in Tissue by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:reference-signals.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:reference-signals.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "#"
+      },
+      {
+        "id": "Observation.component:reference-signals.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:cells-counted",
+        "path": "Observation.component",
+        "sliceName": "cells-counted",
+        "short": "Anzahl gezählter Zellen",
+        "definition": "Anzahl der für die Signalzählung ausgewerteten Zellen",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:cells-counted.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "62361-1",
+              "system": "http://loinc.org",
+              "display": "Cells counted [#]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:cells-counted.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:cells-counted.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "#"
+      },
+      {
+        "id": "Observation.component:cells-counted.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
       }
     ]
   }

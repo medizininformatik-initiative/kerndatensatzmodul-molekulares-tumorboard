@@ -3,6 +3,7 @@ InstanceOf: MII_PR_MTB_Genomic_Study
 Usage: #example
 Title: "Beispiel fuer einen GenomicStudy"
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study)
 * extension[genomic-study-analysis][+].valueReference = Reference(MII-EXA-MTB-GenomicStudyAnalysis-1)
 * status = #completed
 * subject = Reference(Patient/example)
@@ -13,6 +14,7 @@ InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Usage: #example
 Title: "Beispiel fuer einen GenomicStudyAnalysis"
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)
 * status = #completed
 * subject = Reference(Patient/example)
 * extension[method-type][+].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#ngs-mps "Next-Generation (NGS)/Massively parallel sequencing (MPS)"
@@ -29,6 +31,7 @@ Instance: MII-EXA-MTB-Device-Sequencer-1
 InstanceOf: MII_PR_MTB_Genomic_Study_Device
 Usage: #example
 Title: "Beispiel fuer einen Sequencer"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-device)
 * manufacturer = "Illumina"
 * deviceName.name = "Illumina NovaSeq X Plus"
 * deviceName.type = #user-friendly-name

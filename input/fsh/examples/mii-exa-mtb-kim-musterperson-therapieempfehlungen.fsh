@@ -7,6 +7,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Mirvetuximab soravtansine"
 Description: "Therapieempfehlung: Mirvetuximab soravtansine, Priorität: 1, Evidenzgrad: m1A"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 * status = #completed
 * intent = #proposal
 * authoredOn = 2023-03-28
@@ -37,6 +38,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Trastuzumab deruxtecan"
 Description: "Therapieempfehlung: Trastuzumab deruxtecan, Priorität: 3, Evidenzgrad: m1B"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 * status = #draft
 * intent = #proposal
 * authoredOn = 2023-03-28
@@ -56,6 +58,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Adavosertib"
 Description: "Therapieempfehlung: Adavosertib"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 * status = #draft
 * intent = #option
 * authoredOn = 2023-03-28
@@ -68,6 +71,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Carboplatin"
 Description: "Therapieempfehlung: Carboplatin"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 * status = #draft
 * intent = #option
 * authoredOn = 2023-03-28
@@ -81,6 +85,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Title: "Adavosertib +/- Carboplatin"
 Description: "Therapieempfehlung Kombinationstherapie: Adavosertib +/- Carboplatin"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination)
 * status = #draft
 * intent = #proposal
 * authoredOn = 2023-03-28
@@ -102,11 +107,12 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Lunresertib"
 Description: "Therapieempfehlung: Lunresertib"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 * status = #draft
 * intent = #option
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationCodeableConcept.coding = $UNII#N95U3A7N57 "Lunresertib"
+* medicationCodeableConcept.coding = $UNII#N95U3A7N57 "LUNRESERTIB"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-medication-request-camonsertib
@@ -114,11 +120,12 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Camonsertib"
 Description: "Therapieempfehlung: Camonsertib"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 * status = #draft
 * intent = #option
 * authoredOn = 2023-03-28
 * subject = Reference(Patient/PatientKimMusterperson)
-* medicationCodeableConcept.coding = $UNII#S1Z7Y5G56T "Camonsertib"
+* medicationCodeableConcept.coding = $UNII#S1Z7Y5G56T "CAMONSERTIB"
 * reasonReference[Primaertumor] = Reference(PatientKimMusterperson-PrimaryDiagnosis-2)
 
 Instance: mii-exa-mtb-request-group-lunresertib-camonsertib
@@ -126,6 +133,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Title: "Lunresertib + Camonsertib"
 Description: "Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib, Priorität: 5, Evidenzgrad: m1B"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination)
 * status = #draft
 * intent = #proposal
 * authoredOn = 2023-03-28
@@ -144,6 +152,7 @@ InstanceOf: MII_PR_MTB_Therapieempfehlung
 Title: "Cobimetinib"
 Description: "Therapieempfehlung: Cobimetinib, Priorität: 6, Evidenzgrad: m3"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung)
 * status = #draft
 * intent = #option
 * authoredOn = 2023-03-28

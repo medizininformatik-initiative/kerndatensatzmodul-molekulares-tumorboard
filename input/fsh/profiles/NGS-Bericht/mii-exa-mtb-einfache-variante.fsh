@@ -4,13 +4,13 @@ Usage: #example
 Title: "BRAF Variante"
 Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von NGS."
 
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * category[geCategory] = $hl7-v2-0074#GE
 
 * code = $LNC#69548-6 "Genetic variant assessment"
-* valueCodeableConcept.coding.code = $LNC#LA9633-4 "Present"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 
 * subject = Reference(Patient/example)
@@ -34,10 +34,10 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 // alt-allele
 
 * component[representative-coding-hgvs].code = $LNC#48004-6 "DNA change (c.HGVS)"
-* component[representative-coding-hgvs].valueCodeableConcept.coding.code = $HGVS#HGVS:NM_004333.4:c.1799T>A
+* component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_004333.4:c.1799T>A
 
 * component[representative-protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[representative-protein-hgvs].valueCodeableConcept.coding.code = $HGVS#HGVS:p.(Val600Glu)
+* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#p.(Val600Glu)
 
 // allellic read-depth
 

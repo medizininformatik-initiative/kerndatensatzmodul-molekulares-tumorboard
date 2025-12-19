@@ -22,11 +22,6 @@ Description: "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 
 * activity 0..* MS
 
-// Reslice parent's extended slice by profile to differentiate MTB activity types
-* activity[extended] ^slicing.discriminator.type = #profile
-* activity[extended] ^slicing.discriminator.path = "reference.resolve()"
-* activity[extended] ^slicing.rules = #open
-
 * activity[extended] contains Therapieempfehlung 0..* MS
 * activity[extended][Therapieempfehlung] ^short = "Therapieempfehlung Systemische Therapie"
 * activity[extended][Therapieempfehlung] ^definition = "Therapieempfehlung für eine medikamentöse Systemische Therapie"

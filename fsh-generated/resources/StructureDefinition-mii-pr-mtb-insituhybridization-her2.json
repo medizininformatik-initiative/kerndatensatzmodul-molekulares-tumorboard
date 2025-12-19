@@ -2,9 +2,9 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-insituhybridization-her2",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_INSITUHYBRIDIZATION_HER2",
-  "title": "MII PR MTB In Situ Hybridization",
+  "title": "MII PR MTB In Situ Hybridization HER2",
   "status": "draft",
   "publisher": "Medizininformatik Initiative",
   "contact": [
@@ -17,61 +17,47 @@
       ]
     }
   ],
-  "description": "In Situ Hybridization report",
+  "description": "HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC Panel 74885-5.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
-  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker",
+  "baseDefinition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
-        "id": "Observation.code.coding",
+        "id": "Observation.code.coding:spezifisch",
         "path": "Observation.code.coding",
+        "sliceName": "spezifisch",
         "patternCoding": {
-          "code": "31150-6",
+          "code": "49683-6",
           "system": "http://loinc.org",
-          "display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
+          "display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
         }
       },
       {
-        "id": "Observation.value[x]",
+        "id": "Observation.value[x]:valueRatio",
         "path": "Observation.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.value[x]:valueCodeableConcept",
-        "path": "Observation.value[x]",
-        "sliceName": "valueCodeableConcept",
-        "min": 0,
-        "max": "1",
+        "sliceName": "valueRatio",
+        "short": "HER2/CEP17 Ratio",
         "type": [
           {
-            "code": "CodeableConcept"
+            "code": "Ratio"
           }
         ]
       },
       {
-        "id": "Observation.value[x]:valueCodeableConcept.coding.system",
-        "path": "Observation.value[x].coding.system",
-        "patternUri": "http://loinc.org"
-      },
-      {
-        "id": "Observation.value[x]:valueCodeableConcept.coding.code",
-        "path": "Observation.value[x].coding.code",
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://loinc.org/vs/LL360-9-9"
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "1303773004",
+              "system": "http://snomed.info/sct",
+              "display": "Fluorescence in situ hybridization technique (qualifier value)"
+            }
+          ]
         }
       },
       {

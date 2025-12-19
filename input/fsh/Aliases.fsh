@@ -81,8 +81,11 @@ Alias: $mii-vs-mtb-oncotree = https://www.medizininformatik-initiative.de/fhir/e
 Alias: $mii-vs-mtb-msi = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi
 Alias: $mii-cs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type
 Alias: $mii-vs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi-method-type
+Alias: $mii-cs-mtb-genomic-analysis-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type
+Alias: $mii-cs-mtb-genomicanalysis-devicefunction = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction
 Alias: $mii-vs-mtb-mmr-proficiency = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency
 Alias: $mii-vs-mtb-mmr-expression = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression
+Alias: $mii-vs-mtb-ish-method = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method
 // Aliases für HL7 Terminologie
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type

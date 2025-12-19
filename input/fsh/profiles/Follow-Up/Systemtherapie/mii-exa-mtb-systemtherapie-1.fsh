@@ -3,6 +3,7 @@ InstanceOf: MII_PR_MTB_Systemische_Therapie
 Usage: #example
 Title: "Beispiel fuer eine Systemtherapie"
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie)
 * status = #completed
 * statusReason.coding.code = #regular-completion
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K

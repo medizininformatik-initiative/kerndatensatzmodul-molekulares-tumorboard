@@ -2,6 +2,8 @@ Instance: MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1
 InstanceOf: MII_PR_MTB_Antwort_Kostenuebernahme
 Usage: #example
 Title: "Beispiel fuer eine Antwort auf den Antrag auf Kostenuebernahme"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme)
 * type = #institutional
 * use = #claim
 * patient = Reference(Patient/example)

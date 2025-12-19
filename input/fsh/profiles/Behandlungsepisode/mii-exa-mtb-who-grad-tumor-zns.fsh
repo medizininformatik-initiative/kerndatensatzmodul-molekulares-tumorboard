@@ -1,8 +1,10 @@
 Instance: mii-exa-mtb-who-grad-tumor-zns-1
 InstanceOf: MII_PR_MTB_WHO_Grad_Tumor_ZNS
+Usage: #example
 Title: "MII PR MTB WHO Grad Tumor ZNS"
 Description: "Beispiel für WHO Grad Tumor"
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns)
 * status = #final
 
 * subject = Reference(Patient/example)

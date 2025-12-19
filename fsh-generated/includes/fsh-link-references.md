@@ -119,8 +119,8 @@
 [MII_PR_MTB_Immunohistochemistry_MSI]: StructureDefinition-mii-pr-mtb-msi.html
 [MII_PR_MTB_Immunohistochemistry_MMR]: StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.html
 [MII_PR_MTB_Immunohistochemistry_Phosphorylation]: StructureDefinition-mii-pr-mtb-immunohistochemistry-phosphorylation.html
-[MII_PR_MTB_INSITUHYBRIDIZATION_HER2]: StructureDefinition-mii-pr-mtb-insituhybridization-her2.html
 [MII_PR_MTB_Biomarker_InSituHybridization]: StructureDefinition-mii-pr-mtb-insituhybridization.html
+[MII_PR_MTB_INSITUHYBRIDIZATION_HER2]: StructureDefinition-mii-pr-mtb-insituhybridization-her2.html
 [MII_PR_MTB_Mikrosatelliteninstabilitaet]: StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html
 [MII_PR_MTB_Molecular_Pathology_Report]: StructureDefinition-mii-pr-mtb-molecular-pathology-report.html
 [MII_PR_MTB_Molekularer_Biomarker]: StructureDefinition-mii-pr-mtb-molekularer-biomarker.html
@@ -164,6 +164,7 @@
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_MSI_Method_Type]: ValueSet-mii-vs-mtb-msi-method-type.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Type]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
+[MII_VS_MTB_ISH_Method]: ValueSet-mii-vs-mtb-ish-method.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
 [MII_VS_MTB_Beurteilungsmethode]: ValueSet-mii-vs-mtb-beurteilungsmethode-response-befund.html

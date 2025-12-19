@@ -20,6 +20,8 @@ Instance: mii-exa-mtb-therapieempfehlung-kombinationstherapie
 InstanceOf: MII_PR_MTB_Therapieempfehlung_Kombination
 Usage: #example
 Description: "Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination)
 // Erforderliche Angaben
 * status = #active
 * intent = #proposal

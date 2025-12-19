@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-therapieplan",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Therapieplan",
   "title": "MII PR MTB Therapieplan",
   "status": "draft",
@@ -83,20 +83,6 @@
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "CarePlan.activity:extended",
-        "path": "CarePlan.activity",
-        "sliceName": "extended",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "profile",
-              "path": "reference.resolve()"
-            }
-          ],
-          "rules": "open"
-        }
       },
       {
         "id": "CarePlan.activity:extended/Therapieempfehlung",
