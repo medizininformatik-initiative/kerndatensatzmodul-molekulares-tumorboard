@@ -173,6 +173,7 @@
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html
 [MII_VS_MTB_WHO_Grad_Tumor_ZNS]: ValueSet-mii-vs-mtb-who-grad-tumor-zns.html
 [MII_VS_MTB_Zulassungsstatus]: ValueSet-mii-vs-mtb-zulassungsstatus.html
+[mii-exa-mtb-kim-musterperson-bundle]: Bundle-mii-exa-mtb-kim-musterperson-bundle.html
 [mii-exa-mtb-patient]: Patient-mii-exa-mtb-patient.html
 [mii-exa-mtb-therapieempfehlung-dabrafenib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.html
 [mii-exa-mtb-therapieempfehlung-kombinationstherapie]: RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.html
