@@ -14,6 +14,7 @@ Description: "Bestätigte Primärdiagnose C48.2 für Kim Musterperson"
 * code.coding[=].version = "2023"
 * bodySite = $ICDO3#C56.9 "Ovar"
 * stage[ErstdiagnoseZeitpunkt].assessment[+] = Reference(Observation/mii-exa-mtb-kim-tumorausbreitung)
+* stage[OncoTree].type.coding = $SCT#371441004 "Histologic type of proliferative mass"
 * stage[OncoTree].assessment[+] = Reference(Observation/mii-exa-mtb-kim-oncotree)
 
 Instance: mii-exa-mtb-kim-tumorausbreitung
