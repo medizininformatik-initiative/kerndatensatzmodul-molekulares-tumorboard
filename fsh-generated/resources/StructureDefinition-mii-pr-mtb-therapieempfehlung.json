@@ -135,25 +135,6 @@
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.reasonReference:StuetzendeEntitaet",
-        "path": "MedicationRequest.reasonReference",
-        "sliceName": "StuetzendeEntitaet",
-        "short": "Stützende Entität",
-        "definition": "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor",
-              "http://hl7.org/fhir/StructureDefinition/Condition"
-            ]
-          }
-        ],
-        "mustSupport": true
       }
     ]
   }

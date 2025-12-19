@@ -43,11 +43,11 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "value",
-              "path": "code"
+              "type": "pattern",
+              "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "max": "1",
         "mustSupport": true

@@ -32,9 +32,29 @@ Description: "HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC
 * valueRatio MS
 * valueRatio ^short = "HER2/CEP17 Ratio"
 
-// Override component codes for HER2 specific LOINC codes
+// HER2-specific component slices (LOINC Panel 74885-5)
+* component contains
+    target-signals 0..1 MS and
+    reference-signals 0..1 MS and
+    cells-counted 0..1 MS
+
+* component[target-signals] ^short = "ERBB2 Signale pro Zellkern"
 * component[target-signals].code = $LNC#74860-8 "ERBB2 gene copy number/nucleus in Tissue by FISH"
+* component[target-signals].value[x] only Quantity
+* component[target-signals].valueQuantity.unit = "#"
+* component[target-signals].valueQuantity.system = $UCUM
+
+* component[reference-signals] ^short = "CEP17 Signale pro Zellkern"
 * component[reference-signals].code = $LNC#74861-6 "Chromosome 17 copy number/nucleus in Tissue by FISH"
+* component[reference-signals].value[x] only Quantity
+* component[reference-signals].valueQuantity.unit = "#"
+* component[reference-signals].valueQuantity.system = $UCUM
+
+* component[cells-counted] ^short = "Anzahl gezählter Zellkerne"
+* component[cells-counted].code = $LNC#62361-1 "Cells counted [#]"
+* component[cells-counted].value[x] only Quantity
+* component[cells-counted].valueQuantity.unit = "#"
+* component[cells-counted].valueQuantity.system = $UCUM
 
 // Gene studied is ERBB2
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"

@@ -87,6 +87,129 @@
         "id": "Observation.component:biomarker-category.value[x].coding.code",
         "path": "Observation.component.value[x].coding.code",
         "patternCode": "inSituHybridization"
+      },
+      {
+        "id": "Observation.component:target-signals",
+        "path": "Observation.component",
+        "sliceName": "target-signals",
+        "short": "ERBB2 Signale pro Zellkern",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:target-signals.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "74860-8",
+              "system": "http://loinc.org",
+              "display": "ERBB2 gene copy number/nucleus in Tissue by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:target-signals.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:target-signals.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "#"
+      },
+      {
+        "id": "Observation.component:target-signals.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:reference-signals",
+        "path": "Observation.component",
+        "sliceName": "reference-signals",
+        "short": "CEP17 Signale pro Zellkern",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:reference-signals.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "74861-6",
+              "system": "http://loinc.org",
+              "display": "Chromosome 17 copy number/nucleus in Tissue by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:reference-signals.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:reference-signals.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "#"
+      },
+      {
+        "id": "Observation.component:reference-signals.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:cells-counted",
+        "path": "Observation.component",
+        "sliceName": "cells-counted",
+        "short": "Anzahl gezählter Zellkerne",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:cells-counted.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "62361-1",
+              "system": "http://loinc.org",
+              "display": "Cells counted [#]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:cells-counted.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:cells-counted.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "#"
+      },
+      {
+        "id": "Observation.component:cells-counted.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
       }
     ]
   }

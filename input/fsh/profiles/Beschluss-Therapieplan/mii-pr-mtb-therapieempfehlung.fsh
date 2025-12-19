@@ -37,10 +37,8 @@ Description: "Therapieempfehlung für eine medikamentöse Systemische Therapie"
     Observation
 )
 
-* reasonReference contains StuetzendeEntitaet 0..* MS
-* reasonReference[StuetzendeEntitaet] ^short = "Stützende Entität"
-* reasonReference[StuetzendeEntitaet] ^definition = "Verweis auf die Tumorentität, falls Therapie- oder Studieneinschlussempfehlung nicht aufgrund einer molekularen Alteration geschieht"
-* reasonReference[StuetzendeEntitaet] only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
+// NOTE: Entity-based recommendations (without molecular alteration) use the inherited
+// reasonReference[Primaertumor] slice from the parent profile. No separate slice needed.
 
 * extension contains
     MII_EX_MTB_Empfehlung_Prioritaet named Prioritaet 0..1 MS and

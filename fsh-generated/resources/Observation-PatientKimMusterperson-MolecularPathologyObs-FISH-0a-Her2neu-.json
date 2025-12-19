@@ -3,7 +3,7 @@
   "id": "PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization|2026.0.0"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2|2026.0.0"
     ]
   },
   "category": [
@@ -27,9 +27,9 @@
   "code": {
     "coding": [
       {
-        "code": "1365744007",
-        "system": "http://snomed.info/sct",
-        "display": "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
+        "code": "49683-6",
+        "system": "http://loinc.org",
+        "display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
       }
     ]
   },
@@ -53,25 +53,6 @@
     }
   ],
   "component": [
-    {
-      "code": {
-        "coding": [
-          {
-            "system": "http://loinc.org",
-            "code": "48018-6"
-          }
-        ]
-      },
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "code": "HGNC:3430",
-            "system": "http://www.genenames.org/geneId",
-            "display": "ERBB2"
-          }
-        ]
-      }
-    },
     {
       "valueQuantity": {
         "unit": "#",
@@ -118,7 +99,6 @@
       }
     }
   ],
-  "status": "final",
   "method": {
     "coding": [
       {
@@ -128,6 +108,7 @@
       }
     ]
   },
+  "status": "final",
   "subject": {
     "reference": "Patient/PatientKimMusterperson"
   },
