@@ -1,6 +1,3 @@
-// Temporarily commented out due to validation errors (UUID_INVALID, WRONG_DISPLAY, invalid SNOMED codes)
-// TODO: Fix these issues and uncomment
-/*
 RuleSet: BundleResource(type,id)
 * entry[+].fullUrl = "http://example.org/fhir/{type}/{id}"
 * entry[=].request.method = #PUT
@@ -148,16 +145,12 @@ Usage: #example
 * insert BundleResource(ServiceRequest, mii-exa-mtb-study-request-ccne1)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-mirvetuximab)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-trastuzumab-deruxtecan)
-* insert BundleResource(Medication, mii-exa-mtb-medication-adavosertib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-adavosertib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-carboplatin)
 * insert BundleResource(RequestGroup, mii-exa-mtb-request-group-adavosertib-carboplatin)
-* insert BundleResource(Medication, mii-exa-mtb-medication-lunresertib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-lunresertib)
-* insert BundleResource(Medication, mii-exa-mtb-medication-camonsertib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-camonsertib)
 * insert BundleResource(RequestGroup, mii-exa-mtb-request-group-lunresertib-camonsertib)
-* insert BundleResource(Medication, mii-exa-mtb-medication-cobimetinib)
 * insert BundleResource(MedicationRequest, mii-exa-mtb-medication-request-cobimetinib)
 * insert BundleResource(CarePlan, mii-exa-mtb-kim-musterperson-therapieplan)
 * insert BundleResource(Observation, mii-exa-mtb-kim-tumorzellgehalt-aszites)
@@ -174,4 +167,3 @@ Usage: #example
 * insert BundleResource(Organization, MyHospital)
 * insert BundleResource(Organization, MyInsurer)
 * insert BundleResource(Coverage, MyCoverage)
-*/

@@ -40,24 +40,26 @@ Usage: #example
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:3430 "ERBB2"
 
 Instance: PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-
-InstanceOf: MII_PR_MTB_Biomarker_InSituHybridization
+InstanceOf: MII_PR_MTB_INSITUHYBRIDIZATION_HER2
 Usage: #example
 Title: "Example In Situ Hybridization HER2/ERBB2"
 Description: "Example of HER2 in situ hybridization with ratio measurement for patient Kim Musterperson"
 
-* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization)
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory
 * category[mbCategory] = $TBD#biomarker-category
 
-* code.coding[spezifisch] = $SCT#1365744007 "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
+// code and method must be set explicitly even though the profile has fixed values
+* code.coding[spezifisch] = $LNC#49683-6 "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
 * method = $SCT#1303773004 "Fluorescence in situ hybridization technique (qualifier value)"
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * valueRatio.numerator.value = 1.2
 * valueRatio.denominator.value = 1
 * interpretation = $SCT#260385009 "Negative (qualifier value)"
-* component[gene-studied].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
+
+// Component values - codes are fixed in the HER2 profile
 * component[target-signals].valueQuantity.value = 2.4
 * component[target-signals].valueQuantity.unit = "#"
 * component[reference-signals].valueQuantity.value = 2.0

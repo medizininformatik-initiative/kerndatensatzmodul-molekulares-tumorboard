@@ -54,9 +54,7 @@ Usage: #example
 * site = Reference(mii-exa-mtb-study-cldn6-location-10)
 * site = Reference(mii-exa-mtb-study-cldn6-location-11)
 * arm[+].name = "Part 1 - CLDN6 CAR-T: Dose escalation in lymphodepleted patients until the MTD and/or RP2D"
-* arm[=].type = $hl7-research-study-arm-type#experimental
 * arm[+].name = "Part 2 Vaccine-modulated - CLDN6 uRNA-LPX/CLDN6 modRNA-LPX: Dose escalation until the MTD and/or RP2D"
-* arm[=].type = $hl7-research-study-arm-type#experimental
 * objective[+].type = #primary
 * objective[=].name = "Occurrence of treatment-emergent adverse events (TEAEs) including ≥ Grade 3, serious, fatal TEAEs by relationship"
 * objective[+].type = #primary
