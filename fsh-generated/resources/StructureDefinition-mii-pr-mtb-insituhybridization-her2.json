@@ -41,6 +41,36 @@
         "path": "Observation.value[x]",
         "sliceName": "valueRatio",
         "short": "HER2/CEP17 Ratio",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "HER2/CEP17 Verhaeltnis"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "HER2/CEP17 Ratio"
+                }
+              ]
+            }
+          ]
+        },
         "type": [
           {
             "code": "Ratio"
@@ -93,6 +123,36 @@
         "path": "Observation.component",
         "sliceName": "target-signals",
         "short": "ERBB2 Signale pro Zellkern",
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "ERBB2 Signale pro Zellkern"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "ERBB2 signals per cell nucleus"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -134,6 +194,36 @@
         "path": "Observation.component",
         "sliceName": "reference-signals",
         "short": "CEP17 Signale pro Zellkern",
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CEP17 Signale pro Zellkern"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CEP17 signals per cell nucleus"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -175,6 +265,36 @@
         "path": "Observation.component",
         "sliceName": "cells-counted",
         "short": "Anzahl gezählter Zellkerne",
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Anzahl gezaehlter Zellkerne"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Number of counted cell nuclei"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true

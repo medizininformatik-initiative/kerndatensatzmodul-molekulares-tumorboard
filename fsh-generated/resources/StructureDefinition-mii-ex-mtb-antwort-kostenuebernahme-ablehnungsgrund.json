@@ -51,7 +51,67 @@
         "id": "Extension.value[x].coding",
         "path": "Extension.value[x].coding",
         "short": "Grund",
-        "definition": "Grund der Ablehnung des Antrags auf Kostenuebernahme"
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grund"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reason"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Grund der Ablehnung des Antrags auf Kostenuebernahme",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grund der Ablehnung des Antrags auf Kostenuebernahme"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reason for rejection of the cost coverage application"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Extension.value[x].coding.system",

@@ -85,7 +85,67 @@
         "path": "ClinicalImpression.effective[x]",
         "sliceName": "effectivePeriod",
         "short": "Zeitraum der Behandlungsepisode",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zeitraum der Behandlungsepisode"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Treatment Episode Period"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Zeitraum von Einschluss bis Abschluss im Molekularen Tumorboard",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zeitraum von Einschluss bis Abschluss im Molekularen Tumorboard"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Period from inclusion to completion in the Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "type": [
@@ -99,13 +159,133 @@
         "id": "ClinicalImpression.effective[x]:effectivePeriod.start",
         "path": "ClinicalImpression.effective[x].start",
         "short": "Einschlussdatum",
-        "definition": "Einschlussdatum Molekulares Tumorboard"
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Einschlussdatum"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Inclusion Date"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Einschlussdatum Molekulares Tumorboard",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Einschlussdatum Molekulares Tumorboard"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Inclusion date for Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "ClinicalImpression.effective[x]:effectivePeriod.end",
         "path": "ClinicalImpression.effective[x].end",
         "short": "Abschlussdatum",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Abschlussdatum"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Completion Date"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Abschlussdatum Molekulares Tumorboard",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Abschlussdatum Molekulares Tumorboard"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Completion date for Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -129,7 +309,67 @@
         "path": "ClinicalImpression.problem",
         "sliceName": "PrimaertumorDiagnose",
         "short": "Primärtumor Diagnose",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Primärtumor Diagnose"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Primary Tumor Diagnosis"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Verweise auf Diagnose des Primärtumors",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Verweise auf Diagnose des Primärtumors"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reference to primary tumor diagnosis"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -180,7 +420,67 @@
         "id": "ClinicalImpression.investigation:KrankengeschichteFamilie.item",
         "path": "ClinicalImpression.investigation.item",
         "short": "Krankengeschichte Familie",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Krankengeschichte Familie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Family Medical History"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Verweis auf familiäre Krankengeschichte",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Verweis auf familiäre Krankengeschichte"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reference to family medical history"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "type": [
@@ -215,7 +515,67 @@
         "id": "ClinicalImpression.investigation:ECOG.item",
         "path": "ClinicalImpression.investigation.item",
         "short": "ECOG",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "ECOG"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "ECOG"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "ECOG Performance Status",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "ECOG Performance Status"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "ECOG Performance Status"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "type": [
@@ -250,7 +610,67 @@
         "id": "ClinicalImpression.investigation:NgsBericht.item",
         "path": "ClinicalImpression.investigation.item",
         "short": "NGS Report",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "NGS Report"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "NGS Report"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Für Molekulares Tumorboard bereitgestellter Next Generation Sequencing Bericht",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Für Molekulares Tumorboard bereitgestellter Next Generation Sequencing Bericht"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Next Generation Sequencing report provided for the Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "type": [
@@ -285,7 +705,67 @@
         "id": "ClinicalImpression.investigation:MolekularPathologieBefund.item",
         "path": "ClinicalImpression.investigation.item",
         "short": "Molekular Pathologie Befund",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Molekular Pathologie Befund"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Molecular Pathology Report"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Für Molekulares Tumorboard bereitgestellter Molekular Pathologie Befund"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Molecular pathology report provided for the Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "type": [
@@ -320,7 +800,67 @@
         "id": "ClinicalImpression.investigation:Einwilligung.item",
         "path": "ClinicalImpression.investigation.item",
         "short": "Einwilligung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Einwilligung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Consent"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Einwilligung zum Molekularen Tumorboard",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Einwilligung zum Molekularen Tumorboard"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Consent for the Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "type": [
@@ -352,7 +892,67 @@
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "Vorbefund",
         "short": "Vorbefund",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Vorbefund"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Previous Finding"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Relevanter Vorbefund",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relevanter Vorbefund"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relevant previous finding"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "type": [
@@ -371,7 +971,67 @@
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "Vortherapie",
         "short": "Vortherapie",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Vortherapie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Prior Therapy"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Relevante Leitlinien-basierte Vortherapie",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relevante Leitlinien-basierte Vortherapie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relevant guideline-based prior therapy"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "type": [
@@ -392,7 +1052,67 @@
         "path": "ClinicalImpression.supportingInfo.extension",
         "sliceName": "LeitlinieDokumentation",
         "short": "Leitlinie Dokumentation",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Leitlinie Dokumentation"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Guideline Documentation"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Documentation for guideline-compliant implementation of the procedure"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -410,7 +1130,67 @@
         "path": "ClinicalImpression.supportingInfo",
         "sliceName": "Therapieplan",
         "short": "Therapieplan",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapieplan"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapy Plan"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Therapieplan gemäß Beschluss des Molekularen Tumorboards",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapy plan according to the Molecular Tumor Board decision"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [

@@ -35,7 +35,67 @@
         "id": "Observation.code",
         "path": "Observation.code",
         "short": "Code für Immunhistochemische Untersuchung",
-        "definition": "Kodierung für Immunhistochemische Untersuchung. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist über gene-studied "
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Code fuer Immunhistochemische Untersuchung"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Code for immunohistochemical examination"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Kodierung für Immunhistochemische Untersuchung. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist über gene-studied ",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kodierung fuer Immunhistochemische Untersuchung. Nach Moeglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind ist ueber gene-studied anzugeben."
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Coding for immunohistochemical examination. Specific codes should be used whenever possible. If no specific codes are available in SNOMED or LOINC use gene-studied."
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.code.coding",
@@ -57,7 +117,67 @@
         "path": "Observation.code.coding",
         "sliceName": "spezifisch",
         "short": "Immunhistochemische Untersuchung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Immunhistochemische Untersuchung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Immunohistochemical examination"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Spezifischer Code SNOMED-CT- oder LOINC-Code für immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist, ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Spezifischer SNOMED-CT- oder LOINC-Code fuer immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Specific SNOMED-CT or LOINC code for immunohistochemical examination. If no specific code is available in SNOMED or LOINC use the generic code and specify the detected gene under component[gene-studied]."
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true,
@@ -76,7 +196,37 @@
         "id": "Observation.code.coding:generisch",
         "path": "Observation.code.coding",
         "sliceName": "generisch",
-        "short": "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist. ",
+        "short": "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist.",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Generic immunohistochemical examination code. Only to be used if no specific code is available in SNOMED or LOINC."
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "patternCoding": {
@@ -106,7 +256,67 @@
         "path": "Observation.value[x]",
         "sliceName": "valueCodeableConcept",
         "short": "Ergebnis der für immunhistochemische Untersuchung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Ergebnis der immunhistochemischen Untersuchung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Result of the immunohistochemical examination"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Ergebnis der immunhistochemischen Untersuchung.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Ergebnis der immunhistochemischen Untersuchung."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Result of the immunohistochemical examination."
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -125,7 +335,67 @@
         "id": "Observation.specimen",
         "path": "Observation.specimen",
         "short": "Block / Material-Nr. der Probe",
-        "definition": "Block-MAterial-Nr. der Probe. Da jede FHIR-Observation nur eine Referenz auf Specimen haben kann, Die gesamte Probe (z.B. Biopsie, Exzisat) wird von den Einzelschnitten referenziert. ",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Block / Material-Nr. der Probe"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Block / Material ID of the specimen"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Block-MAterial-Nr. der Probe. Da jede FHIR-Observation nur eine Referenz auf Specimen haben kann, Die gesamte Probe (z.B. Biopsie, Exzisat) wird von den Einzelschnitten referenziert.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Block-Material-Nr. der Probe. Da jede FHIR-Observation nur eine Referenz auf Specimen haben kann wird die gesamte Probe - z.B. Biopsie oder Exzisat - von den Einzelschnitten referenziert."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Block material number of the specimen. Since each FHIR Observation can only have one reference to Specimen the entire specimen - e.g. biopsy or excision - is referenced by the individual sections."
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {

@@ -70,7 +70,67 @@
         "id": "Observation.encounter",
         "path": "Observation.encounter",
         "short": "Gesundheitseinrichtungskontakt",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Gesundheitseinrichtungskontakt"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Healthcare Facility Encounter"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Kontakt zur Gesundheitseinrichtung",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kontakt zur Gesundheitseinrichtung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Encounter with the healthcare facility"
+                }
+              ]
+            }
+          ]
+        },
         "type": [
           {
             "code": "Reference",

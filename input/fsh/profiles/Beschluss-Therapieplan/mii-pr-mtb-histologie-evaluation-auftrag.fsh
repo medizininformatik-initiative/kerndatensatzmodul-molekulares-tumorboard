@@ -9,9 +9,13 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * status ^short = "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
 * status ^definition = "Status der Umsetzung der Empfehlung"
 * status ^comment = "
-    draft: Nicht umgesetzt, 
-    active: In Umsetzung, 
+    draft: Nicht umgesetzt,
+    active: In Umsetzung,
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
+* insert Translation(status ^short, de-DE, draft | active | on-hold | revoked | completed | entered-in-error | unknown)
+* insert Translation(status ^definition, de-DE, Status der Umsetzung der Empfehlung)
+* insert Translation(status ^short, en, draft | active | on-hold | revoked | completed | entered-in-error | unknown)
+* insert Translation(status ^definition, en, Status of the recommendation implementation)
 
 * intent = #proposal (exactly)
 
@@ -19,6 +23,10 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * code ^short = "Empfehlung zur histologischen (Re-)Evaluation"
 * code ^definition = "Empfehlung zur histologischen (Re-)Evaluation"
 * code = $SCT#183825009  "Refer for histology (procedure)" (exactly)
+* insert Translation(code ^short, de-DE, Empfehlung zur histologischen Re-Evaluation)
+* insert Translation(code ^definition, de-DE, Empfehlung zur histologischen Re-Evaluation)
+* insert Translation(code ^short, en, Recommendation for histological re-evaluation)
+* insert Translation(code ^definition, en, Recommendation for histological re-evaluation)
 
 * reasonReference ^slicing.discriminator.type = #profile
 * reasonReference ^slicing.discriminator.path = "$this.resolve()"
@@ -29,12 +37,20 @@ Description: "Auftrag zur (erneuten) Histologie-Evaluation"
 * reasonReference contains Histologie 0..1 MS
 * reasonReference[Histologie] ^short = "Histologiebefund"
 * reasonReference[Histologie] ^definition = "Verweis auf Histologiebefund"
+* insert Translation(reasonReference[Histologie] ^short, de-DE, Histologiebefund)
+* insert Translation(reasonReference[Histologie] ^definition, de-DE, Verweis auf Histologiebefund)
+* insert Translation(reasonReference[Histologie] ^short, en, Histology Report)
+* insert Translation(reasonReference[Histologie] ^definition, en, Reference to histology report)
 * reasonReference[Histologie] 0..1 MS
 * reasonReference[Histologie] only Reference(MII_PR_Onko_Befund)
 
 * reasonReference contains Tumorzellgehalt 0..1 MS
 * reasonReference[Tumorzellgehalt] ^short = "Tumorzellgehalt"
 * reasonReference[Tumorzellgehalt] ^definition = "Verweis auf bestimmten Tumorzellgehalt"
+* insert Translation(reasonReference[Tumorzellgehalt] ^short, de-DE, Tumorzellgehalt)
+* insert Translation(reasonReference[Tumorzellgehalt] ^definition, de-DE, Verweis auf bestimmten Tumorzellgehalt)
+* insert Translation(reasonReference[Tumorzellgehalt] ^short, en, Tumor Cell Content)
+* insert Translation(reasonReference[Tumorzellgehalt] ^definition, en, Reference to determined tumor cell content)
 * reasonReference[Tumorzellgehalt] 0..1 MS
 * reasonReference[Tumorzellgehalt] only Reference(MII_PR_MTB_Tumorzellgehalt)
 

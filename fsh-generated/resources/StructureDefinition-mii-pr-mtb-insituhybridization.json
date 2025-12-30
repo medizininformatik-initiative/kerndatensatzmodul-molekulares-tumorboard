@@ -30,7 +30,67 @@
         "id": "Observation.identifier",
         "path": "Observation.identifier",
         "short": "Identifier zur Abgrenzung anderer gleichartiger Untersuchungen",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Identifier zur Abgrenzung anderer gleichartiger Untersuchungen"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Identifier to distinguish from other similar examinations"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Identifier der Untersuchung, damit die Untersuchung auch außerhalb von FHIR eindeutig identifiziert werden kann. Sollte ISH oder vlg. beinhalten, um von anderen Biomarkeruntersuchungen abzugrenzen.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Identifier der Untersuchung damit die Untersuchung auch ausserhalb von FHIR eindeutig identifiziert werden kann. Sollte ISH oder aehnliches beinhalten um von anderen Biomarkeruntersuchungen abzugrenzen."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Identifier of the examination so that the examination can be uniquely identified outside of FHIR. Should include ISH or similar to distinguish from other biomarker examinations."
+                }
+              ]
+            }
+          ]
+        },
         "max": "1",
         "mustSupport": true
       },
@@ -38,7 +98,67 @@
         "id": "Observation.code",
         "path": "Observation.code",
         "short": "Code für In Situ Hybridization Untersuchung",
-        "definition": "Kodierung für In Situ Hybridization. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist der generische Code mit Textbeschreibung zu verwenden."
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Code fuer In Situ Hybridization Untersuchung"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Code for In Situ Hybridization examination"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Kodierung für In Situ Hybridization. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist der generische Code mit Textbeschreibung zu verwenden.",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kodierung fuer In Situ Hybridization. Nach Moeglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind ist der generische Code mit Textbeschreibung zu verwenden."
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Coding for In Situ Hybridization. Specific codes should be used whenever possible. If no specific codes are available in SNOMED or LOINC use the generic code with text description."
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.code.coding",
@@ -60,7 +180,67 @@
         "path": "Observation.code.coding",
         "sliceName": "spezifisch",
         "short": "Spezifischer ISH Code",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Spezifischer ISH Code"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Specific ISH Code"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Spezifischer SNOMED-CT oder LOINC Code für die ISH-Untersuchung. Wenn kein spezifischer Code vorhanden ist, generischen Code verwenden.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Spezifischer SNOMED-CT oder LOINC Code fuer die ISH-Untersuchung. Wenn kein spezifischer Code vorhanden ist generischen Code verwenden."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Specific SNOMED-CT or LOINC code for the ISH examination. If no specific code is available use the generic code."
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -82,7 +262,67 @@
         "path": "Observation.code.coding",
         "sliceName": "generisch",
         "short": "Generischer ISH Code",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Generischer ISH Code"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Generic ISH Code"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Generischer Code für ISH. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Generischer Code fuer ISH. Nur zu benutzen wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Generic code for ISH. Only to be used if no specific code is available in SNOMED or LOINC."
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "patternCoding": {
@@ -124,6 +364,36 @@
         "path": "Observation.value[x]",
         "sliceName": "valueQuantity",
         "short": "Quantitatives Ergebnis (z.B. Signalanzahl)",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Quantitatives Ergebnis - z.B. Signalanzahl"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Quantitative result - e.g. signal count"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -138,6 +408,36 @@
         "path": "Observation.value[x]",
         "sliceName": "valueRatio",
         "short": "Ratio-Ergebnis (z.B. HER2/CEP17)",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Ratio-Ergebnis - z.B. HER2/CEP17"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Ratio result - e.g. HER2/CEP17"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -152,6 +452,36 @@
         "path": "Observation.value[x]",
         "sliceName": "valueCodeableConcept",
         "short": "Kategorisches Ergebnis (z.B. positiv/negativ)",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kategorisches Ergebnis - z.B. positiv/negativ"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Categorical result - e.g. positive/negative"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -165,14 +495,134 @@
         "id": "Observation.interpretation",
         "path": "Observation.interpretation",
         "short": "Interpretation",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Interpretation"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Interpretation"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Interpretation der ISH Signale. Die Interpretation kann auf Vergleich mit Referenzwerten basieren.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Interpretation der ISH Signale. Die Interpretation kann auf Vergleich mit Referenzwerten basieren."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Interpretation of ISH signals. The interpretation can be based on comparison with reference values."
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
         "id": "Observation.method",
         "path": "Observation.method",
         "short": "FISH | CISH | SISH",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "FISH | CISH | SISH"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "FISH | CISH | SISH"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "In Situ Hybridization Methode: Fluoreszenz (FISH), Chromogen (CISH), oder Silber (SISH)",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "In Situ Hybridization Methode: Fluoreszenz - FISH - Chromogen - CISH - oder Silber - SISH"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "In Situ Hybridization Method: Fluorescence - FISH - Chromogen - CISH - or Silver - SISH"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "mustSupport": true,
         "binding": {
@@ -184,7 +634,67 @@
         "id": "Observation.component:gene-studied",
         "path": "Observation.component",
         "sliceName": "gene-studied",
-        "definition": "Das mit der Target-Sonde untersuchte Gen (z.B. ERBB2)"
+        "definition": "Das mit der Target-Sonde untersuchte Gen (z.B. ERBB2)",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Das mit der Target-Sonde untersuchte Gen - z.B. ERBB2"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "The gene studied with the target probe - e.g. ERBB2"
+                }
+              ]
+            }
+          ]
+        },
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Untersuchtes Gen"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Gene studied"
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   }

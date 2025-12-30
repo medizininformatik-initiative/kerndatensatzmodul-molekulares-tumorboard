@@ -18,6 +18,10 @@ Description: "Grad des Tumors nach MSKCC Oncotree Klassifikation"
 * encounter only Reference(MII_PR_Fall_KontaktGesundheitseinrichtung or Encounter)
 * encounter ^short = "Gesundheitseinrichtungskontakt"
 * encounter ^definition = "Kontakt zur Gesundheitseinrichtung"
+* insert Translation(encounter ^short, de-DE, Gesundheitseinrichtungskontakt)
+* insert Translation(encounter ^definition, de-DE, Kontakt zur Gesundheitseinrichtung)
+* insert Translation(encounter ^short, en, Healthcare Facility Encounter)
+* insert Translation(encounter ^definition, en, Encounter with the healthcare facility)
 
 // Grade from OncoTree
 * value[x] 1..1 MS

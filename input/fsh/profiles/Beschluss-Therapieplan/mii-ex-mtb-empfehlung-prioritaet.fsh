@@ -13,3 +13,7 @@ Description: "Priorität der (einzelnen) Empfehlung"
 * value[x] ^short = "Priorität"
 * value[x] ^definition = "Priorität dieser Empfehlung"
 * value[x] ^comment = "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität"
+* insert Translation(value[x] ^short, de-DE, Priorität)
+* insert Translation(value[x] ^definition, de-DE, Priorität dieser Empfehlung)
+* insert Translation(value[x] ^short, en, Priority)
+* insert Translation(value[x] ^definition, en, Priority of this recommendation)

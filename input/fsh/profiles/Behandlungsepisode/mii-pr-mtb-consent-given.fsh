@@ -21,6 +21,10 @@ Description: "Beschreibt, ob und wann der Consent zum Einschluss ins MTB gegeben
 * encounter only Reference(MII_PR_Fall_KontaktGesundheitseinrichtung)
 * encounter ^short = "Gesundheitseinrichtungskontakt"
 * encounter ^definition = "Kontakt zur Gesundheitseinrichtung"
+* insert Translation(encounter ^short, de-DE, Gesundheitseinrichtungskontakt)
+* insert Translation(encounter ^definition, de-DE, Kontakt zur Gesundheitseinrichtung)
+* insert Translation(encounter ^short, en, Healthcare Facility Encounter)
+* insert Translation(encounter ^definition, en, Encounter with the healthcare facility)
 
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
@@ -28,6 +32,10 @@ Description: "Beschreibt, ob und wann der Consent zum Einschluss ins MTB gegeben
 * valueCodeableConcept.coding 1..1 MS
 * valueCodeableConcept.coding ^short = "Dokumentierter Consent"
 * valueCodeableConcept.coding ^definition = "Dokumentation der Zustimmung der Ablehnung eines Consents"
+* insert Translation(valueCodeableConcept.coding ^short, de-DE, Dokumentierter Consent)
+* insert Translation(valueCodeableConcept.coding ^definition, de-DE, Dokumentation der Zustimmung der Ablehnung eines Consents)
+* insert Translation(valueCodeableConcept.coding ^short, en, Documented Consent)
+* insert Translation(valueCodeableConcept.coding ^definition, en, Documentation of consent approval or rejection)
 * valueCodeableConcept.coding.system 1..1 MS
 * valueCodeableConcept.coding.code 1..1 MS
 

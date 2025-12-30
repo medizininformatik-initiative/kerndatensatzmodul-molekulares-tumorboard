@@ -8,7 +8,9 @@ Description: "Immunhistrchemistry report"
 * code.coding[spezifisch] = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL4396-9 //
-* valueCodeableConcept.coding ^short =  "0|1+|2+|3+|Indeterminate"
+* valueCodeableConcept.coding ^short = "0|1+|2+|3+|Indeterminate"
+* insert Translation(valueCodeableConcept.coding ^short, de-DE, 0|1+|2+|3+|Unbestimmt)
+* insert Translation(valueCodeableConcept.coding ^short, en, 0|1+|2+|3+|Indeterminate)
 * component[gene-studied].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
 //* component[protein-studied].valueCodeableConcept = $UNIPROT#P04626 "Receptor tyrosine-protein kinase erbB-2"
 * component[biomarker-category].valueCodeableConcept.coding = #immuneStain // alternative: protein
@@ -31,6 +33,8 @@ Description: "HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC
 // Value is typically a ratio (HER2/CEP17)
 * valueRatio MS
 * valueRatio ^short = "HER2/CEP17 Ratio"
+* insert Translation(valueRatio ^short, de-DE, HER2/CEP17 Verhaeltnis)
+* insert Translation(valueRatio ^short, en, HER2/CEP17 Ratio)
 
 // HER2-specific component slices (LOINC Panel 74885-5)
 * component contains
@@ -39,18 +43,24 @@ Description: "HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC
     cells-counted 0..1 MS
 
 * component[target-signals] ^short = "ERBB2 Signale pro Zellkern"
+* insert Translation(component[target-signals] ^short, de-DE, ERBB2 Signale pro Zellkern)
+* insert Translation(component[target-signals] ^short, en, ERBB2 signals per cell nucleus)
 * component[target-signals].code = $LNC#74860-8 "ERBB2 gene copy number/nucleus in Tissue by FISH"
 * component[target-signals].value[x] only Quantity
 * component[target-signals].valueQuantity.unit = "#"
 * component[target-signals].valueQuantity.system = $UCUM
 
 * component[reference-signals] ^short = "CEP17 Signale pro Zellkern"
+* insert Translation(component[reference-signals] ^short, de-DE, CEP17 Signale pro Zellkern)
+* insert Translation(component[reference-signals] ^short, en, CEP17 signals per cell nucleus)
 * component[reference-signals].code = $LNC#74861-6 "Chromosome 17 copy number/nucleus in Tissue by FISH"
 * component[reference-signals].value[x] only Quantity
 * component[reference-signals].valueQuantity.unit = "#"
 * component[reference-signals].valueQuantity.system = $UCUM
 
 * component[cells-counted] ^short = "Anzahl gezählter Zellkerne"
+* insert Translation(component[cells-counted] ^short, de-DE, Anzahl gezaehlter Zellkerne)
+* insert Translation(component[cells-counted] ^short, en, Number of counted cell nuclei)
 * component[cells-counted].code = $LNC#62361-1 "Cells counted [#]"
 * component[cells-counted].value[x] only Quantity
 * component[cells-counted].valueQuantity.unit = "#"

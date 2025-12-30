@@ -16,6 +16,10 @@ Description: "Beschreibt die Gesamtploidie des Tumors. Die Ploidie ist ein Indik
 * code.coding[NCIT] = $NCIT#C18303 "DNA Ploidy Analysis"
 * code ^short = "Ploidie"
 * code ^definition = "Ploidie der Tumorprobe"
+* insert Translation(code ^short, de-DE, Ploidie)
+* insert Translation(code ^definition, de-DE, Ploidie der Tumorprobe)
+* insert Translation(code ^short, en, Ploidy)
+* insert Translation(code ^definition, en, Ploidy of the tumor specimen)
 * value[x] MS
 * valueQuantity MS
 * interpretation MS

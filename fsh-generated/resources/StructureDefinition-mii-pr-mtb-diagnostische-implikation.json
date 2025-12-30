@@ -54,7 +54,37 @@
         "id": "Observation.component:clinical-significance",
         "path": "Observation.component",
         "sliceName": "clinical-significance",
-        "definition": "Interpretation oder Einschätzung einer oder mehrerer genetischer Varianten."
+        "definition": "Interpretation oder Einschätzung einer oder mehrerer genetischer Varianten.",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Interpretation oder Einschaetzung einer oder mehrerer genetischer Varianten."
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Interpretation or assessment of one or more genetic variants."
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   }
