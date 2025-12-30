@@ -40,4 +40,4 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 * extension contains $fhir-ext-caused-by named causedBy 0..1 MS
 * extension[causedBy] ^short = "Therapieempfehlung"
 * extension[causedBy] ^definition = "Verweis auf die MTB Therapieempfehlung"
-* extension[causedBy].valueReference only Reference(MII_PR_Medikation_MedicationRequest or MII_PR_MTB_Therapieempfehlung or MedicationRequest)
+* extension[causedBy].value[x] only Reference(MII_PR_Medikation_MedicationRequest or MII_PR_MTB_Therapieempfehlung or MedicationRequest)
