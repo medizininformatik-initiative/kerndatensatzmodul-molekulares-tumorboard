@@ -52,7 +52,6 @@
 [mii-exa-mtb-kim-humangenetische-beratung-aszites]: ServiceRequest-mii-exa-mtb-kim-humangenetische-beratung-aszites.html
 [PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-]: Observation-PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-.html
 [MII-EXA-MTB-Follow-Up-ClinicalImpression-1]: ClinicalImpression-MII-EXA-MTB-Follow-Up-ClinicalImpression-1.html
-[MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-genomic-study-analysis.html
 [MII_PR_MTB_Genomic_Study_Device]: StructureDefinition-genomic-study-device.html
 [mii-exa-mtb-kim-oncotree]: Observation-mii-exa-mtb-kim-oncotree.html
 [mii-exa-mtb-kim-tumorausbreitung]: Observation-mii-exa-mtb-kim-tumorausbreitung.html
@@ -110,6 +109,7 @@
 [MII_PR_MTB_DNA_Fusion]: StructureDefinition-mii-pr-mtb-dna-fusion.html
 [MII_PR_MTB_Einfache_Variante]: StructureDefinition-mii-pr-mtb-einfache-variante.html
 [MII_PR_MTB_Genomic_Study]: StructureDefinition-mii-pr-mtb-genomic-study.html
+[MII_PR_MTB_Genomic_Study_Analysis]: StructureDefinition-mii-pr-mtb-genomic-study-analysis.html
 [MII_PR_MTB_Histologie_Evaluation_Auftrag]: StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html
 [MII_PR_MTB_HRD_Score]: StructureDefinition-mii-pr-mtb-hrd-score.html
 [MII_PR_MTB_Humangenetische_Beratung_Auftrag]: StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html
@@ -160,10 +160,10 @@
 [MII_VS_MTB_Microsatellite_Instability]: ValueSet-mii-vs-mtb-msi.html
 [MII_VS_MTB_MMR_Proficiency]: ValueSet-mii-vs-mtb-mmr-proficiency.html
 [MII_VS_MTB_MMR_Expression]: ValueSet-mii-vs-mtb-mmr-expression.html
-[MII_VS_MTB_Immunhistochemistry_Targets]: ValueSet-mii-vs-mtb-immunohistochemistry-targets.html
 [MII_VS_MTB_Molekulare_Biomarker]: ValueSet-mii-vs-mtb-molekulare-biomarker.html
 [MII_VS_MTB_MSI_Method_Type]: ValueSet-mii-vs-mtb-msi-method-type.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Type]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
+[MII_VS_MTB_Immunhistochemistry_Specific_Codes]: ValueSet-mii-vs-mtb-immunohistochemistry-specific-codes.html
 [MII_VS_MTB_ISH_Method]: ValueSet-mii-vs-mtb-ish-method.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html

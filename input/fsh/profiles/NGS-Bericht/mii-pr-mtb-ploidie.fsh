@@ -7,8 +7,8 @@ Description: "Beschreibt die Gesamtploidie des Tumors. Die Ploidie ist ein Indik
 
 * focus MS 
 * focus only Reference(MII_PR_Onko_Diagnose_Primaertumor or MII_PR_MTB_Diagnose_Primaertumor)
-* code.coding ^slicing.discriminator.type = #value
-* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding ^slicing.description = "Slices for code.coding"
 * code.coding ^slicing.ordered = false

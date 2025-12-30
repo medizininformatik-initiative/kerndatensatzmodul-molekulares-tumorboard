@@ -15,6 +15,7 @@ Description: "Immunhistorchemistry report"
 * code.coding ^slicing.rules = #open
 * code.coding contains spezifisch 0..1 MS and generisch 0..1 MS
 * code.coding[spezifisch].system 1..1 MS
+* code.coding[spezifisch] from $mii-vs-mtb-immunohistochemistry-specific-codes (preferred)
 * code.coding[spezifisch] ^short = "Immunhistochemische Untersuchung"
 * code.coding[spezifisch] ^definition = "Spezifischer Code SNOMED-CT- oder LOINC-Code für immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist, ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben."
 

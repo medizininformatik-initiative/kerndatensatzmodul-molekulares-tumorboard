@@ -285,7 +285,7 @@
           "reference": "Procedure/MII-EXA-MTB-GenomicStudyAnalysis-1"
         },
         "name": "Beispiel fuer einen GenomicStudyAnalysis",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {
@@ -513,14 +513,6 @@
         },
         "name": "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/genomic-study-analysis"
-        },
-        "name": "Genomic Study Analysis",
-        "description": "Die Genomic Study Analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
-        "exampleBoolean": false
       },
       {
         "reference": {
@@ -980,6 +972,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-genomic-study-analysis"
+        },
+        "name": "MII PR MTB Genomic Study Analysis",
+        "description": "Die Genomic Study Analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
         },
         "name": "MII PR MTB Histologie-Evaluation Auftrag",
@@ -1380,14 +1380,6 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-immunohistochemistry-targets"
-        },
-        "name": "MII VS Molekulare Biomarker",
-        "description": "ValueSet zum CS Molekulare Biomarker",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/mii-vs-mtb-molekulare-biomarker"
         },
         "name": "MII VS Molekulare Biomarker",
@@ -1408,6 +1400,14 @@
         },
         "name": "MII VS MTB Antrag Kostenuebernahme",
         "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-immunohistochemistry-specific-codes"
+        },
+        "name": "MII VS MTB Immunhistochemistry Specific Codes",
+        "description": "Spezifische LOINC und SNOMED Codes für immunhistochemische Untersuchungen. Diese Codes werden für das Slice 'spezifisch' im Immunohistochemistry Profil verwendet.",
         "exampleBoolean": false
       },
       {
@@ -1589,7 +1589,7 @@
         },
         "name": "MTB-NGS-Bericht Kim Musterperson",
         "description": "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {
@@ -1597,7 +1597,7 @@
         },
         "name": "MTB-NGS-Bericht Kim Musterperson",
         "description": "Diagnostische Prozeduren - MolPatho-Bericht von Kim Musterperson - Immunhistochemie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {
@@ -1605,7 +1605,7 @@
         },
         "name": "MTB-NGS-Bericht Kim Musterperson HLA Status",
         "description": "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben in Beispiel",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {

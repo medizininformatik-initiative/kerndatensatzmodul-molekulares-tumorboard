@@ -26,7 +26,6 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 * subject MS
 
 * performed[x] MS
-* performed[x] only Period
 * performedPeriod ^short = "Durchführungszeitraum"
 * performedPeriod ^definition = "Durchführungszeitraum der Therapie"
 

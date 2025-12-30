@@ -86,6 +86,7 @@ Alias: $mii-cs-mtb-genomicanalysis-devicefunction = https://www.medizininformati
 Alias: $mii-vs-mtb-mmr-proficiency = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency
 Alias: $mii-vs-mtb-mmr-expression = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression
 Alias: $mii-vs-mtb-ish-method = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method
+Alias: $mii-vs-mtb-immunohistochemistry-specific-codes = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-immunohistochemistry-specific-codes
 // Aliases für HL7 Terminologie
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type
