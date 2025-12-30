@@ -14,8 +14,8 @@ Description: "Immunhistorchemistry report"
 * insert Translation(code ^definition, de-DE, Kodierung fuer Immunhistochemische Untersuchung. Nach Moeglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind ist ueber gene-studied anzugeben.)
 * insert Translation(code ^short, en, Code for immunohistochemical examination)
 * insert Translation(code ^definition, en, Coding for immunohistochemical examination. Specific codes should be used whenever possible. If no specific codes are available in SNOMED or LOINC use gene-studied.)
-* code.coding ^slicing.discriminator.type = #value
-* code.coding ^slicing.discriminator.path = "code"
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding contains spezifisch 0..1 MS and generisch 0..1 MS
 * code.coding[spezifisch].system 1..1 MS

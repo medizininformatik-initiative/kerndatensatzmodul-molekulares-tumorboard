@@ -42,6 +42,7 @@ Diese Meldungen werden durch `advisor.json` unterdrückt:
 | **Genomics Reporting** | Extension | HL7 Genomics Reporting Extensions haben bekannte Validierungswarnungen | 🔵 EXTERNAL |
 | **Therapieplan** | Slicing | CarePlan.activity Slicing mit komplexer Struktur | 🟡 MONITOR |
 | **GenomicStudyAnalysis** | Profile Mismatch | Bundle-Validierung kann Profilkette nicht auflösen (siehe unten) | 🔵 EXTERNAL |
+| **Immunohistochemistry** | Slicing | code.coding Slicing mit pattern-Diskriminator und ValueSet (siehe unten) | 🔵 EXTERNAL |
 
 ### Profile Mismatch bei Bundle-Validierung
 
@@ -60,6 +61,21 @@ PROFILE_MISMATCH: Unable to find a profile match for Procedure/mii-exa-mtb-...-g
 **Ursache:** Der FHIR-Validator kann diese mehrstufige Profilkette in Bundle-Kontexten nicht vollständig auflösen, da die Profil-Referenzen über mehrere IG-Pakete hinweg (MTB → MolGen → HL7 Genomics Reporting) verteilt sind.
 
 **Status:** Dies sind Validator-Artefakte und keine tatsächlichen Konformitätsprobleme. Die Profile sind korrekt definiert und die Beispielressourcen konform.
+
+### Immunohistochemistry code.coding Slicing
+
+Das `MII_PR_MTB_Immunohistochemistry`-Profil verwendet ein Slicing auf `code.coding` mit zwei Slices:
+- **spezifisch**: Für spezifische LOINC/SNOMED-Codes (ValueSet-gebunden)
+- **generisch**: Für den generischen IHC-Code `1234806008` (fixiert)
+
+**Fehlermeldung:**
+```
+Slicing cannot be evaluated: Could not match discriminator ($this) for slice spezifisch
+```
+
+**Ursache:** Der FHIR-Validator hat Schwierigkeiten, `#pattern`-Diskriminatoren auf `$this` mit ValueSet-gebundenen Slices zu evaluieren, da das Pattern nicht eindeutig aus dem ValueSet abgeleitet werden kann.
+
+**Status:** Die Profilsemantik ist korrekt. Der Validator kann das Slicing nicht vollständig auswerten, aber die Instanzen sind konform.
 
 ### Terminologie-bezogene Probleme
 
