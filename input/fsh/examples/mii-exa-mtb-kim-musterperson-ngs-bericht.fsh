@@ -26,12 +26,15 @@ Usage: #example
 * extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-1)
 * extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-2)
 * extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-3)
+
 Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-1
 InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Title: "MTB-NGS-Bericht Kim Musterperson"
 Description: "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500"
 Usage: #example
 * insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)
+* status = #completed
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * subject = Reference(Patient/PatientKimMusterperson)
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
 * extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#ngs-mps "Next-Generation (NGS)/Massively parallel sequencing (MPS)" 
@@ -48,9 +51,11 @@ Usage: #example
 Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-2
 InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Title: "MTB-NGS-Bericht Kim Musterperson HLA Status"
-Description: "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben in Beispiel"
+Description: "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Status - keine näheren Angaben in Beispiel"
 Usage: #example
 * insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)
+* status = #completed
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * subject = Reference(Patient/PatientKimMusterperson)
 
 
@@ -60,6 +65,8 @@ Title: "MTB-NGS-Bericht Kim Musterperson"
 Description: "Diagnostische Prozeduren - MolPatho-Bericht von Kim Musterperson - Immunhistochemie"
 Usage: #example
 * insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)
+* status = #completed
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * subject = Reference(Patient/PatientKimMusterperson)
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
 * extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#immunohistochemistry "Immunohistochemistry" 
