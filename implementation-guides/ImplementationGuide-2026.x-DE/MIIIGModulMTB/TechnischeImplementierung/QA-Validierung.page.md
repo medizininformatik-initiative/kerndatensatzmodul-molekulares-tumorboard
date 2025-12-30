@@ -41,6 +41,25 @@ Diese Meldungen werden durch `advisor.json` unterdrückt:
 |--------|-----------|--------------|--------|
 | **Genomics Reporting** | Extension | HL7 Genomics Reporting Extensions haben bekannte Validierungswarnungen | 🔵 EXTERNAL |
 | **Therapieplan** | Slicing | CarePlan.activity Slicing mit komplexer Struktur | 🟡 MONITOR |
+| **GenomicStudyAnalysis** | Profile Mismatch | Bundle-Validierung kann Profilkette nicht auflösen (siehe unten) | 🔵 EXTERNAL |
+
+### Profile Mismatch bei Bundle-Validierung
+
+Bei der Validierung von Bundles mit verschachtelten Profil-Referenzen kann der FHIR-Validator `PROFILE_MISMATCH`-Fehler melden, obwohl die Ressourcen korrekt profiliert sind. Dies tritt insbesondere bei der `GenomicStudyAnalysis`-Ressource auf, die über eine Profilkette referenziert wird:
+
+**Profilkette:**
+- `MII_PR_MTB_NGS_Bericht` → referenziert `MII_PR_MTB_Genomic_Study`
+- `MII_PR_MTB_Genomic_Study` → referenziert `MII_PR_MTB_Genomic_Study_Analysis`
+- `MII_PR_MTB_Genomic_Study_Analysis` → basiert auf `MII_PR_MolGen_GenomicStudyAnalysis`
+
+**Fehlermeldung:**
+```
+PROFILE_MISMATCH: Unable to find a profile match for Procedure/mii-exa-mtb-...-genomic-study-analysis-1
+```
+
+**Ursache:** Der FHIR-Validator kann diese mehrstufige Profilkette in Bundle-Kontexten nicht vollständig auflösen, da die Profil-Referenzen über mehrere IG-Pakete hinweg (MTB → MolGen → HL7 Genomics Reporting) verteilt sind.
+
+**Status:** Dies sind Validator-Artefakte und keine tatsächlichen Konformitätsprobleme. Die Profile sind korrekt definiert und die Beispielressourcen konform.
 
 ### Terminologie-bezogene Probleme
 
