@@ -21,9 +21,10 @@ Title: "24.06.2023 - 12.10.2023 Mirvetuximab soravtansine"
 * insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie)
 * status = #completed
 * statusReason = #regular-completion
+* category = $SCT#367336001 "Chemotherapy (procedure)"
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K // kurativ
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
-* code.coding[ops] = $OPS#8-52 "Andere Chemotherapie"
+* code.coding[ops] = $OPS#8-54 "Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie"
 * code.coding[ops].version = "2023"
 * subject = Reference(Patient/PatientKimMusterperson)
 * performedPeriod.start = "2023-06-24"
