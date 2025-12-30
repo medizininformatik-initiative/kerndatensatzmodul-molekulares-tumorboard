@@ -14,10 +14,8 @@ Description: "Anfrage zum Studieneinschluss"
     completed: Abgeschlossen oder abgebrochen (Patient verstorben)"
 
 * extension contains http://hl7.org/fhir/StructureDefinition/request-statusReason named statusReason 0..1 MS
-* extension[statusReason].value[x] only CodeableConcept
-* extension[statusReason].valueCodeableConcept.coding 1..1 MS
-* extension[statusReason].valueCodeableConcept.coding ^short = "Grund für Ablehnung"
-* extension[statusReason].valueCodeableConcept.coding ^definition = "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)"
+* extension[statusReason] ^short = "Grund für Ablehnung"
+* extension[statusReason] ^definition = "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)"
 
 * intent = #proposal (exactly)
 

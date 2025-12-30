@@ -40,6 +40,8 @@
         "id": "ServiceRequest.extension:statusReason",
         "path": "ServiceRequest.extension",
         "sliceName": "statusReason",
+        "short": "Grund für Ablehnung",
+        "definition": "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)",
         "min": 0,
         "max": "1",
         "type": [
@@ -50,15 +52,6 @@
             ]
           }
         ],
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.extension:statusReason.value[x].coding",
-        "path": "ServiceRequest.extension.value[x].coding",
-        "short": "Grund für Ablehnung",
-        "definition": "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)",
-        "min": 1,
-        "max": "1",
         "mustSupport": true
       },
       {
