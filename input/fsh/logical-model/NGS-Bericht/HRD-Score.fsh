@@ -8,4 +8,3 @@ RuleSet: HRDScoreMapping
 * HRDScore                          ->      "MII_PR_MTB_HRD_Score"
   * Interpretation                  ->      "MII_PR_MTB_HRD_Score.interpretation"
   * Wert                            ->      "MII_PR_MTB_HRD_Score.value"
-  * Metadaten                       ->      ""

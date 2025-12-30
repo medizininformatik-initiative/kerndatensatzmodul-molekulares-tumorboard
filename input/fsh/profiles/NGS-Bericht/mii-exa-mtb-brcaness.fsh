@@ -4,6 +4,7 @@ Usage: #example
 Title: "Beispiel fuer BRCAness-Analyse"
 Description: "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalten eines Tumors in Bezug auf BRCA-ähnliche Eigenschaften darstellt."
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness)
 * status = #final
 
 * category[labCategory].coding.system = $fhir-observation-category

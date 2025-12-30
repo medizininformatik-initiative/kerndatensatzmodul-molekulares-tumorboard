@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-tumorausbreitung",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Tumorausbreitung",
   "title": "MII PR MTB Tumorausbreitung",
   "status": "draft",
@@ -133,7 +133,67 @@
         "id": "Observation.effective[x]",
         "path": "Observation.effective[x]",
         "short": "Zeitpunkt Tumorausbreitung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zeitpunkt Tumorausbreitung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumor Spread Date"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Zeitpunkt der Feststellung der Tumorausbreitung",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zeitpunkt der Feststellung der Tumorausbreitung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Date of tumor spread assessment"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "type": [
           {
@@ -171,23 +231,71 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x].coding.system",
-        "path": "Observation.value[x].coding.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.value[x].coding.code",
-        "path": "Observation.value[x].coding.code",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
         "id": "Observation.value[x].coding:Tumorausbreitung",
         "path": "Observation.value[x].coding",
         "sliceName": "Tumorausbreitung",
         "short": "Tumorausbreitung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumorausbreitung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumor Spread"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Angabe zur Tumorausbreitung",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Angabe zur Tumorausbreitung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Information on tumor spread"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true,
@@ -199,6 +307,7 @@
       {
         "id": "Observation.value[x].coding:Tumorausbreitung.system",
         "path": "Observation.value[x].coding.system",
+        "min": 1,
         "fixedUri": "http://snomed.info/sct"
       }
     ]

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-studieneinschluss-anfrage",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Studieneinschluss_Anfrage",
   "title": "MII PR MTB Studieneinschluss Anfrage",
   "status": "draft",
@@ -40,6 +40,68 @@
         "id": "ServiceRequest.extension:statusReason",
         "path": "ServiceRequest.extension",
         "sliceName": "statusReason",
+        "short": "Grund für Ablehnung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grund für Ablehnung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reason for Rejection"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grund für Ablehnung des Studieneinschlusses - z.B. Tod oder Studie geschlossen"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reason for rejection of study enrollment - e.g. death or study closed"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -50,15 +112,6 @@
             ]
           }
         ],
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.extension:statusReason.value[x].coding",
-        "path": "ServiceRequest.extension.value[x].coding",
-        "short": "Grund für Ablehnung",
-        "definition": "Grund für Ablehnung des Studieneinschlusses (Tod, Studie geschlossen etc)",
-        "min": 1,
-        "max": "1",
         "mustSupport": true
       },
       {
@@ -97,8 +150,68 @@
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
         "definition": "Status des Studieneinschlusses",
-        "comment": "\n    draft: Nicht umgesetzt, \n    active: In Umsetzung, \n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)",
-        "mustSupport": true
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Status des Studieneinschlusses"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Status of study enrollment"
+                }
+              ]
+            }
+          ]
+        },
+        "comment": "\n    draft: Nicht umgesetzt,\n    active: In Umsetzung,\n    completed: Abgeschlossen oder abgebrochen (Patient verstorben)",
+        "mustSupport": true,
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "ServiceRequest.intent",
@@ -125,7 +238,67 @@
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Studieneinschlussempfehlung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Studieneinschlussempfehlung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Study Enrollment Recommendation"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Empfehlung zum Einschluss in eine Studie",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Empfehlung zum Einschluss in eine Studie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Recommendation for enrollment in a study"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "fixedCodeableConcept": {
           "coding": [
@@ -158,8 +331,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "$this"
+              "type": "profile",
+              "path": "resolve()"
             }
           ],
           "rules": "open",

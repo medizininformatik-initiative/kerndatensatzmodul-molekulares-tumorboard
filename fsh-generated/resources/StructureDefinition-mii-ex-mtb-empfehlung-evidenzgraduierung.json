@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-ex-mtb-empfehlung-evidenzgraduierung",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_EX_MTB_Empfehlung_Evidenzgraduierung",
   "title": "MII EX MTB Empfehlung Evidenzgraduierung",
   "status": "draft",
@@ -60,7 +60,67 @@
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "short": "Evidenzgraduierung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidenzgraduierung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidence Grading"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Evidenzgraduierung für Biomarker-basierte Empfehlung",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidenzgraduierung für Biomarker-basierte Empfehlung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidence grading for biomarker-based recommendation"
+                }
+              ]
+            }
+          ]
+        },
         "comment": "Evidenzgraduierung wird durch einen Evidenzgrad und einen optionalen Zusatzverweis angegeben",
         "min": 1,
         "type": [
@@ -92,7 +152,67 @@
         "path": "Extension.value[x].coding",
         "sliceName": "Evidenzgrad",
         "short": "Evidenzgrad",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidenzgrad"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidence Level"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Evidenzgrad der Empfehlung",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidenzgrad der Empfehlung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Evidence level of the recommendation"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -114,7 +234,67 @@
         "path": "Extension.value[x].coding",
         "sliceName": "Zusatzverweis",
         "short": "Zusatzverweis",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zusatzverweis"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Additional Reference"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Zusatzverweis zum Evidenzgrad",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zusatzverweis zum Evidenzgrad"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Additional reference to the evidence level"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-copy-number-variant",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Copy_Number_Variant",
   "title": "MII PR MTB Copy Number Variant",
   "status": "draft",
@@ -40,7 +40,67 @@
         "id": "Observation.identifier",
         "path": "Observation.identifier",
         "short": "VariantenId im Kontext des NGS-Befundes",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "VariantenId im Kontext des NGS-Befundes"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Variant ID in the context of the NGS report"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Eindeutige ID der Variante im Kontext des NGS-Befundes.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Eindeutige ID der Variante im Kontext des NGS-Befundes."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Unique ID of the variant in the context of the NGS report."
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -62,7 +122,67 @@
         "path": "Observation.component",
         "sliceName": "gene-studied",
         "short": "Reported affected genes",
-        "definition": "Reported affected genes"
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Berichtete betroffene Gene"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reported affected genes"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Reported affected genes",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Berichtete betroffene Gene"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reported affected genes"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:gene-studied.code",
@@ -78,14 +198,104 @@
         "id": "Observation.component:chromosome-identifier",
         "path": "Observation.component",
         "sliceName": "chromosome-identifier",
-        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY)."
+        "definition": "Chromosome auf dem sich die Variante befindet (chr1 - chr22, chrX, chrY).",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Chromosom auf dem sich die Variante befindet - chr1 - chr22 - chrX - chrY"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Chromosome on which the variant is located - chr1 - chr22 - chrX - chrY"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:exact-start-end",
         "path": "Observation.component",
         "sliceName": "exact-start-end",
         "short": "Positionsbereich",
-        "definition": "Positionsbereich der genetischen Variante."
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Positionsbereich"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Position range"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Positionsbereich der genetischen Variante.",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Positionsbereich der genetischen Variante."
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Position range of the genetic variant."
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:exact-start-end.code",
@@ -102,7 +312,67 @@
         "path": "Observation.component",
         "sliceName": "copy-number",
         "short": "Total Copy Number",
-        "definition": "Total Copy Number"
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Gesamtkopienzahl"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Total Copy Number"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Total Copy Number",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Gesamtkopienzahl"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Total Copy Number"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:copy-number.code",
@@ -141,7 +411,67 @@
         "path": "Observation.component",
         "sliceName": "relative-copy-number",
         "short": "Relative Copy Number",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relative Kopienzahl"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relative Copy Number"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Relative Copy Number",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relative Kopienzahl"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Relative Copy Number"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -191,7 +521,67 @@
         "path": "Observation.component",
         "sliceName": "cna",
         "short": "CNA",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CNA"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CNA"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Copy Number Allel A",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kopienzahl Allel A"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Copy Number Allele A"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -241,7 +631,67 @@
         "path": "Observation.component",
         "sliceName": "cnb",
         "short": "CNB",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CNB"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CNB"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Copy Number Allel B",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kopienzahl Allel B"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Copy Number Allele B"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -291,7 +741,67 @@
         "path": "Observation.component",
         "sliceName": "reported-focality",
         "short": "Reported focality",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Berichtete Fokalitaet"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reported focality"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Reported focality",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Berichtete Fokalitaet"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reported focality"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -341,7 +851,67 @@
         "path": "Observation.component",
         "sliceName": "cnv-type",
         "short": "CNV Type",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CNV-Typ"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "CNV Type"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Copy Number Variant Type",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kopienzahlvarianten-Typ"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Copy Number Variant Type"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -390,7 +960,67 @@
         "path": "Observation.component",
         "sliceName": "copy-number-neutral-loh",
         "short": "Copy number neutral LoH",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kopienzahlneutraler LoH"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Copy number neutral LoH"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Copy number neutral Loss of heterozygosity",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Kopienzahlneutraler Verlust der Heterozygotie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Copy number neutral Loss of heterozygosity"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true

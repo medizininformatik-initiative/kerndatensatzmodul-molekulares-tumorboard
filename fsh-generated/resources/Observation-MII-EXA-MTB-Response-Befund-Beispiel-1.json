@@ -3,7 +3,7 @@
   "id": "MII-EXA-MTB-Response-Befund-Beispiel-1",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund|2026.0.0"
     ]
   },
   "code": {
@@ -23,7 +23,9 @@
   "valueCodeableConcept": {
     "coding": [
       {
-        "code": "PP"
+        "code": "PD",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung",
+        "display": "Progressive Disease"
       }
     ]
   },
@@ -37,7 +39,9 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "K"
+            "code": "K",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-primaertumor",
+            "display": "Kein Tumor nachweisbar"
           }
         ]
       },
@@ -46,8 +50,7 @@
           {
             "system": "http://snomed.info/sct",
             "code": "445200009",
-            "display": "Status of residual neoplasm (observable entity)",
-            "version": "1"
+            "display": "Status of residual neoplasm (observable entity)"
           }
         ]
       }
@@ -61,7 +64,9 @@
   "method": {
     "coding": [
       {
-        "code": "RECIST"
+        "code": "RECIST",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode",
+        "display": "RECIST"
       }
     ]
   }

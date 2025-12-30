@@ -13,7 +13,15 @@ Description: "Immunhistorchemistry report"
 * component[phosphorylation-localization].code 1..1 MS
 * component[phosphorylation-localization].code ^short = "Phosphorylation localization"
 * component[phosphorylation-localization].code ^definition = "Phosphorylation localization according to UniProt"
+* insert Translation(component[phosphorylation-localization].code ^short, de-DE, Phosphorylierungslokalisation)
+* insert Translation(component[phosphorylation-localization].code ^definition, de-DE, Phosphorylierungslokalisation gemaess UniProt)
+* insert Translation(component[phosphorylation-localization].code ^short, en, Phosphorylation localization)
+* insert Translation(component[phosphorylation-localization].code ^definition, en, Phosphorylation localization according to UniProt)
 * component[phosphorylation-localization].valueCodeableConcept 1..1 MS
 * component[phosphorylation-localization].valueCodeableConcept ^short = "Phosphorylation localization"
 * component[phosphorylation-localization].valueCodeableConcept ^definition = "Phosphorylation localization according to UniProt"
+* insert Translation(component[phosphorylation-localization].valueCodeableConcept ^short, de-DE, Phosphorylierungslokalisation)
+* insert Translation(component[phosphorylation-localization].valueCodeableConcept ^definition, de-DE, Phosphorylierungslokalisation gemaess UniProt)
+* insert Translation(component[phosphorylation-localization].valueCodeableConcept ^short, en, Phosphorylation localization)
+* insert Translation(component[phosphorylation-localization].valueCodeableConcept ^definition, en, Phosphorylation localization according to UniProt)
 * component[protein-isoform] 0..1 MS

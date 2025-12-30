@@ -9,6 +9,10 @@ Description: "Immunhistorchemistry report"
 * specimen MS
 * specimen ^definition = "Probe"
 * specimen ^short = "Probe"
+* insert Translation(specimen ^short, de-DE, Probe)
+* insert Translation(specimen ^definition, de-DE, Probe)
+* insert Translation(specimen ^short, en, Specimen)
+* insert Translation(specimen ^definition, en, Specimen)
 // Eingangs/Journal-Nr -> DiagnosticReport(Identifier) kein Teil von Observationm
 // Block-/Material Nr -> Wie mache ich das am Besten?
 * code 1..1 MS

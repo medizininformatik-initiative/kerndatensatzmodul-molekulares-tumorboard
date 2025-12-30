@@ -5,7 +5,7 @@ Title: "MTB-Behandlungsepisode Kim Musterperson"
 Description: "Molekulares Tumorboard-Behandlungsepisode von Kim Musterperson ab 01.03.2022"
 Usage: #example
 
-* meta.profile[0] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode)
 
 * status = #completed
 
@@ -108,6 +108,7 @@ InstanceOf: MII_PR_MTB_Consent_Given
 Title: "Einwilligung zur MTB-Besprechung Kim Musterperson"
 Description: "Einwilligung von Kim Musterperson zur Besprechung im Molekularen Tumorboard vom 02.01.2023"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given)
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = 2023-01-02
 * valueCodeableConcept = $SCT#373066001 "Yes (qualifier value)"

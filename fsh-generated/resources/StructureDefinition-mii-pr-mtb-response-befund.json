@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-response-befund",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Response_Befund",
   "title": "MII PR MTB Response Befund",
   "status": "draft",
@@ -35,7 +35,67 @@
         "id": "Observation.partOf",
         "path": "Observation.partOf",
         "short": "Systemische Therapie",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Systemische Therapie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Systemic Therapy"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Daszugehoerige, uebergeordnete Systemische Therapie",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Dazugehoerige uebergeordnete Systemische Therapie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Associated parent systemic therapy"
+                }
+              ]
+            }
+          ]
+        },
         "type": [
           {
             "code": "Reference",
@@ -70,7 +130,67 @@
         "path": "Observation.effective[x]",
         "sliceName": "effectiveDateTime",
         "short": "Zeitpunkt",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zeitpunkt"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Time Point"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Zeitpunkt des Response Befundes",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Zeitpunkt des Response Befundes"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Time point of the response assessment"
+                }
+              ]
+            }
+          ]
+        },
         "type": [
           {
             "code": "dateTime"
@@ -107,6 +227,36 @@
         "path": "Observation.value[x].coding",
         "sliceName": "oBDS",
         "short": "Response Beurteilung nach oBDS-Kriterien",
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Response Beurteilung nach oBDS-Kriterien"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Response assessment according to oBDS criteria"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -130,6 +280,36 @@
         "path": "Observation.value[x].coding",
         "sliceName": "MTB",
         "short": "Response Beurteilung nach Recist oder Rano iM Rahmen des MTB",
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Response Beurteilung nach Recist oder Rano im Rahmen des MTB"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Response assessment according to RECIST or RANO within the MTB"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -152,7 +332,67 @@
         "id": "Observation.method",
         "path": "Observation.method",
         "short": "Beurteilungsmethode",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Beurteilungsmethode"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Assessment Method"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Beurteilungsmethode RECIST oder RANO",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Beurteilungsmethode RECIST oder RANO"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Assessment method RECIST or RANO"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "mustSupport": true,
         "binding": {

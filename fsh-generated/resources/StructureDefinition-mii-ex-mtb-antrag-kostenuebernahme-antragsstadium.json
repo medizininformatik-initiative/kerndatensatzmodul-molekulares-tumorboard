@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-ex-mtb-antrag-kostenuebernahme-antragsstadium",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium",
   "title": "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
   "status": "draft",
@@ -63,7 +63,67 @@
         "id": "Extension.value[x].coding",
         "path": "Extension.value[x].coding",
         "short": "Antragsstadium",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Antragsstadium"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Application Stage"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Stadium des Antrags auf Kostenuebernahme",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Stadium des Antrags auf Kostenuebernahme"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Stage of the cost coverage application"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true

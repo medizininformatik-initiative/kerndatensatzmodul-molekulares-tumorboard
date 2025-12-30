@@ -2,6 +2,7 @@ Instance: MII-EXA-MTB-Follow-Up-ClinicalImpression-1
 InstanceOf: MII_PR_MTB_Follow_Up_ClinicalImpression
 Usage: #example
 Title: "Follow-Up Prozess zur Überprüfung der durchgeführten Therapien & Kostenübernahmen"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression)
 * status = #completed
 * code.coding = $SCT#390906007 "Follow-up encounter (procedure)"
 * effectiveDateTime = "2023-10-22"
@@ -17,10 +18,14 @@ Instance: MII-EXA-MTB-Systemische-Therapie-1
 InstanceOf: MII_PR_MTB_Systemische_Therapie
 Usage: #example
 Title: "24.06.2023 - 12.10.2023 Mirvetuximab soravtansine"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie)
 * status = #completed
 * statusReason = #regular-completion
+* category = $SCT#367336001 "Chemotherapy (procedure)"
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K // kurativ
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
+* code.coding[ops] = $OPS#8-54 "Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie"
+* code.coding[ops].version = "2023"
 * subject = Reference(Patient/PatientKimMusterperson)
 * performedPeriod.start = "2023-06-24"
 * performedPeriod.end = "2023-10-12"
@@ -30,6 +35,7 @@ Instance: MII-EXA-MTB-Systemische-Therapie-Medication-1
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement)
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
@@ -50,6 +56,7 @@ Instance: MII-EXA-MTB-Systemische-Therapie-Medication-2
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "16.07.2023 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement)
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf[systemischeTherapie] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
@@ -71,6 +78,7 @@ Instance: MII-EXA-MTB-Systemische-Therapie-Medication-3
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement)
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
@@ -91,14 +99,15 @@ Instance: MII-EXA-MTB-Response-Befund-1
 InstanceOf: MII_PR_MTB_Response_Befund
 Usage: #example
 Title: "20.08.2023 CT T/A"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund)
 * status = #final
-* code.coding.code = #396432002
+* code = $SCT#396432002 "Status of regression of tumor (observable entity)"
 * method = $mii-cs-mtb-response-befund-beurteilungsmethode#RECIST "RECIST"
 * effectiveDateTime = "2023-08-20"
 * subject = Reference(Patient/PatientKimMusterperson)
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
-* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1) 
-* valueCodeableConcept.coding.code = #CR
+* partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
+* valueCodeableConcept.coding = $mii-cs-mtb-response-befund-beurteilung#CR "Complete Response"
 * component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
 * component[Lymphknoten_Verlauf].valueCodeableConcept.coding = $mii-cs-onko-verlauf-lymphknoten#K "kein Lymphknotenbefall nachweisbar"
 
@@ -107,6 +116,7 @@ Instance: MII-EXA-MTB-Systemische-Therapie-Medication-4
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement)
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
@@ -127,6 +137,7 @@ Instance: MII-EXA-MTB-Systemische-Therapie-Medication-5
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "20.09.2023 Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement)
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
@@ -147,6 +158,7 @@ Instance: MII-EXA-MTB-Systemische-Therapie-Medication-6
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "12.10.2023 Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement)
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed
@@ -167,14 +179,15 @@ Instance: MII-EXA-MTB-Response-Befund-2
 InstanceOf: MII_PR_MTB_Response_Befund
 Usage: #example
 Title: "22.10.2023 CT T/A"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund)
 * status = #final
-* code.coding.code = #396432002
+* code = $SCT#396432002 "Status of regression of tumor (observable entity)"
 * method = $mii-cs-mtb-response-befund-beurteilungsmethode#RECIST "RECIST"
 * effectiveDateTime = "2023-10-22"
 * subject = Reference(Patient/PatientKimMusterperson)
 * focus = Reference(Condition/PatientKimMusterperson-PrimaryDiagnosis-2)
 * partOf = Reference(MII-EXA-MTB-Systemische-Therapie-1)
-* valueCodeableConcept.coding.code = #T "Teilremission (partial remission, PR)"
+* valueCodeableConcept.coding = $mii-cs-mtb-response-befund-beurteilung#PR "Partial Response"
 * component[Lymphknoten_Verlauf].code.coding = $SCT#399656008 "Presence of metastatic neoplasm in regional lymph node (observable entity)"
 * component[Lymphknoten_Verlauf].valueCodeableConcept.coding = $mii-cs-onko-verlauf-lymphknoten#K "kein Lymphknotenbefall nachweisbar"
 
@@ -184,6 +197,7 @@ Instance: MII-EXA-MTB-Antrag-Kostenuebernahme-1
 InstanceOf: MII_PR_MTB_Antrag_Kostenuebernahme
 Usage: #example
 Title: "10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme)
 * type = #institutional
 * use = #claim
 * patient = Reference(Patient/PatientKimMusterperson)
@@ -203,6 +217,7 @@ Instance: MII-EXA-MTB-Antwort-Kostenuebernahme-1
 InstanceOf: MII_PR_MTB_Antwort_Kostenuebernahme
 Usage: #example
 Title: "01.05.2023 Krankenkassenantrag Mirvetuximab soravtansine genehmigt"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme)
 * type = #institutional
 * use = #claim
 * patient = Reference(Patient/PatientKimMusterperson)

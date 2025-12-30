@@ -1,79 +1,12 @@
 {
     "resourceType": "Observation",
-    "id": "PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu",
+    "id": "PatientKimMusterperson-ISH-Her2neu-Example",
     "meta": {
         "profile": [
             "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization"
         ]
     },
-    "code": {
-        "coding": [
-            {
-                "code": "1365744007",
-                "system": "http://snomed.info/sct",
-                "display": "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
-            }
-        ]
-    },
-    "valueRatio": {
-        "numerator": {
-            "value": 2.5
-        },
-        "denominator": {
-            "value": 1
-        }
-    },
-    "interpretation": {
-        "coding": [
-            {
-                "code": "12645001",
-                "system": "http://snomed.info/sct",
-                "display": "Gene amplification (finding)"
-            }
-        ]
-    },
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "code": "48018-6",
-                        "system": "http://loinc.org",
-                        "display": "Gene studied [ID]"
-                    }
-                ]
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "code": "HGNC:3430",
-                        "system": "http://www.genenames.org/geneId",
-                        "display": "ERBB2"
-                    }
-                ]
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "code": "48018-6",
-                        "system": "http://loinc.org",
-                        "display": "Gene studied [ID]"
-                    }
-                ]
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "code": "HGNC:CEN17",
-                        "system": "http://www.genenames.org/geneId",
-                        "display": "centromere chromosome 17"
-                    }
-                ]
-            }
-        }
-    ],
+    "status": "final",
     "category": [
         {
             "coding": [
@@ -92,11 +25,117 @@
             ]
         }
     ],
-    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "1365744007",
+                "display": "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
+            }
+        ]
+    },
+    "method": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "1303773004",
+                "display": "Fluorescence in situ hybridization technique (qualifier value)"
+            }
+        ]
+    },
     "subject": {
         "reference": "Patient/PatientKimMusterperson"
     },
     "specimen": {
         "reference": "Specimen/PatientKimMusterperson-Specimen-2"
-    }
+    },
+    "valueRatio": {
+        "numerator": {
+            "value": 2.5
+        },
+        "denominator": {
+            "value": 1
+        }
+    },
+    "interpretation": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "12645001",
+                    "display": "Gene amplification (finding)"
+                }
+            ]
+        }
+    ],
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "48018-6",
+                        "display": "Gene studied [ID]"
+                    }
+                ]
+            },
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://www.genenames.org/geneId",
+                        "code": "HGNC:3430",
+                        "display": "ERBB2"
+                    }
+                ]
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "74860-8",
+                        "display": "ERBB2 gene copy number/nucleus in Tissue by FISH"
+                    }
+                ]
+            },
+            "valueQuantity": {
+                "value": 5.0,
+                "unit": "#",
+                "system": "http://unitsofmeasure.org"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "74861-6",
+                        "display": "Chromosome 17 copy number/nucleus in Tissue by FISH"
+                    }
+                ]
+            },
+            "valueQuantity": {
+                "value": 2.0,
+                "unit": "#",
+                "system": "http://unitsofmeasure.org"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "62361-1",
+                        "display": "Cells counted [#]"
+                    }
+                ]
+            },
+            "valueQuantity": {
+                "value": 50,
+                "unit": "#",
+                "system": "http://unitsofmeasure.org"
+            }
+        }
+    ]
 }

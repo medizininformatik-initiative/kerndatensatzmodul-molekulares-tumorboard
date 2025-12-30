@@ -3,7 +3,17 @@
   "id": "mii-exa-mtb-therapieempfehlung-trametinib",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.0"
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "L01EE01",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "display": "Trametinib",
+        "version": "2025"
+      }
     ]
   },
   "reasonReference": [
@@ -11,35 +21,10 @@
       "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
     }
   ],
-  "dosageInstruction": [
-    {
-      "timing": {
-        "repeat": {
-          "when": [
-            "MORN"
-          ],
-          "frequency": 1
-        }
-      },
-      "doseAndRate": [
-        {
-          "doseQuantity": {
-            "value": 1,
-            "system": "http://unitsofmeasure.org",
-            "code": "{Tablet}",
-            "unit": "Tablet"
-          }
-        }
-      ]
-    }
-  ],
   "status": "active",
   "intent": "option",
   "authoredOn": "2024-01-01",
   "subject": {
     "reference": "Patient/mii-exa-mtb-patient"
-  },
-  "medicationReference": {
-    "reference": "Medication/mii-exa-mtb-medikation-trametinib"
   }
 }

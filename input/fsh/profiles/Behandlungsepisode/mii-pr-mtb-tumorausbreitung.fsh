@@ -41,14 +41,16 @@ Description: "Angabe zur Tumorausbreitung"
 * effective[x] only dateTime
 * effectiveDateTime ^short = "Zeitpunkt Tumorausbreitung"
 * effectiveDateTime ^definition = "Zeitpunkt der Feststellung der Tumorausbreitung"
+* insert Translation(effectiveDateTime ^short, de-DE, Zeitpunkt Tumorausbreitung)
+* insert Translation(effectiveDateTime ^definition, de-DE, Zeitpunkt der Feststellung der Tumorausbreitung)
+* insert Translation(effectiveDateTime ^short, en, Tumor Spread Date)
+* insert Translation(effectiveDateTime ^definition, en, Date of tumor spread assessment)
 
 // Tumor stage (spreading)
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
 
 * valueCodeableConcept.coding 1..* MS
-* valueCodeableConcept.coding.system 1..1 MS
-* valueCodeableConcept.coding.code 1..1 MS
 
 * valueCodeableConcept.coding ^slicing.discriminator.type = #value
 * valueCodeableConcept.coding ^slicing.discriminator.path = "system"
@@ -59,5 +61,9 @@ Description: "Angabe zur Tumorausbreitung"
 * valueCodeableConcept.coding contains Tumorausbreitung 1..1 MS
 * valueCodeableConcept.coding[Tumorausbreitung] ^short = "Tumorausbreitung"
 * valueCodeableConcept.coding[Tumorausbreitung] ^definition = "Angabe zur Tumorausbreitung"
+* insert Translation(valueCodeableConcept.coding[Tumorausbreitung] ^short, de-DE, Tumorausbreitung)
+* insert Translation(valueCodeableConcept.coding[Tumorausbreitung] ^definition, de-DE, Angabe zur Tumorausbreitung)
+* insert Translation(valueCodeableConcept.coding[Tumorausbreitung] ^short, en, Tumor Spread)
+* insert Translation(valueCodeableConcept.coding[Tumorausbreitung] ^definition, en, Information on tumor spread)
 * valueCodeableConcept.coding[Tumorausbreitung].system = $SCT (exactly)
 * valueCodeableConcept.coding[Tumorausbreitung] from MII_VS_MTB_Tumorausbreitung (required)

@@ -16,7 +16,7 @@
     }
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Systemische_Therapie_Medication_Statement",
   "title": "MII PR MTB Systemtherapie Medication Statement",
   "status": "draft",
@@ -49,7 +49,67 @@
         "id": "MedicationStatement.dosage.doseAndRate.type",
         "path": "MedicationStatement.dosage.doseAndRate.type",
         "short": "Dosisdichte",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Dosisdichte"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Dose Intensity"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Die Dosisdichte gibt an ob, in welchem Ausmaß eine Dosisreduktion vorliegt.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Die Dosisdichte gibt an ob und in welchem Ausmass eine Dosisreduktion vorliegt."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "The dose intensity indicates whether and to what extent a dose reduction is present."
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {

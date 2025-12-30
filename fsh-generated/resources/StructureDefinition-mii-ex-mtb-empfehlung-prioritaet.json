@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-ex-mtb-empfehlung-prioritaet",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_EX_MTB_Empfehlung_Prioritaet",
   "title": "MII EX MTB Empfehlung Priorität",
   "status": "draft",
@@ -70,7 +70,67 @@
           "rules": "open"
         },
         "short": "Priorität",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Priorität"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Priority"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Priorität dieser Empfehlung",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Priorität dieser Empfehlung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Priority of this recommendation"
+                }
+              ]
+            }
+          ]
+        },
         "comment": "Wert 1 entspricht der höchsten Priorität, alle weiteren eine jeweils niedrigere Priorität",
         "min": 1,
         "type": [

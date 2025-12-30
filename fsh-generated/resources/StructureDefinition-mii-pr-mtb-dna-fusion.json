@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-dna-fusion",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_DNA_Fusion",
   "title": "MII PR MTB DNA Fusion",
   "status": "draft",
@@ -40,7 +40,67 @@
         "id": "Observation.identifier",
         "path": "Observation.identifier",
         "short": "VariantenId im Kontext des NGS-Befundes",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "VariantenId im Kontext des NGS-Befundes"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Variant ID in the context of the NGS report"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Eindeutige ID der Variante im Kontext des NGS-Befundes.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Eindeutige ID der Variante im Kontext des NGS-Befundes."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Unique ID of the variant in the context of the NGS report."
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -66,7 +126,37 @@
         "id": "Observation.component:allelic-read-depth",
         "path": "Observation.component",
         "sliceName": "allelic-read-depth",
-        "short": "Number reported reads"
+        "short": "Number reported reads",
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Anzahl berichteter Lesevorgaenge"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Number reported reads"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:allelic-read-depth.code",
@@ -83,6 +173,36 @@
         "path": "Observation.component",
         "sliceName": "five-prime-chromosome",
         "short": "5' Domain - Chromosom",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "5' Domaene - Chromosom"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "5' Domain - Chromosome"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -131,6 +251,36 @@
         "path": "Observation.component",
         "sliceName": "three-prime-chromosome",
         "short": "3' Domain - Chromosom",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "3' Domaene - Chromosom"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "3' Domain - Chromosome"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -180,6 +330,36 @@
         "path": "Observation.component",
         "sliceName": "five-prime-position",
         "short": "5' Domain - Position",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "5' Domaene - Position"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "5' Domain - Position"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -229,6 +409,36 @@
         "path": "Observation.component",
         "sliceName": "three-prime-position",
         "short": "3' Domain - Position",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "3' Domaene - Position"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "3' Domain - Position"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -251,6 +461,36 @@
         "path": "Observation.component",
         "sliceName": "five-prime-gene",
         "short": "5' Domain - Gen",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "5' Domaene - Gen"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "5' Domain - Gene"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -273,6 +513,36 @@
         "path": "Observation.component",
         "sliceName": "three-prime-gene",
         "short": "3' Domain - Gen",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "3' Domaene - Gen"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "3' Domain - Gene"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "mustSupport": true

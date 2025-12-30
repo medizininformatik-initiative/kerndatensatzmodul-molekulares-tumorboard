@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-ex-mtb-ngs-bericht-genomic-study",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-genomic-study",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_EX_MTB_NGS_Bericht_Genomic_Study",
   "title": "MII EX MTB NGS Bericht Metadaten",
   "status": "draft",
@@ -52,7 +52,67 @@
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "short": "Metadaten des NGS-Berichts",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Metadaten des NGS-Berichts"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Metadata of the NGS report"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Genomic-Study mit Metadaten als Genomic-Study-Analysis des NGS-Berichts",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Genomic-Study mit Metadaten als Genomic-Study-Analysis des NGS-Berichts"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Genomic Study with metadata as Genomic Study Analysis of the NGS report"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "type": [
           {

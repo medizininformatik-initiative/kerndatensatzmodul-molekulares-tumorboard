@@ -2,6 +2,8 @@ Instance: MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1
 InstanceOf: MII_PR_MTB_Systemische_Therapie_Medication_Statement
 Usage: #example
 Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement)
 * basedOn = Reference(MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab)
 * partOf[systemischeTherapie] = Reference(MII-EXA-MTB-Systemische-Therapie-1)
 * status = #completed

@@ -3,7 +3,7 @@
   "id": "MII-EXA-MTB-Systemtherapie-Beispiel-1",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie|2026.0.0"
     ]
   },
   "statusReason": {
@@ -42,6 +42,12 @@
       {
         "code": "CH",
         "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ"
+      },
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/ops",
+        "code": "8-54",
+        "display": "Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie",
+        "version": "2023"
       }
     ]
   },
@@ -55,6 +61,15 @@
     }
   ],
   "status": "completed",
+  "category": {
+    "coding": [
+      {
+        "code": "367336001",
+        "system": "http://snomed.info/sct",
+        "display": "Chemotherapy (procedure)"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/Example"
   }

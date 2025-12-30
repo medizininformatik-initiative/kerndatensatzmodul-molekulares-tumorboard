@@ -4,6 +4,7 @@ InstanceOf: MII_PR_MTB_NGS_Bericht
 Title: "MTB-NGS-Bericht Kim Musterperson"
 Description: "Ergebnisse des NGS-Bericht von Kim Musterperson"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht)
 * status = #final
 * category = $ngs-category#GE "Genetics"
 * code = $LNC#51969-4 "Genetic analysis report"
@@ -19,16 +20,21 @@ InstanceOf: MII_PR_MTB_Genomic_Study
 Title: "MTB-NGS-Bericht Kim Musterperson"
 Description: "Details zur Durchführung NGS-Bericht von Kim Musterperson"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study)
 * status = #completed
 * subject = Reference(Patient/PatientKimMusterperson)
 * extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-1)
 * extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-2)
 * extension[genomic-study-analysis][+].valueReference =  Reference(mii-exa-mtb-kim-musterperson-genomic-study-analysis-3)
+
 Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-1
 InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Title: "MTB-NGS-Bericht Kim Musterperson"
 Description: "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)
+* status = #completed
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * subject = Reference(Patient/PatientKimMusterperson)
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
 * extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#ngs-mps "Next-Generation (NGS)/Massively parallel sequencing (MPS)" 
@@ -45,8 +51,11 @@ Usage: #example
 Instance: mii-exa-mtb-kim-musterperson-genomic-study-analysis-2
 InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Title: "MTB-NGS-Bericht Kim Musterperson HLA Status"
-Description: "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben in Beispiel"
+Description: "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Status - keine näheren Angaben in Beispiel"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)
+* status = #completed
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * subject = Reference(Patient/PatientKimMusterperson)
 
 
@@ -55,6 +64,9 @@ InstanceOf: MII_PR_MTB_Genomic_Study_Analysis
 Title: "MTB-NGS-Bericht Kim Musterperson"
 Description: "Diagnostische Prozeduren - MolPatho-Bericht von Kim Musterperson - Immunhistochemie"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)
+* status = #completed
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * subject = Reference(Patient/PatientKimMusterperson)
 * extension[+].url =  "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
 * extension[=].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs#immunohistochemistry "Immunohistochemistry" 
@@ -67,6 +79,7 @@ InstanceOf: MII_PR_MTB_Einfache_Variante
 Title: "TP53 Einfache Variante"
 Description: "Nachweis einer pathogenen TP53-Mutation"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"
@@ -83,6 +96,7 @@ InstanceOf: MII_PR_MTB_Diagnostische_Implikation
 Title: "TP53 Diagnostische Implikation"
 Description: "Diagnostische Bedeutung der festgestellten TP53 Mutation"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $TBD#diagnostic-implication "Diagnostic Implication"
@@ -97,6 +111,7 @@ InstanceOf: MII_PR_MTB_Einfache_Variante
 Title: "PIK3R1 Einfache Variante"
 Description: "Nachweis einer PIK3R1-Mutation"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"
@@ -117,6 +132,7 @@ InstanceOf: MII_PR_MTB_Therapeutische_Implikation
 Title: "PIK3R1 Therapeutische Implikation"
 Description: "Therapeutische Bedeutung der festgestellten PIK3R1 Mutation"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapeutische-implikation)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $TBD#therapeutic-implication "Therapeutic Implication"
@@ -134,6 +150,7 @@ InstanceOf: MII_PR_MTB_Copy_Number_Variant
 Title: "CCNE1 Einfache Variante 2"
 Description: "Kopienzahlveränderung bei einer CCNE1-Mutation"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"

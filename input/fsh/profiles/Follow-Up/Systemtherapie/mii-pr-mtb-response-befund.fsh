@@ -13,9 +13,17 @@ Description: "Response Beurteilung nach DNPM"
 * effectiveDateTime MS
 * effectiveDateTime ^short = "Zeitpunkt"
 * effectiveDateTime ^definition = "Zeitpunkt des Response Befundes"
+* insert Translation(effectiveDateTime ^short, de-DE, Zeitpunkt)
+* insert Translation(effectiveDateTime ^definition, de-DE, Zeitpunkt des Response Befundes)
+* insert Translation(effectiveDateTime ^short, en, Time Point)
+* insert Translation(effectiveDateTime ^definition, en, Time point of the response assessment)
 * method 1..1 MS
 * method ^short = "Beurteilungsmethode"
 * method ^definition = "Beurteilungsmethode RECIST oder RANO"
+* insert Translation(method ^short, de-DE, Beurteilungsmethode)
+* insert Translation(method ^definition, de-DE, Beurteilungsmethode RECIST oder RANO)
+* insert Translation(method ^short, en, Assessment Method)
+* insert Translation(method ^definition, en, Assessment method RECIST or RANO)
 * method from MII_VS_MTB_Beurteilungsmethode
 
 // für valueCodeableConcept eigenes CS & VS
@@ -32,14 +40,22 @@ Description: "Response Beurteilung nach DNPM"
 * valueCodeableConcept.coding contains oBDS 0..* MS and MTB 0..* MS
 
 * valueCodeableConcept.coding[oBDS] ^short = "Response Beurteilung nach oBDS-Kriterien"
+* insert Translation(valueCodeableConcept.coding[oBDS] ^short, de-DE, Response Beurteilung nach oBDS-Kriterien)
+* insert Translation(valueCodeableConcept.coding[oBDS] ^short, en, Response assessment according to oBDS criteria)
 * valueCodeableConcept.coding[oBDS].system = $mii-cs-onko-verlauf-gesamtbeurteilung
 * valueCodeableConcept.coding[oBDS].code from MII_VS_Onko_Verlauf_Gesamtbeurteilung
 
 * valueCodeableConcept.coding[MTB] ^short = "Response Beurteilung nach Recist oder Rano iM Rahmen des MTB"
+* insert Translation(valueCodeableConcept.coding[MTB] ^short, de-DE, Response Beurteilung nach Recist oder Rano im Rahmen des MTB)
+* insert Translation(valueCodeableConcept.coding[MTB] ^short, en, Response assessment according to RECIST or RANO within the MTB)
 * valueCodeableConcept.coding[MTB].system = $mii-cs-mtb-response-befund-beurteilung
 * valueCodeableConcept.coding[MTB].code from MII_VS_MTB_Response_Befund_Beurteilung
 
 * partOf 0..* MS
 * partOf ^short = "Systemische Therapie"
 * partOf ^definition = "Daszugehoerige, uebergeordnete Systemische Therapie"
+* insert Translation(partOf ^short, de-DE, Systemische Therapie)
+* insert Translation(partOf ^definition, de-DE, Dazugehoerige uebergeordnete Systemische Therapie)
+* insert Translation(partOf ^short, en, Systemic Therapy)
+* insert Translation(partOf ^definition, en, Associated parent systemic therapy)
 * partOf only Reference(MII_PR_MTB_Systemische_Therapie or Procedure)

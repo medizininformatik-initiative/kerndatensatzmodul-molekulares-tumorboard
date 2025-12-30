@@ -17,6 +17,8 @@ Instance: MTBChemo1Procedure
 InstanceOf: MII_PR_MTB_Systemische_Vortherapie
 Usage: #example
 Description: "Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28; Sechs Zyklen ab 04.01.2023"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie)
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
 * status = #completed
 * category.coding[sct] = $SCT#277132007 // Therapeutic procedure | alternativ 18629005 Administration of medicine?
@@ -166,6 +168,8 @@ Instance: MTBChemo2Procedure
 InstanceOf: MII_PR_MTB_Systemische_Vortherapie
 Usage: #example
 Description: "Mirvetuximab soravtansine 6mg/kg KG, Wdh d22; Sechs Zyklen ab 24.06.2023"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie)
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
 * basedOn[Therapieplan] = Reference(mii-exa-mtb-kim-musterperson-therapieplan)
 * status = #completed

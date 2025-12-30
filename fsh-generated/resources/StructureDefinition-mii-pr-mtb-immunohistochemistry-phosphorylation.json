@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-immunohistochemistry-phosphorylation",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-phosphorylation",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Immunohistochemistry_Phosphorylation",
   "title": "MII PR MTB Immunohistochemistry Phosphorylation",
   "status": "draft",
@@ -38,7 +38,67 @@
         "id": "Observation.component:phosphorylation-localization.code",
         "path": "Observation.component.code",
         "short": "Phosphorylation localization",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylierungslokalisation"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylation localization"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Phosphorylation localization according to UniProt",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylierungslokalisation gemaess UniProt"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylation localization according to UniProt"
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
@@ -61,7 +121,67 @@
         "path": "Observation.component.value[x]",
         "sliceName": "valueCodeableConcept",
         "short": "Phosphorylation localization",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylierungslokalisation"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylation localization"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Phosphorylation localization according to UniProt",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylierungslokalisation gemaess UniProt"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Phosphorylation localization according to UniProt"
+                }
+              ]
+            }
+          ]
+        },
         "min": 1,
         "max": "1",
         "type": [

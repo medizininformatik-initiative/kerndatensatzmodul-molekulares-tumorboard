@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-therapieplan",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Therapieplan",
   "title": "MII PR MTB Therapieplan",
   "status": "draft",
@@ -35,20 +35,200 @@
         "id": "CarePlan.status",
         "path": "CarePlan.status",
         "definition": "Status der Umsetzung des beschlossenen Therapieplans",
-        "comment": "\n    active: Empfehlung bzw. Therapieoption in Umsetzung (Regelfall), \n    revoked: Molekularer Tumorboard-Fall ist abgeschlossen, \n    completed: Alle Empfehlungen bzw. Therapieoptionen ausgeschöpft oder Patient verstorben"
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Status der Umsetzung des beschlossenen Therapieplans"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Status of the approved therapy plan implementation"
+                }
+              ]
+            }
+          ]
+        },
+        "comment": "\n    active: Empfehlung bzw. Therapieoption in Umsetzung (Regelfall),\n    revoked: Molekularer Tumorboard-Fall ist abgeschlossen,\n    completed: Alle Empfehlungen bzw. Therapieoptionen ausgeschöpft oder Patient verstorben",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "CarePlan.description",
         "path": "CarePlan.description",
         "short": "Protokollauszug",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Protokollauszug"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Protocol Excerpt"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Protokollauszug aus dem Beschluss des Molekularen Tumorboards"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Protocol excerpt from the Molecular Tumor Board decision"
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true
       },
       {
         "id": "CarePlan.created",
         "path": "CarePlan.created",
         "short": "Erstellungsdatum",
-        "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
+        "_short": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Erstellungsdatum"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Creation Date"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards",
+        "_definition": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Erstellungsdatum des Therapieplans gemäß Beschluss des Molekularen Tumorboards"
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Creation date of the therapy plan as per Molecular Tumor Board decision"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "CarePlan.supportingInfo",
@@ -70,7 +250,67 @@
         "path": "CarePlan.supportingInfo",
         "sliceName": "Behandlungsepisode",
         "short": "Behandlungsepisode",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Behandlungsepisode"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Treatment Episode"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Aktueller Krankheitszustand und bisherige Behandlungsmaßnahmen"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Current disease status and previous treatment measures"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "type": [
@@ -85,33 +325,79 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity",
+        "id": "CarePlan.activity:extended/Therapieempfehlung",
         "path": "CarePlan.activity",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "profile",
-              "path": "reference.resolve()"
-            }
-          ],
-          "rules": "open",
-          "description": "Slice für Empfehlung zum weiteren Vorgehen auf Basis des referenzierten Ressourcentyps",
-          "ordered": false
-        }
-      },
-      {
-        "id": "CarePlan.activity:Therapieempfehlung",
-        "path": "CarePlan.activity",
-        "sliceName": "Therapieempfehlung",
+        "sliceName": "extended/Therapieempfehlung",
         "short": "Therapieempfehlung Systemische Therapie",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapieempfehlung Systemische Therapie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapy Recommendation Systemic Therapy"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Therapieempfehlung für eine medikamentöse Systemische Therapie",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapieempfehlung für eine medikamentöse Systemische Therapie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Therapy recommendation for a systemic drug therapy"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Therapieempfehlung.reference",
+        "id": "CarePlan.activity:extended/Therapieempfehlung.reference",
         "path": "CarePlan.activity.reference",
+        "min": 1,
         "type": [
           {
             "code": "Reference",
@@ -126,24 +412,82 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Therapieempfehlung.detail",
+        "id": "CarePlan.activity:extended/Therapieempfehlung.detail",
         "path": "CarePlan.activity.detail",
-        "short": "Not used - therapy details in referenced resource",
-        "definition": "Constrained to 0..0 to avoid cpl-3 violation. Therapy type and status are captured in the referenced MedicationRequest/RequestGroup.",
         "max": "0"
       },
       {
-        "id": "CarePlan.activity:HumangenetischeBeratung",
+        "id": "CarePlan.activity:extended/HumangenetischeBeratung",
         "path": "CarePlan.activity",
-        "sliceName": "HumangenetischeBeratung",
+        "sliceName": "extended/HumangenetischeBeratung",
         "short": "Empfehlung Human-genetische Beratung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Empfehlung Human-genetische Beratung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Recommendation for Human Genetic Counseling"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Auftrag zur (erneuten) Human-genetischen Beratung",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Auftrag zur erneuten Human-genetischen Beratung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Request for repeat human genetic counseling"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:HumangenetischeBeratung.reference",
+        "id": "CarePlan.activity:extended/HumangenetischeBeratung.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -157,22 +501,82 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:HumangenetischeBeratung.detail",
+        "id": "CarePlan.activity:extended/HumangenetischeBeratung.detail",
         "path": "CarePlan.activity.detail",
         "max": "0"
       },
       {
-        "id": "CarePlan.activity:HistologieEvaluation",
+        "id": "CarePlan.activity:extended/HistologieEvaluation",
         "path": "CarePlan.activity",
-        "sliceName": "HistologieEvaluation",
+        "sliceName": "extended/HistologieEvaluation",
         "short": "Empfehlung Histologie-Evaluation",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Empfehlung Histologie-Evaluation"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Recommendation for Histology Evaluation"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Auftrag zur (erneuten) Histologie-Evaluation",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Auftrag zur erneuten Histologie-Evaluation"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Request for repeat histology evaluation"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:HistologieEvaluation.reference",
+        "id": "CarePlan.activity:extended/HistologieEvaluation.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -186,17 +590,82 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Biopsie",
+        "id": "CarePlan.activity:extended/HistologieEvaluation.detail",
+        "path": "CarePlan.activity.detail",
+        "max": "0"
+      },
+      {
+        "id": "CarePlan.activity:extended/Biopsie",
         "path": "CarePlan.activity",
-        "sliceName": "Biopsie",
+        "sliceName": "extended/Biopsie",
         "short": "Empfehlung Biopsie",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Empfehlung Biopsie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Recommendation for Biopsy"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Auftrag zur (erneuten) Biopsie",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Auftrag zur erneuten Biopsie"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Request for repeat biopsy"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Biopsie.reference",
+        "id": "CarePlan.activity:extended/Biopsie.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -210,17 +679,82 @@
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Studieneinschlussempfehlung",
+        "id": "CarePlan.activity:extended/Biopsie.detail",
+        "path": "CarePlan.activity.detail",
+        "max": "0"
+      },
+      {
+        "id": "CarePlan.activity:extended/Studieneinschlussempfehlung",
         "path": "CarePlan.activity",
-        "sliceName": "Studieneinschlussempfehlung",
+        "sliceName": "extended/Studieneinschlussempfehlung",
         "short": "Studieneinschlussempfehlung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Studieneinschlussempfehlung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Study Enrollment Recommendation"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Anfrage zum Studieneinschluss",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Anfrage zum Studieneinschluss"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Request for study enrollment"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "CarePlan.activity:Studieneinschlussempfehlung.reference",
+        "id": "CarePlan.activity:extended/Studieneinschlussempfehlung.reference",
         "path": "CarePlan.activity.reference",
         "min": 1,
         "type": [
@@ -232,6 +766,11 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity:extended/Studieneinschlussempfehlung.detail",
+        "path": "CarePlan.activity.detail",
+        "max": "0"
       }
     ]
   }

@@ -16,7 +16,7 @@
     }
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Diagnose_Primaertumor",
   "title": "MII PR MTB Diagnose Primärtumor",
   "status": "draft",
@@ -61,7 +61,67 @@
         "path": "Condition.stage",
         "sliceName": "WHOGradZNS",
         "short": "WHO Grad Tumor ZNS",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "WHO Grad Tumor ZNS"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "WHO Grade CNS Tumor"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grade of a tumor according to the WHO classification of central nervous system tumors"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -102,9 +162,69 @@
         "path": "Condition.stage",
         "sliceName": "OncoTree",
         "short": "OncoTree Classification",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "OncoTree Klassifikation"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "OncoTree Classification"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Klassifizierung eines Tumors nach OncoTree",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Klassifizierung eines Tumors nach OncoTree"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Classification of a tumor according to OncoTree"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
-        "max": "1",
+        "max": "*",
         "mustSupport": true
       },
       {
@@ -123,11 +243,87 @@
         "mustSupport": true
       },
       {
+        "id": "Condition.stage:OncoTree.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:OncoTree.type.coding",
+        "path": "Condition.stage.type.coding",
+        "min": 1,
+        "patternCoding": {
+          "code": "371441004",
+          "system": "http://snomed.info/sct",
+          "display": "Histologic type of proliferative mass"
+        }
+      },
+      {
         "id": "Condition.stage:ErstdiagnoseZeitpunkt",
         "path": "Condition.stage",
         "sliceName": "ErstdiagnoseZeitpunkt",
         "short": "Tumorausbreitung Erstdiagnose",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumorausbreitung Erstdiagnose"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumor Spread at Initial Diagnosis"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Tumorausbreitung zum Zeitpunkt der Erstdiagnose",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumorausbreitung zum Zeitpunkt der Erstdiagnose"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumor spread at the time of initial diagnosis"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -168,7 +364,67 @@
         "path": "Condition.stage",
         "sliceName": "MolekularesTumorboardZeitpunkt",
         "short": "Tumorausbreitung Molekulares Tumorboard",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumorausbreitung Molekulares Tumorboard"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumor Spread at Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Tumorausbreitung zum Zeitpunkt des Molekularen Tumorboard",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumorausbreitung zum Zeitpunkt des Molekularen Tumorboard"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Tumor spread at the time of the Molecular Tumor Board"
+                }
+              ]
+            }
+          ]
+        },
         "min": 0,
         "max": "1",
         "mustSupport": true

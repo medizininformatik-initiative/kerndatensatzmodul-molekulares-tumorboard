@@ -3,7 +3,16 @@
   "id": "mii-exa-mtb-medication-request-cobimetinib",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.0"
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "ER29L26N1X",
+        "system": "http://fdasis.nlm.nih.gov",
+        "display": "COBIMETINIB"
+      }
     ]
   },
   "reasonReference": [
@@ -40,8 +49,5 @@
   "authoredOn": "2023-03-28",
   "subject": {
     "reference": "Patient/PatientKimMusterperson"
-  },
-  "medicationReference": {
-    "reference": "Medication/mii-exa-mtb-medication-cobimetinib"
   }
 }

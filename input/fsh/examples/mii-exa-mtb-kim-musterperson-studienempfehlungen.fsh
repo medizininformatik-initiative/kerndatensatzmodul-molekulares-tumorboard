@@ -9,6 +9,7 @@ InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
 Title: "Phase 1/2 CLDN6 CAR-T-Zell-Studie"
 Description: "Studieneinschlussempfehlung: Phase 1/2 CLDN6 CAR-T-Zell-Studie, Priorität: 2.1"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage)
 * status = #draft
 * subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-cldn6)
@@ -22,6 +23,7 @@ InstanceOf: MII_PR_MTB_Studie
 Title: "A Clinical Study of the Safety and Effectiveness of an Investigational Cell Therapy Given With and Without an Investigational RNA-based Vaccine in Patients With Organ Tumors"
 Description: "This is a Phase I, FIH, open-label, multicenter, dose escalation trial with expansion cohorts to evaluate safety and preliminary efficacy of claudin 6 (CLDN6) chimeric antigen receptor T cells (CAR-T) with or without CLDN6 ribonucleic acid lipoplexes (RNA-LPX) in patients with CLDN6-positive relapsed or refractory advanced solid tumors."
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie)
 * identifier[+].system = $mii-ns-mtb-nct
 * identifier[=].value = "04503278"
 * status = #active
@@ -52,9 +54,7 @@ Usage: #example
 * site = Reference(mii-exa-mtb-study-cldn6-location-10)
 * site = Reference(mii-exa-mtb-study-cldn6-location-11)
 * arm[+].name = "Part 1 - CLDN6 CAR-T: Dose escalation in lymphodepleted patients until the MTD and/or RP2D"
-* arm[=].type = $hl7-research-study-arm-type#experimental
 * arm[+].name = "Part 2 Vaccine-modulated - CLDN6 uRNA-LPX/CLDN6 modRNA-LPX: Dose escalation until the MTD and/or RP2D"
-* arm[=].type = $hl7-research-study-arm-type#experimental
 * objective[+].type = #primary
 * objective[=].name = "Occurrence of treatment-emergent adverse events (TEAEs) including ≥ Grade 3, serious, fatal TEAEs by relationship"
 * objective[+].type = #primary
@@ -317,6 +317,7 @@ InstanceOf: MII_PR_MTB_Studie
 Title: "TEDOVA"
 Description: "Studie: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie)
 * status = #active
 * identifier[+].system = $mii-ns-mtb-nct
 * identifier[=].value = "04713514"
@@ -326,6 +327,7 @@ InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
 Title: "TEDOVA"
 Description: "Studieeinschlussempfehlung: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage)
 * status = #draft
 * subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-tedova)
@@ -338,6 +340,7 @@ InstanceOf: MII_PR_MTB_Studie
 Title: "CCNE1"
 Description: "Studie: CCNE1 ampl. OvCA"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie)
 * status = #active
 
 Instance: mii-exa-mtb-study-request-ccne1
@@ -345,6 +348,7 @@ InstanceOf: MII_PR_MTB_Studieneinschluss_Anfrage
 Title: "CCNE1"
 Description: "Studieneinschlussempfehlung: CCNE1 ampl. OvCA"
 Usage: #example
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage)
 * status = #draft
 * subject = Reference(Patient/PatientKimMusterperson)
 * supportingInfo = Reference(mii-exa-mtb-study-ccne1)

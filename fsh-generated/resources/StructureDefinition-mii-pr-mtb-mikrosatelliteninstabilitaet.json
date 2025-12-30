@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-mikrosatelliteninstabilitaet",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_Mikrosatelliteninstabilitaet",
   "title": "MII PR MTB Mikrosatelliteninstabilität",
   "status": "draft",
@@ -59,7 +59,67 @@
         "id": "Observation.method",
         "path": "Observation.method",
         "short": "IHC|PCR|bioinformatic",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "IHC|PCR|bioinformatisch"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "IHC|PCR|bioinformatic"
+                }
+              ]
+            }
+          ]
+        },
         "definition": "Methode der Untersuchung (IHC, PCR oder NGS-basierte Untersuchung).",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Methode der Untersuchung - IHC oder PCR oder NGS-basierte Untersuchung."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Method of examination - IHC or PCR or NGS-based examination."
+                }
+              ]
+            }
+          ]
+        },
         "mustSupport": true,
         "binding": {
           "strength": "preferred",

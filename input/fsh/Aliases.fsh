@@ -16,6 +16,7 @@ Alias: $mii-pr-onko-specimen = https://www.medizininformatik-initiative.de/fhir/
 Alias: $mii-ex-onko-systemische-therapie-intention = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention
 Alias: $mii-cs-onko-verlauf-lymphknoten = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-lymphknoten
 Alias: $mii-cs-onko-verlauf-gesamtbeurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-gesamtbeurteilung
+Alias: $mii-cs-onko-verlauf-primaertumor = https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-primaertumor
 
 // Aliases für Profile des MII Medikation-Moduls
 Alias: $mii-pr-medikation-medication-request = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest
@@ -80,14 +81,17 @@ Alias: $mii-vs-mtb-oncotree = https://www.medizininformatik-initiative.de/fhir/e
 Alias: $mii-vs-mtb-msi = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi
 Alias: $mii-cs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type
 Alias: $mii-vs-mtb-msi-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi-method-type
+Alias: $mii-cs-mtb-genomic-analysis-method-type = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type
+Alias: $mii-cs-mtb-genomicanalysis-devicefunction = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction
 Alias: $mii-vs-mtb-mmr-proficiency = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency
 Alias: $mii-vs-mtb-mmr-expression = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression
+Alias: $mii-vs-mtb-ish-method = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method
+Alias: $mii-vs-mtb-immunohistochemistry-specific-codes = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-immunohistochemistry-specific-codes
 // Aliases für HL7 Terminologie
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $fhir-claim-type = http://terminology.hl7.org/CodeSystem/claim-type
 Alias: $fhir-observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $hl7-organization-type = http://terminology.hl7.org/CodeSystem/organization-type
-Alias: $hl7-research-study-arm-type = http://hl7.org/fhir/research-study-arm-type
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation

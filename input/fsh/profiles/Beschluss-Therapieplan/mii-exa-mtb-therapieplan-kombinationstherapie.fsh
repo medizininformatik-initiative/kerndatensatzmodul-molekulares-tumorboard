@@ -11,15 +11,17 @@
         - Evidenzgraduierung = m1C
         - Publikation = https://doi.org/10.1002/gcc.23222
         - Dabrafenib (RequestGroup.action.resource -> MedicationRequest)
-          - Dabrafenib (MedicationRequest.medicationReference -> Medication.ingredient)
+          - Dabrafenib (MedicationRequest.medicationCodeableConcept)
         - Trametinib (RequestGroup.action.resource -> MedicationRequest)
-          - Trametinib (MedicationRequest.medicationReference -> Medication.ingredient)
+          - Trametinib (MedicationRequest.medicationCodeableConcept)
 */
 
 Instance: mii-exa-mtb-therapieplan-kombinationstherapie
 InstanceOf: MII_PR_MTB_Therapieplan
 Usage: #example
 Description: "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan)
 // Erforderliche Angaben
 * status = #active
 // * intent = #proposal im Onko wird Plan gesetzt

@@ -15,6 +15,14 @@ Description: "Genomic Study beinhaltet und verweist über GenomicStudyAnalysis a
 * performed[x] MS
 * reasonReference MS
 * reasonReference only Reference(MII_PR_Onko_Diagnose_Primaertumor)
+
+// Allow MTB-specific analysis profile in addition to base GenomicStudyAnalysis
+// Include MolGen profile in chain for proper validation
+* extension[genomic-study-analysis].valueReference only Reference(
+    MII_PR_MTB_Genomic_Study_Analysis or
+    MII_PR_MolGen_GenomicStudyAnalysis or
+    GenomicStudyAnalysis
+)
 /*
 // nachfolgend sind alle original-Definitionen aus GenomicStudy übernommen und können hier modifiziert werden
 

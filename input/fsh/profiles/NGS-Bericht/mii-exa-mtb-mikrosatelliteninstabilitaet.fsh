@@ -4,7 +4,7 @@ Usage: #example
 Title: "Beispiel Mikrosatelliteninstabilität"
 Description: "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund von MMR-Störung."
 
-* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"

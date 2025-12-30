@@ -4,7 +4,7 @@ Usage: #example
 Title: "Beispiel DNA-Fusion"
 Description: "Beispiel fuer eine DNA-Fusion in Tumorzellen."
 
-* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/dna-fusion"
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"

@@ -3,7 +3,7 @@
   "id": "mii-exa-mtb-kim-diagnose",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor"
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor|2026.0.0"
     ]
   },
   "extension": [
@@ -71,6 +71,15 @@
       }
     },
     {
+      "type": {
+        "coding": [
+          {
+            "code": "371441004",
+            "system": "http://snomed.info/sct",
+            "display": "Histologic type of proliferative mass"
+          }
+        ]
+      },
       "assessment": [
         {
           "reference": "Observation/mii-exa-mtb-kim-oncotree"

@@ -3,6 +3,7 @@ InstanceOf: MII_PR_MTB_Follow_Up_ClinicalImpression
 Usage: #example
 Title: "Beispiel fuer eine Follow-Up Clinical Impression "
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression)
 * subject = Reference(Patient/PatientExample)
 * status = #completed
 * code.coding = $SCT#390906007 "Follow-up encounter (procedure)"

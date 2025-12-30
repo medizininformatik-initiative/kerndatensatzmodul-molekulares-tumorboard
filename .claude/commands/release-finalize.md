@@ -62,8 +62,9 @@ After successfully publishing the release:
    ```bash
    gh release view v{VERSION} --web
    ```
-2. Remind about Simplifier publication (Phase 7)
-3. Remind about TMF SharePoint IG export (Phase 8)
+2. Remind about next steps:
+   - **Simplifier publication**: Run `/mii-publish-package` (Phase 7)
+   - **Implementation Guide publication**: Run `/mii-publish-ig` (Phase 8)
 
 ### Quick Commands Reference
 

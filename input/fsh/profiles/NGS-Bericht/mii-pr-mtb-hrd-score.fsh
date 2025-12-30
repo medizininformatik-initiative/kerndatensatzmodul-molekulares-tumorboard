@@ -20,6 +20,10 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * valueInteger MS
 * valueInteger ^short = "HRD-Score"
 * valueInteger ^definition = "HRD-Score als Summe der LOH, TAI und LST-Werte"
+* insert Translation(valueInteger ^short, de-DE, HRD-Score)
+* insert Translation(valueInteger ^definition, de-DE, HRD-Score als Summe der LOH - TAI und LST-Werte)
+* insert Translation(valueInteger ^short, en, HRD Score)
+* insert Translation(valueInteger ^definition, en, HRD Score as sum of LOH - TAI and LST values)
 * interpretation MS
 * interpretation from $hl7-v3-observation-high-low-codes
 
@@ -31,14 +35,20 @@ Description: "Der HRD-Score, welcher den Grad der homologen Rekombinationsdefizi
 * component contains TAI 0..1 MS
 * component contains LST 0..1 MS
 * component[LOH] ^short = "Loss of heterozygosity"
+* insert Translation(component[LOH] ^short, de-DE, Verlust der Heterozygotie)
+* insert Translation(component[LOH] ^short, en, Loss of heterozygosity)
 * component[LOH].code = $NCIT#C18016 "Loss of Heterozygosity"
 * component[LOH].value[x] MS
 * component[LOH].value[x] only integer
 * component[TAI] ^short = "Telomeric allelic imbalance"
+* insert Translation(component[TAI] ^short, de-DE, Telomere allelische Imbalance)
+* insert Translation(component[TAI] ^short, en, Telomeric allelic imbalance)
 * component[TAI].code = $NCIT#C129774 "Telomeric Allelic Imbalance Region"
 * component[TAI].value[x] MS
 * component[TAI].value[x] only integer
 * component[LST] ^short = "Large-scale state transitions"
+* insert Translation(component[LST] ^short, de-DE, Grossflaechige Zustandsuebergaenge)
+* insert Translation(component[LST] ^short, en, Large-scale state transitions)
 * component[LST].code = $NCIT#C120466 "Large-Scale State Transition"
 * component[LST].value[x] MS
 * component[LST].value[x] only integer

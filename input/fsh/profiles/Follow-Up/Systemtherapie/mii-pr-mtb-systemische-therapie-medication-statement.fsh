@@ -73,11 +73,15 @@ Description: "Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosi
 
 */
 
-* dosage 0..1 MS 
+* dosage 0..1 MS
 * dosage.doseAndRate MS
 * dosage.doseAndRate.type 0..1 MS
 * dosage.doseAndRate.type ^short = "Dosisdichte"
 * dosage.doseAndRate.type ^definition = "Die Dosisdichte gibt an ob, in welchem Ausmaß eine Dosisreduktion vorliegt."
+* insert Translation(dosage.doseAndRate.type ^short, de-DE, Dosisdichte)
+* insert Translation(dosage.doseAndRate.type ^definition, de-DE, Die Dosisdichte gibt an ob und in welchem Ausmass eine Dosisreduktion vorliegt.)
+* insert Translation(dosage.doseAndRate.type ^short, en, Dose Intensity)
+* insert Translation(dosage.doseAndRate.type ^definition, en, The dose intensity indicates whether and to what extent a dose reduction is present.)
 * dosage.doseAndRate.type.coding.system = $mii-cs-mtb-dosisdichte
 * dosage.doseAndRate.type.coding.code from MII_VS_MTB_Dosisdichte
 

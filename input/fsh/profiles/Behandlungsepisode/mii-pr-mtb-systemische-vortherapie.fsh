@@ -15,12 +15,20 @@ Description: "Systemische Vortherapie zum Molekularen Tumorboard"
 * basedOn contains Therapieplan 0..1 MS
 * basedOn[Therapieplan] ^short = "Therpieplan"
 * basedOn[Therapieplan] ^definition = "Verweis auf den im Molekularen Tumorboard beschlossenen Therpieplan"
+* insert Translation(basedOn[Therapieplan] ^short, de-DE, Therapieplan)
+* insert Translation(basedOn[Therapieplan] ^definition, de-DE, Verweis auf den im Molekularen Tumorboard beschlossenen Therapieplan)
+* insert Translation(basedOn[Therapieplan] ^short, en, Therapy Plan)
+* insert Translation(basedOn[Therapieplan] ^definition, en, Reference to the therapy plan decided by the Molecular Tumor Board)
 * basedOn[Therapieplan] only Reference(MII_PR_MTB_Therapieplan)
 
 // TODO: Nochmal überlegen, ob man das in Onko auch doppelt darstellen kann -> die Trennung zwischen Status und Grund
 * statusReason 0..1 MS
 * statusReason ^short = "Abbruchsgrund Systemische Therapie"
 * statusReason ^definition = "Falls abgebrochen: Angabe zum Abbruchsgrund der Systemischen Therapie"
+* insert Translation(statusReason ^short, de-DE, Abbruchsgrund Systemische Therapie)
+* insert Translation(statusReason ^definition, de-DE, Falls abgebrochen: Angabe zum Abbruchsgrund der Systemischen Therapie)
+* insert Translation(statusReason ^short, en, Discontinuation Reason for Systemic Therapy)
+* insert Translation(statusReason ^definition, en, If discontinued: specification of the reason for discontinuation of systemic therapy)
 * statusReason.coding 1..* MS
 * statusReason.coding.system 1..1 MS
 * statusReason.coding.code 1..1 MS
@@ -34,6 +42,10 @@ Description: "Systemische Vortherapie zum Molekularen Tumorboard"
 * statusReason.coding contains Therapiestatusgrund 0..1 MS
 * statusReason.coding[Therapiestatusgrund] ^short = "Therapiestatusgrund"
 * statusReason.coding[Therapiestatusgrund] ^definition = "Grund für den Status der Systemischen Therapie"
+* insert Translation(statusReason.coding[Therapiestatusgrund] ^short, de-DE, Therapiestatusgrund)
+* insert Translation(statusReason.coding[Therapiestatusgrund] ^definition, de-DE, Grund für den Status der Systemischen Therapie)
+* insert Translation(statusReason.coding[Therapiestatusgrund] ^short, en, Therapy Status Reason)
+* insert Translation(statusReason.coding[Therapiestatusgrund] ^definition, en, Reason for the status of the systemic therapy)
 * statusReason.coding[Therapiestatusgrund].system = $mii-cs-mtb-therapiestatusgrund (exactly)
 * statusReason.coding[Therapiestatusgrund] from MII_VS_MTB_Therapiestatusgrund (required)
 

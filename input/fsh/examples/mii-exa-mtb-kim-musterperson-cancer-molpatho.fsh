@@ -1,6 +1,8 @@
 Instance: PatientKimMusterperson-MolecularPathologyReport-1
 InstanceOf: MII_PR_MTB_Molecular_Pathology_Report
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report)
 * status = #final
 
 * code = $LNC#60568-3 "Pathology synoptic report" 
@@ -24,6 +26,8 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -36,30 +40,39 @@ Usage: #example
 * component[=].valueCodeableConcept[+].coding = $HGNC#HGNC:3430 "ERBB2"
 
 Instance: PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-
-InstanceOf: MII_PR_MTB_Biomarker_InSituHybridization
+InstanceOf: MII_PR_MTB_INSITUHYBRIDIZATION_HER2
 Usage: #example
 Title: "Example In Situ Hybridization HER2/ERBB2"
 Description: "Example of HER2 in situ hybridization with ratio measurement for patient Kim Musterperson"
-* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization"
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2)
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory
 * category[mbCategory] = $TBD#biomarker-category
 
-* code = $SCT#1365744007 "Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)"
+// code and method must be set explicitly even though the profile has fixed values
+* code.coding[spezifisch] = $LNC#49683-6 "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
+* method = $SCT#1303773004 "Fluorescence in situ hybridization technique (qualifier value)"
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
 * valueRatio.numerator.value = 1.2
 * valueRatio.denominator.value = 1
 * interpretation = $SCT#260385009 "Negative (qualifier value)"
-* component[+].code = $LNC#48018-6 "Gene studied [ID]"
-* component[=].valueCodeableConcept = $HGNC#HGNC:3430 "ERBB2"
-//* component[+].code = $LNC#48018-6 "Gene studied"
-//* component[=].valueCodeableConcept = $HGNC#HGNC:CEN17 "centromere chromosome 17"
+
+// Component values - codes are fixed in the HER2 profile
+* component[target-signals].valueQuantity.value = 2.4
+* component[target-signals].valueQuantity.unit = "#"
+* component[reference-signals].valueQuantity.value = 2.0
+* component[reference-signals].valueQuantity.unit = "#"
+* component[cells-counted].valueQuantity.value = 50
+* component[cells-counted].valueQuantity.unit = "#"
 
 
 Instance: PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -73,6 +86,8 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -89,6 +104,8 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -103,6 +120,7 @@ Instance: PatientKimMusterperson-MolecularPathologyObservation-1-CA125
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
 
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -124,6 +142,8 @@ Die Tumorzellen sind partiell positiv für CA125, durchgehend nukleär für Pax 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-2-Pax8
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -135,21 +155,26 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-3-WT1
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding[spezifisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
-* valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
-* valueCodeableConcept.text = "Tumorzellen durchgehend nukleär für WT1" //durchgehend ist ein modifier? 
-* component[+].code.coding.code = #protein-studied
-* component[=].valueCodeableConcept.coding[+] = $HGNC#HGNC:12796 "WT1"
-* component[=].valueCodeableConcept.coding[+] = $LNC#LP65352-4 "WT-1 Ag" //extra LOINC Part!
+// WT1 has no specific LOINC/SNOMED code, so use the generic code
+* code.coding[generisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
+* valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
+* valueCodeableConcept.text = "Tumorzellen durchgehend nukleär für WT1" //durchgehend ist ein modifier?
+* component[gene-studied].code.coding = $LNC#48018-6 "Gene studied [ID]"
+* component[gene-studied].valueCodeableConcept.coding[+] = $HGNC#HGNC:12796 "WT1"
+* component[gene-studied].valueCodeableConcept.coding[+] = $LNC#LP65352-4 "WT-1 Ag" //extra LOINC Part!
 * bodySite.coding = $SCT#84640000 "Nucleus (cell structure)" //alternativ über bodySite
 * bodySite.text = "Nukleär"
 
 Instance: PatientKimMusterperson-MolecularPathologyObservation-4-ER
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -162,6 +187,8 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-5-PR
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -174,6 +201,8 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-6-p53
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
@@ -184,6 +213,8 @@ Usage: #example
 Instance: PatientKimMusterperson-MolecularPathologyObservation-7-p53
 InstanceOf: MII_PR_MTB_Immunohistochemistry
 Usage: #example
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry)
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)

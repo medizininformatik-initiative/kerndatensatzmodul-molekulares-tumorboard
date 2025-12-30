@@ -17,23 +17,35 @@ Description: "Sequenzierbezogenen Metriken der Genomic Study Analysis"
 * extension[read-depth].url 1..1 MS
 * extension[read-depth].valueQuantity 1..1 MS
 * extension[read-depth].valueQuantity ^short = "Read Depth"
+* insert Translation(extension[read-depth].valueQuantity ^short, de-DE, Lesetiefe)
+* insert Translation(extension[read-depth].valueQuantity ^short, en, Read Depth)
 * extension[read-length] MS
 * extension[read-length].url 1..1 MS
 * extension[read-length].valueQuantity 1..1 MS
 * extension[read-length].valueQuantity ^short = "Read Length"
+* insert Translation(extension[read-length].valueQuantity ^short, de-DE, Leselaenge)
+* insert Translation(extension[read-length].valueQuantity ^short, en, Read Length)
 * extension[sequencing-coverage] MS
 * extension[sequencing-coverage].url 1..1 MS
 * extension[sequencing-coverage].valueQuantity 1..1 MS
 * extension[sequencing-coverage].valueQuantity ^short = "Sequencing Coverage"
+* insert Translation(extension[sequencing-coverage].valueQuantity ^short, de-DE, Sequenzierabdeckung)
+* insert Translation(extension[sequencing-coverage].valueQuantity ^short, en, Sequencing Coverage)
 * extension[metrics-description] MS
 * extension[metrics-description].url 1..1 MS
 * extension[metrics-description].valueString 1..1 MS
 * extension[metrics-description].valueString ^short = "Metrics Description"
+* insert Translation(extension[metrics-description].valueString ^short, de-DE, Metrikbeschreibung)
+* insert Translation(extension[metrics-description].valueString ^short, en, Metrics Description)
 * extension[sequencing-read-type] MS
 * extension[sequencing-read-type].url 1..1 MS
 * extension[sequencing-read-type].valueCodeableConcept 1..1 MS
 * extension[sequencing-read-type].valueCodeableConcept ^short = "Sequencing Read Type"
+* insert Translation(extension[sequencing-read-type].valueCodeableConcept ^short, de-DE, Sequenzier-Lesetyp)
+* insert Translation(extension[sequencing-read-type].valueCodeableConcept ^short, en, Sequencing Read Type)
 * extension[gap-statistics] MS
 * extension[gap-statistics].url 1..1 MS
 * extension[gap-statistics].valueQuantity 1..1 MS
 * extension[gap-statistics].valueQuantity ^short = "Gap Statistics"
+* insert Translation(extension[gap-statistics].valueQuantity ^short, de-DE, Lueckenstatistik)
+* insert Translation(extension[gap-statistics].valueQuantity ^short, en, Gap Statistics)

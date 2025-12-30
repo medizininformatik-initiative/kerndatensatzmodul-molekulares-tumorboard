@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-immunohistochemistry-her2",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-her2",
-  "version": "2024.0.0-ballot",
+  "version": "2026.0.0",
   "name": "MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2",
   "title": "MII PR MTB Immunohistochemistry",
   "status": "draft",
@@ -49,7 +49,37 @@
       {
         "id": "Observation.value[x]:valueCodeableConcept.coding",
         "path": "Observation.value[x].coding",
-        "short": "0|1+|2+|3+|Indeterminate"
+        "short": "0|1+|2+|3+|Indeterminate",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "0|1+|2+|3+|Unbestimmt"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "0|1+|2+|3+|Indeterminate"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "Observation.value[x]:valueCodeableConcept.coding.system",

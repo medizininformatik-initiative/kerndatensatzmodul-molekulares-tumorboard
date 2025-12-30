@@ -10,6 +10,10 @@ Description: "Ablehnungsgrund des Antrags auf Kostenuebernahme"
 
 * valueCodeableConcept.coding ^short = "Grund"
 * valueCodeableConcept.coding ^definition = "Grund der Ablehnung des Antrags auf Kostenuebernahme"
+* insert Translation(valueCodeableConcept.coding ^short, de-DE, Grund)
+* insert Translation(valueCodeableConcept.coding ^definition, de-DE, Grund der Ablehnung des Antrags auf Kostenuebernahme)
+* insert Translation(valueCodeableConcept.coding ^short, en, Reason)
+* insert Translation(valueCodeableConcept.coding ^definition, en, Reason for rejection of the cost coverage application)
 * valueCodeableConcept.coding.system = $mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund
 * valueCodeableConcept.coding.code 1..1 MS
 * valueCodeableConcept.coding.code from MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund

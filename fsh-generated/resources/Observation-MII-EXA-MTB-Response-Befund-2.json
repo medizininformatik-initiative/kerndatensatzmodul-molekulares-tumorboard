@@ -3,16 +3,7 @@
   "id": "MII-EXA-MTB-Response-Befund-2",
   "meta": {
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund"
-    ]
-  },
-  "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "396432002",
-        "display": "Status of regression of tumor (observable entity)"
-      }
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund|2026.0.0"
     ]
   },
   "focus": [
@@ -28,7 +19,9 @@
   "valueCodeableConcept": {
     "coding": [
       {
-        "code": "T"
+        "code": "PR",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung",
+        "display": "Partial Response"
       }
     ]
   },
@@ -55,6 +48,15 @@
     }
   ],
   "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "396432002",
+        "system": "http://snomed.info/sct",
+        "display": "Status of regression of tumor (observable entity)"
+      }
+    ]
+  },
   "method": {
     "coding": [
       {
