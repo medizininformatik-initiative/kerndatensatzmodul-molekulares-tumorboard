@@ -10,6 +10,8 @@ Title: "Beispiel fuer eine Systemtherapie"
 * extension[causedBy].valueReference = Reference(MedicationRequest/Example)
 * basedOn = Reference(CarePlan/Example)
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
+* code.coding[ops] = $OPS#8-52 "Andere Chemotherapie"
+* code.coding[ops].version = "2023"
 * subject = Reference(Patient/Example)
 * performedPeriod.start = "2014-02-12"
 * performedPeriod.end = "2014-02-12"

@@ -23,6 +23,8 @@ Title: "24.06.2023 - 12.10.2023 Mirvetuximab soravtansine"
 * statusReason = #regular-completion
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K // kurativ
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
+* code.coding[ops] = $OPS#8-52 "Andere Chemotherapie"
+* code.coding[ops].version = "2023"
 * subject = Reference(Patient/PatientKimMusterperson)
 * performedPeriod.start = "2023-06-24"
 * performedPeriod.end = "2023-10-12"
