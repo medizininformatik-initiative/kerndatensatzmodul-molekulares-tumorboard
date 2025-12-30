@@ -160,12 +160,13 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding[spezifisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
-* valueCodeableConcept.coding = $LNC#LA6576-8 "Positive" 	
-* valueCodeableConcept.text = "Tumorzellen durchgehend nukleär für WT1" //durchgehend ist ein modifier? 
-* component[+].code.coding.code = #protein-studied
-* component[=].valueCodeableConcept.coding[+] = $HGNC#HGNC:12796 "WT1"
-* component[=].valueCodeableConcept.coding[+] = $LNC#LP65352-4 "WT-1 Ag" //extra LOINC Part!
+// WT1 has no specific LOINC/SNOMED code, so use the generic code
+* code.coding[generisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
+* valueCodeableConcept.coding = $LNC#LA6576-8 "Positive"
+* valueCodeableConcept.text = "Tumorzellen durchgehend nukleär für WT1" //durchgehend ist ein modifier?
+* component[gene-studied].code.coding = $LNC#48018-6 "Gene studied [ID]"
+* component[gene-studied].valueCodeableConcept.coding[+] = $HGNC#HGNC:12796 "WT1"
+* component[gene-studied].valueCodeableConcept.coding[+] = $LNC#LP65352-4 "WT-1 Ag" //extra LOINC Part!
 * bodySite.coding = $SCT#84640000 "Nucleus (cell structure)" //alternativ über bodySite
 * bodySite.text = "Nukleär"
 
