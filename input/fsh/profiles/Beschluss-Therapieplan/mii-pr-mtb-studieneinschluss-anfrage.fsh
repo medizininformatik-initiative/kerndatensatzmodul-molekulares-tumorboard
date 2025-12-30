@@ -33,8 +33,8 @@ Description: "Anfrage zum Studieneinschluss"
 * reasonReference only Reference(MII_PR_MTB_Diagnose_Primaertumor or Condition)
 
 * supportingInfo 0..* MS
-* supportingInfo ^slicing.discriminator.type = #type
-* supportingInfo ^slicing.discriminator.path = "$this"
+* supportingInfo ^slicing.discriminator.type = #profile
+* supportingInfo ^slicing.discriminator.path = "resolve()"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice für Referenz auf eine Studie"
 * supportingInfo ^slicing.ordered = false
