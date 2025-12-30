@@ -25,9 +25,7 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 
 * subject MS
 
-* performed[x] MS
-* performedPeriod ^short = "Durchführungszeitraum"
-* performedPeriod ^definition = "Durchführungszeitraum der Therapie"
+// performed[x] inherited from parent profile MII_PR_Onko_Systemische_Therapie
 
 * basedOn 0..1 MS
 * basedOn only Reference(MII_PR_MTB_Therapieplan or CarePlan)
