@@ -24,6 +24,8 @@ Description: "02.01.2023 Histologie (Z 230201/23)"
 * type.coding[sct] = $SCT#309201001 "Ascitic fluid specimen"
 * subject = Reference(PatientKimMusterperson)
 * collection.collectedDateTime = 2023-01-02
-* collection.quantity.unit = "ml"
 * collection.quantity.value = 20
+* collection.quantity.unit = "mL"
+* collection.quantity.system = "http://unitsofmeasure.org"
+* collection.quantity.code = #mL
 * collection.method = $SCT#178012008
