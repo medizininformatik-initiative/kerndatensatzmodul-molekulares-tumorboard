@@ -40,7 +40,6 @@ Diese Meldungen werden durch `advisor.json` unterdrückt:
 | Profil | Kategorie | Beschreibung | Status |
 |--------|-----------|--------------|--------|
 | **Genomics Reporting** | Extension | HL7 Genomics Reporting Extensions haben bekannte Validierungswarnungen | 🔵 EXTERNAL |
-| **Therapieplan** | Slicing | CarePlan.activity Slicing mit komplexer Struktur | 🟡 MONITOR |
 | **GenomicStudyAnalysis** | Profile Mismatch | Bundle-Validierung kann Profilkette nicht auflösen (siehe unten) | 🔵 EXTERNAL |
 | **Immunohistochemistry** | Slicing | code.coding Slicing mit pattern-Diskriminator und ValueSet (siehe unten) | 🔵 EXTERNAL |
 
@@ -83,9 +82,8 @@ Slicing cannot be evaluated: Could not match discriminator ($this) for slice spe
 |--------------|--------------|--------|
 | **HGNC** | Gene-Symbole nicht auf allen TX-Servern verfügbar | 🔵 EXTERNAL |
 | **Oncotree** | Tumor-Klassifikation extern, nicht FHIR-TX-validierbar | 🔵 EXTERNAL |
-| **ATC** | Medikamenten-Codes versionsspezifisch | 🟡 MONITOR |
 | **LOINC** | Panel-Codes für Genomics teilweise nicht validierbar | 🔵 EXTERNAL |
-| **SNOMED CT** | Neuere Codes (2024+) nicht auf TX-Servern verfügbar | 🔵 EXTERNAL |
+| **SNOMED CT** | Neuere Codes (nach Juli 2025+) nicht auf MII-TX-Servern verfügbar | 🔵 EXTERNAL |
 
 ### Nicht-validierbare SNOMED CT Codes
 
