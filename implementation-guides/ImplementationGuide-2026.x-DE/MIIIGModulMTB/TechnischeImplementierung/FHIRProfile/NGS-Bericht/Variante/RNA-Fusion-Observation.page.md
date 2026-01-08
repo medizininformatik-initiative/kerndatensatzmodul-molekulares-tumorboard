@@ -16,9 +16,20 @@ Die korrekte, präzise und standardisierte Darstellung von Fusions-Varianten ist
 Um bereits jetzt RNA-Fusionen beschreiben zu können, wird hier vereinfacht  und basierend auf der dnpm-Definition auf die formale Beschreibung der beteiligten 5' und 3'-Elemente Chromosom, Gen und Koordinaten zurückgegriffen.  
 
 Der 5' Fusion Partner wird dargestellt durch mehrere Elemente im component Slice: \
-MII_PR_MTB_RNA_Fusion.component[five-prime-gene], MII_PR_MTB_RNA_Fusion.component[five-prime-transcript-id], 
-MII_PR_MTB_RNA_Fusion.component[five-prime-exon-id], MII_PR_MTB_RNA_Fusion.component[five-prime-position] und MII_PR_MTB_RNA_Fusion.component[five-prime-strand]. 
+MII_PR_MTB_RNA_Fusion.component[five-prime-gene], MII_PR_MTB_RNA_Fusion.component[five-prime-transcript-id],
+MII_PR_MTB_RNA_Fusion.component[five-prime-exon-id], MII_PR_MTB_RNA_Fusion.component[five-prime-position] und MII_PR_MTB_RNA_Fusion.component[five-prime-strand].
 Der 3' Fusion Partner analog dazu mit MII_PR_MTB_RNA_Fusion.component[three-prime-...].
+
+#### Kodierung der Strang-Orientierung
+
+Fuer die Kodierung der Strang-Orientierung (Plus/Minus-Strang) wird die [Sequence Ontology](http://www.sequenceontology.org) verwendet:
+
+| Strang | Synonyme | Sequence Ontology Code |
+|--------|----------|------------------------|
+| Plus (+) | Watson, sense, coding, 5'→3' | `SO:0002262` (Watson_strand) |
+| Minus (-) | Crick, antisense, template, 3'←5' | `SO:0002263` (Crick_strand) |
+
+System-URL: `http://www.sequenceontology.org`
 
 ---
 
