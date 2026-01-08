@@ -30,6 +30,7 @@
 [MII-EXA-MTB-HRD-Score-1]: Observation-MII-EXA-MTB-HRD-Score-1.html
 [MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
 [MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
+[MII-EXA-MTB-RNA-Fusion-1]: Observation-MII-EXA-MTB-RNA-Fusion-1.html
 [mii-exa-mtb-kim-diagnose]: Condition-mii-exa-mtb-kim-diagnose.html
 [mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
 [mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
@@ -179,7 +180,6 @@
 [mii-exa-mtb-therapieempfehlung-kombinationstherapie]: RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.html
 [mii-exa-mtb-therapieempfehlung-trametinib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-trametinib.html
 [mii-exa-mtb-therapieplan-kombinationstherapie]: CarePlan-mii-exa-mtb-therapieplan-kombinationstherapie.html
-[mii-exa-mtb-who-grad-tumor-zns]: Observation-mii-exa-mtb-who-grad-tumor-zns.html
 [mii-exa-onko-allgemeiner-leistungszustand-ecog]: Observation-mii-exa-onko-allgemeiner-leistungszustand-ecog.html
 [mii-exa-mtb-medication-request-mirvetuximab]: MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html
 [mii-exa-mtb-kim-musterperson-behandlungsepisode]: ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html

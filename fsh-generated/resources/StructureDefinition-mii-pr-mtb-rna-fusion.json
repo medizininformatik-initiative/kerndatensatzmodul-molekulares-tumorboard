@@ -89,7 +89,7 @@
       {
         "id": "Observation.component",
         "path": "Observation.component",
-        "min": 12
+        "min": 10
       },
       {
         "id": "Observation.component:allelic-read-depth",
@@ -138,14 +138,13 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.component:effect",
+        "id": "Observation.component:variation-code",
         "path": "Observation.component",
-        "sliceName": "effect",
-        "short": "RNA Fusion Effect",
+        "sliceName": "variation-code",
+        "short": "Variant database ID (e.g. COSMIC)",
         "_short": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
               "extension": [
                 {
                   "url": "lang",
@@ -153,9 +152,10 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "RNA-Fusionseffekt"
+                  "valueString": "Varianten-Datenbank-ID (z.B. COSMIC)"
                 }
-              ]
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
             },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/translation",
@@ -166,118 +166,12 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "RNA Fusion Effect"
+                  "valueString": "Variant database ID (e.g. COSMIC)"
                 }
               ]
             }
           ]
-        },
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:effect.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:effect.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
         }
-      },
-      {
-        "id": "Observation.component:effect.value[x]:valueQuantity",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueQuantity",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:cosmic-id",
-        "path": "Observation.component",
-        "sliceName": "cosmic-id",
-        "short": "RNA Fusion Cosmic-ID",
-        "_short": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "de-DE"
-                },
-                {
-                  "url": "content",
-                  "valueString": "RNA-Fusion Cosmic-ID"
-                }
-              ]
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "en"
-                },
-                {
-                  "url": "content",
-                  "valueString": "RNA Fusion Cosmic-ID"
-                }
-              ]
-            }
-          ]
-        },
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:cosmic-id.code",
-        "path": "Observation.component.code",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.component:cosmic-id.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.component:cosmic-id.value[x]:valueCodeableConcept",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueCodeableConcept",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "mustSupport": true
       },
       {
         "id": "Observation.component:five-prime-gene",
@@ -321,7 +215,14 @@
       {
         "id": "Observation.component:five-prime-gene.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-gene",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:five-prime-gene.value[x]",
@@ -392,7 +293,14 @@
       {
         "id": "Observation.component:five-prime-transcript-id.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-transcript-id",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:five-prime-transcript-id.value[x]",
@@ -463,7 +371,14 @@
       {
         "id": "Observation.component:five-prime-exon-id.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-exon-id",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:five-prime-exon-id.value[x]",
@@ -534,6 +449,40 @@
       {
         "id": "Observation.component:five-prime-position.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-position",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:five-prime-position.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:five-prime-position.value[x]:valueRange",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -578,6 +527,40 @@
       {
         "id": "Observation.component:five-prime-strand.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "five-prime-strand",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:five-prime-strand.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:five-prime-strand.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -622,7 +605,14 @@
       {
         "id": "Observation.component:three-prime-gene.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-gene",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:three-prime-gene.value[x]",
@@ -693,7 +683,14 @@
       {
         "id": "Observation.component:three-prime-transcript-id.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-transcript-id",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:three-prime-transcript-id.value[x]",
@@ -764,7 +761,14 @@
       {
         "id": "Observation.component:three-prime-exon-id.code",
         "path": "Observation.component.code",
-        "mustSupport": true
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-exon-id",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
       },
       {
         "id": "Observation.component:three-prime-exon-id.value[x]",
@@ -835,6 +839,40 @@
       {
         "id": "Observation.component:three-prime-position.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-position",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:three-prime-position.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:three-prime-position.value[x]:valueRange",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -879,6 +917,40 @@
       {
         "id": "Observation.component:three-prime-strand.code",
         "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "three-prime-strand",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:three-prime-strand.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:three-prime-strand.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
         "mustSupport": true
       }
     ]

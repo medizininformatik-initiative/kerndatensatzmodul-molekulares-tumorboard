@@ -1,23 +1,45 @@
-//Instance: MII-EXA-MTB-RNA-Fusion-1
-//InstanceOf: MII_PR_MTB_RNA_Fusion
-//Usage: #example
-//Title: "Beispiel RNA-Fusion"
-//Description: "Beispiel fuer eine RNA-Fusion in Tumorzellen."
-//
-//* meta.profile = "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/rna-fusion"
-//* status = #final
-//* category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
-//* code = $LNC#69548-6 "Genetic variant assessment"
-//* valueCodeableConcept = $LNC#LA6572-3 "Present"
-//* subject = Reference(Patient/example)
-//
-//* component[five-prime-chromosome].valueCodeableConcept = $LNC#LA21255-7 "Chromosome 2"
-//* component[three-prime-chromosome].valueCodeableConcept = $LNC#LA21258-1 "Chromosome 5"
-//* component[five-prime-position].valueRange.low.value = 12345678
-//* component[five-prime-position].valueRange.high.value = 12345680
-//* component[three-prime-position].valueRange.low.value = 87654321
-//* component[three-prime-position].valueRange.high.value = 87654323
-//* component[five-prime-gene].valueCodeableConcept = #HGNC:1100 "BRCA1"
-//* component[three-prime-gene].valueCodeableConcept = #HGNC:9967 "RET"
-//* component[allelic-read-depth].valueQuantity = 150 $UCUM#1 "Number of reported reads"
-//* component[allelic-read-depth].code = $LNC#82121-5
+Instance: MII-EXA-MTB-RNA-Fusion-1
+InstanceOf: MII_PR_MTB_RNA_Fusion
+Usage: #example
+Title: "Beispiel RNA-Fusion"
+Description: "Beispiel fuer eine RNA-Fusion (EML4-ALK) in Tumorzellen."
+
+* insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion)
+* status = #final
+* category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
+* code = $LNC#69548-6 "Genetic variant assessment"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+
+* subject = Reference(Patient/example)
+
+// 5' Partner (EML4)
+* component[five-prime-gene].code = $mii-cs-mtb-molekulare-biomarker#five-prime-gene
+* component[five-prime-gene].valueCodeableConcept = $HGNC#HGNC:3331 "EML4"
+* component[five-prime-transcript-id].code = $mii-cs-mtb-molekulare-biomarker#five-prime-transcript-id
+* component[five-prime-transcript-id].valueCodeableConcept = https://www.ncbi.nlm.nih.gov/refseq/#NM_019063.4
+* component[five-prime-exon-id].code = $mii-cs-mtb-molekulare-biomarker#five-prime-exon-id
+* component[five-prime-exon-id].valueCodeableConcept.text = "Exon 13"
+* component[five-prime-position].code = $mii-cs-mtb-molekulare-biomarker#five-prime-position
+* component[five-prime-position].valueRange.low.value = 42396490
+* component[five-prime-position].valueRange.high.value = 42396490
+* component[five-prime-strand].code = $mii-cs-mtb-molekulare-biomarker#five-prime-strand
+* component[five-prime-strand].valueCodeableConcept = $LNC#LA6695-2 "Plus strand"
+
+// 3' Partner (ALK)
+* component[three-prime-gene].code = $mii-cs-mtb-molekulare-biomarker#three-prime-gene
+* component[three-prime-gene].valueCodeableConcept = $HGNC#HGNC:427 "ALK"
+* component[three-prime-transcript-id].code = $mii-cs-mtb-molekulare-biomarker#three-prime-transcript-id
+* component[three-prime-transcript-id].valueCodeableConcept = https://www.ncbi.nlm.nih.gov/refseq/#NM_004304.5
+* component[three-prime-exon-id].code = $mii-cs-mtb-molekulare-biomarker#three-prime-exon-id
+* component[three-prime-exon-id].valueCodeableConcept.text = "Exon 20"
+* component[three-prime-position].code = $mii-cs-mtb-molekulare-biomarker#three-prime-position
+* component[three-prime-position].valueRange.low.value = 29446394
+* component[three-prime-position].valueRange.high.value = 29446394
+* component[three-prime-strand].code = $mii-cs-mtb-molekulare-biomarker#three-prime-strand
+* component[three-prime-strand].valueCodeableConcept = $LNC#LA6695-2 "Plus strand"
+
+// COSMIC ID
+* component[variation-code].valueCodeableConcept = https://cancer.sanger.ac.uk/cosmic#COSF1171 "EML4-ALK fusion"
+
+// Read depth
+* component[allelic-read-depth].valueQuantity = 250 $UCUM#1 "reads"

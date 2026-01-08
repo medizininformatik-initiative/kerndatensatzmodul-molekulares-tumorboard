@@ -89,7 +89,6 @@ Description: "NGS-Bericht zu einer Probe"
 * insert Translation(result[EinfacheVariante] ^definition, de-DE, Verweis auf Einfache Variante)
 * insert Translation(result[EinfacheVariante] ^short, en, Simple Variant)
 * insert Translation(result[EinfacheVariante] ^definition, en, Reference to Simple Variant)
-* result[EinfacheVariante] 0..1 MS
 * result[EinfacheVariante] only Reference(MII_PR_MTB_Einfache_Variante) // or Einfache Variante Profile
 
 * result contains CopyNumberVariant 0..* MS
@@ -99,7 +98,6 @@ Description: "NGS-Bericht zu einer Probe"
 * insert Translation(result[CopyNumberVariant] ^definition, de-DE, Verweis auf Kopienzahlvariante)
 * insert Translation(result[CopyNumberVariant] ^short, en, Copy Number Variant)
 * insert Translation(result[CopyNumberVariant] ^definition, en, Reference to Copy Number Variant)
-* result[CopyNumberVariant] 0..1 MS
 * result[CopyNumberVariant] only Reference(MII_PR_MTB_Copy_Number_Variant) // or Copy Number Variant Profile
 
 * result contains DNAFusion 0..* MS
@@ -109,7 +107,6 @@ Description: "NGS-Bericht zu einer Probe"
 * insert Translation(result[DNAFusion] ^definition, de-DE, Verweis auf DNA-Fusion)
 * insert Translation(result[DNAFusion] ^short, en, DNA Fusion)
 * insert Translation(result[DNAFusion] ^definition, en, Reference to DNA Fusion)
-* result[DNAFusion] 0..1 MS
 * result[DNAFusion] only Reference(MII_PR_MTB_DNA_Fusion) // or MTB DNA-Fusion Profil
 
 * result contains RNAFusion 0..* MS
@@ -119,7 +116,6 @@ Description: "NGS-Bericht zu einer Probe"
 * insert Translation(result[RNAFusion] ^definition, de-DE, Verweis auf RNA-Fusion)
 * insert Translation(result[RNAFusion] ^short, en, RNA Fusion)
 * insert Translation(result[RNAFusion] ^definition, en, Reference to RNA Fusion)
-* result[RNAFusion] 0..1 MS
 * result[RNAFusion] only Reference(MII_PR_MTB_RNA_Fusion) // or MTB RNA-Fusion Profile
 
 * result contains RNASeq 0..* MS
@@ -129,7 +125,6 @@ Description: "NGS-Bericht zu einer Probe"
 * insert Translation(result[RNASeq] ^definition, de-DE, Verweis auf RNASeq)
 * insert Translation(result[RNASeq] ^short, en, RNASeq)
 * insert Translation(result[RNASeq] ^definition, en, Reference to RNASeq)
-* result[RNASeq] 0..1 MS
 * result[RNASeq] only Reference(MII_PR_MTB_RNA_Seq) // or MTB RNASeq Profile
 
 * result contains MolekularerBiomarkerHER2Status 0..* MS

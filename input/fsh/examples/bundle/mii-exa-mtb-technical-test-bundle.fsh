@@ -272,13 +272,3 @@
 // * insert BundleResource(Organization, MyHospital)
 // * insert BundleResource(Organization, MyInsurer)
 // * insert BundleResource(Coverage, MyCoverage)
-
-Instance: mii-exa-mtb-who-grad-tumor-zns
-InstanceOf: MII_PR_MTB_WHO_Grad_Tumor_ZNS
-Usage: #example
-* meta.profile[+] = "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
-* status = #final
-* code.coding = $SCT#396921005 "WHO grade finding for central nervous system tumor"
-* subject = Reference(Patient/PatientKimMusterperson)
-* encounter = Reference(Encounter/example)
-* valueCodeableConcept = $SCT#396923008 "World Health Organization grade II central nervous system tumor (finding)"

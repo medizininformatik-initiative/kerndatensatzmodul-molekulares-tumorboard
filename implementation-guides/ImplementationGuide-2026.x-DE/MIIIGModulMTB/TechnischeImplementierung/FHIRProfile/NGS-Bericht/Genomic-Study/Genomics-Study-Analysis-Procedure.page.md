@@ -83,28 +83,6 @@ select
 
 ---
 
-
-Mapping Datensatz zu FHIR
-
-@```
-from StructureDefinition 
-where url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb'
-    for
-        differential.element
-    
-    where
-        id.contains('RNASeq') and 
-        mapping.first().map.contains('MII_PR_MTB_RNA_Seq')
-    select 
-        Datensatz: short,
-        Erklaerung: definition, 
-        FHIR: mapping[0].map 
-
-```
-
----
-
-
 **Suchparameter**
 
 Folgende Suchparameter sind für das Modul Onkologie relevant, auch in Kombination:
