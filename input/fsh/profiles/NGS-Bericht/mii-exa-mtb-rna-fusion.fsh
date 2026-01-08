@@ -14,7 +14,7 @@ Description: "Beispiel fuer eine RNA-Fusion (EML4-ALK) in Tumorzellen."
 
 // 5' Partner (EML4)
 * component[five-prime-gene].code = $mii-cs-mtb-molekulare-biomarker#five-prime-gene
-* component[five-prime-gene].valueCodeableConcept = $HGNC#HGNC:3331 "EML4"
+* component[five-prime-gene].valueCodeableConcept = $HGNC#HGNC:1316 "EML4"
 * component[five-prime-transcript-id].code = $mii-cs-mtb-molekulare-biomarker#five-prime-transcript-id
 * component[five-prime-transcript-id].valueCodeableConcept = https://www.ncbi.nlm.nih.gov/refseq/#NM_019063.4
 * component[five-prime-exon-id].code = $mii-cs-mtb-molekulare-biomarker#five-prime-exon-id
@@ -23,7 +23,7 @@ Description: "Beispiel fuer eine RNA-Fusion (EML4-ALK) in Tumorzellen."
 * component[five-prime-position].valueRange.low.value = 42396490
 * component[five-prime-position].valueRange.high.value = 42396490
 * component[five-prime-strand].code = $mii-cs-mtb-molekulare-biomarker#five-prime-strand
-* component[five-prime-strand].valueCodeableConcept = $LNC#LA6695-2 "Plus strand"
+* component[five-prime-strand].valueCodeableConcept = http://www.sequenceontology.org#SO:0002262 "Watson_strand"
 
 // 3' Partner (ALK)
 * component[three-prime-gene].code = $mii-cs-mtb-molekulare-biomarker#three-prime-gene
@@ -36,7 +36,7 @@ Description: "Beispiel fuer eine RNA-Fusion (EML4-ALK) in Tumorzellen."
 * component[three-prime-position].valueRange.low.value = 29446394
 * component[three-prime-position].valueRange.high.value = 29446394
 * component[three-prime-strand].code = $mii-cs-mtb-molekulare-biomarker#three-prime-strand
-* component[three-prime-strand].valueCodeableConcept = $LNC#LA6695-2 "Plus strand"
+* component[three-prime-strand].valueCodeableConcept = http://www.sequenceontology.org#SO:0002262 "Watson_strand"
 
 // COSMIC ID
 * component[variation-code].valueCodeableConcept = https://cancer.sanger.ac.uk/cosmic#COSF1171 "EML4-ALK fusion"
