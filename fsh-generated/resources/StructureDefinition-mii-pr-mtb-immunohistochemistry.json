@@ -27,6 +27,19 @@
   "differential": {
     "element": [
       {
+        "id": "Observation",
+        "path": "Observation",
+        "constraint": [
+          {
+            "key": "mii-mtb-ihc-1",
+            "severity": "error",
+            "human": "Entweder muss ein spezifischer Code oder gene-studied angegeben werden (Either a specific code or gene-studied must be provided)",
+            "expression": "code.coding.where(system != 'http://snomed.info/sct' or code != '1234806008').exists() or component.where(code.coding.where(system = 'http://loinc.org' and code = '48018-6').exists()).exists()",
+            "source": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"
+          }
+        ]
+      },
+      {
         "id": "Observation.identifier",
         "path": "Observation.identifier",
         "mustSupport": true
@@ -65,7 +78,7 @@
             }
           ]
         },
-        "definition": "Kodierung für Immunhistochemische Untersuchung. Nach Möglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist über gene-studied ",
+        "definition": "Kodierung für Immunhistochemische Untersuchung. Enthält immer den generischen IHC-Code. Nach Möglichkeit sind zusätzlich spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind, ist über gene-studied das untersuchte Gen anzugeben.",
         "_definition": {
           "extension": [
             {
@@ -76,7 +89,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Kodierung fuer Immunhistochemische Untersuchung. Nach Moeglichkeit sind spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind ist ueber gene-studied anzugeben."
+                  "valueString": "Kodierung fuer Immunhistochemische Untersuchung. Enthaelt immer den generischen IHC-Code. Nach Moeglichkeit sind zusaetzlich spezifische Codes zu verwenden. Wenn weder in SNOMED noch LOINC spezifische Codes vorhanden sind ist ueber gene-studied das untersuchte Gen anzugeben."
                 }
               ],
               "url": "http://hl7.org/fhir/StructureDefinition/translation"
@@ -90,7 +103,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Coding for immunohistochemical examination. Specific codes should be used whenever possible. If no specific codes are available in SNOMED or LOINC use gene-studied."
+                  "valueString": "Coding for immunohistochemical examination. Always contains the generic IHC code. Specific codes should be used additionally whenever possible. If no specific codes are available in SNOMED or LOINC the examined gene must be specified via gene-studied."
                 }
               ]
             }
@@ -109,14 +122,14 @@
           ],
           "rules": "open"
         },
-        "max": "1",
+        "min": 1,
         "mustSupport": true
       },
       {
-        "id": "Observation.code.coding:spezifisch",
+        "id": "Observation.code.coding:generisch",
         "path": "Observation.code.coding",
-        "sliceName": "spezifisch",
-        "short": "Immunhistochemische Untersuchung",
+        "sliceName": "generisch",
+        "short": "Generischer Immunhistochemischer Untersuchungscode",
         "_short": {
           "extension": [
             {
@@ -128,7 +141,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Immunhistochemische Untersuchung"
+                  "valueString": "Generischer Immunhistochemischer Untersuchungscode"
                 }
               ]
             },
@@ -141,13 +154,13 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Immunohistochemical examination"
+                  "valueString": "Generic immunohistochemical examination code"
                 }
               ]
             }
           ]
         },
-        "definition": "Spezifischer Code SNOMED-CT- oder LOINC-Code für immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist, ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben.",
+        "definition": "Generischer Code für immunhistochemische Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten.",
         "_definition": {
           "extension": [
             {
@@ -159,7 +172,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Spezifischer SNOMED-CT- oder LOINC-Code fuer immunhistochemische Untersuchung. Wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist ist der generische Code zu verwenden und das nachgewiesene Gen unter component[gene-studied] anzugeben."
+                  "valueString": "Generischer Code fuer immunhistochemische Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten."
                 }
               ]
             },
@@ -172,7 +185,82 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Specific SNOMED-CT or LOINC code for immunohistochemical examination. If no specific code is available in SNOMED or LOINC use the generic code and specify the detected gene under component[gene-studied]."
+                  "valueString": "Generic code for immunohistochemical examinations. Always provided to ensure interoperability."
+                }
+              ]
+            }
+          ]
+        },
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "1234806008",
+          "system": "http://snomed.info/sct",
+          "display": "Observation using immunohistochemistry (observable entity)"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:spezifisch",
+        "path": "Observation.code.coding",
+        "sliceName": "spezifisch",
+        "short": "Spezifischer Immunhistochemie-Code",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Spezifischer Immunhistochemie-Code"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Specific immunohistochemistry code"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Spezifischer SNOMED-CT- oder LOINC-Code für die immunhistochemische Untersuchung. Soll verwendet werden, wenn ein passender Code existiert.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Spezifischer SNOMED-CT- oder LOINC-Code fuer die immunhistochemische Untersuchung. Soll verwendet werden wenn ein passender Code existiert."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Specific SNOMED-CT or LOINC code for the immunohistochemical examination. Should be used when an appropriate code exists."
                 }
               ]
             }
@@ -190,50 +278,6 @@
         "id": "Observation.code.coding:spezifisch.system",
         "path": "Observation.code.coding.system",
         "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding:generisch",
-        "path": "Observation.code.coding",
-        "sliceName": "generisch",
-        "short": "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist.",
-        "_short": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "de-DE"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Generische Immunhistochemischer Untersuchungscode. Nur zu benutzen wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist."
-                }
-              ]
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "en"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Generic immunohistochemical examination code. Only to be used if no specific code is available in SNOMED or LOINC."
-                }
-              ]
-            }
-          ]
-        },
-        "min": 0,
-        "max": "1",
-        "patternCoding": {
-          "code": "1234806008",
-          "system": "http://snomed.info/sct",
-          "display": "Observation using immunohistochemistry (observable entity)"
-        },
         "mustSupport": true
       },
       {
