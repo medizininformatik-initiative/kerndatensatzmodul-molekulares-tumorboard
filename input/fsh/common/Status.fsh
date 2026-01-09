@@ -1,2 +1,2 @@
 RuleSet: Status
-* ^status = #draft
+* ^status = #active
