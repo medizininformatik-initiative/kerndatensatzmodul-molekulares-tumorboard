@@ -1,12 +1,19 @@
 // In Situ Hybridization (ISH) Profile
 // Supports FISH, CISH, SISH techniques
 
+Invariant: mii-mtb-ish-1
+Description: "Entweder muss ein spezifischer Code oder gene-studied angegeben werden (Either a specific code or gene-studied must be provided)"
+Expression: "code.coding.where(system != 'http://snomed.info/sct' or code != '51864006').exists() or component.where(code.coding.where(system = 'http://loinc.org' and code = '48018-6').exists()).exists()"
+Severity: #error
+
 Profile: MII_PR_MTB_Biomarker_InSituHybridization
 Parent: MII_PR_MTB_Molekularer_Biomarker
 Id: mii-pr-mtb-insituhybridization
 Title: "MII PR MTB In Situ Hybridization"
 Description: "Molekularer Biomarker - In Situ Hybridization Profil. Unterstützt FISH, CISH und SISH Methoden."
 * insert PR_Header
+
+* obeys mii-mtb-ish-1
 
 * identifier 0..1 MS
 * identifier ^short = "Identifier zur Abgrenzung anderer gleichartiger Untersuchungen"
@@ -28,30 +35,31 @@ Description: "Molekularer Biomarker - In Situ Hybridization Profil. Unterstützt
 * insert Translation(code ^short, en, Code for In Situ Hybridization examination)
 * insert Translation(code ^definition, en, Coding for In Situ Hybridization. Specific codes should be used whenever possible. If no specific codes are available in SNOMED or LOINC use the generic code with text description.)
 
+* code.coding MS
 * code.coding ^slicing.discriminator.type = #pattern
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding ^slicing.description = "Slice für spezifischen und generischen ISH Code"
 * code.coding ^slicing.ordered = false
 
-* code.coding contains spezifisch 0..1 MS and generisch 0..1 MS
-
-* code.coding[spezifisch] ^short = "Spezifischer ISH Code"
-* code.coding[spezifisch] ^definition = "Spezifischer SNOMED-CT oder LOINC Code für die ISH-Untersuchung. Wenn kein spezifischer Code vorhanden ist, generischen Code verwenden."
-* insert Translation(code.coding[spezifisch] ^short, de-DE, Spezifischer ISH Code)
-* insert Translation(code.coding[spezifisch] ^definition, de-DE, Spezifischer SNOMED-CT oder LOINC Code fuer die ISH-Untersuchung. Wenn kein spezifischer Code vorhanden ist generischen Code verwenden.)
-* insert Translation(code.coding[spezifisch] ^short, en, Specific ISH Code)
-* insert Translation(code.coding[spezifisch] ^definition, en, Specific SNOMED-CT or LOINC code for the ISH examination. If no specific code is available use the generic code.)
-* code.coding[spezifisch].system 1..1 MS
-* code.coding[spezifisch].code 1..1 MS
+* code.coding contains generisch 1..1 MS and spezifisch 0..1 MS
 
 * code.coding[generisch] = $SCT#51864006 "Nucleic acid hybridization, function (observable entity)"
 * code.coding[generisch] ^short = "Generischer ISH Code"
-* code.coding[generisch] ^definition = "Generischer Code für ISH. Nur zu benutzen, wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist."
+* code.coding[generisch] ^definition = "Generischer Code für ISH-Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten."
 * insert Translation(code.coding[generisch] ^short, de-DE, Generischer ISH Code)
-* insert Translation(code.coding[generisch] ^definition, de-DE, Generischer Code fuer ISH. Nur zu benutzen wenn kein spezifischer Code in SNOMED oder LOINC vorhanden ist.)
+* insert Translation(code.coding[generisch] ^definition, de-DE, Generischer Code fuer ISH-Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten.)
 * insert Translation(code.coding[generisch] ^short, en, Generic ISH Code)
-* insert Translation(code.coding[generisch] ^definition, en, Generic code for ISH. Only to be used if no specific code is available in SNOMED or LOINC.)
+* insert Translation(code.coding[generisch] ^definition, en, Generic code for ISH examinations. Always provided to ensure interoperability.)
+
+* code.coding[spezifisch] ^short = "Spezifischer ISH Code"
+* code.coding[spezifisch] ^definition = "Spezifischer SNOMED-CT oder LOINC Code für die ISH-Untersuchung. Soll verwendet werden, wenn ein passender Code existiert."
+* insert Translation(code.coding[spezifisch] ^short, de-DE, Spezifischer ISH Code)
+* insert Translation(code.coding[spezifisch] ^definition, de-DE, Spezifischer SNOMED-CT oder LOINC Code fuer die ISH-Untersuchung. Soll verwendet werden wenn ein passender Code existiert.)
+* insert Translation(code.coding[spezifisch] ^short, en, Specific ISH Code)
+* insert Translation(code.coding[spezifisch] ^definition, en, Specific SNOMED-CT or LOINC code for the ISH examination. Should be used when an appropriate code exists.)
+* code.coding[spezifisch].system 1..1 MS
+* code.coding[spezifisch].code 1..1 MS
 
 // Method - FISH, CISH, SISH
 * method 1..1 MS
