@@ -26,5 +26,16 @@
         "url_base": "https://hl7.org/fhir/uv/genomics-reporting/STU3/"
       }
     }
+  },
+  "version_files": {
+    "fsh_path": "input/fsh/common/Version.fsh",
+    "rulesets": ["PR_CS_VS_Version", "Version", "MetaProfile"],
+    "files": {
+      "package_json": true,
+      "package_json_description": true,
+      "sushi_config": true,
+      "qc_rules": true,
+      "guide_yaml": "implementation-guides/ImplementationGuide-2026.x-DE/guide.yaml"
+    }
   }
 }
