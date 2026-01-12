@@ -160,7 +160,7 @@
             }
           ]
         },
-        "definition": "Generischer Code für immunhistochemische Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten.",
+        "definition": "Generischer Code für immunhistochemische Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten. Zusätzliche spezifische Codes können über open slicing hinzugefügt werden.",
         "_definition": {
           "extension": [
             {
@@ -172,7 +172,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Generischer Code fuer immunhistochemische Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten."
+                  "valueString": "Generischer Code fuer immunhistochemische Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten. Zusaetzliche spezifische Codes koennen ueber open slicing hinzugefuegt werden."
                 }
               ]
             },
@@ -185,7 +185,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Generic code for immunohistochemical examinations. Always provided to ensure interoperability."
+                  "valueString": "Generic code for immunohistochemical examinations. Always provided to ensure interoperability. Additional specific codes can be added via open slicing."
                 }
               ]
             }
@@ -198,86 +198,6 @@
           "system": "http://snomed.info/sct",
           "display": "Observation using immunohistochemistry (observable entity)"
         },
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding:spezifisch",
-        "path": "Observation.code.coding",
-        "sliceName": "spezifisch",
-        "short": "Spezifischer Immunhistochemie-Code",
-        "_short": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "de-DE"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Spezifischer Immunhistochemie-Code"
-                }
-              ]
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "en"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Specific immunohistochemistry code"
-                }
-              ]
-            }
-          ]
-        },
-        "definition": "Spezifischer SNOMED-CT- oder LOINC-Code für die immunhistochemische Untersuchung. Soll verwendet werden, wenn ein passender Code existiert.",
-        "_definition": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "de-DE"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Spezifischer SNOMED-CT- oder LOINC-Code fuer die immunhistochemische Untersuchung. Soll verwendet werden wenn ein passender Code existiert."
-                }
-              ]
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "en"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Specific SNOMED-CT or LOINC code for the immunohistochemical examination. Should be used when an appropriate code exists."
-                }
-              ]
-            }
-          ]
-        },
-        "min": 0,
-        "max": "1",
-        "mustSupport": true,
-        "binding": {
-          "strength": "preferred",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-immunohistochemistry-specific-codes"
-        }
-      },
-      {
-        "id": "Observation.code.coding:spezifisch.system",
-        "path": "Observation.code.coding.system",
-        "min": 1,
         "mustSupport": true
       },
       {

@@ -184,7 +184,7 @@
             }
           ],
           "rules": "open",
-          "description": "Slice für spezifischen und generischen ISH Code",
+          "description": "Slice für generischen ISH Code, zusätzliche spezifische Codes via open slicing",
           "ordered": false
         },
         "min": 1,
@@ -225,7 +225,7 @@
             }
           ]
         },
-        "definition": "Generischer Code für ISH-Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten.",
+        "definition": "Generischer Code für ISH-Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten. Zusätzliche spezifische Codes können über open slicing hinzugefügt werden.",
         "_definition": {
           "extension": [
             {
@@ -237,7 +237,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Generischer Code fuer ISH-Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten."
+                  "valueString": "Generischer Code fuer ISH-Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten. Zusaetzliche spezifische Codes koennen ueber open slicing hinzugefuegt werden."
                 }
               ]
             },
@@ -250,7 +250,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Generic code for ISH examinations. Always provided to ensure interoperability."
+                  "valueString": "Generic code for ISH examinations. Always provided to ensure interoperability. Additional specific codes can be added via open slicing."
                 }
               ]
             }
@@ -263,88 +263,6 @@
           "system": "http://snomed.info/sct",
           "display": "Nucleic acid hybridization, function (observable entity)"
         },
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding:spezifisch",
-        "path": "Observation.code.coding",
-        "sliceName": "spezifisch",
-        "short": "Spezifischer ISH Code",
-        "_short": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "de-DE"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Spezifischer ISH Code"
-                }
-              ]
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "en"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Specific ISH Code"
-                }
-              ]
-            }
-          ]
-        },
-        "definition": "Spezifischer SNOMED-CT oder LOINC Code für die ISH-Untersuchung. Soll verwendet werden, wenn ein passender Code existiert.",
-        "_definition": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "de-DE"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Spezifischer SNOMED-CT oder LOINC Code fuer die ISH-Untersuchung. Soll verwendet werden wenn ein passender Code existiert."
-                }
-              ]
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
-              "extension": [
-                {
-                  "url": "lang",
-                  "valueCode": "en"
-                },
-                {
-                  "url": "content",
-                  "valueString": "Specific SNOMED-CT or LOINC code for the ISH examination. Should be used when an appropriate code exists."
-                }
-              ]
-            }
-          ]
-        },
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding:spezifisch.system",
-        "path": "Observation.code.coding.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.code.coding:spezifisch.code",
-        "path": "Observation.code.coding.code",
-        "min": 1,
         "mustSupport": true
       },
       {

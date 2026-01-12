@@ -5,6 +5,7 @@ Title: "MII PR MTB Immunohistochemistry"
 Description: "Immunhistrchemistry report"
 * insert PR_Header
 
+* code.coding contains spezifisch 1..1 MS
 * code.coding[spezifisch] = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL4396-9 //
@@ -25,6 +26,7 @@ Description: "HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC
 * insert PR_Header
 
 // Specific code for HER2/CEP17 ratio measurement
+* code.coding contains spezifisch 1..1 MS
 * code.coding[spezifisch] = $LNC#49683-6 "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
 
 // Method defaults to FISH for HER2

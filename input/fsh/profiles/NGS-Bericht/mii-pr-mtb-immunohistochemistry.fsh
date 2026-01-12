@@ -24,24 +24,15 @@ Description: "Immunhistorchemistry report"
 * code.coding ^slicing.discriminator.type = #pattern
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
-* code.coding contains generisch 1..1 MS and spezifisch 0..1 MS
+* code.coding contains generisch 1..1 MS
 
 * code.coding[generisch] = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
 * code.coding[generisch] ^short = "Generischer Immunhistochemischer Untersuchungscode"
-* code.coding[generisch] ^definition = "Generischer Code für immunhistochemische Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten."
+* code.coding[generisch] ^definition = "Generischer Code für immunhistochemische Untersuchungen. Wird immer angegeben, um die Interoperabilität zu gewährleisten. Zusätzliche spezifische Codes können über open slicing hinzugefügt werden."
 * insert Translation(code.coding[generisch] ^short, de-DE, Generischer Immunhistochemischer Untersuchungscode)
-* insert Translation(code.coding[generisch] ^definition, de-DE, Generischer Code fuer immunhistochemische Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten.)
+* insert Translation(code.coding[generisch] ^definition, de-DE, Generischer Code fuer immunhistochemische Untersuchungen. Wird immer angegeben um die Interoperabilitaet zu gewaehrleisten. Zusaetzliche spezifische Codes koennen ueber open slicing hinzugefuegt werden.)
 * insert Translation(code.coding[generisch] ^short, en, Generic immunohistochemical examination code)
-* insert Translation(code.coding[generisch] ^definition, en, Generic code for immunohistochemical examinations. Always provided to ensure interoperability.)
-
-* code.coding[spezifisch].system 1..1 MS
-* code.coding[spezifisch] from $mii-vs-mtb-immunohistochemistry-specific-codes (preferred)
-* code.coding[spezifisch] ^short = "Spezifischer Immunhistochemie-Code"
-* code.coding[spezifisch] ^definition = "Spezifischer SNOMED-CT- oder LOINC-Code für die immunhistochemische Untersuchung. Soll verwendet werden, wenn ein passender Code existiert."
-* insert Translation(code.coding[spezifisch] ^short, de-DE, Spezifischer Immunhistochemie-Code)
-* insert Translation(code.coding[spezifisch] ^definition, de-DE, Spezifischer SNOMED-CT- oder LOINC-Code fuer die immunhistochemische Untersuchung. Soll verwendet werden wenn ein passender Code existiert.)
-* insert Translation(code.coding[spezifisch] ^short, en, Specific immunohistochemistry code)
-* insert Translation(code.coding[spezifisch] ^definition, en, Specific SNOMED-CT or LOINC code for the immunohistochemical examination. Should be used when an appropriate code exists.)
+* insert Translation(code.coding[generisch] ^definition, en, Generic code for immunohistochemical examinations. Always provided to ensure interoperability. Additional specific codes can be added via open slicing.)
 
 * specimen MS
 * specimen ^definition = "Block-MAterial-Nr. der Probe. Da jede FHIR-Observation nur eine Referenz auf Specimen haben kann, Die gesamte Probe (z.B. Biopsie, Exzisat) wird von den Einzelschnitten referenziert."
