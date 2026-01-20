@@ -1,0 +1,49 @@
+{
+  "resourceType": "ClinicalImpression",
+  "id": "MII-EXA-MTB-Follow-Up-ClinicalImpression-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression|2026.0.0"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "390906007",
+        "system": "http://snomed.info/sct",
+        "display": "Follow-up encounter (procedure)"
+      }
+    ]
+  },
+  "investigation": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "completed",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status"
+          }
+        ]
+      }
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "Procedure/MII-EXA-MTB-Systemische-Therapie-1"
+    },
+    {
+      "reference": "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
+    },
+    {
+      "reference": "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"
+    }
+  ],
+  "status": "completed",
+  "effectiveDateTime": "2023-10-22",
+  "previous": {
+    "reference": "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
+  },
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

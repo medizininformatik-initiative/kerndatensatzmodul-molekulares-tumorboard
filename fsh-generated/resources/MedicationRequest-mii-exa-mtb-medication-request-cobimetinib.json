@@ -1,0 +1,53 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "mii-exa-mtb-medication-request-cobimetinib",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.0"
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "ER29L26N1X",
+        "system": "http://fdasis.nlm.nih.gov",
+        "display": "COBIMETINIB"
+      }
+    ]
+  },
+  "reasonReference": [
+    {
+      "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "valuePositiveInt": 6
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+            "code": "m3"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://www.ncbi.nlm.nih.gov/pubmed",
+        "value": "31209687"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    }
+  ],
+  "status": "draft",
+  "intent": "option",
+  "authoredOn": "2023-03-28",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

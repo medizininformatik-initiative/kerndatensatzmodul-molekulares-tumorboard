@@ -1,0 +1,693 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-follow-up-clinicalimpression",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression",
+  "version": "2026.0.0",
+  "name": "MII_PR_MTB_Follow_Up_ClinicalImpression",
+  "title": "MII PR MTB Clinical Impresssion",
+  "status": "active",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Follow-Up als Prozess des Einholens von Informationen über durchgeführte Therapien & Kostenuebernahmen",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ClinicalImpression",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ClinicalImpression",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ClinicalImpression.meta",
+        "path": "ClinicalImpression.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.meta.profile",
+        "path": "ClinicalImpression.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.status",
+        "path": "ClinicalImpression.status",
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.statusReason",
+        "path": "ClinicalImpression.statusReason",
+        "short": "Grund Nicht-Umsetzung",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grund Nicht-Umsetzung"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reason for Non-Implementation"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Grund für die Nicht-Umsetzung des gesamten Therapieplans",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Grund fuer die Nicht-Umsetzung des gesamten Therapieplans"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reason for non-implementation of the entire therapy plan"
+                }
+              ]
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.statusReason.coding",
+        "path": "ClinicalImpression.statusReason.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ClinicalImpression.statusReason.coding.system",
+        "path": "ClinicalImpression.statusReason.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund"
+      },
+      {
+        "id": "ClinicalImpression.statusReason.coding.code",
+        "path": "ClinicalImpression.statusReason.coding.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung"
+        }
+      },
+      {
+        "id": "ClinicalImpression.code",
+        "path": "ClinicalImpression.code",
+        "short": "Follow-Up",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Follow-Up"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Follow-Up"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Follow-Up als Prozess des Einholens von Informationen über durchgeführte Therapien & Kostenuebernahmen",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Follow-Up als Prozess des Einholens von Informationen ueber durchgefuehrte Therapien & Kostenuebernahmen"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Follow-up as a process of gathering information about performed therapies and cost coverage"
+                }
+              ]
+            }
+          ]
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.code.coding",
+        "path": "ClinicalImpression.code.coding",
+        "patternCoding": {
+          "code": "390906007",
+          "system": "http://snomed.info/sct",
+          "display": "Follow-up encounter (procedure)"
+        }
+      },
+      {
+        "id": "ClinicalImpression.subject",
+        "path": "ClinicalImpression.subject",
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.effective[x]",
+        "path": "ClinicalImpression.effective[x]",
+        "short": "Erfassungsdatum",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Erfassungsdatum"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Recording Date"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Erfassungsdatum Durchführung Follow-Up",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Erfassungsdatum Durchfuehrung Follow-Up"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Recording date of follow-up execution"
+                }
+              ]
+            }
+          ]
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.previous",
+        "path": "ClinicalImpression.previous",
+        "short": "MTB-Behandlungsepisode",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "MTB-Behandlungsepisode"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "MTB Treatment Episode"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "MTB-Behandlungsepisode, auf die sich das Follow-Up bezieht",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "MTB-Behandlungsepisode auf die sich das Follow-Up bezieht"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "MTB treatment episode to which the follow-up refers"
+                }
+              ]
+            }
+          ]
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.investigation",
+        "path": "ClinicalImpression.investigation",
+        "short": "Status Follow-Up",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Status Follow-Up"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Follow-Up Status"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Status des Therapieplans im Hinblick auf das Follow-Up",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Status des Therapieplans im Hinblick auf das Follow-Up"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Status of the therapy plan with regard to follow-up"
+                }
+              ]
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.investigation.code.coding.system",
+        "path": "ClinicalImpression.investigation.code.coding.system",
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status"
+      },
+      {
+        "id": "ClinicalImpression.investigation.code.coding.code",
+        "path": "ClinicalImpression.investigation.code.coding.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status"
+        }
+      },
+      {
+        "id": "ClinicalImpression.supportingInfo",
+        "path": "ClinicalImpression.supportingInfo",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this.resolve()"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice für die durch das Follow-Up gewonnenen Informationen",
+          "ordered": false
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.supportingInfo:UmgesetzteTherapien",
+        "path": "ClinicalImpression.supportingInfo",
+        "sliceName": "UmgesetzteTherapien",
+        "short": "Umgesetzte Therapien",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Umgesetzte Therapien"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Implemented Therapies"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Umgesetzte Therapien mit oder auch ohne Bezug auf die MTB-Empfehlungen",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Umgesetzte Therapien mit oder auch ohne Bezug auf die MTB-Empfehlungen"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Implemented therapies with or without reference to MTB recommendations"
+                }
+              ]
+            }
+          ]
+        },
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Procedure"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.supportingInfo:AntraegeKostenuebernahme",
+        "path": "ClinicalImpression.supportingInfo",
+        "sliceName": "AntraegeKostenuebernahme",
+        "short": "Anträge Kostenübernahme",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Antraege Kostenuebernahme"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Cost Coverage Applications"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Anträge Kostenübernahme für die empfohlenen Therapien",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Antraege Kostenuebernahme fuer die empfohlenen Therapien"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Cost coverage applications for the recommended therapies"
+                }
+              ]
+            }
+          ]
+        },
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Claim"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClinicalImpression.supportingInfo:AntwortenKostenuebernahme",
+        "path": "ClinicalImpression.supportingInfo",
+        "sliceName": "AntwortenKostenuebernahme",
+        "short": "Antworten Kostenübernahme",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Antworten Kostenuebernahme"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Cost Coverage Responses"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Antworten der Versicherungen auf die Anträge zur Kostenübernahme",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Antworten der Versicherungen auf die Antraege zur Kostenuebernahme"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Responses from insurance companies to cost coverage applications"
+                }
+              ]
+            }
+          ]
+        },
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ClaimResponse"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

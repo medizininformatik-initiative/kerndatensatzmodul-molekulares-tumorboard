@@ -1,0 +1,73 @@
+{
+  "resourceType": "Observation",
+  "id": "MII-EXA-MTB-Response-Befund-Beispiel-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund|2026.0.0"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "396432002",
+        "display": "Status of regression of tumor (observable entity)"
+      }
+    ]
+  },
+  "focus": [
+    {
+      "reference": "Condition/Example"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "PD",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung",
+        "display": "Progressive Disease"
+      }
+    ]
+  },
+  "partOf": [
+    {
+      "reference": "Procedure/Example"
+    }
+  ],
+  "component": [
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "K",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-primaertumor",
+            "display": "Kein Tumor nachweisbar"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "445200009",
+            "display": "Status of residual neoplasm (observable entity)"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "registered",
+  "subject": {
+    "reference": "Patient/Example"
+  },
+  "effectiveDateTime": "2014-02-12",
+  "method": {
+    "coding": [
+      {
+        "code": "RECIST",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode",
+        "display": "RECIST"
+      }
+    ]
+  }
+}

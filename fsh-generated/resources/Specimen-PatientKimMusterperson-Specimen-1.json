@@ -1,0 +1,47 @@
+{
+  "resourceType": "Specimen",
+  "id": "PatientKimMusterperson-Specimen-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen"
+    ]
+  },
+  "identifier": [
+    {
+      "value": "Z 230201/23"
+    }
+  ],
+  "accessionIdentifier": {
+    "value": "Z 230201/23"
+  },
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "309201001",
+        "display": "Ascitic fluid specimen"
+      }
+    ]
+  },
+  "collection": {
+    "quantity": {
+      "system": "http://unitsofmeasure.org",
+      "value": 20,
+      "unit": "mL",
+      "code": "mL"
+    },
+    "collectedDateTime": "2023-01-02",
+    "method": {
+      "coding": [
+        {
+          "code": "178012008",
+          "system": "http://snomed.info/sct"
+        }
+      ]
+    }
+  },
+  "status": "available",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

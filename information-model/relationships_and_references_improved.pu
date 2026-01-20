@@ -1,0 +1,144 @@
+@startuml references-mtb-improved
+
+' Layout configuration for better readability
+!pragma layout smetana
+skinparam ranksep 60
+skinparam nodesep 40
+skinparam packageStyle rectangle
+skinparam defaultTextAlignment center
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+!$colors = {"CarePlan": "#6a6cf8", "Claim": "#f26f6f", "ClaimResponse": "#a4b1f7", "ClinicalImpression": "#69f683", "Condition": "#6d7198", "DiagnosticReport": "#fa92bb", "MedicationRequest": "#ba6bf9", "MedicationStatement": "#74f8dc", "Observation": "#fbca69", "Procedure": "#70a68c", "RequestGroup": "#fee0b0", "ResearchStudy": "#d96ac5", "ServiceRequest": "#a3c16d"}
+
+legend top right
+    |Color|Type|
+    |<$colors.CarePlan>|CarePlan|
+    |<$colors.Claim>|Claim|
+    |<$colors.ClaimResponse>|ClaimResponse|
+    |<$colors.ClinicalImpression>|ClinicalImpression|
+    |<$colors.Condition>|Condition|
+    |<$colors.DiagnosticReport>|DiagnosticReport|
+    |<$colors.MedicationRequest>|MedicationRequest|
+    |<$colors.MedicationStatement>|MedicationStatement|
+    |<$colors.Observation>|Observation|
+    |<$colors.Procedure>|Procedure|
+    |<$colors.RequestGroup>|RequestGroup|
+    |<$colors.ResearchStudy>|ResearchStudy|
+    |<$colors.ServiceRequest>|ServiceRequest|
+endlegend
+
+' Core Episode Package - Center
+package "Behandlungsepisode" as episode {
+    object "MTB Behandlungsepisode" as Behandlungsepisode $colors.ClinicalImpression
+    object "Diagnose Primärtumor" as Diagnose $colors.Condition
+    object "Consent Given" as Consent $colors.Observation
+    object "Systemische Vortherapie" as Vortherapie $colors.Procedure
+    object "Tumorausbreitung" as Tumorausbreitung $colors.Observation
+    object "WHO Grad Tumor ZNS" as WHOGrad $colors.Observation
+    object "Oncotree" as Oncotree $colors.Observation
+}
+
+' Diagnostic Reports - Top
+package "NGS-Bericht" as ngs {
+    object "NGS Bericht" as NGSBericht $colors.DiagnosticReport
+    object "Varianten & Biomarker" as Varianten $colors.Observation
+    object "Genomic Study" as GenomicStudy $colors.Procedure
+    object "Genomic Study Analysis" as GenomicAnalysis $colors.Procedure
+    object "Therapeutische Implikation" as TherapImplikation $colors.Observation
+    object "Diagnostische Implikation" as DiagImplikation $colors.Observation
+}
+
+package "Molekular-Pathologie" as molpath {
+    object "Molecular Pathology Report" as MolPathReport $colors.DiagnosticReport
+    object "Molekularpathologische Inhalte" as MolPathInhalte $colors.Observation
+}
+
+' Treatment Plan - Right
+package "Therapieplan" as therapy {
+    object "Therapieplan" as Therapieplan $colors.CarePlan
+    object "Therapieempfehlung" as TherapEmpf $colors.MedicationRequest
+    object "Therapieempfehlung Kombination" as TherapKombi $colors.RequestGroup
+    object "Humangenetische Beratung" as HumanGen $colors.ServiceRequest
+    object "Histologie Evaluation" as HistoEval $colors.ServiceRequest
+    object "Biopsie Auftrag" as Biopsie $colors.ServiceRequest
+    object "Studieneinschluss Anfrage" as StudienAnfrage $colors.ServiceRequest
+    object "Studie" as Studie $colors.ResearchStudy
+    object "Tumorzellgehalt" as Tumorzellgehalt $colors.Observation
+}
+
+' Follow-up - Bottom Right
+package "Follow-Up" as followup {
+    object "Follow-Up Clinical Impression" as FollowUpCI $colors.ClinicalImpression
+
+    package "Systemtherapie" as systherapy {
+        object "Systemische Therapie" as SysTherapie $colors.Procedure
+        object "Response Befund" as Response $colors.Observation
+    }
+
+    package "Kostenübernahme" as cost {
+        object "Antrag Kostenübernahme" as Antrag $colors.Claim
+        object "Antwort Kostenübernahme" as Antwort $colors.ClaimResponse
+    }
+}
+
+' Main flow relationships
+Behandlungsepisode --> Diagnose : problem
+Behandlungsepisode --> Consent : supportingInfo
+Behandlungsepisode --> Vortherapie : supportingInfo
+Behandlungsepisode --> Therapieplan : supportingInfo
+
+' Diagnosis details
+Diagnose --> WHOGrad : stage
+Diagnose --> Oncotree : stage
+Diagnose --> Tumorausbreitung : stage
+TherapImplikation --> Diagnose : focus
+DiagImplikation --> Diagnose : focus
+
+' NGS connections
+Behandlungsepisode --> NGSBericht : investigation
+NGSBericht --> Varianten : result
+NGSBericht --> GenomicStudy : extension
+NGSBericht --> GenomicAnalysis : extension
+NGSBericht --> TherapImplikation : result
+NGSBericht --> DiagImplikation : result
+GenomicStudy --> GenomicAnalysis : extension:genomic-study-analysis
+Varianten --> TherapImplikation : derivedFrom
+Varianten --> DiagImplikation : derivedFrom
+TherapImplikation --> Diagnose : focus
+DiagImplikation --> Diagnose : focus
+
+' Molecular Pathology
+Behandlungsepisode --> MolPathReport : investigation
+MolPathReport --> MolPathInhalte : result
+
+' Treatment plan details
+Therapieplan --> Behandlungsepisode : supportingInfo
+Therapieplan --> TherapEmpf : activity
+Therapieplan --> TherapKombi : activity
+Therapieplan --> HumanGen : activity
+Therapieplan --> HistoEval : activity
+Therapieplan --> Biopsie : activity
+Therapieplan --> StudienAnfrage : activity
+
+TherapKombi --> TherapEmpf : action.resource
+TherapEmpf --> Diagnose : reasonReference
+Vortherapie --> Therapieplan : basedOn
+
+' Service requests
+Biopsie --> Tumorzellgehalt : reasonReference
+HistoEval --> Tumorzellgehalt : reasonReference
+StudienAnfrage --> Diagnose : reasonReference
+StudienAnfrage --> Studie : supportingInfo
+
+' Follow-up
+FollowUpCI --> Behandlungsepisode : previous
+SysTherapie --> TherapEmpf : basedOn
+Response --> SysTherapie : partOf
+Response --> Diagnose : focus
+
+' Cost claims
+Antwort --> Antrag : request
+Antrag --> Antrag : related.claim
+
+@enduml

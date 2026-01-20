@@ -1,0 +1,53 @@
+{
+  "resourceType": "Procedure",
+  "id": "PatientKimMusterperson-Procedure-7",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+    ]
+  },
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "363680008",
+        "display": "Radiographic imaging procedure"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "3-20",
+        "system": "http://fhir.de/CodeSystem/bfarm/ops",
+        "display": "Computertomographie [CT], nativ",
+        "version": "2025"
+      }
+    ]
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "code": "818983003",
+          "system": "http://snomed.info/sct",
+          "display": "Abdomen"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "51185008",
+          "system": "http://snomed.info/sct",
+          "display": "Thoracic structure"
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "performedDateTime": "2023-10-22"
+}

@@ -1,0 +1,26 @@
+CodeSystem: MII_CS_MTB_Therapiestatusgrund
+Id: mii-cs-mtb-therapiestatusgrund
+Title: "MII CS Therapiestatusgrund"
+Description: "Codesystem zum Status Grund der Systemischen Therapie nach DNPM"
+* insert CS_Header($mii-cs-mtb-therapiestatusgrund)
+
+* #payment-refused	                            "Kostenübernahme abgelehnt"                     "Kostenübernahme abgelehnt"
+* #payment-pending	                            "Kostenübernahme noch ausstehend"               "Kostenübernahme noch ausstehend"
+* #payment-ended	                            "Ende der Kostenübernahme"                      "Ende der Kostenübernahme"
+* #no-indication	                            "Klinisch keine Indikation"                     "Klinisch keine Indikation"
+* #medical-reasons	                            "Medizinische Gründe"                           "Medizinische Gründe"
+* #patient-refusal	                            "Therapie durch Patient abgelehnt"              "Therapie durch Patient abgelehnt"
+* #patient-wish	                                "Auf Wunsch des Patienten"                      "Auf Wunsch des Patienten"
+* #patient-death	                            "Tod"                                           "Tod"
+* #lost-to-fu	                                "Lost to follow-up"                             "Lost to follow-up"
+* #chronic-remission	                        "Anhaltende Remission"                          "Anhaltende Remission"
+* #progression	                                "Progression"                                   "Progression"
+* #toxicity	                                    "Toxizität"                                     "Toxizität"
+* #other-therapy-chosen	                        "Wahl einer anderen Therapie durch Behandler"   "Wahl einer anderen Therapie durch Behandler"
+* #best-supportive-care	                        "Best Supportive Care"                          "Best Supportive Care"
+* #deterioration	                            "Zustandsverschlechterung"                      "Zustandsverschlechterung"
+* #regular-completion	                        "Reguläres Ende"                                "Reguläres Ende"
+* #regular-completion-with-dosage-reduction	    "Reguläres Ende mit Dosisreduktion"             "Reguläres Ende mit Dosisreduktion"
+* #regular-completion-with-substance-change     "Reguläres Ende mit Substanzwechsel"            "Reguläres Ende mit Substanzwechsel"
+* #other	                                    "Weitere Gründe"                                "Weitere Gründe"
+* #unknown                                      "Unbekannt"                                     "Unbekannt"

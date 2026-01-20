@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "id": "mii-exa-mtb-kim-musterperson-aufklaerung",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given|2026.0.0"
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "105511-0",
+        "system": "http://loinc.org",
+        "display": "Was consent given"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "373066001",
+        "display": "Yes (qualifier value)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime": "2023-01-02"
+}

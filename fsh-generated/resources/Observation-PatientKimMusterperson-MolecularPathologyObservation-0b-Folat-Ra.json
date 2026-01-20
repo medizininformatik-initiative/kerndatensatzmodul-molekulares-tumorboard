@@ -1,0 +1,81 @@
+{
+  "resourceType": "Observation",
+  "id": "PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry|2026.0.0"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "55229-9",
+        "system": "http://loinc.org",
+        "display": "Immune stain study"
+      },
+      {
+        "code": "1234806008",
+        "system": "http://snomed.info/sct",
+        "display": "Observation using immunohistochemistry (observable entity)"
+      }
+    ]
+  },
+  "valueQuantity": {
+    "code": "{/100}",
+    "value": 70,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "48018-6",
+            "system": "http://loinc.org",
+            "display": "Gene studied [ID]"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "HGNC:3791",
+            "system": "http://www.genenames.org/geneId",
+            "display": "FOLR1"
+          },
+          {
+            "code": "LP440974-6",
+            "system": "http://loinc.org",
+            "display": "Folate receptor alpha"
+          }
+        ]
+      }
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+          "code": "biomarker-category"
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "specimen": {
+    "reference": "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+  }
+}

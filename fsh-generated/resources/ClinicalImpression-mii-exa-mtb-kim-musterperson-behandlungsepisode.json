@@ -1,0 +1,228 @@
+{
+  "resourceType": "ClinicalImpression",
+  "id": "mii-exa-mtb-kim-musterperson-behandlungsepisode",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode|2026.0.0"
+    ]
+  },
+  "effectivePeriod": {
+    "start": "2023-01-20",
+    "end": "2023-03-28"
+  },
+  "problem": [
+    {
+      "reference": "Condition/mii-exa-mtb-kim-diagnose"
+    }
+  ],
+  "investigation": [
+    {
+      "item": [
+        {
+          "reference": "DiagnosticReport/mii-exa-mtb-kim-musterperson-ngs-bericht"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "106221001",
+            "system": "http://snomed.info/sct",
+            "display": "Genetic finding"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "60568-3",
+            "system": "http://loinc.org",
+            "display": "Pathology synoptic report"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "Observation/mii-exa-onko-allgemeiner-leistungszustand-ecog"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "424122007",
+            "system": "http://snomed.info/sct",
+            "display": "ECOG performance status finding"
+          }
+        ]
+      }
+    },
+    {
+      "item": [
+        {
+          "reference": "Observation/mii-exa-mtb-kim-musterperson-aufklaerung"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "105511-0",
+            "system": "http://loinc.org",
+            "display": "Was consent given"
+          }
+        ]
+      }
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-1"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-1"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-2"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-3"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-4"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-2"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-5"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-6"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-7"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-8"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-3"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-9"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-10"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-11"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-12"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-13"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-14"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-15"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-4"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-4a"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-4b"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-4c"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-4d"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-16"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-17"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-18"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-19"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-SystemicTherapy-1"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-SystemicTherapy-2"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-SystemicTherapy-3"
+    },
+    {
+      "reference": "Procedure/MTBChemo1Procedure"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-5"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-20"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-21"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-22"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-23"
+    },
+    {
+      "reference": "Procedure/MTBChemo2Procedure"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-6"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-24"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-25"
+    },
+    {
+      "reference": "Procedure/PatientKimMusterperson-Procedure-7"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-26"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-27"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-28"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-29"
+    },
+    {
+      "reference": "Observation/PatientKimMusterperson-Observation-30"
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

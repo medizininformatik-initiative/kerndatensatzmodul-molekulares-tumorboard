@@ -1,0 +1,5 @@
+## {{page-title}}
+
+Die Bilder können [hier (Github)](https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/refs/heads/dev/information-model/MII_MTB_Overview.svg) einzeln betrachtet und heruntergeladen werden (Bereitstellung als ```.svg```)
+
+<a target="_blank" href="https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/refs/heads/dev/information-model/MII_MTB_Overview.svg"><img style="width: 100%;" alt="Überblick Vererbung" src="https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/refs/heads/dev/information-model/MII_MTB_Overview.svg"/></a>

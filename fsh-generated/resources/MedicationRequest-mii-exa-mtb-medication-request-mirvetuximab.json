@@ -1,0 +1,77 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "mii-exa-mtb-medication-request-mirvetuximab",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.0"
+    ]
+  },
+  "basedOn": [
+    {
+      "reference": "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
+    }
+  ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "98DE7VN88D",
+        "system": "http://fdasis.nlm.nih.gov",
+        "display": "MIRVETUXIMAB SORAVTANSINE"
+      },
+      {
+        "code": "L01FX26",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "display": "Mirvetuximab soravtansin",
+        "version": "2025"
+      },
+      {
+        "code": "L01FX",
+        "system": "http://fhir.de/CodeSystem/bfarm/atc",
+        "display": "Andere monoklonale Antikörper und Antikörper-Wirkstoff-Konjugate",
+        "version": "2025"
+      }
+    ]
+  },
+  "reasonReference": [
+    {
+      "reference": "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "valuePositiveInt": 1
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+            "code": "m1A"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://doi.org",
+        "value": "10.1200/JCO.2022.40.16_suppl.5512"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://www.ncbi.nlm.nih.gov/pubmed",
+        "value": "38055253"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    }
+  ],
+  "status": "completed",
+  "intent": "proposal",
+  "authoredOn": "2023-03-28",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  }
+}

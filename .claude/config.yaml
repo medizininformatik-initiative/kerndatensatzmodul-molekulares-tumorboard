@@ -1,0 +1,104 @@
+# Claude Code Configuration for MII MTB Module
+# This file contains repository-specific configuration values used by slash commands
+
+# Config Metadata
+_meta:
+  version: "1.0.0"
+  last_updated: "2025-12-16"
+  min_command_version: "1.0.0"
+
+# Repository Identification
+repository:
+  name: "kerndatensatzmodul-molekulares-tumorboard"
+  owner: "medizininformatik-initiative"
+  module: "Molekulares Tumorboard"
+  module_long: "Modul Molekulares Tumorboard"
+  package_id: "de.medizininformatikinitiative.kerndatensatz.mtb"
+  canonical: "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb"
+  ig_id: "mii-kerndatensatzmodul-molekulares-tumorboard"
+  prefix: "mtb"
+
+# Git Branch Configuration
+branches:
+  main: "main"
+  development: "dev"
+  release_prefix: "release/v"
+  feature_prefix: "feature/"
+
+# Build System Configuration
+build:
+  system: "firely-bake"
+  sushi_command: "sushi ."
+  ig_publisher_command: "./_genonce.sh"
+  bake_config: "package.bake.yaml"
+  expected_file_count:
+    min: 30
+    max: 100
+  expected_size_kb:
+    min: 50
+    max: 300
+
+# Version Management
+versioning:
+  pattern: "YYYY.0.0"
+  version_files:
+    - path: "package.json"
+      field: "version"
+      format: "json"
+    - path: "sushi-config.yaml"
+      field: "version"
+      format: "yaml"
+  release_labels:
+    development: "ci-build"
+    ballot: "ballot"
+    release_candidate: "trial-use"
+    production: "release"
+
+# CI/CD Configuration
+ci:
+  workflow_name: "CI (FHIR Validation)"
+  artifact_name: "validation-output"
+  timeout_minutes: 10
+  poll_interval_seconds: 30
+  validation_history_dir: ".validation-history"
+
+# File Paths
+paths:
+  fsh_source: "input/fsh"
+  fsh_generated: "fsh-generated"
+  output: "output"
+  bake_output: ".bake"
+
+# Simplifier Publishing
+simplifier:
+  project_url: "https://simplifier.net/MedizininformatikInitiative-ModulMTB"
+  package_registry: "https://packages.simplifier.net/de.medizininformatikinitiative.kerndatensatz.mtb"
+  organization: "Medizininformatik Initiative"
+
+# Terminology Services
+terminology:
+  server: "https://termserv.mii.medizininformatik-initiative.de/fhir"
+  fhir_version: "4.0.1"
+
+# Module-Specific Configuration
+module:
+  base_specification: "Molekulares Tumorboard"
+  language: "de-DE"
+  maintainer:
+    name: "Medizininformatik Initiative"
+    url: "https://www.medizininformatik-initiative.de/"
+
+# Naming Conventions
+naming:
+  profile_pattern: "MII_PR_MTB_{ConceptName}"
+  profile_id_pattern: "mii-pr-mtb-{concept-name}"
+  extension_pattern: "MII_EX_MTB_{ConceptName}"
+  valueset_pattern: "mii-vs-mtb-{concept-name}"
+  codesystem_pattern: "mii-cs-mtb-{concept-name}"
+  example_pattern: "mii-exa-mtb-{concept-name}"
+
+# External Resources
+resources:
+  mii_url: "https://www.medizininformatik-initiative.de/"
+  github_url: "https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard"
+  fhir_spec: "http://hl7.org/fhir/R4/"

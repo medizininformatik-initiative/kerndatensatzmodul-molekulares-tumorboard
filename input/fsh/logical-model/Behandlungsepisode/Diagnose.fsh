@@ -1,0 +1,21 @@
+RuleSet: Diagnose
+* Diagnose                      1..1      BackboneElement     "Diagnose"
+  * WHOGradZNS                  0..1      code                "WHO-Grad ZNS Tumor"               "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)"
+  * OncoTree                    0..1      code                "OncoTree Classification"          "Klassifizierung eines Tumor nach OncoTree"
+  * TumorausbreitungED          0..1      BackboneElement     "Tumorausbreitung ED"              "Tumorausbreitung zum Zeitpunkt der Erstdiagnose"
+    * Wert                      1..1      code                "Wert"                             "Wert Tumorausbreitung"
+    * Zeitpunkt                 1..1      dateTime            "Zeitpunkt"                        "Zeitpunkt der Tumorausbreitung"
+  * TumorausbreitungMTB         0..1      BackboneElement     "Tumorausbreitung MTB"             "Tumorausbreitung zum Zeitpunkt der MTB-Anmeldung"
+    * Wert                      1..1      code                "Wert"                             "Wert Tumorausbreitung"
+    * Zeitpunkt                 1..1      dateTime            "Zeitpunkt"                        "Zeitpunkt der Tumorausbreitung"
+
+RuleSet: DiagnoseMapping
+* Diagnose                      -> "Condition"
+  * WHOGradZNS                  -> "Condition.stage.assessment:Reference(Observation)"
+  * OncoTree                    -> "Condition.stage.assessment:Reference(Observation)"
+  * TumorausbreitungED          -> "Condition.stage.assessment:Reference(Observation)"
+    * Wert                      -> "Observation.valueCodeableConcept.coding.code"
+    * Zeitpunkt                 -> "Observation.effectiveDateTime"
+  * TumorausbreitungMTB         -> "Condition.stage.assessment:Reference(Observation)"
+    * Wert                      -> "Observation.valueCodeableConcept.coding.code"
+    * Zeitpunkt                 -> "Observation.effectiveDateTime"

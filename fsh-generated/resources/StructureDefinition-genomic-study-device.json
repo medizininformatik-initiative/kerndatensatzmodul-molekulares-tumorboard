@@ -1,0 +1,190 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "genomic-study-device",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device",
+  "version": "2026.0.0",
+  "name": "MII_PR_MTB_Genomic_Study_Device",
+  "title": "Genomic Study Device",
+  "status": "active",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Profil für die Abbildung von Geräten, Labormaterialien und Pipelines, die in der Genomic Study Analysis verwendet werden.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Device",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Device",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Device.meta",
+        "path": "Device.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.meta.profile",
+        "path": "Device.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.manufacturer",
+        "path": "Device.manufacturer",
+        "short": "Hersteller des Geräts",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Hersteller des Geraets"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Device manufacturer"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "Hersteller des Geräts, das in der Genomic Study Analysis verwendet wird.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Hersteller des Geraets das in der Genomic Study Analysis verwendet wird."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Manufacturer of the device used in the Genomic Study Analysis."
+                }
+              ]
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Device.deviceName",
+        "path": "Device.deviceName",
+        "short": "Name des Geräts",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Name des Geraets"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Device name"
+                }
+              ]
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Device.deviceName.name",
+        "path": "Device.deviceName.name",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.deviceName.type",
+        "path": "Device.deviceName.type",
+        "patternCode": "user-friendly-name"
+      },
+      {
+        "id": "Device.type",
+        "path": "Device.type",
+        "short": "Genomic Study Device Type",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Geraetetyp der Genomic Study"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Genomic Study Device Type"
+                }
+              ]
+            }
+          ]
+        },
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MII_VS_MTB_MMR_Expression",
+  "id": "mii-vs-mtb-mmr-expression",
+  "title": "MII VS Mismatch Repair Proteins Expression",
+  "description": "ValueSet zum MMR-Protein-Expression auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL3993-4 Intact nuc express|Loss of nuc express|Undet",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression",
+  "version": "2026.0.0",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "language": "de-DE",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "LA26197-6",
+            "display": "Intact nuclear expression"
+          },
+          {
+            "code": "LA26198-4",
+            "display": "Loss of nuclear expression"
+          },
+          {
+            "code": "LA14100-4",
+            "display": "Undetermined"
+          }
+        ]
+      }
+    ]
+  }
+}

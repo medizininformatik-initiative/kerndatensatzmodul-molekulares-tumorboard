@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MII_VS_MTB_Microsatellite_Instability",
+  "id": "mii-vs-mtb-msi",
+  "title": "MII VS Mikrosatelliteninstabilität",
+  "description": "ValueSet zum MSI-Status auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL1057-0 Stable|Unstable|Indeterminate",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi",
+  "version": "2026.0.0",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "language": "de-DE",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "LA14122-8",
+            "display": "Stable"
+          },
+          {
+            "code": "LA14123-6",
+            "display": "Instable"
+          },
+          {
+            "code": "LA11884-6",
+            "display": "Indeterminate"
+          },
+          {
+            "code": "LA26202-4",
+            "display": "MSI-L"
+          },
+          {
+            "code": "LA26203-2",
+            "display": "MSI-H"
+          }
+        ]
+      }
+    ]
+  }
+}

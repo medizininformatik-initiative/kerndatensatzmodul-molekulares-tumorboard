@@ -1,0 +1,89 @@
+name: IG Publisher
+
+env:
+  NODE_VERSION: 20
+  DOTNET_VERSION: 8
+  FIRELY_TERMINAL_VERSION: 3.3.2
+  SUSHI_VERSION: 3.12.1
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  build-ig:
+    name: Build Profiles
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Node (for SUSHI)
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install latest SUSHI
+        run: npm install -g fsh-sushi@${{ env.SUSHI_VERSION }}
+
+      - name: Install .NET SDK (for Firely Terminal)
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install latest Firely Terminal
+        run: dotnet tool install firely.terminal -g --version ${{ env.FIRELY_TERMINAL_VERSION }}
+      
+      - name: Clean up local FHIR cache
+        run: rm -rf ${HOME}/.fhir
+
+      - name: Get all FHIR packages
+        run: fhir restore
+
+      - name: Generate depended FHIR packages snapshots
+        run: fhir deps | sed '/^hl7.fhir.*.core.*/d' | sed -E 's/([a-z0-9.-]+)[[:space:]]+([0-9a-z.-]+).*/\1@\2/g' | xargs -I % fhir inflate --package % --snapshot --expand --force
+
+      - name: Build FHIR profiles
+        run: sushi build --log-level debug
+
+      - name: Build profiles
+        uses: cybernop/build-fhir-ig@v1
+        with:
+          sushi-version: ${{ env.SUSHI_VERSION }}
+
+      - name: Archive profile artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: package
+          path: output/package.tgz
+
+      - name: Archive generated pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: output
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    needs: build-ig
+    if: github.ref_name == 'dev'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

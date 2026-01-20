@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MII_VS_MTB_ISH_Method",
+  "id": "mii-vs-mtb-ish-method",
+  "title": "MII VS MTB ISH Method",
+  "description": "In Situ Hybridization technique methods (FISH, CISH, SISH)",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method",
+  "version": "2026.0.0",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "language": "de-DE",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1363313004",
+            "display": "In situ hybridization technique (qualifier value)"
+          },
+          {
+            "code": "1303773004",
+            "display": "Fluorescence in situ hybridization technique (qualifier value)"
+          },
+          {
+            "code": "787997001",
+            "display": "Chromogenic in situ hybridization (qualifier value)"
+          },
+          {
+            "code": "787998006",
+            "display": "Silver in situ hybridization (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

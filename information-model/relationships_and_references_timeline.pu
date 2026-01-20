@@ -1,0 +1,169 @@
+@startuml references-mtb-timeline
+
+' Timeline/workflow layout - zigzag through the process
+skinparam linetype ortho
+skinparam nodesep 60
+skinparam ranksep 100
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam arrow {
+    Color #555555
+    Thickness 1.5
+}
+
+!$colors = {"CarePlan": "#6a6cf8", "Claim": "#f26f6f", "ClaimResponse": "#a4b1f7", "ClinicalImpression": "#69f683", "Condition": "#6d7198", "DiagnosticReport": "#fa92bb", "MedicationRequest": "#ba6bf9", "MedicationStatement": "#74f8dc", "Observation": "#fbca69", "Procedure": "#70a68c", "RequestGroup": "#fee0b0", "ResearchStudy": "#d96ac5", "ServiceRequest": "#a3c16d"}
+
+legend top left
+    **MTB Workflow Timeline**
+    |Color|Type|
+    |<$colors.DiagnosticReport>|DiagnosticReport|<$colors.ClinicalImpression>|ClinicalImpression|
+    |<$colors.Condition>|Condition|<$colors.Observation>|Observation|
+    |<$colors.Procedure>|Procedure|<$colors.CarePlan>|CarePlan|
+    |<$colors.MedicationRequest>|MedicationRequest|<$colors.RequestGroup>|RequestGroup|
+    |<$colors.ServiceRequest>|ServiceRequest|<$colors.ResearchStudy>|ResearchStudy|
+    |<$colors.Claim>|Claim|<$colors.ClaimResponse>|ClaimResponse|
+endlegend
+
+' =============== PHASE 1: Diagnostic Input (Left) ===============
+package "**Phase 1: Diagnostics**" as phase1 {
+    object "NGS Bericht" as NGS $colors.DiagnosticReport
+    object "Molecular Path.\nReport" as MolPath $colors.DiagnosticReport
+}
+
+' =============== PHASE 2: NGS Details (Right, down) ===============
+package "**Phase 2: NGS Analysis**" as phase2 {
+    object "Varianten &\nBiomarker" as Var $colors.Observation
+    object "Genomic Study" as GS $colors.Procedure
+    object "Genomic Analysis" as GA $colors.Procedure
+    object "Therapeutische\nImplikation" as TI $colors.Observation
+    object "Diagnostische\nImplikation" as DI $colors.Observation
+}
+
+' =============== PHASE 3: Episode & Diagnosis (Left, down) ===============
+package "**Phase 3: MTB Episode**" as phase3 {
+    object "**Behandlungsepisode**" as Episode $colors.ClinicalImpression {
+        ==Core Entity==
+    }
+    object "**Diagnose Primärtumor**" as Diag $colors.Condition {
+        ==Main Problem==
+    }
+    object "Consent" as Consent $colors.Observation
+    object "Vortherapie" as Vorth $colors.Procedure
+}
+
+' =============== PHASE 4: Diagnosis Details (Right, down) ===============
+package "**Phase 4: Diagnosis Details**" as phase4 {
+    object "Tumorausbreitung" as TA $colors.Observation
+    object "WHO Grad ZNS" as WHO $colors.Observation
+    object "Oncotree" as OT $colors.Observation
+    object "Mol. Path.\nInhalte" as MPI $colors.Observation
+}
+
+' =============== PHASE 5: Treatment Planning (Left, down) ===============
+package "**Phase 5: Treatment Plan**" as phase5 {
+    object "**Therapieplan**" as TP $colors.CarePlan {
+        ==Treatment Plan==
+    }
+    object "Therapieempfehlung" as TE $colors.MedicationRequest
+    object "Kombi-Therapie" as TK $colors.RequestGroup
+}
+
+' =============== PHASE 6: Service Requests (Right, down) ===============
+package "**Phase 6: Service Requests**" as phase6 {
+    object "Humangenetische\nBeratung" as HG $colors.ServiceRequest
+    object "Histologie\nEvaluation" as HE $colors.ServiceRequest
+    object "Biopsie" as Bio $colors.ServiceRequest
+    object "Studieneinschluss" as SE $colors.ServiceRequest
+    object "Tumorzellgehalt" as TZG $colors.Observation
+    object "Studie" as St $colors.ResearchStudy
+}
+
+' =============== PHASE 7: Follow-Up (Left, down) ===============
+package "**Phase 7: Follow-Up**" as phase7 {
+    object "Follow-Up Episode" as FU $colors.ClinicalImpression
+    object "Systemische\nTherapie" as SysT $colors.Procedure
+    object "Response" as Resp $colors.Observation
+}
+
+' =============== PHASE 8: Cost Claims (Right, down) ===============
+package "**Phase 8: Cost Management**" as phase8 {
+    object "Antrag\nKostenübernahme" as Claim $colors.Claim
+    object "Antwort\nKostenübernahme" as ClaimResp $colors.ClaimResponse
+}
+
+' ============== LAYOUT HINTS ==============
+' Zigzag: left-right-left-right pattern
+phase1 -[hidden]right- phase2
+phase2 -[hidden]down- phase3
+phase3 -[hidden]right- phase4
+phase4 -[hidden]down- phase5
+phase5 -[hidden]right- phase6
+phase6 -[hidden]down- phase7
+phase7 -[hidden]right- phase8
+
+' ============== RELATIONSHIPS ==============
+
+' Phase 1 -> Phase 2: Diagnostic reports produce results
+NGS -down-> Var : result
+NGS -down-> GS : extension
+NGS -down-> GA : extension
+NGS -down-> TI : result
+NGS -down-> DI : result
+GS -right-> GA : extension:\ngenomic-study-analysis
+Var -down-> TI : derivedFrom
+Var -down-> DI : derivedFrom
+
+' Phase 1 -> Phase 3: Reports feed into episode
+NGS -down-> Episode : investigation
+MolPath -down-> Episode : investigation
+
+' Phase 2 -> Phase 3: Implikationen point to diagnosis
+TI -down-> Diag : focus
+DI -down-> Diag : focus
+
+' Phase 3: Episode internal relationships
+Episode -right-> Diag : problem
+Episode -right-> Consent : supportingInfo
+Episode -right-> Vorth : supportingInfo
+
+' Phase 3 -> Phase 4: Diagnosis details
+Diag -down-> TA : stage
+Diag -down-> WHO : stage
+Diag -down-> OT : stage
+
+' Phase 1 -> Phase 4: Mol Path details
+MolPath -down-> MPI : result
+
+' Phase 3 -> Phase 5: Episode to Treatment Plan
+Episode -down-> TP : supportingInfo
+Vorth -down-> TP : basedOn
+
+' Phase 5: Treatment plan internal
+TP -right-> TE : activity
+TP -right-> TK : activity
+TK -up-> TE : action.resource
+TE -up-> Diag : reasonReference
+
+' Phase 5 -> Phase 6: Treatment plan to service requests
+TP -down-> HG : activity
+TP -down-> HE : activity
+TP -down-> Bio : activity
+TP -down-> SE : activity
+Bio -right-> TZG : reasonReference
+HE -right-> TZG : reasonReference
+SE -up-> Diag : reasonReference
+SE -right-> St : supportingInfo
+
+' Phase 3 -> Phase 7: Episode to Follow-up
+Episode -down-> FU : previous (via Follow-Up)
+
+' Phase 5 -> Phase 7: Treatment recommendation to therapy
+TE -down-> SysT : basedOn
+SysT -right-> Resp : partOf (via Response)
+Resp -up-> Diag : focus
+
+' Phase 7 -> Phase 8: Follow-up to cost claims
+ClaimResp -left-> Claim : request
+Claim -up-> Claim : related.claim
+
+@enduml

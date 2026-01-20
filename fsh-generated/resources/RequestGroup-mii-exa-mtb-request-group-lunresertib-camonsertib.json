@@ -1,0 +1,55 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "mii-exa-mtb-request-group-lunresertib-camonsertib",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination|2026.0.0"
+    ]
+  },
+  "action": [
+    {
+      "resource": {
+        "reference": "MedicationRequest/mii-exa-mtb-medication-request-camonsertib"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "valuePositiveInt": 5
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+            "code": "m1B"
+          }
+        ]
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"
+    },
+    {
+      "valueIdentifier": {
+        "system": "http://doi.org",
+        "value": "10.1158/1535-7163.TARG-23-PR008"
+      },
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"
+    }
+  ],
+  "intent": "proposal",
+  "status": "draft",
+  "authoredOn": "2023-03-28",
+  "subject": {
+    "reference": "Patient/PatientKimMusterperson"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "ZS",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+        "display": "zielgerichtete Substanzen"
+      }
+    ]
+  }
+}
