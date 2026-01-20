@@ -3,7 +3,7 @@ Id: mii-ex-mtb-antwort-kostenuebernahme-entscheidung
 Context: ClaimResponse
 Title: "MII EX MTB Antwort Kostenuebernahme Entscheidung"
 Description: "Entscheidung zum Antrag zur Kostenuebernahme"
-//* insert EX_Header($mii-ex-mtb-antwort-kostenuebernahme-entscheidung)
+* insert EX_Header($mii-ex-mtb-antwort-kostenuebernahme-entscheidung)
 
 * value[x] only CodeableConcept
 * value[x] 1..1 MS

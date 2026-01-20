@@ -3,7 +3,7 @@ Id: mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund
 Context: ClaimResponse
 Title: "MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund"
 Description: "Ablehnungsgrund des Antrags auf Kostenuebernahme"
-//* insert EX_Header($mii-ex-mtb-antwort-kostenuebernahme-antragsstadium)
+* insert EX_Header($mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund)
 
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
