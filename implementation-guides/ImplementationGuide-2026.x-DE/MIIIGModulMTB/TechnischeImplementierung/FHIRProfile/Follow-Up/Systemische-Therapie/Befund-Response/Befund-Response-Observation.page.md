@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Follow-Up Systemische Therapie (Medication Statement)
+topic: ResponseBefund
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund
 ---
 

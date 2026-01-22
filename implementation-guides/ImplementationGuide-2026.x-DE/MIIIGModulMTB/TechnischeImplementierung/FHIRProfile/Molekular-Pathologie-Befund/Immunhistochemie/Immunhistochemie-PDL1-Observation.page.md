@@ -1,6 +1,6 @@
 ---
 parent:
-topic: Immunhistochemie PDL1
+topic: IHC_PDL1
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-pdl1
 ---
 

@@ -1,7 +1,7 @@
 ---
 parent:
-topic: Immunhistochemie MMR MSI
-subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-msi
+topic: IHC_MMR
+subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-mmr
 ---
 
 ## {{page-title}}

@@ -1,6 +1,6 @@
 ---
 parent: MII_PR_MTB_Molekularer_Biomarker
-topic: HRD-Score
+topic: HRDScore
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score
 ---
 

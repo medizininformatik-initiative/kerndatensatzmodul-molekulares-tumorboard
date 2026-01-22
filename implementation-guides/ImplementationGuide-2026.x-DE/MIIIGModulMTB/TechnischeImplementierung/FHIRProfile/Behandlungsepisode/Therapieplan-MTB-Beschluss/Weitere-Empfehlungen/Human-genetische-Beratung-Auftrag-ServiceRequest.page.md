@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Human-genetische Beratung (Auftrag)
+topic: HumangenetischeBeratungAuftrag
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag
 ---
 

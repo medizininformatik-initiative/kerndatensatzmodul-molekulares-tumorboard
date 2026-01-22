@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Biopsie (Auftrag)
+topic: BiopsieAuftrag
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag
 ---
 

@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Histologie-Evaluation (Auftrag)
+topic: HistologieEvaluationAuftrag
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag
 ---
 

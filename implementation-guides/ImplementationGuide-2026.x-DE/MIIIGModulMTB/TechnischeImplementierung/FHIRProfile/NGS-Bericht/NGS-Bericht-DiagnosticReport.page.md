@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: NGS-Bericht (DiagnosticReport)
+topic: NGSBericht
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht
 ---
 

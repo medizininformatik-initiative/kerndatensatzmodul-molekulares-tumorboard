@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Kombinationstherapie-Empfehlung
+topic: TherapieempfehlungKombination
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination
 ---
 

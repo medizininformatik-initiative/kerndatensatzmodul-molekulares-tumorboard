@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Antrag Kostenuebernahme (Claim)
+topic: AntragKostenuebernahme
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme
 ---
 

@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Studieneinschluss (Studie)
+topic: Studie
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie
 ---
 

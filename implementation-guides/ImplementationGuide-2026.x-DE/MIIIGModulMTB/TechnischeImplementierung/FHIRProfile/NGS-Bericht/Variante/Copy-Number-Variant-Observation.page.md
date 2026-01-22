@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Copy Number Variant
+topic: CopyNumberVariant
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant
 ---
 

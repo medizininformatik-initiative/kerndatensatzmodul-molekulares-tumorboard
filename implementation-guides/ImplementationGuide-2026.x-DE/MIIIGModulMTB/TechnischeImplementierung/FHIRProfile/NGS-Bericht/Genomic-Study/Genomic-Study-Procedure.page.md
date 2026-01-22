@@ -1,6 +1,6 @@
 ---
 parent:
-topic: Genomic Study (Procedure)
+topic: GenomicStudy
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study
 ---
 

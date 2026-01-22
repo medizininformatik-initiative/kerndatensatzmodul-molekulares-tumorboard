@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Diagnostische Implikation (Diagnostische_Implikation)
+topic: DiagnostischeImplikation
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation
 ---
 

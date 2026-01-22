@@ -1,6 +1,6 @@
 ---
 parent:
-topic: Molekular-Pathologie-Befund
+topic: MolecularPathologyReport
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report
 ---
 

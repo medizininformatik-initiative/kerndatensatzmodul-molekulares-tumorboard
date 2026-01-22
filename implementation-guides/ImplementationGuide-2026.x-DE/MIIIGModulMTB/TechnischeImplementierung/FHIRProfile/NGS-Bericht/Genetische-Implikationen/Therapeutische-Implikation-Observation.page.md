@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Therapeutische Implikation (Therapeutische_Implikation)
+topic: TherapeutischeImplikation
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapeutische-implikation
 ---
 

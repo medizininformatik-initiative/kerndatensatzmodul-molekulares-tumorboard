@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Follow-Up Systemische Therapie (Procedure)
+topic: SystemischeTherapie
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie
 ---
 

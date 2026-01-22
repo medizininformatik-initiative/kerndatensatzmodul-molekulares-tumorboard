@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Studieneinschluss (Anfrage)
+topic: StudieneinschlussAnfrage
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage
 ---
 

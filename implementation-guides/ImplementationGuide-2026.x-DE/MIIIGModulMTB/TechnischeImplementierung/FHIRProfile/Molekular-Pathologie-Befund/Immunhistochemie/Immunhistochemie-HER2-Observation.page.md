@@ -1,6 +1,6 @@
 ---
 parent:
-topic: Immunhistochemie HER2
+topic: IHC_HER2
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-her2
 ---
 

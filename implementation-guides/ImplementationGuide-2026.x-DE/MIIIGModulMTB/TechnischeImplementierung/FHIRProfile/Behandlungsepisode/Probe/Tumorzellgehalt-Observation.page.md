@@ -1,6 +1,6 @@
 ---
 parent: 
-topic: Tumorzellgehalt: Observation
+topic: Tumorzellgehalt
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt
 ---
 

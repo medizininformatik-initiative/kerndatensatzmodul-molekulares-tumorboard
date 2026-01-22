@@ -1,6 +1,6 @@
 ---
 parent:
-topic: Mikrosatelliteninstabilität
+topic: Mikrosatelliteninstabilitaet
 subject: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet
 ---
 
