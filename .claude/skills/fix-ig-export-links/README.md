@@ -1,115 +1,114 @@
-# fix-ig-export-links Canonical Skill
+# Fix IG Export Links
 
-**Status:** Architecture defined, implementation in progress
+This skill fixes broken Simplifier resolve links in MII MTB Implementation Guide exports.
 
-## Architecture
+## Problem
 
-**Generator Pattern:** This skill generates module-specific bash scripts from configuration rather than maintaining separate static scripts per module.
+When exporting an Implementation Guide from Simplifier, many links are broken:
+- External FHIR R4 core links point to non-working Simplifier resolve URLs
+- External terminology (THO) links are broken
+- External HL7 Genomics Reporting STU3 links are broken
+- MII dependency module links (base, medikation, molgen, onkologie, patho, studie) are broken
+- German base profile links are broken
 
+## Solution
+
+The `fix-links.sh` script replaces all broken Simplifier resolve URLs with working links:
+
+1. **FHIR R4 Core**: Links to https://hl7.org/fhir/R4/
+2. **HL7 Terminology**: Links to https://terminology.hl7.org/
+3. **Genomics Reporting STU3**: Links to https://hl7.org/fhir/uv/genomics-reporting/STU3/
+4. **German Base Profiles**: Links to Simplifier package viewer
+5. **MII Dependencies**: Links to Simplifier package viewer with correct versions
+6. **MTB Internal Resources**: Converts to Simplifier resolve with scope and fhirVersion
+
+## Usage
+
+### Manual Usage
+
+1. Export the IG from Simplifier (HTML bundle)
+2. Extract the ZIP file
+3. Navigate to the extracted directory
+4. Run the fix script:
+
+```bash
+cd ~/Downloads/mtb-ig-export
+bash /path/to/kerndatensatzmodul-molekulares-tumorboard/.claude/skills/fix-ig-export-links/scripts/fix-links.sh
 ```
-┌─────────────────────────────────────────────────────────┐
-│ Module: kerndatensatzmodul-onkologie                    │
-├─────────────────────────────────────────────────────────┤
-│ .claude/config.json                                     │
-│   └── ig_export: { module_id, canonical_base, ... }    │
-│                                                         │
-│ .claude/skills/fix-ig-export-links/  (sync'd from      │
-│   ├── SKILL.md                        mii-kds-dev)     │
-│   ├── scripts/                                          │
-│   │   └── fix-links.sh  ← GENERATED from config        │
-│   └── templates/                                        │
-│       └── script-template.sh  ← Template with params   │
-└─────────────────────────────────────────────────────────┘
+
+### Via Claude Skill
+
+Simply ask Claude:
+```
+Can you fix the links in the MTB IG export?
 ```
 
-## Benefits
+Claude will:
+1. Locate the most recent IG export in ~/Downloads
+2. Extract it to a temporary directory
+3. Run the fix script
+4. Create a fixed ZIP archive
 
-1. **Single source of truth**: One skill logic for all modules
-2. **Config-driven**: Module differences in config, not code
-3. **Maintainable**: Update template once, regenerate for all modules
-4. **Adaptable**: IG structure changes only require template updates
-5. **Testable**: Config validation before script generation
+## What Gets Fixed
 
-## Workflow
+### External Resources
+- FHIR R4 Core (StructureDefinitions, ValueSets, CodeSystems)
+- HL7 Terminology (THO)
+- HL7 Genomics Reporting STU3
+- German Base Profiles (de.basisprofil.r4@1.5.4)
 
-### Initial Setup (per module)
+### MII Dependencies
+- kerndatensatz.base@2026.0.0 (Diagnose, Prozedur)
+- kerndatensatz.medikation@2026.0.0 (MedicationStatement)
+- kerndatensatz.molgen@2026.0.4 (Variante, Therapeutische Implikation, Diagnostische Implikation)
+- kerndatensatz.onkologie@2026.0.0
+- kerndatensatz.patho@2026.0.0
+- kerndatensatz.studie@2026.0.1
 
-1. Add `ig_export` config to module's `.claude/config.json`
-2. Sync skill from mii-kerndatensatz-dev
-3. Run skill to generate `fix-links.sh`
+### MTB Internal Resources
+- ValueSets (mii-vs-mtb-*)
+- CodeSystems (mii-cs-mtb-*)
+- Extensions (mii-ex-mtb-*)
+- Profiles (mii-pr-mtb-*)
+- NamingSystems (mii-ns-*)
 
-### Using the Skill
+## Verification
 
-1. Download IG export from Simplifier
-2. Extract ZIP file
-3. Run generated `fix-links.sh` in extracted directory
-4. Verify remaining links are intentional
+After running the script, verify the fixes:
 
-### Maintenance
+1. Open the IG locally in a browser
+2. Navigate to any profile page
+3. Click on links in the differential table
+4. Verify external links (FHIR core, terminology) work
+5. Check that Simplifier resolve links for MTB resources work
 
-**When dependencies change:**
-- Update module config → regenerate script
+## Technical Details
 
-**When IG structure changes:**
-- Update template in mii-kds-dev → sync to modules → regenerate scripts
+The script uses `sed` with macOS-specific syntax (`sed -i ''`). It processes all HTML files in the current directory with 17 sequential steps:
 
-## Implementation Status
-
-- ✅ Architecture defined
-- ✅ Config schema documented
-- ✅ SKILL.md created with instructions
-- ✅ Script template created (templates/script-template.sh)
-- ✅ Generator implementation complete (scripts/generate-fix-script.py)
-- ⏳ Extract configs from existing 4 modules (next step)
-- ⏳ Testing across 5 modules (pending)
-- ⏳ Sync to modules (pending)
-
-## Required Config Schema
-
-See SKILL.md for complete schema. Minimum required:
-
-```json
-{
-  "ig_export": {
-    "module_id": "onkologie",
-    "package_name": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-    "canonical_base": "https://...modul-onko",
-    "guide_name": "mii-ig-modul-onkologie-v2026-de",
-    "resource_prefix": "mii-pr-onko",
-    "dependencies": {
-      "hl7.fhir.r4.core": "4.0.1",
-      "hl7.terminology.r4": "7.0.0",
-      ...
-    }
-  }
-}
-```
+1. Fix FHIR R4 Core filepath-pattern links
+2. Fix HL7 Terminology links
+3. Fix HL7 Genomics Reporting STU3 links
+4. Fix German base profile links
+5-9. Fix MII module dependencies
+10-12. Fix canonical box links for FHIR R4 and MTB
+13-17. Fix internal MTB resource references
 
 ## Files
 
-- `SKILL.md` - Instructions for using the skill (config → script → run)
-- `README.md` - This file (architecture documentation)
-- `templates/script-template.sh` - Parameterized bash script template (TODO)
-- `scripts/` - Generated scripts go here (one per module, generated on-demand)
+- `scripts/fix-links.sh`: Main fix script (17 steps)
+- `README.md`: This file
 
-## Migration Path
+## Package Information
 
-Current modules have static scripts. Migration:
+- **Package**: de.medizininformatikinitiative.kerndatensatz.mtb
+- **Version**: 2026.0.0
+- **Canonical**: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb
 
-1. Extract config from existing scripts → `.claude/config.json`
-2. Sync canonical skill from mii-kds-dev
-3. Generate script from config
-4. Compare generated vs existing (should be equivalent)
-5. Replace existing with generated
-6. Document in CATALOG.md
+## References
 
-## Version History
-
-- **v1.0.0** (2026-01-10): Architecture defined, config schema documented
-- **v1.1.0** (planned): Template + generator implementation
-- **v2.0.0** (planned): Deployed to all 5 modules
-
----
-
-Tracked in: kds-dz8
-Canonical source: mii-kerndatensatz-dev
+This script is adapted from the Onkologie module fix script with MTB-specific:
+- Package name and version
+- Canonical URLs
+- Profile naming patterns
+- Dependencies (added genomics-reporting, studie, patho)
