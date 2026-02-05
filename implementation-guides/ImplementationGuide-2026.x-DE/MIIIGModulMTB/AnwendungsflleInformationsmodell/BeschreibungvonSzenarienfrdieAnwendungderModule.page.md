@@ -78,7 +78,7 @@ Im Rahmen des MTBs wurden die aktuellen histologischen Befunde sowie molekulare 
 
 ### Leitliniengerechte Vortherapie und Monitoring
 
-Die initiale Diagnostik, Therapien und Beurteilungen sind dem Therapieverlauf der Patientin im [MII KDS-Erweiterungsmodul Onkologie zu entnehmen](https://simplifier.net/guide/mii-ig-modul-onkologie-2024-de/MIIIGModulOnkologie/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md?version=current). Der im Folgenden geschilderte Therapieverlauf knüpft daran nahtlos an, um einen komplexen und zusammenhängenden Fall zu beschreiben mit dem Ziel, dessen Umsetzung durch die MII KDS-Module darzustellen.
+Die initiale Diagnostik, Therapien und Beurteilungen sind dem Therapieverlauf der Patientin im [MII KDS-Modul Onkologie zu entnehmen](https://simplifier.net/guide/mii-ig-modul-onkologie-2024-de/MIIIGModulOnkologie/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md?version=current). Der im Folgenden geschilderte Therapieverlauf knüpft daran nahtlos an, um einen komplexen und zusammenhängenden Fall zu beschreiben mit dem Ziel, dessen Umsetzung durch die MII KDS-Module darzustellen.
 
 <table class="tbl">
     <thead>
@@ -607,7 +607,7 @@ Im Rahmen des MTBs wurden die aktuellen histologischen Befunde sowie molekulare 
 
 ### Leitliniengerechte Vortherapie und Monitoring
 
-Die initiale Diagnostik, Therapien und Beurteilungen sind dem Therapieverlauf der Patientin dem [MII KDS-Erweiterungsmodul Onkologie zu entnehmen](https://simplifier.net/guide/mii-ig-modul-onkologie-2024-de/MIIIGModulOnkologie/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md?version=current). Der im Folgenden geschilderte Therapieverlauf knüpft daran nahtlos an, um einen komplexen und zusammenhängenden Fall zu beschreiben mit dem Ziel, dessen Umsetzung durch die MII KDS-Module darzustellen.
+Die initiale Diagnostik, Therapien und Beurteilungen sind dem Therapieverlauf der Patientin dem [MII KDS-Modul Onkologie zu entnehmen](https://simplifier.net/guide/mii-ig-modul-onkologie-2024-de/MIIIGModulOnkologie/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md?version=current). Der im Folgenden geschilderte Therapieverlauf knüpft daran nahtlos an, um einen komplexen und zusammenhängenden Fall zu beschreiben mit dem Ziel, dessen Umsetzung durch die MII KDS-Module darzustellen.
 
 <table class="tbl">
     <thead>

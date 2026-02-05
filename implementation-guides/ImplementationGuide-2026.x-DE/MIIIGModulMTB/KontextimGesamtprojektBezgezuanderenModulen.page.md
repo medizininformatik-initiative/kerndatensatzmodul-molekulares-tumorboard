@@ -3,7 +3,7 @@ parent:
 ---
 ## Kontext im Gesamtprojekt / Bezüge zu anderen Modulen
 
-Der Kerndatensatz der Medizininformatik-Initiative hat mittlerweile eine Vielzahl von Erweiterungsmodulen. Ein Zusammenspiel der Module an einzelnen Standorten ist angedacht und gewünscht, kann aber aufgrund der lokal verschiedenen Systeme und Ressourcen nicht vorausgesetzt werden. Außerdem ist zu beachten, dass sich alle Module des MII KDS in einem stetigen weiterentwicklungsprozess befinden. 
+Der Kerndatensatz der Medizininformatik-Initiative hat mittlerweile eine Vielzahl von KDS-Modulen. Ein Zusammenspiel der Module an einzelnen Standorten ist angedacht und gewünscht, kann aber aufgrund der lokal verschiedenen Systeme und Ressourcen nicht vorausgesetzt werden. Außerdem ist zu beachten, dass sich alle Module des MII KDS in einem stetigen weiterentwicklungsprozess befinden. 
 
 Verpflichtend für die Nutzung sind:
 

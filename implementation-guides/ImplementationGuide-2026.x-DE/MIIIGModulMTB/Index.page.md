@@ -2,16 +2,16 @@
 parent: 
 ---
 
-# Kerndatensatz Modul Molekulares Tumorboard
+# Kerndatensatz-Modul Molekulares Tumorboard
 
-Die vorliegende Spezifikation beschreibt die FHIR Repräsentation des Kerndatensatz Moduls _Molekulares Tumorboard_ der Medizinformatik Initiative.
-Im Folgenden werden die Use Case des Moduls, sowie die dazuhegörigen FHIR Profile und Terminologie Ressourcen in ihrer verbindlichen Form beschrieben.
+Die vorliegende Spezifikation beschreibt die FHIR-Repräsentation des Kerndatensatz-Moduls _Molekulares Tumorboard_ der Medizininformatik-Initiative.
+Im Folgenden werden die Use Cases des Moduls, sowie die dazugehörigen FHIR-Profile und Terminologie-Ressourcen in ihrer verbindlichen Form beschrieben.
 
 | Veröffentlichung   |   |
 |---------|---|
-| Datum   | 26.05.25 |
-| Version | 2025.0.0-ballot        |
-| Status  | Draft       |
+| Datum   | 04.02.2026 |
+| Version | 2026.0.0        |
+| Status  | Active       |
 | Realm   | DE          | 
 
 ## Inhaltsverzeichnis
