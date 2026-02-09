@@ -80,7 +80,7 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2026.0.0",
+      "version": "2026.0.1",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
@@ -92,7 +92,7 @@
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
-      "version": "2026.0.1",
+      "version": "2026.0.2",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.studie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.studie",
       "id": "de_medizininformatikinitiative_kerndatensatz_studie"
     },
@@ -188,6 +188,14 @@
         },
         "name": "29.08.2023 Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement"
+      },
+      {
+        "reference": {
+          "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
+        },
+        "name": "A Clinical Study of the Safety and Effectiveness of an Investigational Cell Therapy Given With and Without an Investigational RNA-based Vaccine in Patients With Organ Tumors",
+        "description": "This is a Phase I, FIH, open-label, multicenter, dose escalation trial with expansion cohorts to evaluate safety and preliminary efficacy of claudin 6 (CLDN6) chimeric antigen receptor T cells (CAR-T) with or without CLDN6 ribonucleic acid lipoplexes (RNA-LPX) in patients with CLDN6-positive relapsed or refractory advanced solid tumors.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
       },
       {
         "reference": {
@@ -357,6 +365,14 @@
       },
       {
         "reference": {
+          "reference": "PractitionerRole/mii-exa-mtb-study-investigator-biontech"
+        },
+        "name": "BioNTech Responsible Person",
+        "description": "Investigator: BioNTech Responsible Person, BioNTech SE",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Observation/MII-EXA-MTB-Einfache-Variante"
         },
         "name": "BRAF Variante",
@@ -426,6 +442,14 @@
         "name": "Carboplatin",
         "description": "Therapieempfehlung: Carboplatin",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
+      },
+      {
+        "reference": {
+          "reference": "ResearchStudy/mii-exa-mtb-study-ccne1"
+        },
+        "name": "CCNE1",
+        "description": "Studie: CCNE1 ampl. OvCA",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
       },
       {
         "reference": {
@@ -1132,6 +1156,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-studie"
+        },
+        "name": "MII PR MTB Studie",
+        "description": "Onkologische Studie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"
         },
         "name": "MII PR MTB Studieneinschluss Anfrage",
@@ -1457,6 +1489,13 @@
         "name": "MII VS Zulassungsstatus",
         "description": "ValueSet zum Zulassungsstatus",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/mii-exa-mtb-kim-musterperson-bundle"
+        },
+        "name": "mii-exa-mtb-kim-musterperson-bundle",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -2351,6 +2390,14 @@
         "name": "Ploidie Beispiel",
         "description": "Beispiel für die Gesamtploidie des Tumors.",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ploidie"
+      },
+      {
+        "reference": {
+          "reference": "ResearchStudy/mii-exa-mtb-study-tedova"
+        },
+        "name": "TEDOVA",
+        "description": "Studie: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
       },
       {
         "reference": {

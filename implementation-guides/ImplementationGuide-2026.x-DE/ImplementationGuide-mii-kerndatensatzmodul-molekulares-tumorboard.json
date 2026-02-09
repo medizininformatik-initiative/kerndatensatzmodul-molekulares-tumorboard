@@ -3,10 +3,10 @@
   "id": "mii-kerndatensatzmodul-molekulares-tumorboard",
   "language": "de-DE",
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard",
-  "version": "2026.0.0-alpha",
+  "version": "2026.0.0",
   "name": "MII_IG_MTB_DE",
-  "title": "MII IG Molekulares Tumorboard",
-  "status": "draft",
+  "title": "MII IG Kerndatensatz-Modul Molekulares Tumorboard",
+  "status": "active",
   "publisher": "Medizininformatik-Initiative",
   "contact": [
     {
@@ -38,79 +38,61 @@
   "dependsOn": [
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.3",
+      "version": "1.5.4",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.biobank",
-      "version": "2025.0.x",
+      "version": "2026.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.biobank/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.biobank",
       "id": "de_medizininformatikinitiative_kerndatensatz_biobank"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.consent",
-      "version": "2025.0.x",
+      "version": "2025.0.4",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.consent/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.consent",
       "id": "de_medizininformatikinitiative_kerndatensatz_consent"
     },
     {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.diagnose",
-      "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.diagnose/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.diagnose",
-      "id": "de_medizininformatikinitiative_kerndatensatz_diagnose"
-    },
-    {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.fall",
-      "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.fall/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.fall",
-      "id": "de_medizininformatikinitiative_kerndatensatz_fall"
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.base",
+      "version": "2026.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
+      "id": "de_medizininformatikinitiative_kerndatensatz_base"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.medikation",
-      "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.medikation/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.medikation",
+      "version": "2026.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/ImplementationGuide/mii-ig-medikation",
       "id": "de_medizininformatikinitiative_kerndatensatz_medikation"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
-      "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.meta/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.meta",
+      "version": "2026.0.0",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/modul-meta/ImplementationGuide/mii-ig-meta",
       "id": "de_medizininformatikinitiative_kerndatensatz_meta"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.molgen",
-      "version": "2025.0.x",
-      "uri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/ImplementationGuide/mii-ig-molgen-v2025-DE",
+      "version": "2026.0.4",
+      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.molgen/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.molgen",
       "id": "de_medizininformatikinitiative_kerndatensatz_molgen"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.onkologie",
-      "version": "2025.1.0-beta",
+      "version": "2026.0.1",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
       "id": "de_medizininformatikinitiative_kerndatensatz_onkologie"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.patho",
-      "version": "2025.0.x",
+      "version": "2026.0.0",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.patho/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.patho",
       "id": "de_medizininformatikinitiative_kerndatensatz_patho"
     },
     {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.person",
-      "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.person/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.person",
-      "id": "de_medizininformatikinitiative_kerndatensatz_person"
-    },
-    {
-      "packageId": "de.medizininformatikinitiative.kerndatensatz.prozedur",
-      "version": "2025.0.x",
-      "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.prozedur/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.prozedur",
-      "id": "de_medizininformatikinitiative_kerndatensatz_prozedur"
-    },
-    {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.studie",
-      "version": "2025.0.x",
+      "version": "2026.0.2",
       "uri": "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.studie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.studie",
       "id": "de_medizininformatikinitiative_kerndatensatz_studie"
     },
@@ -209,22 +191,6 @@
       },
       {
         "reference": {
-          "reference": "ResearchStudy/mii-exa-mtb-study-cldn6"
-        },
-        "name": "A Clinical Study of the Safety and Effectiveness of an Investigational Cell Therapy Given With and Without an Investigational RNA-based Vaccine in Patients With Organ Tumors",
-        "description": "This is a Phase I, FIH, open-label, multicenter, dose escalation trial with expansion cohorts to evaluate safety and preliminary efficacy of claudin 6 (CLDN6) chimeric antigen receptor T cells (CAR-T) with or without CLDN6 ribonucleic acid lipoplexes (RNA-LPX) in patients with CLDN6-positive relapsed or refractory advanced solid tumors.",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medication-adavosertib"
-        },
-        "name": "Adavosertib",
-        "description": "Medikament: Adavosertib",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "MedicationRequest/mii-exa-mtb-medication-request-adavosertib"
         },
         "name": "Adavosertib",
@@ -311,7 +277,7 @@
           "reference": "Procedure/MII-EXA-MTB-GenomicStudyAnalysis-1"
         },
         "name": "Beispiel fuer einen GenomicStudyAnalysis",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {
@@ -325,6 +291,20 @@
           "reference": "Device/MII-EXA-MTB-Device-Sequencer-1"
         },
         "name": "Beispiel fuer einen Sequencer",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device"
+      },
+      {
+        "reference": {
+          "reference": "Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1"
+        },
+        "name": "Beispiel für ein Library Preparation Kit",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Device/MII-EXA-MTB-Device-SequencingKit-1"
+        },
+        "name": "Beispiel für ein SequencingKit",
         "exampleBoolean": true
       },
       {
@@ -353,6 +333,14 @@
       },
       {
         "reference": {
+          "reference": "Observation/MII-EXA-MTB-RNA-Fusion-1"
+        },
+        "name": "Beispiel RNA-Fusion",
+        "description": "Beispiel fuer eine RNA-Fusion (EML4-ALK) in Tumorzellen.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion"
+      },
+      {
+        "reference": {
           "reference": "Condition/mii-exa-mtb-kim-diagnose"
         },
         "name": "Bestätigte Primärdiagnose",
@@ -365,14 +353,6 @@
         },
         "name": "BioNTech Cell & Gene Therapies GmbH",
         "description": "Sponsor: BioNTech Cell & Gene Therapies GmbH",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "PractitionerRole/mii-exa-mtb-study-investigator-biontech"
-        },
-        "name": "BioNTech Responsible Person",
-        "description": "Investigator: BioNTech Responsible Person, BioNTech SE",
         "exampleBoolean": true
       },
       {
@@ -433,14 +413,6 @@
       },
       {
         "reference": {
-          "reference": "Medication/mii-exa-mtb-medication-camonsertib"
-        },
-        "name": "Camonsertib",
-        "description": "Medikament: Camonsertib",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "MedicationRequest/mii-exa-mtb-medication-request-camonsertib"
         },
         "name": "Camonsertib",
@@ -454,14 +426,6 @@
         "name": "Carboplatin",
         "description": "Therapieempfehlung: Carboplatin",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "ResearchStudy/mii-exa-mtb-study-ccne1"
-        },
-        "name": "CCNE1",
-        "description": "Studie: CCNE1 ampl. OvCA",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
       },
       {
         "reference": {
@@ -481,26 +445,11 @@
       },
       {
         "reference": {
-          "reference": "Medication/mii-exa-mtb-medication-cobimetinib"
-        },
-        "name": "Cobimetinib",
-        "description": "Medikament: Cobimetinib",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"
         },
         "name": "Cobimetinib",
         "description": "Therapieempfehlung: Cobimetinib, Priorität: 6, Evidenzgrad: m3",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"
-      },
-      {
-        "reference": {
-          "reference": "Device/MII-EXA-MTB-Device-SequencingKit-1"
-        },
-        "name": "Device",
-        "exampleBoolean": true
       },
       {
         "reference": {
@@ -536,10 +485,11 @@
       },
       {
         "reference": {
-          "reference": "Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1"
+          "reference": "Observation/PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-"
         },
-        "name": "ExampleDefinition",
-        "exampleBoolean": true
+        "name": "Example In Situ Hybridization HER2/ERBB2",
+        "description": "Example of HER2 in situ hybridization with ratio measurement for patient Kim Musterperson",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2"
       },
       {
         "reference": {
@@ -550,10 +500,10 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/genomic-study-analysis"
+          "reference": "StructureDefinition/genomic-study-device"
         },
-        "name": "Genomic Study Analysis",
-        "description": "Die Genomic Data analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
+        "name": "Genomic Study Device",
+        "description": "Profil für die Abbildung von Geräten, Labormaterialien und Pipelines, die in der Genomic Study Analysis verwendet werden.",
         "exampleBoolean": false
       },
       {
@@ -571,14 +521,6 @@
         "name": "Lokale Tumorausbreitung",
         "description": "Lokale Tumorausbreitung bei Kim Musterperson",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung"
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medication-lunresertib"
-        },
-        "name": "Lunresertib",
-        "description": "Medikament: Lunresertib",
-        "exampleBoolean": true
       },
       {
         "reference": {
@@ -746,6 +688,14 @@
         },
         "name": "MII CS Response Befund Beurteilung",
         "description": "Codesystem für die Beurteilung des Response Befund",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode"
+        },
+        "name": "MII CS Response Befund Beurteilungsmethode",
+        "description": "Codesystem für die Beurteilungsmethode eines Response Befunds",
         "exampleBoolean": false
       },
       {
@@ -918,6 +868,14 @@
       },
       {
         "reference": {
+          "reference": "ClinicalImpression/mii-exa-mtb-behandlungsepisode-1"
+        },
+        "name": "MII PR MTB Behandlungsepisode Beispiel",
+        "description": "Beispiel für aktuellen Gesundheitszustand und bisherige Behandlungsmaßnahmen",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-biopsie-auftrag"
         },
         "name": "MII PR MTB Biopsie Auftrag",
@@ -998,6 +956,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-mtb-genomic-study-analysis"
+        },
+        "name": "MII PR MTB Genomic Study Analysis",
+        "description": "Die Genomic Study Analysis beschreibt die Methodik einer bestimmten molekulargenetischen Untersuchung.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag"
         },
         "name": "MII PR MTB Histologie-Evaluation Auftrag",
@@ -1070,18 +1036,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization-her2"
+          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization"
         },
         "name": "MII PR MTB In Situ Hybridization",
-        "description": "In Situ Hybridization report",
+        "description": "Molekularer Biomarker - In Situ Hybridization Profil. Unterstützt FISH, CISH und SISH Methoden.",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization"
+          "reference": "StructureDefinition/mii-pr-mtb-insituhybridization-her2"
         },
-        "name": "MII PR MTB In Situ Hybridization",
-        "description": "Molekularer Biomarker - In Situ Hybridization Profil",
+        "name": "MII PR MTB In Situ Hybridization HER2",
+        "description": "HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC Panel 74885-5.",
         "exampleBoolean": false
       },
       {
@@ -1162,14 +1128,6 @@
         },
         "name": "MII PR MTB RNA Seq",
         "description": "RNA Seq",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-mtb-studie"
-        },
-        "name": "MII PR MTB Studie",
-        "description": "Onkologische Studie",
         "exampleBoolean": false
       },
       {
@@ -1259,6 +1217,14 @@
         "name": "MII PR MTB WHO Grad Tumor ZNS",
         "description": "Grad des Tumors nach WHO Klassifikation der Tumoren des zentralen Nervensystems (ZNS)",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-mtb-who-grad-tumor-zns-1"
+        },
+        "name": "MII PR MTB WHO Grad Tumor ZNS",
+        "description": "Beispiel für WHO Grad Tumor",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
       },
       {
         "reference": {
@@ -1390,14 +1356,6 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/mii-vs-mtb-immunohistochemistry-targets"
-        },
-        "name": "MII VS Molekulare Biomarker",
-        "description": "ValueSet zum CS Molekulare Biomarker",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/mii-vs-mtb-molekulare-biomarker"
         },
         "name": "MII VS Molekulare Biomarker",
@@ -1422,6 +1380,22 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/mii-vs-mtb-immunohistochemistry-specific-codes"
+        },
+        "name": "MII VS MTB Immunhistochemistry Specific Codes",
+        "description": "Spezifische LOINC und SNOMED Codes für immunhistochemische Untersuchungen. Diese Codes werden für das Slice 'spezifisch' im Immunohistochemistry Profil verwendet.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-ish-method"
+        },
+        "name": "MII VS MTB ISH Method",
+        "description": "In Situ Hybridization technique methods (FISH, CISH, SISH)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/mii-vs-mtb-systemische-therapie-status"
         },
         "name": "MII VS MTB Systemtherapie Status",
@@ -1434,6 +1408,14 @@
         },
         "name": "MII VS OncoTree ValueSet",
         "description": "ValueSet der MSKCC OncoTree Klassifikationen",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-mtb-beurteilungsmethode-response-befund"
+        },
+        "name": "MII VS Response Befund Beurteilung",
+        "description": "ValueSet Beurteilungsmethode eines Response Befunds",
         "exampleBoolean": false
       },
       {
@@ -1478,40 +1460,10 @@
       },
       {
         "reference": {
-          "reference": "Bundle/mii-exa-mtb-kim-musterperson-bundle"
-        },
-        "name": "mii-exa-mtb-kim-musterperson-bundle",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medikation-dabrafenib"
-        },
-        "name": "mii-exa-mtb-medikation-dabrafenib",
-        "description": "Dabrafenib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/mii-exa-mtb-medikation-trametinib"
-        },
-        "name": "mii-exa-mtb-medikation-trametinib",
-        "description": "Trametinib (Dabrafenib/Trametinib-Kombinationstherapie)",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Patient/mii-exa-mtb-patient"
         },
         "name": "mii-exa-mtb-patient",
         "description": "Beispiel-Patient für Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Bundle/mii-exa-mtb-technical-test-bundle"
-        },
-        "name": "mii-exa-mtb-technical-test-bundle",
         "exampleBoolean": true
       },
       {
@@ -1545,13 +1497,6 @@
         "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
         "description": "Therapieplan mit Therapieempfehlung für Dabrafenib/Trametinib-Kombinationstherapie",
         "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
-      },
-      {
-        "reference": {
-          "reference": "Observation/mii-exa-mtb-who-grad-tumor-zns"
-        },
-        "name": "mii-exa-mtb-who-grad-tumor-zns",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns"
       },
       {
         "reference": {
@@ -1606,7 +1551,7 @@
         },
         "name": "MTB-NGS-Bericht Kim Musterperson",
         "description": "Details zur Analyse NGS-Bericht von Kim Musterperson - TSO500",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {
@@ -1614,15 +1559,15 @@
         },
         "name": "MTB-NGS-Bericht Kim Musterperson",
         "description": "Diagnostische Prozeduren - MolPatho-Bericht von Kim Musterperson - Immunhistochemie",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {
           "reference": "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2"
         },
         "name": "MTB-NGS-Bericht Kim Musterperson HLA Status",
-        "description": "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Statu - keine näheren Angaben in Beispiel",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-analysis"
+        "description": "Diagnostische Prozeduren  NGS-Bericht von Kim Musterperson - HLA-Status - keine näheren Angaben in Beispiel",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis"
       },
       {
         "reference": {
@@ -2401,11 +2346,11 @@
       },
       {
         "reference": {
-          "reference": "ResearchStudy/mii-exa-mtb-study-tedova"
+          "reference": "Observation/MII-EXA-MTB-Ploidie-1"
         },
-        "name": "TEDOVA",
-        "description": "Studie: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA",
-        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"
+        "name": "Ploidie Beispiel",
+        "description": "Beispiel für die Gesamtploidie des Tumors.",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ploidie"
       },
       {
         "reference": {
@@ -2452,7 +2397,13 @@
       "nameUrl": "toc.html",
       "title": "Table of Contents",
       "generation": "html",
-      "page": []
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
     },
     "parameter": [
       {
@@ -2461,7 +2412,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "ci-build"
+        "value": "release"
       }
     ]
   }
