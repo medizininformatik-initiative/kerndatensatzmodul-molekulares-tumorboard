@@ -1,0 +1,185 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-systemic-therapy" = "SMSystemicTherapy"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"                        alias Bundle               as target
+uses "http://hl7.org/fhir/StructureDefinition/Procedure"                     alias Procedure            as produced
+uses "http://hl7.org/fhir/StructureDefinition/Observation"                   alias Observation          as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate over systemicTherapies (double-nested) and responses
+// ---------------------------------------------------------------------------
+group SystemicTherapies(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  // Bundle type = collection
+  src -> bundle.type = 'collection' "bundleType";
+
+  // --- Procedure per systemicTherapies[].history[] entry --------------------
+  // Double-iteration: src.systemicTherapies[] → st.history[] → h
+  src.systemicTherapies as st -> bundle then {
+    st.history as h ->
+        bundle.entry as e,
+        e.resource = create('Procedure') as proc
+        then {
+          h.id as hid -> e.fullUrl = append('urn:uuid:', hid) "fullUrl";
+          h -> proc then MapSystemicTherapy(h, proc) "map";
+        } "historyEntry";
+  } "systemicTherapy";
+
+  // --- Observation (Response Befund) per responses entry -------------------
+  src.responses as resp ->
+      bundle.entry as e,
+      e.resource = create('Observation') as obs
+      then {
+        resp.id as respid -> e.fullUrl = append('urn:uuid:', respid) "fullUrl";
+        resp -> obs then MapResponse(resp, obs) "map";
+      } "response";
+}
+
+// ---------------------------------------------------------------------------
+// MapSystemicTherapy: DNPM systemicTherapies[].history[] entry → FHIR Procedure
+//   Profile: MII_PR_MTB_Systemische_Therapie
+//   (Parent: MII_PR_Onko_Systemische_Therapie)
+// ---------------------------------------------------------------------------
+group MapSystemicTherapy(source src : BackboneElement, target tgt : Procedure) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "procId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie' "procProfile";
+  } "procMeta";
+
+  // status: translate DNPM therapy status → FHIR Procedure.status
+  src.status as st where st.code = 'completed'  -> tgt.status = 'completed'   "statusCompleted";
+  src.status as st where st.code = 'ongoing'    -> tgt.status = 'in-progress' "statusOngoing";
+  src.status as st where st.code = 'stopped'    -> tgt.status = 'stopped'     "statusStopped";
+  src.status as st where st.code = 'not-done'   -> tgt.status = 'not-done'    "statusNotDone";
+  // Fallback: unknown → unknown
+  src where src.status.empty() -> tgt.status = 'unknown' "statusDefault";
+
+  // statusReason: DNPM statusReason coding → Procedure.statusReason.coding
+  src.statusReason as sr -> tgt.statusReason as statusR then {
+    sr -> statusR.coding as c then {
+      sr.code as codeV -> c.code = cast(codeV, 'string') "srCode";
+      sr.system as systemV -> c.system = cast(systemV, 'string') "srSystem";
+      sr.display as displayV -> c.display = cast(displayV, 'string') "srDisplay";
+    } "srCoding";
+  } "procStatusReason";
+
+  // subject → Patient reference (urn:uuid)
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "procSubjectReference";
+  } "procSubject";
+
+  // performedPeriod ← history.period
+  src.period as p -> tgt.performedPeriod as pp then {
+    p.start as startDt -> pp.start = cast(startDt, 'dateTime') "ppStart";
+    p.end as endDt -> pp.end = cast(endDt, 'dateTime') "ppEnd";
+  } "performedPeriod";
+
+  // reasonReference ← indication (MTBDiagnosis reference)
+  src.indication as ind -> tgt.reasonReference as rr then {
+    ind.id as iid -> rr.reference = append('urn:uuid:', iid) "indicationReference";
+  } "procIndication";
+
+  // extension[causedBy] ← basedOn (MTBMedicationRecommendation reference)
+  // Uses http://hl7.org/fhir/StructureDefinition/procedure-causedBy
+  src.basedOn as bo -> tgt.extension as ext then {
+    bo -> ext.url = 'http://hl7.org/fhir/StructureDefinition/procedure-causedBy' "causedByUrl";
+    bo.id as bid -> ext.value = create('Reference') as ref then {
+      bid -> ref.reference = append('urn:uuid:', bid) "causedByRef";
+    } "causedByValue";
+  } "procCausedBy";
+
+  // extension (mii-ex-mtb-leitlinie-dokumentation): therapyLine as sub-extension
+  // Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation
+  src.therapyLine as tl -> tgt.extension as ext then {
+    tl -> ext.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation' "leitlinieExtUrl";
+    tl -> ext.extension as subExt then {
+      tl -> subExt.url = 'Therapielinie' "therapielinieSubUrl";
+      tl -> subExt.value = cast(tl, 'unsignedInt') "therapielinieValue";
+    } "leitlinieSubExt";
+  } "procTherapyLine";
+
+  // note ← notes[] (free-text therapy notes)
+  src.notes as n -> tgt.note as note then {
+    n -> note.text = n "noteText";
+  } "procNotes";
+
+  // medication[]: each ATC entry → a separate MedicationStatement resource
+  // linked via partOf back to this Procedure is the recommended pattern;
+  // however, since medication codings must end up in the Bundle, we create
+  // MedicationStatement entries inline via separate group (see below).
+  // The Procedure itself does not carry medication directly per the MII profile
+  // (MII_PR_Onko_Systemische_Therapie inherits from Procedure, not MedicationAdministration).
+  // We record the medication codes as supportingInfo-like annotations on the Procedure
+  // using the 'usedCode' element (0..*) which accepts CodeableConcept.
+  src.medication as med -> tgt.usedCode as uc then {
+    med -> uc.coding as c then {
+      med.code as codeV -> c.code = cast(codeV, 'string') "medCode";
+      med.system as systemV -> c.system = cast(systemV, 'string') "medSystem";
+      med.display as displayV -> c.display = cast(displayV, 'string') "medDisplay";
+    } "medCoding";
+  } "procMedication";
+}
+
+// ---------------------------------------------------------------------------
+// MapResponse: DNPM responses entry → FHIR Observation
+//   Profile: MII_PR_MTB_Response_Befund
+//   (Parent: MII_PR_Onko_Verlauf)
+// ---------------------------------------------------------------------------
+group MapResponse(source src : BackboneElement, target tgt : Observation) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "obsId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund' "obsProfile";
+  } "obsMeta";
+
+  // status = final (fixed per profile intent)
+  src -> tgt.status = 'final' "obsStatus";
+
+  // code: LOINC 21976-6 "Response to cancer treatment" — parent Onko Verlauf uses this
+  src -> tgt.code as c then {
+    src -> c.coding as coding then {
+      src -> coding.system = 'http://loinc.org' "obsCodeSystem";
+      src -> coding.code   = '21976-6'          "obsCodeCode";
+    } "obsCodeCoding";
+  } "obsCode";
+
+  // subject → Patient reference (urn:uuid)
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "obsSubjectReference";
+  } "obsSubject";
+
+  // effectiveDateTime ← effectiveDate
+  src.effectiveDate as effectiveDateDt -> tgt.effectiveDateTime = cast(effectiveDateDt, 'dateTime') "obsEffectiveDateTime";
+
+  // partOf ← therapy.id (MTBSystemicTherapy reference)
+  // Profile uses partOf (not focus) for the associated systemic therapy
+  src.therapy as th -> tgt.partOf as po then {
+    th.id as tid -> po.reference = append('urn:uuid:', tid) "obsTherapyReference";
+  } "obsPartOf";
+
+  // valueCodeableConcept: DNPM RECIST value.code → MTB slice
+  // System: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung
+  src.value as v -> tgt.valueCodeableConcept as vc then {
+    v -> vc.coding as c then {
+      v.code as codeV -> c.code = cast(codeV, 'string') "obsValueCode";
+      // Use the MII MTB response assessment CodeSystem for the MTB slice
+      v -> c.system = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung' "obsValueSystem";
+      v.display as displayV -> c.display = cast(displayV, 'string') "obsValueDisplay";
+    } "obsValueCoding";
+  } "obsValue";
+
+  // method: assessment method (RECIST / RANO) — required by profile (1..1)
+  // DNPM passes the system name as the method indicator; map to the MII beurteilungsmethode CS
+  src.value as v -> tgt.method as meth then {
+    v -> meth.coding as c then {
+      v.system as systemV -> c.code = cast(systemV, 'string') "obsMethodCode";
+      v -> c.system = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode' "obsMethodSystem";
+    } "obsMethodCoding";
+  } "obsMethod";
+}

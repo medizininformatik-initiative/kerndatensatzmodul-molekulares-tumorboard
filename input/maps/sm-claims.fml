@@ -1,0 +1,189 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims" = "SMClaims"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"                        alias Bundle               as target
+uses "http://hl7.org/fhir/StructureDefinition/Claim"                         alias Claim                as produced
+uses "http://hl7.org/fhir/StructureDefinition/ClaimResponse"                 alias ClaimResponse        as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate over claims and claimResponses
+// ---------------------------------------------------------------------------
+group Claims(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  // Bundle type = collection
+  src -> bundle.type = 'collection' "bundleType";
+
+  // --- Claim per claims[] entry ---------------------------------------------
+  src.claims as claim ->
+      bundle.entry as e,
+      e.resource = create('Claim') as tgtClaim
+      then {
+        claim.id as claimid -> e.fullUrl = append('urn:uuid:', claimid) "fullUrl";
+        claim -> tgtClaim then MapClaim(claim, tgtClaim) "map";
+      } "claim";
+
+  // --- ClaimResponse per claimResponses[] entry ----------------------------
+  src.claimResponses as claimResp ->
+      bundle.entry as e,
+      e.resource = create('ClaimResponse') as tgtClaimResp
+      then {
+        claimResp.id as claimRespid -> e.fullUrl = append('urn:uuid:', claimRespid) "fullUrl";
+        claimResp -> tgtClaimResp then MapClaimResponse(claimResp, tgtClaimResp) "map";
+      } "claimResponse";
+}
+
+// ---------------------------------------------------------------------------
+// MapClaim: DNPM claims entry → FHIR Claim
+//   Profile: MII_PR_MTB_Antrag_Kostenuebernahme (Parent: Claim)
+// ---------------------------------------------------------------------------
+group MapClaim(source src : BackboneElement, target tgt : Claim) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "claimId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme' "claimProfile";
+  } "claimMeta";
+
+  // status = #active (fixed by profile: * status = #active (exactly))
+  src -> tgt.status = 'active' "claimStatus";
+
+  // use = #preauthorization: DNPM Antrag Kostenuebernahme is a pre-authorization request
+  // (request for coverage approval before / at time of treatment decision)
+  src -> tgt.use = 'preauthorization' "claimUse";
+
+  // type: required CodeableConcept — use a placeholder institutional coding
+  // (actual type from dnpm-dip/mtb/claim-type if available; not in LM, use fixed value)
+  src -> tgt.type as t then {
+    src -> t.coding as c then {
+      src -> c.system = 'http://terminology.hl7.org/CodeSystem/claim-type' "claimTypeSystem";
+      src -> c.code   = 'institutional'                                      "claimTypeCode";
+    } "claimTypeCoding";
+  } "claimType";
+
+  // patient → Patient reference (urn:uuid)
+  src.patient as pat -> tgt.patient as p then {
+    pat.id as pid -> p.reference = append('urn:uuid:', pid) "claimPatientReference";
+  } "claimPatient";
+
+  // created ← issuedOn
+  src.issuedOn as issuedOnDt -> tgt.created = cast(issuedOnDt, 'date') "claimCreated";
+
+  // provider: required by FHIR Claim — use a placeholder (no DNPM source field)
+  // Set to a relative reference that implementers can override
+  src -> tgt.provider as prov then {
+    src -> prov.display = 'Unknown' "claimProviderDisplay";
+  } "claimProvider";
+
+  // priority: required by FHIR Claim — fixed to 'normal' per profile
+  src -> tgt.priority as pri then {
+    src -> pri.coding as c then {
+      src -> c.system = 'http://terminology.hl7.org/CodeSystem/processpriority' "claimPrioritySystem";
+      src -> c.code   = 'normal'                                                  "claimPriorityCode";
+    } "claimPriorityCoding";
+  } "claimPriority";
+
+  // prescription ← recommendation.id (MTBMedicationRecommendation reference)
+  // Profile uses Claim.prescription (Reference(MedicationRequest)) for the therapy recommendation
+  src.recommendation as rec -> tgt.prescription as pres then {
+    rec.id as rid -> pres.reference = append('urn:uuid:', rid) "claimPrescriptionReference";
+  } "claimPrescription";
+
+  // insurance: required by FHIR Claim (1..*)
+  // Profile requires insurance with focal=true and a sequence number
+  src -> tgt.insurance as ins then {
+    src -> ins.sequence = 1 "insSequence";
+    src -> ins.focal = true "insFocal";
+    // coverage: placeholder (no insurer data in DNPM LM)
+    src -> ins.coverage as cov then {
+      src -> cov.display = 'Unknown' "insCoverageDisplay";
+    } "insCoverage";
+  } "claimInsurance";
+
+  // careTeam[ZPMBeteiligung]: required by profile (1..*)
+  // No ZPM practitioner data in DNPM LM; write mandatory structure with placeholder
+  src -> tgt.careTeam as ct then {
+    src -> ct.sequence = 1 "ctSequence";
+    src -> ct.responsible = true "ctResponsible";
+    src -> ct.provider as prov then {
+      src -> prov.display = 'ZPM' "ctProviderDisplay";
+    } "ctProvider";
+  } "claimCareTeam";
+}
+
+// ---------------------------------------------------------------------------
+// MapClaimResponse: DNPM claimResponses entry → FHIR ClaimResponse
+//   Profile: MII_PR_MTB_Antwort_Kostenuebernahme (Parent: ClaimResponse)
+// ---------------------------------------------------------------------------
+group MapClaimResponse(source src : BackboneElement, target tgt : ClaimResponse) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "crId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme' "crProfile";
+  } "crMeta";
+
+  // status = #active (fixed by profile: * status = #active)
+  src -> tgt.status = 'active' "crStatus";
+
+  // use = #preauthorization: mirrors the Claim.use
+  src -> tgt.use = 'preauthorization' "crUse";
+
+  // type: required — mirror institutional from Claim
+  src -> tgt.type as t then {
+    src -> t.coding as c then {
+      src -> c.system = 'http://terminology.hl7.org/CodeSystem/claim-type' "crTypeSystem";
+      src -> c.code   = 'institutional'                                      "crTypeCode";
+    } "crTypeCoding";
+  } "crType";
+
+  // patient → Patient reference (urn:uuid)
+  src.patient as pat -> tgt.patient as p then {
+    pat.id as pid -> p.reference = append('urn:uuid:', pid) "crPatientReference";
+  } "crPatient";
+
+  // created ← issuedOn
+  src.issuedOn as issuedOnDt -> tgt.created = cast(issuedOnDt, 'date') "crCreated";
+
+  // insurer: required by FHIR ClaimResponse — placeholder (no insurer in DNPM LM)
+  src -> tgt.insurer as ins then {
+    src -> ins.display = 'Unknown' "crInsurerDisplay";
+  } "crInsurer";
+
+  // request ← claim.id (associated Claim reference)
+  src.claim as cl -> tgt.request as req then {
+    cl.id as cid -> req.reference = append('urn:uuid:', cid) "crRequestReference";
+  } "crRequest";
+
+  // outcome: fixed to 'complete' per profile
+  // (* outcome = http://hl7.org/fhir/remittance-outcome#complete)
+  src -> tgt.outcome = 'complete' "crOutcome";
+
+  // extension[Entscheidung]: map claimResponse.status → decision extension
+  // Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung
+  src.status as st -> tgt.extension as ext then {
+    st -> ext.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung' "entscheidungUrl";
+    st -> ext.value = create('CodeableConcept') as cc then {
+      st -> cc.coding as c then {
+        st.code as codeV -> c.code = cast(codeV, 'string') "entscheidungCode";
+        st.system as systemV -> c.system = cast(systemV, 'string') "entscheidungSystem";
+        st.display as displayV -> c.display = cast(displayV, 'string') "entscheidungDisplay";
+      } "entscheidungCoding";
+    } "entscheidungValue";
+  } "crEntscheidung";
+
+  // extension[Ablehnungsgrund]: map statusReason → rejection reason extension
+  // Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund
+  src.statusReason as sr -> tgt.extension as ext then {
+    sr -> ext.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund' "ablehnungsgrundUrl";
+    sr -> ext.value = create('CodeableConcept') as cc then {
+      sr -> cc.coding as c then {
+        sr.code as codeV -> c.code = cast(codeV, 'string') "ablehnungsgrundCode";
+        sr.system as systemV -> c.system = cast(systemV, 'string') "ablehnungsgrundSystem";
+        sr.display as displayV -> c.display = cast(displayV, 'string') "ablehnungsgrundDisplay";
+      } "ablehnungsgrundCoding";
+    } "ablehnungsgrundValue";
+  } "crAblehnungsgrund";
+}

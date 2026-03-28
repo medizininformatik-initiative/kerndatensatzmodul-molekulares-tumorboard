@@ -1,0 +1,16 @@
+services:
+  matchbox-mtb:
+    build:
+      context: ../..
+      dockerfile: scripts/matchbox/Dockerfile
+    image: matchbox-mtb:latest
+    container_name: matchbox-mtb
+    platform: linux/amd64
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8080/matchboxv3/fhir/metadata"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s

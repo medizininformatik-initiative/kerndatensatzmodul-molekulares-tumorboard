@@ -1,0 +1,88 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up" = "SMFollowUp"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"                        alias Bundle               as target
+uses "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"            alias ClinicalImpression   as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate over followUps and populate the Bundle
+// ---------------------------------------------------------------------------
+group FollowUps(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  // Bundle type = collection
+  src -> bundle.type = 'collection' "bundleType";
+
+  // --- ClinicalImpression per follow-up entry --------------------------------
+  src.followUps as fu ->
+      bundle.entry as e,
+      e.resource = create('ClinicalImpression') as ci
+      then {
+        fu.id as fuid -> e.fullUrl = append('urn:uuid:', fuid) "fullUrl";
+        fu -> ci then MapFollowUp(fu, ci) "map";
+      } "followUp";
+}
+
+// ---------------------------------------------------------------------------
+// MapFollowUp: DNPM followUps entry → FHIR ClinicalImpression
+//   Profile: MII_PR_MTB_Follow_Up_ClinicalImpression (Parent: ClinicalImpression)
+// ---------------------------------------------------------------------------
+group MapFollowUp(source src : BackboneElement, target tgt : ClinicalImpression) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "ciId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression' "ciProfile";
+  } "ciMeta";
+
+  // status: fixed to 'completed' (retrospective data acquisition)
+  src -> tgt.status = 'completed' "ciStatus";
+
+  // code: fixed SNOMED code for follow-up encounter (required by profile)
+  src -> tgt.code as c then {
+    src -> c.coding as coding then {
+      src -> coding.system = 'http://snomed.info/sct' "ciCodeSystem";
+      src -> coding.code   = '390906007'              "ciCodeCode";
+      src -> coding.display = 'Follow-up encounter (procedure)' "ciCodeDisplay";
+    } "ciCodeCoding";
+  } "ciCode";
+
+  // subject → Patient reference (urn:uuid)
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "ciSubjectReference";
+  } "ciSubject";
+
+  // effectiveDateTime ← followUp.date
+  src.date as dateDt -> tgt.effectiveDateTime = cast(dateDt, 'dateTime') "ciEffectiveDateTime";
+
+  // note: carry lastContactDate as a note text
+  src.lastContactDate as lcd -> tgt.note as note then {
+    lcd -> note.text = append('Last contact date: ', lcd) "ciNoteText";
+  } "ciNote";
+
+  // investigation: patient status at follow-up
+  src.patientStatus as ps -> tgt.investigation as inv then MapPatientStatus(ps, inv) "ciInvestigation";
+
+  // supportingInfo[AntraegeKostenuebernahme]: claim references carried at follow-up level
+  // Note: these are claim IDs referenced in the followUp. The actual Claim resources
+  // are created by sm-claims.fml. Here we only write the reference into supportingInfo.
+  src.claims as claimRef -> tgt.supportingInfo as si then {
+    claimRef.id as cid -> si.reference = append('urn:uuid:', cid) "claimRefValue";
+  } "ciClaimRefs";
+}
+
+// ---------------------------------------------------------------------------
+// MapPatientStatus: DNPM patientStatus coding → ClinicalImpression.investigation
+// ---------------------------------------------------------------------------
+group MapPatientStatus(source src : BackboneElement, target tgt : BackboneElement) {
+
+  // investigation.code: use the MII Follow-Up Status CodeSystem
+  src -> tgt.code as code then {
+    src -> code.coding as c then {
+      src.system as systemV -> c.system = cast(systemV, 'string') "invCodeSystem";
+      src.code as codeV -> c.code = cast(codeV, 'string') "invCodeCode";
+      src.display as displayV -> c.display = cast(displayV, 'string') "invCodeDisplay";
+    } "invCoding";
+  } "invCode";
+}

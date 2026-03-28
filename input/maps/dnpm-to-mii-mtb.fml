@@ -1,0 +1,47 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/dnpm-to-mii-mtb" = "DNPMtoMIIMTB"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle" alias Bundle as target
+
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-ngs-report"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-systemic-therapy"
+imports "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims"
+
+group DNPMPatientRecordToBundle(source src : DNPMPatientRecord, target bundle : Bundle) {
+  // Set bundle type
+  src -> bundle.type = 'transaction' "bundleType";
+
+  // Patient demographics, episodes, family history
+  src -> bundle then PatientDemographics(src, bundle) "demographics";
+
+  // Diagnoses + ECOG
+  src -> bundle then Diagnoses(src, bundle) "diagnoses";
+
+  // Specimens, histology, IHC, MSI
+  src -> bundle then SpecimenHistologyIHCMSI(src, bundle) "pathology";
+
+  // NGS Reports
+  src -> bundle then NGSReports(src, bundle) "ngs";
+
+  // CarePlans + recommendations
+  src -> bundle then CarePlans(src, bundle) "carePlans";
+
+  // Guideline therapies + procedures
+  src -> bundle then GuidelineTherapy(src, bundle) "guidelineTherapy";
+
+  // Follow-ups
+  src -> bundle then FollowUps(src, bundle) "followUps";
+
+  // Systemic therapies + responses
+  src -> bundle then SystemicTherapies(src, bundle) "systemicTherapies";
+
+  // Claims + claim responses
+  src -> bundle then Claims(src, bundle) "claims";
+}

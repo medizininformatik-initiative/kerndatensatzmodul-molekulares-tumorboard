@@ -1,0 +1,163 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis" = "SMDiagnosis"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"                        alias Bundle               as target
+uses "http://hl7.org/fhir/StructureDefinition/Condition"                     alias Condition            as produced
+uses "http://hl7.org/fhir/StructureDefinition/Observation"                   alias Observation          as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate over diagnoses and performanceStatus
+// ---------------------------------------------------------------------------
+group Diagnoses(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  // Bundle type = collection
+  src -> bundle.type = 'collection' "bundleType";
+
+  // --- Condition per diagnosis entry ----------------------------------------
+  src.diagnoses as diag ->
+      bundle.entry as e,
+      e.resource = create('Condition') as cond
+      then {
+        diag.id as diagid -> e.fullUrl = append('urn:uuid:', diagid) "fullUrl";
+        diag -> cond then MapDiagnosis(diag, cond) "map";
+      } "diagnosis";
+
+  // --- Observation (ECOG) per performanceStatus entry -----------------------
+  src.performanceStatus as ps ->
+      bundle.entry as e,
+      e.resource = create('Observation') as obs
+      then {
+        ps.id as psid -> e.fullUrl = append('urn:uuid:', psid) "fullUrl";
+        ps -> obs then MapECOG(ps, obs) "map";
+      } "ecog";
+}
+
+// ---------------------------------------------------------------------------
+// MapDiagnosis: DNPM diagnoses entry → FHIR Condition
+//   Profile: MII_PR_MTB_Diagnose_Primaertumor
+//   (Parent: MII_PR_Onko_Diagnose_Primaertumor → Parent: MII_PR_Diagnose)
+// ---------------------------------------------------------------------------
+group MapDiagnosis(source src : BackboneElement, target tgt : Condition) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "conditionId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor' "conditionProfile";
+  } "conditionMeta";
+
+  // Required clinical status – set to active as DNPM provides no alternative
+  src -> tgt.clinicalStatus as cs then {
+    src -> cs.coding as c then {
+      src -> c.system = 'http://terminology.hl7.org/CodeSystem/condition-clinical' "clinStatusSystem";
+      src -> c.code   = 'active'                                                    "clinStatusCode";
+    } "clinStatusCoding";
+  } "clinicalStatus";
+
+  // Required verification status – set to confirmed
+  src -> tgt.verificationStatus as vs then {
+    src -> vs.coding as c then {
+      src -> c.system = 'http://terminology.hl7.org/CodeSystem/condition-ver-status' "verStatusSystem";
+      src -> c.code   = 'confirmed'                                                   "verStatusCode";
+    } "verStatusCoding";
+  } "verificationStatus";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "subjectReference";
+  } "subject";
+
+  // recordedDate
+  src.recordedOn as recordedOnDt -> tgt.recordedDate = cast(recordedOnDt, 'date') "recordedDate";
+
+  // --- Code (ICD-10-GM) -----------------------------------------------------
+  src.code as code -> tgt.code as tgtCode then {
+    code -> tgtCode.coding as c then {
+      code.code as codeV -> c.code = cast(codeV, 'string') "codeCode";
+      code.system as systemV -> c.system = cast(systemV, 'string') "codeSystem";
+      code.version as versionV -> c.version = cast(versionV, 'string') "codeVersion";
+      code.display as displayV -> c.display = cast(displayV, 'string') "codeDisplay";
+    } "codeCoding";
+  } "conditionCode";
+
+  // --- Body site (ICD-O-3 topography) ---------------------------------------
+  src.topography as topo -> tgt.bodySite as bs then {
+    topo -> bs.coding as c then {
+      topo.code as codeV -> c.code = cast(codeV, 'string') "topoCode";
+      topo.system as systemV -> c.system = cast(systemV, 'string') "topoSystem";
+      topo.version as versionV -> c.version = cast(versionV, 'string') "topoVersion";
+      topo.display as displayV -> c.display = cast(displayV, 'string') "topoDisplay";
+    } "topoCoding";
+  } "bodySite";
+
+  // --- Guideline treatment status (as extension on Condition) ---------------
+  // Note: MII_EX_MTB_Leitlinienbehandlung_Status has context ClinicalImpression;
+  // a Condition-level extension is added here to preserve the DNPM value until
+  // a dedicated Condition extension is defined. Receivers may prefer to read
+  // this value from the associated Behandlungsepisode (ClinicalImpression).
+  src.guidelineTreatmentStatus as gts -> tgt.extension as ext then {
+    gts -> ext.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status' "gtsExtUrl";
+    gts -> ext.value = create('Coding') as coding then {
+      gts.code as codeV -> coding.code = cast(codeV, 'string') "gtsCode";
+      gts.system as systemV -> coding.system = cast(systemV, 'string') "gtsSystem";
+    } "gtsExtValue";
+  } "guidelineStatusExt";
+
+  // --- Free-text notes ------------------------------------------------------
+  src.notes as n -> tgt.note as note then {
+    n -> note.text = n "noteText";
+  } "notes";
+}
+
+// ---------------------------------------------------------------------------
+// MapECOG: DNPM performanceStatus entry → FHIR Observation
+//   Profile: MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG
+// ---------------------------------------------------------------------------
+group MapECOG(source src : BackboneElement, target tgt : Observation) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "ecogId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-allgemeiner-leistungszustand-ecog' "ecogProfile";
+  } "ecogMeta";
+
+  // status = final (fixed per profile intent)
+  src -> tgt.status = 'final' "ecogStatus";
+
+  // code: required SNOMED slice (423740007) + optional LOINC slice (89262-0)
+  src -> tgt.code as c then {
+    // SNOMED — required slice
+    src -> c.coding as snomed then {
+      src -> snomed.system = 'http://snomed.info/sct' "ecogCodeSnomedSystem";
+      src -> snomed.code   = '423740007'               "ecogCodeSnomedCode";
+    } "ecogCodeSnomed";
+    // LOINC — optional slice
+    src -> c.coding as loinc then {
+      src -> loinc.system = 'http://loinc.org' "ecogCodeLoincSystem";
+      src -> loinc.code   = '89262-0'           "ecogCodeLoincCode";
+    } "ecogCodeLoinc";
+  } "ecogCode";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "ecogSubjectReference";
+  } "ecogSubject";
+
+  // effectiveDateTime
+  src.effectiveDate as effectiveDateDt -> tgt.effectiveDateTime = cast(effectiveDateDt, 'dateTime') "ecogEffectiveDateTime";
+
+  // valueCodeableConcept: DNPM ECOG code/system → obds slice
+  // The DNPM system is 'dnpm-dip/patient/ecog-performance-status';
+  // a concept map (dnpm-ecog-to-mii.fsh) provides formal equivalence to
+  // https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-allgemeiner-leistungszustand-ecog
+  // but both numeric codes (0–4) are identical, so direct pass-through is used.
+  src.value as v -> tgt.valueCodeableConcept as vc then {
+    v -> vc.coding as c then {
+      v.code as codeV -> c.code = cast(codeV, 'string') "ecogValueCode";
+      v.system as systemV -> c.system = cast(systemV, 'string') "ecogValueSystem";
+      v.display as displayV -> c.display = cast(displayV, 'string') "ecogValueDisplay";
+    } "ecogValueCoding";
+  } "ecogValue";
+}
