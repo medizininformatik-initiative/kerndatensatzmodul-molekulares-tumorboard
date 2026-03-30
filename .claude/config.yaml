@@ -48,6 +48,13 @@ versioning:
     - path: "sushi-config.yaml"
       field: "version"
       format: "yaml"
+    - path: "input/fsh/common/Version.fsh"
+      field: "version"
+      format: "fsh-ruleset"
+      note: "Contains RuleSets Version, PR_CS_VS_Version, MetaProfile — ALL version strings must be updated. Run sushi --snapshot after updating."
+    - path: "implementation-guides/ImplementationGuide-2026.x-DE/guide.yaml"
+      field: "version"
+      format: "yaml"
   release_labels:
     development: "ci-build"
     ballot: "ballot"

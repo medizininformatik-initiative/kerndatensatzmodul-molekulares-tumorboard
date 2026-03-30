@@ -23,13 +23,20 @@ Das Modul wird kontinuierlich gegen den FHIR R4 Standard und die definierten Pro
 
 ## Gefilterte Validierungsmeldungen
 
-Diese Meldungen werden durch `advisor.json` unterdrückt:
+Diese Meldungen werden durch [`advisor.json`](https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/dev/advisor.json) unterdrückt:
 
-| Fehlercode | Filter | Begründung |
-|------------|--------|------------|
-| `Terminology_TX_NoValid_16` | ImplementationGuide Parameter | Externe Terminologie-Server-Limitation |
-| `MSG_DRAFT` | SearchParameter Extension | Erwartete Warnung während Entwicklungsphase |
-| `dom-6` | DomainResource | FHIR Basisregel, bekanntes Validator-Artefakt |
+| Fehlercode | Kontext | Begründung |
+|------------|---------|------------|
+| `Terminology_TX_NoValid_16` | ImplementationGuide, StructureDefinition, ValueSet, CodeSystem | Externe Terminologie-Server-Limitation: TX-Server kann bestimmte Codes nicht validieren |
+| `UNABLE_TO_INFER_CODESYSTEM` | ImplementationGuide, StructureDefinition, ValueSet, CodeSystem | CodeSystem kann vom Validator nicht automatisch abgeleitet werden |
+| `Structural_VAL_Array_Empty` | ImplementationGuide.definition.page | Leeres Array in IG-Seitendefinition (Simplifier-Artefakt) |
+| `MSG_DRAFT` | global | Erwartete Warnung für Ressourcen im `draft`-Status während Entwicklungsphase |
+| `dom-6` | DomainResource | FHIR-Basisinvariante, bekanntes Validator-Artefakt |
+| `eld-20` | ElementDefinition | ElementDefinition-Invariante, bekanntes Validator-Artefakt |
+| `LOINC LIST filter` | Observations, Procedures | `There is no declared filter called LIST on code system http://loinc.org` — der CI-TX-Server unterstützt den LOINC `LIST`-Filter nicht (siehe unten) |
+| `Unknown code '1381317004'` | SNOMED CT | Neuer SNOMED-CT-Code noch nicht in der TX-Server-Version verfügbar |
+| `Reference_REF_CantMatchChoice` | global | Validator kann choice-type Referenzen nicht auflösen (bekannte Limitation) |
+| `Validation_VAL_Profile_NoSnapshot` | global | Referenziertes Profil ohne Snapshot (z.B. aus Dependency-Paketen ohne Snapshots) |
 
 ---
 
@@ -82,8 +89,30 @@ Slicing cannot be evaluated: Could not match discriminator ($this) for slice spe
 |--------------|--------------|--------|
 | **HGNC** | Gene-Symbole nicht auf allen TX-Servern verfügbar | 🔵 EXTERNAL |
 | **Oncotree** | Tumor-Klassifikation extern, nicht FHIR-TX-validierbar | 🔵 EXTERNAL |
-| **LOINC** | Panel-Codes für Genomics teilweise nicht validierbar | 🔵 EXTERNAL |
+| **LOINC** | Panel-Codes für Genomics teilweise nicht validierbar; `LIST`-Filter nicht unterstützt (siehe unten) | 🔵 EXTERNAL |
 | **SNOMED CT** | Neuere Codes (nach Juli 2025+) nicht auf MII-TX-Servern verfügbar | 🔵 EXTERNAL |
+
+### LOINC LIST-Filter-Fehler in CI
+
+Die CI-Validierung meldet 14 Fehler der Form:
+
+```
+Error from http://127.0.0.1:8090/fhir: Error: There is no declared filter called LIST on code system http://loinc.org
+```
+
+**Ursache:** Das `hl7.fhir.uv.genomics-reporting` IG (v3.0.0) verwendet ValueSets mit LOINC `LIST`-Filter-Ausdrücken. Der in der CI eingesetzte Terminologie-Server unterstützt diesen Filter nicht. Dies betrifft alle Ressourcen, die LOINC-Codes aus Genomics-Reporting-ValueSets verwenden.
+
+**Betroffene Ressourcen (14):**
+
+| Ressource | Element |
+|-----------|---------|
+| Bundle (Kim Musterperson) | GenomicStudyAnalysis, EinfacheVariante (TP53, PIK3R1), CNVariante (CCNE1) |
+| Observation (Einfache Variante) | `value`, `method`, `component[0].value` |
+| Observation (Copy Number Variant) | `component[0].value` |
+| Observation (RNA Fusion) | `value` |
+| Procedure (GenomicStudyAnalysis) | `extension.value` |
+
+**Status:** 🔵 EXTERNAL — Der Fehler liegt im CI-TX-Server, nicht in den Profilen oder Beispielen. Die Meldung wird über `advisor.json` gefiltert.
 
 ### Nicht-validierbare SNOMED CT Codes
 
@@ -117,8 +146,12 @@ Die folgenden SNOMED CT Codes sind korrekt, aber neuer als die auf dem Terminolo
 
 | Paket | Version | Beschreibung |
 |-------|---------|--------------|
-| `de.medizininformatik-initiative.kerndatensatz.meta` | 2025.0.0 | MII Kerndatensatz Meta |
-| `de.medizininformatik-initiative.kerndatensatz.onkologie` | 2026.0.x | MII Modul Onkologie (Diagnose-Profile) |
+| `de.medizininformatikinitiative.kerndatensatz.meta` | 2026.0.0 | MII Kerndatensatz Meta |
+| `de.medizininformatikinitiative.kerndatensatz.base` | 2026.0.0 | MII Kerndatensatz Basis |
+| `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2026.0.3 | MII Modul Onkologie |
+| `de.medizininformatikinitiative.kerndatensatz.molgen` | 2026.0.4 | MII Modul Molekulargenetik |
+| `de.medizininformatikinitiative.kerndatensatz.patho` | 2026.0.0 | MII Modul Pathologie |
+| `de.medizininformatikinitiative.kerndatensatz.consent` | 2026.0.0 | MII Modul Consent |
 | `hl7.fhir.uv.genomics-reporting` | 3.0.0 | HL7 Genomics Reporting IG |
 
 ---
