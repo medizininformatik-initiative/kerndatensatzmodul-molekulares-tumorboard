@@ -1,7 +1,7 @@
 to-json:
-  - source: fsh-generated/resources
+  - source: input
   - category: Resource
-  - move: /
+  - transform: json
   - target: staging
 
 generate-snapshots:

@@ -6,6 +6,39 @@ topic: ReleaseNotes
 ## {{page-title}}
 Hier sind alle Änderungen aufgelistet.
 
+## Version 2026.0.1 (2026-03-30)
+
+Dependency-Updates und Dokumentationsverbesserungen.
+
+### Dependency-Updates
+
+- `fix` **Onkologie**: Update von 2026.0.1 auf 2026.0.3 (AppleDouble-Bereinigung, Snapshot-Korrekturen, Extension-Versions-Fix)
+- `fix` **Consent**: Update von 2025.0.4 auf 2026.0.0 (2026-Release)
+
+### Dokumentation
+
+- `feat` **QA-Validierung**: Seite vollständig überarbeitet — alle `advisor.json`-Filter dokumentiert, LOINC LIST-Filter-Fehler beschrieben, externe Abhängigkeiten aktualisiert (siehe {{pagelink:QAValidierung}})
+
+### Build-System
+
+- `fix` **package.bake.yaml**: Anpassung für lokalen Build mit `--input fsh-generated/resources` und `sushi --snapshot`
+
+### Abhängigkeiten
+
+- de.basisprofil.r4 1.5.4
+- kerndatensatz.biobank 2026.0.0
+- kerndatensatz.consent 2026.0.0
+- kerndatensatz.base 2026.0.0
+- kerndatensatz.medikation 2026.0.0
+- kerndatensatz.meta 2026.0.0
+- kerndatensatz.molgen 2026.0.4
+- kerndatensatz.onkologie 2026.0.3
+- kerndatensatz.patho 2026.0.0
+- kerndatensatz.studie 2026.0.2
+- hl7.fhir.uv.genomics-reporting 3.0.0
+
+---
+
 ## Version 2026.0.0 (2026-01-20)
 
 Erste stabile Version des MII KDS-Moduls Molekulares Tumorboard nach erfolgreicher Ballot-Phase.

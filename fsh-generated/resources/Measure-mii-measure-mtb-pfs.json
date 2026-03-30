@@ -1,0 +1,362 @@
+{
+  "resourceType": "Measure",
+  "id": "mii-measure-mtb-pfs",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Measure/mtb-pfs",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "library": [
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Library/mtb-outcomes"
+  ],
+  "group": [
+    {
+      "code": {
+        "text": "PFS 0-90 Tage"
+      },
+      "population": [
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 0-90 At Risk"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "description": "Patienten at risk zu Beginn des Intervalls"
+        },
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 0-90 Event"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "measure-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "description": "Events (Progression oder Tod) im Intervall"
+        }
+      ],
+      "stratifier": [
+        {
+          "code": {
+            "text": "Vortherapielinien"
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Vortherapie Kategorie"
+          }
+        }
+      ],
+      "description": "At Risk und Events (Progression oder Tod) im Intervall 0-90 Tage nach Therapiebeginn"
+    },
+    {
+      "code": {
+        "text": "PFS 90-180 Tage"
+      },
+      "population": [
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 90-180 At Risk"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        },
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 90-180 Event"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "measure-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "code": {
+            "text": "Vortherapielinien"
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Vortherapie Kategorie"
+          }
+        }
+      ]
+    },
+    {
+      "code": {
+        "text": "PFS 180-270 Tage"
+      },
+      "population": [
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 180-270 At Risk"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        },
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 180-270 Event"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "measure-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "code": {
+            "text": "Vortherapielinien"
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Vortherapie Kategorie"
+          }
+        }
+      ]
+    },
+    {
+      "code": {
+        "text": "PFS 270-360 Tage"
+      },
+      "population": [
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 270-360 At Risk"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        },
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 270-360 Event"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "measure-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "code": {
+            "text": "Vortherapielinien"
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Vortherapie Kategorie"
+          }
+        }
+      ]
+    },
+    {
+      "code": {
+        "text": "PFS 360-540 Tage"
+      },
+      "population": [
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 360-540 At Risk"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        },
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 360-540 Event"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "measure-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "code": {
+            "text": "Vortherapielinien"
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Vortherapie Kategorie"
+          }
+        }
+      ]
+    },
+    {
+      "code": {
+        "text": "PFS 540-720 Tage"
+      },
+      "population": [
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 540-720 At Risk"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        },
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 540-720 Event"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "measure-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "code": {
+            "text": "Vortherapielinien"
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Vortherapie Kategorie"
+          }
+        }
+      ]
+    },
+    {
+      "code": {
+        "text": "PFS 720+ Tage"
+      },
+      "population": [
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 720 Plus At Risk"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        },
+        {
+          "criteria": {
+            "language": "text/cql",
+            "expression": "PFS Intervall 720 Plus Event"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "measure-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "code": {
+            "text": "Vortherapielinien"
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Vortherapie Kategorie"
+          }
+        }
+      ]
+    }
+  ],
+  "version": "2026.0.0",
+  "name": "MII_Measure_MTB_PFS",
+  "title": "MII Measure MTB Progression-Free Survival Life-Table",
+  "description": "Progression-Free Survival (PFS) als Life-Table mit 90-Tage-Intervallen zur Rekonstruktion von Kaplan-Meier-Kurven. Stratifiziert nach Anzahl der Vortherapielinien. Startpunkt: Beginn der ersten MTB-empfohlenen Therapie. Endpunkt: Progressive Disease (PD) oder Tod.",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-03-16",
+  "publisher": "Medizininformatik Initiative",
+  "scoring": {
+    "coding": [
+      {
+        "code": "cohort",
+        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+        "display": "Cohort"
+      }
+    ]
+  }
+}

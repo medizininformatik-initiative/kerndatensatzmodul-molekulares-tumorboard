@@ -61,6 +61,7 @@
 [mii-cm-mtb-therapiestatusgrund-obds]: ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.html
 [mii-cm-mtb-therapiestatusgrund-sct]: ConceptMap-mii-cm-mtb-therapiestatusgrund-sct.html
 [mii-cps-mtb-capabilitystatement]: CapabilityStatement-mii-cps-mtb-capabilitystatement.html
+[mii-lib-mtb-outcomes]: Library-mii-lib-mtb-outcomes.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
@@ -92,6 +93,9 @@
 [MII_EX_MTB_Leitlinienbehandlung_Status]: StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.html
 [MII_EX_MTB_NGS_Bericht_Genomic_Study]: StructureDefinition-mii-ex-mtb-ngs-bericht-genomic-study.html
 [MII_LM_MTB]: StructureDefinition-mii-lm-mtb.html
+[mii-measure-mtb-deskriptiv]: Measure-mii-measure-mtb-deskriptiv.html
+[mii-measure-mtb-os]: Measure-mii-measure-mtb-os.html
+[mii-measure-mtb-pfs]: Measure-mii-measure-mtb-pfs.html
 [mii-ns-mtb-nct]: NamingSystem-mii-ns-mtb-nct.html
 [mii-ns-studie-drks]: NamingSystem-mii-ns-studie-drks.html
 [mii-ns-studie-eudract]: NamingSystem-mii-ns-studie-eudract.html
