@@ -47,6 +47,9 @@
 [mii-exa-mtb-study-request-ccne1]: ServiceRequest-mii-exa-mtb-study-request-ccne1.html
 [mii-exa-mtb-kim-musterperson-CNVariante-CCNE1]: Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html
 [mii-exa-mtb-medication-request-cobimetinib]: MedicationRequest-mii-exa-mtb-medication-request-cobimetinib.html
+[DNPM_LM_CarePlan]: StructureDefinition-dnpm-lm-care-plan.html
+[DNPM_LM_NGSReport]: StructureDefinition-dnpm-lm-ngs-report.html
+[DNPM_LM_PatientRecord]: StructureDefinition-dnpm-lm-patient-record.html
 [mii-exa-mtb-kim-musterperson-aufklaerung]: Observation-mii-exa-mtb-kim-musterperson-aufklaerung.html
 [mii-exa-mtb-kim-rebiopsie-aszites]: ServiceRequest-mii-exa-mtb-kim-rebiopsie-aszites.html
 [mii-exa-mtb-kim-histologie-evaluation-aszites]: ServiceRequest-mii-exa-mtb-kim-histologie-evaluation-aszites.html

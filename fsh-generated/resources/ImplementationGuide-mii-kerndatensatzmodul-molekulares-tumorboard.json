@@ -477,6 +477,30 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/dnpm-lm-care-plan"
+        },
+        "name": "DNPM MTB Care Plan",
+        "description": "Logical Model for a single entry in the DNPM DIP MTB Patient Record carePlans array",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dnpm-lm-ngs-report"
+        },
+        "name": "DNPM NGS Report",
+        "description": "Logical Model for a single entry in the DNPM DIP MTB Patient Record ngsReports array",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dnpm-lm-patient-record"
+        },
+        "name": "DNPM Patient Record",
+        "description": "Logical Model for the DNPM DIP MTB Patient Record JSON structure (all 19 top-level keys)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "Observation/mii-exa-mtb-kim-musterperson-aufklaerung"
         },
         "name": "Einwilligung zur MTB-Besprechung Kim Musterperson",
@@ -584,6 +608,14 @@
         },
         "name": "MII CPS MTB CapabilityStatement",
         "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul MTB der Medizininformatik Initiative zu implementieren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Library/mii-lib-mtb-outcomes"
+        },
+        "name": "MII CQL MTB Outcomes",
+        "description": "CQL Library fuer die Berechnung von MTB-Outcome-Parametern (OS, PFS, ORR, DCR, TTNT) zur dezentralen Auswertung via FHIR Measure/MeasureReport",
         "exampleBoolean": false
       },
       {
@@ -832,6 +864,30 @@
         },
         "name": "MII LM Molekulares Tumorboard",
         "description": "MII Logical Model Modul Molekulares Tumorboard",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Measure/mii-measure-mtb-deskriptiv"
+        },
+        "name": "MII Measure MTB Deskriptive Kennzahlen",
+        "description": "Deskriptive Kennzahlen der MTB-Kohorte: Overall Response Rate (ORR), Disease Control Rate (DCR) und Umsetzungsrate der Therapieempfehlungen, stratifiziert nach Anzahl der Vortherapielinien.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Measure/mii-measure-mtb-os"
+        },
+        "name": "MII Measure MTB Overall Survival Life-Table",
+        "description": "Overall Survival (OS) als Life-Table mit 90-Tage-Intervallen zur Rekonstruktion von Kaplan-Meier-Kurven. Stratifiziert nach Umsetzung der MTB-Empfehlung. Startpunkt: MTB-Vorstellungsdatum (bzw. Erstdiagnose). Endpunkt: Tod oder letzter Vitalstatus.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Measure/mii-measure-mtb-pfs"
+        },
+        "name": "MII Measure MTB Progression-Free Survival Life-Table",
+        "description": "Progression-Free Survival (PFS) als Life-Table mit 90-Tage-Intervallen zur Rekonstruktion von Kaplan-Meier-Kurven. Stratifiziert nach Anzahl der Vortherapielinien. Startpunkt: Beginn der ersten MTB-empfohlenen Therapie. Endpunkt: Progressive Disease (PD) oder Tod.",
         "exampleBoolean": false
       },
       {

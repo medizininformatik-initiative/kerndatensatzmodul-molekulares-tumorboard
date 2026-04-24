@@ -7,6 +7,13 @@
   "status": "active",
   "description": "Logical Model for the DNPM DIP MTB Patient Record JSON structure (all 19 top-level keys)",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "dnpm-to-mii-fhir",
+      "name": "DNPM to MII FHIR",
+      "comment": "Mapping der DNPM DIP JSON-Elemente auf MII KDS FHIR-Profile (moduluebergreifend)"
+    }
+  ],
   "kind": "logical",
   "abstract": false,
   "type": "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record",
@@ -31,6 +38,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient"
+          }
         ]
       },
       {
@@ -44,6 +57,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient.identifier"
+          }
         ]
       },
       {
@@ -56,6 +75,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient.gender"
           }
         ]
       },
@@ -109,6 +134,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient.birthDate"
+          }
         ]
       },
       {
@@ -121,6 +152,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient.contact.organization"
           }
         ]
       },
@@ -252,6 +289,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient.address"
+          }
         ]
       },
       {
@@ -264,6 +307,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient.address.extension(destatis/ags)"
           }
         ]
       },
@@ -317,6 +366,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Person: Patient.deceased[x]"
+          }
         ]
       },
       {
@@ -369,6 +424,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Behandlungsepisode (ClinicalImpression)"
+          }
         ]
       },
       {
@@ -382,6 +443,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.identifier"
+          }
         ]
       },
       {
@@ -394,6 +461,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.subject"
           }
         ]
       },
@@ -434,6 +507,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.effectivePeriod"
+          }
         ]
       },
       {
@@ -447,6 +526,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.effectivePeriod.start"
+          }
         ]
       },
       {
@@ -459,6 +544,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.effectivePeriod.end"
           }
         ]
       },
@@ -512,6 +603,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Diagnose Primaertumor (Condition)"
+          }
         ]
       },
       {
@@ -525,6 +622,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Condition.identifier"
+          }
         ]
       },
       {
@@ -537,6 +640,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Condition.subject"
           }
         ]
       },
@@ -576,6 +685,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Condition.recordedDate"
           }
         ]
       },
@@ -681,6 +796,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Condition.code (ICD-10-GM)"
+          }
         ]
       },
       {
@@ -746,6 +867,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Condition.bodySite (ICD-O-3-T)"
+          }
         ]
       },
       {
@@ -810,6 +937,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: Observation (Grading)"
           }
         ]
       },
@@ -901,6 +1034,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: Observation (Staging)"
           }
         ]
       },
@@ -1162,6 +1301,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Condition.extension(Leitlinienbehandlung-Status)"
+          }
         ]
       },
       {
@@ -1213,6 +1358,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport"
           }
         ]
       },
@@ -1266,6 +1417,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Mol.gen: FamilyMemberHistory"
+          }
         ]
       },
       {
@@ -1279,6 +1436,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Mol.gen: FamilyMemberHistory.identifier"
+          }
         ]
       },
       {
@@ -1291,6 +1454,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Mol.gen: FamilyMemberHistory.patient"
           }
         ]
       },
@@ -1330,6 +1499,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Mol.gen: FamilyMemberHistory.relationship"
           }
         ]
       },
@@ -1383,6 +1558,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Systemische Vortherapie (MedicationStatement)"
+          }
         ]
       },
       {
@@ -1396,6 +1577,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.identifier"
+          }
         ]
       },
       {
@@ -1408,6 +1595,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.subject"
           }
         ]
       },
@@ -1448,6 +1641,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.reasonReference"
+          }
         ]
       },
       {
@@ -1487,6 +1686,12 @@
           {
             "code": "integer"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.extension(Therapielinie)"
+          }
         ]
       },
       {
@@ -1499,6 +1704,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.status"
           }
         ]
       },
@@ -1552,6 +1763,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.statusReason"
+          }
         ]
       },
       {
@@ -1604,6 +1821,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.effectivePeriod"
+          }
         ]
       },
       {
@@ -1642,6 +1865,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.medication[x]"
           }
         ]
       },
@@ -1773,6 +2002,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Vortherapie Prozedur (Procedure)"
+          }
         ]
       },
       {
@@ -1786,6 +2021,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Procedure.identifier"
+          }
         ]
       },
       {
@@ -1798,6 +2039,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Procedure.subject"
           }
         ]
       },
@@ -1838,6 +2085,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Procedure.reasonReference"
+          }
         ]
       },
       {
@@ -1876,6 +2129,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Procedure.code"
           }
         ]
       },
@@ -1929,6 +2188,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Procedure.status"
+          }
         ]
       },
       {
@@ -1980,6 +2245,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Procedure.performedPeriod"
           }
         ]
       },
@@ -2085,6 +2356,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: ECOG (Observation, LOINC 89247-1)"
+          }
         ]
       },
       {
@@ -2098,6 +2375,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: Observation.identifier"
+          }
         ]
       },
       {
@@ -2110,6 +2393,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: Observation.subject"
           }
         ]
       },
@@ -2150,6 +2439,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: Observation.effectiveDateTime"
+          }
         ]
       },
       {
@@ -2162,6 +2457,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: Observation.valueCodeableConcept"
           }
         ]
       },
@@ -2215,6 +2516,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Tumorprobe (Specimen)"
+          }
         ]
       },
       {
@@ -2228,6 +2535,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Specimen.identifier"
+          }
         ]
       },
       {
@@ -2240,6 +2553,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Specimen.subject"
           }
         ]
       },
@@ -2319,6 +2638,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Specimen.type"
+          }
         ]
       },
       {
@@ -2371,6 +2696,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Specimen.collection"
+          }
         ]
       },
       {
@@ -2384,6 +2715,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Specimen.collection.collectedDateTime"
+          }
         ]
       },
       {
@@ -2396,6 +2733,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Specimen.collection.bodySite"
           }
         ]
       },
@@ -2462,6 +2805,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Specimen.collection.method"
+          }
         ]
       },
       {
@@ -2514,6 +2863,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport (MolecularPathology)"
+          }
         ]
       },
       {
@@ -2527,6 +2882,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.identifier"
+          }
         ]
       },
       {
@@ -2539,6 +2900,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.subject"
           }
         ]
       },
@@ -2579,6 +2946,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.issued"
+          }
         ]
       },
       {
@@ -2605,6 +2978,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport (Histology)"
+          }
         ]
       },
       {
@@ -2618,6 +2997,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.identifier"
+          }
         ]
       },
       {
@@ -2630,6 +3015,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.subject"
           }
         ]
       },
@@ -2670,6 +3061,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.specimen"
+          }
         ]
       },
       {
@@ -2709,6 +3106,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.issued"
+          }
         ]
       },
       {
@@ -2722,6 +3125,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Pathologie: DiagnosticReport.result"
+          }
         ]
       },
       {
@@ -2734,6 +3143,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Tumorzellgehalt (Observation)"
           }
         ]
       },
@@ -2903,6 +3318,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "Onkologie: Histologie ICD-O-3 (Observation)"
           }
         ]
       },
@@ -3086,6 +3507,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Molecular Pathology Report (DiagnosticReport)"
+          }
         ]
       },
       {
@@ -3098,6 +3525,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.identifier"
           }
         ]
       },
@@ -3151,6 +3584,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.specimen"
+          }
         ]
       },
       {
@@ -3190,6 +3629,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.issued"
+          }
         ]
       },
       {
@@ -3203,6 +3648,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.result"
+          }
         ]
       },
       {
@@ -3215,6 +3666,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Immunhistochemie PDL1 (Observation)"
           }
         ]
       },
@@ -3541,6 +3998,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Immunhistochemie MMR (Observation)"
+          }
         ]
       },
       {
@@ -3749,6 +4212,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Mikrosatelliteninstabilitaet (Observation)"
+          }
         ]
       },
       {
@@ -3761,6 +4230,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.identifier"
           }
         ]
       },
@@ -3813,6 +4288,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.specimen"
           }
         ]
       },
@@ -3905,6 +4386,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.valueCodeableConcept"
+          }
         ]
       },
       {
@@ -3956,6 +4443,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.method"
           }
         ]
       },
@@ -4009,6 +4502,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: NGS Bericht (DiagnosticReport)"
+          }
         ]
       },
       {
@@ -4022,6 +4521,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.identifier"
+          }
         ]
       },
       {
@@ -4034,6 +4539,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.subject"
           }
         ]
       },
@@ -4074,6 +4585,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.specimen"
+          }
         ]
       },
       {
@@ -4113,6 +4630,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.issued"
+          }
         ]
       },
       {
@@ -4125,6 +4648,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: GenomicStudy.type"
           }
         ]
       },
@@ -4178,6 +4707,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: GenomicStudyAnalysis"
+          }
         ]
       },
       {
@@ -4190,6 +4725,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: GenomicStudyAnalysis.extension(referenceGenome)"
           }
         ]
       },
@@ -4242,6 +4783,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: GenomicStudyAnalysis.device"
           }
         ]
       },
@@ -4412,6 +4959,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DiagnosticReport.result"
+          }
         ]
       },
       {
@@ -4424,6 +4977,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Tumorzellgehalt (Observation)"
           }
         ]
       },
@@ -4593,6 +5152,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Tumor Mutational Burden (Observation)"
           }
         ]
       },
@@ -4789,6 +5354,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: BRCAness (Observation)"
+          }
         ]
       },
       {
@@ -4944,6 +5515,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: HRD Score (Observation)"
           }
         ]
       },
@@ -5165,6 +5742,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Einfache Variante (Observation)"
           }
         ]
       },
@@ -5608,6 +6191,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Copy Number Variante (Observation)"
+          }
         ]
       },
       {
@@ -6024,6 +6613,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: DNA Fusion (Observation)"
+          }
         ]
       },
       {
@@ -6309,6 +6904,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: RNA Fusion (Observation)"
           }
         ]
       },
@@ -6817,6 +7418,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Therapieplan (CarePlan)"
+          }
         ]
       },
       {
@@ -6830,6 +7437,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: CarePlan.identifier"
+          }
         ]
       },
       {
@@ -6842,6 +7455,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: CarePlan.subject"
           }
         ]
       },
@@ -6882,6 +7501,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: CarePlan.created"
+          }
         ]
       },
       {
@@ -6894,6 +7519,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: CarePlan.addresses"
           }
         ]
       },
@@ -6934,6 +7565,12 @@
           {
             "code": "boolean"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: CarePlan.extension(noTargetFinding)"
+          }
         ]
       },
       {
@@ -6946,6 +7583,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Humangenetische Beratung (ServiceRequest)"
           }
         ]
       },
@@ -7077,6 +7720,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Therapieempfehlung (MedicationRequest)"
+          }
         ]
       },
       {
@@ -7194,6 +7843,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationRequest.extension(Prioritaet)"
+          }
         ]
       },
       {
@@ -7245,6 +7900,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationRequest.medication[x]"
           }
         ]
       },
@@ -7311,6 +7972,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationRequest.supportingInfo"
+          }
         ]
       },
       {
@@ -7349,6 +8016,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationRequest.extension(Evidenzgraduierung)"
           }
         ]
       },
@@ -7505,6 +8178,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Studieneinschluss (ServiceRequest)"
           }
         ]
       },
@@ -7701,6 +8380,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Follow-Up (ClinicalImpression)"
+          }
         ]
       },
       {
@@ -7714,6 +8399,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.identifier"
+          }
         ]
       },
       {
@@ -7726,6 +8417,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.subject"
           }
         ]
       },
@@ -7765,6 +8462,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClinicalImpression.effectiveDateTime"
           }
         ]
       },
@@ -7896,6 +8599,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Antrag Kostenuebernahme (ClaimResponse)"
+          }
         ]
       },
       {
@@ -7909,6 +8618,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.identifier"
+          }
         ]
       },
       {
@@ -7921,6 +8636,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.patient"
           }
         ]
       },
@@ -7961,6 +8682,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.request"
+          }
         ]
       },
       {
@@ -8000,6 +8727,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.created"
+          }
         ]
       },
       {
@@ -8012,6 +8745,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Antwort Kostenuebernahme (ClaimResponse)"
           }
         ]
       },
@@ -8026,6 +8765,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.identifier"
+          }
         ]
       },
       {
@@ -8038,6 +8783,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.patient"
           }
         ]
       },
@@ -8078,6 +8829,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.request"
+          }
         ]
       },
       {
@@ -8117,6 +8874,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.created"
+          }
         ]
       },
       {
@@ -8129,6 +8892,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.extension(Entscheidung)"
           }
         ]
       },
@@ -8182,6 +8951,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: ClaimResponse.extension(Ablehnungsgrund)"
+          }
         ]
       },
       {
@@ -8234,6 +9009,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Systemische Therapie Follow-Up"
+          }
         ]
       },
       {
@@ -8246,6 +9027,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement + Procedure"
           }
         ]
       },
@@ -8260,6 +9047,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.identifier"
+          }
         ]
       },
       {
@@ -8272,6 +9065,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.subject"
           }
         ]
       },
@@ -8312,6 +9111,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.reasonReference"
+          }
         ]
       },
       {
@@ -8350,6 +9155,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.basedOn"
           }
         ]
       },
@@ -8390,6 +9201,12 @@
           {
             "code": "integer"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.extension(Therapielinie)"
+          }
         ]
       },
       {
@@ -8402,6 +9219,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.status"
           }
         ]
       },
@@ -8455,6 +9278,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.statusReason"
+          }
         ]
       },
       {
@@ -8507,6 +9336,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.effectivePeriod"
+          }
         ]
       },
       {
@@ -8545,6 +9380,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: MedicationStatement.medication[x]"
           }
         ]
       },
@@ -8624,6 +9465,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Response Befund (Observation)"
+          }
         ]
       },
       {
@@ -8637,6 +9484,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.identifier"
+          }
         ]
       },
       {
@@ -8649,6 +9502,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.subject"
           }
         ]
       },
@@ -8689,6 +9548,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.focus"
+          }
         ]
       },
       {
@@ -8728,6 +9593,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.effectiveDateTime"
+          }
         ]
       },
       {
@@ -8740,6 +9611,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "dnpm-to-mii-fhir",
+            "map": "MTB: Observation.valueCodeableConcept (RECIST)"
           }
         ]
       },
