@@ -1,0 +1,189 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy" = "SMGuidelineTherapy"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"              alias Bundle              as target
+uses "http://hl7.org/fhir/StructureDefinition/MedicationStatement" alias MedicationStatement  as produced
+uses "http://hl7.org/fhir/StructureDefinition/Procedure"           alias Procedure            as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate guidelineTherapies and guidelineProcedures arrays
+// ---------------------------------------------------------------------------
+group GuidelineTherapy(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  src -> bundle.type = 'collection' "bundleType";
+
+  // guidelineTherapies → MedicationStatement (Systemische Vortherapie)
+  src.guidelineTherapies as gt ->
+      bundle.entry as e,
+      e.resource = create('MedicationStatement') as ms
+      then {
+        gt.id as gtid -> e.fullUrl = append('urn:uuid:', gtid) "fullUrl";
+        gt -> ms then MapGuidelineTherapy(gt, ms) "map";
+      } "guidelineTherapy";
+
+  // guidelineProcedures → Procedure
+  src.guidelineProcedures as gp ->
+      bundle.entry as e,
+      e.resource = create('Procedure') as proc
+      then {
+        gp.id as gpid -> e.fullUrl = append('urn:uuid:', gpid) "fullUrl";
+        gp -> proc then MapGuidelineProcedure(gp, proc) "map";
+      } "guidelineProcedure";
+}
+
+// ---------------------------------------------------------------------------
+// MapGuidelineTherapy: single guidelineTherapy → FHIR MedicationStatement
+//   Profile: MII_PR_MTB_Systemische_Vortherapie
+//            (Parent: MII_PR_Onko_Systemische_Therapie → MedicationStatement)
+//   Status mapping (ConceptMap: DNPMTherapyStatusToFHIR):
+//     completed → completed
+//     stopped   → stopped
+//     ongoing   → active
+//     not-done  → not-taken
+//     unknown   → unknown
+//     (default) → unknown
+// ---------------------------------------------------------------------------
+group MapGuidelineTherapy(
+    source src : BackboneElement,
+    target tgt : MedicationStatement
+) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "gtId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie' "gtProfile";
+  } "gtMeta";
+
+  // Status: translate DNPM therapy status → FHIR MedicationStatement status
+  src.status as s where s.code = 'completed' -> tgt.status = 'completed' "gtStatusCompleted";
+  src.status as s where s.code = 'stopped'   -> tgt.status = 'stopped'   "gtStatusStopped";
+  src.status as s where s.code = 'ongoing'   -> tgt.status = 'active'    "gtStatusActive";
+  src.status as s where s.code = 'not-done'  -> tgt.status = 'not-taken' "gtStatusNotTaken";
+  src.status as s where s.code = 'unknown'   -> tgt.status = 'unknown'   "gtStatusUnknown";
+  // Fallback when status is absent
+  src where src.status.empty() -> tgt.status = 'unknown' "gtStatusDefault";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "gtSubjectRef";
+  } "gtSubject";
+
+  // reasonReference ← indication (MTBDiagnosis)
+  src.indication as ind -> tgt.reasonReference as rr then {
+    ind.id as iid -> rr.reference = append('urn:uuid:', iid) "gtReasonRef";
+  } "gtReason";
+
+  // effectivePeriod ← period
+  src.period as p -> tgt.effectivePeriod as ep then {
+    p.start as startDt -> ep.start = cast(startDt, 'dateTime') "gtPeriodStart";
+    p.end as endDt -> ep.end = cast(endDt, 'dateTime') "gtPeriodEnd";
+  } "gtPeriod";
+
+  // medicationCodeableConcept: one coding per medication (ATC)
+  src.medication as med -> tgt.medicationCodeableConcept as mcc then {
+    med -> mcc.coding as c then {
+      med.code as codeV -> c.code = cast(codeV, 'string') "gtMedCode";
+      med.system as systemV -> c.system = cast(systemV, 'string') "gtMedSystem";
+      med.display as displayV -> c.display = cast(displayV, 'string') "gtMedDisplay";
+    } "gtMedCoding";
+  } "gtMedication";
+
+  // statusReason ← statusReason (if therapy was stopped/discontinued)
+  src.statusReason as sr -> tgt.statusReason as tsr then {
+    sr -> tsr.coding as c then {
+      sr.code as codeV -> c.code = cast(codeV, 'string') "gtSrCode";
+      sr.system as systemV -> c.system = cast(systemV, 'string') "gtSrSystem";
+      sr.display as displayV -> c.display = cast(displayV, 'string') "gtSrDisplay";
+    } "gtSrCoding";
+  } "gtStatusReason";
+
+  // notes ← notes (free-text)
+  src.notes as n -> tgt.note as note then {
+    n -> note.text = n "gtNoteText";
+  } "gtNotes";
+
+  // therapyLine: stored as extension on the Onko parent profile
+  // MII_PR_Onko_Systemische_Therapie uses KDS extension for therapyLine
+  src.therapyLine as tl -> tgt.extension as ext then {
+    tl -> ext.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-therapielinie' "gtThLineUrl";
+    tl -> ext.value = cast(tl, 'positiveInt') "gtThLineValue";
+  } "gtTherapyLine";
+
+  // category ← category (DNPM therapy category coding)
+  src.category as cat -> tgt.category as tcat then {
+    cat -> tcat.coding as c then {
+      cat.code as codeV -> c.code = cast(codeV, 'string') "gtCatCode";
+      cat.system as systemV -> c.system = cast(systemV, 'string') "gtCatSystem";
+      cat.display as displayV -> c.display = cast(displayV, 'string') "gtCatDisplay";
+    } "gtCatCoding";
+  } "gtCategory";
+}
+
+// ---------------------------------------------------------------------------
+// MapGuidelineProcedure: single guidelineProcedure → FHIR Procedure
+//   Used for radiotherapy and other non-medication guideline-based procedures.
+//   Status mapping:
+//     ongoing   → in-progress
+//     completed → completed
+//     stopped   → stopped
+//     not-done  → not-done
+//     unknown   → unknown
+//     (default) → unknown
+// ---------------------------------------------------------------------------
+group MapGuidelineProcedure(
+    source src : BackboneElement,
+    target tgt : Procedure
+) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "gpId";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "gpSubjectRef";
+  } "gpSubject";
+
+  // Status: translate DNPM therapy status → FHIR Procedure status
+  src.status as s where s.code = 'ongoing'   -> tgt.status = 'in-progress' "gpStatusInProgress";
+  src.status as s where s.code = 'completed' -> tgt.status = 'completed'   "gpStatusCompleted";
+  src.status as s where s.code = 'stopped'   -> tgt.status = 'stopped'     "gpStatusStopped";
+  src.status as s where s.code = 'not-done'  -> tgt.status = 'not-done'    "gpStatusNotDone";
+  src.status as s where s.code = 'unknown'   -> tgt.status = 'unknown'     "gpStatusUnknown";
+  // Fallback when status is absent
+  src where src.status.empty() -> tgt.status = 'unknown' "gpStatusDefault";
+
+  // code ← procedure.code (e.g. radiotherapy)
+  src.code as c -> tgt.code as tcode then {
+    c -> tcode.coding as coding then {
+      c.code as codeV -> coding.code = cast(codeV, 'string') "gpCodeCode";
+      c.system as systemV -> coding.system = cast(systemV, 'string') "gpCodeSystem";
+      c.display as displayV -> coding.display = cast(displayV, 'string') "gpCodeDisplay";
+    } "gpCodeCoding";
+  } "gpCode";
+
+  // reasonReference ← indication (MTBDiagnosis)
+  src.indication as ind -> tgt.reasonReference as rr then {
+    ind.id as iid -> rr.reference = append('urn:uuid:', iid) "gpReasonRef";
+  } "gpReason";
+
+  // performedPeriod ← period
+  src.period as p -> tgt.performedPeriod as pp then {
+    p.start as startDt -> pp.start = cast(startDt, 'dateTime') "gpPeriodStart";
+    p.end as endDt -> pp.end = cast(endDt, 'dateTime') "gpPeriodEnd";
+  } "gpPeriod";
+
+  // intent ← intent (palliative, curative, …) stored as extension
+  // Procedure R4 does not have a native intent field; carry as basic extension.
+  src.intent as intent -> tgt.extension as ext then {
+    intent -> ext.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation' "gpIntentUrl";
+    intent -> ext.value = create('Coding') as intCoding then {
+      intent.code as codeV -> intCoding.code = cast(codeV, 'string') "gpIntentCode";
+      intent.system as systemV -> intCoding.system = cast(systemV, 'string') "gpIntentSystem";
+      intent.display as displayV -> intCoding.display = cast(displayV, 'string') "gpIntentDisplay";
+    } "gpIntentCoding";
+  } "gpIntent";
+
+  // notes ← notes (free-text)
+  src.notes as n -> tgt.note as note then {
+    n -> note.text = n "gpNoteText";
+  } "gpNotes";
+}

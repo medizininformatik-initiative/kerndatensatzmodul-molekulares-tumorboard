@@ -1,0 +1,157 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics" = "SMPatientDemographics"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"               alias Bundle               as target
+uses "http://hl7.org/fhir/StructureDefinition/Patient"              alias Patient              as produced
+uses "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"   alias ClinicalImpression   as produced
+uses "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory"  alias FamilyMemberHistory  as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate over the whole PatientRecord and populate the Bundle
+// ---------------------------------------------------------------------------
+group PatientDemographics(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  // Bundle type = collection
+  src -> bundle.type = 'collection' "bundleType";
+
+  // --- Patient (exactly one) -----------------------------------------------
+  src.patient as srcPat ->
+      bundle.entry as e,
+      e.resource = create('Patient') as tgtPat
+      then {
+        srcPat.id as srcPatid -> e.fullUrl = append('urn:uuid:', srcPatid) "fullUrl";
+        srcPat -> tgtPat then MapPatient(srcPat, tgtPat) "map";
+      } "patient";
+
+  // --- ClinicalImpression per episode of care ------------------------------
+  src.episodesOfCare as eoc ->
+      bundle.entry as e,
+      e.resource = create('ClinicalImpression') as ci
+      then {
+        eoc.id as eocid -> e.fullUrl = append('urn:uuid:', eocid) "fullUrl";
+        eoc -> ci then MapEpisodeOfCare(eoc, ci, src) "map";
+      } "episodes";
+
+  // --- FamilyMemberHistory per family-history entry ------------------------
+  src.familyMemberHistories as fh ->
+      bundle.entry as e,
+      e.resource = create('FamilyMemberHistory') as tgtFh
+      then {
+        fh.id as fhid -> e.fullUrl = append('urn:uuid:', fhid) "fullUrl";
+        fh -> tgtFh then MapFamilyHistory(fh, tgtFh) "map";
+      } "familyHistory";
+}
+
+// ---------------------------------------------------------------------------
+// MapPatient: DNPM patient → FHIR Patient
+// ---------------------------------------------------------------------------
+group MapPatient(source src : BackboneElement, target tgt : Patient) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "patientId";
+
+  src.birthDate as birthDateDt -> tgt.birthDate = cast(birthDateDt, 'date') "birthDate";
+
+  // Profile meta – MII KDS Person Patient
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient' "patientProfile";
+  } "patientMeta";
+
+  // Gender: translate DNPM codes → FHIR administrative-gender
+  src.gender as g where g.code = 'female'  -> tgt.gender = 'female'  "genderFemale";
+  src.gender as g where g.code = 'male'    -> tgt.gender = 'male'    "genderMale";
+  src.gender as g where g.code = 'other'   -> tgt.gender = 'other'   "genderOther";
+  src.gender as g where g.code = 'unknown' -> tgt.gender = 'unknown' "genderUnknown";
+
+  // Vital status → deceasedBoolean
+  src.vitalStatus as vs where vs.code = 'deceased' -> tgt.deceased = true  "deceasedTrue";
+  src.vitalStatus as vs where vs.code = 'alive'    -> tgt.deceased = false "deceasedFalse";
+
+  // Address: municipalityCode → postalCode + AGS extension
+  src.address as srcAddr -> tgt.address as tgtAddr then MapAddress(srcAddr, tgtAddr) "address";
+}
+
+// ---------------------------------------------------------------------------
+// MapAddress: DNPM address.municipalityCode → FHIR Address
+// ---------------------------------------------------------------------------
+group MapAddress(source src : BackboneElement, target tgt : BackboneElement) {
+
+  // Plain postalCode (fallback / dual-write)
+  src.municipalityCode as municipalityCodeV -> tgt.postalCode = cast(municipalityCodeV, 'string') "postalCode";
+
+  // AGS extension (http://fhir.de/StructureDefinition/destatis/ags)
+  src.municipalityCode as ags -> tgt.extension as ext then {
+    ags -> ext.url = 'http://fhir.de/StructureDefinition/destatis/ags' "agsExtUrl";
+    ags -> ext.value = cast(ags, 'string') "agsExtValue";
+  } "agsExtension";
+}
+
+// ---------------------------------------------------------------------------
+// MapEpisodeOfCare: DNPM episodesOfCare entry → FHIR ClinicalImpression
+//   Profile: MII_PR_MTB_Behandlungsepisode (Parent: ClinicalImpression)
+// ---------------------------------------------------------------------------
+group MapEpisodeOfCare(
+    source src    : BackboneElement,
+    target tgt    : ClinicalImpression,
+    source record : DNPMPatientRecord
+) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "ciId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode' "ciProfile";
+  } "ciMeta";
+
+  // Status: use 'completed' when period.end is present, otherwise 'in-progress'
+  src.period as p where p.end.exists() -> tgt.status = 'completed'   "statusCompleted";
+  src.period as p where p.end.empty()  -> tgt.status = 'in-progress' "statusInProgress";
+  // Fallback when no period is present at all
+  src where src.period.empty() -> tgt.status = 'in-progress' "statusDefault";
+
+  // Subject → reference to Patient (by urn:uuid)
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "subjectReference";
+  } "ciSubject";
+
+  // effectivePeriod (1..1 per profile)
+  src.period as p -> tgt.effectivePeriod as ep then {
+    p.start as startDt -> ep.start = cast(startDt, 'dateTime') "epStart";
+    p.end as endDt -> ep.end = cast(endDt, 'dateTime') "epEnd";
+  } "effectivePeriod";
+
+  // problem: one entry per diagnosis reference in the episode
+  src.diagnoses as diag -> tgt.problem as prob then {
+    diag.id as did -> prob.reference = append('urn:uuid:', did) "diagReference";
+  } "problems";
+}
+
+// ---------------------------------------------------------------------------
+// MapFamilyHistory: DNPM familyMemberHistories entry → FHIR FamilyMemberHistory
+// ---------------------------------------------------------------------------
+group MapFamilyHistory(source src : BackboneElement, target tgt : FamilyMemberHistory) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "fhId";
+
+  // Required status (no DNPM source for this – use health-unknown as default)
+  src -> tgt.status = 'health-unknown' "fhStatus";
+
+  // patient → reference to Patient (by urn:uuid)
+  src.patient as pat -> tgt.patient as p then {
+    pat.id as pid -> p.reference = append('urn:uuid:', pid) "fhPatientReference";
+  } "fhPatient";
+
+  // relationship → CodeableConcept with one Coding
+  src.relationship as rel -> tgt.relationship as r then MapRelationship(rel, r) "fhRelationship";
+}
+
+// ---------------------------------------------------------------------------
+// MapRelationship: DNPM relationship coding → FHIR CodeableConcept
+// ---------------------------------------------------------------------------
+group MapRelationship(source src : BackboneElement, target tgt : BackboneElement) {
+
+  src -> tgt.coding as c then {
+    src.code as codeV -> c.code = cast(codeV, 'string') "relCode";
+    src.system as systemV -> c.system = cast(systemV, 'string') "relSystem";
+    src.display as displayV -> c.display = cast(displayV, 'string') "relDisplay";
+  } "relCoding";
+}

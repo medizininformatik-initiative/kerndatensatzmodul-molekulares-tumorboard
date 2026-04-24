@@ -1,0 +1,342 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan" = "SMCarePlan"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"         alias Bundle         as target
+uses "http://hl7.org/fhir/StructureDefinition/CarePlan"       alias CarePlan       as produced
+uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as produced
+uses "http://hl7.org/fhir/StructureDefinition/ServiceRequest" alias ServiceRequest  as produced
+uses "http://hl7.org/fhir/StructureDefinition/ResearchStudy"  alias ResearchStudy   as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate carePlans array; produces CarePlan + child resources
+// ---------------------------------------------------------------------------
+group CarePlans(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  src -> bundle.type = 'collection' "bundleType";
+
+  src.carePlans as cp ->
+      bundle.entry as e,
+      e.resource = create('CarePlan') as tgtCp
+      then {
+        cp.id as cpid -> e.fullUrl = append('urn:uuid:', cpid) "fullUrl";
+        cp -> tgtCp then MapCarePlan(cp, tgtCp, bundle) "map";
+      } "carePlan";
+}
+
+// ---------------------------------------------------------------------------
+// MapCarePlan: single carePlan entry → FHIR CarePlan
+//   Profile: MII_PR_MTB_Therapieplan (Parent: MII_PR_Onko_Tumorkonferenz)
+// ---------------------------------------------------------------------------
+group MapCarePlan(
+    source src    : BackboneElement,
+    target tgt    : CarePlan,
+    target bundle : Bundle
+) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "cpId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan' "cpProfile";
+  } "cpMeta";
+
+  // Fixed values required by CarePlan
+  src -> tgt.status = 'active' "cpStatus";
+  src -> tgt.intent = 'plan'   "cpIntent";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "cpSubjectRef";
+  } "cpSubject";
+
+  // created ← issuedOn
+  src.issuedOn as issuedOnDt -> tgt.created = cast(issuedOnDt, 'date') "cpCreated";
+
+  // addresses ← reason (MTBDiagnosis reference)
+  src.reason as r -> tgt.addresses as addr then {
+    r.id as rid -> addr.reference = append('urn:uuid:', rid) "cpReasonRef";
+  } "cpAddresses";
+
+  // ---------------------------------------------------------------------------
+  // Medication Recommendations → MedicationRequest per recommendation
+  // ---------------------------------------------------------------------------
+  src.medicationRecommendations as rec ->
+      bundle.entry as e,
+      e.resource = create('MedicationRequest') as mr,
+      tgt.activity as act,
+      act.reference as actRef
+      then {
+        rec.id as recid -> e.fullUrl = append('urn:uuid:', recid) "fullUrl";
+        rec.id as rid -> actRef.reference = append('urn:uuid:', rid) "mrActRef";
+        rec -> mr then MapMedicationRecommendation(rec, mr) "mapMedRec";
+      } "medicationRecommendation";
+
+  // ---------------------------------------------------------------------------
+  // Genetic Counseling Recommendation → ServiceRequest
+  // ---------------------------------------------------------------------------
+  src.geneticCounselingRecommendation as gcr ->
+      bundle.entry as e,
+      e.resource = create('ServiceRequest') as sr,
+      tgt.activity as act,
+      act.reference as actRef
+      then {
+        gcr.id as gcrid -> e.fullUrl = append('urn:uuid:', gcrid) "fullUrl";
+        gcr.id as gid -> actRef.reference = append('urn:uuid:', gid) "gcrActRef";
+        gcr -> sr then MapGeneticCounseling(gcr, sr) "mapGcr";
+      } "geneticCounseling";
+
+  // ---------------------------------------------------------------------------
+  // Study Enrollment Recommendations → ServiceRequest (Studieneinschluss-Anfrage)
+  //   + ResearchStudy per study entry
+  // ---------------------------------------------------------------------------
+  src.studyEnrollmentRecommendations as ser ->
+      bundle.entry as e,
+      e.resource = create('ServiceRequest') as srSer,
+      tgt.activity as act,
+      act.reference as actRef
+      then {
+        ser.id as serid -> e.fullUrl = append('urn:uuid:', serid) "fullUrl";
+        ser.id as sid -> actRef.reference = append('urn:uuid:', sid) "serActRef";
+        ser -> srSer then MapStudyEnrollmentRecommendation(ser, srSer, bundle) "mapSer";
+      } "studyEnrollmentRec";
+}
+
+// ---------------------------------------------------------------------------
+// MapMedicationRecommendation: single medicationRecommendation → MedicationRequest
+//   Profile: MII_PR_MTB_Therapieempfehlung (or Kombination via RequestGroup)
+//   Extensions: MII_EX_MTB_Empfehlung_Prioritaet,
+//               MII_EX_MTB_Empfehlung_Evidenzgraduierung,
+//               MII_EX_MTB_Empfehlung_Publikation
+// ---------------------------------------------------------------------------
+group MapMedicationRecommendation(
+    source src : BackboneElement,
+    target tgt : MedicationRequest
+) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "mrId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung' "mrProfile";
+  } "mrMeta";
+
+  // Fixed statuses for a proposal-type recommendation
+  src -> tgt.status = 'active'   "mrStatus";
+  src -> tgt.intent = 'proposal' "mrIntent";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "mrSubjectRef";
+  } "mrSubject";
+
+  // authoredOn ← issuedOn
+  src.issuedOn as issuedOnDt -> tgt.authoredOn = cast(issuedOnDt, 'dateTime') "mrAuthoredOn";
+
+  // reasonReference ← indication (MTBDiagnosis)
+  src.indication as ind -> tgt.reasonReference as rr then {
+    ind.id as iid -> rr.reference = append('urn:uuid:', iid) "mrReasonRef";
+  } "mrReason";
+
+  // medicationCodeableConcept: one coding per medication entry (ATC)
+  src.medication as med -> tgt.medicationCodeableConcept as mcc then {
+    med -> mcc.coding as c then {
+      med.code as codeV -> c.code = cast(codeV, 'string') "mrMedCode";
+      med.system as systemV -> c.system = cast(systemV, 'string') "mrMedSystem";
+      med.display as displayV -> c.display = cast(displayV, 'string') "mrMedDisplay";
+    } "mrMedCoding";
+  } "mrMedication";
+
+  // Priority extension: MII_EX_MTB_Empfehlung_Prioritaet (valuePositiveInt)
+  src.priority as prio -> tgt.extension as ext then {
+    prio -> ext.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet' "mrPrioUrl";
+    prio.code as pc -> ext.value = cast(pc, 'positiveInt') "mrPrioValue";
+  } "mrPriority";
+
+  // Level of evidence: grading → MII_EX_MTB_Empfehlung_Evidenzgraduierung (CodeableConcept)
+  src.levelOfEvidence as loe -> tgt.extension as extLoe then {
+    loe -> extLoe.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung' "mrLoeUrl";
+    loe -> extLoe.value = create('CodeableConcept') as loeCC then {
+
+      // Evidenzgrad slice (system = mii-cs-mtb-empfehlung-evidenzgrad)
+      loe.grading as grad -> loeCC.coding as c then {
+        grad.code as codeV -> c.code = cast(codeV, 'string') "mrGradCode";
+        grad.system as systemV -> c.system = cast(systemV, 'string') "mrGradSystem";
+        grad.display as displayV -> c.display = cast(displayV, 'string') "mrGradDisplay";
+      } "mrGrading";
+
+      // Zusatzverweis slice (addendums; system = mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis)
+      loe.addendums as add -> loeCC.coding as c then {
+        add.code as codeV -> c.code = cast(codeV, 'string') "mrAddCode";
+        add.system as systemV -> c.system = cast(systemV, 'string') "mrAddSystem";
+        add.display as displayV -> c.display = cast(displayV, 'string') "mrAddDisplay";
+      } "mrAddendum";
+
+    } "mrLoeCC";
+  } "mrLoe";
+
+  // Publications: MII_EX_MTB_Empfehlung_Publikation (Identifier)
+  // PMID → system = http://www.ncbi.nlm.nih.gov/pubmed
+  src.levelOfEvidence as loe -> tgt then {
+    loe.publications as pub -> tgt.extension as extPub then {
+      pub -> extPub.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation' "mrPubUrl";
+      pub.pmid as pmid -> extPub.value = create('Identifier') as ident then {
+        pmid -> ident.system = 'http://www.ncbi.nlm.nih.gov/pubmed' "mrPubPmidSystem";
+        pmid -> ident.value = pmid "mrPubPmidValue";
+      } "mrPubPmidIdent";
+    } "mrPubPmid";
+  } "mrPubLoe";
+
+  // DOI publication
+  src.levelOfEvidence as loe -> tgt then {
+    loe.publications as pub -> tgt.extension as extDoi then {
+      pub -> extDoi.url = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation' "mrDoiUrl";
+      pub.doi as doi -> extDoi.value = create('Identifier') as identDoi then {
+        doi -> identDoi.system = 'http://doi.org' "mrDoiSystem";
+        doi -> identDoi.value = doi "mrDoiValue";
+      } "mrDoiIdent";
+    } "mrPubDoi";
+  } "mrDoiLoe";
+
+  // supportingVariants as reasonReference (variant resources created in NGS map)
+  src.supportingVariants as sv -> tgt.reasonReference as rrSv then {
+    sv.id as vid -> rrSv.reference = append('urn:uuid:', vid) "mrSvRef";
+  } "mrSupportingVariants";
+}
+
+// ---------------------------------------------------------------------------
+// MapGeneticCounseling: geneticCounselingRecommendation → ServiceRequest
+//   Profile: MII_PR_MTB_Humangenetische_Beratung_Auftrag
+//   code = SCT#788339009 "Genetic consultation (procedure)"
+// ---------------------------------------------------------------------------
+group MapGeneticCounseling(
+    source src : BackboneElement,
+    target tgt : ServiceRequest
+) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "gcrId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag' "gcrProfile";
+  } "gcrMeta";
+
+  src -> tgt.status = 'active'   "gcrStatus";
+  src -> tgt.intent = 'proposal' "gcrIntent";
+
+  // Fixed code: SNOMED CT #788339009 "Genetic consultation (procedure)"
+  src -> tgt.code as code then {
+    src -> code.coding as c then {
+      src -> c.system  = 'http://snomed.info/sct'  "gcrCodeSystem";
+      src -> c.code    = '788339009'               "gcrCodeCode";
+      src -> c.display = 'Genetic consultation (procedure)' "gcrCodeDisplay";
+    } "gcrCoding";
+  } "gcrCode";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "gcrSubjectRef";
+  } "gcrSubject";
+
+  // authoredOn ← issuedOn
+  src.issuedOn as issuedOnDt -> tgt.authoredOn = cast(issuedOnDt, 'dateTime') "gcrAuthoredOn";
+
+  // reasonCode ← reason coding
+  src.reason as r -> tgt.reasonCode as rc then {
+    r -> rc.coding as c then {
+      r.code as codeV -> c.code = cast(codeV, 'string') "gcrReasonCode";
+      r.system as systemV -> c.system = cast(systemV, 'string') "gcrReasonSystem";
+      r.display as displayV -> c.display = cast(displayV, 'string') "gcrReasonDisplay";
+    } "gcrReasonCoding";
+  } "gcrReasonCode";
+}
+
+// ---------------------------------------------------------------------------
+// MapStudyEnrollmentRecommendation: studyEnrollmentRecommendation → ServiceRequest
+//   Profile: MII_PR_MTB_Studieneinschluss_Anfrage
+//   code  = SCT#702475000 "Referral to clinical trial (procedure)"
+//   category = SCT#110465008 "Clinical trial (procedure)"
+//   Each study[] entry → ResearchStudy added to bundle + supportingInfo reference
+// ---------------------------------------------------------------------------
+group MapStudyEnrollmentRecommendation(
+    source src    : BackboneElement,
+    target tgt    : ServiceRequest,
+    target bundle : Bundle
+) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "serSrId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage' "serSrProfile";
+  } "serSrMeta";
+
+  src -> tgt.status = 'active'   "serSrStatus";
+  src -> tgt.intent = 'proposal' "serSrIntent";
+
+  // category = SCT#110465008
+  src -> tgt.category as cat then {
+    src -> cat.coding as c then {
+      src -> c.system  = 'http://snomed.info/sct'        "serCatSystem";
+      src -> c.code    = '110465008'                     "serCatCode";
+      src -> c.display = 'Clinical trial (procedure)'    "serCatDisplay";
+    } "serCatCoding";
+  } "serCategory";
+
+  // code = SCT#702475000
+  src -> tgt.code as code then {
+    src -> code.coding as c then {
+      src -> c.system  = 'http://snomed.info/sct'                   "serCodeSystem";
+      src -> c.code    = '702475000'                                "serCodeCode";
+      src -> c.display = 'Referral to clinical trial (procedure)'   "serCodeDisplay";
+    } "serCodeCoding";
+  } "serCode";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "serSubjectRef";
+  } "serSubject";
+
+  // authoredOn ← issuedOn
+  src.issuedOn as issuedOnDt -> tgt.authoredOn = cast(issuedOnDt, 'dateTime') "serAuthoredOn";
+
+  // reasonReference ← indication (MTBDiagnosis)
+  src.indication as ind -> tgt.reasonReference as rr then {
+    ind.id as iid -> rr.reference = append('urn:uuid:', iid) "serReasonRef";
+  } "serReason";
+
+  // supportingVariants as reasonReference
+  src.supportingVariants as sv -> tgt.reasonReference as rrSv then {
+    sv.id as vid -> rrSv.reference = append('urn:uuid:', vid) "serSvRef";
+  } "serVariants";
+
+  // Each study → ResearchStudy resource in bundle + supportingInfo reference
+  src.studies as study ->
+      bundle.entry as e,
+      e.resource = create('ResearchStudy') as rs,
+      tgt.supportingInfo as si
+      then {
+        study.id as studyid -> e.fullUrl = append('urn:uuid:', studyid) "fullUrl";
+        study.id as sid -> si.reference = append('urn:uuid:', sid) "serStudySiRef";
+        study -> rs then MapStudy(study, rs) "mapStudy";
+      } "serStudy";
+}
+
+// ---------------------------------------------------------------------------
+// MapStudy: study reference → ResearchStudy
+//   Profile: MII_PR_MTB_Studie — identifier sliced by system
+//   NCT system = https://clinicaltrials.gov/study
+// ---------------------------------------------------------------------------
+group MapStudy(source src : BackboneElement, target tgt : ResearchStudy) {
+  src.id as srcId -> tgt.id = cast(srcId, "id") "studyId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie' "studyProfile";
+  } "studyMeta";
+
+  // Required status (no DNPM source → use active as default)
+  src -> tgt.status = 'active' "studyStatus";
+
+  // identifier: system from study.system, value from study.id (e.g. NCT number)
+  src -> tgt.identifier as ident then {
+    src.system as systemV -> ident.system = cast(systemV, 'string') "studyIdentSystem";
+    src.id as idV -> ident.value = cast(idV, 'string') "studyIdentValue";
+  } "studyIdentifier";
+}

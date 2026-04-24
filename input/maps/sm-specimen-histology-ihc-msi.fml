@@ -1,0 +1,545 @@
+
+map "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi" = "SMSpecimenHistologyIHCMSI"
+
+uses "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" alias DNPMPatientRecord as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle"             alias Bundle             as target
+uses "http://hl7.org/fhir/StructureDefinition/Specimen"           alias Specimen           as produced
+uses "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"   alias DiagnosticReport   as produced
+uses "http://hl7.org/fhir/StructureDefinition/Observation"        alias Observation        as produced
+
+// ---------------------------------------------------------------------------
+// Root group: iterate over the whole PatientRecord and populate the Bundle
+// ---------------------------------------------------------------------------
+group SpecimenHistologyIHCMSI(source src : DNPMPatientRecord, target bundle : Bundle) {
+
+  // Bundle type = collection
+  src -> bundle.type = 'collection' "bundleType";
+
+  // --- Specimen (one per specimens entry) -----------------------------------
+  src.specimens as spec ->
+      bundle.entry as e,
+      e.resource = create('Specimen') as s
+      then {
+        spec.id as specid -> e.fullUrl = append('urn:uuid:', specid) "fullUrl";
+        spec -> s then MapSpecimen(spec, s) "map";
+      } "specimen";
+
+  // --- DiagnosticReport + child Observations per histologyReport -----------
+  src.histologyReports as hr ->
+      bundle.entry as e,
+      e.resource = create('DiagnosticReport') as dr
+      then {
+        hr.id as hrid -> e.fullUrl = append('urn:uuid:', hrid) "fullUrl";
+        hr -> dr then MapHistologyReport(hr, dr, bundle) "map";
+      } "histologyReport";
+
+  // --- DiagnosticReport + child Observations per ihcReport -----------------
+  src.ihcReports as ihc ->
+      bundle.entry as e,
+      e.resource = create('DiagnosticReport') as dr
+      then {
+        ihc.id as ihcid -> e.fullUrl = append('urn:uuid:', ihcid) "fullUrl";
+        ihc -> dr then MapIHCReport(ihc, dr, bundle) "map";
+      } "ihcReport";
+
+  // --- Observation per msi finding -----------------------------------------
+  src.msiFindings as msi ->
+      bundle.entry as e,
+      e.resource = create('Observation') as obs
+      then {
+        msi.id as msiid -> e.fullUrl = append('urn:uuid:', msiid) "fullUrl";
+        msi -> obs then MapMSIFinding(msi, obs) "map";
+      } "msiFinding";
+}
+
+// ---------------------------------------------------------------------------
+// MapSpecimen: DNPM specimen entry → FHIR Specimen
+//   Profile: MII (parent: Specimen)
+// ---------------------------------------------------------------------------
+group MapSpecimen(source src : BackboneElement, target tgt : Specimen) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "specimenId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumor-specimen' "specimenProfile";
+  } "specimenMeta";
+
+  // subject → Patient reference
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "specimenSubjectRef";
+  } "specimenSubject";
+
+  // type → CodeableConcept
+  src.type as t -> tgt.type as typ then {
+    t -> typ.coding as c then {
+      t.code as codeV -> c.code = cast(codeV, 'string') "specimenTypeCode";
+      t.system as systemV -> c.system = cast(systemV, 'string') "specimenTypeSystem";
+    } "specimenTypeCoding";
+  } "specimenType";
+
+  // collection block
+  src.collection as col -> tgt.collection as tcol then MapSpecimenCollection(col, tcol) "specimenCollection";
+}
+
+// ---------------------------------------------------------------------------
+// MapSpecimenCollection: DNPM collection → FHIR Specimen.collection
+// ---------------------------------------------------------------------------
+group MapSpecimenCollection(source src : BackboneElement, target tgt : BackboneElement) {
+
+  src.date as dateDt -> tgt.collectedDateTime = cast(dateDt, 'dateTime') "collectedDateTime";
+
+  // bodySite
+  src.site as site -> tgt.bodySite as bs then {
+    site -> bs.coding as c then {
+      site.code as codeV -> c.code = cast(codeV, 'string') "bodySiteCode";
+      site.system as systemV -> c.system = cast(systemV, 'string') "bodySiteSystem";
+    } "bodySiteCoding";
+  } "bodySite";
+
+  // method
+  src.method as meth -> tgt.method as m then {
+    meth -> m.coding as c then {
+      meth.code as codeV -> c.code = cast(codeV, 'string') "methodCode";
+      meth.system as systemV -> c.system = cast(systemV, 'string') "methodSystem";
+    } "methodCoding";
+  } "collectionMethod";
+}
+
+// ---------------------------------------------------------------------------
+// MapHistologyReport: DNPM histologyReport → FHIR DiagnosticReport
+//   Also creates child Observation entries for tumorCellContent and
+//   tumorMorphology and links them as DiagnosticReport.result references.
+// ---------------------------------------------------------------------------
+group MapHistologyReport(
+    source src    : BackboneElement,
+    target dr     : DiagnosticReport,
+    target bundle : Bundle
+) {
+  src.id as idV -> dr.id = cast(idV, 'string') "drId";
+
+  // Profile meta
+  src -> dr.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-befundbericht' "drProfile";
+  } "drMeta";
+
+  src -> dr.status = 'final' "drStatus";
+
+  // subject
+  src.patient as pat -> dr.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "drSubjectRef";
+  } "drSubject";
+
+  // specimen[0]
+  src.specimen as spec -> dr.specimen as sRef then {
+    spec.id as sid -> sRef.reference = append('urn:uuid:', sid) "drSpecimenRef";
+  } "drSpecimen";
+
+  // issued — append timestamp suffix so it becomes a FHIR instant
+  src.issuedOn as d -> dr.issued = append(d, 'T00:00:00Z') "drIssued";
+
+  // --- tumorCellContent child Observation -----------------------------------
+  src.results as res ->
+      bundle.entry as e,
+      e.resource = create('Observation') as obs
+      then {
+        res.tumorCellContent as tcc then {
+          tcc.id as tid -> e.fullUrl = append('urn:uuid:', tid) "fullUrl";
+          tcc -> obs then MapTumorCellContent(tcc, obs) "tccMap";
+        } "tccInner";
+      } "tccEntry";
+
+  // link result reference from DiagnosticReport
+  src.results as res -> dr.result as r then {
+    res.tumorCellContent as tcc then {
+      tcc.id as tid -> r.reference = append('urn:uuid:', tid) "tccRef";
+    } "tccInner";
+  } "drResultTCC";
+
+  // --- tumorMorphology child Observation ------------------------------------
+  src.results as res ->
+      bundle.entry as e,
+      e.resource = create('Observation') as obs
+      then {
+        res.tumorMorphology as tm then {
+          tm.id as tmid -> e.fullUrl = append('urn:uuid:', tmid) "fullUrl";
+          tm -> obs then MapTumorMorphology(tm, obs) "morphMap";
+        } "morphInner";
+      } "morphEntry";
+
+  // link result reference from DiagnosticReport
+  src.results as res -> dr.result as r then {
+    res.tumorMorphology as tm then {
+      tm.id as tmid -> r.reference = append('urn:uuid:', tmid) "morphRef";
+    } "morphInner";
+  } "drResultMorph";
+}
+
+// ---------------------------------------------------------------------------
+// MapTumorCellContent: DNPM tumorCellContent → FHIR Observation
+//   Profile: MII_PR_MTB_Tumorzellgehalt
+//   code: LOINC 93356-4 (Cells with cytogenetic abnormality)
+// ---------------------------------------------------------------------------
+group MapTumorCellContent(source src : BackboneElement, target tgt : Observation) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "tccId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt' "tccProfile";
+  } "tccMeta";
+
+  src -> tgt.status = 'final' "tccStatus";
+
+  // Fixed LOINC code per mii-pr-mtb-tumorzellgehalt profile
+  src -> tgt.code as code then {
+    src -> code.coding as c then {
+      src -> c.system = 'http://loinc.org' "tccCodeSystem";
+      src -> c.code   = '93356-4'          "tccCodeCode";
+    } "tccCodeCoding";
+  } "tccCode";
+
+  // subject
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "tccSubjectRef";
+  } "tccSubject";
+
+  // specimen
+  src.specimen as spec -> tgt.specimen as sRef then {
+    spec.id as sid -> sRef.reference = append('urn:uuid:', sid) "tccSpecimenRef";
+  } "tccSpecimen";
+
+  // valueQuantity: multiply fraction × 100 to get percent
+  src.value as v -> tgt.valueQuantity as vq then {
+    v -> vq.value  = v                         "tccQtyValue";
+    v -> vq.unit   = 'percent'                 "tccQtyUnit";
+    v -> vq.system = 'http://unitsofmeasure.org' "tccQtySystem";
+    v -> vq.code   = '%'                        "tccQtyCode";
+  } "tccValueQuantity";
+
+  // method
+  src.method as meth -> tgt.method as m then {
+    meth -> m.coding as c then {
+      meth.code as codeV -> c.code = cast(codeV, 'string') "tccMethodCode";
+      meth.system as systemV -> c.system = cast(systemV, 'string') "tccMethodSystem";
+    } "tccMethodCoding";
+  } "tccMethod";
+}
+
+// ---------------------------------------------------------------------------
+// MapTumorMorphology: DNPM tumorMorphology → FHIR Observation
+//   Profile: Observation (base — no dedicated MII MTB profile yet)
+//   code: LOINC 59847-4 (Histology and Behavior ICD-O-3)
+// ---------------------------------------------------------------------------
+group MapTumorMorphology(source src : BackboneElement, target tgt : Observation) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "morphId";
+
+  src -> tgt.status = 'final' "morphStatus";
+
+  // Fixed code for morphology
+  src -> tgt.code as code then {
+    src -> code.coding as c then {
+      src -> c.system = 'http://loinc.org' "morphCodeSystem";
+      src -> c.code   = '59847-4'          "morphCodeCode";
+      src -> c.display = 'Histology and Behavior ICD-O-3 Cancer' "morphCodeDisplay";
+    } "morphCodeCoding";
+  } "morphCode";
+
+  // subject
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "morphSubjectRef";
+  } "morphSubject";
+
+  // specimen
+  src.specimen as spec -> tgt.specimen as sRef then {
+    spec.id as sid -> sRef.reference = append('urn:uuid:', sid) "morphSpecimenRef";
+  } "morphSpecimen";
+
+  // valueCodeableConcept from first morphology entry
+  src.morphology as morph -> tgt.valueCodeableConcept as vcc then {
+    morph -> vcc.coding as c then {
+      morph.code as codeV -> c.code = cast(codeV, 'string') "morphValueCode";
+      morph.system as systemV -> c.system = cast(systemV, 'string') "morphValueSystem";
+    } "morphValueCoding";
+  } "morphValue";
+
+  // notes → Annotation.text (one per note string)
+  src.notes as n -> tgt.note as ann then {
+    n -> ann.text = n "morphNoteText";
+  } "morphNote";
+}
+
+// ---------------------------------------------------------------------------
+// MapIHCReport: DNPM ihcReport → FHIR DiagnosticReport
+//   Also creates child Observation entries for each proteinExpression and
+//   each msiMmr entry and links them as DiagnosticReport.result references.
+// ---------------------------------------------------------------------------
+group MapIHCReport(
+    source src    : BackboneElement,
+    target dr     : DiagnosticReport,
+    target bundle : Bundle
+) {
+  src.id as idV -> dr.id = cast(idV, 'string') "ihcDrId";
+
+  // Profile meta
+  src -> dr.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ihc-befundbericht' "ihcDrProfile";
+  } "ihcDrMeta";
+
+  src -> dr.status = 'final' "ihcDrStatus";
+
+  // Fixed code for IHC panel report: SNOMED 1264497003 (Histology report)
+  src -> dr.code as code then {
+    src -> code.coding as c then {
+      src -> c.system  = 'http://snomed.info/sct' "ihcDrCodeSystem";
+      src -> c.code    = '1264497003'             "ihcDrCodeCode";
+      src -> c.display = 'Histology report (record artifact)' "ihcDrCodeDisplay";
+    } "ihcDrCodeCoding";
+  } "ihcDrCode";
+
+  // subject
+  src.patient as pat -> dr.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "ihcDrSubjectRef";
+  } "ihcDrSubject";
+
+  // specimen[0]
+  src.specimen as spec -> dr.specimen as sRef then {
+    spec.id as sid -> sRef.reference = append('urn:uuid:', sid) "ihcDrSpecimenRef";
+  } "ihcDrSpecimen";
+
+  // issued
+  src.issuedOn as d -> dr.issued = append(d, 'T00:00:00Z') "ihcDrIssued";
+
+  // --- proteinExpression entries -------------------------------------------
+  src.results as res then {
+    res.proteinExpression as pe ->
+        bundle.entry as e,
+        e.resource = create('Observation') as obs
+        then {
+          pe.id as peid -> e.fullUrl = append('urn:uuid:', peid) "fullUrl";
+          pe -> obs then MapProteinExpression(pe, obs) "map";
+        } "peEntry";
+
+    // link into DiagnosticReport.result
+    res.proteinExpression as pe -> dr.result as r then {
+      pe.id as pid -> r.reference = append('urn:uuid:', pid) "peResultRef";
+    } "drResultPE";
+
+    // --- msiMmr entries (IHC-based MSI/MMR proteins) ----------------------
+    res.msiMmr as mmr ->
+        bundle.entry as e,
+        e.resource = create('Observation') as obs
+        then {
+          mmr.id as mmrid -> e.fullUrl = append('urn:uuid:', mmrid) "fullUrl";
+          mmr -> obs then MapMsiMmrObservation(mmr, obs) "map";
+        } "mmrEntry";
+
+    // link into DiagnosticReport.result
+    res.msiMmr as mmr -> dr.result as r then {
+      mmr.id as mid -> r.reference = append('urn:uuid:', mid) "mmrResultRef";
+    } "drResultMMR";
+  } "ihcResults";
+}
+
+// ---------------------------------------------------------------------------
+// MapProteinExpression: DNPM proteinExpression → FHIR Observation
+//   Profile: MII_PR_MTB_Immunohistochemistry
+// ---------------------------------------------------------------------------
+group MapProteinExpression(source src : BackboneElement, target tgt : Observation) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "peId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry' "peProfile";
+  } "peMeta";
+
+  src -> tgt.status = 'final' "peStatus";
+
+  // code: always include the generic IHC SNOMED code (profile constraint)
+  src -> tgt.code as code then {
+    // generic IHC code (pattern)
+    src -> code.coding as cGen then {
+      src -> cGen.system  = 'http://snomed.info/sct' "peCodeGenSystem";
+      src -> cGen.code    = '1234806008'             "peCodeGenCode";
+      src -> cGen.display = 'Observation using immunohistochemistry (observable entity)' "peCodeGenDisplay";
+    } "peCodeGenCoding";
+    // protein-specific code (open slice)
+    src.protein as prot -> code.coding as cSpec then {
+      prot.code as codeV -> cSpec.code = cast(codeV, 'string') "peCodeSpecCode";
+      prot.system as systemV -> cSpec.system = cast(systemV, 'string') "peCodeSpecSystem";
+    } "peCodeSpecCoding";
+  } "peCode";
+
+  // subject
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "peSubjectRef";
+  } "peSubject";
+
+  // specimen
+  src.specimen as spec -> tgt.specimen as sRef then {
+    spec.id as sid -> sRef.reference = append('urn:uuid:', sid) "peSpecimenRef";
+  } "peSpecimen";
+
+  // valueCodeableConcept
+  src.value as val -> tgt.valueCodeableConcept as vcc then {
+    val -> vcc.coding as c then {
+      val.code as codeV -> c.code = cast(codeV, 'string') "peValueCode";
+      val.system as systemV -> c.system = cast(systemV, 'string') "peValueSystem";
+    } "peValueCoding";
+  } "peValue";
+
+  // component: tps-score (integer) — only when present
+  src.tpsScore as tps -> tgt.component as comp then {
+    tps -> comp.code as code then {
+      tps -> code.coding as c then {
+        tps -> c.system = 'http://ncithesaurus.nci.nih.gov' "peTpsCodeSystem";
+        tps -> c.code   = 'C184941'                         "peTpsCodeCode";
+        tps -> c.display = 'PD-L1 Tumor Proportion Score'  "peTpsCodeDisplay";
+      } "peTpsCodeCoding";
+    } "peTpsCode";
+    tps -> comp.valueInteger = tps "peTpsValue";
+  } "peTpsComponent";
+
+  // component: ic-score (CodeableConcept) — only when present
+  src.icScore as ic -> tgt.component as comp then {
+    ic -> comp.code as code then {
+      ic -> code.coding as c then {
+        ic -> c.system  = 'http://loinc.org' "peIcCodeSystem";
+        ic -> c.code    = '85315-2'          "peIcCodeCode";
+        ic -> c.display = 'PD-L1 immune cell score [%] in Tissue by Immune stain' "peIcCodeDisplay";
+      } "peIcCodeCoding";
+    } "peIcCode";
+    ic -> comp.valueCodeableConcept as vcc then {
+      ic -> vcc.coding as c then {
+        ic.code as codeV -> c.code = cast(codeV, 'string') "peIcValueCode";
+        ic.system as systemV -> c.system = cast(systemV, 'string') "peIcValueSystem";
+      } "peIcValueCoding";
+    } "peIcValue";
+  } "peIcComponent";
+
+  // component: tc-score (CodeableConcept) — only when present
+  src.tcScore as tc -> tgt.component as comp then {
+    tc -> comp.code as code then {
+      tc -> code.coding as c then {
+        tc -> c.system  = 'http://loinc.org' "peTcCodeSystem";
+        tc -> c.code    = '83053-9'          "peTcCodeCode";
+        tc -> c.display = 'Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain' "peTcCodeDisplay";
+      } "peTcCodeCoding";
+    } "peTcCode";
+    tc -> comp.valueCodeableConcept as vcc then {
+      tc -> vcc.coding as c then {
+        tc.code as codeV -> c.code = cast(codeV, 'string') "peTcValueCode";
+        tc.system as systemV -> c.system = cast(systemV, 'string') "peTcValueSystem";
+      } "peTcValueCoding";
+    } "peTcValue";
+  } "peTcComponent";
+}
+
+// ---------------------------------------------------------------------------
+// MapMsiMmrObservation: DNPM ihcReport.results.msiMmr entry → FHIR Observation
+//   Profile: MII_PR_MTB_Immunohistochemistry_MSI (IHC-based MMR protein expression)
+//   code: LOINC 62862-8 (Microsatellite instability … by Immune stain)
+// ---------------------------------------------------------------------------
+group MapMsiMmrObservation(source src : BackboneElement, target tgt : Observation) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "mmrId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-msi' "mmrProfile";
+  } "mmrMeta";
+
+  src -> tgt.status = 'final' "mmrStatus";
+
+  // Fixed LOINC code per mii-pr-mtb-immunohistochemistry-msi profile
+  src -> tgt.code as code then {
+    src -> code.coding as c then {
+      src -> c.system  = 'http://loinc.org' "mmrCodeSystem";
+      src -> c.code    = '62862-8'          "mmrCodeCode";
+      src -> c.display = 'Microsatellite instability [Presence] in Tissue by Immune stain' "mmrCodeDisplay";
+    } "mmrCodeCoding";
+  } "mmrCode";
+
+  // subject
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "mmrSubjectRef";
+  } "mmrSubject";
+
+  // specimen
+  src.specimen as spec -> tgt.specimen as sRef then {
+    spec.id as sid -> sRef.reference = append('urn:uuid:', sid) "mmrSpecimenRef";
+  } "mmrSpecimen";
+
+  // code also carries protein info as an additional coding (gene/protein studied)
+  src.protein as prot -> tgt.code as code then {
+    prot -> code.coding as c then {
+      prot.code as codeV -> c.code = cast(codeV, 'string') "mmrProteinCode";
+      prot.system as systemV -> c.system = cast(systemV, 'string') "mmrProteinSystem";
+    } "mmrProteinCoding";
+  } "mmrProtein";
+
+  // valueCodeableConcept (expression result: exp_present / exp_absent / …)
+  src.value as val -> tgt.valueCodeableConcept as vcc then {
+    val -> vcc.coding as c then {
+      val.code as codeV -> c.code = cast(codeV, 'string') "mmrValueCode";
+      val.system as systemV -> c.system = cast(systemV, 'string') "mmrValueSystem";
+    } "mmrValueCoding";
+  } "mmrValue";
+}
+
+// ---------------------------------------------------------------------------
+// MapMSIFinding: DNPM msiFindings entry → FHIR Observation
+//   Profile: MII_PR_MTB_Mikrosatelliteninstabilitaet (NGS-based MSI)
+//   code: LOINC 81695-9 (Microsatellite instability [Interpretation] in Cancer specimen Qualitative)
+// ---------------------------------------------------------------------------
+group MapMSIFinding(source src : BackboneElement, target tgt : Observation) {
+
+  src.id as srcId -> tgt.id = cast(srcId, "id") "msiId";
+
+  // Profile meta
+  src -> tgt.meta as m then {
+    src -> m.profile = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet' "msiProfile";
+  } "msiMeta";
+
+  src -> tgt.status = 'final' "msiStatus";
+
+  // Fixed LOINC code per mii-pr-mtb-mikrosatelliteninstabilitaet example
+  src -> tgt.code as code then {
+    src -> code.coding as c then {
+      src -> c.system  = 'http://loinc.org' "msiCodeSystem";
+      src -> c.code    = '81695-9'          "msiCodeCode";
+      src -> c.display = 'Microsatellite instability [Interpretation] in Cancer specimen Qualitative' "msiCodeDisplay";
+    } "msiCodeCoding";
+  } "msiCode";
+
+  // subject
+  src.patient as pat -> tgt.subject as subj then {
+    pat.id as pid -> subj.reference = append('urn:uuid:', pid) "msiSubjectRef";
+  } "msiSubject";
+
+  // specimen
+  src.specimen as spec -> tgt.specimen as sRef then {
+    spec.id as sid -> sRef.reference = append('urn:uuid:', sid) "msiSpecimenRef";
+  } "msiSpecimen";
+
+  // effectiveDateTime
+  src.issuedOn as issuedOnDt -> tgt.effectiveDateTime = cast(issuedOnDt, 'dateTime') "msiEffectiveDateTime";
+
+  // valueCodeableConcept — DNPM interpretation code (e.g. MSI-H, MSI-L, MSS)
+  src.value as val -> tgt.valueCodeableConcept as vcc then {
+    val -> vcc.coding as c then {
+      val.code as codeV -> c.code = cast(codeV, 'string') "msiValueCode";
+      val.system as systemV -> c.system = cast(systemV, 'string') "msiValueSystem";
+    } "msiValueCoding";
+  } "msiValue";
+
+  // method (IHC / PCR / bioinformatics)
+  src.method as meth -> tgt.method as m then {
+    meth -> m.coding as c then {
+      meth.code as codeV -> c.code = cast(codeV, 'string') "msiMethodCode";
+      meth.system as systemV -> c.system = cast(systemV, 'string') "msiMethodSystem";
+    } "msiMethodCoding";
+  } "msiMethod";
+}
