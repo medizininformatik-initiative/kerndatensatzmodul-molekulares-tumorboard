@@ -1,0 +1,49 @@
+{
+  "resourceType" : "Observation",
+  "id" : "PatientKimMusterperson-Observation-9",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-9</b></p><a name=\"PatientKimMusterperson-Observation-9\"> </a><a name=\"hcPatientKimMusterperson-Observation-9\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-3.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 112231000}, {http://snomed.info/sct 174430004}\">Status post (contextual qualifier) (qualifier value)</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 309201001}, {http://snomed.info/sct 249567002}\">regrediente Flüssigkeitskollektion am Leberrand</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 181268008}\">Entire liver</span></p></div>"
+  },
+  "partOf" : [{
+    "reference" : "Procedure/PatientKimMusterperson-Procedure-3"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "237679004",
+      "display" : "Status post (contextual qualifier) (qualifier value)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "112231000",
+      "display" : "Atypical"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "174430004",
+      "display" : "Resection of segment of liver (procedure)"
+    }]
+  },
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "309201001",
+      "display" : "Ascitic fluid specimen"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "249567002",
+      "display" : "Liver edge (finding)"
+    }],
+    "text" : "regrediente Flüssigkeitskollektion am Leberrand"
+  },
+  "bodySite" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "181268008",
+      "display" : "Entire liver"
+    }]
+  }
+}

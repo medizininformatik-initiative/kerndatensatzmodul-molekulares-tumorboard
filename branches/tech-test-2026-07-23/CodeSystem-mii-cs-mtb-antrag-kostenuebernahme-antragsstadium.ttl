@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"] ;
+  fhir:Resource.language [ fhir:value "de-DE"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"de-DE\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-DE\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mii-cs-mtb-antrag-kostenuebernahme-antragsstadium</b></p><a name=\"mii-cs-mtb-antrag-kostenuebernahme-antragsstadium\"> </a><a name=\"hcmii-cs-mtb-antrag-kostenuebernahme-antragsstadium\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">initial-claim<a name=\"mii-cs-mtb-antrag-kostenuebernahme-antragsstadium-initial-claim\"> </a></td><td>Erstantrag</td></tr><tr><td style=\"white-space:nowrap\">revocation<a name=\"mii-cs-mtb-antrag-kostenuebernahme-antragsstadium-revocation\"> </a></td><td>Widerspruch</td></tr><tr><td style=\"white-space:nowrap\">follow-up-claim<a name=\"mii-cs-mtb-antrag-kostenuebernahme-antragsstadium-follow-up-claim\"> </a></td><td>Folgeantrag</td></tr><tr><td style=\"white-space:nowrap\">unknown<a name=\"mii-cs-mtb-antrag-kostenuebernahme-antragsstadium-unknown\"> </a></td><td>Unbekannt</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"] ;
+  fhir:CodeSystem.version [ fhir:value "2026.0.1"] ;
+  fhir:CodeSystem.name [ fhir:value "MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium"] ;
+  fhir:CodeSystem.title [ fhir:value "MII CS Antrag Kostenuebernahme Antragsstadium"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-07-23T12:42:46+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Codesystem zum Stadium des Antrags zur Kostenuebernahme nach DNPM"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "4"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "initial-claim" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Erstantrag" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "revocation" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Widerspruch" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "follow-up-claim" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Folgeantrag" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "unknown" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Unbekannt" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

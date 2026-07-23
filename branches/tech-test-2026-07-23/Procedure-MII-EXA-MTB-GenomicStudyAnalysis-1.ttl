@@ -1,0 +1,136 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/MII-EXA-MTB-GenomicStudyAnalysis-1> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "MII-EXA-MTB-GenomicStudyAnalysis-1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure MII-EXA-MTB-GenomicStudyAnalysis-1</b></p><a name=\"MII-EXA-MTB-GenomicStudyAnalysis-1\"> </a><a name=\"hcMII-EXA-MTB-GenomicStudyAnalysis-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-genomic-study-analysis.html\">MII PR MTB Genomic Study Analysis</a> version: 2026.0.1</p></div><p><b>Genomic Study Analysis Method Type</b>: <span title=\"Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs ngs-mps}\">Next-Generation (NGS)/Massively parallel sequencing (MPS)</span></p><p><b>Genomic Study Analysis Focus</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/example\">Patient/example</a></p><blockquote><p><b>Genomic Study Analysis Device</b></p><ul><li>device: <a href=\"Device-MII-EXA-MTB-Device-Sequencer-1.html\">Device: manufacturer = Illumina</a></li><li>function: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction sequencing-device}\">Sequenziergerät</span></li></ul></blockquote><blockquote><p><b>Genomic Study Analysis Device</b></p><ul><li>device: <a href=\"Device-MII-EXA-MTB-Device-SequencingKit-1.html\">Device: manufacturer = Illumina</a></li><li>function: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction sequencing-kit}\">Sequenzier-Kit</span></li></ul></blockquote><blockquote><p><b>Genomic Study Analysis Device</b></p><ul><li>device: <a href=\"Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.html\">Device: manufacturer = Illumina</a></li><li>function: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction library-preparation-kit}\">Library-Preparation Kit</span></li></ul></blockquote><p><b>Genomic Study Analysis Genome Build</b>: <span title=\"Codes:{http://loinc.org LA26806-2}\">GRCh38</span></p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>subject</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/example\">Patient/example</a></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs" ] ;
+         fhir:Coding.code [ fhir:value "ngs-mps" ] ;
+         fhir:Coding.display [ fhir:value "Next-Generation (NGS)/Massively parallel sequencing (MPS)" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-focus" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/example> ;
+       fhir:Reference.reference [ fhir:value "Patient/example" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "device" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Device/MII-EXA-MTB-Device-Sequencer-1> ;
+         fhir:Reference.reference [ fhir:value "Device/MII-EXA-MTB-Device-Sequencer-1" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "function" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction" ] ;
+           fhir:Coding.code [ fhir:value "sequencing-device" ]
+         ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device" ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "device" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Device/MII-EXA-MTB-Device-SequencingKit-1> ;
+         fhir:Reference.reference [ fhir:value "Device/MII-EXA-MTB-Device-SequencingKit-1" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "function" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction" ] ;
+           fhir:Coding.code [ fhir:value "sequencing-kit" ]
+         ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device" ]
+  ], [
+     fhir:index 4 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "device" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1> ;
+         fhir:Reference.reference [ fhir:value "Device/MII-EXA-MTB-Device-LibraryPreparation-Kit-1" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "function" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction" ] ;
+           fhir:Coding.code [ fhir:value "library-preparation-kit" ]
+         ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device" ]
+  ], [
+     fhir:index 5 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:LA26806-2 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "LA26806-2" ] ;
+         fhir:Coding.display [ fhir:value "GRCh38" ]
+       ]
+     ]
+  ] ;
+  fhir:Procedure.status [ fhir:value "completed"] ;
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "laboratory" ]
+     ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/example> ;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/MII-EXA-MTB-GenomicStudyAnalysis-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

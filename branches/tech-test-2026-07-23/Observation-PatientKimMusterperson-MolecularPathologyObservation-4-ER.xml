@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PatientKimMusterperson-MolecularPathologyObservation-4-ER"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry|2026.0.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation PatientKimMusterperson-MolecularPathologyObservation-4-ER</b></p><a name="PatientKimMusterperson-MolecularPathologyObservation-4-ER"> </a><a name="hcPatientKimMusterperson-MolecularPathologyObservation-4-ER"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-immunohistochemistry.html">MII PR MTB Immunohistochemistry</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs biomarker-category}">A characterization of a given biomarker observation.</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 14228-1}, {http://snomed.info/sct 1234806008}">Cells.estrogen receptor/cells in Tissue by Immune stain</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>value</b>: 70 %<span style="background: LightGoldenRodYellow"> (Details: UCUM  code/100 = '/100')</span></p><p><b>specimen</b>: <a href="Specimen-PatientKimMusterperson-AscitesSpecimen-2.html">Specimen: accessionIdentifier = Z230201/23; type = Ascitic fluid specimen (specimen)</a></p></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="laboratory"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+      <code value="biomarker-category"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="14228-1"/>
+      <display value="Cells.estrogen receptor/cells in Tissue by Immune stain"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="1234806008"/>
+      <display value="Observation using immunohistochemistry (observable entity)"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <valueQuantity>
+    <value value="70"/>
+    <unit value="%"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="/100"/>
+  </valueQuantity>
+  <specimen>
+    <reference value="Specimen/PatientKimMusterperson-AscitesSpecimen-2"/>
+  </specimen>
+</Observation>

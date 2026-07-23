@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="SMGuidelineTherapy"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap SMGuidelineTherapy</b></p><a name="SMGuidelineTherapy"> </a><a name="hcSMGuidelineTherapy"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy<span style="color: navy">&quot; = &quot;</span>SMGuidelineTherapy<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/medicationstatement.html" title="MedicationStatement">http://hl7.org/fhir/StructureDefinition/MedicationStatement</a><span style="color: navy">&quot; </span><b>alias </b>MedicationStatement <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/procedure.html" title="Procedure">http://hl7.org/fhir/StructureDefinition/Procedure</a><span style="color: navy">&quot; </span><b>alias </b>Procedure <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate guidelineTherapies and guidelineProcedures arrays</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>GuidelineTherapy<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">guidelineTherapies → MedicationStatement (Systemische Vortherapie)</span>
+  src.guidelineTherapies<b> as </b><span style="color: maroon">gt</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'MedicationStatement'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">ms</span><b> then</b><span style="color: navy"> {
+</span>    gt.id<b> as </b><span style="color: maroon">gtid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">gtid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    gt<span style="color: navy"><b> -&gt; </b></span>ms<b> then </b>MapGuidelineTherapy<span style="color: navy">(</span><span style="color: maroon">gt</span><span style="color: navy">, </span><span style="color: maroon">ms</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;guidelineTherapy&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">guidelineProcedures → Procedure</span>
+  src.guidelineProcedures<b> as </b><span style="color: maroon">gp</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Procedure'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">proc</span><b> then</b><span style="color: navy"> {
+</span>    gp.id<b> as </b><span style="color: maroon">gpid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">gpid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    gp<span style="color: navy"><b> -&gt; </b></span>proc<b> then </b>MapGuidelineProcedure<span style="color: navy">(</span><span style="color: maroon">gp</span><span style="color: navy">, </span><span style="color: maroon">proc</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;guidelineProcedure&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapGuidelineTherapy: single guidelineTherapy → FHIR MedicationStatement</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Systemische_Vortherapie</span>
+<span style="color: navy">// </span><span style="color: green">(Parent: MII_PR_Onko_Systemische_Therapie → MedicationStatement)</span>
+<span style="color: navy">// </span><span style="color: green">Status mapping (ConceptMap: DNPMTherapyStatusToFHIR):</span>
+<span style="color: navy">// </span><span style="color: green">completed → completed</span>
+<span style="color: navy">// </span><span style="color: green">stopped   → stopped</span>
+<span style="color: navy">// </span><span style="color: green">ongoing   → active</span>
+<span style="color: navy">// </span><span style="color: green">not-done  → not-taken</span>
+<span style="color: navy">// </span><span style="color: green">unknown   → unknown</span>
+<span style="color: navy">// </span><span style="color: green">(default) → unknown</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapGuidelineTherapy<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>MedicationStatement<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;gtId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie'</span> <i>&quot;gtProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Status: translate DNPM therapy status → FHIR MedicationStatement status</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'completed'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'completed'</span> <i>&quot;gtStatusCompleted&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'stopped'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'stopped'</span> <i>&quot;gtStatusStopped&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'ongoing'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;gtStatusActive&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'not-done'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'not-taken'</span> <i>&quot;gtStatusNotTaken&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'unknown'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'unknown'</span> <i>&quot;gtStatusUnknown&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fallback when status is absent</span>
+  src<b> where </b><span style="color: navy">(</span>src.status.empty()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'unknown'</span> <i>&quot;gtStatusDefault&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;gtSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">reasonReference ← indication (MTBDiagnosis)</span>
+  src.indication<b> as </b><span style="color: maroon">ind</span><span style="color: navy"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style="color: maroon">rr</span><b> then</b><span style="color: navy"> {
+</span>    ind.id<b> as </b><span style="color: maroon">iid</span><span style="color: navy"><b> -&gt; </b></span>rr.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">iid</span><span style="color: navy">)</span> <i>&quot;gtReasonRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtReason&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">effectivePeriod ← period</span>
+  src.period<b> as </b><span style="color: maroon">p</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectivePeriod<b> as </b><span style="color: maroon">ep</span><b> then</b><span style="color: navy"> {
+</span>    p.start<b> as </b><span style="color: maroon">startDt</span><span style="color: navy"><b> -&gt; </b></span>ep.start = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">startDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;gtPeriodStart&quot;</i><span style="color: navy">;</span>
+    p.end<b> as </b><span style="color: maroon">endDt</span><span style="color: navy"><b> -&gt; </b></span>ep.end = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">endDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;gtPeriodEnd&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtPeriod&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">medicationCodeableConcept: one coding per medication (ATC)</span>
+  src.medication<b> as </b><span style="color: maroon">med</span><span style="color: navy"><b> -&gt; </b></span>tgt.medicationCodeableConcept<b> as </b><span style="color: maroon">mcc</span><b> then</b><span style="color: navy"> {
+</span>    med<span style="color: navy"><b> -&gt; </b></span>mcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      med.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtMedCode&quot;</i><span style="color: navy">;</span>
+      med.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtMedSystem&quot;</i><span style="color: navy">;</span>
+      med.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtMedDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gtMedCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtMedication&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">statusReason ← statusReason (if therapy was stopped/discontinued)</span>
+  src.statusReason<b> as </b><span style="color: maroon">sr</span><span style="color: navy"><b> -&gt; </b></span>tgt.statusReason<b> as </b><span style="color: maroon">tsr</span><b> then</b><span style="color: navy"> {
+</span>    sr<span style="color: navy"><b> -&gt; </b></span>tsr.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      sr.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtSrCode&quot;</i><span style="color: navy">;</span>
+      sr.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtSrSystem&quot;</i><span style="color: navy">;</span>
+      sr.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtSrDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gtSrCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtStatusReason&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">notes ← notes (free-text)</span>
+  src.notes<b> as </b><span style="color: maroon">n</span><span style="color: navy"><b> -&gt; </b></span>tgt.note<b> as </b><span style="color: maroon">note</span><b> then</b><span style="color: navy"> {
+</span>    n<span style="color: navy"><b> -&gt; </b></span>note.text = <span style="color: maroon">n</span> <i>&quot;gtNoteText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtNotes&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">therapyLine: stored as extension on the Onko parent profile</span>
+  <span style="color: navy">// </span><span style="color: green">MII_PR_Onko_Systemische_Therapie uses KDS extension for therapyLine</span>
+  src.therapyLine<b> as </b><span style="color: maroon">tl</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    tl<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-therapielinie'</span> <i>&quot;gtThLineUrl&quot;</i><span style="color: navy">;</span>
+    tl<span style="color: navy"><b> -&gt; </b></span>ext.value = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">tl</span><span style="color: navy">, </span><span style="color: blue">'positiveInt'</span><span style="color: navy">)</span> <i>&quot;gtThLineValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtTherapyLine&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">category ← category (DNPM therapy category coding)</span>
+  src.category<b> as </b><span style="color: maroon">cat</span><span style="color: navy"><b> -&gt; </b></span>tgt.category<b> as </b><span style="color: maroon">tcat</span><b> then</b><span style="color: navy"> {
+</span>    cat<span style="color: navy"><b> -&gt; </b></span>tcat.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      cat.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtCatCode&quot;</i><span style="color: navy">;</span>
+      cat.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtCatSystem&quot;</i><span style="color: navy">;</span>
+      cat.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtCatDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gtCatCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gtCategory&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapGuidelineProcedure: single guidelineProcedure → FHIR Procedure</span>
+<span style="color: navy">// </span><span style="color: green">Used for radiotherapy and other non-medication guideline-based procedures.</span>
+<span style="color: navy">// </span><span style="color: green">Status mapping:</span>
+<span style="color: navy">// </span><span style="color: green">ongoing   → in-progress</span>
+<span style="color: navy">// </span><span style="color: green">completed → completed</span>
+<span style="color: navy">// </span><span style="color: green">stopped   → stopped</span>
+<span style="color: navy">// </span><span style="color: green">not-done  → not-done</span>
+<span style="color: navy">// </span><span style="color: green">unknown   → unknown</span>
+<span style="color: navy">// </span><span style="color: green">(default) → unknown</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapGuidelineProcedure<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Procedure<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;gpId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;gpSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gpSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Status: translate DNPM therapy status → FHIR Procedure status</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'ongoing'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'in-progress'</span> <i>&quot;gpStatusInProgress&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'completed'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'completed'</span> <i>&quot;gpStatusCompleted&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'stopped'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'stopped'</span> <i>&quot;gpStatusStopped&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'not-done'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'not-done'</span> <i>&quot;gpStatusNotDone&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><b> where </b><span style="color: navy">(</span>s.code = 'unknown'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'unknown'</span> <i>&quot;gpStatusUnknown&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fallback when status is absent</span>
+  src<b> where </b><span style="color: navy">(</span>src.status.empty()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'unknown'</span> <i>&quot;gpStatusDefault&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">code ← procedure.code (e.g. radiotherapy)</span>
+  src.code<b> as </b><span style="color: maroon">c</span><span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">tcode</span><b> then</b><span style="color: navy"> {
+</span>    c<span style="color: navy"><b> -&gt; </b></span>tcode.coding<b> as </b><span style="color: maroon">coding</span><b> then</b><span style="color: navy"> {
+</span>      c.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>coding.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gpCodeCode&quot;</i><span style="color: navy">;</span>
+      c.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>coding.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gpCodeSystem&quot;</i><span style="color: navy">;</span>
+      c.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>coding.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gpCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gpCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gpCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">reasonReference ← indication (MTBDiagnosis)</span>
+  src.indication<b> as </b><span style="color: maroon">ind</span><span style="color: navy"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style="color: maroon">rr</span><b> then</b><span style="color: navy"> {
+</span>    ind.id<b> as </b><span style="color: maroon">iid</span><span style="color: navy"><b> -&gt; </b></span>rr.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">iid</span><span style="color: navy">)</span> <i>&quot;gpReasonRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gpReason&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">performedPeriod ← period</span>
+  src.period<b> as </b><span style="color: maroon">p</span><span style="color: navy"><b> -&gt; </b></span>tgt.performedPeriod<b> as </b><span style="color: maroon">pp</span><b> then</b><span style="color: navy"> {
+</span>    p.start<b> as </b><span style="color: maroon">startDt</span><span style="color: navy"><b> -&gt; </b></span>pp.start = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">startDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;gpPeriodStart&quot;</i><span style="color: navy">;</span>
+    p.end<b> as </b><span style="color: maroon">endDt</span><span style="color: navy"><b> -&gt; </b></span>pp.end = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">endDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;gpPeriodEnd&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gpPeriod&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">intent ← intent (palliative, curative, …) stored as extension</span>
+  <span style="color: navy">// </span><span style="color: green">Procedure R4 does not have a native intent field; carry as basic extension.</span>
+  src.intent<b> as </b><span style="color: maroon">intent</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    intent<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation'</span> <i>&quot;gpIntentUrl&quot;</i><span style="color: navy">;</span>
+    intent<span style="color: navy"><b> -&gt; </b></span>ext.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Coding'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">intCoding</span><b> then</b><span style="color: navy"> {
+</span>      intent.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>intCoding.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gpIntentCode&quot;</i><span style="color: navy">;</span>
+      intent.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>intCoding.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gpIntentSystem&quot;</i><span style="color: navy">;</span>
+      intent.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>intCoding.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gpIntentDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gpIntentCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gpIntent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">notes ← notes (free-text)</span>
+  src.notes<b> as </b><span style="color: maroon">n</span><span style="color: navy"><b> -&gt; </b></span>tgt.note<b> as </b><span style="color: maroon">note</span><b> then</b><span style="color: navy"> {
+</span>    n<span style="color: navy"><b> -&gt; </b></span>note.text = <span style="color: maroon">n</span> <i>&quot;gpNoteText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gpNotes&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy"/>
+  <version value="2026.0.1"/>
+  <name value="SMGuidelineTherapy"/>
+  <status value="draft"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record"/>
+    <mode value="source"/>
+    <alias value="DNPMPatientRecord"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/MedicationStatement"/>
+    <mode value="produced"/>
+    <alias value="MedicationStatement"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Procedure"/>
+    <mode value="produced"/>
+    <alias value="Procedure"/>
+  </structure>
+  <group>
+    <name value="GuidelineTherapy"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Root group: iterate guidelineTherapies and guidelineProcedures arrays&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="bundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="collection"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="guidelineTherapy"/>
+      <source>
+        <context value="src"/>
+        <element value="guidelineTherapies"/>
+        <variable value="gt"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="ms"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="MedicationStatement"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="gt"/>
+          <element value="id"/>
+          <variable value="gtid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="gtid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="gt"/>
+        </source>
+        <target>
+          <context value="ms"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapGuidelineTherapy"/>
+          <variable value="gt"/>
+          <variable value="ms"/>
+        </dependent>
+      </rule>
+      <documentation value="guidelineTherapies → MedicationStatement (Systemische Vortherapie)"/>
+    </rule>
+    <rule>
+      <name value="guidelineProcedure"/>
+      <source>
+        <context value="src"/>
+        <element value="guidelineProcedures"/>
+        <variable value="gp"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="proc"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Procedure"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="gp"/>
+          <element value="id"/>
+          <variable value="gpid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="gpid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="gp"/>
+        </source>
+        <target>
+          <context value="proc"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapGuidelineProcedure"/>
+          <variable value="gp"/>
+          <variable value="proc"/>
+        </dependent>
+      </rule>
+      <documentation value="guidelineProcedures → Procedure"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapGuidelineTherapy"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapGuidelineTherapy: single guidelineTherapy → FHIR MedicationStatement&#xD;&#xA;Profile: MII_PR_MTB_Systemische_Vortherapie&#xD;&#xA;(Parent: MII_PR_Onko_Systemische_Therapie → MedicationStatement)&#xD;&#xA;Status mapping (ConceptMap: DNPMTherapyStatusToFHIR):&#xD;&#xA;completed → completed&#xD;&#xA;stopped   → stopped&#xD;&#xA;ongoing   → active&#xD;&#xA;not-done  → not-taken&#xD;&#xA;unknown   → unknown&#xD;&#xA;(default) → unknown&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="MedicationStatement"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="gtId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gtMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="gtProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="gtStatusCompleted"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'completed'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="completed"/>
+        </parameter>
+      </target>
+      <documentation value="Status: translate DNPM therapy status → FHIR MedicationStatement status"/>
+    </rule>
+    <rule>
+      <name value="gtStatusStopped"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'stopped'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="stopped"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gtStatusActive"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'ongoing'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gtStatusNotTaken"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'not-done'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="not-taken"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gtStatusUnknown"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'unknown'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="unknown"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gtStatusDefault"/>
+      <source>
+        <context value="src"/>
+        <condition value="src.status.empty()"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="unknown"/>
+        </parameter>
+      </target>
+      <documentation value="Fallback when status is absent"/>
+    </rule>
+    <rule>
+      <name value="gtSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="gtSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="gtReason"/>
+      <source>
+        <context value="src"/>
+        <element value="indication"/>
+        <variable value="ind"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="reasonReference"/>
+        <variable value="rr"/>
+      </target>
+      <rule>
+        <name value="gtReasonRef"/>
+        <source>
+          <context value="ind"/>
+          <element value="id"/>
+          <variable value="iid"/>
+        </source>
+        <target>
+          <context value="rr"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="iid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="reasonReference ← indication (MTBDiagnosis)"/>
+    </rule>
+    <rule>
+      <name value="gtPeriod"/>
+      <source>
+        <context value="src"/>
+        <element value="period"/>
+        <variable value="p"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectivePeriod"/>
+        <variable value="ep"/>
+      </target>
+      <rule>
+        <name value="gtPeriodStart"/>
+        <source>
+          <context value="p"/>
+          <element value="start"/>
+          <variable value="startDt"/>
+        </source>
+        <target>
+          <context value="ep"/>
+          <contextType value="variable"/>
+          <element value="start"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="startDt"/>
+          </parameter>
+          <parameter>
+            <valueString value="dateTime"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="gtPeriodEnd"/>
+        <source>
+          <context value="p"/>
+          <element value="end"/>
+          <variable value="endDt"/>
+        </source>
+        <target>
+          <context value="ep"/>
+          <contextType value="variable"/>
+          <element value="end"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="endDt"/>
+          </parameter>
+          <parameter>
+            <valueString value="dateTime"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="effectivePeriod ← period"/>
+    </rule>
+    <rule>
+      <name value="gtMedication"/>
+      <source>
+        <context value="src"/>
+        <element value="medication"/>
+        <variable value="med"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="medicationCodeableConcept"/>
+        <variable value="mcc"/>
+      </target>
+      <rule>
+        <name value="gtMedCoding"/>
+        <source>
+          <context value="med"/>
+        </source>
+        <target>
+          <context value="mcc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="gtMedCode"/>
+          <source>
+            <context value="med"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gtMedSystem"/>
+          <source>
+            <context value="med"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gtMedDisplay"/>
+          <source>
+            <context value="med"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="medicationCodeableConcept: one coding per medication (ATC)"/>
+    </rule>
+    <rule>
+      <name value="gtStatusReason"/>
+      <source>
+        <context value="src"/>
+        <element value="statusReason"/>
+        <variable value="sr"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="statusReason"/>
+        <variable value="tsr"/>
+      </target>
+      <rule>
+        <name value="gtSrCoding"/>
+        <source>
+          <context value="sr"/>
+        </source>
+        <target>
+          <context value="tsr"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="gtSrCode"/>
+          <source>
+            <context value="sr"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gtSrSystem"/>
+          <source>
+            <context value="sr"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gtSrDisplay"/>
+          <source>
+            <context value="sr"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="statusReason ← statusReason (if therapy was stopped/discontinued)"/>
+    </rule>
+    <rule>
+      <name value="gtNotes"/>
+      <source>
+        <context value="src"/>
+        <element value="notes"/>
+        <variable value="n"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="note"/>
+        <variable value="note"/>
+      </target>
+      <rule>
+        <name value="gtNoteText"/>
+        <source>
+          <context value="n"/>
+        </source>
+        <target>
+          <context value="note"/>
+          <contextType value="variable"/>
+          <element value="text"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="n"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="notes ← notes (free-text)"/>
+    </rule>
+    <rule>
+      <name value="gtTherapyLine"/>
+      <source>
+        <context value="src"/>
+        <element value="therapyLine"/>
+        <variable value="tl"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+      </target>
+      <rule>
+        <name value="gtThLineUrl"/>
+        <source>
+          <context value="tl"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-therapielinie"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="gtThLineValue"/>
+        <source>
+          <context value="tl"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="tl"/>
+          </parameter>
+          <parameter>
+            <valueString value="positiveInt"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="therapyLine: stored as extension on the Onko parent profile&#xD;&#xA;MII_PR_Onko_Systemische_Therapie uses KDS extension for therapyLine"/>
+    </rule>
+    <rule>
+      <name value="gtCategory"/>
+      <source>
+        <context value="src"/>
+        <element value="category"/>
+        <variable value="cat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="category"/>
+        <variable value="tcat"/>
+      </target>
+      <rule>
+        <name value="gtCatCoding"/>
+        <source>
+          <context value="cat"/>
+        </source>
+        <target>
+          <context value="tcat"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="gtCatCode"/>
+          <source>
+            <context value="cat"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gtCatSystem"/>
+          <source>
+            <context value="cat"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gtCatDisplay"/>
+          <source>
+            <context value="cat"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="category ← category (DNPM therapy category coding)"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapGuidelineProcedure"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapGuidelineProcedure: single guidelineProcedure → FHIR Procedure&#xD;&#xA;Used for radiotherapy and other non-medication guideline-based procedures.&#xD;&#xA;Status mapping:&#xD;&#xA;ongoing   → in-progress&#xD;&#xA;completed → completed&#xD;&#xA;stopped   → stopped&#xD;&#xA;not-done  → not-done&#xD;&#xA;unknown   → unknown&#xD;&#xA;(default) → unknown&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Procedure"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="gpId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gpSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="gpSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="gpStatusInProgress"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'ongoing'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="in-progress"/>
+        </parameter>
+      </target>
+      <documentation value="Status: translate DNPM therapy status → FHIR Procedure status"/>
+    </rule>
+    <rule>
+      <name value="gpStatusCompleted"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'completed'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="completed"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gpStatusStopped"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'stopped'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="stopped"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gpStatusNotDone"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'not-done'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="not-done"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gpStatusUnknown"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="s"/>
+        <condition value="s.code = 'unknown'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="unknown"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gpStatusDefault"/>
+      <source>
+        <context value="src"/>
+        <condition value="src.status.empty()"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="unknown"/>
+        </parameter>
+      </target>
+      <documentation value="Fallback when status is absent"/>
+    </rule>
+    <rule>
+      <name value="gpCode"/>
+      <source>
+        <context value="src"/>
+        <element value="code"/>
+        <variable value="c"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="tcode"/>
+      </target>
+      <rule>
+        <name value="gpCodeCoding"/>
+        <source>
+          <context value="c"/>
+        </source>
+        <target>
+          <context value="tcode"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="coding"/>
+        </target>
+        <rule>
+          <name value="gpCodeCode"/>
+          <source>
+            <context value="c"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="coding"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gpCodeSystem"/>
+          <source>
+            <context value="c"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="coding"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gpCodeDisplay"/>
+          <source>
+            <context value="c"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="coding"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="code ← procedure.code (e.g. radiotherapy)"/>
+    </rule>
+    <rule>
+      <name value="gpReason"/>
+      <source>
+        <context value="src"/>
+        <element value="indication"/>
+        <variable value="ind"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="reasonReference"/>
+        <variable value="rr"/>
+      </target>
+      <rule>
+        <name value="gpReasonRef"/>
+        <source>
+          <context value="ind"/>
+          <element value="id"/>
+          <variable value="iid"/>
+        </source>
+        <target>
+          <context value="rr"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="iid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="reasonReference ← indication (MTBDiagnosis)"/>
+    </rule>
+    <rule>
+      <name value="gpPeriod"/>
+      <source>
+        <context value="src"/>
+        <element value="period"/>
+        <variable value="p"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="performedPeriod"/>
+        <variable value="pp"/>
+      </target>
+      <rule>
+        <name value="gpPeriodStart"/>
+        <source>
+          <context value="p"/>
+          <element value="start"/>
+          <variable value="startDt"/>
+        </source>
+        <target>
+          <context value="pp"/>
+          <contextType value="variable"/>
+          <element value="start"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="startDt"/>
+          </parameter>
+          <parameter>
+            <valueString value="dateTime"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="gpPeriodEnd"/>
+        <source>
+          <context value="p"/>
+          <element value="end"/>
+          <variable value="endDt"/>
+        </source>
+        <target>
+          <context value="pp"/>
+          <contextType value="variable"/>
+          <element value="end"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="endDt"/>
+          </parameter>
+          <parameter>
+            <valueString value="dateTime"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="performedPeriod ← period"/>
+    </rule>
+    <rule>
+      <name value="gpIntent"/>
+      <source>
+        <context value="src"/>
+        <element value="intent"/>
+        <variable value="intent"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+      </target>
+      <rule>
+        <name value="gpIntentUrl"/>
+        <source>
+          <context value="intent"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="gpIntentCoding"/>
+        <source>
+          <context value="intent"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="intCoding"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="Coding"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="gpIntentCode"/>
+          <source>
+            <context value="intent"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="intCoding"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gpIntentSystem"/>
+          <source>
+            <context value="intent"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="intCoding"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gpIntentDisplay"/>
+          <source>
+            <context value="intent"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="intCoding"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="intent ← intent (palliative, curative, …) stored as extension&#xD;&#xA;Procedure R4 does not have a native intent field; carry as basic extension."/>
+    </rule>
+    <rule>
+      <name value="gpNotes"/>
+      <source>
+        <context value="src"/>
+        <element value="notes"/>
+        <variable value="n"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="note"/>
+        <variable value="note"/>
+      </target>
+      <rule>
+        <name value="gpNoteText"/>
+        <source>
+          <context value="n"/>
+        </source>
+        <target>
+          <context value="note"/>
+          <contextType value="variable"/>
+          <element value="text"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="n"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="notes ← notes (free-text)"/>
+    </rule>
+  </group>
+</StructureMap>

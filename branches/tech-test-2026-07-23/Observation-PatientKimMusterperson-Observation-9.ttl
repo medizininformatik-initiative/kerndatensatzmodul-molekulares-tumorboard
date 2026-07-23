@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-9> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PatientKimMusterperson-Observation-9"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-9</b></p><a name=\"PatientKimMusterperson-Observation-9\"> </a><a name=\"hcPatientKimMusterperson-Observation-9\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-3.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 112231000}, {http://snomed.info/sct 174430004}\">Status post (contextual qualifier) (qualifier value)</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 309201001}, {http://snomed.info/sct 249567002}\">regrediente Flüssigkeitskollektion am Leberrand</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 181268008}\">Entire liver</span></p></div>"
+  ] ;
+  fhir:Observation.partOf [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/PatientKimMusterperson-Procedure-3> ;
+     fhir:Reference.reference [ fhir:value "Procedure/PatientKimMusterperson-Procedure-3" ]
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:237679004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "237679004" ] ;
+       fhir:Coding.display [ fhir:value "Status post (contextual qualifier) (qualifier value)" ]
+     ], [
+       fhir:index 1 ;
+       a sct:112231000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "112231000" ] ;
+       fhir:Coding.display [ fhir:value "Atypical" ]
+     ], [
+       fhir:index 2 ;
+       a sct:174430004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "174430004" ] ;
+       fhir:Coding.display [ fhir:value "Resection of segment of liver (procedure)" ]
+     ]
+  ] ;
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:309201001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "309201001" ] ;
+       fhir:Coding.display [ fhir:value "Ascitic fluid specimen" ]
+     ], [
+       fhir:index 1 ;
+       a sct:249567002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "249567002" ] ;
+       fhir:Coding.display [ fhir:value "Liver edge (finding)" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "regrediente Flüssigkeitskollektion am Leberrand" ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:181268008 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "181268008" ] ;
+       fhir:Coding.display [ fhir:value "Entire liver" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-9.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

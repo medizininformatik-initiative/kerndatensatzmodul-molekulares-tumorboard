@@ -1,0 +1,671 @@
+{
+  "package": "mii-kerndatensatzmodul-molekulares-tumorboard",
+  "version": "2026.0.1",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "276",
+  "extensions": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium",
+      "title": "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+      "title": "MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung",
+      "title": "MII EX MTB Antwort Kostenuebernahme Entscheidung",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose",
+      "title": "MII EX MTB Diagnose",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung",
+      "title": "MII EX MTB Empfehlung Evidenzgraduierung",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+      "title": "MII EX MTB Empfehlung Priorität",
+      "types": [
+        "decimal",
+        "positiveInt",
+        "decimal",
+        "positiveInt"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+      "title": "MII EX MTB Empfehlung Publikation",
+      "types": [
+        "Identifier",
+        "string",
+        "Extension",
+        "code",
+        "CodeableConcept",
+        "uri",
+        "string",
+        "Period",
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-genomic-study-analysis-qc",
+      "title": "MII EX MTB Antrag GenomicsStudyAnalysis Metrics",
+      "types": [
+        "Quantity",
+        "Quantity",
+        "Quantity",
+        "Quantity",
+        "Quantity",
+        "Quantity",
+        "string",
+        "string",
+        "CodeableConcept",
+        "CodeableConcept",
+        "Quantity",
+        "Quantity",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation",
+      "title": "MII EX MTB Leitlinie Dokumentation",
+      "types": [
+        "unsignedInt",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta",
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status",
+      "title": "MII EX MTB Leitlinienbehandlung Status",
+      "types": [
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-genomic-study",
+      "title": "MII EX MTB NGS Bericht Metadaten",
+      "types": [
+        "Reference"
+      ]
+    }
+  ],
+  "profiles": {
+    "Device": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device",
+        "title": "Genomic Study Device"
+      }
+    ],
+    "Claim": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme",
+        "title": "MII PR MTB Antrag Kostenuebernahme"
+      }
+    ],
+    "ClaimResponse": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme",
+        "title": "MII PR MTB Anwort Kostenuebernahme"
+      }
+    ],
+    "ClinicalImpression": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression",
+        "title": "MII PR MTB Clinical Impresssion"
+      }
+    ],
+    "Observation": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung",
+        "title": "MII PR MTB Tumorausbreitung"
+      },
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt",
+        "title": "MII PR MTB Tumorzellgehalt"
+      },
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns",
+        "title": "MII PR MTB WHO Grad Tumor ZNS"
+      }
+    ],
+    "ServiceRequest": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage",
+        "title": "MII PR MTB Studieneinschluss Anfrage"
+      }
+    ],
+    "Condition": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor",
+        "title": "MII PR MTB Diagnose Primärtumor"
+      }
+    ],
+    "Procedure": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie",
+        "title": "MII PR MTB Systemische Therapie"
+      },
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie",
+        "title": "MII PR MTB Systemische Vortherapie"
+      }
+    ],
+    "DiagnosticReport": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht",
+        "title": "MII PR MTB NGS-Bericht"
+      }
+    ],
+    "ResearchStudy": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie",
+        "title": "MII PR MTB Studie"
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement",
+        "title": "MII PR MTB Systemtherapie Medication Statement"
+      }
+    ],
+    "MedicationRequest": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
+        "title": "MII PR MTB Therapieempfehlung Systemische Therapie"
+      }
+    ],
+    "RequestGroup": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination",
+        "title": "MII PR MTB Therapieempfehlung Kombinationstherapie"
+      }
+    ],
+    "CarePlan": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
+        "title": "MII PR MTB Therapieplan"
+      }
+    ]
+  },
+  "usage": {
+    "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum": [
+      "Procedure"
+    ],
+    "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit": [
+      "Condition.code.coding"
+    ],
+    "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen": [
+      "Condition.code.coding"
+    ],
+    "http://fhir.de/StructureDefinition/lebensphase": [
+      "Condition.onset[x]",
+      "Condition.onset[x].end",
+      "Condition.onset[x].start"
+    ],
+    "http://fhir.de/StructureDefinition/seitenlokalisation": [
+      "Condition.code.coding",
+      "Procedure.code.coding"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url": [
+      "NamingSystem"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version": [
+      "NamingSystem"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-ResearchStudy.associatedParty": [
+      "ResearchStudy"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-ResearchStudy.label": [
+      "ResearchStudy"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/bodySite": [
+      "Observation"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.searchParam",
+      "CapabilityStatement.rest.resource.supportedProfile"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-assertedDate": [
+      "Bundle.entry.resource",
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-occurredFollowing": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-related": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding": [
+      "Observation"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/procedure-causedBy": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/request-statusReason": [
+      "ServiceRequest"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/translation": [
+      "StructureDefinition.differential.element.definition",
+      "StructureDefinition.differential.element.short",
+      "StructureDefinition.snapshot.element.definition",
+      "StructureDefinition.snapshot.element.short"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact": [
+      "Observation"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-risk-assessment": [
+      "Observation"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type": [
+      "Bundle.entry.resource",
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext": [
+      "Bundle.entry.resource",
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-focus": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build": [
+      "Bundle.entry.resource",
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genomic-source-class": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-input": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type": [
+      "Bundle.entry.resource",
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-metrics": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-output": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-protocol-performed": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-regions": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-specimen": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-title": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-referrer-ext": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-assessed-reference": [
+      "Observation.component"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/repeat-motif-order": [
+      "Observation.component"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapy-assessed-reference": [
+      "Observation.component"
+    ],
+    "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/workflow-relatedArtifactComponent": [
+      "Observation.component"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht": [
+      "Procedure"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund": [
+      "ClaimResponse"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung": [
+      "ClaimResponse"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung": [
+      "Bundle.entry.resource",
+      "MedicationRequest",
+      "Observation",
+      "RequestGroup"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet": [
+      "Bundle.entry.resource",
+      "MedicationRequest",
+      "RequestGroup",
+      "ServiceRequest"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation": [
+      "Bundle.entry.resource",
+      "MedicationRequest",
+      "RequestGroup",
+      "ServiceRequest"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-genomic-study-analysis-qc": [
+      "Procedure"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation": [
+      "ClinicalImpression.supportingInfo",
+      "Procedure"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status": [
+      "ClinicalImpression"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-histology-morphology-behavior-icdo3": [
+      "Condition"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention": [
+      "Bundle.entry.resource",
+      "Procedure"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-stellungzurop": [
+      "Procedure"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable": [
+      "StructureDefinition"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-ex-studie-akronym": [
+      "ResearchStudy"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-ex-studie-eligibility": [
+      "ResearchStudy"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-ex-studie-ethikvotum": [
+      "ResearchStudy"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-ex-studie-finanzierung": [
+      "ResearchStudy"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-ex-studie-rekrutierung": [
+      "ResearchStudy"
+    ],
+    "https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-ex-studie-studienregister": [
+      "ResearchStudy"
+    ]
+  }
+}

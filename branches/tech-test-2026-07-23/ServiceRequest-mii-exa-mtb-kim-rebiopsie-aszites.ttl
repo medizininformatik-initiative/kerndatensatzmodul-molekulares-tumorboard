@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-kim-rebiopsie-aszites"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest mii-exa-mtb-kim-rebiopsie-aszites</b></p><a name=\"mii-exa-mtb-kim-rebiopsie-aszites\"> </a><a name=\"hcmii-exa-mtb-kim-rebiopsie-aszites\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-biopsie-auftrag.html\">MII PR MTB Biopsie Auftrag</a> version: 2026.0.1</p></div><p><b>status</b>: Completed</p><p><b>intent</b>: Proposal</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 86273004}\">Biopsy (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>reasonReference</b>: <a href=\"Observation-mii-exa-mtb-kim-tumorzellgehalt-aszites.html\">Observation Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method</a></p><p><b>specimen</b>: <a href=\"Specimen-PatientKimMusterperson-AscitesSpecimen-2.html\">Specimen: accessionIdentifier = Z230201/23; type = Ascitic fluid specimen (specimen)</a></p></div>"
+  ] ;
+  fhir:ServiceRequest.status [ fhir:value "completed"] ;
+  fhir:ServiceRequest.intent [ fhir:value "proposal"] ;
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:86273004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "86273004" ] ;
+       fhir:Coding.display [ fhir:value "Biopsy (procedure)" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:ServiceRequest.reasonReference [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites> ;
+     fhir:Reference.reference [ fhir:value "Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites" ]
+  ] ;
+  fhir:ServiceRequest.specimen [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Specimen/PatientKimMusterperson-AscitesSpecimen-2> ;
+     fhir:Reference.reference [ fhir:value "Specimen/PatientKimMusterperson-AscitesSpecimen-2" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

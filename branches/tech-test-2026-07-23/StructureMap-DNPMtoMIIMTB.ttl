@@ -1,0 +1,351 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/DNPMtoMIIMTB> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "DNPMtoMIIMTB"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap DNPMtoMIIMTB</b></p><a name=\"DNPMtoMIIMTB\"> </a><a name=\"hcDNPMtoMIIMTB\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/dnpm-to-mii-mtb<span style=\"color: navy\">\" = \"</span>DNPMtoMIIMTB<span style=\"color: navy\">\"#xD;\n#xD;\n</span><b>uses</b><span style=\"color: navy\"> \"</span><a href=\"StructureDefinition-dnpm-lm-patient-record.html\" title=\"DNPM Patient Record\">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style=\"color: navy\">\" </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/bundle.html\" title=\"Bundle\">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style=\"color: navy\">\" </span><b>alias </b>Bundle <b>as </b><b>target</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMPatientDemographics.html\" title=\"SMPatientDemographics\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMDiagnosis.html\" title=\"SMDiagnosis\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMSpecimenHistologyIHCMSI.html\" title=\"SMSpecimenHistologyIHCMSI\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMNGSReport.html\" title=\"SMNGSReport\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-ngs-report</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMCarePlan.html\" title=\"SMCarePlan\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMGuidelineTherapy.html\" title=\"SMGuidelineTherapy\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMFollowUp.html\" title=\"SMFollowUp\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMSystemicTherapy.html\" title=\"SMSystemicTherapy\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-systemic-therapy</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SMClaims.html\" title=\"SMClaims\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>DNPMPatientRecordToBundle<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>DNPMPatientRecord, <b>target</b> <span style=\"color: maroon\">bundle</span><span style=\"color: navy\"> : </span>Bundle<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Set bundle type</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle.type = <span style=\"color: blue\">'transaction'</span> <i>\"bundleType\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Patient demographics, episodes, family history</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>PatientDemographics<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"demographics\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Diagnoses + ECOG</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>Diagnoses<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"diagnoses\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Specimens, histology, IHC, MSI</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>SpecimenHistologyIHCMSI<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"pathology\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">NGS Reports</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>NGSReports<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"ngs\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">CarePlans + recommendations</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>CarePlans<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"carePlans\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Guideline therapies + procedures</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>GuidelineTherapy<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"guidelineTherapy\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Follow-ups</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>FollowUps<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"followUps\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Systemic therapies + responses</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>SystemicTherapies<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"systemicTherapies\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Claims + claim responses</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle<b> then </b>Claims<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">bundle</span><span style=\"color: navy\">)</span> <i>\"claims\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/dnpm-to-mii-mtb"] ;
+  fhir:StructureMap.version [ fhir:value "2026.0.1"] ;
+  fhir:StructureMap.name [ fhir:value "DNPMtoMIIMTB"] ;
+  fhir:StructureMap.status [ fhir:value "draft"] ;
+  fhir:StructureMap.date [ fhir:value "2026-07-23T12:42:46+00:00"^^xsd:dateTime] ;
+  fhir:StructureMap.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" ;
+       fhir:link <https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "DNPMPatientRecord" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Bundle" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Bundle" ]
+  ] ;
+  fhir:StructureMap.import [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics" ;
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis" ;
+     fhir:index 1 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi" ;
+     fhir:index 2 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-ngs-report" ;
+     fhir:index 3 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-ngs-report>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan" ;
+     fhir:index 4 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy" ;
+     fhir:index 5 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up" ;
+     fhir:index 6 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-systemic-therapy" ;
+     fhir:index 7 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-systemic-therapy>
+  ], [
+     fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims" ;
+     fhir:index 8 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims>
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "DNPMPatientRecordToBundle" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "DNPMPatientRecord" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "bundle" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Bundle" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "bundleType" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "type" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "transaction" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Set bundle type" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "demographics" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "PatientDemographics" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Patient demographics, episodes, family history" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "diagnoses" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "Diagnoses" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Diagnoses + ECOG" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "pathology" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "SpecimenHistologyIHCMSI" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Specimens, histology, IHC, MSI" ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "ngs" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "NGSReports" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "NGS Reports" ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "carePlans" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "CarePlans" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "CarePlans + recommendations" ]
+     ], [
+       fhir:index 6 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "guidelineTherapy" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "GuidelineTherapy" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Guideline therapies + procedures" ]
+     ], [
+       fhir:index 7 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "followUps" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "FollowUps" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Follow-ups" ]
+     ], [
+       fhir:index 8 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "systemicTherapies" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "SystemicTherapies" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Systemic therapies + responses" ]
+     ], [
+       fhir:index 9 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claims" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "Claims" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "bundle" ;
+           fhir:index 1
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Claims + claim responses" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/DNPMtoMIIMTB.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

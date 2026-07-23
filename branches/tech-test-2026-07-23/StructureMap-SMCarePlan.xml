@@ -1,0 +1,2500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="SMCarePlan"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap SMCarePlan</b></p><a name="SMCarePlan"> </a><a name="hcSMCarePlan"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan<span style="color: navy">&quot; = &quot;</span>SMCarePlan<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/careplan.html" title="CarePlan">http://hl7.org/fhir/StructureDefinition/CarePlan</a><span style="color: navy">&quot; </span><b>alias </b>CarePlan <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/medicationrequest.html" title="MedicationRequest">http://hl7.org/fhir/StructureDefinition/MedicationRequest</a><span style="color: navy">&quot; </span><b>alias </b>MedicationRequest <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/servicerequest.html" title="ServiceRequest">http://hl7.org/fhir/StructureDefinition/ServiceRequest</a><span style="color: navy">&quot; </span><b>alias </b>ServiceRequest <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/researchstudy.html" title="ResearchStudy">http://hl7.org/fhir/StructureDefinition/ResearchStudy</a><span style="color: navy">&quot; </span><b>alias </b>ResearchStudy <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate carePlans array; produces CarePlan + child resources</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>CarePlans<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  src.carePlans<b> as </b><span style="color: maroon">cp</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CarePlan'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtCp</span><b> then</b><span style="color: navy"> {
+</span>    cp.id<b> as </b><span style="color: maroon">cpid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">cpid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    cp<span style="color: navy"><b> -&gt; </b></span>tgtCp<b> then </b>MapCarePlan<span style="color: navy">(</span><span style="color: maroon">cp</span><span style="color: navy">, </span><span style="color: maroon">tgtCp</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;carePlan&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapCarePlan: single carePlan entry → FHIR CarePlan</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Therapieplan (Parent: MII_PR_Onko_Tumorkonferenz)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapCarePlan<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>CarePlan, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;cpId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan'</span> <i>&quot;cpProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;cpMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed values required by CarePlan</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;cpStatus&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.intent = <span style="color: blue">'plan'</span> <i>&quot;cpIntent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;cpSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;cpSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">created ← issuedOn</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.created = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'date'</span><span style="color: navy">)</span> <i>&quot;cpCreated&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">addresses ← reason (MTBDiagnosis reference)</span>
+  src.reason<b> as </b><span style="color: maroon">r</span><span style="color: navy"><b> -&gt; </b></span>tgt.addresses<b> as </b><span style="color: maroon">addr</span><b> then</b><span style="color: navy"> {
+</span>    r.id<b> as </b><span style="color: maroon">rid</span><span style="color: navy"><b> -&gt; </b></span>addr.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">rid</span><span style="color: navy">)</span> <i>&quot;cpReasonRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;cpAddresses&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+  <span style="color: navy">// </span><span style="color: green">Medication Recommendations → MedicationRequest per recommendation</span>
+  <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+  src.medicationRecommendations<b> as </b><span style="color: maroon">rec</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'MedicationRequest'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">mr</span><span style="color: navy">, </span> tgt.activity<b> as </b><span style="color: maroon">act</span><span style="color: navy">, </span> act.reference<b> as </b><span style="color: maroon">actRef</span><b> then</b><span style="color: navy"> {
+</span>    rec.id<b> as </b><span style="color: maroon">recid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">recid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    rec.id<b> as </b><span style="color: maroon">rid</span><span style="color: navy"><b> -&gt; </b></span>actRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">rid</span><span style="color: navy">)</span> <i>&quot;mrActRef&quot;</i><span style="color: navy">;</span>
+    rec<span style="color: navy"><b> -&gt; </b></span>mr<b> then </b>MapMedicationRecommendation<span style="color: navy">(</span><span style="color: maroon">rec</span><span style="color: navy">, </span><span style="color: maroon">mr</span><span style="color: navy">)</span> <i>&quot;mapMedRec&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;medicationRecommendation&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+  <span style="color: navy">// </span><span style="color: green">Genetic Counseling Recommendation → ServiceRequest</span>
+  <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+  src.geneticCounselingRecommendation<b> as </b><span style="color: maroon">gcr</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'ServiceRequest'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">sr</span><span style="color: navy">, </span> tgt.activity<b> as </b><span style="color: maroon">act</span><span style="color: navy">, </span> act.reference<b> as </b><span style="color: maroon">actRef</span><b> then</b><span style="color: navy"> {
+</span>    gcr.id<b> as </b><span style="color: maroon">gcrid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">gcrid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    gcr.id<b> as </b><span style="color: maroon">gid</span><span style="color: navy"><b> -&gt; </b></span>actRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">gid</span><span style="color: navy">)</span> <i>&quot;gcrActRef&quot;</i><span style="color: navy">;</span>
+    gcr<span style="color: navy"><b> -&gt; </b></span>sr<b> then </b>MapGeneticCounseling<span style="color: navy">(</span><span style="color: maroon">gcr</span><span style="color: navy">, </span><span style="color: maroon">sr</span><span style="color: navy">)</span> <i>&quot;mapGcr&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;geneticCounseling&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+  <span style="color: navy">// </span><span style="color: green">Study Enrollment Recommendations → ServiceRequest (Studieneinschluss-Anfrage)</span>
+  <span style="color: navy">// </span><span style="color: green">+ ResearchStudy per study entry</span>
+  <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+  src.studyEnrollmentRecommendations<b> as </b><span style="color: maroon">ser</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'ServiceRequest'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">srSer</span><span style="color: navy">, </span> tgt.activity<b> as </b><span style="color: maroon">act</span><span style="color: navy">, </span> act.reference<b> as </b><span style="color: maroon">actRef</span><b> then</b><span style="color: navy"> {
+</span>    ser.id<b> as </b><span style="color: maroon">serid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">serid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    ser.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>actRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;serActRef&quot;</i><span style="color: navy">;</span>
+    ser<span style="color: navy"><b> -&gt; </b></span>srSer<b> then </b>MapStudyEnrollmentRecommendation<span style="color: navy">(</span><span style="color: maroon">ser</span><span style="color: navy">, </span><span style="color: maroon">srSer</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;mapSer&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;studyEnrollmentRec&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapMedicationRecommendation: single medicationRecommendation → MedicationRequest</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Therapieempfehlung (or Kombination via RequestGroup)</span>
+<span style="color: navy">// </span><span style="color: green">Extensions: MII_EX_MTB_Empfehlung_Prioritaet,</span>
+<span style="color: navy">// </span><span style="color: green">MII_EX_MTB_Empfehlung_Evidenzgraduierung,</span>
+<span style="color: navy">// </span><span style="color: green">MII_EX_MTB_Empfehlung_Publikation</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapMedicationRecommendation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>MedicationRequest<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;mrId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung'</span> <i>&quot;mrProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed statuses for a proposal-type recommendation</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;mrStatus&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.intent = <span style="color: blue">'proposal'</span> <i>&quot;mrIntent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;mrSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">authoredOn ← issuedOn</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.authoredOn = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;mrAuthoredOn&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">reasonReference ← indication (MTBDiagnosis)</span>
+  src.indication<b> as </b><span style="color: maroon">ind</span><span style="color: navy"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style="color: maroon">rr</span><b> then</b><span style="color: navy"> {
+</span>    ind.id<b> as </b><span style="color: maroon">iid</span><span style="color: navy"><b> -&gt; </b></span>rr.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">iid</span><span style="color: navy">)</span> <i>&quot;mrReasonRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrReason&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">medicationCodeableConcept: one coding per medication entry (ATC)</span>
+  src.medication<b> as </b><span style="color: maroon">med</span><span style="color: navy"><b> -&gt; </b></span>tgt.medicationCodeableConcept<b> as </b><span style="color: maroon">mcc</span><b> then</b><span style="color: navy"> {
+</span>    med<span style="color: navy"><b> -&gt; </b></span>mcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      med.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrMedCode&quot;</i><span style="color: navy">;</span>
+      med.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrMedSystem&quot;</i><span style="color: navy">;</span>
+      med.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrMedDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mrMedCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrMedication&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Priority extension: MII_EX_MTB_Empfehlung_Prioritaet (valuePositiveInt)</span>
+  src.priority<b> as </b><span style="color: maroon">prio</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    prio<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet'</span> <i>&quot;mrPrioUrl&quot;</i><span style="color: navy">;</span>
+    prio.code<b> as </b><span style="color: maroon">pc</span><span style="color: navy"><b> -&gt; </b></span>ext.value = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">pc</span><span style="color: navy">, </span><span style="color: blue">'positiveInt'</span><span style="color: navy">)</span> <i>&quot;mrPrioValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrPriority&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Level of evidence: grading → MII_EX_MTB_Empfehlung_Evidenzgraduierung (CodeableConcept)</span>
+  src.levelOfEvidence<b> as </b><span style="color: maroon">loe</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">extLoe</span><b> then</b><span style="color: navy"> {
+</span>    loe<span style="color: navy"><b> -&gt; </b></span>extLoe.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung'</span> <i>&quot;mrLoeUrl&quot;</i><span style="color: navy">;</span>
+    loe<span style="color: navy"><b> -&gt; </b></span>extLoe.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">loeCC</span><b> then</b><span style="color: navy"> {
+</span>      <span style="color: navy">// </span><span style="color: green">Evidenzgrad slice (system = mii-cs-mtb-empfehlung-evidenzgrad)</span>
+      loe.grading<b> as </b><span style="color: maroon">grad</span><span style="color: navy"><b> -&gt; </b></span>loeCC.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        grad.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrGradCode&quot;</i><span style="color: navy">;</span>
+        grad.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrGradSystem&quot;</i><span style="color: navy">;</span>
+        grad.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrGradDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;mrGrading&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">// </span><span style="color: green">Zusatzverweis slice (addendums; system = mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis)</span>
+      loe.addendums<b> as </b><span style="color: maroon">add</span><span style="color: navy"><b> -&gt; </b></span>loeCC.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        add.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrAddCode&quot;</i><span style="color: navy">;</span>
+        add.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrAddSystem&quot;</i><span style="color: navy">;</span>
+        add.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mrAddDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;mrAddendum&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mrLoeCC&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrLoe&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Publications: MII_EX_MTB_Empfehlung_Publikation (Identifier)</span>
+  <span style="color: navy">// </span><span style="color: green">PMID → system = http://www.ncbi.nlm.nih.gov/pubmed</span>
+  src.levelOfEvidence<b> as </b><span style="color: maroon">loe</span><span style="color: navy"><b> -&gt; </b></span>tgt<b> then</b><span style="color: navy"> {
+</span>    loe.publications<b> as </b><span style="color: maroon">pub</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">extPub</span><b> then</b><span style="color: navy"> {
+</span>      pub<span style="color: navy"><b> -&gt; </b></span>extPub.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation'</span> <i>&quot;mrPubUrl&quot;</i><span style="color: navy">;</span>
+      pub.pmid<b> as </b><span style="color: maroon">pmid</span><span style="color: navy"><b> -&gt; </b></span>extPub.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Identifier'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">ident</span><b> then</b><span style="color: navy"> {
+</span>        pmid<span style="color: navy"><b> -&gt; </b></span>ident.system = <span style="color: blue">'http://www.ncbi.nlm.nih.gov/pubmed'</span> <i>&quot;mrPubPmidSystem&quot;</i><span style="color: navy">;</span>
+        pmid<span style="color: navy"><b> -&gt; </b></span>ident.value = <span style="color: maroon">pmid</span> <i>&quot;mrPubPmidValue&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;mrPubPmidIdent&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mrPubPmid&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrPubLoe&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">DOI publication</span>
+  src.levelOfEvidence<b> as </b><span style="color: maroon">loe</span><span style="color: navy"><b> -&gt; </b></span>tgt<b> then</b><span style="color: navy"> {
+</span>    loe.publications<b> as </b><span style="color: maroon">pub</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">extDoi</span><b> then</b><span style="color: navy"> {
+</span>      pub<span style="color: navy"><b> -&gt; </b></span>extDoi.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation'</span> <i>&quot;mrDoiUrl&quot;</i><span style="color: navy">;</span>
+      pub.doi<b> as </b><span style="color: maroon">doi</span><span style="color: navy"><b> -&gt; </b></span>extDoi.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Identifier'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">identDoi</span><b> then</b><span style="color: navy"> {
+</span>        doi<span style="color: navy"><b> -&gt; </b></span>identDoi.system = <span style="color: blue">'http://doi.org'</span> <i>&quot;mrDoiSystem&quot;</i><span style="color: navy">;</span>
+        doi<span style="color: navy"><b> -&gt; </b></span>identDoi.value = <span style="color: maroon">doi</span> <i>&quot;mrDoiValue&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;mrDoiIdent&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mrPubDoi&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrDoiLoe&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">supportingVariants as reasonReference (variant resources created in NGS map)</span>
+  src.supportingVariants<b> as </b><span style="color: maroon">sv</span><span style="color: navy"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style="color: maroon">rrSv</span><b> then</b><span style="color: navy"> {
+</span>    sv.id<b> as </b><span style="color: maroon">vid</span><span style="color: navy"><b> -&gt; </b></span>rrSv.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">vid</span><span style="color: navy">)</span> <i>&quot;mrSvRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mrSupportingVariants&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapGeneticCounseling: geneticCounselingRecommendation → ServiceRequest</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Humangenetische_Beratung_Auftrag</span>
+<span style="color: navy">// </span><span style="color: green">code = SCT#788339009 &quot;Genetic consultation (procedure)&quot;</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapGeneticCounseling<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>ServiceRequest<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;gcrId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag'</span> <i>&quot;gcrProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gcrMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;gcrStatus&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.intent = <span style="color: blue">'proposal'</span> <i>&quot;gcrIntent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed code: SNOMED CT #788339009 &quot;Genetic consultation (procedure)&quot;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;gcrCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'788339009'</span> <i>&quot;gcrCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Genetic consultation (procedure)'</span> <i>&quot;gcrCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gcrCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gcrCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;gcrSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gcrSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">authoredOn ← issuedOn</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.authoredOn = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;gcrAuthoredOn&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">reasonCode ← reason coding</span>
+  src.reason<b> as </b><span style="color: maroon">r</span><span style="color: navy"><b> -&gt; </b></span>tgt.reasonCode<b> as </b><span style="color: maroon">rc</span><b> then</b><span style="color: navy"> {
+</span>    r<span style="color: navy"><b> -&gt; </b></span>rc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      r.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gcrReasonCode&quot;</i><span style="color: navy">;</span>
+      r.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gcrReasonSystem&quot;</i><span style="color: navy">;</span>
+      r.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gcrReasonDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gcrReasonCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;gcrReasonCode&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapStudyEnrollmentRecommendation: studyEnrollmentRecommendation → ServiceRequest</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Studieneinschluss_Anfrage</span>
+<span style="color: navy">// </span><span style="color: green">code  = SCT#702475000 &quot;Referral to clinical trial (procedure)&quot;</span>
+<span style="color: navy">// </span><span style="color: green">category = SCT#110465008 &quot;Clinical trial (procedure)&quot;</span>
+<span style="color: navy">// </span><span style="color: green">Each study[] entry → ResearchStudy added to bundle + supportingInfo reference</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapStudyEnrollmentRecommendation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>ServiceRequest, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;serSrId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage'</span> <i>&quot;serSrProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;serSrMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;serSrStatus&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.intent = <span style="color: blue">'proposal'</span> <i>&quot;serSrIntent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">category = SCT#110465008</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.category<b> as </b><span style="color: maroon">cat</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>cat.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;serCatSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'110465008'</span> <i>&quot;serCatCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Clinical trial (procedure)'</span> <i>&quot;serCatDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;serCatCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;serCategory&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">code = SCT#702475000</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;serCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'702475000'</span> <i>&quot;serCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Referral to clinical trial (procedure)'</span> <i>&quot;serCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;serCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;serCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;serSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;serSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">authoredOn ← issuedOn</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.authoredOn = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;serAuthoredOn&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">reasonReference ← indication (MTBDiagnosis)</span>
+  src.indication<b> as </b><span style="color: maroon">ind</span><span style="color: navy"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style="color: maroon">rr</span><b> then</b><span style="color: navy"> {
+</span>    ind.id<b> as </b><span style="color: maroon">iid</span><span style="color: navy"><b> -&gt; </b></span>rr.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">iid</span><span style="color: navy">)</span> <i>&quot;serReasonRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;serReason&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">supportingVariants as reasonReference</span>
+  src.supportingVariants<b> as </b><span style="color: maroon">sv</span><span style="color: navy"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style="color: maroon">rrSv</span><b> then</b><span style="color: navy"> {
+</span>    sv.id<b> as </b><span style="color: maroon">vid</span><span style="color: navy"><b> -&gt; </b></span>rrSv.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">vid</span><span style="color: navy">)</span> <i>&quot;serSvRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;serVariants&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Each study → ResearchStudy resource in bundle + supportingInfo reference</span>
+  src.studies<b> as </b><span style="color: maroon">study</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'ResearchStudy'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">rs</span><span style="color: navy">, </span> tgt.supportingInfo<b> as </b><span style="color: maroon">si</span><b> then</b><span style="color: navy"> {
+</span>    study.id<b> as </b><span style="color: maroon">studyid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">studyid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    study.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>si.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;serStudySiRef&quot;</i><span style="color: navy">;</span>
+    study<span style="color: navy"><b> -&gt; </b></span>rs<b> then </b>MapStudy<span style="color: navy">(</span><span style="color: maroon">study</span><span style="color: navy">, </span><span style="color: maroon">rs</span><span style="color: navy">)</span> <i>&quot;mapStudy&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;serStudy&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapStudy: study reference → ResearchStudy</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Studie — identifier sliced by system</span>
+<span style="color: navy">// </span><span style="color: green">NCT system = https://clinicaltrials.gov/study</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapStudy<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>ResearchStudy<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;studyId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie'</span> <i>&quot;studyProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;studyMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Required status (no DNPM source → use active as default)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;studyStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">identifier: system from study.system, value from study.id (e.g. NCT number)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.identifier<b> as </b><span style="color: maroon">ident</span><b> then</b><span style="color: navy"> {
+</span>    src.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>ident.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;studyIdentSystem&quot;</i><span style="color: navy">;</span>
+    src.id<b> as </b><span style="color: maroon">idV</span><span style="color: navy"><b> -&gt; </b></span>ident.value = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">idV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;studyIdentValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;studyIdentifier&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan"/>
+  <version value="2026.0.1"/>
+  <name value="SMCarePlan"/>
+  <status value="draft"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record"/>
+    <mode value="source"/>
+    <alias value="DNPMPatientRecord"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/CarePlan"/>
+    <mode value="produced"/>
+    <alias value="CarePlan"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/MedicationRequest"/>
+    <mode value="produced"/>
+    <alias value="MedicationRequest"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
+    <mode value="produced"/>
+    <alias value="ServiceRequest"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/ResearchStudy"/>
+    <mode value="produced"/>
+    <alias value="ResearchStudy"/>
+  </structure>
+  <group>
+    <name value="CarePlans"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Root group: iterate carePlans array; produces CarePlan + child resources&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="bundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="collection"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="carePlan"/>
+      <source>
+        <context value="src"/>
+        <element value="carePlans"/>
+        <variable value="cp"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="tgtCp"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="CarePlan"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="cp"/>
+          <element value="id"/>
+          <variable value="cpid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="cpid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="cp"/>
+        </source>
+        <target>
+          <context value="tgtCp"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapCarePlan"/>
+          <variable value="cp"/>
+          <variable value="tgtCp"/>
+          <variable value="bundle"/>
+        </dependent>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapCarePlan"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapCarePlan: single carePlan entry → FHIR CarePlan&#xD;&#xA;Profile: MII_PR_MTB_Therapieplan (Parent: MII_PR_Onko_Tumorkonferenz)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="CarePlan"/>
+      <mode value="target"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="cpId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="cpMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="cpProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="cpStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+      <documentation value="Fixed values required by CarePlan"/>
+    </rule>
+    <rule>
+      <name value="cpIntent"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="intent"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="plan"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="cpSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="cpSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="cpCreated"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="issuedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="created"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="issuedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="date"/>
+        </parameter>
+      </target>
+      <documentation value="created ← issuedOn"/>
+    </rule>
+    <rule>
+      <name value="cpAddresses"/>
+      <source>
+        <context value="src"/>
+        <element value="reason"/>
+        <variable value="r"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="addresses"/>
+        <variable value="addr"/>
+      </target>
+      <rule>
+        <name value="cpReasonRef"/>
+        <source>
+          <context value="r"/>
+          <element value="id"/>
+          <variable value="rid"/>
+        </source>
+        <target>
+          <context value="addr"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="rid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="addresses ← reason (MTBDiagnosis reference)"/>
+    </rule>
+    <rule>
+      <name value="medicationRecommendation"/>
+      <source>
+        <context value="src"/>
+        <element value="medicationRecommendations"/>
+        <variable value="rec"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="mr"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="MedicationRequest"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="activity"/>
+        <variable value="act"/>
+      </target>
+      <target>
+        <context value="act"/>
+        <contextType value="variable"/>
+        <element value="reference"/>
+        <variable value="actRef"/>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="rec"/>
+          <element value="id"/>
+          <variable value="recid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="recid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="mrActRef"/>
+        <source>
+          <context value="rec"/>
+          <element value="id"/>
+          <variable value="rid"/>
+        </source>
+        <target>
+          <context value="actRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="rid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="mapMedRec"/>
+        <source>
+          <context value="rec"/>
+        </source>
+        <target>
+          <context value="mr"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapMedicationRecommendation"/>
+          <variable value="rec"/>
+          <variable value="mr"/>
+        </dependent>
+      </rule>
+      <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Medication Recommendations → MedicationRequest per recommendation&#xD;&#xA;---------------------------------------------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="geneticCounseling"/>
+      <source>
+        <context value="src"/>
+        <element value="geneticCounselingRecommendation"/>
+        <variable value="gcr"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="sr"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="ServiceRequest"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="activity"/>
+        <variable value="act"/>
+      </target>
+      <target>
+        <context value="act"/>
+        <contextType value="variable"/>
+        <element value="reference"/>
+        <variable value="actRef"/>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="gcr"/>
+          <element value="id"/>
+          <variable value="gcrid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="gcrid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="gcrActRef"/>
+        <source>
+          <context value="gcr"/>
+          <element value="id"/>
+          <variable value="gid"/>
+        </source>
+        <target>
+          <context value="actRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="gid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="mapGcr"/>
+        <source>
+          <context value="gcr"/>
+        </source>
+        <target>
+          <context value="sr"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapGeneticCounseling"/>
+          <variable value="gcr"/>
+          <variable value="sr"/>
+        </dependent>
+      </rule>
+      <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Genetic Counseling Recommendation → ServiceRequest&#xD;&#xA;---------------------------------------------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="studyEnrollmentRec"/>
+      <source>
+        <context value="src"/>
+        <element value="studyEnrollmentRecommendations"/>
+        <variable value="ser"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="srSer"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="ServiceRequest"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="activity"/>
+        <variable value="act"/>
+      </target>
+      <target>
+        <context value="act"/>
+        <contextType value="variable"/>
+        <element value="reference"/>
+        <variable value="actRef"/>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="ser"/>
+          <element value="id"/>
+          <variable value="serid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="serid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="serActRef"/>
+        <source>
+          <context value="ser"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="actRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="mapSer"/>
+        <source>
+          <context value="ser"/>
+        </source>
+        <target>
+          <context value="srSer"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapStudyEnrollmentRecommendation"/>
+          <variable value="ser"/>
+          <variable value="srSer"/>
+          <variable value="bundle"/>
+        </dependent>
+      </rule>
+      <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Study Enrollment Recommendations → ServiceRequest (Studieneinschluss-Anfrage)&#xD;&#xA;+ ResearchStudy per study entry&#xD;&#xA;---------------------------------------------------------------------------"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapMedicationRecommendation"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapMedicationRecommendation: single medicationRecommendation → MedicationRequest&#xD;&#xA;Profile: MII_PR_MTB_Therapieempfehlung (or Kombination via RequestGroup)&#xD;&#xA;Extensions: MII_EX_MTB_Empfehlung_Prioritaet,&#xD;&#xA;MII_EX_MTB_Empfehlung_Evidenzgraduierung,&#xD;&#xA;MII_EX_MTB_Empfehlung_Publikation&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="MedicationRequest"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="mrId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="mrMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="mrProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="mrStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+      <documentation value="Fixed statuses for a proposal-type recommendation"/>
+    </rule>
+    <rule>
+      <name value="mrIntent"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="intent"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="proposal"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="mrSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="mrSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="mrAuthoredOn"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="issuedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="authoredOn"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="issuedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <documentation value="authoredOn ← issuedOn"/>
+    </rule>
+    <rule>
+      <name value="mrReason"/>
+      <source>
+        <context value="src"/>
+        <element value="indication"/>
+        <variable value="ind"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="reasonReference"/>
+        <variable value="rr"/>
+      </target>
+      <rule>
+        <name value="mrReasonRef"/>
+        <source>
+          <context value="ind"/>
+          <element value="id"/>
+          <variable value="iid"/>
+        </source>
+        <target>
+          <context value="rr"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="iid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="reasonReference ← indication (MTBDiagnosis)"/>
+    </rule>
+    <rule>
+      <name value="mrMedication"/>
+      <source>
+        <context value="src"/>
+        <element value="medication"/>
+        <variable value="med"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="medicationCodeableConcept"/>
+        <variable value="mcc"/>
+      </target>
+      <rule>
+        <name value="mrMedCoding"/>
+        <source>
+          <context value="med"/>
+        </source>
+        <target>
+          <context value="mcc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="mrMedCode"/>
+          <source>
+            <context value="med"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mrMedSystem"/>
+          <source>
+            <context value="med"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mrMedDisplay"/>
+          <source>
+            <context value="med"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="medicationCodeableConcept: one coding per medication entry (ATC)"/>
+    </rule>
+    <rule>
+      <name value="mrPriority"/>
+      <source>
+        <context value="src"/>
+        <element value="priority"/>
+        <variable value="prio"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+      </target>
+      <rule>
+        <name value="mrPrioUrl"/>
+        <source>
+          <context value="prio"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="mrPrioValue"/>
+        <source>
+          <context value="prio"/>
+          <element value="code"/>
+          <variable value="pc"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="pc"/>
+          </parameter>
+          <parameter>
+            <valueString value="positiveInt"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Priority extension: MII_EX_MTB_Empfehlung_Prioritaet (valuePositiveInt)"/>
+    </rule>
+    <rule>
+      <name value="mrLoe"/>
+      <source>
+        <context value="src"/>
+        <element value="levelOfEvidence"/>
+        <variable value="loe"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="extLoe"/>
+      </target>
+      <rule>
+        <name value="mrLoeUrl"/>
+        <source>
+          <context value="loe"/>
+        </source>
+        <target>
+          <context value="extLoe"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="mrLoeCC"/>
+        <source>
+          <context value="loe"/>
+        </source>
+        <target>
+          <context value="extLoe"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="loeCC"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="CodeableConcept"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="mrGrading"/>
+          <source>
+            <context value="loe"/>
+            <element value="grading"/>
+            <variable value="grad"/>
+          </source>
+          <target>
+            <context value="loeCC"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="mrGradCode"/>
+            <source>
+              <context value="grad"/>
+              <element value="code"/>
+              <variable value="codeV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="codeV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="mrGradSystem"/>
+            <source>
+              <context value="grad"/>
+              <element value="system"/>
+              <variable value="systemV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="systemV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="mrGradDisplay"/>
+            <source>
+              <context value="grad"/>
+              <element value="display"/>
+              <variable value="displayV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="displayV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <documentation value="Evidenzgrad slice (system = mii-cs-mtb-empfehlung-evidenzgrad)"/>
+        </rule>
+        <rule>
+          <name value="mrAddendum"/>
+          <source>
+            <context value="loe"/>
+            <element value="addendums"/>
+            <variable value="add"/>
+          </source>
+          <target>
+            <context value="loeCC"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="mrAddCode"/>
+            <source>
+              <context value="add"/>
+              <element value="code"/>
+              <variable value="codeV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="codeV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="mrAddSystem"/>
+            <source>
+              <context value="add"/>
+              <element value="system"/>
+              <variable value="systemV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="systemV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="mrAddDisplay"/>
+            <source>
+              <context value="add"/>
+              <element value="display"/>
+              <variable value="displayV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="displayV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <documentation value="Zusatzverweis slice (addendums; system = mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis)"/>
+        </rule>
+      </rule>
+      <documentation value="Level of evidence: grading → MII_EX_MTB_Empfehlung_Evidenzgraduierung (CodeableConcept)"/>
+    </rule>
+    <rule>
+      <name value="mrPubLoe"/>
+      <source>
+        <context value="src"/>
+        <element value="levelOfEvidence"/>
+        <variable value="loe"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+      </target>
+      <rule>
+        <name value="mrPubPmid"/>
+        <source>
+          <context value="loe"/>
+          <element value="publications"/>
+          <variable value="pub"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="extension"/>
+          <variable value="extPub"/>
+        </target>
+        <rule>
+          <name value="mrPubUrl"/>
+          <source>
+            <context value="pub"/>
+          </source>
+          <target>
+            <context value="extPub"/>
+            <contextType value="variable"/>
+            <element value="url"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mrPubPmidIdent"/>
+          <source>
+            <context value="pub"/>
+            <element value="pmid"/>
+            <variable value="pmid"/>
+          </source>
+          <target>
+            <context value="extPub"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="ident"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Identifier"/>
+            </parameter>
+          </target>
+          <rule>
+            <name value="mrPubPmidSystem"/>
+            <source>
+              <context value="pmid"/>
+            </source>
+            <target>
+              <context value="ident"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="http://www.ncbi.nlm.nih.gov/pubmed"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="mrPubPmidValue"/>
+            <source>
+              <context value="pmid"/>
+            </source>
+            <target>
+              <context value="ident"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="pmid"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <documentation value="Publications: MII_EX_MTB_Empfehlung_Publikation (Identifier)&#xD;&#xA;PMID → system = http://www.ncbi.nlm.nih.gov/pubmed"/>
+    </rule>
+    <rule>
+      <name value="mrDoiLoe"/>
+      <source>
+        <context value="src"/>
+        <element value="levelOfEvidence"/>
+        <variable value="loe"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+      </target>
+      <rule>
+        <name value="mrPubDoi"/>
+        <source>
+          <context value="loe"/>
+          <element value="publications"/>
+          <variable value="pub"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="extension"/>
+          <variable value="extDoi"/>
+        </target>
+        <rule>
+          <name value="mrDoiUrl"/>
+          <source>
+            <context value="pub"/>
+          </source>
+          <target>
+            <context value="extDoi"/>
+            <contextType value="variable"/>
+            <element value="url"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mrDoiIdent"/>
+          <source>
+            <context value="pub"/>
+            <element value="doi"/>
+            <variable value="doi"/>
+          </source>
+          <target>
+            <context value="extDoi"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="identDoi"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Identifier"/>
+            </parameter>
+          </target>
+          <rule>
+            <name value="mrDoiSystem"/>
+            <source>
+              <context value="doi"/>
+            </source>
+            <target>
+              <context value="identDoi"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="http://doi.org"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="mrDoiValue"/>
+            <source>
+              <context value="doi"/>
+            </source>
+            <target>
+              <context value="identDoi"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="doi"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <documentation value="DOI publication"/>
+    </rule>
+    <rule>
+      <name value="mrSupportingVariants"/>
+      <source>
+        <context value="src"/>
+        <element value="supportingVariants"/>
+        <variable value="sv"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="reasonReference"/>
+        <variable value="rrSv"/>
+      </target>
+      <rule>
+        <name value="mrSvRef"/>
+        <source>
+          <context value="sv"/>
+          <element value="id"/>
+          <variable value="vid"/>
+        </source>
+        <target>
+          <context value="rrSv"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="vid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="supportingVariants as reasonReference (variant resources created in NGS map)"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapGeneticCounseling"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapGeneticCounseling: geneticCounselingRecommendation → ServiceRequest&#xD;&#xA;Profile: MII_PR_MTB_Humangenetische_Beratung_Auftrag&#xD;&#xA;code = SCT#788339009 &quot;Genetic consultation (procedure)&quot;&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="ServiceRequest"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="gcrId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gcrMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="gcrProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="gcrStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gcrIntent"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="intent"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="proposal"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="gcrCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="gcrCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="gcrCodeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gcrCodeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="788339009"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gcrCodeDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Genetic consultation (procedure)"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Fixed code: SNOMED CT #788339009 &quot;Genetic consultation (procedure)&quot;"/>
+    </rule>
+    <rule>
+      <name value="gcrSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="gcrSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="gcrAuthoredOn"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="issuedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="authoredOn"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="issuedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <documentation value="authoredOn ← issuedOn"/>
+    </rule>
+    <rule>
+      <name value="gcrReasonCode"/>
+      <source>
+        <context value="src"/>
+        <element value="reason"/>
+        <variable value="r"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="reasonCode"/>
+        <variable value="rc"/>
+      </target>
+      <rule>
+        <name value="gcrReasonCoding"/>
+        <source>
+          <context value="r"/>
+        </source>
+        <target>
+          <context value="rc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="gcrReasonCode"/>
+          <source>
+            <context value="r"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gcrReasonSystem"/>
+          <source>
+            <context value="r"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gcrReasonDisplay"/>
+          <source>
+            <context value="r"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="reasonCode ← reason coding"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapStudyEnrollmentRecommendation"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapStudyEnrollmentRecommendation: studyEnrollmentRecommendation → ServiceRequest&#xD;&#xA;Profile: MII_PR_MTB_Studieneinschluss_Anfrage&#xD;&#xA;code  = SCT#702475000 &quot;Referral to clinical trial (procedure)&quot;&#xD;&#xA;category = SCT#110465008 &quot;Clinical trial (procedure)&quot;&#xD;&#xA;Each study[] entry → ResearchStudy added to bundle + supportingInfo reference&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="ServiceRequest"/>
+      <mode value="target"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="serSrId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="serSrMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="serSrProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="serSrStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="serSrIntent"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="intent"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="proposal"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="serCategory"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="category"/>
+        <variable value="cat"/>
+      </target>
+      <rule>
+        <name value="serCatCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="cat"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="serCatSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="serCatCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="110465008"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="serCatDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Clinical trial (procedure)"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="category = SCT#110465008"/>
+    </rule>
+    <rule>
+      <name value="serCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="serCodeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="serCodeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="serCodeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="702475000"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="serCodeDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Referral to clinical trial (procedure)"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="code = SCT#702475000"/>
+    </rule>
+    <rule>
+      <name value="serSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="serSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="serAuthoredOn"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="issuedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="authoredOn"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="issuedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <documentation value="authoredOn ← issuedOn"/>
+    </rule>
+    <rule>
+      <name value="serReason"/>
+      <source>
+        <context value="src"/>
+        <element value="indication"/>
+        <variable value="ind"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="reasonReference"/>
+        <variable value="rr"/>
+      </target>
+      <rule>
+        <name value="serReasonRef"/>
+        <source>
+          <context value="ind"/>
+          <element value="id"/>
+          <variable value="iid"/>
+        </source>
+        <target>
+          <context value="rr"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="iid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="reasonReference ← indication (MTBDiagnosis)"/>
+    </rule>
+    <rule>
+      <name value="serVariants"/>
+      <source>
+        <context value="src"/>
+        <element value="supportingVariants"/>
+        <variable value="sv"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="reasonReference"/>
+        <variable value="rrSv"/>
+      </target>
+      <rule>
+        <name value="serSvRef"/>
+        <source>
+          <context value="sv"/>
+          <element value="id"/>
+          <variable value="vid"/>
+        </source>
+        <target>
+          <context value="rrSv"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="vid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="supportingVariants as reasonReference"/>
+    </rule>
+    <rule>
+      <name value="serStudy"/>
+      <source>
+        <context value="src"/>
+        <element value="studies"/>
+        <variable value="study"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="rs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="ResearchStudy"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="supportingInfo"/>
+        <variable value="si"/>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="study"/>
+          <element value="id"/>
+          <variable value="studyid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="studyid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="serStudySiRef"/>
+        <source>
+          <context value="study"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="si"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="mapStudy"/>
+        <source>
+          <context value="study"/>
+        </source>
+        <target>
+          <context value="rs"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapStudy"/>
+          <variable value="study"/>
+          <variable value="rs"/>
+        </dependent>
+      </rule>
+      <documentation value="Each study → ResearchStudy resource in bundle + supportingInfo reference"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapStudy"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapStudy: study reference → ResearchStudy&#xD;&#xA;Profile: MII_PR_MTB_Studie — identifier sliced by system&#xD;&#xA;NCT system = https://clinicaltrials.gov/study&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="ResearchStudy"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="studyId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="studyMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="studyProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="studyStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+      <documentation value="Required status (no DNPM source → use active as default)"/>
+    </rule>
+    <rule>
+      <name value="studyIdentifier"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="ident"/>
+      </target>
+      <rule>
+        <name value="studyIdentSystem"/>
+        <source>
+          <context value="src"/>
+          <element value="system"/>
+          <variable value="systemV"/>
+        </source>
+        <target>
+          <context value="ident"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="systemV"/>
+          </parameter>
+          <parameter>
+            <valueString value="string"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="studyIdentValue"/>
+        <source>
+          <context value="src"/>
+          <element value="id"/>
+          <variable value="idV"/>
+        </source>
+        <target>
+          <context value="ident"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="idV"/>
+          </parameter>
+          <parameter>
+            <valueString value="string"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="identifier: system from study.system, value from study.id (e.g. NCT number)"/>
+    </rule>
+  </group>
+</StructureMap>

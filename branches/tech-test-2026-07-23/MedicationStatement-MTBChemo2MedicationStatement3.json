@@ -1,0 +1,48 @@
+{
+  "resourceType" : "MedicationStatement",
+  "id" : "MTBChemo2MedicationStatement3",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement MTBChemo2MedicationStatement3</b></p><a name=\"MTBChemo2MedicationStatement3\"> </a><a name=\"hcMTBChemo2MedicationStatement3\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.medikation@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement\">MII PR Medikation MedicationStatement</a></p></div><p><b>basedOn</b>: <a href=\"MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html\">MedicationRequest: extension = 1,m1A,http://doi.org#10.1200/JCO.2022.40.16_suppl.5512,http://www.ncbi.nlm.nih.gov/pubmed#38055253; status = completed; intent = proposal; medication[x] = MIRVETUXIMAB SORAVTANSINE; authoredOn = 2023-03-28</a></p><p><b>partOf</b>: <a href=\"Procedure-MTBChemo2Procedure.html\">Procedure Chemotherapy</a></p><p><b>status</b>: Completed</p><p><b>medication</b>: <span title=\"Codes:{http://fdasis.nlm.nih.gov 98DE7VN88D}, {http://fhir.de/CodeSystem/bfarm/atc L01FX26}\">MIRVETUXIMAB SORAVTANSINE</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>effective</b>: 2023-08-07</p><p><b>note</b>: </p><blockquote><div><p>Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22</p>\n</div></blockquote><blockquote><p><b>dosage</b></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>6 mg/kg KG<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg/kg{KG} = 'mg/kg{KG}')</span></td></tr></table></blockquote></div>"
+  },
+  "basedOn" : [{
+    "reference" : "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"
+  }],
+  "partOf" : [{
+    "reference" : "Procedure/MTBChemo2Procedure"
+  }],
+  "status" : "completed",
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fdasis.nlm.nih.gov",
+      "code" : "98DE7VN88D",
+      "display" : "MIRVETUXIMAB SORAVTANSINE"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/atc",
+      "version" : "2025",
+      "code" : "L01FX26",
+      "display" : "Mirvetuximab soravtansin"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime" : "2023-08-07",
+  "note" : [{
+    "text" : "Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+  }],
+  "dosage" : [{
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "value" : 6,
+        "unit" : "mg/kg KG",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mg/kg{KG}"
+      }
+    }]
+  }]
+}

@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-kim-humangenetische-beratung-aszites"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest mii-exa-mtb-kim-humangenetische-beratung-aszites</b></p><a name=\"mii-exa-mtb-kim-humangenetische-beratung-aszites\"> </a><a name=\"hcmii-exa-mtb-kim-humangenetische-beratung-aszites\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html\">MII PR MTB Human-genetische Beratung Auftrag</a> version: 2026.0.1</p></div><p><b>status</b>: Completed</p><p><b>intent</b>: Proposal</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 788339009}\">Genetic consultation (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>reasonCode</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung secondary-tumor}\">Zweittumor</span></p><p><b>specimen</b>: <a href=\"Specimen-PatientKimMusterperson-AscitesSpecimen-2.html\">Specimen: accessionIdentifier = Z230201/23; type = Ascitic fluid specimen (specimen)</a></p></div>"
+  ] ;
+  fhir:ServiceRequest.status [ fhir:value "completed"] ;
+  fhir:ServiceRequest.intent [ fhir:value "proposal"] ;
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:788339009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "788339009" ] ;
+       fhir:Coding.display [ fhir:value "Genetic consultation (procedure)" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung" ] ;
+       fhir:Coding.code [ fhir:value "secondary-tumor" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.specimen [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Specimen/PatientKimMusterperson-AscitesSpecimen-2> ;
+     fhir:Reference.reference [ fhir:value "Specimen/PatientKimMusterperson-AscitesSpecimen-2" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,28 @@
+{
+  "resourceType" : "MedicationRequest",
+  "id" : "mii-exa-mtb-therapieempfehlung-dabrafenib",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.1"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest mii-exa-mtb-therapieempfehlung-dabrafenib</b></p><a name=\"mii-exa-mtb-therapieempfehlung-dabrafenib\"> </a><a name=\"hcmii-exa-mtb-therapieempfehlung-dabrafenib\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-therapieempfehlung.html\">MII PR MTB Therapieempfehlung Systemische Therapie</a> version: 2026.0.1</p></div><p><b>status</b>: Active</p><p><b>intent</b>: Option</p><p><b>medication</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/atc L01EC02}\">Dabrafenib</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-mtb-patient.html\">Maxim Muster  (no stated gender), DoB Unknown</a></p><p><b>authoredOn</b>: 2024-01-01</p><p><b>reasonReference</b>: <a href=\"Condition-PatientKimMusterperson-PrimaryDiagnosis-2.html\">Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet</a></p></div>"
+  },
+  "status" : "active",
+  "intent" : "option",
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/bfarm/atc",
+      "version" : "2025",
+      "code" : "L01EC02",
+      "display" : "Dabrafenib"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/mii-exa-mtb-patient"
+  },
+  "authoredOn" : "2024-01-01",
+  "reasonReference" : [{
+    "reference" : "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+  }]
+}

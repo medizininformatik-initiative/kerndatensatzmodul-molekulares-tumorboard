@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PatientKimMusterperson-Observation-9"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-9</b></p><a name="PatientKimMusterperson-Observation-9"> </a><a name="hcPatientKimMusterperson-Observation-9"> </a><p><b>partOf</b>: <a href="Procedure-PatientKimMusterperson-Procedure-3.html">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 112231000}, {http://snomed.info/sct 174430004}">Status post (contextual qualifier) (qualifier value)</span></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 309201001}, {http://snomed.info/sct 249567002}">regrediente Flüssigkeitskollektion am Leberrand</span></p><p><b>bodySite</b>: <span title="Codes:{http://snomed.info/sct 181268008}">Entire liver</span></p></div>
+  </text>
+  <partOf>
+    <reference value="Procedure/PatientKimMusterperson-Procedure-3"/>
+  </partOf>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="237679004"/>
+      <display value="Status post (contextual qualifier) (qualifier value)"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="112231000"/>
+      <display value="Atypical"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="174430004"/>
+      <display value="Resection of segment of liver (procedure)"/>
+    </coding>
+  </code>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="309201001"/>
+      <display value="Ascitic fluid specimen"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="249567002"/>
+      <display value="Liver edge (finding)"/>
+    </coding>
+    <text value="regrediente Flüssigkeitskollektion am Leberrand"/>
+  </valueCodeableConcept>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="181268008"/>
+      <display value="Entire liver"/>
+    </coding>
+  </bodySite>
+</Observation>

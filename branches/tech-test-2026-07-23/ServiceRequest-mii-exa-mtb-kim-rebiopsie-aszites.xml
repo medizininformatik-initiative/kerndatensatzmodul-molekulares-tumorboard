@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-kim-rebiopsie-aszites"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag|2026.0.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ServiceRequest mii-exa-mtb-kim-rebiopsie-aszites</b></p><a name="mii-exa-mtb-kim-rebiopsie-aszites"> </a><a name="hcmii-exa-mtb-kim-rebiopsie-aszites"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-biopsie-auftrag.html">MII PR MTB Biopsie Auftrag</a> version: 2026.0.1</p></div><p><b>status</b>: Completed</p><p><b>intent</b>: Proposal</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 86273004}">Biopsy (procedure)</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>reasonReference</b>: <a href="Observation-mii-exa-mtb-kim-tumorzellgehalt-aszites.html">Observation Cells with cytogenetic abnormality [#] in Blood or Tissue by Molecular genetics method</a></p><p><b>specimen</b>: <a href="Specimen-PatientKimMusterperson-AscitesSpecimen-2.html">Specimen: accessionIdentifier = Z230201/23; type = Ascitic fluid specimen (specimen)</a></p></div>
+  </text>
+  <status value="completed"/>
+  <intent value="proposal"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="86273004"/>
+      <display value="Biopsy (procedure)"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <reasonReference>
+    <reference value="Observation/mii-exa-mtb-kim-tumorzellgehalt-aszites"/>
+  </reasonReference>
+  <specimen>
+    <reference value="Specimen/PatientKimMusterperson-AscitesSpecimen-2"/>
+  </specimen>
+</ServiceRequest>

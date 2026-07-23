@@ -1,0 +1,1440 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/SMClaims> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "SMClaims"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap SMClaims</b></p><a name=\"SMClaims\"> </a><a name=\"hcSMClaims\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims<span style=\"color: navy\">\" = \"</span>SMClaims<span style=\"color: navy\">\"#xD;\n#xD;\n</span><b>uses</b><span style=\"color: navy\"> \"</span><a href=\"StructureDefinition-dnpm-lm-patient-record.html\" title=\"DNPM Patient Record\">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style=\"color: navy\">\" </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/bundle.html\" title=\"Bundle\">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style=\"color: navy\">\" </span><b>alias </b>Bundle <b>as </b><b>target</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/claim.html\" title=\"Claim\">http://hl7.org/fhir/StructureDefinition/Claim</a><span style=\"color: navy\">\" </span><b>alias </b>Claim <b>as </b><b>produced</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/claimresponse.html\" title=\"ClaimResponse\">http://hl7.org/fhir/StructureDefinition/ClaimResponse</a><span style=\"color: navy\">\" </span><b>alias </b>ClaimResponse <b>as </b><b>produced</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Root group: iterate over claims and claimResponses</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<b>group </b>Claims<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>DNPMPatientRecord, <b>target</b> <span style=\"color: maroon\">bundle</span><span style=\"color: navy\"> : </span>Bundle<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Bundle type = collection</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle.type = <span style=\"color: blue\">'collection'</span> <i>\"bundleType\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">--- Claim per claims[] entry ---------------------------------------------</span>#xD;\n  src.claims<b> as </b><span style=\"color: maroon\">claim</span><span style=\"color: navy\"><b> -&gt; </b></span> bundle.entry<b> as </b><span style=\"color: maroon\">e</span><span style=\"color: navy\">, </span> e.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Claim'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtClaim</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    claim.id<b> as </b><span style=\"color: maroon\">claimid</span><span style=\"color: navy\"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">claimid</span><span style=\"color: navy\">)</span> <i>\"fullUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    claim<span style=\"color: navy\"><b> -&gt; </b></span>tgtClaim<b> then </b>MapClaim<span style=\"color: navy\">(</span><span style=\"color: maroon\">claim</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgtClaim</span><span style=\"color: navy\">)</span> <i>\"map\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claim\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">--- ClaimResponse per claimResponses[] entry ----------------------------</span>#xD;\n  src.claimResponses<b> as </b><span style=\"color: maroon\">claimResp</span><span style=\"color: navy\"><b> -&gt; </b></span> bundle.entry<b> as </b><span style=\"color: maroon\">e</span><span style=\"color: navy\">, </span> e.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'ClaimResponse'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtClaimResp</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    claimResp.id<b> as </b><span style=\"color: maroon\">claimRespid</span><span style=\"color: navy\"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">claimRespid</span><span style=\"color: navy\">)</span> <i>\"fullUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    claimResp<span style=\"color: navy\"><b> -&gt; </b></span>tgtClaimResp<b> then </b>MapClaimResponse<span style=\"color: navy\">(</span><span style=\"color: maroon\">claimResp</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgtClaimResp</span><span style=\"color: navy\">)</span> <i>\"map\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimResponse\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">MapClaim: DNPM claims entry → FHIR Claim</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Profile: MII_PR_MTB_Antrag_Kostenuebernahme (Parent: Claim)</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<b>group </b>MapClaim<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>BackboneElement, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Claim<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.id<b> as </b><span style=\"color: maroon\">srcId</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">srcId</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'id'</span><span style=\"color: navy\">)</span> <i>\"claimId\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Profile meta</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.meta<b> as </b><span style=\"color: maroon\">m</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>m.profile = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme'</span> <i>\"claimProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimMeta\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">status = #active (fixed by profile: * status = #active (exactly))</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'active'</span> <i>\"claimStatus\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">use = #preauthorization: DNPM Antrag Kostenuebernahme is a pre-authorization request</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">(request for coverage approval before / at time of treatment decision)</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.use = <span style=\"color: blue\">'preauthorization'</span> <i>\"claimUse\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">type: required CodeableConcept — use a placeholder institutional coding</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">(actual type from dnpm-dip/mtb/claim-type if available; not in LM, use fixed value)</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.type<b> as </b><span style=\"color: maroon\">t</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>t.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      src<span style=\"color: navy\"><b> -&gt; </b></span>c.system = <span style=\"color: blue\">'http://terminology.hl7.org/CodeSystem/claim-type'</span> <i>\"claimTypeSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      src<span style=\"color: navy\"><b> -&gt; </b></span>c.code = <span style=\"color: blue\">'institutional'</span> <i>\"claimTypeCode\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"claimTypeCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimType\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">patient → Patient reference (urn:uuid)</span>#xD;\n  src.patient<b> as </b><span style=\"color: maroon\">pat</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.patient<b> as </b><span style=\"color: maroon\">p</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    pat.id<b> as </b><span style=\"color: maroon\">pid</span><span style=\"color: navy\"><b> -&gt; </b></span>p.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">pid</span><span style=\"color: navy\">)</span> <i>\"claimPatientReference\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimPatient\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">created ← issuedOn</span>#xD;\n  src.issuedOn<b> as </b><span style=\"color: maroon\">issuedOnDt</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.created = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">issuedOnDt</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'date'</span><span style=\"color: navy\">)</span> <i>\"claimCreated\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">provider: required by FHIR Claim — use a placeholder (no DNPM source field)</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Set to a relative reference that implementers can override</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.provider<b> as </b><span style=\"color: maroon\">prov</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>prov.display = <span style=\"color: blue\">'Unknown'</span> <i>\"claimProviderDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimProvider\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">priority: required by FHIR Claim — fixed to 'normal' per profile</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.priority<b> as </b><span style=\"color: maroon\">pri</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>pri.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      src<span style=\"color: navy\"><b> -&gt; </b></span>c.system = <span style=\"color: blue\">'http://terminology.hl7.org/CodeSystem/processpriority'</span> <i>\"claimPrioritySystem\"</i><span style=\"color: navy\">;</span>#xD;\n      src<span style=\"color: navy\"><b> -&gt; </b></span>c.code = <span style=\"color: blue\">'normal'</span> <i>\"claimPriorityCode\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"claimPriorityCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimPriority\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">prescription ← recommendation.id (MTBMedicationRecommendation reference)</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Profile uses Claim.prescription (Reference(MedicationRequest)) for the therapy recommendation</span>#xD;\n  src.recommendation<b> as </b><span style=\"color: maroon\">rec</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.prescription<b> as </b><span style=\"color: maroon\">pres</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    rec.id<b> as </b><span style=\"color: maroon\">rid</span><span style=\"color: navy\"><b> -&gt; </b></span>pres.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">rid</span><span style=\"color: navy\">)</span> <i>\"claimPrescriptionReference\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimPrescription\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">insurance: required by FHIR Claim (1..*)</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Profile requires insurance with focal=true and a sequence number</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.insurance<b> as </b><span style=\"color: maroon\">ins</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>ins.sequence = <span style=\"color: blue\">1</span> <i>\"insSequence\"</i><span style=\"color: navy\">;</span>#xD;\n    src<span style=\"color: navy\"><b> -&gt; </b></span>ins.focal = <span style=\"color: blue\">true</span> <i>\"insFocal\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">// </span><span style=\"color: green\">coverage: placeholder (no insurer data in DNPM LM)</span>#xD;\n    src<span style=\"color: navy\"><b> -&gt; </b></span>ins.coverage<b> as </b><span style=\"color: maroon\">cov</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      src<span style=\"color: navy\"><b> -&gt; </b></span>cov.display = <span style=\"color: blue\">'Unknown'</span> <i>\"insCoverageDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"insCoverage\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimInsurance\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">careTeam[ZPMBeteiligung]: required by profile (1..*)</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">No ZPM practitioner data in DNPM LM; write mandatory structure with placeholder</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.careTeam<b> as </b><span style=\"color: maroon\">ct</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>ct.sequence = <span style=\"color: blue\">1</span> <i>\"ctSequence\"</i><span style=\"color: navy\">;</span>#xD;\n    src<span style=\"color: navy\"><b> -&gt; </b></span>ct.responsible = <span style=\"color: blue\">true</span> <i>\"ctResponsible\"</i><span style=\"color: navy\">;</span>#xD;\n    src<span style=\"color: navy\"><b> -&gt; </b></span>ct.provider<b> as </b><span style=\"color: maroon\">prov</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      src<span style=\"color: navy\"><b> -&gt; </b></span>prov.display = <span style=\"color: blue\">'ZPM'</span> <i>\"ctProviderDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ctProvider\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"claimCareTeam\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">MapClaimResponse: DNPM claimResponses entry → FHIR ClaimResponse</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Profile: MII_PR_MTB_Antwort_Kostenuebernahme (Parent: ClaimResponse)</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<b>group </b>MapClaimResponse<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>BackboneElement, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>ClaimResponse<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.id<b> as </b><span style=\"color: maroon\">srcId</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">srcId</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'id'</span><span style=\"color: navy\">)</span> <i>\"crId\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Profile meta</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.meta<b> as </b><span style=\"color: maroon\">m</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>m.profile = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme'</span> <i>\"crProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"crMeta\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">status = #active (fixed by profile: * status = #active)</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'active'</span> <i>\"crStatus\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">use = #preauthorization: mirrors the Claim.use</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.use = <span style=\"color: blue\">'preauthorization'</span> <i>\"crUse\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">type: required — mirror institutional from Claim</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.type<b> as </b><span style=\"color: maroon\">t</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>t.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      src<span style=\"color: navy\"><b> -&gt; </b></span>c.system = <span style=\"color: blue\">'http://terminology.hl7.org/CodeSystem/claim-type'</span> <i>\"crTypeSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      src<span style=\"color: navy\"><b> -&gt; </b></span>c.code = <span style=\"color: blue\">'institutional'</span> <i>\"crTypeCode\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"crTypeCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"crType\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">patient → Patient reference (urn:uuid)</span>#xD;\n  src.patient<b> as </b><span style=\"color: maroon\">pat</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.patient<b> as </b><span style=\"color: maroon\">p</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    pat.id<b> as </b><span style=\"color: maroon\">pid</span><span style=\"color: navy\"><b> -&gt; </b></span>p.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">pid</span><span style=\"color: navy\">)</span> <i>\"crPatientReference\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"crPatient\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">created ← issuedOn</span>#xD;\n  src.issuedOn<b> as </b><span style=\"color: maroon\">issuedOnDt</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.created = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">issuedOnDt</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'date'</span><span style=\"color: navy\">)</span> <i>\"crCreated\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">insurer: required by FHIR ClaimResponse — placeholder (no insurer in DNPM LM)</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.insurer<b> as </b><span style=\"color: maroon\">ins</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>ins.display = <span style=\"color: blue\">'Unknown'</span> <i>\"crInsurerDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"crInsurer\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">request ← claim.id (associated Claim reference)</span>#xD;\n  src.claim<b> as </b><span style=\"color: maroon\">cl</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.request<b> as </b><span style=\"color: maroon\">req</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    cl.id<b> as </b><span style=\"color: maroon\">cid</span><span style=\"color: navy\"><b> -&gt; </b></span>req.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">cid</span><span style=\"color: navy\">)</span> <i>\"crRequestReference\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"crRequest\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">outcome: fixed to 'complete' per profile</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">(* outcome = http://hl7.org/fhir/remittance-outcome#complete)</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.outcome = <span style=\"color: blue\">'complete'</span> <i>\"crOutcome\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">extension[Entscheidung]: map claimResponse.status → decision extension</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">st</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.extension<b> as </b><span style=\"color: maroon\">ext</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    st<span style=\"color: navy\"><b> -&gt; </b></span>ext.url = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung'</span> <i>\"entscheidungUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    st<span style=\"color: navy\"><b> -&gt; </b></span>ext.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      st<span style=\"color: navy\"><b> -&gt; </b></span>cc.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        st.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"entscheidungCode\"</i><span style=\"color: navy\">;</span>#xD;\n        st.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"entscheidungSystem\"</i><span style=\"color: navy\">;</span>#xD;\n        st.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"entscheidungDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"entscheidungCoding\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"entscheidungValue\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"crEntscheidung\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">extension[Ablehnungsgrund]: map statusReason → rejection reason extension</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund</span>#xD;\n  src.statusReason<b> as </b><span style=\"color: maroon\">sr</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.extension<b> as </b><span style=\"color: maroon\">ext</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    sr<span style=\"color: navy\"><b> -&gt; </b></span>ext.url = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund'</span> <i>\"ablehnungsgrundUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    sr<span style=\"color: navy\"><b> -&gt; </b></span>ext.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      sr<span style=\"color: navy\"><b> -&gt; </b></span>cc.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        sr.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"ablehnungsgrundCode\"</i><span style=\"color: navy\">;</span>#xD;\n        sr.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"ablehnungsgrundSystem\"</i><span style=\"color: navy\">;</span>#xD;\n        sr.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"ablehnungsgrundDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"ablehnungsgrundCoding\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ablehnungsgrundValue\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"crAblehnungsgrund\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims"] ;
+  fhir:StructureMap.version [ fhir:value "2026.0.1"] ;
+  fhir:StructureMap.name [ fhir:value "SMClaims"] ;
+  fhir:StructureMap.status [ fhir:value "draft"] ;
+  fhir:StructureMap.date [ fhir:value "2026-07-23T12:42:46+00:00"^^xsd:dateTime] ;
+  fhir:StructureMap.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" ;
+       fhir:link <https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "DNPMPatientRecord" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Bundle" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Bundle" ]
+  ], [
+     fhir:index 2 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Claim" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Claim>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "produced" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Claim" ]
+  ], [
+     fhir:index 3 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/ClaimResponse" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/ClaimResponse>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "produced" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "ClaimResponse" ]
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "Claims" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "---------------------------------------------------------------------------\r\nRoot group: iterate over claims and claimResponses\r\n---------------------------------------------------------------------------" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "DNPMPatientRecord" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "bundle" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Bundle" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "bundleType" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "type" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "collection" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Bundle type = collection" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claim" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "claims" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "claim" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "entry" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "e" ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtClaim" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Claim" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "fullUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "claim" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "claimid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "fullUrl" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "claimid" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "map" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "claim" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtClaim" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "MapClaim" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "claim" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgtClaim" ;
+             fhir:index 1
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "--- Claim per claims[] entry ---------------------------------------------" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimResponse" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "claimResponses" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "claimResp" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "entry" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "e" ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtClaimResp" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "ClaimResponse" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "fullUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "claimResp" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "claimRespid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "fullUrl" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "claimRespid" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "map" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "claimResp" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtClaimResp" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "MapClaimResponse" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "claimResp" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgtClaimResp" ;
+             fhir:index 1
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "--- ClaimResponse per claimResponses[] entry ----------------------------" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.group.name [ fhir:value "MapClaim" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "---------------------------------------------------------------------------\r\nMapClaim: DNPM claims entry → FHIR Claim\r\nProfile: MII_PR_MTB_Antrag_Kostenuebernahme (Parent: Claim)\r\n---------------------------------------------------------------------------" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "BackboneElement" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Claim" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimId" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcId" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcId" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "id" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimMeta" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "m" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "claimProfile" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "m" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "profile" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Profile meta" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimStatus" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "active" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "status = #active (fixed by profile: * status = #active (exactly))" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimUse" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "use" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "preauthorization" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "use = #preauthorization: DNPM Antrag Kostenuebernahme is a pre-authorization request\r\n(request for coverage approval before / at time of treatment decision)" ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimType" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "type" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "t" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "claimTypeCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "t" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "claimTypeSystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "claimTypeCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "institutional" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "type: required CodeableConcept — use a placeholder institutional coding\r\n(actual type from dnpm-dip/mtb/claim-type if available; not in LM, use fixed value)" ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimPatient" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "patient" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "pat" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "patient" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "p" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "claimPatientReference" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "pat" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "pid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "p" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "pid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "patient → Patient reference (urn:uuid)" ]
+     ], [
+       fhir:index 6 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimCreated" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "issuedOn" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "issuedOnDt" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "created" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "issuedOnDt" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "date" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "created ← issuedOn" ]
+     ], [
+       fhir:index 7 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimProvider" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "provider" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "prov" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "claimProviderDisplay" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "prov" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Unknown" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "provider: required by FHIR Claim — use a placeholder (no DNPM source field)\r\nSet to a relative reference that implementers can override" ]
+     ], [
+       fhir:index 8 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimPriority" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "priority" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "pri" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "claimPriorityCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "pri" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "claimPrioritySystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://terminology.hl7.org/CodeSystem/processpriority" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "claimPriorityCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "normal" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "priority: required by FHIR Claim — fixed to 'normal' per profile" ]
+     ], [
+       fhir:index 9 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimPrescription" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "recommendation" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "rec" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "prescription" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "pres" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "claimPrescriptionReference" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "rec" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "rid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "pres" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "rid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "prescription ← recommendation.id (MTBMedicationRecommendation reference)\r\nProfile uses Claim.prescription (Reference(MedicationRequest)) for the therapy recommendation" ]
+     ], [
+       fhir:index 10 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimInsurance" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "insurance" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ins" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "insSequence" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ins" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "sequence" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueInteger [ fhir:value "1"^^xsd:integer ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "insFocal" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ins" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "focal" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+           ]
+         ]
+       ], [
+         fhir:index 2 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "insCoverage" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ins" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coverage" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "cov" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "insCoverageDisplay" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "cov" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Unknown" ]
+             ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "coverage: placeholder (no insurer data in DNPM LM)" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "insurance: required by FHIR Claim (1..*)\r\nProfile requires insurance with focal=true and a sequence number" ]
+     ], [
+       fhir:index 11 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "claimCareTeam" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "careTeam" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ct" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ctSequence" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ct" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "sequence" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueInteger [ fhir:value "1"^^xsd:integer ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ctResponsible" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ct" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "responsible" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+           ]
+         ]
+       ], [
+         fhir:index 2 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ctProvider" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ct" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "provider" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "prov" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "ctProviderDisplay" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "prov" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "ZPM" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "careTeam[ZPMBeteiligung]: required by profile (1..*)\r\nNo ZPM practitioner data in DNPM LM; write mandatory structure with placeholder" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:StructureMap.group.name [ fhir:value "MapClaimResponse" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "---------------------------------------------------------------------------\r\nMapClaimResponse: DNPM claimResponses entry → FHIR ClaimResponse\r\nProfile: MII_PR_MTB_Antwort_Kostenuebernahme (Parent: ClaimResponse)\r\n---------------------------------------------------------------------------" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "BackboneElement" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "ClaimResponse" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crId" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcId" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcId" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "id" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crMeta" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "m" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "crProfile" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "m" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "profile" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Profile meta" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crStatus" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "active" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "status = #active (fixed by profile: * status = #active)" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crUse" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "use" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "preauthorization" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "use = #preauthorization: mirrors the Claim.use" ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crType" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "type" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "t" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "crTypeCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "t" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "crTypeSystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://terminology.hl7.org/CodeSystem/claim-type" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "crTypeCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "institutional" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "type: required — mirror institutional from Claim" ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crPatient" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "patient" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "pat" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "patient" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "p" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "crPatientReference" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "pat" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "pid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "p" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "pid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "patient → Patient reference (urn:uuid)" ]
+     ], [
+       fhir:index 6 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crCreated" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "issuedOn" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "issuedOnDt" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "created" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "issuedOnDt" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "date" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "created ← issuedOn" ]
+     ], [
+       fhir:index 7 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crInsurer" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "insurer" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ins" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "crInsurerDisplay" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ins" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Unknown" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "insurer: required by FHIR ClaimResponse — placeholder (no insurer in DNPM LM)" ]
+     ], [
+       fhir:index 8 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crRequest" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "claim" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "cl" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "request" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "req" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "crRequestReference" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "cl" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "cid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "req" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "cid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "request ← claim.id (associated Claim reference)" ]
+     ], [
+       fhir:index 9 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crOutcome" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "outcome" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "complete" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "outcome: fixed to 'complete' per profile\r\n(* outcome = http://hl7.org/fhir/remittance-outcome#complete)" ]
+     ], [
+       fhir:index 10 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crEntscheidung" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "st" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ext" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "entscheidungUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "st" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "entscheidungValue" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "st" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "cc" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "CodeableConcept" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "entscheidungCoding" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "st" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "cc" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+             fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+           ] ;
+           fhir:StructureMap.group.rule.rule [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "entscheidungCode" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "st" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "codeV" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "codeV" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+               ]
+             ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "entscheidungSystem" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "st" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "systemV" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "systemV" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+               ]
+             ]
+           ], [
+             fhir:index 2 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "entscheidungDisplay" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "st" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "display" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "displayV" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "displayV" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+               ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "extension[Entscheidung]: map claimResponse.status → decision extension\r\nExtension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung" ]
+     ], [
+       fhir:index 11 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "crAblehnungsgrund" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "statusReason" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "sr" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ext" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ablehnungsgrundUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ablehnungsgrundValue" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "cc" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "CodeableConcept" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "ablehnungsgrundCoding" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "cc" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+             fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+           ] ;
+           fhir:StructureMap.group.rule.rule [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "ablehnungsgrundCode" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "codeV" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "codeV" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+               ]
+             ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "ablehnungsgrundSystem" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "systemV" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "systemV" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+               ]
+             ]
+           ], [
+             fhir:index 2 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "ablehnungsgrundDisplay" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "display" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "displayV" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "displayV" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+               ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "extension[Ablehnungsgrund]: map statusReason → rejection reason extension\r\nExtension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/SMClaims.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

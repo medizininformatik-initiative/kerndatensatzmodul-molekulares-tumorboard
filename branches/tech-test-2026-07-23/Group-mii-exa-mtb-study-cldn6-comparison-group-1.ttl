@@ -1,0 +1,36 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Group/mii-exa-mtb-study-cldn6-comparison-group-1> a fhir:Group ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-cldn6-comparison-group-1"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Group mii-exa-mtb-study-cldn6-comparison-group-1</b></p><a name=\"mii-exa-mtb-study-cldn6-comparison-group-1\"> </a><a name=\"hcmii-exa-mtb-study-cldn6-comparison-group-1\"> </a><p><b>type</b>: Person</p><p><b>actual</b>: false</p><h3>Characteristics</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Value[x]</b></td><td><b>Exclude</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">Exposed to</span></td><td><a href=\"EvidenceVariable-mii-exa-mtb-study-cldn6-evidence-variable-1.html\">Biological: CLDN6 uRNA-LPX/CLDN6 modRNA-LPX</a></td><td>false</td></tr></table></div>"
+  ] ;
+  fhir:Group.type [ fhir:value "person"] ;
+  fhir:Group.actual [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Group.characteristic [
+     fhir:index 0 ;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Exposed to" ]
+     ] ;
+     fhir:Group.characteristic.valueReference [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-1> ;
+       fhir:Reference.reference [ fhir:value "EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-1" ] ;
+       fhir:Reference.display [ fhir:value "Biological: CLDN6 uRNA-LPX/CLDN6 modRNA-LPX" ]
+     ] ;
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Group/mii-exa-mtb-study-cldn6-comparison-group-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,172 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-cm-mtb-therapiestatusgrund-obds"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap mii-cm-mtb-therapiestatusgrund-obds</b></p><a name=\"mii-cm-mtb-therapiestatusgrund-obds\"> </a><a name=\"hcmii-cm-mtb-therapiestatusgrund-obds\"> </a><p>Mapping from <a href=\"ValueSet-mii-vs-mtb-therapiestatusgrund.html\">MII VS Therapiestatusgrund</a> to https://basisdatensatz.de</p><br/><p>Mapping from <a href=\"CodeSystem-mii-cs-mtb-therapiestatusgrund.html\">MII CS Therapiestatusgrund</a> to <code>https://basisdatensatz.de</code></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>patient-refusal (Therapie durch Patient abgelehnt)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>V (Patient verweigert weitere Therapie)</td></tr><tr><td>patient-death (Tod)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>T (Patient verstorben)</td></tr><tr><td>chronic-remission (Anhaltende Remission)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>S (Abbruch aus sonstigen Gründen)</td></tr><tr><td>progression</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>P (Abbruch wegen Progress)</td></tr><tr><td>toxicity (Toxizität)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>A (Abbruch wegen Nebenwirkungen)</td></tr><tr><td>deterioration (Zustandsverschlechterung)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>S (Abbruch aus sonstigen Gründen)</td></tr><tr><td>regular-completion (Reguläres Ende)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>E (reguläres Ende)</td></tr><tr><td>regular-completion-with-dosage-reduction (Reguläres Ende mit Dosisreduktion)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>R (reguläres Ende mit Dosisreduktion)</td></tr><tr><td>regular-completion-with-substance-change (Reguläres Ende mit Substanzwechsel)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>W (reguläres Ende mit Substanzwechsel)</td></tr><tr><td>other (Weitere Gründe)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>S (Abbruch aus sonstigen Gründen)</td></tr><tr><td>unknown (Unbekannt)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>U (unbekannt)</td></tr></table></div>"
+  ] ;
+  fhir:ConceptMap.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds"] ;
+  fhir:ConceptMap.version [ fhir:value "2026.0.1"] ;
+  fhir:ConceptMap.name [ fhir:value "MII CM MTB Therapiestatusgrund oBDS Mapping"] ;
+  fhir:ConceptMap.title [ fhir:value "MII CM MTB Therapiestatusgrund oBDS Mapping"] ;
+  fhir:ConceptMap.status [ fhir:value "active"] ;
+  fhir:ConceptMap.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ConceptMap.date [ fhir:value "2025-05-01"^^xsd:date] ;
+  fhir:ConceptMap.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:ConceptMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:ConceptMap.description [ fhir:value "Mapping der Codes zur Begründung des Therapiestatus nach oBDS"] ;
+  fhir:ConceptMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:ConceptMap.purpose [ fhir:value "Technische Mappings zur Transformation der Therapiestatusgründe nach oBDS"] ;
+  fhir:ConceptMap.sourceUri [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund"] ;
+  fhir:ConceptMap.targetUri [ fhir:value "https://basisdatensatz.de"] ;
+  fhir:ConceptMap.group [
+     fhir:index 0 ;
+     fhir:ConceptMap.group.source [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund" ] ;
+     fhir:ConceptMap.group.target [ fhir:value "https://basisdatensatz.de" ] ;
+     fhir:ConceptMap.group.element [
+       fhir:index 0 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "patient-refusal" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Therapie durch Patient abgelehnt" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "V" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Patient verweigert weitere Therapie" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "patient-death" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Tod" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "T" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Patient verstorben" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "chronic-remission" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Anhaltende Remission" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "S" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Abbruch aus sonstigen Gründen" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "progression" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Progression" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "P" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Abbruch wegen Progress" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "toxicity" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Toxizität" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "A" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Abbruch wegen Nebenwirkungen" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "deterioration" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Zustandsverschlechterung" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "S" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Abbruch aus sonstigen Gründen" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "regular-completion" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Reguläres Ende" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "E" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "reguläres Ende" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "regular-completion-with-dosage-reduction" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Reguläres Ende mit Dosisreduktion" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "R" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "reguläres Ende mit Dosisreduktion" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "regular-completion-with-substance-change" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Reguläres Ende mit Substanzwechsel" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "W" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "reguläres Ende mit Substanzwechsel" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "other" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Weitere Gründe" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "S" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Abbruch aus sonstigen Gründen" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "unknown" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Unbekannt" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "U" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "unbekannt" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ] ;
+     fhir:ConceptMap.group.unmapped [
+       fhir:ConceptMap.group.unmapped.mode [ fhir:value "fixed" ] ;
+       fhir:ConceptMap.group.unmapped.code [ fhir:value "U" ] ;
+       fhir:ConceptMap.group.unmapped.display [ fhir:value "unbekannt" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

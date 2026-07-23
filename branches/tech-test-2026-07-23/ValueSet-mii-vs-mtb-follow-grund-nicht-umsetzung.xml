@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="mii-vs-mtb-follow-grund-nicht-umsetzung"/>
+  <language value="de-DE"/>
+  <text>
+    <status value="generated"/><div xml:lang="de-DE" xmlns="http://www.w3.org/1999/xhtml" lang="de-DE"><p class="res-header-id"><b>Generated Narrative: ValueSet mii-vs-mtb-follow-grund-nicht-umsetzung</b></p><a name="mii-vs-mtb-follow-grund-nicht-umsetzung"> </a><a name="hcmii-vs-mtb-follow-grund-nicht-umsetzung"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-DE</p></div><ul><li>Include these codes as defined in <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>payment-refused</td><td/></tr><tr><td>payment-pending</td><td/></tr><tr><td>payment-ended</td><td/></tr><tr><td>no-indication</td><td/></tr><tr><td>medical-reason</td><td/></tr><tr><td>patient-refusal</td><td/></tr><tr><td>patient-wish</td><td/></tr><tr><td>patient-death</td><td/></tr><tr><td>lost-to-fu</td><td/></tr><tr><td>chronic-remission</td><td/></tr><tr><td>progression</td><td/></tr><tr><td>toxicity</td><td/></tr><tr><td>other-therapy-chosen</td><td/></tr><tr><td>best-supportive-care</td><td/></tr><tr><td>deterioration</td><td/></tr><tr><td>other</td><td/></tr><tr><td>unknown</td><td/></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung"/>
+  <version value="2026.0.1"/>
+  <name value="MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung"/>
+  <title value="MII VS Follow-Up Grund Nicht-Umsetzung"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund"/>
+      <concept>
+        <code value="payment-refused"/>
+      </concept>
+      <concept>
+        <code value="payment-pending"/>
+      </concept>
+      <concept>
+        <code value="payment-ended"/>
+      </concept>
+      <concept>
+        <code value="no-indication"/>
+      </concept>
+      <concept>
+        <code value="medical-reason"/>
+      </concept>
+      <concept>
+        <code value="patient-refusal"/>
+      </concept>
+      <concept>
+        <code value="patient-wish"/>
+      </concept>
+      <concept>
+        <code value="patient-death"/>
+      </concept>
+      <concept>
+        <code value="lost-to-fu"/>
+      </concept>
+      <concept>
+        <code value="chronic-remission"/>
+      </concept>
+      <concept>
+        <code value="progression"/>
+      </concept>
+      <concept>
+        <code value="toxicity"/>
+      </concept>
+      <concept>
+        <code value="other-therapy-chosen"/>
+      </concept>
+      <concept>
+        <code value="best-supportive-care"/>
+      </concept>
+      <concept>
+        <code value="deterioration"/>
+      </concept>
+      <concept>
+        <code value="other"/>
+      </concept>
+      <concept>
+        <code value="unknown"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

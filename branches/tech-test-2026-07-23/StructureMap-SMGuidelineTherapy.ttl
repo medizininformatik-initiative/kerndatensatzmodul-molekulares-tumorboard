@@ -1,0 +1,1584 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/SMGuidelineTherapy> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "SMGuidelineTherapy"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap SMGuidelineTherapy</b></p><a name=\"SMGuidelineTherapy\"> </a><a name=\"hcSMGuidelineTherapy\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy<span style=\"color: navy\">\" = \"</span>SMGuidelineTherapy<span style=\"color: navy\">\"#xD;\n#xD;\n</span><b>uses</b><span style=\"color: navy\"> \"</span><a href=\"StructureDefinition-dnpm-lm-patient-record.html\" title=\"DNPM Patient Record\">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style=\"color: navy\">\" </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/bundle.html\" title=\"Bundle\">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style=\"color: navy\">\" </span><b>alias </b>Bundle <b>as </b><b>target</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medicationstatement.html\" title=\"MedicationStatement\">http://hl7.org/fhir/StructureDefinition/MedicationStatement</a><span style=\"color: navy\">\" </span><b>alias </b>MedicationStatement <b>as </b><b>produced</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/procedure.html\" title=\"Procedure\">http://hl7.org/fhir/StructureDefinition/Procedure</a><span style=\"color: navy\">\" </span><b>alias </b>Procedure <b>as </b><b>produced</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Root group: iterate guidelineTherapies and guidelineProcedures arrays</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<b>group </b>GuidelineTherapy<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>DNPMPatientRecord, <b>target</b> <span style=\"color: maroon\">bundle</span><span style=\"color: navy\"> : </span>Bundle<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle.type = <span style=\"color: blue\">'collection'</span> <i>\"bundleType\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">guidelineTherapies → MedicationStatement (Systemische Vortherapie)</span>#xD;\n  src.guidelineTherapies<b> as </b><span style=\"color: maroon\">gt</span><span style=\"color: navy\"><b> -&gt; </b></span> bundle.entry<b> as </b><span style=\"color: maroon\">e</span><span style=\"color: navy\">, </span> e.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'MedicationStatement'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">ms</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    gt.id<b> as </b><span style=\"color: maroon\">gtid</span><span style=\"color: navy\"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">gtid</span><span style=\"color: navy\">)</span> <i>\"fullUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    gt<span style=\"color: navy\"><b> -&gt; </b></span>ms<b> then </b>MapGuidelineTherapy<span style=\"color: navy\">(</span><span style=\"color: maroon\">gt</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">ms</span><span style=\"color: navy\">)</span> <i>\"map\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"guidelineTherapy\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">guidelineProcedures → Procedure</span>#xD;\n  src.guidelineProcedures<b> as </b><span style=\"color: maroon\">gp</span><span style=\"color: navy\"><b> -&gt; </b></span> bundle.entry<b> as </b><span style=\"color: maroon\">e</span><span style=\"color: navy\">, </span> e.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Procedure'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">proc</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    gp.id<b> as </b><span style=\"color: maroon\">gpid</span><span style=\"color: navy\"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">gpid</span><span style=\"color: navy\">)</span> <i>\"fullUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    gp<span style=\"color: navy\"><b> -&gt; </b></span>proc<b> then </b>MapGuidelineProcedure<span style=\"color: navy\">(</span><span style=\"color: maroon\">gp</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">proc</span><span style=\"color: navy\">)</span> <i>\"map\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"guidelineProcedure\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">MapGuidelineTherapy: single guidelineTherapy → FHIR MedicationStatement</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Profile: MII_PR_MTB_Systemische_Vortherapie</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">(Parent: MII_PR_Onko_Systemische_Therapie → MedicationStatement)</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Status mapping (ConceptMap: DNPMTherapyStatusToFHIR):</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">completed → completed</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">stopped   → stopped</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">ongoing   → active</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">not-done  → not-taken</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">unknown   → unknown</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">(default) → unknown</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<b>group </b>MapGuidelineTherapy<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>BackboneElement, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>MedicationStatement<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.id<b> as </b><span style=\"color: maroon\">srcId</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">srcId</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'id'</span><span style=\"color: navy\">)</span> <i>\"gtId\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Profile meta</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.meta<b> as </b><span style=\"color: maroon\">m</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>m.profile = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie'</span> <i>\"gtProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtMeta\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Status: translate DNPM therapy status → FHIR MedicationStatement status</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'completed'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'completed'</span> <i>\"gtStatusCompleted\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'stopped'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'stopped'</span> <i>\"gtStatusStopped\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'ongoing'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'active'</span> <i>\"gtStatusActive\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'not-done'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'not-taken'</span> <i>\"gtStatusNotTaken\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'unknown'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'unknown'</span> <i>\"gtStatusUnknown\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Fallback when status is absent</span>#xD;\n  src<b> where </b><span style=\"color: navy\">(</span>src.status.empty()<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'unknown'</span> <i>\"gtStatusDefault\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">subject → Patient reference</span>#xD;\n  src.patient<b> as </b><span style=\"color: maroon\">pat</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject<b> as </b><span style=\"color: maroon\">subj</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    pat.id<b> as </b><span style=\"color: maroon\">pid</span><span style=\"color: navy\"><b> -&gt; </b></span>subj.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">pid</span><span style=\"color: navy\">)</span> <i>\"gtSubjectRef\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtSubject\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">reasonReference ← indication (MTBDiagnosis)</span>#xD;\n  src.indication<b> as </b><span style=\"color: maroon\">ind</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style=\"color: maroon\">rr</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    ind.id<b> as </b><span style=\"color: maroon\">iid</span><span style=\"color: navy\"><b> -&gt; </b></span>rr.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">iid</span><span style=\"color: navy\">)</span> <i>\"gtReasonRef\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtReason\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">effectivePeriod ← period</span>#xD;\n  src.period<b> as </b><span style=\"color: maroon\">p</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effectivePeriod<b> as </b><span style=\"color: maroon\">ep</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    p.start<b> as </b><span style=\"color: maroon\">startDt</span><span style=\"color: navy\"><b> -&gt; </b></span>ep.start = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">startDt</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'dateTime'</span><span style=\"color: navy\">)</span> <i>\"gtPeriodStart\"</i><span style=\"color: navy\">;</span>#xD;\n    p.end<b> as </b><span style=\"color: maroon\">endDt</span><span style=\"color: navy\"><b> -&gt; </b></span>ep.end = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">endDt</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'dateTime'</span><span style=\"color: navy\">)</span> <i>\"gtPeriodEnd\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtPeriod\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">medicationCodeableConcept: one coding per medication (ATC)</span>#xD;\n  src.medication<b> as </b><span style=\"color: maroon\">med</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.medicationCodeableConcept<b> as </b><span style=\"color: maroon\">mcc</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    med<span style=\"color: navy\"><b> -&gt; </b></span>mcc.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      med.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtMedCode\"</i><span style=\"color: navy\">;</span>#xD;\n      med.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtMedSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      med.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtMedDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"gtMedCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtMedication\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">statusReason ← statusReason (if therapy was stopped/discontinued)</span>#xD;\n  src.statusReason<b> as </b><span style=\"color: maroon\">sr</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.statusReason<b> as </b><span style=\"color: maroon\">tsr</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    sr<span style=\"color: navy\"><b> -&gt; </b></span>tsr.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      sr.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtSrCode\"</i><span style=\"color: navy\">;</span>#xD;\n      sr.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtSrSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      sr.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtSrDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"gtSrCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtStatusReason\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">notes ← notes (free-text)</span>#xD;\n  src.notes<b> as </b><span style=\"color: maroon\">n</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.note<b> as </b><span style=\"color: maroon\">note</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    n<span style=\"color: navy\"><b> -&gt; </b></span>note.text = <span style=\"color: maroon\">n</span> <i>\"gtNoteText\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtNotes\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">therapyLine: stored as extension on the Onko parent profile</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">MII_PR_Onko_Systemische_Therapie uses KDS extension for therapyLine</span>#xD;\n  src.therapyLine<b> as </b><span style=\"color: maroon\">tl</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.extension<b> as </b><span style=\"color: maroon\">ext</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    tl<span style=\"color: navy\"><b> -&gt; </b></span>ext.url = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-therapielinie'</span> <i>\"gtThLineUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    tl<span style=\"color: navy\"><b> -&gt; </b></span>ext.value = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">tl</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'positiveInt'</span><span style=\"color: navy\">)</span> <i>\"gtThLineValue\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtTherapyLine\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">category ← category (DNPM therapy category coding)</span>#xD;\n  src.category<b> as </b><span style=\"color: maroon\">cat</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.category<b> as </b><span style=\"color: maroon\">tcat</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    cat<span style=\"color: navy\"><b> -&gt; </b></span>tcat.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      cat.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtCatCode\"</i><span style=\"color: navy\">;</span>#xD;\n      cat.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtCatSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      cat.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gtCatDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"gtCatCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gtCategory\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">MapGuidelineProcedure: single guidelineProcedure → FHIR Procedure</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Used for radiotherapy and other non-medication guideline-based procedures.</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Status mapping:</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">ongoing   → in-progress</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">completed → completed</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">stopped   → stopped</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">not-done  → not-done</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">unknown   → unknown</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">(default) → unknown</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>#xD;\n<b>group </b>MapGuidelineProcedure<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>BackboneElement, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Procedure<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.id<b> as </b><span style=\"color: maroon\">srcId</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">srcId</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'id'</span><span style=\"color: navy\">)</span> <i>\"gpId\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">subject → Patient reference</span>#xD;\n  src.patient<b> as </b><span style=\"color: maroon\">pat</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject<b> as </b><span style=\"color: maroon\">subj</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    pat.id<b> as </b><span style=\"color: maroon\">pid</span><span style=\"color: navy\"><b> -&gt; </b></span>subj.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">pid</span><span style=\"color: navy\">)</span> <i>\"gpSubjectRef\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gpSubject\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Status: translate DNPM therapy status → FHIR Procedure status</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'ongoing'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'in-progress'</span> <i>\"gpStatusInProgress\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'completed'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'completed'</span> <i>\"gpStatusCompleted\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'stopped'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'stopped'</span> <i>\"gpStatusStopped\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'not-done'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'not-done'</span> <i>\"gpStatusNotDone\"</i><span style=\"color: navy\">;</span>#xD;\n  src.status<b> as </b><span style=\"color: maroon\">s</span><b> where </b><span style=\"color: navy\">(</span>s.code = 'unknown'<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'unknown'</span> <i>\"gpStatusUnknown\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Fallback when status is absent</span>#xD;\n  src<b> where </b><span style=\"color: navy\">(</span>src.status.empty()<span style=\"color: navy\">)</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'unknown'</span> <i>\"gpStatusDefault\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">code ← procedure.code (e.g. radiotherapy)</span>#xD;\n  src.code<b> as </b><span style=\"color: maroon\">c</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.code<b> as </b><span style=\"color: maroon\">tcode</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    c<span style=\"color: navy\"><b> -&gt; </b></span>tcode.coding<b> as </b><span style=\"color: maroon\">coding</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      c.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>coding.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gpCodeCode\"</i><span style=\"color: navy\">;</span>#xD;\n      c.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>coding.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gpCodeSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      c.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>coding.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gpCodeDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"gpCodeCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gpCode\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">reasonReference ← indication (MTBDiagnosis)</span>#xD;\n  src.indication<b> as </b><span style=\"color: maroon\">ind</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.reasonReference<b> as </b><span style=\"color: maroon\">rr</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    ind.id<b> as </b><span style=\"color: maroon\">iid</span><span style=\"color: navy\"><b> -&gt; </b></span>rr.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">iid</span><span style=\"color: navy\">)</span> <i>\"gpReasonRef\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gpReason\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">performedPeriod ← period</span>#xD;\n  src.period<b> as </b><span style=\"color: maroon\">p</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.performedPeriod<b> as </b><span style=\"color: maroon\">pp</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    p.start<b> as </b><span style=\"color: maroon\">startDt</span><span style=\"color: navy\"><b> -&gt; </b></span>pp.start = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">startDt</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'dateTime'</span><span style=\"color: navy\">)</span> <i>\"gpPeriodStart\"</i><span style=\"color: navy\">;</span>#xD;\n    p.end<b> as </b><span style=\"color: maroon\">endDt</span><span style=\"color: navy\"><b> -&gt; </b></span>pp.end = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">endDt</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'dateTime'</span><span style=\"color: navy\">)</span> <i>\"gpPeriodEnd\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gpPeriod\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">intent ← intent (palliative, curative, …) stored as extension</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Procedure R4 does not have a native intent field; carry as basic extension.</span>#xD;\n  src.intent<b> as </b><span style=\"color: maroon\">intent</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.extension<b> as </b><span style=\"color: maroon\">ext</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    intent<span style=\"color: navy\"><b> -&gt; </b></span>ext.url = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation'</span> <i>\"gpIntentUrl\"</i><span style=\"color: navy\">;</span>#xD;\n    intent<span style=\"color: navy\"><b> -&gt; </b></span>ext.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Coding'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">intCoding</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      intent.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>intCoding.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gpIntentCode\"</i><span style=\"color: navy\">;</span>#xD;\n      intent.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>intCoding.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gpIntentSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      intent.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>intCoding.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>\"gpIntentDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"gpIntentCoding\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gpIntent\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">notes ← notes (free-text)</span>#xD;\n  src.notes<b> as </b><span style=\"color: maroon\">n</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.note<b> as </b><span style=\"color: maroon\">note</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    n<span style=\"color: navy\"><b> -&gt; </b></span>note.text = <span style=\"color: maroon\">n</span> <i>\"gpNoteText\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"gpNotes\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy"] ;
+  fhir:StructureMap.version [ fhir:value "2026.0.1"] ;
+  fhir:StructureMap.name [ fhir:value "SMGuidelineTherapy"] ;
+  fhir:StructureMap.status [ fhir:value "draft"] ;
+  fhir:StructureMap.date [ fhir:value "2026-07-23T12:42:46+00:00"^^xsd:dateTime] ;
+  fhir:StructureMap.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record" ;
+       fhir:link <https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "DNPMPatientRecord" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Bundle" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Bundle" ]
+  ], [
+     fhir:index 2 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/MedicationStatement" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/MedicationStatement>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "produced" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "MedicationStatement" ]
+  ], [
+     fhir:index 3 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Procedure" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Procedure>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "produced" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Procedure" ]
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "GuidelineTherapy" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "---------------------------------------------------------------------------\r\nRoot group: iterate guidelineTherapies and guidelineProcedures arrays\r\n---------------------------------------------------------------------------" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "DNPMPatientRecord" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "bundle" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Bundle" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "bundleType" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "type" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "collection" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "guidelineTherapy" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "guidelineTherapies" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "gt" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "entry" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "e" ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ms" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "MedicationStatement" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "fullUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "gt" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "gtid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "fullUrl" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "gtid" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "map" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "gt" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ms" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "MapGuidelineTherapy" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "gt" ;
+             fhir:index 0
+           ], [
+             fhir:value "ms" ;
+             fhir:index 1
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "guidelineTherapies → MedicationStatement (Systemische Vortherapie)" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "guidelineProcedure" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "guidelineProcedures" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "gp" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bundle" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "entry" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "e" ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "proc" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Procedure" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "fullUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "gp" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "gpid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "e" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "fullUrl" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "gpid" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "map" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "gp" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "proc" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "MapGuidelineProcedure" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "gp" ;
+             fhir:index 0
+           ], [
+             fhir:value "proc" ;
+             fhir:index 1
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "guidelineProcedures → Procedure" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.group.name [ fhir:value "MapGuidelineTherapy" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "---------------------------------------------------------------------------\r\nMapGuidelineTherapy: single guidelineTherapy → FHIR MedicationStatement\r\nProfile: MII_PR_MTB_Systemische_Vortherapie\r\n(Parent: MII_PR_Onko_Systemische_Therapie → MedicationStatement)\r\nStatus mapping (ConceptMap: DNPMTherapyStatusToFHIR):\r\ncompleted → completed\r\nstopped   → stopped\r\nongoing   → active\r\nnot-done  → not-taken\r\nunknown   → unknown\r\n(default) → unknown\r\n---------------------------------------------------------------------------" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "BackboneElement" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "MedicationStatement" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtId" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcId" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcId" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "id" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtMeta" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "m" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtProfile" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "m" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "profile" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Profile meta" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtStatusCompleted" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'completed'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "completed" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Status: translate DNPM therapy status → FHIR MedicationStatement status" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtStatusStopped" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'stopped'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "stopped" ]
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtStatusActive" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'ongoing'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "active" ]
+         ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtStatusNotTaken" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'not-done'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "not-taken" ]
+         ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtStatusUnknown" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'unknown'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "unknown" ]
+         ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtStatusDefault" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "src.status.empty()" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "unknown" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Fallback when status is absent" ]
+     ], [
+       fhir:index 8 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtSubject" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "patient" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "pat" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "subject" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "subj" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtSubjectRef" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "pat" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "pid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "subj" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "pid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "subject → Patient reference" ]
+     ], [
+       fhir:index 9 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtReason" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "indication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "ind" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "reasonReference" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "rr" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtReasonRef" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "ind" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "iid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "rr" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "iid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "reasonReference ← indication (MTBDiagnosis)" ]
+     ], [
+       fhir:index 10 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtPeriod" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "period" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "p" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "effectivePeriod" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ep" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtPeriodStart" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "p" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "start" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "startDt" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ep" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "start" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "startDt" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "dateTime" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtPeriodEnd" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "p" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "end" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "endDt" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ep" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "end" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "endDt" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "dateTime" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "effectivePeriod ← period" ]
+     ], [
+       fhir:index 11 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtMedication" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "medication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "med" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "medicationCodeableConcept" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "mcc" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtMedCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "med" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "mcc" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtMedCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "med" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "codeV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "codeV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtMedSystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "med" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "systemV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "systemV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtMedDisplay" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "med" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "displayV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "displayV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "medicationCodeableConcept: one coding per medication (ATC)" ]
+     ], [
+       fhir:index 12 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtStatusReason" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "statusReason" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "sr" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "statusReason" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tsr" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtSrCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tsr" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtSrCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "codeV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "codeV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtSrSystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "systemV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "systemV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtSrDisplay" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "sr" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "displayV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "displayV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "statusReason ← statusReason (if therapy was stopped/discontinued)" ]
+     ], [
+       fhir:index 13 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtNotes" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "notes" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "n" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "note" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "note" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtNoteText" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "n" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "note" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "text" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "n" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "notes ← notes (free-text)" ]
+     ], [
+       fhir:index 14 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtTherapyLine" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "therapyLine" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "tl" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ext" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtThLineUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "tl" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-therapielinie" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtThLineValue" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "tl" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "tl" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "positiveInt" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "therapyLine: stored as extension on the Onko parent profile\r\nMII_PR_Onko_Systemische_Therapie uses KDS extension for therapyLine" ]
+     ], [
+       fhir:index 15 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gtCategory" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "category" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "cat" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "category" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tcat" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gtCatCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "cat" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tcat" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "c" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtCatCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "cat" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "codeV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "codeV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtCatSystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "cat" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "systemV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "systemV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gtCatDisplay" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "cat" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "displayV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "displayV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "category ← category (DNPM therapy category coding)" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:StructureMap.group.name [ fhir:value "MapGuidelineProcedure" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "---------------------------------------------------------------------------\r\nMapGuidelineProcedure: single guidelineProcedure → FHIR Procedure\r\nUsed for radiotherapy and other non-medication guideline-based procedures.\r\nStatus mapping:\r\nongoing   → in-progress\r\ncompleted → completed\r\nstopped   → stopped\r\nnot-done  → not-done\r\nunknown   → unknown\r\n(default) → unknown\r\n---------------------------------------------------------------------------" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "BackboneElement" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Procedure" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpId" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcId" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcId" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "id" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpSubject" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "patient" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "pat" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "subject" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "subj" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpSubjectRef" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "pat" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "pid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "subj" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "pid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "subject → Patient reference" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpStatusInProgress" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'ongoing'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "in-progress" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Status: translate DNPM therapy status → FHIR Procedure status" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpStatusCompleted" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'completed'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "completed" ]
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpStatusStopped" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'stopped'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "stopped" ]
+         ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpStatusNotDone" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'not-done'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "not-done" ]
+         ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpStatusUnknown" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "s.code = 'unknown'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "unknown" ]
+         ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpStatusDefault" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "src.status.empty()" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "unknown" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Fallback when status is absent" ]
+     ], [
+       fhir:index 8 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpCode" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "c" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tcode" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpCodeCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "c" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tcode" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "coding" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gpCodeCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "codeV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "coding" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "codeV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gpCodeSystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "systemV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "coding" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "systemV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gpCodeDisplay" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "c" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "displayV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "coding" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "displayV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "code ← procedure.code (e.g. radiotherapy)" ]
+     ], [
+       fhir:index 9 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpReason" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "indication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "ind" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "reasonReference" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "rr" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpReasonRef" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "ind" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "iid" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "rr" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "urn:uuid:" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "iid" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "reasonReference ← indication (MTBDiagnosis)" ]
+     ], [
+       fhir:index 10 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpPeriod" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "period" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "p" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "performedPeriod" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "pp" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpPeriodStart" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "p" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "start" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "startDt" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "pp" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "start" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "startDt" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "dateTime" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpPeriodEnd" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "p" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "end" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "endDt" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "pp" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "end" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "endDt" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "dateTime" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "performedPeriod ← period" ]
+     ], [
+       fhir:index 11 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpIntent" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "intent" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "intent" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ext" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpIntentUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "intent" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpIntentCoding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "intent" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ext" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "intCoding" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Coding" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gpIntentCode" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "intent" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "codeV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "intCoding" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "codeV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gpIntentSystem" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "intent" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "systemV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "intCoding" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "systemV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "gpIntentDisplay" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "intent" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "displayV" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "intCoding" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "display" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "displayV" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "string" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "intent ← intent (palliative, curative, …) stored as extension\r\nProcedure R4 does not have a native intent field; carry as basic extension." ]
+     ], [
+       fhir:index 12 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "gpNotes" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "notes" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "n" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "note" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "note" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "gpNoteText" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "n" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "note" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "text" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "n" ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "notes ← notes (free-text)" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/SMGuidelineTherapy.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="SMDiagnosis"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap SMDiagnosis</b></p><a name="SMDiagnosis"> </a><a name="hcSMDiagnosis"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis<span style="color: navy">&quot; = &quot;</span>SMDiagnosis<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/condition.html" title="Condition">http://hl7.org/fhir/StructureDefinition/Condition</a><span style="color: navy">&quot; </span><b>alias </b>Condition <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Observation <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate over diagnoses and performanceStatus</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>Diagnoses<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Bundle type = collection</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Condition per diagnosis entry ----------------------------------------</span>
+  src.diagnoses<b> as </b><span style="color: maroon">diag</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Condition'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cond</span><b> then</b><span style="color: navy"> {
+</span>    diag.id<b> as </b><span style="color: maroon">diagid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">diagid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    diag<span style="color: navy"><b> -&gt; </b></span>cond<b> then </b>MapDiagnosis<span style="color: navy">(</span><span style="color: maroon">diag</span><span style="color: navy">, </span><span style="color: maroon">cond</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;diagnosis&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Observation (ECOG) per performanceStatus entry -----------------------</span>
+  src.performanceStatus<b> as </b><span style="color: maroon">ps</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>    ps.id<b> as </b><span style="color: maroon">psid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">psid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    ps<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapECOG<span style="color: navy">(</span><span style="color: maroon">ps</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ecog&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapDiagnosis: DNPM diagnoses entry → FHIR Condition</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Diagnose_Primaertumor</span>
+<span style="color: navy">// </span><span style="color: green">(Parent: MII_PR_Onko_Diagnose_Primaertumor → Parent: MII_PR_Diagnose)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapDiagnosis<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Condition<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;conditionId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor'</span> <i>&quot;conditionProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;conditionMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Required clinical status – set to active as DNPM provides no alternative</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.clinicalStatus<b> as </b><span style="color: maroon">cs</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>cs.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://terminology.hl7.org/CodeSystem/condition-clinical'</span> <i>&quot;clinStatusSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'active'</span> <i>&quot;clinStatusCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;clinStatusCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;clinicalStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Required verification status – set to confirmed</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.verificationStatus<b> as </b><span style="color: maroon">vs</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>vs.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://terminology.hl7.org/CodeSystem/condition-ver-status'</span> <i>&quot;verStatusSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'confirmed'</span> <i>&quot;verStatusCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;verStatusCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;verificationStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;subjectReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;subject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">recordedDate</span>
+  src.recordedOn<b> as </b><span style="color: maroon">recordedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.recordedDate = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">recordedOnDt</span><span style="color: navy">, </span><span style="color: blue">'date'</span><span style="color: navy">)</span> <i>&quot;recordedDate&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Code (ICD-10-GM) -----------------------------------------------------</span>
+  src.code<b> as </b><span style="color: maroon">code</span><span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">tgtCode</span><b> then</b><span style="color: navy"> {
+</span>    code<span style="color: navy"><b> -&gt; </b></span>tgtCode.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      code.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;codeCode&quot;</i><span style="color: navy">;</span>
+      code.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;codeSystem&quot;</i><span style="color: navy">;</span>
+      code.version<b> as </b><span style="color: maroon">versionV</span><span style="color: navy"><b> -&gt; </b></span>c.version = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">versionV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;codeVersion&quot;</i><span style="color: navy">;</span>
+      code.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;codeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;codeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;conditionCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Body site (ICD-O-3 topography) ---------------------------------------</span>
+  src.topography<b> as </b><span style="color: maroon">topo</span><span style="color: navy"><b> -&gt; </b></span>tgt.bodySite<b> as </b><span style="color: maroon">bs</span><b> then</b><span style="color: navy"> {
+</span>    topo<span style="color: navy"><b> -&gt; </b></span>bs.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      topo.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;topoCode&quot;</i><span style="color: navy">;</span>
+      topo.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;topoSystem&quot;</i><span style="color: navy">;</span>
+      topo.version<b> as </b><span style="color: maroon">versionV</span><span style="color: navy"><b> -&gt; </b></span>c.version = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">versionV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;topoVersion&quot;</i><span style="color: navy">;</span>
+      topo.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;topoDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;topoCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;bodySite&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Guideline treatment status (as extension on Condition) ---------------</span>
+  <span style="color: navy">// </span><span style="color: green">Note: MII_EX_MTB_Leitlinienbehandlung_Status has context ClinicalImpression;</span>
+  <span style="color: navy">// </span><span style="color: green">a Condition-level extension is added here to preserve the DNPM value until</span>
+  <span style="color: navy">// </span><span style="color: green">a dedicated Condition extension is defined. Receivers may prefer to read</span>
+  <span style="color: navy">// </span><span style="color: green">this value from the associated Behandlungsepisode (ClinicalImpression).</span>
+  src.guidelineTreatmentStatus<b> as </b><span style="color: maroon">gts</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    gts<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status'</span> <i>&quot;gtsExtUrl&quot;</i><span style="color: navy">;</span>
+    gts<span style="color: navy"><b> -&gt; </b></span>ext.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Coding'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">coding</span><b> then</b><span style="color: navy"> {
+</span>      gts.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>coding.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtsCode&quot;</i><span style="color: navy">;</span>
+      gts.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>coding.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;gtsSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;gtsExtValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;guidelineStatusExt&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Free-text notes ------------------------------------------------------</span>
+  src.notes<b> as </b><span style="color: maroon">n</span><span style="color: navy"><b> -&gt; </b></span>tgt.note<b> as </b><span style="color: maroon">note</span><b> then</b><span style="color: navy"> {
+</span>    n<span style="color: navy"><b> -&gt; </b></span>note.text = <span style="color: maroon">n</span> <i>&quot;noteText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapECOG: DNPM performanceStatus entry → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapECOG<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;ecogId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-allgemeiner-leistungszustand-ecog'</span> <i>&quot;ecogProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ecogMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">status = final (fixed per profile intent)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;ecogStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">code: required SNOMED slice (423740007) + optional LOINC slice (89262-0)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">SNOMED — required slice</span>
+    src<span style="color: navy"><b> -&gt; </b></span>c.coding<b> as </b><span style="color: maroon">snomed</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>snomed.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;ecogCodeSnomedSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>snomed.code = <span style="color: blue">'423740007'</span> <i>&quot;ecogCodeSnomedCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ecogCodeSnomed&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">LOINC — optional slice</span>
+    src<span style="color: navy"><b> -&gt; </b></span>c.coding<b> as </b><span style="color: maroon">loinc</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>loinc.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;ecogCodeLoincSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>loinc.code = <span style="color: blue">'89262-0'</span> <i>&quot;ecogCodeLoincCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ecogCodeLoinc&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ecogCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;ecogSubjectReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ecogSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">effectiveDateTime</span>
+  src.effectiveDate<b> as </b><span style="color: maroon">effectiveDateDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">effectiveDateDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;ecogEffectiveDateTime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept: DNPM ECOG code/system → obds slice</span>
+  <span style="color: navy">// </span><span style="color: green">The DNPM system is 'dnpm-dip/patient/ecog-performance-status';</span>
+  <span style="color: navy">// </span><span style="color: green">a concept map (dnpm-ecog-to-mii.fsh) provides formal equivalence to</span>
+  <span style="color: navy">// </span><span style="color: green">https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-allgemeiner-leistungszustand-ecog</span>
+  <span style="color: navy">// </span><span style="color: green">but both numeric codes (0–4) are identical, so direct pass-through is used.</span>
+  src.value<b> as </b><span style="color: maroon">v</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vc</span><b> then</b><span style="color: navy"> {
+</span>    v<span style="color: navy"><b> -&gt; </b></span>vc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      v.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ecogValueCode&quot;</i><span style="color: navy">;</span>
+      v.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ecogValueSystem&quot;</i><span style="color: navy">;</span>
+      v.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ecogValueDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ecogValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ecogValue&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis"/>
+  <version value="2026.0.1"/>
+  <name value="SMDiagnosis"/>
+  <status value="draft"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record"/>
+    <mode value="source"/>
+    <alias value="DNPMPatientRecord"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+    <mode value="produced"/>
+    <alias value="Condition"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="produced"/>
+    <alias value="Observation"/>
+  </structure>
+  <group>
+    <name value="Diagnoses"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Root group: iterate over diagnoses and performanceStatus&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="bundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="collection"/>
+        </parameter>
+      </target>
+      <documentation value="Bundle type = collection"/>
+    </rule>
+    <rule>
+      <name value="diagnosis"/>
+      <source>
+        <context value="src"/>
+        <element value="diagnoses"/>
+        <variable value="diag"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="cond"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Condition"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="diag"/>
+          <element value="id"/>
+          <variable value="diagid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="diagid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="diag"/>
+        </source>
+        <target>
+          <context value="cond"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapDiagnosis"/>
+          <variable value="diag"/>
+          <variable value="cond"/>
+        </dependent>
+      </rule>
+      <documentation value="--- Condition per diagnosis entry ----------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="ecog"/>
+      <source>
+        <context value="src"/>
+        <element value="performanceStatus"/>
+        <variable value="ps"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="obs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Observation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="ps"/>
+          <element value="id"/>
+          <variable value="psid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="psid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="ps"/>
+        </source>
+        <target>
+          <context value="obs"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapECOG"/>
+          <variable value="ps"/>
+          <variable value="obs"/>
+        </dependent>
+      </rule>
+      <documentation value="--- Observation (ECOG) per performanceStatus entry -----------------------"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapDiagnosis"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapDiagnosis: DNPM diagnoses entry → FHIR Condition&#xD;&#xA;Profile: MII_PR_MTB_Diagnose_Primaertumor&#xD;&#xA;(Parent: MII_PR_Onko_Diagnose_Primaertumor → Parent: MII_PR_Diagnose)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Condition"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="conditionId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="conditionMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="conditionProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="clinicalStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="clinicalStatus"/>
+        <variable value="cs"/>
+      </target>
+      <rule>
+        <name value="clinStatusCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="cs"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="clinStatusSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="clinStatusCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="active"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Required clinical status – set to active as DNPM provides no alternative"/>
+    </rule>
+    <rule>
+      <name value="verificationStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="verificationStatus"/>
+        <variable value="vs"/>
+      </target>
+      <rule>
+        <name value="verStatusCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="vs"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="verStatusSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="verStatusCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="confirmed"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Required verification status – set to confirmed"/>
+    </rule>
+    <rule>
+      <name value="subject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="subjectReference"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="recordedDate"/>
+      <source>
+        <context value="src"/>
+        <element value="recordedOn"/>
+        <variable value="recordedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="recordedDate"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="recordedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="date"/>
+        </parameter>
+      </target>
+      <documentation value="recordedDate"/>
+    </rule>
+    <rule>
+      <name value="conditionCode"/>
+      <source>
+        <context value="src"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="tgtCode"/>
+      </target>
+      <rule>
+        <name value="codeCoding"/>
+        <source>
+          <context value="code"/>
+        </source>
+        <target>
+          <context value="tgtCode"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="codeCode"/>
+          <source>
+            <context value="code"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="codeSystem"/>
+          <source>
+            <context value="code"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="codeVersion"/>
+          <source>
+            <context value="code"/>
+            <element value="version"/>
+            <variable value="versionV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="version"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="versionV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="codeDisplay"/>
+          <source>
+            <context value="code"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="--- Code (ICD-10-GM) -----------------------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="bodySite"/>
+      <source>
+        <context value="src"/>
+        <element value="topography"/>
+        <variable value="topo"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="bodySite"/>
+        <variable value="bs"/>
+      </target>
+      <rule>
+        <name value="topoCoding"/>
+        <source>
+          <context value="topo"/>
+        </source>
+        <target>
+          <context value="bs"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="topoCode"/>
+          <source>
+            <context value="topo"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="topoSystem"/>
+          <source>
+            <context value="topo"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="topoVersion"/>
+          <source>
+            <context value="topo"/>
+            <element value="version"/>
+            <variable value="versionV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="version"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="versionV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="topoDisplay"/>
+          <source>
+            <context value="topo"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="--- Body site (ICD-O-3 topography) ---------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="guidelineStatusExt"/>
+      <source>
+        <context value="src"/>
+        <element value="guidelineTreatmentStatus"/>
+        <variable value="gts"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+      </target>
+      <rule>
+        <name value="gtsExtUrl"/>
+        <source>
+          <context value="gts"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="gtsExtValue"/>
+        <source>
+          <context value="gts"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="coding"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="Coding"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="gtsCode"/>
+          <source>
+            <context value="gts"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="coding"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="gtsSystem"/>
+          <source>
+            <context value="gts"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="coding"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="--- Guideline treatment status (as extension on Condition) ---------------&#xD;&#xA;Note: MII_EX_MTB_Leitlinienbehandlung_Status has context ClinicalImpression;&#xD;&#xA;a Condition-level extension is added here to preserve the DNPM value until&#xD;&#xA;a dedicated Condition extension is defined. Receivers may prefer to read&#xD;&#xA;this value from the associated Behandlungsepisode (ClinicalImpression)."/>
+    </rule>
+    <rule>
+      <name value="notes"/>
+      <source>
+        <context value="src"/>
+        <element value="notes"/>
+        <variable value="n"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="note"/>
+        <variable value="note"/>
+      </target>
+      <rule>
+        <name value="noteText"/>
+        <source>
+          <context value="n"/>
+        </source>
+        <target>
+          <context value="note"/>
+          <contextType value="variable"/>
+          <element value="text"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="n"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="--- Free-text notes ------------------------------------------------------"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapECOG"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapECOG: DNPM performanceStatus entry → FHIR Observation&#xD;&#xA;Profile: MII_PR_Onko_Allgemeiner_Leistungszustand_ECOG&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Observation"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ecogId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ecogMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="ecogProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-allgemeiner-leistungszustand-ecog"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="ecogStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+      <documentation value="status = final (fixed per profile intent)"/>
+    </rule>
+    <rule>
+      <name value="ecogCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="c"/>
+      </target>
+      <rule>
+        <name value="ecogCodeSnomed"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="c"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="snomed"/>
+        </target>
+        <rule>
+          <name value="ecogCodeSnomedSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="snomed"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="ecogCodeSnomedCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="snomed"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="423740007"/>
+            </parameter>
+          </target>
+        </rule>
+        <documentation value="SNOMED — required slice"/>
+      </rule>
+      <rule>
+        <name value="ecogCodeLoinc"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="c"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="loinc"/>
+        </target>
+        <rule>
+          <name value="ecogCodeLoincSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="loinc"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://loinc.org"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="ecogCodeLoincCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="loinc"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="89262-0"/>
+            </parameter>
+          </target>
+        </rule>
+        <documentation value="LOINC — optional slice"/>
+      </rule>
+      <documentation value="code: required SNOMED slice (423740007) + optional LOINC slice (89262-0)"/>
+    </rule>
+    <rule>
+      <name value="ecogSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="ecogSubjectReference"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="ecogEffectiveDateTime"/>
+      <source>
+        <context value="src"/>
+        <element value="effectiveDate"/>
+        <variable value="effectiveDateDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectiveDateTime"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="effectiveDateDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <documentation value="effectiveDateTime"/>
+    </rule>
+    <rule>
+      <name value="ecogValue"/>
+      <source>
+        <context value="src"/>
+        <element value="value"/>
+        <variable value="v"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="valueCodeableConcept"/>
+        <variable value="vc"/>
+      </target>
+      <rule>
+        <name value="ecogValueCoding"/>
+        <source>
+          <context value="v"/>
+        </source>
+        <target>
+          <context value="vc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="ecogValueCode"/>
+          <source>
+            <context value="v"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="ecogValueSystem"/>
+          <source>
+            <context value="v"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="ecogValueDisplay"/>
+          <source>
+            <context value="v"/>
+            <element value="display"/>
+            <variable value="displayV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="displayV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="valueCodeableConcept: DNPM ECOG code/system → obds slice&#xD;&#xA;The DNPM system is 'dnpm-dip/patient/ecog-performance-status';&#xD;&#xA;a concept map (dnpm-ecog-to-mii.fsh) provides formal equivalence to&#xD;&#xA;https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-allgemeiner-leistungszustand-ecog&#xD;&#xA;but both numeric codes (0–4) are identical, so direct pass-through is used."/>
+    </rule>
+  </group>
+</StructureMap>

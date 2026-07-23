@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-1> a fhir:EvidenceVariable ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-cldn6-evidence-variable-1"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: EvidenceVariable mii-exa-mtb-study-cldn6-evidence-variable-1</b></p><a name=\"mii-exa-mtb-study-cldn6-evidence-variable-1\"> </a><a name=\"hcmii-exa-mtb-study-cldn6-evidence-variable-1\"> </a><p><b>status</b>: Active</p><h3>UseContexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"http://snomed.info/id/362956003\">SNOMED CT: 362956003</a> (Procedure/intervention (navigational concept))</td><td><span title=\"Codes:{http://snomed.info/sct 12893009}\">Biological</span></td></tr></table><h3>Characteristics</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Definition[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Group-mii-exa-mtb-study-cldn6-eligibility-criteria.html\">Group: type = person; actual = false; quantity = 145</a></td></tr></table></div>"
+  ] ;
+  fhir:EvidenceVariable.status [ fhir:value "active"] ;
+  fhir:EvidenceVariable.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       a sct:362956003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "362956003" ] ;
+       fhir:Coding.display [ fhir:value "Procedure/intervention (navigational concept)" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:12893009 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "12893009" ] ;
+         fhir:Coding.display [ fhir:value "Biological" ]
+       ]
+     ]
+  ] ;
+  fhir:EvidenceVariable.characteristic [
+     fhir:index 0 ;
+     fhir:EvidenceVariable.characteristic.definitionReference [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Group/mii-exa-mtb-study-cldn6-eligibility-criteria> ;
+       fhir:Reference.reference [ fhir:value "Group/mii-exa-mtb-study-cldn6-eligibility-criteria" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/EvidenceVariable/mii-exa-mtb-study-cldn6-evidence-variable-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

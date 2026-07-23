@@ -1,0 +1,257 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-cm-mtb-therapiestatusgrund-sct"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap mii-cm-mtb-therapiestatusgrund-sct</b></p><a name=\"mii-cm-mtb-therapiestatusgrund-sct\"> </a><a name=\"hcmii-cm-mtb-therapiestatusgrund-sct\"> </a><p>Mapping from <a href=\"ValueSet-mii-vs-mtb-therapiestatusgrund.html\">MII VS Therapiestatusgrund</a> to http://snomed.info/sct/900000000000207008/version/20250501</p><br/><p>Mapping from <a href=\"CodeSystem-mii-cs-mtb-therapiestatusgrund.html\">MII CS Therapiestatusgrund</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>payment-refused (Kostenübernahme abgelehnt)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>302179005 (Benefit application rejected (finding))</td></tr><tr><td>payment-pending (Kostenübernahme noch ausstehend)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>302178002 (Outcome of benefit application awaited (finding))</td></tr><tr><td>payment-ended (Ende der Kostenübernahme)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>224196001 (Benefits received (finding))</td></tr><tr><td>no-indication (Klinisch keine Indikation)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>71653005 (No indication of (contextual qualifier) (qualifier value))</td></tr><tr><td>medical-reasons (Medizinische Gründe)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>373788008 (Treatment delay - clinical reason (finding))</td></tr><tr><td>patient-refusal (Therapie durch Patient abgelehnt)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>413311005 (Patient non-compliant - declined intervention / support (situation))</td></tr><tr><td>patient-wish (Auf Wunsch des Patienten)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>1186606009 (Patient request observable (observable entity))</td></tr><tr><td>patient-death (Tod)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>419099009 (Dead (finding))</td></tr><tr><td>lost-to-fu (Lost to follow-up)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>399307001 (Lost to follow-up (finding))</td></tr><tr><td>chronic-remission (Anhaltende Remission)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>277022003 (Remission phase (qualifier value))</td></tr><tr><td>progression</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>419835002 (Tumor progression (finding))</td></tr><tr><td>toxicity (Toxizität)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>75478009 (Toxicity)</td></tr><tr><td>other-therapy-chosen (Wahl einer anderen Therapie durch Behandler)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>182868002 (Treatment stopped - alternative therapy undertaken (situation))</td></tr><tr><td>best-supportive-care</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>243114000 (Supportive care)</td></tr><tr><td>deterioration (Zustandsverschlechterung)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>285384003 (General health deterioration (finding))</td></tr><tr><td>regular-completion (Reguläres Ende)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>385656004 (Ended (qualifier value))</td></tr><tr><td>regular-completion-with-dosage-reduction (Reguläres Ende mit Dosisreduktion)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>182822000 (Reducing dose prescribed (situation))</td></tr><tr><td>regular-completion-with-substance-change (Reguläres Ende mit Substanzwechsel)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>417886001 (Treatment adjusted per protocol (situation))</td></tr><tr><td>other (Weitere Gründe)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>74964007 (Other (qualifier value))</td></tr><tr><td>unknown (Unbekannt)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>261665006 (Unknown (qualifier value))</td></tr></table></div>"
+  ] ;
+  fhir:ConceptMap.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct"] ;
+  fhir:ConceptMap.version [ fhir:value "2026.0.1"] ;
+  fhir:ConceptMap.name [ fhir:value "MII CM MTB Therapiestatusgrund SNOMED CT Mapping"] ;
+  fhir:ConceptMap.title [ fhir:value "MII CM MTB Therapiestatusgrund SNOMED CT Mapping"] ;
+  fhir:ConceptMap.status [ fhir:value "active"] ;
+  fhir:ConceptMap.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ConceptMap.date [ fhir:value "2025-05-01"^^xsd:date] ;
+  fhir:ConceptMap.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:ConceptMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:ConceptMap.description [ fhir:value "Mapping der Codes zur Begründung des Therapiestatus nach SNOMED CT"] ;
+  fhir:ConceptMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:ConceptMap.purpose [ fhir:value "Technische Mappings zur Transformation der Therapiestatusgründe nach SNOMED CT"] ;
+  fhir:ConceptMap.sourceUri [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund"] ;
+  fhir:ConceptMap.targetUri [ fhir:value "http://snomed.info/sct/900000000000207008/version/20250501"] ;
+  fhir:ConceptMap.group [
+     fhir:index 0 ;
+     fhir:ConceptMap.group.source [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund" ] ;
+     fhir:ConceptMap.group.target [ fhir:value "http://snomed.info/sct" ] ;
+     fhir:ConceptMap.group.element [
+       fhir:index 0 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "payment-refused" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Kostenübernahme abgelehnt" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "302179005" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Benefit application rejected (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "payment-pending" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Kostenübernahme noch ausstehend" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "302178002" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Outcome of benefit application awaited (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "payment-ended" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Ende der Kostenübernahme" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "224196001" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Benefits received (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "no-indication" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Klinisch keine Indikation" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "71653005" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "No indication of (contextual qualifier) (qualifier value)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "medical-reasons" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Medizinische Gründe" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "373788008" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Treatment delay - clinical reason (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "patient-refusal" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Therapie durch Patient abgelehnt" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "413311005" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Patient non-compliant - declined intervention / support (situation)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "patient-wish" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Auf Wunsch des Patienten" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "1186606009" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Patient request observable (observable entity)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "patient-death" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Tod" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "419099009" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Dead (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "lost-to-fu" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Lost to follow-up" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "399307001" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Lost to follow-up (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "chronic-remission" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Anhaltende Remission" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "277022003" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Remission phase (qualifier value)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "progression" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Progression" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "419835002" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Tumor progression (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "toxicity" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Toxizität" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "75478009" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Toxicity" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "other-therapy-chosen" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Wahl einer anderen Therapie durch Behandler" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "182868002" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Treatment stopped - alternative therapy undertaken (situation)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 13 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "best-supportive-care" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Best Supportive Care" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "243114000" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Supportive care" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 14 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "deterioration" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Zustandsverschlechterung" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "285384003" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "General health deterioration (finding)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 15 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "regular-completion" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Reguläres Ende" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "385656004" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Ended (qualifier value)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 16 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "regular-completion-with-dosage-reduction" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Reguläres Ende mit Dosisreduktion" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "182822000" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Reducing dose prescribed (situation)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 17 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "regular-completion-with-substance-change" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Reguläres Ende mit Substanzwechsel" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "417886001" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Treatment adjusted per protocol (situation)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 18 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "other" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Weitere Gründe" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "74964007" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Other (qualifier value)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 19 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "unknown" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Unbekannt" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "261665006" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Unknown (qualifier value)" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

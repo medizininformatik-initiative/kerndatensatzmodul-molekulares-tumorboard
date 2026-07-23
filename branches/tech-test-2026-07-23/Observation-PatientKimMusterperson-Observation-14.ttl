@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-14> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PatientKimMusterperson-Observation-14"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-14</b></p><a name=\"PatientKimMusterperson-Observation-14\"> </a><a name=\"hcPatientKimMusterperson-Observation-14\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-3.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 245276004}\">mediastinaler Lymphknoten</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 258283002}, {http://snomed.info/sct 373067005}, {http://snomed.info/sct 385420005}, {http://snomed.info/sct 151174005}\">vermehrter mediastinaler Lymphknotenbesatz ohne Kontrastmittelaufnahme</span></p></div>"
+  ] ;
+  fhir:Observation.partOf [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/PatientKimMusterperson-Procedure-3> ;
+     fhir:Reference.reference [ fhir:value "Procedure/PatientKimMusterperson-Procedure-3" ]
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:245276004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "245276004" ] ;
+       fhir:Coding.display [ fhir:value "Mediastinal lymph node group" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "mediastinaler Lymphknoten" ]
+  ] ;
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:258283002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "258283002" ] ;
+       fhir:Coding.display [ fhir:value "Lymphomatous nodal involvement" ]
+     ], [
+       fhir:index 1 ;
+       a sct:373067005 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "373067005" ] ;
+       fhir:Coding.display [ fhir:value "No" ]
+     ], [
+       fhir:index 2 ;
+       a sct:385420005 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "385420005" ] ;
+       fhir:Coding.display [ fhir:value "Contrast media" ]
+     ], [
+       fhir:index 3 ;
+       a sct:151174005 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "151174005" ] ;
+       fhir:Coding.display [ fhir:value "Drug intake observed" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "vermehrter mediastinaler Lymphknotenbesatz ohne Kontrastmittelaufnahme" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-14.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

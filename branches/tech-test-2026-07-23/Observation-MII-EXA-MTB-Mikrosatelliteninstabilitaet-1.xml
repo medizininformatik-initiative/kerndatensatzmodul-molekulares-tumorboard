@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="MII-EXA-MTB-Mikrosatelliteninstabilitaet-1"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet|2026.0.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation MII-EXA-MTB-Mikrosatelliteninstabilitaet-1</b></p><a name="MII-EXA-MTB-Mikrosatelliteninstabilitaet-1"> </a><a name="hcMII-EXA-MTB-Mikrosatelliteninstabilitaet-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html">MII PR MTB Mikrosatelliteninstabilität</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs biomarker-category}">A characterization of a given biomarker observation.</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 81695-9}">Microsatellite instability [Interpretation] in Cancer specimen Qualitative</span></p><p><b>subject</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/example">Patient/example</a></p><p><b>encounter</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/example">Encounter/example</a></p><p><b>value</b>: 2.61 %<span style="background: LightGoldenRodYellow"> (Details: UCUM  code% = '%')</span></p><p><b>interpretation</b>: <span title="Codes:{http://loinc.org LA14122-8}">Stable</span></p><p><b>method</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type bioinformatic}">Sequenzierung</span></p><p><b>specimen</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Specimen/example">Specimen/example</a></p></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="laboratory"/>
+      <display value="Laboratory"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+      <code value="biomarker-category"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="81695-9"/>
+      <display value="Microsatellite instability [Interpretation] in Cancer specimen Qualitative"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <valueQuantity>
+    <value value="2.61"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="%"/>
+  </valueQuantity>
+  <interpretation>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LA14122-8"/>
+      <display value="Stable"/>
+    </coding>
+  </interpretation>
+  <method>
+    <coding>
+      <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type"/>
+      <code value="bioinformatic"/>
+      <display value="Sequenzierung"/>
+    </coding>
+  </method>
+  <specimen>
+    <reference value="Specimen/example"/>
+  </specimen>
+</Observation>

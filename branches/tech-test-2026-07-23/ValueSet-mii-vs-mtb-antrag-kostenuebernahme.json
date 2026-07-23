@@ -1,0 +1,49 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "mii-vs-mtb-antrag-kostenuebernahme",
+  "language" : "de-DE",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xml:lang=\"de-DE\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-DE\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-mtb-antrag-kostenuebernahme</b></p><a name=\"mii-vs-mtb-antrag-kostenuebernahme\"> </a><a name=\"hcmii-vs-mtb-antrag-kostenuebernahme\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/7.2.0/CodeSystem-claim-type.html\"><code>http://terminology.hl7.org/CodeSystem/claim-type</code></a><span title=\"Version is explicitly stated to be 1.0.1\"> version &#x1F4CD;1.0.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.2.0/CodeSystem-claim-type.html#claim-type-institutional\">institutional</a></td><td>Stationärer Erstattungsantrag</td><td>Hospital, clinic and typically inpatient claims.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.2.0/CodeSystem-claim-type.html#claim-type-pharmacy\">pharmacy</a></td><td>Apotheken-Erstattungsantrag</td><td>Pharmacy claims for goods and services.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.2.0/CodeSystem-claim-type.html#claim-type-professional\">professional</a></td><td>Außerklinischer Erstattungsantrag (z.B. niedergelassener Onkologe)</td><td>Typically, outpatient claims from Physician, Psychological, Chiropractor, Physiotherapy, Speech Pathology, rehabilitative, consulting.</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Antrag_Kostenuebernahme_Type",
+  "title" : "MII VS MTB Antrag Kostenuebernahme",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-23T12:42:46+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "MII Logical Model Modul Molekulares Tumorboard",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "276"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/claim-type",
+      "version" : "1.0.1",
+      "concept" : [{
+        "code" : "institutional",
+        "display" : "Stationärer Erstattungsantrag"
+      },
+      {
+        "code" : "pharmacy",
+        "display" : "Apotheken-Erstattungsantrag"
+      },
+      {
+        "code" : "professional",
+        "display" : "Außerklinischer Erstattungsantrag (z.B. niedergelassener Onkologe)"
+      }]
+    }]
+  }
+}

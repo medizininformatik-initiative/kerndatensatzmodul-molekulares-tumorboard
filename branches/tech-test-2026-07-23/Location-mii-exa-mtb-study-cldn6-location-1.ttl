@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-1> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-cldn6-location-1"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location mii-exa-mtb-study-cldn6-location-1</b></p><a name=\"mii-exa-mtb-study-cldn6-location-1\"> </a><a name=\"hcmii-exa-mtb-study-cldn6-location-1\"> </a><p><b>name</b>: Charité - Universitätsmedizin Berlin - Campus Benjamin Franklin</p><p><b>address</b>: Berlin 12200 Germany </p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>13.41053</td><td>52.52437</td></tr></table></div>"
+  ] ;
+  fhir:Location.name [ fhir:value "Charité - Universitätsmedizin Berlin - Campus Benjamin Franklin"] ;
+  fhir:Location.address [
+     fhir:Address.city [ fhir:value "Berlin" ] ;
+     fhir:Address.postalCode [ fhir:value "12200" ] ;
+     fhir:Address.country [ fhir:value "Germany" ]
+  ] ;
+  fhir:Location.position [
+     fhir:Location.position.longitude [ fhir:value "13.41053"^^xsd:decimal ] ;
+     fhir:Location.position.latitude [ fhir:value "52.52437"^^xsd:decimal ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

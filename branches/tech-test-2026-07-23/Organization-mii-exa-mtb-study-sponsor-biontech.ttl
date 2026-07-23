@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Organization/mii-exa-mtb-study-sponsor-biontech> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-sponsor-biontech"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization mii-exa-mtb-study-sponsor-biontech</b></p><a name=\"mii-exa-mtb-study-sponsor-biontech\"> </a><a name=\"hcmii-exa-mtb-study-sponsor-biontech\"> </a><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/organization-type crs}\">Clinical Research Sponsor</span></p><p><b>name</b>: BioNTech Cell &amp; Gene Therapies GmbH</p></div>"
+  ] ;
+  fhir:Organization.type [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/organization-type" ] ;
+       fhir:Coding.code [ fhir:value "crs" ] ;
+       fhir:Coding.display [ fhir:value "Clinical Research Sponsor" ]
+     ]
+  ] ;
+  fhir:Organization.name [ fhir:value "BioNTech Cell & Gene Therapies GmbH"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Organization/mii-exa-mtb-study-sponsor-biontech.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

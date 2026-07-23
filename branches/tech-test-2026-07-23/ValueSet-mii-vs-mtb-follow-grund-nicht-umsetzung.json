@@ -1,0 +1,87 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "mii-vs-mtb-follow-grund-nicht-umsetzung",
+  "language" : "de-DE",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de-DE\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-DE\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-mtb-follow-grund-nicht-umsetzung</b></p><a name=\"mii-vs-mtb-follow-grund-nicht-umsetzung\"> </a><a name=\"hcmii-vs-mtb-follow-grund-nicht-umsetzung\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><ul><li>Include these codes as defined in <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>payment-refused</td><td/></tr><tr><td>payment-pending</td><td/></tr><tr><td>payment-ended</td><td/></tr><tr><td>no-indication</td><td/></tr><tr><td>medical-reason</td><td/></tr><tr><td>patient-refusal</td><td/></tr><tr><td>patient-wish</td><td/></tr><tr><td>patient-death</td><td/></tr><tr><td>lost-to-fu</td><td/></tr><tr><td>chronic-remission</td><td/></tr><tr><td>progression</td><td/></tr><tr><td>toxicity</td><td/></tr><tr><td>other-therapy-chosen</td><td/></tr><tr><td>best-supportive-care</td><td/></tr><tr><td>deterioration</td><td/></tr><tr><td>other</td><td/></tr><tr><td>unknown</td><td/></tr></table></li></ul></div>"
+  },
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung",
+  "title" : "MII VS Follow-Up Grund Nicht-Umsetzung",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-23T12:42:46+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "276"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund",
+      "concept" : [{
+        "code" : "payment-refused"
+      },
+      {
+        "code" : "payment-pending"
+      },
+      {
+        "code" : "payment-ended"
+      },
+      {
+        "code" : "no-indication"
+      },
+      {
+        "code" : "medical-reason"
+      },
+      {
+        "code" : "patient-refusal"
+      },
+      {
+        "code" : "patient-wish"
+      },
+      {
+        "code" : "patient-death"
+      },
+      {
+        "code" : "lost-to-fu"
+      },
+      {
+        "code" : "chronic-remission"
+      },
+      {
+        "code" : "progression"
+      },
+      {
+        "code" : "toxicity"
+      },
+      {
+        "code" : "other-therapy-chosen"
+      },
+      {
+        "code" : "best-supportive-care"
+      },
+      {
+        "code" : "deterioration"
+      },
+      {
+        "code" : "other"
+      },
+      {
+        "code" : "unknown"
+      }]
+    }]
+  }
+}

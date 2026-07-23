@@ -1,0 +1,143 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-</b></p><a name=\"PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-\"> </a><a name=\"hcPatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-insituhybridization-her2.html\">MII PR MTB In Situ Hybridization HER2</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span>, <span title=\"Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs biomarker-category}\">A characterization of a given biomarker observation.</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 49683-6}, {http://snomed.info/sct 51864006}\">ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>value</b>: 1.2/1</p><p><b>interpretation</b>: <span title=\"Codes:{http://snomed.info/sct 260385009}\">Negative (qualifier value)</span></p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 1303773004}\">Fluorescence in situ hybridization technique (qualifier value)</span></p><p><b>specimen</b>: <a href=\"Specimen-PatientKimMusterperson-AscitesSpecimen-2.html\">Specimen: accessionIdentifier = Z230201/23; type = Ascitic fluid specimen (specimen)</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 74860-8}\">ERBB2 gene copy number/nucleus in Tissue by FISH</span></p><p><b>value</b>: 2.4 #</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 74861-6}\">Chromosome 17 copy number/nucleus in Tissue by FISH</span></p><p><b>value</b>: 2 #</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 62361-1}\">Cells counted [#]</span></p><p><b>value</b>: 50 #</p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "laboratory" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs" ] ;
+       fhir:Coding.code [ fhir:value "biomarker-category" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a loinc:49683-6 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "49683-6" ] ;
+       fhir:Coding.display [ fhir:value "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH" ]
+     ], [
+       fhir:index 1 ;
+       a sct:51864006 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "51864006" ] ;
+       fhir:Coding.display [ fhir:value "Nucleic acid hybridization, function (observable entity)" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:Observation.valueRatio [
+     fhir:Ratio.numerator [
+       fhir:Quantity.value [ fhir:value "1.2"^^xsd:decimal ]
+     ] ;
+     fhir:Ratio.denominator [
+       fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+     ]
+  ] ;
+  fhir:Observation.interpretation [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:260385009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "260385009" ] ;
+       fhir:Coding.display [ fhir:value "Negative (qualifier value)" ]
+     ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:1303773004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "1303773004" ] ;
+       fhir:Coding.display [ fhir:value "Fluorescence in situ hybridization technique (qualifier value)" ]
+     ]
+  ] ;
+  fhir:Observation.specimen [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Specimen/PatientKimMusterperson-AscitesSpecimen-2> ;
+     fhir:Reference.reference [ fhir:value "Specimen/PatientKimMusterperson-AscitesSpecimen-2" ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:74860-8 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "74860-8" ] ;
+         fhir:Coding.display [ fhir:value "ERBB2 gene copy number/nucleus in Tissue by FISH" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "2.4"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "#" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:74861-6 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "74861-6" ] ;
+         fhir:Coding.display [ fhir:value "Chromosome 17 copy number/nucleus in Tissue by FISH" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "#" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:62361-1 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "62361-1" ] ;
+         fhir:Coding.display [ fhir:value "Cells counted [#]" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "50"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "#" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

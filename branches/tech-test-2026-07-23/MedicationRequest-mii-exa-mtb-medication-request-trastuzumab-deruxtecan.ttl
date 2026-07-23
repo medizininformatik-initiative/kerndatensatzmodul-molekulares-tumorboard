@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-medication-request-trastuzumab-deruxtecan"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest mii-exa-mtb-medication-request-trastuzumab-deruxtecan</b></p><a name=\"mii-exa-mtb-medication-request-trastuzumab-deruxtecan\"> </a><a name=\"hcmii-exa-mtb-medication-request-trastuzumab-deruxtecan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-therapieempfehlung.html\">MII PR MTB Therapieempfehlung Systemische Therapie</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 3</p><p><b>MII EX MTB Empfehlung Evidenzgraduierung</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad m1B}\">m1B</span></p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/35665782</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/37870536</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://doi.org</code>/10.1200/JCO.2023.41.17_suppl.LBA3000</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>medication</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/atc L01FD04}\">Trastuzumab deruxtecan</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>authoredOn</b>: 2023-03-28</p><p><b>reasonReference</b>: <a href=\"Condition-PatientKimMusterperson-PrimaryDiagnosis-2.html\">Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet</a></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet" ] ;
+     fhir:Extension.valuePositiveInt [ fhir:value "3"^^xsd:positiveInteger ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad" ] ;
+         fhir:Coding.code [ fhir:value "m1B" ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "http://www.ncbi.nlm.nih.gov/pubmed" ] ;
+       fhir:Identifier.value [ fhir:value "35665782" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "http://www.ncbi.nlm.nih.gov/pubmed" ] ;
+       fhir:Identifier.value [ fhir:value "37870536" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "http://doi.org" ] ;
+       fhir:Identifier.value [ fhir:value "10.1200/JCO.2023.41.17_suppl.LBA3000" ]
+     ]
+  ] ;
+  fhir:MedicationRequest.status [ fhir:value "draft"] ;
+  fhir:MedicationRequest.intent [ fhir:value "proposal"] ;
+  fhir:MedicationRequest.medicationCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/atc" ] ;
+       fhir:Coding.version [ fhir:value "2025" ] ;
+       fhir:Coding.code [ fhir:value "L01FD04" ] ;
+       fhir:Coding.display [ fhir:value "Trastuzumab deruxtecan" ]
+     ]
+  ] ;
+  fhir:MedicationRequest.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:MedicationRequest.authoredOn [ fhir:value "2023-03-28"^^xsd:date] ;
+  fhir:MedicationRequest.reasonReference [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Condition/PatientKimMusterperson-PrimaryDiagnosis-2> ;
+     fhir:Reference.reference [ fhir:value "Condition/PatientKimMusterperson-PrimaryDiagnosis-2" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

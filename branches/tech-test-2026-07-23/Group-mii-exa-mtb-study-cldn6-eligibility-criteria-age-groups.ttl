@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Group/mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups> a fhir:Group ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Group mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups</b></p><a name=\"mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups\"> </a><a name=\"hcmii-exa-mtb-study-cldn6-eligibility-criteria-age-groups\"> </a><p><b>type</b>: Person</p><p><b>actual</b>: false</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes:\">Age Group (Adult)</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 41847000}\">Adulthood (qualifier value)</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes:\">Age Group (Older Adult)</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 271872005}\">Old age (qualifier value)</span></p><p><b>exclude</b>: false</p></blockquote></div>"
+  ] ;
+  fhir:Group.type [ fhir:value "person"] ;
+  fhir:Group.actual [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Group.characteristic [
+     fhir:index 0 ;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Age Group (Adult)" ]
+     ] ;
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:41847000 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "41847000" ] ;
+         fhir:Coding.display [ fhir:value "Adulthood (qualifier value)" ]
+       ]
+     ] ;
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 1 ;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Age Group (Older Adult)" ]
+     ] ;
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:271872005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "271872005" ] ;
+         fhir:Coding.display [ fhir:value "Old age (qualifier value)" ]
+       ]
+     ] ;
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Group/mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

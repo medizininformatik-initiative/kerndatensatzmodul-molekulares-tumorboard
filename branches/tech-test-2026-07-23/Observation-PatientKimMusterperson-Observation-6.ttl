@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-6> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PatientKimMusterperson-Observation-6"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-6</b></p><a name=\"PatientKimMusterperson-Observation-6\"> </a><a name=\"hcPatientKimMusterperson-Observation-6\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-2.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 389026000}\">Ascites</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 860638000}\">kein Aszites</span></p></div>"
+  ] ;
+  fhir:Observation.partOf [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/PatientKimMusterperson-Procedure-2> ;
+     fhir:Reference.reference [ fhir:value "Procedure/PatientKimMusterperson-Procedure-2" ]
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:389026000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "389026000" ] ;
+       fhir:Coding.display [ fhir:value "Ascites" ]
+     ]
+  ] ;
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:860638000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "860638000" ] ;
+       fhir:Coding.display [ fhir:value "No ascites" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "kein Aszites" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-6.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

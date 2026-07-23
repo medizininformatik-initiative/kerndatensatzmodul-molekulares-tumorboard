@@ -1,0 +1,153 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-cs-mtb-therapiestatusgrund"] ;
+  fhir:Resource.language [ fhir:value "de-DE"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"de-DE\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-DE\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mii-cs-mtb-therapiestatusgrund</b></p><a name=\"mii-cs-mtb-therapiestatusgrund\"> </a><a name=\"hcmii-cs-mtb-therapiestatusgrund\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">payment-refused<a name=\"mii-cs-mtb-therapiestatusgrund-payment-refused\"> </a></td><td>Kostenübernahme abgelehnt</td><td>Kostenübernahme abgelehnt</td></tr><tr><td style=\"white-space:nowrap\">payment-pending<a name=\"mii-cs-mtb-therapiestatusgrund-payment-pending\"> </a></td><td>Kostenübernahme noch ausstehend</td><td>Kostenübernahme noch ausstehend</td></tr><tr><td style=\"white-space:nowrap\">payment-ended<a name=\"mii-cs-mtb-therapiestatusgrund-payment-ended\"> </a></td><td>Ende der Kostenübernahme</td><td>Ende der Kostenübernahme</td></tr><tr><td style=\"white-space:nowrap\">no-indication<a name=\"mii-cs-mtb-therapiestatusgrund-no-indication\"> </a></td><td>Klinisch keine Indikation</td><td>Klinisch keine Indikation</td></tr><tr><td style=\"white-space:nowrap\">medical-reasons<a name=\"mii-cs-mtb-therapiestatusgrund-medical-reasons\"> </a></td><td>Medizinische Gründe</td><td>Medizinische Gründe</td></tr><tr><td style=\"white-space:nowrap\">patient-refusal<a name=\"mii-cs-mtb-therapiestatusgrund-patient-refusal\"> </a></td><td>Therapie durch Patient abgelehnt</td><td>Therapie durch Patient abgelehnt</td></tr><tr><td style=\"white-space:nowrap\">patient-wish<a name=\"mii-cs-mtb-therapiestatusgrund-patient-wish\"> </a></td><td>Auf Wunsch des Patienten</td><td>Auf Wunsch des Patienten</td></tr><tr><td style=\"white-space:nowrap\">patient-death<a name=\"mii-cs-mtb-therapiestatusgrund-patient-death\"> </a></td><td>Tod</td><td>Tod</td></tr><tr><td style=\"white-space:nowrap\">lost-to-fu<a name=\"mii-cs-mtb-therapiestatusgrund-lost-to-fu\"> </a></td><td>Lost to follow-up</td><td>Lost to follow-up</td></tr><tr><td style=\"white-space:nowrap\">chronic-remission<a name=\"mii-cs-mtb-therapiestatusgrund-chronic-remission\"> </a></td><td>Anhaltende Remission</td><td>Anhaltende Remission</td></tr><tr><td style=\"white-space:nowrap\">progression<a name=\"mii-cs-mtb-therapiestatusgrund-progression\"> </a></td><td>Progression</td><td>Progression</td></tr><tr><td style=\"white-space:nowrap\">toxicity<a name=\"mii-cs-mtb-therapiestatusgrund-toxicity\"> </a></td><td>Toxizität</td><td>Toxizität</td></tr><tr><td style=\"white-space:nowrap\">other-therapy-chosen<a name=\"mii-cs-mtb-therapiestatusgrund-other-therapy-chosen\"> </a></td><td>Wahl einer anderen Therapie durch Behandler</td><td>Wahl einer anderen Therapie durch Behandler</td></tr><tr><td style=\"white-space:nowrap\">best-supportive-care<a name=\"mii-cs-mtb-therapiestatusgrund-best-supportive-care\"> </a></td><td>Best Supportive Care</td><td>Best Supportive Care</td></tr><tr><td style=\"white-space:nowrap\">deterioration<a name=\"mii-cs-mtb-therapiestatusgrund-deterioration\"> </a></td><td>Zustandsverschlechterung</td><td>Zustandsverschlechterung</td></tr><tr><td style=\"white-space:nowrap\">regular-completion<a name=\"mii-cs-mtb-therapiestatusgrund-regular-completion\"> </a></td><td>Reguläres Ende</td><td>Reguläres Ende</td></tr><tr><td style=\"white-space:nowrap\">regular-completion-with-dosage-reduction<a name=\"mii-cs-mtb-therapiestatusgrund-regular-completion-with-dosage-reduction\"> </a></td><td>Reguläres Ende mit Dosisreduktion</td><td>Reguläres Ende mit Dosisreduktion</td></tr><tr><td style=\"white-space:nowrap\">regular-completion-with-substance-change<a name=\"mii-cs-mtb-therapiestatusgrund-regular-completion-with-substance-change\"> </a></td><td>Reguläres Ende mit Substanzwechsel</td><td>Reguläres Ende mit Substanzwechsel</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"mii-cs-mtb-therapiestatusgrund-other\"> </a></td><td>Weitere Gründe</td><td>Weitere Gründe</td></tr><tr><td style=\"white-space:nowrap\">unknown<a name=\"mii-cs-mtb-therapiestatusgrund-unknown\"> </a></td><td>Unbekannt</td><td>Unbekannt</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund"] ;
+  fhir:CodeSystem.version [ fhir:value "2026.0.1"] ;
+  fhir:CodeSystem.name [ fhir:value "MII_CS_MTB_Therapiestatusgrund"] ;
+  fhir:CodeSystem.title [ fhir:value "MII CS Therapiestatusgrund"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-07-23T12:42:46+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Codesystem zum Status Grund der Systemischen Therapie nach DNPM"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "20"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "payment-refused" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Kostenübernahme abgelehnt" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Kostenübernahme abgelehnt" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "payment-pending" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Kostenübernahme noch ausstehend" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Kostenübernahme noch ausstehend" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "payment-ended" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Ende der Kostenübernahme" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Ende der Kostenübernahme" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "no-indication" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Klinisch keine Indikation" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Klinisch keine Indikation" ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "medical-reasons" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Medizinische Gründe" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Medizinische Gründe" ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "patient-refusal" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Therapie durch Patient abgelehnt" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Therapie durch Patient abgelehnt" ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "patient-wish" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Auf Wunsch des Patienten" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Auf Wunsch des Patienten" ]
+  ], [
+     fhir:index 7 ;
+     fhir:CodeSystem.concept.code [ fhir:value "patient-death" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Tod" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Tod" ]
+  ], [
+     fhir:index 8 ;
+     fhir:CodeSystem.concept.code [ fhir:value "lost-to-fu" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Lost to follow-up" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Lost to follow-up" ]
+  ], [
+     fhir:index 9 ;
+     fhir:CodeSystem.concept.code [ fhir:value "chronic-remission" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Anhaltende Remission" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Anhaltende Remission" ]
+  ], [
+     fhir:index 10 ;
+     fhir:CodeSystem.concept.code [ fhir:value "progression" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Progression" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Progression" ]
+  ], [
+     fhir:index 11 ;
+     fhir:CodeSystem.concept.code [ fhir:value "toxicity" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Toxizität" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Toxizität" ]
+  ], [
+     fhir:index 12 ;
+     fhir:CodeSystem.concept.code [ fhir:value "other-therapy-chosen" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Wahl einer anderen Therapie durch Behandler" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Wahl einer anderen Therapie durch Behandler" ]
+  ], [
+     fhir:index 13 ;
+     fhir:CodeSystem.concept.code [ fhir:value "best-supportive-care" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Best Supportive Care" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Best Supportive Care" ]
+  ], [
+     fhir:index 14 ;
+     fhir:CodeSystem.concept.code [ fhir:value "deterioration" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Zustandsverschlechterung" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Zustandsverschlechterung" ]
+  ], [
+     fhir:index 15 ;
+     fhir:CodeSystem.concept.code [ fhir:value "regular-completion" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Reguläres Ende" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Reguläres Ende" ]
+  ], [
+     fhir:index 16 ;
+     fhir:CodeSystem.concept.code [ fhir:value "regular-completion-with-dosage-reduction" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Reguläres Ende mit Dosisreduktion" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Reguläres Ende mit Dosisreduktion" ]
+  ], [
+     fhir:index 17 ;
+     fhir:CodeSystem.concept.code [ fhir:value "regular-completion-with-substance-change" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Reguläres Ende mit Substanzwechsel" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Reguläres Ende mit Substanzwechsel" ]
+  ], [
+     fhir:index 18 ;
+     fhir:CodeSystem.concept.code [ fhir:value "other" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Weitere Gründe" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Weitere Gründe" ]
+  ], [
+     fhir:index 19 ;
+     fhir:CodeSystem.concept.code [ fhir:value "unknown" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Unbekannt" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Unbekannt" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

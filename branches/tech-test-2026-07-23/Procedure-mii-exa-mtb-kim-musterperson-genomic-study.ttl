@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/mii-exa-mtb-kim-musterperson-genomic-study> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-kim-musterperson-genomic-study"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure mii-exa-mtb-kim-musterperson-genomic-study</b></p><a name=\"mii-exa-mtb-kim-musterperson-genomic-study\"> </a><a name=\"hcmii-exa-mtb-kim-musterperson-genomic-study\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-genomic-study.html\">MII PR MTB Genomic Study</a> version: 2026.0.1</p></div><p><b>Genomic Study Analysis Extension</b>: <a href=\"Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-1.html\">Procedure: extension = Next-Generation (NGS)/Massively parallel sequencing (MPS),SNV,SNV,GRCh38; status = completed; category = Laboratory</a></p><p><b>Genomic Study Analysis Extension</b>: <a href=\"Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-2.html\">Procedure: status = completed; category = Laboratory</a></p><p><b>Genomic Study Analysis Extension</b>: <a href=\"Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-3.html\">Procedure: extension = Immunohistochemistry; status = completed; category = Laboratory</a></p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-1> ;
+       fhir:Reference.reference [ fhir:value "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-1" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2> ;
+       fhir:Reference.reference [ fhir:value "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-3> ;
+       fhir:Reference.reference [ fhir:value "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-3" ]
+     ]
+  ] ;
+  fhir:Procedure.status [ fhir:value "completed"] ;
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "laboratory" ]
+     ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/mii-exa-mtb-kim-musterperson-genomic-study.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

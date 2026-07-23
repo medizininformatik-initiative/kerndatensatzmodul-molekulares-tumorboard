@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="SMClaims"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap SMClaims</b></p><a name="SMClaims"> </a><a name="hcSMClaims"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims<span style="color: navy">&quot; = &quot;</span>SMClaims<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/claim.html" title="Claim">http://hl7.org/fhir/StructureDefinition/Claim</a><span style="color: navy">&quot; </span><b>alias </b>Claim <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/claimresponse.html" title="ClaimResponse">http://hl7.org/fhir/StructureDefinition/ClaimResponse</a><span style="color: navy">&quot; </span><b>alias </b>ClaimResponse <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate over claims and claimResponses</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>Claims<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Bundle type = collection</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Claim per claims[] entry ---------------------------------------------</span>
+  src.claims<b> as </b><span style="color: maroon">claim</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Claim'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtClaim</span><b> then</b><span style="color: navy"> {
+</span>    claim.id<b> as </b><span style="color: maroon">claimid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">claimid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    claim<span style="color: navy"><b> -&gt; </b></span>tgtClaim<b> then </b>MapClaim<span style="color: navy">(</span><span style="color: maroon">claim</span><span style="color: navy">, </span><span style="color: maroon">tgtClaim</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claim&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- ClaimResponse per claimResponses[] entry ----------------------------</span>
+  src.claimResponses<b> as </b><span style="color: maroon">claimResp</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'ClaimResponse'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtClaimResp</span><b> then</b><span style="color: navy"> {
+</span>    claimResp.id<b> as </b><span style="color: maroon">claimRespid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">claimRespid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    claimResp<span style="color: navy"><b> -&gt; </b></span>tgtClaimResp<b> then </b>MapClaimResponse<span style="color: navy">(</span><span style="color: maroon">claimResp</span><span style="color: navy">, </span><span style="color: maroon">tgtClaimResp</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimResponse&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapClaim: DNPM claims entry → FHIR Claim</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Antrag_Kostenuebernahme (Parent: Claim)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapClaim<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Claim<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;claimId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme'</span> <i>&quot;claimProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">status = #active (fixed by profile: * status = #active (exactly))</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;claimStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">use = #preauthorization: DNPM Antrag Kostenuebernahme is a pre-authorization request</span>
+  <span style="color: navy">// </span><span style="color: green">(request for coverage approval before / at time of treatment decision)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.use = <span style="color: blue">'preauthorization'</span> <i>&quot;claimUse&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">type: required CodeableConcept — use a placeholder institutional coding</span>
+  <span style="color: navy">// </span><span style="color: green">(actual type from dnpm-dip/mtb/claim-type if available; not in LM, use fixed value)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.type<b> as </b><span style="color: maroon">t</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>t.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://terminology.hl7.org/CodeSystem/claim-type'</span> <i>&quot;claimTypeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'institutional'</span> <i>&quot;claimTypeCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;claimTypeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">patient → Patient reference (urn:uuid)</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.patient<b> as </b><span style="color: maroon">p</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>p.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;claimPatientReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimPatient&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">created ← issuedOn</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.created = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'date'</span><span style="color: navy">)</span> <i>&quot;claimCreated&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">provider: required by FHIR Claim — use a placeholder (no DNPM source field)</span>
+  <span style="color: navy">// </span><span style="color: green">Set to a relative reference that implementers can override</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.provider<b> as </b><span style="color: maroon">prov</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>prov.display = <span style="color: blue">'Unknown'</span> <i>&quot;claimProviderDisplay&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimProvider&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">priority: required by FHIR Claim — fixed to 'normal' per profile</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.priority<b> as </b><span style="color: maroon">pri</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>pri.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://terminology.hl7.org/CodeSystem/processpriority'</span> <i>&quot;claimPrioritySystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'normal'</span> <i>&quot;claimPriorityCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;claimPriorityCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimPriority&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">prescription ← recommendation.id (MTBMedicationRecommendation reference)</span>
+  <span style="color: navy">// </span><span style="color: green">Profile uses Claim.prescription (Reference(MedicationRequest)) for the therapy recommendation</span>
+  src.recommendation<b> as </b><span style="color: maroon">rec</span><span style="color: navy"><b> -&gt; </b></span>tgt.prescription<b> as </b><span style="color: maroon">pres</span><b> then</b><span style="color: navy"> {
+</span>    rec.id<b> as </b><span style="color: maroon">rid</span><span style="color: navy"><b> -&gt; </b></span>pres.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">rid</span><span style="color: navy">)</span> <i>&quot;claimPrescriptionReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimPrescription&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">insurance: required by FHIR Claim (1..*)</span>
+  <span style="color: navy">// </span><span style="color: green">Profile requires insurance with focal=true and a sequence number</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.insurance<b> as </b><span style="color: maroon">ins</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>ins.sequence = <span style="color: blue">1</span> <i>&quot;insSequence&quot;</i><span style="color: navy">;</span>
+    src<span style="color: navy"><b> -&gt; </b></span>ins.focal = <span style="color: blue">true</span> <i>&quot;insFocal&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">coverage: placeholder (no insurer data in DNPM LM)</span>
+    src<span style="color: navy"><b> -&gt; </b></span>ins.coverage<b> as </b><span style="color: maroon">cov</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>cov.display = <span style="color: blue">'Unknown'</span> <i>&quot;insCoverageDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;insCoverage&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimInsurance&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">careTeam[ZPMBeteiligung]: required by profile (1..*)</span>
+  <span style="color: navy">// </span><span style="color: green">No ZPM practitioner data in DNPM LM; write mandatory structure with placeholder</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.careTeam<b> as </b><span style="color: maroon">ct</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>ct.sequence = <span style="color: blue">1</span> <i>&quot;ctSequence&quot;</i><span style="color: navy">;</span>
+    src<span style="color: navy"><b> -&gt; </b></span>ct.responsible = <span style="color: blue">true</span> <i>&quot;ctResponsible&quot;</i><span style="color: navy">;</span>
+    src<span style="color: navy"><b> -&gt; </b></span>ct.provider<b> as </b><span style="color: maroon">prov</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>prov.display = <span style="color: blue">'ZPM'</span> <i>&quot;ctProviderDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ctProvider&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;claimCareTeam&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapClaimResponse: DNPM claimResponses entry → FHIR ClaimResponse</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Antwort_Kostenuebernahme (Parent: ClaimResponse)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapClaimResponse<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>ClaimResponse<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;crId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme'</span> <i>&quot;crProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;crMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">status = #active (fixed by profile: * status = #active)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'active'</span> <i>&quot;crStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">use = #preauthorization: mirrors the Claim.use</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.use = <span style="color: blue">'preauthorization'</span> <i>&quot;crUse&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">type: required — mirror institutional from Claim</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.type<b> as </b><span style="color: maroon">t</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>t.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://terminology.hl7.org/CodeSystem/claim-type'</span> <i>&quot;crTypeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'institutional'</span> <i>&quot;crTypeCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;crTypeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;crType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">patient → Patient reference (urn:uuid)</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.patient<b> as </b><span style="color: maroon">p</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>p.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;crPatientReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;crPatient&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">created ← issuedOn</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.created = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'date'</span><span style="color: navy">)</span> <i>&quot;crCreated&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">insurer: required by FHIR ClaimResponse — placeholder (no insurer in DNPM LM)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.insurer<b> as </b><span style="color: maroon">ins</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>ins.display = <span style="color: blue">'Unknown'</span> <i>&quot;crInsurerDisplay&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;crInsurer&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">request ← claim.id (associated Claim reference)</span>
+  src.claim<b> as </b><span style="color: maroon">cl</span><span style="color: navy"><b> -&gt; </b></span>tgt.request<b> as </b><span style="color: maroon">req</span><b> then</b><span style="color: navy"> {
+</span>    cl.id<b> as </b><span style="color: maroon">cid</span><span style="color: navy"><b> -&gt; </b></span>req.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">cid</span><span style="color: navy">)</span> <i>&quot;crRequestReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;crRequest&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">outcome: fixed to 'complete' per profile</span>
+  <span style="color: navy">// </span><span style="color: green">(* outcome = http://hl7.org/fhir/remittance-outcome#complete)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.outcome = <span style="color: blue">'complete'</span> <i>&quot;crOutcome&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">extension[Entscheidung]: map claimResponse.status → decision extension</span>
+  <span style="color: navy">// </span><span style="color: green">Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung</span>
+  src.status<b> as </b><span style="color: maroon">st</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    st<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung'</span> <i>&quot;entscheidungUrl&quot;</i><span style="color: navy">;</span>
+    st<span style="color: navy"><b> -&gt; </b></span>ext.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc</span><b> then</b><span style="color: navy"> {
+</span>      st<span style="color: navy"><b> -&gt; </b></span>cc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        st.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;entscheidungCode&quot;</i><span style="color: navy">;</span>
+        st.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;entscheidungSystem&quot;</i><span style="color: navy">;</span>
+        st.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;entscheidungDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;entscheidungCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;entscheidungValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;crEntscheidung&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">extension[Ablehnungsgrund]: map statusReason → rejection reason extension</span>
+  <span style="color: navy">// </span><span style="color: green">Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund</span>
+  src.statusReason<b> as </b><span style="color: maroon">sr</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    sr<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund'</span> <i>&quot;ablehnungsgrundUrl&quot;</i><span style="color: navy">;</span>
+    sr<span style="color: navy"><b> -&gt; </b></span>ext.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc</span><b> then</b><span style="color: navy"> {
+</span>      sr<span style="color: navy"><b> -&gt; </b></span>cc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        sr.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ablehnungsgrundCode&quot;</i><span style="color: navy">;</span>
+        sr.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ablehnungsgrundSystem&quot;</i><span style="color: navy">;</span>
+        sr.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ablehnungsgrundDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ablehnungsgrundCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ablehnungsgrundValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;crAblehnungsgrund&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims"/>
+  <version value="2026.0.1"/>
+  <name value="SMClaims"/>
+  <status value="draft"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record"/>
+    <mode value="source"/>
+    <alias value="DNPMPatientRecord"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Claim"/>
+    <mode value="produced"/>
+    <alias value="Claim"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/ClaimResponse"/>
+    <mode value="produced"/>
+    <alias value="ClaimResponse"/>
+  </structure>
+  <group>
+    <name value="Claims"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Root group: iterate over claims and claimResponses&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="bundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="collection"/>
+        </parameter>
+      </target>
+      <documentation value="Bundle type = collection"/>
+    </rule>
+    <rule>
+      <name value="claim"/>
+      <source>
+        <context value="src"/>
+        <element value="claims"/>
+        <variable value="claim"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="tgtClaim"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Claim"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="claim"/>
+          <element value="id"/>
+          <variable value="claimid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="claimid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="claim"/>
+        </source>
+        <target>
+          <context value="tgtClaim"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapClaim"/>
+          <variable value="claim"/>
+          <variable value="tgtClaim"/>
+        </dependent>
+      </rule>
+      <documentation value="--- Claim per claims[] entry ---------------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="claimResponse"/>
+      <source>
+        <context value="src"/>
+        <element value="claimResponses"/>
+        <variable value="claimResp"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="tgtClaimResp"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="ClaimResponse"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="claimResp"/>
+          <element value="id"/>
+          <variable value="claimRespid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="claimRespid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="claimResp"/>
+        </source>
+        <target>
+          <context value="tgtClaimResp"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapClaimResponse"/>
+          <variable value="claimResp"/>
+          <variable value="tgtClaimResp"/>
+        </dependent>
+      </rule>
+      <documentation value="--- ClaimResponse per claimResponses[] entry ----------------------------"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapClaim"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapClaim: DNPM claims entry → FHIR Claim&#xD;&#xA;Profile: MII_PR_MTB_Antrag_Kostenuebernahme (Parent: Claim)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Claim"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="claimId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="claimMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="claimProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="claimStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+      <documentation value="status = #active (fixed by profile: * status = #active (exactly))"/>
+    </rule>
+    <rule>
+      <name value="claimUse"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="use"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="preauthorization"/>
+        </parameter>
+      </target>
+      <documentation value="use = #preauthorization: DNPM Antrag Kostenuebernahme is a pre-authorization request&#xD;&#xA;(request for coverage approval before / at time of treatment decision)"/>
+    </rule>
+    <rule>
+      <name value="claimType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <variable value="t"/>
+      </target>
+      <rule>
+        <name value="claimTypeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="t"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="claimTypeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="claimTypeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="institutional"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="type: required CodeableConcept — use a placeholder institutional coding&#xD;&#xA;(actual type from dnpm-dip/mtb/claim-type if available; not in LM, use fixed value)"/>
+    </rule>
+    <rule>
+      <name value="claimPatient"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="patient"/>
+        <variable value="p"/>
+      </target>
+      <rule>
+        <name value="claimPatientReference"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="p"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="patient → Patient reference (urn:uuid)"/>
+    </rule>
+    <rule>
+      <name value="claimCreated"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="issuedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="created"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="issuedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="date"/>
+        </parameter>
+      </target>
+      <documentation value="created ← issuedOn"/>
+    </rule>
+    <rule>
+      <name value="claimProvider"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="provider"/>
+        <variable value="prov"/>
+      </target>
+      <rule>
+        <name value="claimProviderDisplay"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="prov"/>
+          <contextType value="variable"/>
+          <element value="display"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="Unknown"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="provider: required by FHIR Claim — use a placeholder (no DNPM source field)&#xD;&#xA;Set to a relative reference that implementers can override"/>
+    </rule>
+    <rule>
+      <name value="claimPriority"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="priority"/>
+        <variable value="pri"/>
+      </target>
+      <rule>
+        <name value="claimPriorityCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="pri"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="claimPrioritySystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://terminology.hl7.org/CodeSystem/processpriority"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="claimPriorityCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="normal"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="priority: required by FHIR Claim — fixed to 'normal' per profile"/>
+    </rule>
+    <rule>
+      <name value="claimPrescription"/>
+      <source>
+        <context value="src"/>
+        <element value="recommendation"/>
+        <variable value="rec"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="prescription"/>
+        <variable value="pres"/>
+      </target>
+      <rule>
+        <name value="claimPrescriptionReference"/>
+        <source>
+          <context value="rec"/>
+          <element value="id"/>
+          <variable value="rid"/>
+        </source>
+        <target>
+          <context value="pres"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="rid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="prescription ← recommendation.id (MTBMedicationRecommendation reference)&#xD;&#xA;Profile uses Claim.prescription (Reference(MedicationRequest)) for the therapy recommendation"/>
+    </rule>
+    <rule>
+      <name value="claimInsurance"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="insurance"/>
+        <variable value="ins"/>
+      </target>
+      <rule>
+        <name value="insSequence"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="ins"/>
+          <contextType value="variable"/>
+          <element value="sequence"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueInteger value="1"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="insFocal"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="ins"/>
+          <contextType value="variable"/>
+          <element value="focal"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueBoolean value="true"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="insCoverage"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="ins"/>
+          <contextType value="variable"/>
+          <element value="coverage"/>
+          <variable value="cov"/>
+        </target>
+        <rule>
+          <name value="insCoverageDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="cov"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Unknown"/>
+            </parameter>
+          </target>
+        </rule>
+        <documentation value="coverage: placeholder (no insurer data in DNPM LM)"/>
+      </rule>
+      <documentation value="insurance: required by FHIR Claim (1..*)&#xD;&#xA;Profile requires insurance with focal=true and a sequence number"/>
+    </rule>
+    <rule>
+      <name value="claimCareTeam"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="careTeam"/>
+        <variable value="ct"/>
+      </target>
+      <rule>
+        <name value="ctSequence"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="ct"/>
+          <contextType value="variable"/>
+          <element value="sequence"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueInteger value="1"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="ctResponsible"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="ct"/>
+          <contextType value="variable"/>
+          <element value="responsible"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueBoolean value="true"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="ctProvider"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="ct"/>
+          <contextType value="variable"/>
+          <element value="provider"/>
+          <variable value="prov"/>
+        </target>
+        <rule>
+          <name value="ctProviderDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="prov"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="ZPM"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="careTeam[ZPMBeteiligung]: required by profile (1..*)&#xD;&#xA;No ZPM practitioner data in DNPM LM; write mandatory structure with placeholder"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapClaimResponse"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapClaimResponse: DNPM claimResponses entry → FHIR ClaimResponse&#xD;&#xA;Profile: MII_PR_MTB_Antwort_Kostenuebernahme (Parent: ClaimResponse)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="ClaimResponse"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="crId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="crMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="crProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="crStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="active"/>
+        </parameter>
+      </target>
+      <documentation value="status = #active (fixed by profile: * status = #active)"/>
+    </rule>
+    <rule>
+      <name value="crUse"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="use"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="preauthorization"/>
+        </parameter>
+      </target>
+      <documentation value="use = #preauthorization: mirrors the Claim.use"/>
+    </rule>
+    <rule>
+      <name value="crType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <variable value="t"/>
+      </target>
+      <rule>
+        <name value="crTypeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="t"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="crTypeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="crTypeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="institutional"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="type: required — mirror institutional from Claim"/>
+    </rule>
+    <rule>
+      <name value="crPatient"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="patient"/>
+        <variable value="p"/>
+      </target>
+      <rule>
+        <name value="crPatientReference"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="p"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="patient → Patient reference (urn:uuid)"/>
+    </rule>
+    <rule>
+      <name value="crCreated"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="issuedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="created"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="issuedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="date"/>
+        </parameter>
+      </target>
+      <documentation value="created ← issuedOn"/>
+    </rule>
+    <rule>
+      <name value="crInsurer"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="insurer"/>
+        <variable value="ins"/>
+      </target>
+      <rule>
+        <name value="crInsurerDisplay"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="ins"/>
+          <contextType value="variable"/>
+          <element value="display"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="Unknown"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="insurer: required by FHIR ClaimResponse — placeholder (no insurer in DNPM LM)"/>
+    </rule>
+    <rule>
+      <name value="crRequest"/>
+      <source>
+        <context value="src"/>
+        <element value="claim"/>
+        <variable value="cl"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="request"/>
+        <variable value="req"/>
+      </target>
+      <rule>
+        <name value="crRequestReference"/>
+        <source>
+          <context value="cl"/>
+          <element value="id"/>
+          <variable value="cid"/>
+        </source>
+        <target>
+          <context value="req"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="cid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="request ← claim.id (associated Claim reference)"/>
+    </rule>
+    <rule>
+      <name value="crOutcome"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="outcome"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="complete"/>
+        </parameter>
+      </target>
+      <documentation value="outcome: fixed to 'complete' per profile&#xD;&#xA;(* outcome = http://hl7.org/fhir/remittance-outcome#complete)"/>
+    </rule>
+    <rule>
+      <name value="crEntscheidung"/>
+      <source>
+        <context value="src"/>
+        <element value="status"/>
+        <variable value="st"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+      </target>
+      <rule>
+        <name value="entscheidungUrl"/>
+        <source>
+          <context value="st"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="entscheidungValue"/>
+        <source>
+          <context value="st"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="cc"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="CodeableConcept"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="entscheidungCoding"/>
+          <source>
+            <context value="st"/>
+          </source>
+          <target>
+            <context value="cc"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="entscheidungCode"/>
+            <source>
+              <context value="st"/>
+              <element value="code"/>
+              <variable value="codeV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="codeV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="entscheidungSystem"/>
+            <source>
+              <context value="st"/>
+              <element value="system"/>
+              <variable value="systemV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="systemV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="entscheidungDisplay"/>
+            <source>
+              <context value="st"/>
+              <element value="display"/>
+              <variable value="displayV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="displayV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <documentation value="extension[Entscheidung]: map claimResponse.status → decision extension&#xD;&#xA;Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung"/>
+    </rule>
+    <rule>
+      <name value="crAblehnungsgrund"/>
+      <source>
+        <context value="src"/>
+        <element value="statusReason"/>
+        <variable value="sr"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+      </target>
+      <rule>
+        <name value="ablehnungsgrundUrl"/>
+        <source>
+          <context value="sr"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="ablehnungsgrundValue"/>
+        <source>
+          <context value="sr"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="cc"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="CodeableConcept"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="ablehnungsgrundCoding"/>
+          <source>
+            <context value="sr"/>
+          </source>
+          <target>
+            <context value="cc"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="ablehnungsgrundCode"/>
+            <source>
+              <context value="sr"/>
+              <element value="code"/>
+              <variable value="codeV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="codeV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="ablehnungsgrundSystem"/>
+            <source>
+              <context value="sr"/>
+              <element value="system"/>
+              <variable value="systemV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="systemV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="ablehnungsgrundDisplay"/>
+            <source>
+              <context value="sr"/>
+              <element value="display"/>
+              <variable value="displayV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="displayV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <documentation value="extension[Ablehnungsgrund]: map statusReason → rejection reason extension&#xD;&#xA;Extension URL: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund"/>
+    </rule>
+  </group>
+</StructureMap>

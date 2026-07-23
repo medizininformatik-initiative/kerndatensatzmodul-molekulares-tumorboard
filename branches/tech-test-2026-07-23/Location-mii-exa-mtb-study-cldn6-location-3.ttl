@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-3> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-cldn6-location-3"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location mii-exa-mtb-study-cldn6-location-3</b></p><a name=\"mii-exa-mtb-study-cldn6-location-3\"> </a><a name=\"hcmii-exa-mtb-study-cldn6-location-3\"> </a><p><b>name</b>: Universitätsklinikum Hamburg Eppendorf - II Medizinische Klinik und Poliklinik</p><p><b>address</b>: Hamburg 20246 Germany </p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>10.01534</td><td>53.57532</td></tr></table></div>"
+  ] ;
+  fhir:Location.name [ fhir:value "Universitätsklinikum Hamburg Eppendorf - II Medizinische Klinik und Poliklinik"] ;
+  fhir:Location.address [
+     fhir:Address.city [ fhir:value "Hamburg" ] ;
+     fhir:Address.postalCode [ fhir:value "20246" ] ;
+     fhir:Address.country [ fhir:value "Germany" ]
+  ] ;
+  fhir:Location.position [
+     fhir:Location.position.longitude [ fhir:value "10.01534"^^xsd:decimal ] ;
+     fhir:Location.position.latitude [ fhir:value "53.57532"^^xsd:decimal ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-3.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

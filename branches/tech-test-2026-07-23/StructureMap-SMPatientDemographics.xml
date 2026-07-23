@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="SMPatientDemographics"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap SMPatientDemographics</b></p><a name="SMPatientDemographics"> </a><a name="hcSMPatientDemographics"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics<span style="color: navy">&quot; = &quot;</span>SMPatientDemographics<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/patient.html" title="Patient">http://hl7.org/fhir/StructureDefinition/Patient</a><span style="color: navy">&quot; </span><b>alias </b>Patient <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/clinicalimpression.html" title="ClinicalImpression">http://hl7.org/fhir/StructureDefinition/ClinicalImpression</a><span style="color: navy">&quot; </span><b>alias </b>ClinicalImpression <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/familymemberhistory.html" title="FamilyMemberHistory">http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory</a><span style="color: navy">&quot; </span><b>alias </b>FamilyMemberHistory <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate over the whole PatientRecord and populate the Bundle</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>PatientDemographics<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Bundle type = collection</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Patient (exactly one) -----------------------------------------------</span>
+  src.patient<b> as </b><span style="color: maroon">srcPat</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Patient'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtPat</span><b> then</b><span style="color: navy"> {
+</span>    srcPat.id<b> as </b><span style="color: maroon">srcPatid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">srcPatid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    srcPat<span style="color: navy"><b> -&gt; </b></span>tgtPat<b> then </b>MapPatient<span style="color: navy">(</span><span style="color: maroon">srcPat</span><span style="color: navy">, </span><span style="color: maroon">tgtPat</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- ClinicalImpression per episode of care ------------------------------</span>
+  src.episodesOfCare<b> as </b><span style="color: maroon">eoc</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'ClinicalImpression'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">ci</span><b> then</b><span style="color: navy"> {
+</span>    eoc.id<b> as </b><span style="color: maroon">eocid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">eocid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    eoc<span style="color: navy"><b> -&gt; </b></span>ci<b> then </b>MapEpisodeOfCare<span style="color: navy">(</span><span style="color: maroon">eoc</span><span style="color: navy">, </span><span style="color: maroon">ci</span><span style="color: navy">, </span><span style="color: maroon">src</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;episodes&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- FamilyMemberHistory per family-history entry ------------------------</span>
+  src.familyMemberHistories<b> as </b><span style="color: maroon">fh</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'FamilyMemberHistory'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtFh</span><b> then</b><span style="color: navy"> {
+</span>    fh.id<b> as </b><span style="color: maroon">fhid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">fhid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    fh<span style="color: navy"><b> -&gt; </b></span>tgtFh<b> then </b>MapFamilyHistory<span style="color: navy">(</span><span style="color: maroon">fh</span><span style="color: navy">, </span><span style="color: maroon">tgtFh</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;familyHistory&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapPatient: DNPM patient → FHIR Patient</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapPatient<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Patient<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;patientId&quot;</i><span style="color: navy">;</span>
+  src.birthDate<b> as </b><span style="color: maroon">birthDateDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.birthDate = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">birthDateDt</span><span style="color: navy">, </span><span style="color: blue">'date'</span><span style="color: navy">)</span><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta – MII KDS Person Patient</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient'</span> <i>&quot;patientProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;patientMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Gender: translate DNPM codes → FHIR administrative-gender</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'female'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'female'</span> <i>&quot;genderFemale&quot;</i><span style="color: navy">;</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'male'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'male'</span> <i>&quot;genderMale&quot;</i><span style="color: navy">;</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'other'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'other'</span> <i>&quot;genderOther&quot;</i><span style="color: navy">;</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'unknown'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'unknown'</span> <i>&quot;genderUnknown&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Vital status → deceasedBoolean</span>
+  src.vitalStatus<b> as </b><span style="color: maroon">vs</span><b> where </b><span style="color: navy">(</span>vs.code = 'deceased'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.deceased = <span style="color: blue">true</span> <i>&quot;deceasedTrue&quot;</i><span style="color: navy">;</span>
+  src.vitalStatus<b> as </b><span style="color: maroon">vs</span><b> where </b><span style="color: navy">(</span>vs.code = 'alive'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.deceased = <span style="color: blue">false</span> <i>&quot;deceasedFalse&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Address: municipalityCode → postalCode + AGS extension</span>
+  src.address<b> as </b><span style="color: maroon">srcAddr</span><span style="color: navy"><b> -&gt; </b></span>tgt.address<b> as </b><span style="color: maroon">tgtAddr</span><b> then </b>MapAddress<span style="color: navy">(</span><span style="color: maroon">srcAddr</span><span style="color: navy">, </span><span style="color: maroon">tgtAddr</span><span style="color: navy">)</span><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapAddress: DNPM address.municipalityCode → FHIR Address</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapAddress<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>BackboneElement<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Plain postalCode (fallback / dual-write)</span>
+  src.municipalityCode<b> as </b><span style="color: maroon">municipalityCodeV</span><span style="color: navy"><b> -&gt; </b></span>tgt.postalCode = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">municipalityCodeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;postalCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">AGS extension (http://fhir.de/StructureDefinition/destatis/ags)</span>
+  src.municipalityCode<b> as </b><span style="color: maroon">ags</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    ags<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'http://fhir.de/StructureDefinition/destatis/ags'</span> <i>&quot;agsExtUrl&quot;</i><span style="color: navy">;</span>
+    ags<span style="color: navy"><b> -&gt; </b></span>ext.value = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">ags</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;agsExtValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;agsExtension&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapEpisodeOfCare: DNPM episodesOfCare entry → FHIR ClinicalImpression</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Behandlungsepisode (Parent: ClinicalImpression)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapEpisodeOfCare<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>ClinicalImpression, <b>source</b> <span style="color: maroon">record</span><span style="color: navy"> : </span>DNPMPatientRecord<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;ciId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode'</span> <i>&quot;ciProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ciMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Status: use 'completed' when period.end is present, otherwise 'in-progress'</span>
+  src.period<b> as </b><span style="color: maroon">p</span><b> where </b><span style="color: navy">(</span>p.end.exists()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'completed'</span> <i>&quot;statusCompleted&quot;</i><span style="color: navy">;</span>
+  src.period<b> as </b><span style="color: maroon">p</span><b> where </b><span style="color: navy">(</span>p.end.empty()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'in-progress'</span> <i>&quot;statusInProgress&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fallback when no period is present at all</span>
+  src<b> where </b><span style="color: navy">(</span>src.period.empty()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'in-progress'</span> <i>&quot;statusDefault&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Subject → reference to Patient (by urn:uuid)</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;subjectReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ciSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">effectivePeriod (1..1 per profile)</span>
+  src.period<b> as </b><span style="color: maroon">p</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectivePeriod<b> as </b><span style="color: maroon">ep</span><b> then</b><span style="color: navy"> {
+</span>    p.start<b> as </b><span style="color: maroon">startDt</span><span style="color: navy"><b> -&gt; </b></span>ep.start = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">startDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;epStart&quot;</i><span style="color: navy">;</span>
+    p.end<b> as </b><span style="color: maroon">endDt</span><span style="color: navy"><b> -&gt; </b></span>ep.end = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">endDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;epEnd&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;effectivePeriod&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">problem: one entry per diagnosis reference in the episode</span>
+  src.diagnoses<b> as </b><span style="color: maroon">diag</span><span style="color: navy"><b> -&gt; </b></span>tgt.problem<b> as </b><span style="color: maroon">prob</span><b> then</b><span style="color: navy"> {
+</span>    diag.id<b> as </b><span style="color: maroon">did</span><span style="color: navy"><b> -&gt; </b></span>prob.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">did</span><span style="color: navy">)</span> <i>&quot;diagReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;problems&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapFamilyHistory: DNPM familyMemberHistories entry → FHIR FamilyMemberHistory</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapFamilyHistory<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>FamilyMemberHistory<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;fhId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Required status (no DNPM source for this – use health-unknown as default)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'health-unknown'</span> <i>&quot;fhStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">patient → reference to Patient (by urn:uuid)</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.patient<b> as </b><span style="color: maroon">p</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>p.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;fhPatientReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;fhPatient&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">relationship → CodeableConcept with one Coding</span>
+  src.relationship<b> as </b><span style="color: maroon">rel</span><span style="color: navy"><b> -&gt; </b></span>tgt.relationship<b> as </b><span style="color: maroon">r</span><b> then </b>MapRelationship<span style="color: navy">(</span><span style="color: maroon">rel</span><span style="color: navy">, </span><span style="color: maroon">r</span><span style="color: navy">)</span> <i>&quot;fhRelationship&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapRelationship: DNPM relationship coding → FHIR CodeableConcept</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapRelationship<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>BackboneElement<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<span style="color: navy"><b> -&gt; </b></span>tgt.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>    src.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;relCode&quot;</i><span style="color: navy">;</span>
+    src.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;relSystem&quot;</i><span style="color: navy">;</span>
+    src.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;relDisplay&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;relCoding&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics"/>
+  <version value="2026.0.1"/>
+  <name value="SMPatientDemographics"/>
+  <status value="draft"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record"/>
+    <mode value="source"/>
+    <alias value="DNPMPatientRecord"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+    <mode value="produced"/>
+    <alias value="Patient"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/ClinicalImpression"/>
+    <mode value="produced"/>
+    <alias value="ClinicalImpression"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory"/>
+    <mode value="produced"/>
+    <alias value="FamilyMemberHistory"/>
+  </structure>
+  <group>
+    <name value="PatientDemographics"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Root group: iterate over the whole PatientRecord and populate the Bundle&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="bundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="collection"/>
+        </parameter>
+      </target>
+      <documentation value="Bundle type = collection"/>
+    </rule>
+    <rule>
+      <name value="patient"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="srcPat"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="tgtPat"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Patient"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="srcPat"/>
+          <element value="id"/>
+          <variable value="srcPatid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="srcPatid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="srcPat"/>
+        </source>
+        <target>
+          <context value="tgtPat"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapPatient"/>
+          <variable value="srcPat"/>
+          <variable value="tgtPat"/>
+        </dependent>
+      </rule>
+      <documentation value="--- Patient (exactly one) -----------------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="episodes"/>
+      <source>
+        <context value="src"/>
+        <element value="episodesOfCare"/>
+        <variable value="eoc"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="ci"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="ClinicalImpression"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="eoc"/>
+          <element value="id"/>
+          <variable value="eocid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="eocid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="eoc"/>
+        </source>
+        <target>
+          <context value="ci"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapEpisodeOfCare"/>
+          <variable value="eoc"/>
+          <variable value="ci"/>
+          <variable value="src"/>
+        </dependent>
+      </rule>
+      <documentation value="--- ClinicalImpression per episode of care ------------------------------"/>
+    </rule>
+    <rule>
+      <name value="familyHistory"/>
+      <source>
+        <context value="src"/>
+        <element value="familyMemberHistories"/>
+        <variable value="fh"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="tgtFh"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="FamilyMemberHistory"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="fh"/>
+          <element value="id"/>
+          <variable value="fhid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="fhid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="fh"/>
+        </source>
+        <target>
+          <context value="tgtFh"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapFamilyHistory"/>
+          <variable value="fh"/>
+          <variable value="tgtFh"/>
+        </dependent>
+      </rule>
+      <documentation value="--- FamilyMemberHistory per family-history entry ------------------------"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPatient"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapPatient: DNPM patient → FHIR Patient&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Patient"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="patientId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="birthDate"/>
+      <source>
+        <context value="src"/>
+        <element value="birthDate"/>
+        <variable value="birthDateDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="birthDate"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="birthDateDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="date"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="patientMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="patientProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta – MII KDS Person Patient"/>
+    </rule>
+    <rule>
+      <name value="genderFemale"/>
+      <source>
+        <context value="src"/>
+        <element value="gender"/>
+        <variable value="g"/>
+        <condition value="g.code = 'female'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="gender"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="female"/>
+        </parameter>
+      </target>
+      <documentation value="Gender: translate DNPM codes → FHIR administrative-gender"/>
+    </rule>
+    <rule>
+      <name value="genderMale"/>
+      <source>
+        <context value="src"/>
+        <element value="gender"/>
+        <variable value="g"/>
+        <condition value="g.code = 'male'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="gender"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="male"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="genderOther"/>
+      <source>
+        <context value="src"/>
+        <element value="gender"/>
+        <variable value="g"/>
+        <condition value="g.code = 'other'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="gender"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="other"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="genderUnknown"/>
+      <source>
+        <context value="src"/>
+        <element value="gender"/>
+        <variable value="g"/>
+        <condition value="g.code = 'unknown'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="gender"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="unknown"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="deceasedTrue"/>
+      <source>
+        <context value="src"/>
+        <element value="vitalStatus"/>
+        <variable value="vs"/>
+        <condition value="vs.code = 'deceased'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="deceased"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueBoolean value="true"/>
+        </parameter>
+      </target>
+      <documentation value="Vital status → deceasedBoolean"/>
+    </rule>
+    <rule>
+      <name value="deceasedFalse"/>
+      <source>
+        <context value="src"/>
+        <element value="vitalStatus"/>
+        <variable value="vs"/>
+        <condition value="vs.code = 'alive'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="deceased"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueBoolean value="false"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="address"/>
+      <source>
+        <context value="src"/>
+        <element value="address"/>
+        <variable value="srcAddr"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="address"/>
+        <variable value="tgtAddr"/>
+      </target>
+      <dependent>
+        <name value="MapAddress"/>
+        <variable value="srcAddr"/>
+        <variable value="tgtAddr"/>
+      </dependent>
+      <documentation value="Address: municipalityCode → postalCode + AGS extension"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapAddress"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapAddress: DNPM address.municipalityCode → FHIR Address&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="BackboneElement"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="postalCode"/>
+      <source>
+        <context value="src"/>
+        <element value="municipalityCode"/>
+        <variable value="municipalityCodeV"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="postalCode"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="municipalityCodeV"/>
+        </parameter>
+        <parameter>
+          <valueString value="string"/>
+        </parameter>
+      </target>
+      <documentation value="Plain postalCode (fallback / dual-write)"/>
+    </rule>
+    <rule>
+      <name value="agsExtension"/>
+      <source>
+        <context value="src"/>
+        <element value="municipalityCode"/>
+        <variable value="ags"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+      </target>
+      <rule>
+        <name value="agsExtUrl"/>
+        <source>
+          <context value="ags"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="url"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="http://fhir.de/StructureDefinition/destatis/ags"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="agsExtValue"/>
+        <source>
+          <context value="ags"/>
+        </source>
+        <target>
+          <context value="ext"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="ags"/>
+          </parameter>
+          <parameter>
+            <valueString value="string"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="AGS extension (http://fhir.de/StructureDefinition/destatis/ags)"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapEpisodeOfCare"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapEpisodeOfCare: DNPM episodesOfCare entry → FHIR ClinicalImpression&#xD;&#xA;Profile: MII_PR_MTB_Behandlungsepisode (Parent: ClinicalImpression)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="ClinicalImpression"/>
+      <mode value="target"/>
+    </input>
+    <input>
+      <name value="record"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <rule>
+      <name value="ciId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ciMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="ciProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="statusCompleted"/>
+      <source>
+        <context value="src"/>
+        <element value="period"/>
+        <variable value="p"/>
+        <condition value="p.end.exists()"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="completed"/>
+        </parameter>
+      </target>
+      <documentation value="Status: use 'completed' when period.end is present, otherwise 'in-progress'"/>
+    </rule>
+    <rule>
+      <name value="statusInProgress"/>
+      <source>
+        <context value="src"/>
+        <element value="period"/>
+        <variable value="p"/>
+        <condition value="p.end.empty()"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="in-progress"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="statusDefault"/>
+      <source>
+        <context value="src"/>
+        <condition value="src.period.empty()"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="in-progress"/>
+        </parameter>
+      </target>
+      <documentation value="Fallback when no period is present at all"/>
+    </rule>
+    <rule>
+      <name value="ciSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="subjectReference"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Subject → reference to Patient (by urn:uuid)"/>
+    </rule>
+    <rule>
+      <name value="effectivePeriod"/>
+      <source>
+        <context value="src"/>
+        <element value="period"/>
+        <variable value="p"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectivePeriod"/>
+        <variable value="ep"/>
+      </target>
+      <rule>
+        <name value="epStart"/>
+        <source>
+          <context value="p"/>
+          <element value="start"/>
+          <variable value="startDt"/>
+        </source>
+        <target>
+          <context value="ep"/>
+          <contextType value="variable"/>
+          <element value="start"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="startDt"/>
+          </parameter>
+          <parameter>
+            <valueString value="dateTime"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="epEnd"/>
+        <source>
+          <context value="p"/>
+          <element value="end"/>
+          <variable value="endDt"/>
+        </source>
+        <target>
+          <context value="ep"/>
+          <contextType value="variable"/>
+          <element value="end"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="endDt"/>
+          </parameter>
+          <parameter>
+            <valueString value="dateTime"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="effectivePeriod (1..1 per profile)"/>
+    </rule>
+    <rule>
+      <name value="problems"/>
+      <source>
+        <context value="src"/>
+        <element value="diagnoses"/>
+        <variable value="diag"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="problem"/>
+        <variable value="prob"/>
+      </target>
+      <rule>
+        <name value="diagReference"/>
+        <source>
+          <context value="diag"/>
+          <element value="id"/>
+          <variable value="did"/>
+        </source>
+        <target>
+          <context value="prob"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="did"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="problem: one entry per diagnosis reference in the episode"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapFamilyHistory"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapFamilyHistory: DNPM familyMemberHistories entry → FHIR FamilyMemberHistory&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="FamilyMemberHistory"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="fhId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="fhStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="health-unknown"/>
+        </parameter>
+      </target>
+      <documentation value="Required status (no DNPM source for this – use health-unknown as default)"/>
+    </rule>
+    <rule>
+      <name value="fhPatient"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="patient"/>
+        <variable value="p"/>
+      </target>
+      <rule>
+        <name value="fhPatientReference"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="p"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="patient → reference to Patient (by urn:uuid)"/>
+    </rule>
+    <rule>
+      <name value="fhRelationship"/>
+      <source>
+        <context value="src"/>
+        <element value="relationship"/>
+        <variable value="rel"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="relationship"/>
+        <variable value="r"/>
+      </target>
+      <dependent>
+        <name value="MapRelationship"/>
+        <variable value="rel"/>
+        <variable value="r"/>
+      </dependent>
+      <documentation value="relationship → CodeableConcept with one Coding"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapRelationship"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapRelationship: DNPM relationship coding → FHIR CodeableConcept&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="BackboneElement"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="relCoding"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="coding"/>
+        <variable value="c"/>
+      </target>
+      <rule>
+        <name value="relCode"/>
+        <source>
+          <context value="src"/>
+          <element value="code"/>
+          <variable value="codeV"/>
+        </source>
+        <target>
+          <context value="c"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="codeV"/>
+          </parameter>
+          <parameter>
+            <valueString value="string"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="relSystem"/>
+        <source>
+          <context value="src"/>
+          <element value="system"/>
+          <variable value="systemV"/>
+        </source>
+        <target>
+          <context value="c"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="systemV"/>
+          </parameter>
+          <parameter>
+            <valueString value="string"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="relDisplay"/>
+        <source>
+          <context value="src"/>
+          <element value="display"/>
+          <variable value="displayV"/>
+        </source>
+        <target>
+          <context value="c"/>
+          <contextType value="variable"/>
+          <element value="display"/>
+          <transform value="cast"/>
+          <parameter>
+            <valueId value="displayV"/>
+          </parameter>
+          <parameter>
+            <valueString value="string"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>

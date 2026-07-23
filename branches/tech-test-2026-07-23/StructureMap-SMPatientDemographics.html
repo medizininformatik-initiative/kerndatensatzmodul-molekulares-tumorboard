@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>SMPatientDemographics - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2.124"}
+    h3,h4,h5,h6{--heading-prefix:"2.124"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII IG Kerndatensatz-Modul Molekulares Tumorboard</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - release
+
+
+
+  Unknown region code '276'
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>SMPatientDemographics</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII IG Kerndatensatz-Modul Molekulares Tumorboard - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="StructureMap-SMPatientDemographics.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureMap-SMPatientDemographics.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureMap-SMPatientDemographics.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">StructureMap: SMPatientDemographics
+
+  </h2>
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2026.0.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics|2026.0.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2026-07-23
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">SMPatientDemographics</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="StructureMap-SMPatientDemographics.xml.html">XML</a>, <a href="StructureMap-SMPatientDemographics.json.html">JSON</a>, <a href="StructureMap-SMPatientDemographics.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div data-fhir="generated"><p class="res-header-id"/><a name="SMPatientDemographics"> </a><a name="hcSMPatientDemographics"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics<span style="color: navy">&quot; = &quot;</span>SMPatientDemographics<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/patient.html" title="Patient">http://hl7.org/fhir/StructureDefinition/Patient</a><span style="color: navy">&quot; </span><b>alias </b>Patient <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/clinicalimpression.html" title="ClinicalImpression">http://hl7.org/fhir/StructureDefinition/ClinicalImpression</a><span style="color: navy">&quot; </span><b>alias </b>ClinicalImpression <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/familymemberhistory.html" title="FamilyMemberHistory">http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory</a><span style="color: navy">&quot; </span><b>alias </b>FamilyMemberHistory <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate over the whole PatientRecord and populate the Bundle</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>PatientDemographics<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Bundle type = collection</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Patient (exactly one) -----------------------------------------------</span>
+  src.patient<b> as </b><span style="color: maroon">srcPat</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Patient'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtPat</span><b> then</b><span style="color: navy"> {
+</span>    srcPat.id<b> as </b><span style="color: maroon">srcPatid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">srcPatid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    srcPat<span style="color: navy"><b> -&gt; </b></span>tgtPat<b> then </b>MapPatient<span style="color: navy">(</span><span style="color: maroon">srcPat</span><span style="color: navy">, </span><span style="color: maroon">tgtPat</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- ClinicalImpression per episode of care ------------------------------</span>
+  src.episodesOfCare<b> as </b><span style="color: maroon">eoc</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'ClinicalImpression'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">ci</span><b> then</b><span style="color: navy"> {
+</span>    eoc.id<b> as </b><span style="color: maroon">eocid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">eocid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    eoc<span style="color: navy"><b> -&gt; </b></span>ci<b> then </b>MapEpisodeOfCare<span style="color: navy">(</span><span style="color: maroon">eoc</span><span style="color: navy">, </span><span style="color: maroon">ci</span><span style="color: navy">, </span><span style="color: maroon">src</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;episodes&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- FamilyMemberHistory per family-history entry ------------------------</span>
+  src.familyMemberHistories<b> as </b><span style="color: maroon">fh</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'FamilyMemberHistory'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtFh</span><b> then</b><span style="color: navy"> {
+</span>    fh.id<b> as </b><span style="color: maroon">fhid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">fhid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    fh<span style="color: navy"><b> -&gt; </b></span>tgtFh<b> then </b>MapFamilyHistory<span style="color: navy">(</span><span style="color: maroon">fh</span><span style="color: navy">, </span><span style="color: maroon">tgtFh</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;familyHistory&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapPatient: DNPM patient → FHIR Patient</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapPatient<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Patient<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;patientId&quot;</i><span style="color: navy">;</span>
+  src.birthDate<b> as </b><span style="color: maroon">birthDateDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.birthDate = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">birthDateDt</span><span style="color: navy">, </span><span style="color: blue">'date'</span><span style="color: navy">)</span><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta – MII KDS Person Patient</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient'</span> <i>&quot;patientProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;patientMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Gender: translate DNPM codes → FHIR administrative-gender</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'female'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'female'</span> <i>&quot;genderFemale&quot;</i><span style="color: navy">;</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'male'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'male'</span> <i>&quot;genderMale&quot;</i><span style="color: navy">;</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'other'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'other'</span> <i>&quot;genderOther&quot;</i><span style="color: navy">;</span>
+  src.gender<b> as </b><span style="color: maroon">g</span><b> where </b><span style="color: navy">(</span>g.code = 'unknown'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.gender = <span style="color: blue">'unknown'</span> <i>&quot;genderUnknown&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Vital status → deceasedBoolean</span>
+  src.vitalStatus<b> as </b><span style="color: maroon">vs</span><b> where </b><span style="color: navy">(</span>vs.code = 'deceased'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.deceased = <span style="color: blue">true</span> <i>&quot;deceasedTrue&quot;</i><span style="color: navy">;</span>
+  src.vitalStatus<b> as </b><span style="color: maroon">vs</span><b> where </b><span style="color: navy">(</span>vs.code = 'alive'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.deceased = <span style="color: blue">false</span> <i>&quot;deceasedFalse&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Address: municipalityCode → postalCode + AGS extension</span>
+  src.address<b> as </b><span style="color: maroon">srcAddr</span><span style="color: navy"><b> -&gt; </b></span>tgt.address<b> as </b><span style="color: maroon">tgtAddr</span><b> then </b>MapAddress<span style="color: navy">(</span><span style="color: maroon">srcAddr</span><span style="color: navy">, </span><span style="color: maroon">tgtAddr</span><span style="color: navy">)</span><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapAddress: DNPM address.municipalityCode → FHIR Address</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapAddress<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>BackboneElement<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Plain postalCode (fallback / dual-write)</span>
+  src.municipalityCode<b> as </b><span style="color: maroon">municipalityCodeV</span><span style="color: navy"><b> -&gt; </b></span>tgt.postalCode = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">municipalityCodeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;postalCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">AGS extension (http://fhir.de/StructureDefinition/destatis/ags)</span>
+  src.municipalityCode<b> as </b><span style="color: maroon">ags</span><span style="color: navy"><b> -&gt; </b></span>tgt.extension<b> as </b><span style="color: maroon">ext</span><b> then</b><span style="color: navy"> {
+</span>    ags<span style="color: navy"><b> -&gt; </b></span>ext.url = <span style="color: blue">'http://fhir.de/StructureDefinition/destatis/ags'</span> <i>&quot;agsExtUrl&quot;</i><span style="color: navy">;</span>
+    ags<span style="color: navy"><b> -&gt; </b></span>ext.value = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">ags</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;agsExtValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;agsExtension&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapEpisodeOfCare: DNPM episodesOfCare entry → FHIR ClinicalImpression</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Behandlungsepisode (Parent: ClinicalImpression)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapEpisodeOfCare<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>ClinicalImpression, <b>source</b> <span style="color: maroon">record</span><span style="color: navy"> : </span>DNPMPatientRecord<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;ciId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode'</span> <i>&quot;ciProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ciMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Status: use 'completed' when period.end is present, otherwise 'in-progress'</span>
+  src.period<b> as </b><span style="color: maroon">p</span><b> where </b><span style="color: navy">(</span>p.end.exists()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'completed'</span> <i>&quot;statusCompleted&quot;</i><span style="color: navy">;</span>
+  src.period<b> as </b><span style="color: maroon">p</span><b> where </b><span style="color: navy">(</span>p.end.empty()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'in-progress'</span> <i>&quot;statusInProgress&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fallback when no period is present at all</span>
+  src<b> where </b><span style="color: navy">(</span>src.period.empty()<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'in-progress'</span> <i>&quot;statusDefault&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Subject → reference to Patient (by urn:uuid)</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;subjectReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ciSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">effectivePeriod (1..1 per profile)</span>
+  src.period<b> as </b><span style="color: maroon">p</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectivePeriod<b> as </b><span style="color: maroon">ep</span><b> then</b><span style="color: navy"> {
+</span>    p.start<b> as </b><span style="color: maroon">startDt</span><span style="color: navy"><b> -&gt; </b></span>ep.start = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">startDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;epStart&quot;</i><span style="color: navy">;</span>
+    p.end<b> as </b><span style="color: maroon">endDt</span><span style="color: navy"><b> -&gt; </b></span>ep.end = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">endDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;epEnd&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;effectivePeriod&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">problem: one entry per diagnosis reference in the episode</span>
+  src.diagnoses<b> as </b><span style="color: maroon">diag</span><span style="color: navy"><b> -&gt; </b></span>tgt.problem<b> as </b><span style="color: maroon">prob</span><b> then</b><span style="color: navy"> {
+</span>    diag.id<b> as </b><span style="color: maroon">did</span><span style="color: navy"><b> -&gt; </b></span>prob.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">did</span><span style="color: navy">)</span> <i>&quot;diagReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;problems&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapFamilyHistory: DNPM familyMemberHistories entry → FHIR FamilyMemberHistory</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapFamilyHistory<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>FamilyMemberHistory<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;fhId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Required status (no DNPM source for this – use health-unknown as default)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'health-unknown'</span> <i>&quot;fhStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">patient → reference to Patient (by urn:uuid)</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.patient<b> as </b><span style="color: maroon">p</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>p.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;fhPatientReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;fhPatient&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">relationship → CodeableConcept with one Coding</span>
+  src.relationship<b> as </b><span style="color: maroon">rel</span><span style="color: navy"><b> -&gt; </b></span>tgt.relationship<b> as </b><span style="color: maroon">r</span><b> then </b>MapRelationship<span style="color: navy">(</span><span style="color: maroon">rel</span><span style="color: navy">, </span><span style="color: maroon">r</span><span style="color: navy">)</span> <i>&quot;fhRelationship&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapRelationship: DNPM relationship coding → FHIR CodeableConcept</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapRelationship<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>BackboneElement<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<span style="color: navy"><b> -&gt; </b></span>tgt.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>    src.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;relCode&quot;</i><span style="color: navy">;</span>
+    src.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;relSystem&quot;</i><span style="color: navy">;</span>
+    src.display<b> as </b><span style="color: maroon">displayV</span><span style="color: navy"><b> -&gt; </b></span>c.display = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">displayV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;relDisplay&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;relCoding&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  Package mii-kerndatensatzmodul-molekulares-tumorboard#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 23, 2026 12:42+0000">2026-07-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1> a fhir:Claim ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "MII-EXA-MTB-Antrag-Kostenuebernahme-1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Claim MII-EXA-MTB-Antrag-Kostenuebernahme-1</b></p><a name=\"MII-EXA-MTB-Antrag-Kostenuebernahme-1\"> </a><a name=\"hcMII-EXA-MTB-Antrag-Kostenuebernahme-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html\">MII PR MTB Antrag Kostenuebernahme</a> version: 2026.0.1</p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:\">institutional</span></p><p><b>use</b>: Claim</p><p><b>patient</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>created</b>: 2023-03-10</p><p><b>provider</b>: <a href=\"Organization-MyHospital.html\">Organization Example General Hospital</a></p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}\">Normal</span></p><h3>Relateds</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Relationship</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">initial-claim</span></td></tr></table><p><b>prescription</b>: <a href=\"MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html\">MedicationRequest: extension = 1,m1A,http://doi.org#10.1200/JCO.2022.40.16_suppl.5512,http://www.ncbi.nlm.nih.gov/pubmed#38055253; status = completed; intent = proposal; medication[x] = MIRVETUXIMAB SORAVTANSINE; authoredOn = 2023-03-28</a></p><h3>CareTeams</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Provider</b></td><td><b>Responsible</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><a href=\"Organization-MyInsurer.html\">Organization Example Health Insurance Co.</a></td><td>true</td></tr></table><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td><td><b>ClaimResponse</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"Coverage-MyCoverage.html\">Coverage: status = active; type = extended healthcare; period = 2023-01-01 --&gt; 2025-12-31</a></td><td><a href=\"ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html\">ClaimResponse: status = active; type = institutional; use = claim; created = 2023-05-01; outcome = complete</a></td></tr></table></div>"
+  ] ;
+  fhir:Claim.status [ fhir:value "active"] ;
+  fhir:Claim.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.code [ fhir:value "institutional" ]
+     ]
+  ] ;
+  fhir:Claim.use [ fhir:value "claim"] ;
+  fhir:Claim.patient [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:Claim.created [ fhir:value "2023-03-10"^^xsd:date] ;
+  fhir:Claim.provider [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Organization/MyHospital> ;
+     fhir:Reference.reference [ fhir:value "Organization/MyHospital" ]
+  ] ;
+  fhir:Claim.priority [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/processpriority" ] ;
+       fhir:Coding.code [ fhir:value "normal" ]
+     ]
+  ] ;
+  fhir:Claim.related [
+     fhir:index 0 ;
+     fhir:Claim.related.relationship [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.code [ fhir:value "initial-claim" ]
+       ]
+     ]
+  ] ;
+  fhir:Claim.prescription [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab> ;
+     fhir:Reference.reference [ fhir:value "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab" ]
+  ] ;
+  fhir:Claim.careTeam [
+     fhir:index 0 ;
+     fhir:Claim.careTeam.sequence [ fhir:value "1"^^xsd:positiveInteger ] ;
+     fhir:Claim.careTeam.provider [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Organization/MyInsurer> ;
+       fhir:Reference.reference [ fhir:value "Organization/MyInsurer" ]
+     ] ;
+     fhir:Claim.careTeam.responsible [ fhir:value "true"^^xsd:boolean ]
+  ] ;
+  fhir:Claim.insurance [
+     fhir:index 0 ;
+     fhir:Claim.insurance.sequence [ fhir:value "1"^^xsd:positiveInteger ] ;
+     fhir:Claim.insurance.focal [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Claim.insurance.coverage [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Coverage/MyCoverage> ;
+       fhir:Reference.reference [ fhir:value "Coverage/MyCoverage" ]
+     ] ;
+     fhir:Claim.insurance.claimResponse [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1> ;
+       fhir:Reference.reference [ fhir:value "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,55 @@
+{
+  "resourceType" : "Claim",
+  "id" : "MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme|2026.0.1"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Claim MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1</b></p><a name=\"MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1\"> </a><a name=\"hcMII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html\">MII PR MTB Antrag Kostenuebernahme</a> version: 2026.0.1</p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:\">institutional</span></p><p><b>use</b>: Claim</p><p><b>patient</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/example\">Patient/example</a></p><p><b>created</b>: 2024-07-07</p><p><b>provider</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Organization/InstitutionID\">Organization/InstitutionID</a></p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}\">Normal</span></p><h3>Relateds</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Relationship</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">initial-claim</span></td></tr></table><p><b>prescription</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/MedicationRequest/TherapieempfehlungExample\">MedicationRequest/TherapieempfehlungExample</a></p><h3>CareTeams</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Provider</b></td><td><b>Responsible</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Organization/ZPMExample\">Organization/ZPMExample</a></td><td>true</td></tr></table><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Coverage/CoverageExample\">Coverage/CoverageExample</a></td></tr></table></div>"
+  },
+  "status" : "active",
+  "type" : {
+    "coding" : [{
+      "code" : "institutional"
+    }]
+  },
+  "use" : "claim",
+  "patient" : {
+    "reference" : "Patient/example"
+  },
+  "created" : "2024-07-07",
+  "provider" : {
+    "reference" : "Organization/InstitutionID"
+  },
+  "priority" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/processpriority",
+      "code" : "normal"
+    }]
+  },
+  "related" : [{
+    "relationship" : {
+      "coding" : [{
+        "code" : "initial-claim"
+      }]
+    }
+  }],
+  "prescription" : {
+    "reference" : "MedicationRequest/TherapieempfehlungExample"
+  },
+  "careTeam" : [{
+    "sequence" : 1,
+    "provider" : {
+      "reference" : "Organization/ZPMExample"
+    },
+    "responsible" : true
+  }],
+  "insurance" : [{
+    "sequence" : 1,
+    "focal" : true,
+    "coverage" : {
+      "reference" : "Coverage/CoverageExample"
+    }
+  }]
+}

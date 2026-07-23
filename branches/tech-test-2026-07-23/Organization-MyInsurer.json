@@ -1,0 +1,23 @@
+{
+  "resourceType" : "Organization",
+  "id" : "MyInsurer",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization MyInsurer</b></p><a name=\"MyInsurer\"> </a><a name=\"hcMyInsurer\"> </a><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/organization-type ins}\">Insurance Company</span></p><p><b>name</b>: Example Health Insurance Co.</p><p><b>address</b>: 789 Insurance Blvd Policytown InsureState 98765 DE </p></div>"
+  },
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/organization-type",
+      "code" : "ins",
+      "display" : "Insurance Company"
+    }]
+  }],
+  "name" : "Example Health Insurance Co.",
+  "address" : [{
+    "line" : ["789 Insurance Blvd"],
+    "city" : "Policytown",
+    "state" : "InsureState",
+    "postalCode" : "98765",
+    "country" : "DE"
+  }]
+}

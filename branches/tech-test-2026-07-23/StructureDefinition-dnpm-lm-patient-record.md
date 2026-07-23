@@ -1,0 +1,8080 @@
+# DNPM Patient Record - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **DNPM Patient Record**
+
+## Logical Model: DNPM Patient Record 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record | *Version*:2026.0.1 |
+| Active as of 2026-07-23 | *Computable Name*:DNPM_LM_PatientRecord |
+
+ 
+Logical Model for the DNPM DIP MTB Patient Record JSON structure (all 19 top-level keys) 
+
+**Usages:**
+
+* This Logical Model is not used by any profiles in this Specification
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/mii-kerndatensatzmodul-molekulares-tumorboard|current/StructureDefinition/StructureDefinition-dnpm-lm-patient-record.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-dnpm-lm-patient-record.csv), [Excel](StructureDefinition-dnpm-lm-patient-record.xlsx) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "dnpm-lm-patient-record",
+  "url" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record",
+  "version" : "2026.0.1",
+  "name" : "DNPM_LM_PatientRecord",
+  "title" : "DNPM Patient Record",
+  "status" : "active",
+  "date" : "2026-07-23T12:42:46+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "Logical Model for the DNPM DIP MTB Patient Record JSON structure (all 19 top-level keys)",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "276"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "dnpm-to-mii-fhir",
+    "name" : "DNPM to MII FHIR",
+    "comment" : "Mapping der DNPM DIP JSON-Elemente auf MII KDS FHIR-Profile (moduluebergreifend)"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation" : "specialization",
+  "differential" : {
+    "element" : [{
+      "id" : "dnpm-lm-patient-record",
+      "path" : "dnpm-lm-patient-record",
+      "short" : "DNPM Patient Record",
+      "definition" : "Logical Model for the DNPM DIP MTB Patient Record JSON structure (all 19 top-level keys)"
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient",
+      "path" : "dnpm-lm-patient-record.patient",
+      "short" : "Patient demographics",
+      "definition" : "Patient demographics",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.id",
+      "path" : "dnpm-lm-patient-record.patient.id",
+      "short" : "Patient UUID",
+      "definition" : "Patient UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.gender",
+      "path" : "dnpm-lm-patient-record.patient.gender",
+      "short" : "Patient gender",
+      "definition" : "Patient gender",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient.gender"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.gender.code",
+      "path" : "dnpm-lm-patient-record.patient.gender.code",
+      "short" : "Gender code (e.g. female)",
+      "definition" : "Gender code (e.g. female)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.gender.display",
+      "path" : "dnpm-lm-patient-record.patient.gender.display",
+      "short" : "Gender display text",
+      "definition" : "Gender display text",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.gender.system",
+      "path" : "dnpm-lm-patient-record.patient.gender.system",
+      "short" : "Gender code system",
+      "definition" : "Gender code system",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.birthDate",
+      "path" : "dnpm-lm-patient-record.patient.birthDate",
+      "short" : "Date of birth (YYYY-MM)",
+      "definition" : "Date of birth (YYYY-MM)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient.birthDate"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance",
+      "short" : "Health insurance information",
+      "definition" : "Health insurance information",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient.contact.organization"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.type",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.type",
+      "short" : "Insurance type coding",
+      "definition" : "Insurance type coding",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.type.code",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.type.code",
+      "short" : "Insurance type code (e.g. GKV)",
+      "definition" : "Insurance type code (e.g. GKV)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.type.display",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.type.display",
+      "short" : "Insurance type display",
+      "definition" : "Insurance type display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.type.system",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.type.system",
+      "short" : "Insurance type system URI",
+      "definition" : "Insurance type system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.reference",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.reference",
+      "short" : "Insurance provider reference",
+      "definition" : "Insurance provider reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.reference.id",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.reference.id",
+      "short" : "Insurance provider ID",
+      "definition" : "Insurance provider ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.reference.type",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.reference.type",
+      "short" : "Reference type (HealthInsurance)",
+      "definition" : "Reference type (HealthInsurance)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.reference.display",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.reference.display",
+      "short" : "Insurance provider display name",
+      "definition" : "Insurance provider display name",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.healthInsurance.reference.system",
+      "path" : "dnpm-lm-patient-record.patient.healthInsurance.reference.system",
+      "short" : "Insurance provider system URI",
+      "definition" : "Insurance provider system URI",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.address",
+      "path" : "dnpm-lm-patient-record.patient.address",
+      "short" : "Patient address (municipality)",
+      "definition" : "Patient address (municipality)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient.address"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.address.municipalityCode",
+      "path" : "dnpm-lm-patient-record.patient.address.municipalityCode",
+      "short" : "AGS municipality code (5-digit)",
+      "definition" : "AGS municipality code (5-digit)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient.address.extension(destatis/ags)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.age",
+      "path" : "dnpm-lm-patient-record.patient.age",
+      "short" : "Calculated patient age",
+      "definition" : "Calculated patient age",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.age.value",
+      "path" : "dnpm-lm-patient-record.patient.age.value",
+      "short" : "Age numeric value",
+      "definition" : "Age numeric value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.age.unit",
+      "path" : "dnpm-lm-patient-record.patient.age.unit",
+      "short" : "Age unit (e.g. Years)",
+      "definition" : "Age unit (e.g. Years)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.vitalStatus",
+      "path" : "dnpm-lm-patient-record.patient.vitalStatus",
+      "short" : "Vital status",
+      "definition" : "Vital status",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Person: Patient.deceased[x]"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.vitalStatus.code",
+      "path" : "dnpm-lm-patient-record.patient.vitalStatus.code",
+      "short" : "Vital status code (e.g. alive)",
+      "definition" : "Vital status code (e.g. alive)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.vitalStatus.display",
+      "path" : "dnpm-lm-patient-record.patient.vitalStatus.display",
+      "short" : "Vital status display",
+      "definition" : "Vital status display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.patient.vitalStatus.system",
+      "path" : "dnpm-lm-patient-record.patient.vitalStatus.system",
+      "short" : "Vital status system URI",
+      "definition" : "Vital status system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare",
+      "path" : "dnpm-lm-patient-record.episodesOfCare",
+      "short" : "MTB episodes of care",
+      "definition" : "MTB episodes of care",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Behandlungsepisode (ClinicalImpression)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.id",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.id",
+      "short" : "Episode UUID",
+      "definition" : "Episode UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.patient",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.patient.id",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.patient.type",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.period",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.period",
+      "short" : "Episode period",
+      "definition" : "Episode period",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.effectivePeriod"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.period.start",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.period.start",
+      "short" : "Start date (YYYY-MM-DD)",
+      "definition" : "Start date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.effectivePeriod.start"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.period.end",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.period.end",
+      "short" : "End date (YYYY-MM-DD)",
+      "definition" : "End date (YYYY-MM-DD)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.effectivePeriod.end"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.diagnoses",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.diagnoses",
+      "short" : "Diagnosis references within this episode",
+      "definition" : "Diagnosis references within this episode",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.diagnoses.id",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.diagnoses.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.episodesOfCare.diagnoses.type",
+      "path" : "dnpm-lm-patient-record.episodesOfCare.diagnoses.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses",
+      "path" : "dnpm-lm-patient-record.diagnoses",
+      "short" : "MTB tumor diagnoses",
+      "definition" : "MTB tumor diagnoses",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Diagnose Primaertumor (Condition)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.id",
+      "path" : "dnpm-lm-patient-record.diagnoses.id",
+      "short" : "Diagnosis UUID",
+      "definition" : "Diagnosis UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Condition.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.patient",
+      "path" : "dnpm-lm-patient-record.diagnoses.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Condition.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.patient.id",
+      "path" : "dnpm-lm-patient-record.diagnoses.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.patient.type",
+      "path" : "dnpm-lm-patient-record.diagnoses.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.recordedOn",
+      "path" : "dnpm-lm-patient-record.diagnoses.recordedOn",
+      "short" : "Date diagnosis was recorded (YYYY-MM-DD)",
+      "definition" : "Date diagnosis was recorded (YYYY-MM-DD)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Condition.recordedDate"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.type",
+      "path" : "dnpm-lm-patient-record.diagnoses.type",
+      "short" : "Diagnosis type history (main / secondary)",
+      "definition" : "Diagnosis type history (main / secondary)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.type.history",
+      "path" : "dnpm-lm-patient-record.diagnoses.type.history",
+      "short" : "History entries for diagnosis type",
+      "definition" : "History entries for diagnosis type",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.type.history.date",
+      "path" : "dnpm-lm-patient-record.diagnoses.type.history.date",
+      "short" : "Entry date",
+      "definition" : "Entry date",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.type.history.value",
+      "path" : "dnpm-lm-patient-record.diagnoses.type.history.value",
+      "short" : "Diagnosis type value",
+      "definition" : "Diagnosis type value",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.type.history.value.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.type.history.value.code",
+      "short" : "Type code (e.g. main)",
+      "definition" : "Type code (e.g. main)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.type.history.value.display",
+      "path" : "dnpm-lm-patient-record.diagnoses.type.history.value.display",
+      "short" : "Type display",
+      "definition" : "Type display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.type.history.value.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.type.history.value.system",
+      "short" : "Type system URI",
+      "definition" : "Type system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.code",
+      "short" : "ICD-10-GM tumor diagnosis code",
+      "definition" : "ICD-10-GM tumor diagnosis code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Condition.code (ICD-10-GM)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.code.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.code.code",
+      "short" : "ICD-10-GM code (e.g. C75.8)",
+      "definition" : "ICD-10-GM code (e.g. C75.8)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.code.display",
+      "path" : "dnpm-lm-patient-record.diagnoses.code.display",
+      "short" : "Diagnosis display text",
+      "definition" : "Diagnosis display text",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.code.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.code.system",
+      "short" : "ICD-10-GM code system URI",
+      "definition" : "ICD-10-GM code system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.code.version",
+      "path" : "dnpm-lm-patient-record.diagnoses.code.version",
+      "short" : "ICD-10-GM version year",
+      "definition" : "ICD-10-GM version year",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.topography",
+      "path" : "dnpm-lm-patient-record.diagnoses.topography",
+      "short" : "ICD-O-3 topography code",
+      "definition" : "ICD-O-3 topography code",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Condition.bodySite (ICD-O-3-T)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.topography.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.topography.code",
+      "short" : "Topography code",
+      "definition" : "Topography code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.topography.display",
+      "path" : "dnpm-lm-patient-record.diagnoses.topography.display",
+      "short" : "Topography display",
+      "definition" : "Topography display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.topography.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.topography.system",
+      "short" : "Topography system URI (ICD-O-3)",
+      "definition" : "Topography system URI (ICD-O-3)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.topography.version",
+      "path" : "dnpm-lm-patient-record.diagnoses.topography.version",
+      "short" : "ICD-O-3 version",
+      "definition" : "ICD-O-3 version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.grading",
+      "path" : "dnpm-lm-patient-record.diagnoses.grading",
+      "short" : "Tumor grading history",
+      "definition" : "Tumor grading history",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: Observation (Grading)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.grading.history",
+      "path" : "dnpm-lm-patient-record.diagnoses.grading.history",
+      "short" : "Grading history entries",
+      "definition" : "Grading history entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.grading.history.date",
+      "path" : "dnpm-lm-patient-record.diagnoses.grading.history.date",
+      "short" : "Grading date",
+      "definition" : "Grading date",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.grading.history.codes",
+      "path" : "dnpm-lm-patient-record.diagnoses.grading.history.codes",
+      "short" : "Grading codes",
+      "definition" : "Grading codes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.grading.history.codes.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.grading.history.codes.code",
+      "short" : "Grade code",
+      "definition" : "Grade code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.grading.history.codes.display",
+      "path" : "dnpm-lm-patient-record.diagnoses.grading.history.codes.display",
+      "short" : "Grade display",
+      "definition" : "Grade display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.grading.history.codes.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.grading.history.codes.system",
+      "short" : "Grading system URI",
+      "definition" : "Grading system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging",
+      "short" : "Tumor staging history",
+      "definition" : "Tumor staging history",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: Observation (Staging)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history",
+      "short" : "Staging history entries",
+      "definition" : "Staging history entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.date",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.date",
+      "short" : "Staging date",
+      "definition" : "Staging date",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.method",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.method",
+      "short" : "Staging method",
+      "definition" : "Staging method",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.method.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.method.code",
+      "short" : "Method code (e.g. clinical)",
+      "definition" : "Method code (e.g. clinical)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.method.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification",
+      "short" : "TNM classification",
+      "definition" : "TNM classification",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.tumor",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.tumor",
+      "short" : "T category",
+      "definition" : "T category",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.tumor.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.tumor.code",
+      "short" : "T code (e.g. T0)",
+      "definition" : "T code (e.g. T0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.tumor.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.tumor.system",
+      "short" : "TNM system (UICC)",
+      "definition" : "TNM system (UICC)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.nodes",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.nodes",
+      "short" : "N category",
+      "definition" : "N category",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.nodes.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.nodes.code",
+      "short" : "N code (e.g. N2)",
+      "definition" : "N code (e.g. N2)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.nodes.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.nodes.system",
+      "short" : "TNM system (UICC)",
+      "definition" : "TNM system (UICC)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.metastasis",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.metastasis",
+      "short" : "M category",
+      "definition" : "M category",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.metastasis.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.metastasis.code",
+      "short" : "M code (e.g. M0)",
+      "definition" : "M code (e.g. M0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.metastasis.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.tnmClassification.metastasis.system",
+      "short" : "TNM system (UICC)",
+      "definition" : "TNM system (UICC)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications",
+      "short" : "Other classification systems",
+      "definition" : "Other classification systems",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications.code",
+      "short" : "Classification code",
+      "definition" : "Classification code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications.display",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications.display",
+      "short" : "Classification display",
+      "definition" : "Classification display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.staging.history.otherClassifications.system",
+      "short" : "Classification system URI",
+      "definition" : "Classification system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus",
+      "path" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus",
+      "short" : "Guideline treatment exhaustion status",
+      "definition" : "Guideline treatment exhaustion status",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Condition.extension(Leitlinienbehandlung-Status)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus.code",
+      "path" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus.code",
+      "short" : "Status code (e.g. non-exhausted)",
+      "definition" : "Status code (e.g. non-exhausted)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus.display",
+      "path" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus.display",
+      "short" : "Status display",
+      "definition" : "Status display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus.system",
+      "path" : "dnpm-lm-patient-record.diagnoses.guidelineTreatmentStatus.system",
+      "short" : "Status system URI",
+      "definition" : "Status system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.histology",
+      "path" : "dnpm-lm-patient-record.diagnoses.histology",
+      "short" : "Histology report references",
+      "definition" : "Histology report references",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.histology.id",
+      "path" : "dnpm-lm-patient-record.diagnoses.histology.id",
+      "short" : "Histology report ID",
+      "definition" : "Histology report ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.histology.type",
+      "path" : "dnpm-lm-patient-record.diagnoses.histology.type",
+      "short" : "Reference type (HistologyReport)",
+      "definition" : "Reference type (HistologyReport)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.diagnoses.notes",
+      "path" : "dnpm-lm-patient-record.diagnoses.notes",
+      "short" : "Free-text clinical notes",
+      "definition" : "Free-text clinical notes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories",
+      "short" : "Family member cancer history entries",
+      "definition" : "Family member cancer history entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Mol.gen: FamilyMemberHistory"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.id",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.id",
+      "short" : "Family member history UUID",
+      "definition" : "Family member history UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Mol.gen: FamilyMemberHistory.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.patient",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Mol.gen: FamilyMemberHistory.patient"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.patient.id",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.patient.type",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.relationship",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.relationship",
+      "short" : "Family relationship type",
+      "definition" : "Family relationship type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Mol.gen: FamilyMemberHistory.relationship"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.relationship.code",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.relationship.code",
+      "short" : "Relationship code",
+      "definition" : "Relationship code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.relationship.display",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.relationship.display",
+      "short" : "Relationship display",
+      "definition" : "Relationship display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.familyMemberHistories.relationship.system",
+      "path" : "dnpm-lm-patient-record.familyMemberHistories.relationship.system",
+      "short" : "Relationship system URI",
+      "definition" : "Relationship system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies",
+      "short" : "Guideline-based therapy entries",
+      "definition" : "Guideline-based therapy entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Systemische Vortherapie (MedicationStatement)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.id",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.id",
+      "short" : "Therapy UUID",
+      "definition" : "Therapy UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.patient",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.patient.id",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.patient.type",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.indication",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.indication",
+      "short" : "Indication (MTBDiagnosis) reference",
+      "definition" : "Indication (MTBDiagnosis) reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.reasonReference"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.indication.id",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.indication.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.indication.type",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.indication.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.therapyLine",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.therapyLine",
+      "short" : "Therapy line number",
+      "definition" : "Therapy line number",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.extension(Therapielinie)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.status",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.status",
+      "short" : "Therapy status",
+      "definition" : "Therapy status",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.status"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.status.code",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.status.code",
+      "short" : "Status code (e.g. stopped)",
+      "definition" : "Status code (e.g. stopped)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.status.display",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.status.display",
+      "short" : "Status display",
+      "definition" : "Status display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.status.system",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.status.system",
+      "short" : "Status system URI",
+      "definition" : "Status system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.statusReason",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.statusReason",
+      "short" : "Reason for therapy status",
+      "definition" : "Reason for therapy status",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.statusReason"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.statusReason.code",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.statusReason.code",
+      "short" : "Status reason code (e.g. progression)",
+      "definition" : "Status reason code (e.g. progression)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.statusReason.display",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.statusReason.display",
+      "short" : "Status reason display",
+      "definition" : "Status reason display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.statusReason.system",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.statusReason.system",
+      "short" : "Status reason system URI",
+      "definition" : "Status reason system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.period",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.period",
+      "short" : "Therapy period",
+      "definition" : "Therapy period",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.effectivePeriod"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.period.start",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.period.start",
+      "short" : "Start date (YYYY-MM-DD)",
+      "definition" : "Start date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.period.end",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.period.end",
+      "short" : "End date (YYYY-MM-DD)",
+      "definition" : "End date (YYYY-MM-DD)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.medication",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.medication",
+      "short" : "Medication codes (ATC)",
+      "definition" : "Medication codes (ATC)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.medication[x]"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.medication.code",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.medication.code",
+      "short" : "ATC code",
+      "definition" : "ATC code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.medication.display",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.medication.display",
+      "short" : "Medication display name",
+      "definition" : "Medication display name",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.medication.system",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.medication.system",
+      "short" : "ATC code system URI",
+      "definition" : "ATC code system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.medication.version",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.medication.version",
+      "short" : "ATC version",
+      "definition" : "ATC version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.notes",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.notes",
+      "short" : "Free-text therapy notes",
+      "definition" : "Free-text therapy notes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.category",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.category",
+      "short" : "Therapy category",
+      "definition" : "Therapy category",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.category.code",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.category.code",
+      "short" : "Category code",
+      "definition" : "Category code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.category.display",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.category.display",
+      "short" : "Category display",
+      "definition" : "Category display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineTherapies.category.system",
+      "path" : "dnpm-lm-patient-record.guidelineTherapies.category.system",
+      "short" : "Category system URI",
+      "definition" : "Category system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures",
+      "short" : "Guideline-based non-medication procedures",
+      "definition" : "Guideline-based non-medication procedures",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Vortherapie Prozedur (Procedure)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.id",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.id",
+      "short" : "Procedure UUID",
+      "definition" : "Procedure UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Procedure.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.patient",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Procedure.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.patient.id",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.patient.type",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.indication",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.indication",
+      "short" : "Indication (MTBDiagnosis) reference",
+      "definition" : "Indication (MTBDiagnosis) reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Procedure.reasonReference"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.indication.id",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.indication.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.indication.type",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.indication.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.code",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.code",
+      "short" : "Procedure type code",
+      "definition" : "Procedure type code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Procedure.code"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.code.code",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.code.code",
+      "short" : "Procedure code (e.g. radiotherapy)",
+      "definition" : "Procedure code (e.g. radiotherapy)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.code.display",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.code.display",
+      "short" : "Procedure display",
+      "definition" : "Procedure display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.code.system",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.code.system",
+      "short" : "Procedure system URI",
+      "definition" : "Procedure system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.status",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.status",
+      "short" : "Procedure status",
+      "definition" : "Procedure status",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Procedure.status"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.status.code",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.status.code",
+      "short" : "Status code (e.g. ongoing)",
+      "definition" : "Status code (e.g. ongoing)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.status.display",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.status.display",
+      "short" : "Status display",
+      "definition" : "Status display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.status.system",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.status.system",
+      "short" : "Status system URI",
+      "definition" : "Status system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.period",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.period",
+      "short" : "Procedure period",
+      "definition" : "Procedure period",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Procedure.performedPeriod"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.period.start",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.period.start",
+      "short" : "Start date (YYYY-MM-DD)",
+      "definition" : "Start date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.period.end",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.period.end",
+      "short" : "End date (YYYY-MM-DD)",
+      "definition" : "End date (YYYY-MM-DD)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.intent",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.intent",
+      "short" : "Therapy intent",
+      "definition" : "Therapy intent",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.intent.code",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.intent.code",
+      "short" : "Intent code (e.g. palliative)",
+      "definition" : "Intent code (e.g. palliative)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.intent.display",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.intent.display",
+      "short" : "Intent display",
+      "definition" : "Intent display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.intent.system",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.intent.system",
+      "short" : "Intent system URI",
+      "definition" : "Intent system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.guidelineProcedures.notes",
+      "path" : "dnpm-lm-patient-record.guidelineProcedures.notes",
+      "short" : "Free-text procedure notes",
+      "definition" : "Free-text procedure notes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus",
+      "path" : "dnpm-lm-patient-record.performanceStatus",
+      "short" : "ECOG performance status assessments",
+      "definition" : "ECOG performance status assessments",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: ECOG (Observation, LOINC 89247-1)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.id",
+      "path" : "dnpm-lm-patient-record.performanceStatus.id",
+      "short" : "Performance status UUID",
+      "definition" : "Performance status UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: Observation.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.patient",
+      "path" : "dnpm-lm-patient-record.performanceStatus.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: Observation.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.patient.id",
+      "path" : "dnpm-lm-patient-record.performanceStatus.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.patient.type",
+      "path" : "dnpm-lm-patient-record.performanceStatus.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.effectiveDate",
+      "path" : "dnpm-lm-patient-record.performanceStatus.effectiveDate",
+      "short" : "Assessment date (YYYY-MM-DD)",
+      "definition" : "Assessment date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: Observation.effectiveDateTime"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.value",
+      "path" : "dnpm-lm-patient-record.performanceStatus.value",
+      "short" : "ECOG score",
+      "definition" : "ECOG score",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: Observation.valueCodeableConcept"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.value.code",
+      "path" : "dnpm-lm-patient-record.performanceStatus.value.code",
+      "short" : "ECOG code (e.g. 0–4)",
+      "definition" : "ECOG code (e.g. 0–4)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.value.display",
+      "path" : "dnpm-lm-patient-record.performanceStatus.value.display",
+      "short" : "ECOG display",
+      "definition" : "ECOG display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.performanceStatus.value.system",
+      "path" : "dnpm-lm-patient-record.performanceStatus.value.system",
+      "short" : "ECOG system URI",
+      "definition" : "ECOG system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens",
+      "path" : "dnpm-lm-patient-record.specimens",
+      "short" : "Tumor specimen entries",
+      "definition" : "Tumor specimen entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Tumorprobe (Specimen)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.id",
+      "path" : "dnpm-lm-patient-record.specimens.id",
+      "short" : "Specimen UUID",
+      "definition" : "Specimen UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Specimen.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.patient",
+      "path" : "dnpm-lm-patient-record.specimens.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Specimen.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.patient.id",
+      "path" : "dnpm-lm-patient-record.specimens.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.patient.type",
+      "path" : "dnpm-lm-patient-record.specimens.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.diagnosis",
+      "path" : "dnpm-lm-patient-record.specimens.diagnosis",
+      "short" : "Associated diagnosis reference",
+      "definition" : "Associated diagnosis reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.diagnosis.id",
+      "path" : "dnpm-lm-patient-record.specimens.diagnosis.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.diagnosis.type",
+      "path" : "dnpm-lm-patient-record.specimens.diagnosis.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.type",
+      "path" : "dnpm-lm-patient-record.specimens.type",
+      "short" : "Specimen type",
+      "definition" : "Specimen type",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Specimen.type"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.type.code",
+      "path" : "dnpm-lm-patient-record.specimens.type.code",
+      "short" : "Specimen type code (e.g. fresh-tissue)",
+      "definition" : "Specimen type code (e.g. fresh-tissue)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.type.display",
+      "path" : "dnpm-lm-patient-record.specimens.type.display",
+      "short" : "Specimen type display",
+      "definition" : "Specimen type display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.type.system",
+      "path" : "dnpm-lm-patient-record.specimens.type.system",
+      "short" : "Specimen type system URI",
+      "definition" : "Specimen type system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection",
+      "path" : "dnpm-lm-patient-record.specimens.collection",
+      "short" : "Specimen collection details",
+      "definition" : "Specimen collection details",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Specimen.collection"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.date",
+      "path" : "dnpm-lm-patient-record.specimens.collection.date",
+      "short" : "Collection date (YYYY-MM-DD)",
+      "definition" : "Collection date (YYYY-MM-DD)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Specimen.collection.collectedDateTime"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.site",
+      "path" : "dnpm-lm-patient-record.specimens.collection.site",
+      "short" : "Collection site (ICD-O-3 topography)",
+      "definition" : "Collection site (ICD-O-3 topography)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Specimen.collection.bodySite"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.site.code",
+      "path" : "dnpm-lm-patient-record.specimens.collection.site.code",
+      "short" : "Site code",
+      "definition" : "Site code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.site.display",
+      "path" : "dnpm-lm-patient-record.specimens.collection.site.display",
+      "short" : "Site display",
+      "definition" : "Site display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.site.system",
+      "path" : "dnpm-lm-patient-record.specimens.collection.site.system",
+      "short" : "Site system URI",
+      "definition" : "Site system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.site.version",
+      "path" : "dnpm-lm-patient-record.specimens.collection.site.version",
+      "short" : "ICD-O-3 version",
+      "definition" : "ICD-O-3 version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.method",
+      "path" : "dnpm-lm-patient-record.specimens.collection.method",
+      "short" : "Collection method",
+      "definition" : "Collection method",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Specimen.collection.method"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.method.code",
+      "path" : "dnpm-lm-patient-record.specimens.collection.method.code",
+      "short" : "Method code (e.g. biopsy)",
+      "definition" : "Method code (e.g. biopsy)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.method.display",
+      "path" : "dnpm-lm-patient-record.specimens.collection.method.display",
+      "short" : "Method display",
+      "definition" : "Method display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.specimens.collection.method.system",
+      "path" : "dnpm-lm-patient-record.specimens.collection.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.priorDiagnosticReports",
+      "path" : "dnpm-lm-patient-record.priorDiagnosticReports",
+      "short" : "Prior diagnostic reports (free-text)",
+      "definition" : "Prior diagnostic reports (free-text)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport (MolecularPathology)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.priorDiagnosticReports.id",
+      "path" : "dnpm-lm-patient-record.priorDiagnosticReports.id",
+      "short" : "Report UUID",
+      "definition" : "Report UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.priorDiagnosticReports.patient",
+      "path" : "dnpm-lm-patient-record.priorDiagnosticReports.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.priorDiagnosticReports.patient.id",
+      "path" : "dnpm-lm-patient-record.priorDiagnosticReports.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.priorDiagnosticReports.patient.type",
+      "path" : "dnpm-lm-patient-record.priorDiagnosticReports.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.priorDiagnosticReports.issuedOn",
+      "path" : "dnpm-lm-patient-record.priorDiagnosticReports.issuedOn",
+      "short" : "Report issue date (YYYY-MM-DD)",
+      "definition" : "Report issue date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.issued"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.priorDiagnosticReports.results",
+      "path" : "dnpm-lm-patient-record.priorDiagnosticReports.results",
+      "short" : "Free-text diagnostic result strings",
+      "definition" : "Free-text diagnostic result strings",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports",
+      "path" : "dnpm-lm-patient-record.histologyReports",
+      "short" : "Histology report entries",
+      "definition" : "Histology report entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport (Histology)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.id",
+      "short" : "Histology report UUID",
+      "definition" : "Histology report UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.patient",
+      "path" : "dnpm-lm-patient-record.histologyReports.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.patient.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.patient.type",
+      "path" : "dnpm-lm-patient-record.histologyReports.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.specimen",
+      "path" : "dnpm-lm-patient-record.histologyReports.specimen",
+      "short" : "Tumor specimen reference",
+      "definition" : "Tumor specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.specimen"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.specimen.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.specimen.type",
+      "path" : "dnpm-lm-patient-record.histologyReports.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.issuedOn",
+      "path" : "dnpm-lm-patient-record.histologyReports.issuedOn",
+      "short" : "Report issue date (YYYY-MM-DD)",
+      "definition" : "Report issue date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.issued"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results",
+      "path" : "dnpm-lm-patient-record.histologyReports.results",
+      "short" : "Histology results",
+      "definition" : "Histology results",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Pathologie: DiagnosticReport.result"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent",
+      "short" : "Histologic tumor cell content",
+      "definition" : "Histologic tumor cell content",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Tumorzellgehalt (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.id",
+      "short" : "Result UUID",
+      "definition" : "Result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.patient",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.patient.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.patient.type",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.specimen",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.specimen.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.specimen.type",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method",
+      "short" : "Determination method",
+      "definition" : "Determination method",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method.code",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method.code",
+      "short" : "Method code (e.g. histologic)",
+      "definition" : "Method code (e.g. histologic)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method.display",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method.display",
+      "short" : "Method display",
+      "definition" : "Method display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method.system",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.value",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorCellContent.value",
+      "short" : "Tumor cell content fraction (0.0 – 1.0)",
+      "definition" : "Tumor cell content fraction (0.0 – 1.0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology",
+      "short" : "Tumor morphology",
+      "definition" : "Tumor morphology",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "Onkologie: Histologie ICD-O-3 (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.id",
+      "short" : "Morphology result UUID",
+      "definition" : "Morphology result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.patient",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.patient.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.patient.type",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.specimen",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.specimen.id",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.specimen.type",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology",
+      "short" : "ICD-O-3 morphology codes",
+      "definition" : "ICD-O-3 morphology codes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.code",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.code",
+      "short" : "Morphology code",
+      "definition" : "Morphology code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.display",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.display",
+      "short" : "Morphology display",
+      "definition" : "Morphology display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.system",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.system",
+      "short" : "Morphology system URI (ICD-O-3)",
+      "definition" : "Morphology system URI (ICD-O-3)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.version",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.morphology.version",
+      "short" : "ICD-O-3 version",
+      "definition" : "ICD-O-3 version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.notes",
+      "path" : "dnpm-lm-patient-record.histologyReports.results.tumorMorphology.notes",
+      "short" : "Free-text morphology notes",
+      "definition" : "Free-text morphology notes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports",
+      "path" : "dnpm-lm-patient-record.ihcReports",
+      "short" : "Immunohistochemistry (IHC) reports",
+      "definition" : "Immunohistochemistry (IHC) reports",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Molecular Pathology Report (DiagnosticReport)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.id",
+      "short" : "IHC report UUID",
+      "definition" : "IHC report UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.patient",
+      "path" : "dnpm-lm-patient-record.ihcReports.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.patient.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.patient.type",
+      "path" : "dnpm-lm-patient-record.ihcReports.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.specimen",
+      "path" : "dnpm-lm-patient-record.ihcReports.specimen",
+      "short" : "Tumor specimen reference",
+      "definition" : "Tumor specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.specimen"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.specimen.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.specimen.type",
+      "path" : "dnpm-lm-patient-record.ihcReports.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.issuedOn",
+      "path" : "dnpm-lm-patient-record.ihcReports.issuedOn",
+      "short" : "Report issue date (YYYY-MM-DD)",
+      "definition" : "Report issue date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.issued"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results",
+      "path" : "dnpm-lm-patient-record.ihcReports.results",
+      "short" : "IHC results",
+      "definition" : "IHC results",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.result"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression",
+      "short" : "Protein expression results",
+      "definition" : "Protein expression results",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Immunhistochemie PDL1 (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.id",
+      "short" : "Result UUID",
+      "definition" : "Result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.patient",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.patient.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.patient.type",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.specimen",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.specimen.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.specimen.type",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein",
+      "short" : "Protein tested",
+      "definition" : "Protein tested",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein.code",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein.code",
+      "short" : "Protein code (e.g. BRAFP1)",
+      "definition" : "Protein code (e.g. BRAFP1)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein.display",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein.display",
+      "short" : "Protein display",
+      "definition" : "Protein display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein.system",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.protein.system",
+      "short" : "Protein system URI",
+      "definition" : "Protein system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value",
+      "short" : "IHC expression value",
+      "definition" : "IHC expression value",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value.code",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value.code",
+      "short" : "Score code (e.g. 1+)",
+      "definition" : "Score code (e.g. 1+)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value.display",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value.display",
+      "short" : "Score display",
+      "definition" : "Score display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value.system",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.value.system",
+      "short" : "Score system URI",
+      "definition" : "Score system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tpsScore",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tpsScore",
+      "short" : "Tumor proportion score (TPS)",
+      "definition" : "Tumor proportion score (TPS)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore",
+      "short" : "Immune-cell score",
+      "definition" : "Immune-cell score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore.code",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore.code",
+      "short" : "IC score code",
+      "definition" : "IC score code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore.display",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore.display",
+      "short" : "IC score display",
+      "definition" : "IC score display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore.system",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.icScore.system",
+      "short" : "IC score system URI",
+      "definition" : "IC score system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore",
+      "short" : "Tumor-cell score",
+      "definition" : "Tumor-cell score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore.code",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore.code",
+      "short" : "TC score code",
+      "definition" : "TC score code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore.display",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore.display",
+      "short" : "TC score display",
+      "definition" : "TC score display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore.system",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.proteinExpression.tcScore.system",
+      "short" : "TC score system URI",
+      "definition" : "TC score system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr",
+      "short" : "MSI / MMR protein expression results",
+      "definition" : "MSI / MMR protein expression results",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Immunhistochemie MMR (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.id",
+      "short" : "Result UUID",
+      "definition" : "Result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.patient",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.patient.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.patient.type",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.specimen",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.specimen.id",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.specimen.type",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein",
+      "short" : "MMR protein tested (e.g. MLH1)",
+      "definition" : "MMR protein tested (e.g. MLH1)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein.code",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein.code",
+      "short" : "Protein code",
+      "definition" : "Protein code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein.display",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein.display",
+      "short" : "Protein display",
+      "definition" : "Protein display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein.system",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.protein.system",
+      "short" : "Protein system URI",
+      "definition" : "Protein system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value",
+      "short" : "Expression result",
+      "definition" : "Expression result",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value.code",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value.code",
+      "short" : "Result code (e.g. exp_present)",
+      "definition" : "Result code (e.g. exp_present)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value.display",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value.display",
+      "short" : "Result display",
+      "definition" : "Result display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value.system",
+      "path" : "dnpm-lm-patient-record.ihcReports.results.msiMmr.value.system",
+      "short" : "Result system URI",
+      "definition" : "Result system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings",
+      "path" : "dnpm-lm-patient-record.msiFindings",
+      "short" : "Microsatellite instability (MSI) findings",
+      "definition" : "Microsatellite instability (MSI) findings",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Mikrosatelliteninstabilitaet (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.id",
+      "path" : "dnpm-lm-patient-record.msiFindings.id",
+      "short" : "MSI finding UUID",
+      "definition" : "MSI finding UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.patient",
+      "path" : "dnpm-lm-patient-record.msiFindings.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.patient.id",
+      "path" : "dnpm-lm-patient-record.msiFindings.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.patient.type",
+      "path" : "dnpm-lm-patient-record.msiFindings.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.specimen",
+      "path" : "dnpm-lm-patient-record.msiFindings.specimen",
+      "short" : "Tumor specimen reference",
+      "definition" : "Tumor specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.specimen"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.specimen.id",
+      "path" : "dnpm-lm-patient-record.msiFindings.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.specimen.type",
+      "path" : "dnpm-lm-patient-record.msiFindings.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.ngsReport",
+      "path" : "dnpm-lm-patient-record.msiFindings.ngsReport",
+      "short" : "Associated NGS report reference",
+      "definition" : "Associated NGS report reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.ngsReport.id",
+      "path" : "dnpm-lm-patient-record.msiFindings.ngsReport.id",
+      "short" : "NGS report ID",
+      "definition" : "NGS report ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.ngsReport.type",
+      "path" : "dnpm-lm-patient-record.msiFindings.ngsReport.type",
+      "short" : "Reference type (NGSReport)",
+      "definition" : "Reference type (NGSReport)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.issuedOn",
+      "path" : "dnpm-lm-patient-record.msiFindings.issuedOn",
+      "short" : "Finding date (YYYY-MM-DD)",
+      "definition" : "Finding date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.value",
+      "path" : "dnpm-lm-patient-record.msiFindings.value",
+      "short" : "MSI result value",
+      "definition" : "MSI result value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.valueCodeableConcept"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.value.code",
+      "path" : "dnpm-lm-patient-record.msiFindings.value.code",
+      "short" : "MSI code (e.g. MSI-H)",
+      "definition" : "MSI code (e.g. MSI-H)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.value.display",
+      "path" : "dnpm-lm-patient-record.msiFindings.value.display",
+      "short" : "MSI display",
+      "definition" : "MSI display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.value.system",
+      "path" : "dnpm-lm-patient-record.msiFindings.value.system",
+      "short" : "MSI system URI",
+      "definition" : "MSI system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.method",
+      "path" : "dnpm-lm-patient-record.msiFindings.method",
+      "short" : "MSI determination method",
+      "definition" : "MSI determination method",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.method"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.method.code",
+      "path" : "dnpm-lm-patient-record.msiFindings.method.code",
+      "short" : "Method code (e.g. bioinformatics)",
+      "definition" : "Method code (e.g. bioinformatics)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.method.display",
+      "path" : "dnpm-lm-patient-record.msiFindings.method.display",
+      "short" : "Method display",
+      "definition" : "Method display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.msiFindings.method.system",
+      "path" : "dnpm-lm-patient-record.msiFindings.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports",
+      "path" : "dnpm-lm-patient-record.ngsReports",
+      "short" : "NGS sequencing reports",
+      "definition" : "NGS sequencing reports",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: NGS Bericht (DiagnosticReport)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.id",
+      "short" : "NGS Report UUID",
+      "definition" : "NGS Report UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.specimen",
+      "path" : "dnpm-lm-patient-record.ngsReports.specimen",
+      "short" : "Tumor specimen reference",
+      "definition" : "Tumor specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.specimen"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.specimen.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.specimen.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.issuedOn",
+      "path" : "dnpm-lm-patient-record.ngsReports.issuedOn",
+      "short" : "Report issue date (YYYY-MM-DD)",
+      "definition" : "Report issue date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.issued"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.type",
+      "short" : "NGS analysis type",
+      "definition" : "NGS analysis type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: GenomicStudy.type"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.type.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.type.code",
+      "short" : "Type code (e.g. exome)",
+      "definition" : "Type code (e.g. exome)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.type.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.type.display",
+      "short" : "Type display",
+      "definition" : "Type display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.type.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.type.system",
+      "short" : "Type system URI",
+      "definition" : "Type system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata",
+      "short" : "NGS run metadata",
+      "definition" : "NGS run metadata",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: GenomicStudyAnalysis"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome",
+      "short" : "Reference genome",
+      "definition" : "Reference genome",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: GenomicStudyAnalysis.extension(referenceGenome)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome.code",
+      "short" : "Genome build (e.g. GRCh38)",
+      "definition" : "Genome build (e.g. GRCh38)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome.display",
+      "short" : "Genome build display",
+      "definition" : "Genome build display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.referenceGenome.system",
+      "short" : "Genome build system URI",
+      "definition" : "Genome build system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer",
+      "short" : "Sequencer instrument",
+      "definition" : "Sequencer instrument",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: GenomicStudyAnalysis.device"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer.code",
+      "short" : "Sequencer code",
+      "definition" : "Sequencer code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer.display",
+      "short" : "Sequencer display",
+      "definition" : "Sequencer display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.sequencer.system",
+      "short" : "Sequencer system URI",
+      "definition" : "Sequencer system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.kitManufacturer",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.kitManufacturer",
+      "short" : "Kit manufacturer",
+      "definition" : "Kit manufacturer",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.kitType",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.kitType",
+      "short" : "Kit type",
+      "definition" : "Kit type",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.pipeline",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.pipeline",
+      "short" : "Bioinformatics pipeline",
+      "definition" : "Bioinformatics pipeline",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent",
+      "short" : "Pre-sequencing tumor cell content estimate",
+      "definition" : "Pre-sequencing tumor cell content estimate",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method",
+      "short" : "Estimation method",
+      "definition" : "Estimation method",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method.code",
+      "short" : "Method code",
+      "definition" : "Method code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method.display",
+      "short" : "Method display",
+      "definition" : "Method display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.metadata.tumorCellContent.value",
+      "short" : "Fraction (0.0 – 1.0)",
+      "definition" : "Fraction (0.0 – 1.0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results",
+      "path" : "dnpm-lm-patient-record.ngsReports.results",
+      "short" : "NGS analysis results",
+      "definition" : "NGS analysis results",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DiagnosticReport.result"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent",
+      "short" : "Bioinformatic tumor cell content",
+      "definition" : "Bioinformatic tumor cell content",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Tumorzellgehalt (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.id",
+      "short" : "Result UUID",
+      "definition" : "Result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.specimen",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.specimen.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.specimen.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method",
+      "short" : "Determination method",
+      "definition" : "Determination method",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method.code",
+      "short" : "Method code (e.g. bioinformatic)",
+      "definition" : "Method code (e.g. bioinformatic)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method.display",
+      "short" : "Method display",
+      "definition" : "Method display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tumorCellContent.value",
+      "short" : "Fraction (0.0 – 1.0)",
+      "definition" : "Fraction (0.0 – 1.0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb",
+      "short" : "Tumor Mutational Burden",
+      "definition" : "Tumor Mutational Burden",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Tumor Mutational Burden (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.id",
+      "short" : "TMB result UUID",
+      "definition" : "TMB result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.specimen",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.specimen.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.specimen.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.value",
+      "short" : "TMB quantity",
+      "definition" : "TMB quantity",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.value.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.value.value",
+      "short" : "Numeric value",
+      "definition" : "Numeric value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.value.unit",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.value.unit",
+      "short" : "Unit",
+      "definition" : "Unit",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation",
+      "short" : "TMB interpretation",
+      "definition" : "TMB interpretation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation.code",
+      "short" : "Code (e.g. high)",
+      "definition" : "Code (e.g. high)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation.display",
+      "short" : "Display",
+      "definition" : "Display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.tmb.interpretation.system",
+      "short" : "System URI",
+      "definition" : "System URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness",
+      "short" : "BRCAness score",
+      "definition" : "BRCAness score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: BRCAness (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.id",
+      "short" : "BRCAness result UUID",
+      "definition" : "BRCAness result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.specimen",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.specimen.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.specimen.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.value",
+      "short" : "BRCAness score (0.0 – 1.0)",
+      "definition" : "BRCAness score (0.0 – 1.0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.confidenceRange",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.confidenceRange",
+      "short" : "Confidence range",
+      "definition" : "Confidence range",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.confidenceRange.min",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.confidenceRange.min",
+      "short" : "Minimum",
+      "definition" : "Minimum",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.brcaness.confidenceRange.max",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.brcaness.confidenceRange.max",
+      "short" : "Maximum",
+      "definition" : "Maximum",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore",
+      "short" : "HRD Score",
+      "definition" : "HRD Score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: HRD Score (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.id",
+      "short" : "HRD result UUID",
+      "definition" : "HRD result UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.specimen",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.specimen.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.specimen.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.value",
+      "short" : "HRD composite score",
+      "definition" : "HRD composite score",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components",
+      "short" : "HRD component scores",
+      "definition" : "HRD component scores",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components.lst",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components.lst",
+      "short" : "LST score",
+      "definition" : "LST score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components.loh",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components.loh",
+      "short" : "LOH score",
+      "definition" : "LOH score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components.tai",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.components.tai",
+      "short" : "TAI score",
+      "definition" : "TAI score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation",
+      "short" : "HRD interpretation",
+      "definition" : "HRD interpretation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation.code",
+      "short" : "Code (e.g. low)",
+      "definition" : "Code (e.g. low)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation.display",
+      "short" : "Display",
+      "definition" : "Display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.hrdScore.interpretation.system",
+      "short" : "System URI",
+      "definition" : "System URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants",
+      "short" : "Simple variants (SNV / small indels)",
+      "definition" : "Simple variants (SNV / small indels)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Einfache Variante (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.id",
+      "short" : "Variant UUID",
+      "definition" : "Variant UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.externalIds",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.externalIds",
+      "short" : "External identifiers (e.g. dbSNP)",
+      "definition" : "External identifiers (e.g. dbSNP)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.externalIds.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.externalIds.value",
+      "short" : "Identifier value",
+      "definition" : "Identifier value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.externalIds.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.externalIds.system",
+      "short" : "Identifier system URI",
+      "definition" : "Identifier system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.chromosome",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.chromosome",
+      "short" : "Chromosome (e.g. chr4)",
+      "definition" : "Chromosome (e.g. chr4)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene",
+      "short" : "Affected gene",
+      "definition" : "Affected gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization",
+      "short" : "Variant localization in gene",
+      "definition" : "Variant localization in gene",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization.code",
+      "short" : "Localization code",
+      "definition" : "Localization code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization.display",
+      "short" : "Localization display",
+      "definition" : "Localization display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.localization.system",
+      "short" : "Localization system URI",
+      "definition" : "Localization system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.transcriptId",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.transcriptId",
+      "short" : "Transcript identifier",
+      "definition" : "Transcript identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.transcriptId.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.transcriptId.value",
+      "short" : "Transcript ID (e.g. ENST...)",
+      "definition" : "Transcript ID (e.g. ENST...)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.transcriptId.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.transcriptId.system",
+      "short" : "Transcript system URI",
+      "definition" : "Transcript system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.exonId",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.exonId",
+      "short" : "Exon identifier",
+      "definition" : "Exon identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.position",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.position",
+      "short" : "Genomic position",
+      "definition" : "Genomic position",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.position.start",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.position.start",
+      "short" : "Start position",
+      "definition" : "Start position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.position.end",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.position.end",
+      "short" : "End position",
+      "definition" : "End position",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.altAllele",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.altAllele",
+      "short" : "Alternate allele",
+      "definition" : "Alternate allele",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.refAllele",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.refAllele",
+      "short" : "Reference allele",
+      "definition" : "Reference allele",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.dnaChange",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.dnaChange",
+      "short" : "cDNA change (HGVS)",
+      "definition" : "cDNA change (HGVS)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.proteinChange",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.proteinChange",
+      "short" : "Protein change (HGVS)",
+      "definition" : "Protein change (HGVS)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.readDepth",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.readDepth",
+      "short" : "Read depth",
+      "definition" : "Read depth",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.allelicFrequency",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.allelicFrequency",
+      "short" : "Allelic frequency",
+      "definition" : "Allelic frequency",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation",
+      "short" : "ClinVar interpretation",
+      "definition" : "ClinVar interpretation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation.code",
+      "short" : "Interpretation code",
+      "definition" : "Interpretation code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation.display",
+      "short" : "Interpretation display",
+      "definition" : "Interpretation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.simpleVariants.interpretation.system",
+      "short" : "Interpretation system URI",
+      "definition" : "Interpretation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants",
+      "short" : "Copy number variants",
+      "definition" : "Copy number variants",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Copy Number Variante (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.id",
+      "short" : "CNV UUID",
+      "definition" : "CNV UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.chromosome",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.chromosome",
+      "short" : "Chromosome (e.g. chr7)",
+      "definition" : "Chromosome (e.g. chr7)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization",
+      "short" : "CNV localization",
+      "definition" : "CNV localization",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization.code",
+      "short" : "Localization code",
+      "definition" : "Localization code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization.display",
+      "short" : "Localization display",
+      "definition" : "Localization display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.localization.system",
+      "short" : "Localization system URI",
+      "definition" : "Localization system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.startRange",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.startRange",
+      "short" : "Start position range",
+      "definition" : "Start position range",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.startRange.start",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.startRange.start",
+      "short" : "Range start",
+      "definition" : "Range start",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.startRange.end",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.startRange.end",
+      "short" : "Range end",
+      "definition" : "Range end",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.endRange",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.endRange",
+      "short" : "End position range",
+      "definition" : "End position range",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.endRange.start",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.endRange.start",
+      "short" : "Range start",
+      "definition" : "Range start",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.endRange.end",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.endRange.end",
+      "short" : "Range end",
+      "definition" : "Range end",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.totalCopyNumber",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.totalCopyNumber",
+      "short" : "Total copy number",
+      "definition" : "Total copy number",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.relativeCopyNumber",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.relativeCopyNumber",
+      "short" : "Relative copy number",
+      "definition" : "Relative copy number",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.cnA",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.cnA",
+      "short" : "Copy number allele A",
+      "definition" : "Copy number allele A",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.cnB",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.cnB",
+      "short" : "Copy number allele B",
+      "definition" : "Copy number allele B",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes",
+      "short" : "Affected genes",
+      "definition" : "Affected genes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.reportedAffectedGenes.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality",
+      "short" : "CNV focality",
+      "definition" : "CNV focality",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality.code",
+      "short" : "Focality code (e.g. focal)",
+      "definition" : "Focality code (e.g. focal)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality.display",
+      "short" : "Focality display",
+      "definition" : "Focality display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.focality.system",
+      "short" : "Focality system URI",
+      "definition" : "Focality system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type",
+      "short" : "CNV type",
+      "definition" : "CNV type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type.code",
+      "short" : "CNV type code (e.g. gain)",
+      "definition" : "CNV type code (e.g. gain)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type.display",
+      "short" : "CNV type display",
+      "definition" : "CNV type display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.copyNumberVariants.type.system",
+      "short" : "CNV type system URI",
+      "definition" : "CNV type system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions",
+      "short" : "DNA-level gene fusions",
+      "definition" : "DNA-level gene fusions",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: DNA Fusion (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.id",
+      "short" : "DNA fusion UUID",
+      "definition" : "DNA fusion UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization",
+      "short" : "Fusion localization",
+      "definition" : "Fusion localization",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization.code",
+      "short" : "Localization code",
+      "definition" : "Localization code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization.display",
+      "short" : "Localization display",
+      "definition" : "Localization display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.localization.system",
+      "short" : "Localization system URI",
+      "definition" : "Localization system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime",
+      "short" : "5-prime fusion partner",
+      "definition" : "5-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene",
+      "short" : "5-prime partner gene",
+      "definition" : "5-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.position",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner5prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime",
+      "short" : "3-prime fusion partner",
+      "definition" : "3-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene",
+      "short" : "3-prime partner gene",
+      "definition" : "3-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.position",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.fusionPartner3prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.reportedNumReads",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.dnaFusions.reportedNumReads",
+      "short" : "Supporting read count",
+      "definition" : "Supporting read count",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions",
+      "short" : "RNA-level gene fusions",
+      "definition" : "RNA-level gene fusions",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: RNA Fusion (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.id",
+      "short" : "RNA fusion UUID",
+      "definition" : "RNA fusion UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.patient",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.patient.id",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.patient.type",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.externalIds",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.externalIds",
+      "short" : "External identifiers (e.g. COSMIC)",
+      "definition" : "External identifiers (e.g. COSMIC)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.externalIds.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.externalIds.value",
+      "short" : "Identifier value",
+      "definition" : "Identifier value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.externalIds.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.externalIds.system",
+      "short" : "Identifier system URI",
+      "definition" : "Identifier system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization",
+      "short" : "Fusion localization",
+      "definition" : "Fusion localization",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization.code",
+      "short" : "Localization code",
+      "definition" : "Localization code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization.display",
+      "short" : "Localization display",
+      "definition" : "Localization display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.localization.system",
+      "short" : "Localization system URI",
+      "definition" : "Localization system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime",
+      "short" : "5-prime fusion partner",
+      "definition" : "5-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene",
+      "short" : "5-prime partner gene",
+      "definition" : "5-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.transcript",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.transcript",
+      "short" : "5-prime transcript",
+      "definition" : "5-prime transcript",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.transcript.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.transcript.value",
+      "short" : "Transcript ID (e.g. ENST...)",
+      "definition" : "Transcript ID (e.g. ENST...)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.transcript.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.transcript.system",
+      "short" : "Transcript system URI",
+      "definition" : "Transcript system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.exon",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.exon",
+      "short" : "Exon identifier",
+      "definition" : "Exon identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.position",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.strand",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner5prime.strand",
+      "short" : "Strand (+ or -)",
+      "definition" : "Strand (+ or -)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime",
+      "short" : "3-prime fusion partner",
+      "definition" : "3-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene",
+      "short" : "3-prime partner gene",
+      "definition" : "3-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.transcript",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.transcript",
+      "short" : "3-prime transcript",
+      "definition" : "3-prime transcript",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.transcript.value",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.transcript.value",
+      "short" : "Transcript ID (e.g. ENST...)",
+      "definition" : "Transcript ID (e.g. ENST...)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.transcript.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.transcript.system",
+      "short" : "Transcript system URI",
+      "definition" : "Transcript system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.exon",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.exon",
+      "short" : "Exon identifier",
+      "definition" : "Exon identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.position",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.strand",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.fusionPartner3prime.strand",
+      "short" : "Strand (+ or -)",
+      "definition" : "Strand (+ or -)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect",
+      "short" : "RNA fusion effect",
+      "definition" : "RNA fusion effect",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect.code",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect.code",
+      "short" : "Effect code (e.g. in-frame)",
+      "definition" : "Effect code (e.g. in-frame)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect.display",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect.display",
+      "short" : "Effect display",
+      "definition" : "Effect display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect.system",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.effect.system",
+      "short" : "Effect system URI",
+      "definition" : "Effect system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.reportedNumReads",
+      "path" : "dnpm-lm-patient-record.ngsReports.results.rnaFusions.reportedNumReads",
+      "short" : "Supporting read count",
+      "definition" : "Supporting read count",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans",
+      "path" : "dnpm-lm-patient-record.carePlans",
+      "short" : "MTB care plans",
+      "definition" : "MTB care plans",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Therapieplan (CarePlan)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.id",
+      "path" : "dnpm-lm-patient-record.carePlans.id",
+      "short" : "Care plan UUID",
+      "definition" : "Care plan UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: CarePlan.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.patient",
+      "path" : "dnpm-lm-patient-record.carePlans.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: CarePlan.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.patient.id",
+      "path" : "dnpm-lm-patient-record.carePlans.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.patient.type",
+      "path" : "dnpm-lm-patient-record.carePlans.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.issuedOn",
+      "path" : "dnpm-lm-patient-record.carePlans.issuedOn",
+      "short" : "Issue date (YYYY-MM-DD)",
+      "definition" : "Issue date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: CarePlan.created"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.reason",
+      "path" : "dnpm-lm-patient-record.carePlans.reason",
+      "short" : "Indication (MTBDiagnosis) reference",
+      "definition" : "Indication (MTBDiagnosis) reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: CarePlan.addresses"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.reason.id",
+      "path" : "dnpm-lm-patient-record.carePlans.reason.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.reason.type",
+      "path" : "dnpm-lm-patient-record.carePlans.reason.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.noTargetFinding",
+      "path" : "dnpm-lm-patient-record.carePlans.noTargetFinding",
+      "short" : "True when no actionable target was found",
+      "definition" : "True when no actionable target was found",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "boolean"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: CarePlan.extension(noTargetFinding)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation",
+      "short" : "Genetic counselling recommendation",
+      "definition" : "Genetic counselling recommendation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Humangenetische Beratung (ServiceRequest)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.id",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.id",
+      "short" : "Recommendation UUID",
+      "definition" : "Recommendation UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.patient",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.patient.id",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.patient.type",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.issuedOn",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.issuedOn",
+      "short" : "Recommendation date (YYYY-MM-DD)",
+      "definition" : "Recommendation date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason",
+      "short" : "Counselling reason",
+      "definition" : "Counselling reason",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason.code",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason.code",
+      "short" : "Reason code",
+      "definition" : "Reason code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason.display",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason.display",
+      "short" : "Reason display",
+      "definition" : "Reason display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason.system",
+      "path" : "dnpm-lm-patient-record.carePlans.geneticCounselingRecommendation.reason.system",
+      "short" : "Reason system URI",
+      "definition" : "Reason system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations",
+      "short" : "Medication therapy recommendations",
+      "definition" : "Medication therapy recommendations",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Therapieempfehlung (MedicationRequest)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.id",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.id",
+      "short" : "Recommendation UUID",
+      "definition" : "Recommendation UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.patient",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.patient.id",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.patient.type",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.issuedOn",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.issuedOn",
+      "short" : "Recommendation date (YYYY-MM-DD)",
+      "definition" : "Recommendation date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.indication",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.indication",
+      "short" : "Indication reference",
+      "definition" : "Indication reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.indication.id",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.indication.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.indication.type",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.indication.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority",
+      "short" : "Recommendation priority",
+      "definition" : "Recommendation priority",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationRequest.extension(Prioritaet)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority.code",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority.code",
+      "short" : "Priority code (e.g. 1)",
+      "definition" : "Priority code (e.g. 1)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority.display",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority.display",
+      "short" : "Priority display",
+      "definition" : "Priority display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority.system",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.priority.system",
+      "short" : "Priority system URI",
+      "definition" : "Priority system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication",
+      "short" : "Recommended medications (ATC)",
+      "definition" : "Recommended medications (ATC)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationRequest.medication[x]"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.code",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.code",
+      "short" : "ATC code",
+      "definition" : "ATC code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.display",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.display",
+      "short" : "Medication display",
+      "definition" : "Medication display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.system",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.system",
+      "short" : "ATC system URI",
+      "definition" : "ATC system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.version",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.medication.version",
+      "short" : "ATC version",
+      "definition" : "ATC version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.supportingVariants",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.supportingVariants",
+      "short" : "Supporting variants",
+      "definition" : "Supporting variants",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationRequest.supportingInfo"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.supportingVariants.id",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.supportingVariants.id",
+      "short" : "Variant ID",
+      "definition" : "Variant ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.supportingVariants.type",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.supportingVariants.type",
+      "short" : "Variant type (SNV | CNV | DNAFusion | RNAFusion)",
+      "definition" : "Variant type (SNV | CNV | DNAFusion | RNAFusion)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence",
+      "short" : "Level of evidence",
+      "definition" : "Level of evidence",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationRequest.extension(Evidenzgraduierung)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading",
+      "short" : "Evidence grading",
+      "definition" : "Evidence grading",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading.code",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading.code",
+      "short" : "Grade code (e.g. m1A)",
+      "definition" : "Grade code (e.g. m1A)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading.display",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading.display",
+      "short" : "Grade display",
+      "definition" : "Grade display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading.system",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.grading.system",
+      "short" : "Grade system URI",
+      "definition" : "Grade system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums",
+      "short" : "Evidence addendums",
+      "definition" : "Evidence addendums",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums.code",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums.code",
+      "short" : "Addendum code",
+      "definition" : "Addendum code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums.display",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums.display",
+      "short" : "Addendum display",
+      "definition" : "Addendum display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums.system",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.addendums.system",
+      "short" : "Addendum system URI",
+      "definition" : "Addendum system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.publications",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.publications",
+      "short" : "Supporting publications",
+      "definition" : "Supporting publications",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.publications.pmid",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.publications.pmid",
+      "short" : "PubMed ID",
+      "definition" : "PubMed ID",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.publications.doi",
+      "path" : "dnpm-lm-patient-record.carePlans.medicationRecommendations.levelOfEvidence.publications.doi",
+      "short" : "Digital Object Identifier",
+      "definition" : "Digital Object Identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations",
+      "short" : "Study enrollment recommendations",
+      "definition" : "Study enrollment recommendations",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Studieneinschluss (ServiceRequest)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.id",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.id",
+      "short" : "Recommendation UUID",
+      "definition" : "Recommendation UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.patient",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.patient.id",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.patient.type",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.issuedOn",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.issuedOn",
+      "short" : "Recommendation date (YYYY-MM-DD)",
+      "definition" : "Recommendation date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.indication",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.indication",
+      "short" : "Indication reference",
+      "definition" : "Indication reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.indication.id",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.indication.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.indication.type",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.indication.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.supportingVariants",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.supportingVariants",
+      "short" : "Supporting variants",
+      "definition" : "Supporting variants",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.supportingVariants.id",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.supportingVariants.id",
+      "short" : "Variant ID",
+      "definition" : "Variant ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.supportingVariants.type",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.supportingVariants.type",
+      "short" : "Variant type",
+      "definition" : "Variant type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.studies",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.studies",
+      "short" : "Recommended studies",
+      "definition" : "Recommended studies",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.studies.id",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.studies.id",
+      "short" : "Study ID (e.g. NCT number)",
+      "definition" : "Study ID (e.g. NCT number)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.studies.system",
+      "path" : "dnpm-lm-patient-record.carePlans.studyEnrollmentRecommendations.studies.system",
+      "short" : "Study registry system URI",
+      "definition" : "Study registry system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps",
+      "path" : "dnpm-lm-patient-record.followUps",
+      "short" : "Follow-up visit entries",
+      "definition" : "Follow-up visit entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Follow-Up (ClinicalImpression)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.id",
+      "path" : "dnpm-lm-patient-record.followUps.id",
+      "short" : "Follow-up UUID",
+      "definition" : "Follow-up UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.patient",
+      "path" : "dnpm-lm-patient-record.followUps.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.patient.id",
+      "path" : "dnpm-lm-patient-record.followUps.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.patient.type",
+      "path" : "dnpm-lm-patient-record.followUps.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.date",
+      "path" : "dnpm-lm-patient-record.followUps.date",
+      "short" : "Follow-up date (YYYY-MM-DD)",
+      "definition" : "Follow-up date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClinicalImpression.effectiveDateTime"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.lastContactDate",
+      "path" : "dnpm-lm-patient-record.followUps.lastContactDate",
+      "short" : "Date of last patient contact (YYYY-MM-DD)",
+      "definition" : "Date of last patient contact (YYYY-MM-DD)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.patientStatus",
+      "path" : "dnpm-lm-patient-record.followUps.patientStatus",
+      "short" : "Patient status at follow-up",
+      "definition" : "Patient status at follow-up",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.patientStatus.code",
+      "path" : "dnpm-lm-patient-record.followUps.patientStatus.code",
+      "short" : "Status code (e.g. alive)",
+      "definition" : "Status code (e.g. alive)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.patientStatus.display",
+      "path" : "dnpm-lm-patient-record.followUps.patientStatus.display",
+      "short" : "Status display",
+      "definition" : "Status display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.patientStatus.system",
+      "path" : "dnpm-lm-patient-record.followUps.patientStatus.system",
+      "short" : "Status system URI",
+      "definition" : "Status system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.claims",
+      "path" : "dnpm-lm-patient-record.followUps.claims",
+      "short" : "Claim references at follow-up",
+      "definition" : "Claim references at follow-up",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.claims.id",
+      "path" : "dnpm-lm-patient-record.followUps.claims.id",
+      "short" : "Claim ID",
+      "definition" : "Claim ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.claims.type",
+      "path" : "dnpm-lm-patient-record.followUps.claims.type",
+      "short" : "Reference type (Claim)",
+      "definition" : "Reference type (Claim)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.followUps.therapyChanged",
+      "path" : "dnpm-lm-patient-record.followUps.therapyChanged",
+      "short" : "Whether therapy was changed at this follow-up",
+      "definition" : "Whether therapy was changed at this follow-up",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "boolean"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims",
+      "path" : "dnpm-lm-patient-record.claims",
+      "short" : "Insurance / cost coverage claim entries",
+      "definition" : "Insurance / cost coverage claim entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Antrag Kostenuebernahme (ClaimResponse)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.id",
+      "path" : "dnpm-lm-patient-record.claims.id",
+      "short" : "Claim UUID",
+      "definition" : "Claim UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.patient",
+      "path" : "dnpm-lm-patient-record.claims.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.patient"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.patient.id",
+      "path" : "dnpm-lm-patient-record.claims.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.patient.type",
+      "path" : "dnpm-lm-patient-record.claims.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.recommendation",
+      "path" : "dnpm-lm-patient-record.claims.recommendation",
+      "short" : "Associated medication recommendation reference",
+      "definition" : "Associated medication recommendation reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.request"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.recommendation.id",
+      "path" : "dnpm-lm-patient-record.claims.recommendation.id",
+      "short" : "Recommendation ID",
+      "definition" : "Recommendation ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.recommendation.type",
+      "path" : "dnpm-lm-patient-record.claims.recommendation.type",
+      "short" : "Reference type (MTBMedicationRecommendation)",
+      "definition" : "Reference type (MTBMedicationRecommendation)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claims.issuedOn",
+      "path" : "dnpm-lm-patient-record.claims.issuedOn",
+      "short" : "Claim issue date (YYYY-MM-DD)",
+      "definition" : "Claim issue date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.created"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses",
+      "path" : "dnpm-lm-patient-record.claimResponses",
+      "short" : "Insurance / cost coverage claim response entries",
+      "definition" : "Insurance / cost coverage claim response entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Antwort Kostenuebernahme (ClaimResponse)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.id",
+      "path" : "dnpm-lm-patient-record.claimResponses.id",
+      "short" : "Claim response UUID",
+      "definition" : "Claim response UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.patient",
+      "path" : "dnpm-lm-patient-record.claimResponses.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.patient"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.patient.id",
+      "path" : "dnpm-lm-patient-record.claimResponses.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.patient.type",
+      "path" : "dnpm-lm-patient-record.claimResponses.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.claim",
+      "path" : "dnpm-lm-patient-record.claimResponses.claim",
+      "short" : "Associated claim reference",
+      "definition" : "Associated claim reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.request"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.claim.id",
+      "path" : "dnpm-lm-patient-record.claimResponses.claim.id",
+      "short" : "Claim ID",
+      "definition" : "Claim ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.claim.type",
+      "path" : "dnpm-lm-patient-record.claimResponses.claim.type",
+      "short" : "Reference type (Claim)",
+      "definition" : "Reference type (Claim)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.issuedOn",
+      "path" : "dnpm-lm-patient-record.claimResponses.issuedOn",
+      "short" : "Response date (YYYY-MM-DD)",
+      "definition" : "Response date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.created"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.status",
+      "path" : "dnpm-lm-patient-record.claimResponses.status",
+      "short" : "Response status",
+      "definition" : "Response status",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.extension(Entscheidung)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.status.code",
+      "path" : "dnpm-lm-patient-record.claimResponses.status.code",
+      "short" : "Status code (e.g. rejected)",
+      "definition" : "Status code (e.g. rejected)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.status.display",
+      "path" : "dnpm-lm-patient-record.claimResponses.status.display",
+      "short" : "Status display",
+      "definition" : "Status display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.status.system",
+      "path" : "dnpm-lm-patient-record.claimResponses.status.system",
+      "short" : "Status system URI",
+      "definition" : "Status system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.statusReason",
+      "path" : "dnpm-lm-patient-record.claimResponses.statusReason",
+      "short" : "Reason for response status",
+      "definition" : "Reason for response status",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: ClaimResponse.extension(Ablehnungsgrund)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.statusReason.code",
+      "path" : "dnpm-lm-patient-record.claimResponses.statusReason.code",
+      "short" : "Reason code",
+      "definition" : "Reason code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.statusReason.display",
+      "path" : "dnpm-lm-patient-record.claimResponses.statusReason.display",
+      "short" : "Reason display",
+      "definition" : "Reason display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.claimResponses.statusReason.system",
+      "path" : "dnpm-lm-patient-record.claimResponses.statusReason.system",
+      "short" : "Reason system URI",
+      "definition" : "Reason system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies",
+      "path" : "dnpm-lm-patient-record.systemicTherapies",
+      "short" : "Systemic (molecular) therapy entries (each wraps a history)",
+      "definition" : "Systemic (molecular) therapy entries (each wraps a history)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Systemische Therapie Follow-Up"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history",
+      "short" : "Therapy version history entries",
+      "definition" : "Therapy version history entries",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement + Procedure"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.id",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.id",
+      "short" : "Therapy entry UUID",
+      "definition" : "Therapy entry UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.patient",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.patient.id",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.patient.type",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.indication",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.indication",
+      "short" : "Indication reference",
+      "definition" : "Indication reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.reasonReference"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.indication.id",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.indication.id",
+      "short" : "Diagnosis ID",
+      "definition" : "Diagnosis ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.indication.type",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.indication.type",
+      "short" : "Reference type (MTBDiagnosis)",
+      "definition" : "Reference type (MTBDiagnosis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.basedOn",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.basedOn",
+      "short" : "Medication recommendation reference",
+      "definition" : "Medication recommendation reference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.basedOn"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.basedOn.id",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.basedOn.id",
+      "short" : "Recommendation ID",
+      "definition" : "Recommendation ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.basedOn.type",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.basedOn.type",
+      "short" : "Reference type (MTBMedicationRecommendation)",
+      "definition" : "Reference type (MTBMedicationRecommendation)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.therapyLine",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.therapyLine",
+      "short" : "Therapy line number",
+      "definition" : "Therapy line number",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.extension(Therapielinie)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.status",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.status",
+      "short" : "Therapy status",
+      "definition" : "Therapy status",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.status"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.status.code",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.status.code",
+      "short" : "Status code (e.g. completed)",
+      "definition" : "Status code (e.g. completed)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.status.display",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.status.display",
+      "short" : "Status display",
+      "definition" : "Status display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.status.system",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.status.system",
+      "short" : "Status system URI",
+      "definition" : "Status system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason",
+      "short" : "Reason for therapy status",
+      "definition" : "Reason for therapy status",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.statusReason"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason.code",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason.code",
+      "short" : "Status reason code",
+      "definition" : "Status reason code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason.display",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason.display",
+      "short" : "Status reason display",
+      "definition" : "Status reason display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason.system",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.statusReason.system",
+      "short" : "Status reason system URI",
+      "definition" : "Status reason system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.period",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.period",
+      "short" : "Therapy period",
+      "definition" : "Therapy period",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.effectivePeriod"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.period.start",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.period.start",
+      "short" : "Start date (YYYY-MM-DD)",
+      "definition" : "Start date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.period.end",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.period.end",
+      "short" : "End date (YYYY-MM-DD)",
+      "definition" : "End date (YYYY-MM-DD)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.medication",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.medication",
+      "short" : "Medication codes (ATC)",
+      "definition" : "Medication codes (ATC)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: MedicationStatement.medication[x]"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.medication.code",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.medication.code",
+      "short" : "ATC code",
+      "definition" : "ATC code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.medication.display",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.medication.display",
+      "short" : "Medication display",
+      "definition" : "Medication display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.medication.system",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.medication.system",
+      "short" : "ATC system URI",
+      "definition" : "ATC system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.medication.version",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.medication.version",
+      "short" : "ATC version",
+      "definition" : "ATC version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.systemicTherapies.history.notes",
+      "path" : "dnpm-lm-patient-record.systemicTherapies.history.notes",
+      "short" : "Free-text therapy notes",
+      "definition" : "Free-text therapy notes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses",
+      "path" : "dnpm-lm-patient-record.responses",
+      "short" : "Therapy response assessments",
+      "definition" : "Therapy response assessments",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Response Befund (Observation)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.id",
+      "path" : "dnpm-lm-patient-record.responses.id",
+      "short" : "Response UUID",
+      "definition" : "Response UUID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.identifier"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.patient",
+      "path" : "dnpm-lm-patient-record.responses.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.subject"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.patient.id",
+      "path" : "dnpm-lm-patient-record.responses.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.patient.type",
+      "path" : "dnpm-lm-patient-record.responses.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.therapy",
+      "path" : "dnpm-lm-patient-record.responses.therapy",
+      "short" : "Associated systemic therapy reference",
+      "definition" : "Associated systemic therapy reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.focus"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.therapy.id",
+      "path" : "dnpm-lm-patient-record.responses.therapy.id",
+      "short" : "Therapy ID",
+      "definition" : "Therapy ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.therapy.type",
+      "path" : "dnpm-lm-patient-record.responses.therapy.type",
+      "short" : "Reference type (MTBSystemicTherapy)",
+      "definition" : "Reference type (MTBSystemicTherapy)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.effectiveDate",
+      "path" : "dnpm-lm-patient-record.responses.effectiveDate",
+      "short" : "Response assessment date (YYYY-MM-DD)",
+      "definition" : "Response assessment date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.effectiveDateTime"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.value",
+      "path" : "dnpm-lm-patient-record.responses.value",
+      "short" : "RECIST response category",
+      "definition" : "RECIST response category",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "dnpm-to-mii-fhir",
+        "map" : "MTB: Observation.valueCodeableConcept (RECIST)"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.value.code",
+      "path" : "dnpm-lm-patient-record.responses.value.code",
+      "short" : "RECIST code (e.g. SD, PR, CR, PD)",
+      "definition" : "RECIST code (e.g. SD, PR, CR, PD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.value.display",
+      "path" : "dnpm-lm-patient-record.responses.value.display",
+      "short" : "RECIST display (e.g. Stable Disease)",
+      "definition" : "RECIST display (e.g. Stable Disease)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-patient-record.responses.value.system",
+      "path" : "dnpm-lm-patient-record.responses.value.system",
+      "short" : "RECIST system (e.g. RECIST)",
+      "definition" : "RECIST system (e.g. RECIST)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    }]
+  }
+}
+
+```

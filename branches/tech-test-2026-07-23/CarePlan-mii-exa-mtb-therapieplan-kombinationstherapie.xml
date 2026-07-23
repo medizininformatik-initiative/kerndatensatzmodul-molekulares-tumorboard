@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-therapieplan-kombinationstherapie"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan|2026.0.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CarePlan mii-exa-mtb-therapieplan-kombinationstherapie</b></p><a name="mii-exa-mtb-therapieplan-kombinationstherapie"> </a><a name="hcmii-exa-mtb-therapieplan-kombinationstherapie"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-therapieplan.html">MII PR MTB Therapieplan</a> version: 2026.0.1</p></div><p><b>status</b>: Active</p><p><b>intent</b>: Plan</p><p><b>category</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ postth}">posttherapeutische Tumorkonferenz (manche Tumore werden nicht operiert)</span></p><p><b>subject</b>: <a href="Patient-mii-exa-mtb-patient.html">Maxim Muster  (no stated gender), DoB Unknown</a></p><p><b>created</b>: 2024-08-09</p><h3>Activities</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><a href="RequestGroup-mii-exa-mtb-therapieempfehlung-kombinationstherapie.html">RequestGroup: extension = 1,https://doi.org#10.1002/gcc.23222,m1C; status = active; intent = proposal; authoredOn = 2024-01-01</a></td></tr></table></div>
+  </text>
+  <status value="active"/>
+  <intent value="plan"/>
+  <category>
+    <coding>
+      <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ"/>
+      <code value="postth"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/mii-exa-mtb-patient"/>
+  </subject>
+  <created value="2024-08-09"/>
+  <activity>
+    <reference>
+      <reference value="RequestGroup/mii-exa-mtb-therapieempfehlung-kombinationstherapie"/>
+    </reference>
+  </activity>
+</CarePlan>

@@ -1,0 +1,133 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-cs-mtb-molekulare-biomarker"] ;
+  fhir:Resource.language [ fhir:value "de-DE"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"de-DE\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-DE\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mii-cs-mtb-molekulare-biomarker</b></p><a name=\"mii-cs-mtb-molekulare-biomarker\"> </a><a name=\"hcmii-cs-mtb-molekulare-biomarker\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">brcaness<a name=\"mii-cs-mtb-molekulare-biomarker-brcaness\"> </a></td><td>BRCAness</td></tr><tr><td style=\"white-space:nowrap\">phosphorylation-localization<a name=\"mii-cs-mtb-molekulare-biomarker-phosphorylation-localization\"> </a></td><td>Phosphorylation localization</td></tr><tr><td style=\"white-space:nowrap\">protein-isoform<a name=\"mii-cs-mtb-molekulare-biomarker-protein-isoform\"> </a></td><td>Protein isoform</td></tr><tr><td style=\"white-space:nowrap\">relative-copy-number<a name=\"mii-cs-mtb-molekulare-biomarker-relative-copy-number\"> </a></td><td>Relative Copy Number of Allele A and B</td></tr><tr><td style=\"white-space:nowrap\">copy-number-allele-a<a name=\"mii-cs-mtb-molekulare-biomarker-copy-number-allele-a\"> </a></td><td>Copy Number of Allele B</td></tr><tr><td style=\"white-space:nowrap\">copy-number-allele-b<a name=\"mii-cs-mtb-molekulare-biomarker-copy-number-allele-b\"> </a></td><td>Copy Number of Allele A</td></tr><tr><td style=\"white-space:nowrap\">reported-focality<a name=\"mii-cs-mtb-molekulare-biomarker-reported-focality\"> </a></td><td>Reported focality</td></tr><tr><td style=\"white-space:nowrap\">copy-number-neutral-loh<a name=\"mii-cs-mtb-molekulare-biomarker-copy-number-neutral-loh\"> </a></td><td>Copy Number Neutral Loss of Heterozygosity</td></tr><tr><td style=\"white-space:nowrap\">five-prime-chromosome<a name=\"mii-cs-mtb-molekulare-biomarker-five-prime-chromosome\"> </a></td><td>Five Prime Chromosome</td></tr><tr><td style=\"white-space:nowrap\">five-prime-position<a name=\"mii-cs-mtb-molekulare-biomarker-five-prime-position\"> </a></td><td>Five Prime Position</td></tr><tr><td style=\"white-space:nowrap\">five-prime-gene<a name=\"mii-cs-mtb-molekulare-biomarker-five-prime-gene\"> </a></td><td>Five Prime Gene</td></tr><tr><td style=\"white-space:nowrap\">three-prime-chromosome<a name=\"mii-cs-mtb-molekulare-biomarker-three-prime-chromosome\"> </a></td><td>Three Prime Chromosome</td></tr><tr><td style=\"white-space:nowrap\">three-prime-position<a name=\"mii-cs-mtb-molekulare-biomarker-three-prime-position\"> </a></td><td>Three Prime Position</td></tr><tr><td style=\"white-space:nowrap\">three-prime-gene<a name=\"mii-cs-mtb-molekulare-biomarker-three-prime-gene\"> </a></td><td>Three Prime Gene</td></tr><tr><td style=\"white-space:nowrap\">five-prime-transcript-id<a name=\"mii-cs-mtb-molekulare-biomarker-five-prime-transcript-id\"> </a></td><td>Five Prime Transcript ID</td></tr><tr><td style=\"white-space:nowrap\">five-prime-exon-id<a name=\"mii-cs-mtb-molekulare-biomarker-five-prime-exon-id\"> </a></td><td>Five Prime Exon ID</td></tr><tr><td style=\"white-space:nowrap\">five-prime-strand<a name=\"mii-cs-mtb-molekulare-biomarker-five-prime-strand\"> </a></td><td>Five Prime Strand</td></tr><tr><td style=\"white-space:nowrap\">three-prime-transcript-id<a name=\"mii-cs-mtb-molekulare-biomarker-three-prime-transcript-id\"> </a></td><td>Three Prime Transcript ID</td></tr><tr><td style=\"white-space:nowrap\">three-prime-exon-id<a name=\"mii-cs-mtb-molekulare-biomarker-three-prime-exon-id\"> </a></td><td>Three Prime Exon ID</td></tr><tr><td style=\"white-space:nowrap\">three-prime-strand<a name=\"mii-cs-mtb-molekulare-biomarker-three-prime-strand\"> </a></td><td>Three Prime Strand</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"] ;
+  fhir:CodeSystem.version [ fhir:value "2026.0.1"] ;
+  fhir:CodeSystem.name [ fhir:value "MII_CS_MTB_Molekulare_Biomarker"] ;
+  fhir:CodeSystem.title [ fhir:value "MII CS Molekulare Biomarker"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-07-23T12:42:46+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Codesystem, welches verschiedene Molekulare Biomarker enthält, die nicht in anderen offenen semantischen Standards wie LOINC oder SNOMED-CT abgebildet sind"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "20"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "brcaness" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "BRCAness" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "phosphorylation-localization" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Phosphorylation localization" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "protein-isoform" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Protein isoform" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "relative-copy-number" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Relative Copy Number of Allele A and B" ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "copy-number-allele-a" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Copy Number of Allele B" ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "copy-number-allele-b" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Copy Number of Allele A" ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "reported-focality" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Reported focality" ]
+  ], [
+     fhir:index 7 ;
+     fhir:CodeSystem.concept.code [ fhir:value "copy-number-neutral-loh" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Copy Number Neutral Loss of Heterozygosity" ]
+  ], [
+     fhir:index 8 ;
+     fhir:CodeSystem.concept.code [ fhir:value "five-prime-chromosome" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Five Prime Chromosome" ]
+  ], [
+     fhir:index 9 ;
+     fhir:CodeSystem.concept.code [ fhir:value "five-prime-position" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Five Prime Position" ]
+  ], [
+     fhir:index 10 ;
+     fhir:CodeSystem.concept.code [ fhir:value "five-prime-gene" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Five Prime Gene" ]
+  ], [
+     fhir:index 11 ;
+     fhir:CodeSystem.concept.code [ fhir:value "three-prime-chromosome" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Three Prime Chromosome" ]
+  ], [
+     fhir:index 12 ;
+     fhir:CodeSystem.concept.code [ fhir:value "three-prime-position" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Three Prime Position" ]
+  ], [
+     fhir:index 13 ;
+     fhir:CodeSystem.concept.code [ fhir:value "three-prime-gene" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Three Prime Gene" ]
+  ], [
+     fhir:index 14 ;
+     fhir:CodeSystem.concept.code [ fhir:value "five-prime-transcript-id" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Five Prime Transcript ID" ]
+  ], [
+     fhir:index 15 ;
+     fhir:CodeSystem.concept.code [ fhir:value "five-prime-exon-id" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Five Prime Exon ID" ]
+  ], [
+     fhir:index 16 ;
+     fhir:CodeSystem.concept.code [ fhir:value "five-prime-strand" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Five Prime Strand" ]
+  ], [
+     fhir:index 17 ;
+     fhir:CodeSystem.concept.code [ fhir:value "three-prime-transcript-id" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Three Prime Transcript ID" ]
+  ], [
+     fhir:index 18 ;
+     fhir:CodeSystem.concept.code [ fhir:value "three-prime-exon-id" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Three Prime Exon ID" ]
+  ], [
+     fhir:index 19 ;
+     fhir:CodeSystem.concept.code [ fhir:value "three-prime-strand" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Three Prime Strand" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

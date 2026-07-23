@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-6> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-cldn6-location-6"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location mii-exa-mtb-study-cldn6-location-6</b></p><a name=\"mii-exa-mtb-study-cldn6-location-6\"> </a><a name=\"hcmii-exa-mtb-study-cldn6-location-6\"> </a><p><b>name</b>: Universitätsklinikum Köln AÖR-Centrum für Integrierte Onkologie (CIO)-Studienzentrum der Klinik I für Innere Medizin (CTU Cologne)</p><p><b>address</b>: Köln 50937 Germany </p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>6.95</td><td>50.93333</td></tr></table></div>"
+  ] ;
+  fhir:Location.name [ fhir:value "Universitätsklinikum Köln AÖR-Centrum für Integrierte Onkologie (CIO)-Studienzentrum der Klinik I für Innere Medizin (CTU Cologne)"] ;
+  fhir:Location.address [
+     fhir:Address.city [ fhir:value "Köln" ] ;
+     fhir:Address.postalCode [ fhir:value "50937" ] ;
+     fhir:Address.country [ fhir:value "Germany" ]
+  ] ;
+  fhir:Location.position [
+     fhir:Location.position.longitude [ fhir:value "6.95"^^xsd:decimal ] ;
+     fhir:Location.position.latitude [ fhir:value "50.93333"^^xsd:decimal ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-6.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

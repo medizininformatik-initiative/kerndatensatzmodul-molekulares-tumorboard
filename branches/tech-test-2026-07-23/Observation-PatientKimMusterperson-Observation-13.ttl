@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-13> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PatientKimMusterperson-Observation-13"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-13</b></p><a name=\"PatientKimMusterperson-Observation-13\"> </a><a name=\"hcPatientKimMusterperson-Observation-13\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-3.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 255227004}, {http://snomed.info/sct 1217294009}, {http://snomed.info/sct 44714003}\">regrediente Milchglasinfiltrate im linken Oberlappen</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 112231000}, {http://snomed.info/sct 257552002}\">a.e. atypisch entzündlich</span></p></div>"
+  ] ;
+  fhir:Observation.partOf [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/PatientKimMusterperson-Procedure-3> ;
+     fhir:Reference.reference [ fhir:value "Procedure/PatientKimMusterperson-Procedure-3" ]
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:255227004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "255227004" ] ;
+       fhir:Coding.display [ fhir:value "Recurrent" ]
+     ], [
+       fhir:index 1 ;
+       a sct:1217294009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "1217294009" ] ;
+       fhir:Coding.display [ fhir:value "Ground glass opacity" ]
+     ], [
+       fhir:index 2 ;
+       a sct:44714003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "44714003" ] ;
+       fhir:Coding.display [ fhir:value "Structure of upper lobe of left lung" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "regrediente Milchglasinfiltrate im linken Oberlappen" ]
+  ] ;
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:112231000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "112231000" ] ;
+       fhir:Coding.display [ fhir:value "Atypical" ]
+     ], [
+       fhir:index 1 ;
+       a sct:257552002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "257552002" ] ;
+       fhir:Coding.display [ fhir:value "Inflammation" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "a.e. atypisch entzündlich" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-Observation-13.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

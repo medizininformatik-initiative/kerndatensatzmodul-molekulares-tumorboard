@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-7> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-study-cldn6-location-7"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location mii-exa-mtb-study-cldn6-location-7</b></p><a name=\"mii-exa-mtb-study-cldn6-location-7\"> </a><a name=\"hcmii-exa-mtb-study-cldn6-location-7\"> </a><p><b>name</b>: Universitätsmedizin Mainz - III Medizinische Klinik und Poliklinik</p><p><b>address</b>: Mainz 55131 Germany </p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>8.2791</td><td>49.98419</td></tr></table></div>"
+  ] ;
+  fhir:Location.name [ fhir:value "Universitätsmedizin Mainz - III Medizinische Klinik und Poliklinik"] ;
+  fhir:Location.address [
+     fhir:Address.city [ fhir:value "Mainz" ] ;
+     fhir:Address.postalCode [ fhir:value "55131" ] ;
+     fhir:Address.country [ fhir:value "Germany" ]
+  ] ;
+  fhir:Location.position [
+     fhir:Location.position.longitude [ fhir:value "8.2791"^^xsd:decimal ] ;
+     fhir:Location.position.latitude [ fhir:value "49.98419"^^xsd:decimal ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Location/mii-exa-mtb-study-cldn6-location-7.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

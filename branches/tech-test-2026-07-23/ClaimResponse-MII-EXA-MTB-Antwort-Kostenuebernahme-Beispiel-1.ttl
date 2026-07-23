@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1> a fhir:ClaimResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClaimResponse MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1</b></p><a name=\"MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1\"> </a><a name=\"hcMII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html\">MII PR MTB Anwort Kostenuebernahme</a> version: 2026.0.1</p></div><p><b>MII EX MTB Antwort Kostenuebernahme Entscheidung</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung rejected}\">Abgelehnt</span></p><p><b>MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund other-therapy-recommended}\">Andere Therapie vorgeschlagen</span></p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:\">institutional</span></p><p><b>use</b>: Claim</p><p><b>patient</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/example\">Patient/example</a></p><p><b>created</b>: 2024-07-07</p><p><b>insurer</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Organization/InstitutionID\">Organization/InstitutionID</a></p><p><b>request</b>: <a href=\"Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.html\">Claim: status = active; type = institutional; use = claim; created = 2024-07-07; priority = Normal</a></p><p><b>outcome</b>: Processing Complete</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung" ] ;
+         fhir:Coding.code [ fhir:value "rejected" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund" ] ;
+         fhir:Coding.code [ fhir:value "other-therapy-recommended" ]
+       ]
+     ]
+  ] ;
+  fhir:ClaimResponse.status [ fhir:value "active"] ;
+  fhir:ClaimResponse.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.code [ fhir:value "institutional" ]
+     ]
+  ] ;
+  fhir:ClaimResponse.use [ fhir:value "claim"] ;
+  fhir:ClaimResponse.patient [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/example> ;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] ;
+  fhir:ClaimResponse.created [ fhir:value "2024-07-07"^^xsd:date] ;
+  fhir:ClaimResponse.insurer [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Organization/InstitutionID> ;
+     fhir:Reference.reference [ fhir:value "Organization/InstitutionID" ]
+  ] ;
+  fhir:ClaimResponse.request [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1> ;
+     fhir:Reference.reference [ fhir:value "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1" ]
+  ] ;
+  fhir:ClaimResponse.outcome [ fhir:value "complete"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,28 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Device/MII-EXA-MTB-Device-SequencingKit-1> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "MII-EXA-MTB-Device-SequencingKit-1"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device MII-EXA-MTB-Device-SequencingKit-1</b></p><a name=\"MII-EXA-MTB-Device-SequencingKit-1\"> </a><a name=\"hcMII-EXA-MTB-Device-SequencingKit-1\"> </a><p><b>manufacturer</b>: Illumina</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>NovaSeq X Reagent Kit (300 cycles)</td><td>User Friendly name</td></tr></table></div>"
+  ] ;
+  fhir:Device.manufacturer [ fhir:value "Illumina"] ;
+  fhir:Device.deviceName [
+     fhir:index 0 ;
+     fhir:Device.deviceName.name [ fhir:value "NovaSeq X Reagent Kit (300 cycles)" ] ;
+     fhir:Device.deviceName.type [ fhir:value "user-friendly-name" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Device/MII-EXA-MTB-Device-SequencingKit-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

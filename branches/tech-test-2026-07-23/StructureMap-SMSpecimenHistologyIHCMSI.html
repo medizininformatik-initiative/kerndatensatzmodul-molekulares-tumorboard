@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>SMSpecimenHistologyIHCMSI - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2.125"}
+    h3,h4,h5,h6{--heading-prefix:"2.125"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII IG Kerndatensatz-Modul Molekulares Tumorboard</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - release
+
+
+
+  Unknown region code '276'
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>SMSpecimenHistologyIHCMSI</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII IG Kerndatensatz-Modul Molekulares Tumorboard - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="StructureMap-SMSpecimenHistologyIHCMSI.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureMap-SMSpecimenHistologyIHCMSI.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureMap-SMSpecimenHistologyIHCMSI.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">StructureMap: SMSpecimenHistologyIHCMSI
+
+  </h2>
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2026.0.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi|2026.0.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2026-07-23
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">SMSpecimenHistologyIHCMSI</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="StructureMap-SMSpecimenHistologyIHCMSI.xml.html">XML</a>, <a href="StructureMap-SMSpecimenHistologyIHCMSI.json.html">JSON</a>, <a href="StructureMap-SMSpecimenHistologyIHCMSI.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div data-fhir="generated"><p class="res-header-id"/><a name="SMSpecimenHistologyIHCMSI"> </a><a name="hcSMSpecimenHistologyIHCMSI"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi<span style="color: navy">&quot; = &quot;</span>SMSpecimenHistologyIHCMSI<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/specimen.html" title="Specimen">http://hl7.org/fhir/StructureDefinition/Specimen</a><span style="color: navy">&quot; </span><b>alias </b>Specimen <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/diagnosticreport.html" title="DiagnosticReport">http://hl7.org/fhir/StructureDefinition/DiagnosticReport</a><span style="color: navy">&quot; </span><b>alias </b>DiagnosticReport <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Observation <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate over the whole PatientRecord and populate the Bundle</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>SpecimenHistologyIHCMSI<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Bundle type = collection</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Specimen (one per specimens entry) -----------------------------------</span>
+  src.specimens<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Specimen'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">s</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">specid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">specid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    spec<span style="color: navy"><b> -&gt; </b></span>s<b> then </b>MapSpecimen<span style="color: navy">(</span><span style="color: maroon">spec</span><span style="color: navy">, </span><span style="color: maroon">s</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- DiagnosticReport + child Observations per histologyReport -----------</span>
+  src.histologyReports<b> as </b><span style="color: maroon">hr</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'DiagnosticReport'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dr</span><b> then</b><span style="color: navy"> {
+</span>    hr.id<b> as </b><span style="color: maroon">hrid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">hrid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    hr<span style="color: navy"><b> -&gt; </b></span>dr<b> then </b>MapHistologyReport<span style="color: navy">(</span><span style="color: maroon">hr</span><span style="color: navy">, </span><span style="color: maroon">dr</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;histologyReport&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- DiagnosticReport + child Observations per ihcReport -----------------</span>
+  src.ihcReports<b> as </b><span style="color: maroon">ihc</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'DiagnosticReport'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dr</span><b> then</b><span style="color: navy"> {
+</span>    ihc.id<b> as </b><span style="color: maroon">ihcid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">ihcid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    ihc<span style="color: navy"><b> -&gt; </b></span>dr<b> then </b>MapIHCReport<span style="color: navy">(</span><span style="color: maroon">ihc</span><span style="color: navy">, </span><span style="color: maroon">dr</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcReport&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Observation per msi finding -----------------------------------------</span>
+  src.msiFindings<b> as </b><span style="color: maroon">msi</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>    msi.id<b> as </b><span style="color: maroon">msiid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">msiid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    msi<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapMSIFinding<span style="color: navy">(</span><span style="color: maroon">msi</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiFinding&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapSpecimen: DNPM specimen entry → FHIR Specimen</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII (parent: Specimen)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapSpecimen<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Specimen<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;specimenId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumor-specimen'</span> <i>&quot;specimenProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimenMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;specimenSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimenSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">type → CodeableConcept</span>
+  src.type<b> as </b><span style="color: maroon">t</span><span style="color: navy"><b> -&gt; </b></span>tgt.type<b> as </b><span style="color: maroon">typ</span><b> then</b><span style="color: navy"> {
+</span>    t<span style="color: navy"><b> -&gt; </b></span>typ.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      t.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;specimenTypeCode&quot;</i><span style="color: navy">;</span>
+      t.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;specimenTypeSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;specimenTypeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimenType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">collection block</span>
+  src.collection<b> as </b><span style="color: maroon">col</span><span style="color: navy"><b> -&gt; </b></span>tgt.collection<b> as </b><span style="color: maroon">tcol</span><b> then </b>MapSpecimenCollection<span style="color: navy">(</span><span style="color: maroon">col</span><span style="color: navy">, </span><span style="color: maroon">tcol</span><span style="color: navy">)</span> <i>&quot;specimenCollection&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapSpecimenCollection: DNPM collection → FHIR Specimen.collection</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapSpecimenCollection<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>BackboneElement<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.date<b> as </b><span style="color: maroon">dateDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.collectedDateTime = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">dateDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;collectedDateTime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">bodySite</span>
+  src.site<b> as </b><span style="color: maroon">site</span><span style="color: navy"><b> -&gt; </b></span>tgt.bodySite<b> as </b><span style="color: maroon">bs</span><b> then</b><span style="color: navy"> {
+</span>    site<span style="color: navy"><b> -&gt; </b></span>bs.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      site.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;bodySiteCode&quot;</i><span style="color: navy">;</span>
+      site.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;bodySiteSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;bodySiteCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;bodySite&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">method</span>
+  src.method<b> as </b><span style="color: maroon">meth</span><span style="color: navy"><b> -&gt; </b></span>tgt.method<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    meth<span style="color: navy"><b> -&gt; </b></span>m.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      meth.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;methodCode&quot;</i><span style="color: navy">;</span>
+      meth.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;methodSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;methodCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;collectionMethod&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapHistologyReport: DNPM histologyReport → FHIR DiagnosticReport</span>
+<span style="color: navy">// </span><span style="color: green">Also creates child Observation entries for tumorCellContent and</span>
+<span style="color: navy">// </span><span style="color: green">tumorMorphology and links them as DiagnosticReport.result references.</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapHistologyReport<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">dr</span><span style="color: navy"> : </span>DiagnosticReport, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">idV</span><span style="color: navy"><b> -&gt; </b></span>dr.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">idV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;drId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-befundbericht'</span> <i>&quot;drProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.status = <span style="color: blue">'final'</span> <i>&quot;drStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>dr.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;drSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen[0]</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>dr.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;drSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">issued — append timestamp suffix so it becomes a FHIR instant</span>
+  src.issuedOn<b> as </b><span style="color: maroon">d</span><span style="color: navy"><b> -&gt; </b></span>dr.issued = <b>append</b><span style="color: navy">(</span><span style="color: maroon">d</span><span style="color: navy">, </span><span style="color: blue">'T00:00:00Z'</span><span style="color: navy">)</span> <i>&quot;drIssued&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- tumorCellContent child Observation -----------------------------------</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorCellContent<b> as </b><span style="color: maroon">tcc</span><b> then</b><span style="color: navy"> {
+</span>      tcc.id<b> as </b><span style="color: maroon">tid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      tcc<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapTumorCellContent<span style="color: navy">(</span><span style="color: maroon">tcc</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;tccMap&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccEntry&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">link result reference from DiagnosticReport</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorCellContent<b> as </b><span style="color: maroon">tcc</span><b> then</b><span style="color: navy"> {
+</span>      tcc.id<b> as </b><span style="color: maroon">tid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tid</span><span style="color: navy">)</span> <i>&quot;tccRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drResultTCC&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- tumorMorphology child Observation ------------------------------------</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorMorphology<b> as </b><span style="color: maroon">tm</span><b> then</b><span style="color: navy"> {
+</span>      tm.id<b> as </b><span style="color: maroon">tmid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tmid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      tm<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapTumorMorphology<span style="color: navy">(</span><span style="color: maroon">tm</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;morphMap&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphEntry&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">link result reference from DiagnosticReport</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorMorphology<b> as </b><span style="color: maroon">tm</span><b> then</b><span style="color: navy"> {
+</span>      tm.id<b> as </b><span style="color: maroon">tmid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tmid</span><span style="color: navy">)</span> <i>&quot;morphRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drResultMorph&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapTumorCellContent: DNPM tumorCellContent → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Tumorzellgehalt</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 93356-4 (Cells with cytogenetic abnormality)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapTumorCellContent<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;tccId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt'</span> <i>&quot;tccProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;tccStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed LOINC code per mii-pr-mtb-tumorzellgehalt profile</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;tccCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'93356-4'</span> <i>&quot;tccCodeCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;tccSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;tccSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueQuantity: multiply fraction × 100 to get percent</span>
+  src.value<b> as </b><span style="color: maroon">v</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueQuantity<b> as </b><span style="color: maroon">vq</span><b> then</b><span style="color: navy"> {
+</span>    v<span style="color: navy"><b> -&gt; </b></span>vq.value = <span style="color: maroon">v</span> <i>&quot;tccQtyValue&quot;</i><span style="color: navy">;</span>
+    v<span style="color: navy"><b> -&gt; </b></span>vq.unit = <span style="color: blue">'percent'</span> <i>&quot;tccQtyUnit&quot;</i><span style="color: navy">;</span>
+    v<span style="color: navy"><b> -&gt; </b></span>vq.system = <span style="color: blue">'http://unitsofmeasure.org'</span> <i>&quot;tccQtySystem&quot;</i><span style="color: navy">;</span>
+    v<span style="color: navy"><b> -&gt; </b></span>vq.code = <span style="color: blue">'%'</span> <i>&quot;tccQtyCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccValueQuantity&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">method</span>
+  src.method<b> as </b><span style="color: maroon">meth</span><span style="color: navy"><b> -&gt; </b></span>tgt.method<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    meth<span style="color: navy"><b> -&gt; </b></span>m.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      meth.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;tccMethodCode&quot;</i><span style="color: navy">;</span>
+      meth.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;tccMethodSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccMethodCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccMethod&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapTumorMorphology: DNPM tumorMorphology → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: Observation (base — no dedicated MII MTB profile yet)</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 59847-4 (Histology and Behavior ICD-O-3)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapTumorMorphology<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;morphId&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;morphStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed code for morphology</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;morphCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'59847-4'</span> <i>&quot;morphCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Histology and Behavior ICD-O-3 Cancer'</span> <i>&quot;morphCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;morphSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;morphSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept from first morphology entry</span>
+  src.morphology<b> as </b><span style="color: maroon">morph</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    morph<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      morph.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;morphValueCode&quot;</i><span style="color: navy">;</span>
+      morph.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;morphValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">notes → Annotation.text (one per note string)</span>
+  src.notes<b> as </b><span style="color: maroon">n</span><span style="color: navy"><b> -&gt; </b></span>tgt.note<b> as </b><span style="color: maroon">ann</span><b> then</b><span style="color: navy"> {
+</span>    n<span style="color: navy"><b> -&gt; </b></span>ann.text = <span style="color: maroon">n</span> <i>&quot;morphNoteText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphNote&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapIHCReport: DNPM ihcReport → FHIR DiagnosticReport</span>
+<span style="color: navy">// </span><span style="color: green">Also creates child Observation entries for each proteinExpression and</span>
+<span style="color: navy">// </span><span style="color: green">each msiMmr entry and links them as DiagnosticReport.result references.</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapIHCReport<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">dr</span><span style="color: navy"> : </span>DiagnosticReport, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">idV</span><span style="color: navy"><b> -&gt; </b></span>dr.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">idV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ihcDrId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ihc-befundbericht'</span> <i>&quot;ihcDrProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.status = <span style="color: blue">'final'</span> <i>&quot;ihcDrStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed code for IHC panel report: SNOMED 1264497003 (Histology report)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;ihcDrCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'1264497003'</span> <i>&quot;ihcDrCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Histology report (record artifact)'</span> <i>&quot;ihcDrCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ihcDrCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>dr.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;ihcDrSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen[0]</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>dr.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;ihcDrSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">issued</span>
+  src.issuedOn<b> as </b><span style="color: maroon">d</span><span style="color: navy"><b> -&gt; </b></span>dr.issued = <b>append</b><span style="color: navy">(</span><span style="color: maroon">d</span><span style="color: navy">, </span><span style="color: blue">'T00:00:00Z'</span><span style="color: navy">)</span> <i>&quot;ihcDrIssued&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- proteinExpression entries -------------------------------------------</span>
+  src.results<b> as </b><span style="color: maroon">res</span><b> then</b><span style="color: navy"> {
+</span>    res.proteinExpression<b> as </b><span style="color: maroon">pe</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>      pe.id<b> as </b><span style="color: maroon">peid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">peid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      pe<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapProteinExpression<span style="color: navy">(</span><span style="color: maroon">pe</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peEntry&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">link into DiagnosticReport.result</span>
+    res.proteinExpression<b> as </b><span style="color: maroon">pe</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>      pe.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;peResultRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;drResultPE&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">--- msiMmr entries (IHC-based MSI/MMR proteins) ----------------------</span>
+    res.msiMmr<b> as </b><span style="color: maroon">mmr</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>      mmr.id<b> as </b><span style="color: maroon">mmrid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">mmrid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      mmr<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapMsiMmrObservation<span style="color: navy">(</span><span style="color: maroon">mmr</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrEntry&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">link into DiagnosticReport.result</span>
+    res.msiMmr<b> as </b><span style="color: maroon">mmr</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>      mmr.id<b> as </b><span style="color: maroon">mid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">mid</span><span style="color: navy">)</span> <i>&quot;mmrResultRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;drResultMMR&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcResults&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapProteinExpression: DNPM proteinExpression → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Immunohistochemistry</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapProteinExpression<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;peId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry'</span> <i>&quot;peProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;peStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">code: always include the generic IHC SNOMED code (profile constraint)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">generic IHC code (pattern)</span>
+    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">cGen</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>cGen.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;peCodeGenSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>cGen.code = <span style="color: blue">'1234806008'</span> <i>&quot;peCodeGenCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>cGen.display = <span style="color: blue">'Observation using immunohistochemistry (observable entity)'</span> <i>&quot;peCodeGenDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peCodeGenCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">protein-specific code (open slice)</span>
+    src.protein<b> as </b><span style="color: maroon">prot</span><span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">cSpec</span><b> then</b><span style="color: navy"> {
+</span>      prot.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>cSpec.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peCodeSpecCode&quot;</i><span style="color: navy">;</span>
+      prot.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>cSpec.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peCodeSpecSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peCodeSpecCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;peSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;peSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept</span>
+  src.value<b> as </b><span style="color: maroon">val</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    val<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      val.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peValueCode&quot;</i><span style="color: navy">;</span>
+      val.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">component: tps-score (integer) — only when present</span>
+  src.tpsScore<b> as </b><span style="color: maroon">tps</span><span style="color: navy"><b> -&gt; </b></span>tgt.component<b> as </b><span style="color: maroon">comp</span><b> then</b><span style="color: navy"> {
+</span>    tps<span style="color: navy"><b> -&gt; </b></span>comp.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>      tps<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        tps<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://ncithesaurus.nci.nih.gov'</span> <i>&quot;peTpsCodeSystem&quot;</i><span style="color: navy">;</span>
+        tps<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'C184941'</span> <i>&quot;peTpsCodeCode&quot;</i><span style="color: navy">;</span>
+        tps<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'PD-L1 Tumor Proportion Score'</span> <i>&quot;peTpsCodeDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peTpsCodeCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peTpsCode&quot;</i><span style="color: navy">;</span>
+    tps<span style="color: navy"><b> -&gt; </b></span>comp.valueInteger = <span style="color: maroon">tps</span> <i>&quot;peTpsValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peTpsComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">component: ic-score (CodeableConcept) — only when present</span>
+  src.icScore<b> as </b><span style="color: maroon">ic</span><span style="color: navy"><b> -&gt; </b></span>tgt.component<b> as </b><span style="color: maroon">comp</span><b> then</b><span style="color: navy"> {
+</span>    ic<span style="color: navy"><b> -&gt; </b></span>comp.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>      ic<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        ic<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;peIcCodeSystem&quot;</i><span style="color: navy">;</span>
+        ic<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'85315-2'</span> <i>&quot;peIcCodeCode&quot;</i><span style="color: navy">;</span>
+        ic<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'PD-L1 immune cell score [%] in Tissue by Immune stain'</span> <i>&quot;peIcCodeDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peIcCodeCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peIcCode&quot;</i><span style="color: navy">;</span>
+    ic<span style="color: navy"><b> -&gt; </b></span>comp.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>      ic<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        ic.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peIcValueCode&quot;</i><span style="color: navy">;</span>
+        ic.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peIcValueSystem&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peIcValueCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peIcValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peIcComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">component: tc-score (CodeableConcept) — only when present</span>
+  src.tcScore<b> as </b><span style="color: maroon">tc</span><span style="color: navy"><b> -&gt; </b></span>tgt.component<b> as </b><span style="color: maroon">comp</span><b> then</b><span style="color: navy"> {
+</span>    tc<span style="color: navy"><b> -&gt; </b></span>comp.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>      tc<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        tc<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;peTcCodeSystem&quot;</i><span style="color: navy">;</span>
+        tc<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'83053-9'</span> <i>&quot;peTcCodeCode&quot;</i><span style="color: navy">;</span>
+        tc<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain'</span> <i>&quot;peTcCodeDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peTcCodeCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peTcCode&quot;</i><span style="color: navy">;</span>
+    tc<span style="color: navy"><b> -&gt; </b></span>comp.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>      tc<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        tc.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peTcValueCode&quot;</i><span style="color: navy">;</span>
+        tc.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peTcValueSystem&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peTcValueCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peTcValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peTcComponent&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapMsiMmrObservation: DNPM ihcReport.results.msiMmr entry → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Immunohistochemistry_MSI (IHC-based MMR protein expression)</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 62862-8 (Microsatellite instability … by Immune stain)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapMsiMmrObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;mmrId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-msi'</span> <i>&quot;mmrProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;mmrStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed LOINC code per mii-pr-mtb-immunohistochemistry-msi profile</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;mmrCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'62862-8'</span> <i>&quot;mmrCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Microsatellite instability [Presence] in Tissue by Immune stain'</span> <i>&quot;mmrCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;mmrSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;mmrSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">code also carries protein info as an additional coding (gene/protein studied)</span>
+  src.protein<b> as </b><span style="color: maroon">prot</span><span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    prot<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      prot.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrProteinCode&quot;</i><span style="color: navy">;</span>
+      prot.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrProteinSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrProteinCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrProtein&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept (expression result: exp_present / exp_absent / …)</span>
+  src.value<b> as </b><span style="color: maroon">val</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    val<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      val.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrValueCode&quot;</i><span style="color: navy">;</span>
+      val.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrValue&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapMSIFinding: DNPM msiFindings entry → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Mikrosatelliteninstabilitaet (NGS-based MSI)</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 81695-9 (Microsatellite instability [Interpretation] in Cancer specimen Qualitative)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapMSIFinding<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;msiId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet'</span> <i>&quot;msiProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;msiStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed LOINC code per mii-pr-mtb-mikrosatelliteninstabilitaet example</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;msiCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'81695-9'</span> <i>&quot;msiCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Microsatellite instability [Interpretation] in Cancer specimen Qualitative'</span> <i>&quot;msiCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;msiCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;msiSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;msiSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">effectiveDateTime</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;msiEffectiveDateTime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept — DNPM interpretation code (e.g. MSI-H, MSI-L, MSS)</span>
+  src.value<b> as </b><span style="color: maroon">val</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    val<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      val.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiValueCode&quot;</i><span style="color: navy">;</span>
+      val.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;msiValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">method (IHC / PCR / bioinformatics)</span>
+  src.method<b> as </b><span style="color: maroon">meth</span><span style="color: navy"><b> -&gt; </b></span>tgt.method<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    meth<span style="color: navy"><b> -&gt; </b></span>m.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      meth.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiMethodCode&quot;</i><span style="color: navy">;</span>
+      meth.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiMethodSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;msiMethodCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiMethod&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  Package mii-kerndatensatzmodul-molekulares-tumorboard#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 23, 2026 12:42+0000">2026-07-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PatientKimMusterperson-MolecularPathologyReport-1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DiagnosticReport PatientKimMusterperson-MolecularPathologyReport-1</b></p><a name=\"PatientKimMusterperson-MolecularPathologyReport-1\"> </a><a name=\"hcPatientKimMusterperson-MolecularPathologyReport-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-molecular-pathology-report.html\">MII PR MTB Molecular Pathology Report</a> version: 2026.0.1</p></div><h2><span title=\"Codes:{http://loinc.org 60568-3}\">Pathology synoptic report</span> </h2><table class=\"grid\"><tr><td>Subject</td><td>Kim Musterperson  (no stated gender), DoB: 1956-03-14</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Flags</b></td></tr><tr><td><a href=\"Observation-PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu.html\"><span title=\"Codes:{http://loinc.org 18474-7}, {http://snomed.info/sct 1234806008}\">HER2 Ag [Presence] in Tissue by Immune stain</span></a></td><td><span title=\"Codes:{http://loinc.org LA11842-4}\">2+</span></td><td>Final</td></tr></table></div>"
+  ] ;
+  fhir:DiagnosticReport.status [ fhir:value "final"] ;
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a loinc:60568-3 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "60568-3" ] ;
+       fhir:Coding.display [ fhir:value "Pathology synoptic report" ]
+     ]
+  ] ;
+  fhir:DiagnosticReport.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:DiagnosticReport.result [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Observation/PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu> ;
+     fhir:Reference.reference [ fhir:value "Observation/PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

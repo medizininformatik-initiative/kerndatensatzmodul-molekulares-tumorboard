@@ -1,0 +1,4050 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="SMSpecimenHistologyIHCMSI"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap SMSpecimenHistologyIHCMSI</b></p><a name="SMSpecimenHistologyIHCMSI"> </a><a name="hcSMSpecimenHistologyIHCMSI"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi<span style="color: navy">&quot; = &quot;</span>SMSpecimenHistologyIHCMSI<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/specimen.html" title="Specimen">http://hl7.org/fhir/StructureDefinition/Specimen</a><span style="color: navy">&quot; </span><b>alias </b>Specimen <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/diagnosticreport.html" title="DiagnosticReport">http://hl7.org/fhir/StructureDefinition/DiagnosticReport</a><span style="color: navy">&quot; </span><b>alias </b>DiagnosticReport <b>as </b><b>produced</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Observation <b>as </b><b>produced</b>
+
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Root group: iterate over the whole PatientRecord and populate the Bundle</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>SpecimenHistologyIHCMSI<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Bundle type = collection</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'collection'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Specimen (one per specimens entry) -----------------------------------</span>
+  src.specimens<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Specimen'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">s</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">specid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">specid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    spec<span style="color: navy"><b> -&gt; </b></span>s<b> then </b>MapSpecimen<span style="color: navy">(</span><span style="color: maroon">spec</span><span style="color: navy">, </span><span style="color: maroon">s</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- DiagnosticReport + child Observations per histologyReport -----------</span>
+  src.histologyReports<b> as </b><span style="color: maroon">hr</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'DiagnosticReport'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dr</span><b> then</b><span style="color: navy"> {
+</span>    hr.id<b> as </b><span style="color: maroon">hrid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">hrid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    hr<span style="color: navy"><b> -&gt; </b></span>dr<b> then </b>MapHistologyReport<span style="color: navy">(</span><span style="color: maroon">hr</span><span style="color: navy">, </span><span style="color: maroon">dr</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;histologyReport&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- DiagnosticReport + child Observations per ihcReport -----------------</span>
+  src.ihcReports<b> as </b><span style="color: maroon">ihc</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'DiagnosticReport'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dr</span><b> then</b><span style="color: navy"> {
+</span>    ihc.id<b> as </b><span style="color: maroon">ihcid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">ihcid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    ihc<span style="color: navy"><b> -&gt; </b></span>dr<b> then </b>MapIHCReport<span style="color: navy">(</span><span style="color: maroon">ihc</span><span style="color: navy">, </span><span style="color: maroon">dr</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcReport&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- Observation per msi finding -----------------------------------------</span>
+  src.msiFindings<b> as </b><span style="color: maroon">msi</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>    msi.id<b> as </b><span style="color: maroon">msiid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">msiid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+    msi<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapMSIFinding<span style="color: navy">(</span><span style="color: maroon">msi</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiFinding&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapSpecimen: DNPM specimen entry → FHIR Specimen</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII (parent: Specimen)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapSpecimen<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Specimen<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;specimenId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumor-specimen'</span> <i>&quot;specimenProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimenMeta&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject → Patient reference</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;specimenSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimenSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">type → CodeableConcept</span>
+  src.type<b> as </b><span style="color: maroon">t</span><span style="color: navy"><b> -&gt; </b></span>tgt.type<b> as </b><span style="color: maroon">typ</span><b> then</b><span style="color: navy"> {
+</span>    t<span style="color: navy"><b> -&gt; </b></span>typ.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      t.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;specimenTypeCode&quot;</i><span style="color: navy">;</span>
+      t.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;specimenTypeSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;specimenTypeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;specimenType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">collection block</span>
+  src.collection<b> as </b><span style="color: maroon">col</span><span style="color: navy"><b> -&gt; </b></span>tgt.collection<b> as </b><span style="color: maroon">tcol</span><b> then </b>MapSpecimenCollection<span style="color: navy">(</span><span style="color: maroon">col</span><span style="color: navy">, </span><span style="color: maroon">tcol</span><span style="color: navy">)</span> <i>&quot;specimenCollection&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapSpecimenCollection: DNPM collection → FHIR Specimen.collection</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapSpecimenCollection<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>BackboneElement<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.date<b> as </b><span style="color: maroon">dateDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.collectedDateTime = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">dateDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;collectedDateTime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">bodySite</span>
+  src.site<b> as </b><span style="color: maroon">site</span><span style="color: navy"><b> -&gt; </b></span>tgt.bodySite<b> as </b><span style="color: maroon">bs</span><b> then</b><span style="color: navy"> {
+</span>    site<span style="color: navy"><b> -&gt; </b></span>bs.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      site.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;bodySiteCode&quot;</i><span style="color: navy">;</span>
+      site.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;bodySiteSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;bodySiteCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;bodySite&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">method</span>
+  src.method<b> as </b><span style="color: maroon">meth</span><span style="color: navy"><b> -&gt; </b></span>tgt.method<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    meth<span style="color: navy"><b> -&gt; </b></span>m.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      meth.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;methodCode&quot;</i><span style="color: navy">;</span>
+      meth.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;methodSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;methodCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;collectionMethod&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapHistologyReport: DNPM histologyReport → FHIR DiagnosticReport</span>
+<span style="color: navy">// </span><span style="color: green">Also creates child Observation entries for tumorCellContent and</span>
+<span style="color: navy">// </span><span style="color: green">tumorMorphology and links them as DiagnosticReport.result references.</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapHistologyReport<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">dr</span><span style="color: navy"> : </span>DiagnosticReport, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">idV</span><span style="color: navy"><b> -&gt; </b></span>dr.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">idV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;drId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-befundbericht'</span> <i>&quot;drProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.status = <span style="color: blue">'final'</span> <i>&quot;drStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>dr.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;drSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen[0]</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>dr.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;drSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">issued — append timestamp suffix so it becomes a FHIR instant</span>
+  src.issuedOn<b> as </b><span style="color: maroon">d</span><span style="color: navy"><b> -&gt; </b></span>dr.issued = <b>append</b><span style="color: navy">(</span><span style="color: maroon">d</span><span style="color: navy">, </span><span style="color: blue">'T00:00:00Z'</span><span style="color: navy">)</span> <i>&quot;drIssued&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- tumorCellContent child Observation -----------------------------------</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorCellContent<b> as </b><span style="color: maroon">tcc</span><b> then</b><span style="color: navy"> {
+</span>      tcc.id<b> as </b><span style="color: maroon">tid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      tcc<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapTumorCellContent<span style="color: navy">(</span><span style="color: maroon">tcc</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;tccMap&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccEntry&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">link result reference from DiagnosticReport</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorCellContent<b> as </b><span style="color: maroon">tcc</span><b> then</b><span style="color: navy"> {
+</span>      tcc.id<b> as </b><span style="color: maroon">tid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tid</span><span style="color: navy">)</span> <i>&quot;tccRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drResultTCC&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- tumorMorphology child Observation ------------------------------------</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorMorphology<b> as </b><span style="color: maroon">tm</span><b> then</b><span style="color: navy"> {
+</span>      tm.id<b> as </b><span style="color: maroon">tmid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tmid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      tm<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapTumorMorphology<span style="color: navy">(</span><span style="color: maroon">tm</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;morphMap&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphEntry&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">link result reference from DiagnosticReport</span>
+  src.results<b> as </b><span style="color: maroon">res</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>    res.tumorMorphology<b> as </b><span style="color: maroon">tm</span><b> then</b><span style="color: navy"> {
+</span>      tm.id<b> as </b><span style="color: maroon">tmid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">tmid</span><span style="color: navy">)</span> <i>&quot;morphRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphInner&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;drResultMorph&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapTumorCellContent: DNPM tumorCellContent → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Tumorzellgehalt</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 93356-4 (Cells with cytogenetic abnormality)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapTumorCellContent<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;tccId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt'</span> <i>&quot;tccProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;tccStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed LOINC code per mii-pr-mtb-tumorzellgehalt profile</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;tccCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'93356-4'</span> <i>&quot;tccCodeCode&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;tccSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;tccSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueQuantity: multiply fraction × 100 to get percent</span>
+  src.value<b> as </b><span style="color: maroon">v</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueQuantity<b> as </b><span style="color: maroon">vq</span><b> then</b><span style="color: navy"> {
+</span>    v<span style="color: navy"><b> -&gt; </b></span>vq.value = <span style="color: maroon">v</span> <i>&quot;tccQtyValue&quot;</i><span style="color: navy">;</span>
+    v<span style="color: navy"><b> -&gt; </b></span>vq.unit = <span style="color: blue">'percent'</span> <i>&quot;tccQtyUnit&quot;</i><span style="color: navy">;</span>
+    v<span style="color: navy"><b> -&gt; </b></span>vq.system = <span style="color: blue">'http://unitsofmeasure.org'</span> <i>&quot;tccQtySystem&quot;</i><span style="color: navy">;</span>
+    v<span style="color: navy"><b> -&gt; </b></span>vq.code = <span style="color: blue">'%'</span> <i>&quot;tccQtyCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccValueQuantity&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">method</span>
+  src.method<b> as </b><span style="color: maroon">meth</span><span style="color: navy"><b> -&gt; </b></span>tgt.method<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    meth<span style="color: navy"><b> -&gt; </b></span>m.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      meth.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;tccMethodCode&quot;</i><span style="color: navy">;</span>
+      meth.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;tccMethodSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;tccMethodCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;tccMethod&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapTumorMorphology: DNPM tumorMorphology → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: Observation (base — no dedicated MII MTB profile yet)</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 59847-4 (Histology and Behavior ICD-O-3)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapTumorMorphology<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;morphId&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;morphStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed code for morphology</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;morphCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'59847-4'</span> <i>&quot;morphCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Histology and Behavior ICD-O-3 Cancer'</span> <i>&quot;morphCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;morphSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;morphSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept from first morphology entry</span>
+  src.morphology<b> as </b><span style="color: maroon">morph</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    morph<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      morph.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;morphValueCode&quot;</i><span style="color: navy">;</span>
+      morph.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;morphValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;morphValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">notes → Annotation.text (one per note string)</span>
+  src.notes<b> as </b><span style="color: maroon">n</span><span style="color: navy"><b> -&gt; </b></span>tgt.note<b> as </b><span style="color: maroon">ann</span><b> then</b><span style="color: navy"> {
+</span>    n<span style="color: navy"><b> -&gt; </b></span>ann.text = <span style="color: maroon">n</span> <i>&quot;morphNoteText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;morphNote&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapIHCReport: DNPM ihcReport → FHIR DiagnosticReport</span>
+<span style="color: navy">// </span><span style="color: green">Also creates child Observation entries for each proteinExpression and</span>
+<span style="color: navy">// </span><span style="color: green">each msiMmr entry and links them as DiagnosticReport.result references.</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapIHCReport<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">dr</span><span style="color: navy"> : </span>DiagnosticReport, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">idV</span><span style="color: navy"><b> -&gt; </b></span>dr.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">idV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;ihcDrId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ihc-befundbericht'</span> <i>&quot;ihcDrProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.status = <span style="color: blue">'final'</span> <i>&quot;ihcDrStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed code for IHC panel report: SNOMED 1264497003 (Histology report)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>dr.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;ihcDrCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'1264497003'</span> <i>&quot;ihcDrCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Histology report (record artifact)'</span> <i>&quot;ihcDrCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ihcDrCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>dr.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;ihcDrSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen[0]</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>dr.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;ihcDrSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcDrSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">issued</span>
+  src.issuedOn<b> as </b><span style="color: maroon">d</span><span style="color: navy"><b> -&gt; </b></span>dr.issued = <b>append</b><span style="color: navy">(</span><span style="color: maroon">d</span><span style="color: navy">, </span><span style="color: blue">'T00:00:00Z'</span><span style="color: navy">)</span> <i>&quot;ihcDrIssued&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">--- proteinExpression entries -------------------------------------------</span>
+  src.results<b> as </b><span style="color: maroon">res</span><b> then</b><span style="color: navy"> {
+</span>    res.proteinExpression<b> as </b><span style="color: maroon">pe</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>      pe.id<b> as </b><span style="color: maroon">peid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">peid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      pe<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapProteinExpression<span style="color: navy">(</span><span style="color: maroon">pe</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peEntry&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">link into DiagnosticReport.result</span>
+    res.proteinExpression<b> as </b><span style="color: maroon">pe</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>      pe.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;peResultRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;drResultPE&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">--- msiMmr entries (IHC-based MSI/MMR proteins) ----------------------</span>
+    res.msiMmr<b> as </b><span style="color: maroon">mmr</span><span style="color: navy"><b> -&gt; </b></span> bundle.entry<b> as </b><span style="color: maroon">e</span><span style="color: navy">, </span> e.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">obs</span><b> then</b><span style="color: navy"> {
+</span>      mmr.id<b> as </b><span style="color: maroon">mmrid</span><span style="color: navy"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">mmrid</span><span style="color: navy">)</span> <i>&quot;fullUrl&quot;</i><span style="color: navy">;</span>
+      mmr<span style="color: navy"><b> -&gt; </b></span>obs<b> then </b>MapMsiMmrObservation<span style="color: navy">(</span><span style="color: maroon">mmr</span><span style="color: navy">, </span><span style="color: maroon">obs</span><span style="color: navy">)</span> <i>&quot;map&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrEntry&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">link into DiagnosticReport.result</span>
+    res.msiMmr<b> as </b><span style="color: maroon">mmr</span><span style="color: navy"><b> -&gt; </b></span>dr.result<b> as </b><span style="color: maroon">r</span><b> then</b><span style="color: navy"> {
+</span>      mmr.id<b> as </b><span style="color: maroon">mid</span><span style="color: navy"><b> -&gt; </b></span>r.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">mid</span><span style="color: navy">)</span> <i>&quot;mmrResultRef&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;drResultMMR&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ihcResults&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapProteinExpression: DNPM proteinExpression → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Immunohistochemistry</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapProteinExpression<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;peId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry'</span> <i>&quot;peProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;peStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">code: always include the generic IHC SNOMED code (profile constraint)</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">generic IHC code (pattern)</span>
+    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">cGen</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>cGen.system = <span style="color: blue">'http://snomed.info/sct'</span> <i>&quot;peCodeGenSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>cGen.code = <span style="color: blue">'1234806008'</span> <i>&quot;peCodeGenCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>cGen.display = <span style="color: blue">'Observation using immunohistochemistry (observable entity)'</span> <i>&quot;peCodeGenDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peCodeGenCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">protein-specific code (open slice)</span>
+    src.protein<b> as </b><span style="color: maroon">prot</span><span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">cSpec</span><b> then</b><span style="color: navy"> {
+</span>      prot.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>cSpec.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peCodeSpecCode&quot;</i><span style="color: navy">;</span>
+      prot.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>cSpec.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peCodeSpecSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peCodeSpecCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;peSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;peSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept</span>
+  src.value<b> as </b><span style="color: maroon">val</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    val<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      val.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peValueCode&quot;</i><span style="color: navy">;</span>
+      val.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">component: tps-score (integer) — only when present</span>
+  src.tpsScore<b> as </b><span style="color: maroon">tps</span><span style="color: navy"><b> -&gt; </b></span>tgt.component<b> as </b><span style="color: maroon">comp</span><b> then</b><span style="color: navy"> {
+</span>    tps<span style="color: navy"><b> -&gt; </b></span>comp.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>      tps<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        tps<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://ncithesaurus.nci.nih.gov'</span> <i>&quot;peTpsCodeSystem&quot;</i><span style="color: navy">;</span>
+        tps<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'C184941'</span> <i>&quot;peTpsCodeCode&quot;</i><span style="color: navy">;</span>
+        tps<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'PD-L1 Tumor Proportion Score'</span> <i>&quot;peTpsCodeDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peTpsCodeCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peTpsCode&quot;</i><span style="color: navy">;</span>
+    tps<span style="color: navy"><b> -&gt; </b></span>comp.valueInteger = <span style="color: maroon">tps</span> <i>&quot;peTpsValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peTpsComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">component: ic-score (CodeableConcept) — only when present</span>
+  src.icScore<b> as </b><span style="color: maroon">ic</span><span style="color: navy"><b> -&gt; </b></span>tgt.component<b> as </b><span style="color: maroon">comp</span><b> then</b><span style="color: navy"> {
+</span>    ic<span style="color: navy"><b> -&gt; </b></span>comp.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>      ic<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        ic<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;peIcCodeSystem&quot;</i><span style="color: navy">;</span>
+        ic<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'85315-2'</span> <i>&quot;peIcCodeCode&quot;</i><span style="color: navy">;</span>
+        ic<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'PD-L1 immune cell score [%] in Tissue by Immune stain'</span> <i>&quot;peIcCodeDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peIcCodeCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peIcCode&quot;</i><span style="color: navy">;</span>
+    ic<span style="color: navy"><b> -&gt; </b></span>comp.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>      ic<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        ic.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peIcValueCode&quot;</i><span style="color: navy">;</span>
+        ic.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peIcValueSystem&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peIcValueCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peIcValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peIcComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">component: tc-score (CodeableConcept) — only when present</span>
+  src.tcScore<b> as </b><span style="color: maroon">tc</span><span style="color: navy"><b> -&gt; </b></span>tgt.component<b> as </b><span style="color: maroon">comp</span><b> then</b><span style="color: navy"> {
+</span>    tc<span style="color: navy"><b> -&gt; </b></span>comp.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>      tc<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        tc<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;peTcCodeSystem&quot;</i><span style="color: navy">;</span>
+        tc<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'83053-9'</span> <i>&quot;peTcCodeCode&quot;</i><span style="color: navy">;</span>
+        tc<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain'</span> <i>&quot;peTcCodeDisplay&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peTcCodeCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peTcCode&quot;</i><span style="color: navy">;</span>
+    tc<span style="color: navy"><b> -&gt; </b></span>comp.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>      tc<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>        tc.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peTcValueCode&quot;</i><span style="color: navy">;</span>
+        tc.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;peTcValueSystem&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;peTcValueCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;peTcValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;peTcComponent&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapMsiMmrObservation: DNPM ihcReport.results.msiMmr entry → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Immunohistochemistry_MSI (IHC-based MMR protein expression)</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 62862-8 (Microsatellite instability … by Immune stain)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapMsiMmrObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;mmrId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-msi'</span> <i>&quot;mmrProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;mmrStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed LOINC code per mii-pr-mtb-immunohistochemistry-msi profile</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;mmrCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'62862-8'</span> <i>&quot;mmrCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Microsatellite instability [Presence] in Tissue by Immune stain'</span> <i>&quot;mmrCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;mmrSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;mmrSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">code also carries protein info as an additional coding (gene/protein studied)</span>
+  src.protein<b> as </b><span style="color: maroon">prot</span><span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    prot<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      prot.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrProteinCode&quot;</i><span style="color: navy">;</span>
+      prot.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrProteinSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrProteinCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrProtein&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept (expression result: exp_present / exp_absent / …)</span>
+  src.value<b> as </b><span style="color: maroon">val</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    val<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      val.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrValueCode&quot;</i><span style="color: navy">;</span>
+      val.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;mmrValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;mmrValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mmrValue&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">MapMSIFinding: DNPM msiFindings entry → FHIR Observation</span>
+<span style="color: navy">// </span><span style="color: green">Profile: MII_PR_MTB_Mikrosatelliteninstabilitaet (NGS-based MSI)</span>
+<span style="color: navy">// </span><span style="color: green">code: LOINC 81695-9 (Microsatellite instability [Interpretation] in Cancer specimen Qualitative)</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapMSIFinding<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>BackboneElement, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.id<b> as </b><span style="color: maroon">srcId</span><span style="color: navy"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">srcId</span><span style="color: navy">, </span><span style="color: blue">'id'</span><span style="color: navy">)</span> <i>&quot;msiId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Profile meta</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.meta<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>m.profile = <span style="color: blue">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet'</span> <i>&quot;msiProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiMeta&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;msiStatus&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Fixed LOINC code per mii-pr-mtb-mikrosatelliteninstabilitaet example</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    src<span style="color: navy"><b> -&gt; </b></span>code.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      src<span style="color: navy"><b> -&gt; </b></span>c.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;msiCodeSystem&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.code = <span style="color: blue">'81695-9'</span> <i>&quot;msiCodeCode&quot;</i><span style="color: navy">;</span>
+      src<span style="color: navy"><b> -&gt; </b></span>c.display = <span style="color: blue">'Microsatellite instability [Interpretation] in Cancer specimen Qualitative'</span> <i>&quot;msiCodeDisplay&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;msiCodeCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">subject</span>
+  src.patient<b> as </b><span style="color: maroon">pat</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject<b> as </b><span style="color: maroon">subj</span><b> then</b><span style="color: navy"> {
+</span>    pat.id<b> as </b><span style="color: maroon">pid</span><span style="color: navy"><b> -&gt; </b></span>subj.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">pid</span><span style="color: navy">)</span> <i>&quot;msiSubjectRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiSubject&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">specimen</span>
+  src.specimen<b> as </b><span style="color: maroon">spec</span><span style="color: navy"><b> -&gt; </b></span>tgt.specimen<b> as </b><span style="color: maroon">sRef</span><b> then</b><span style="color: navy"> {
+</span>    spec.id<b> as </b><span style="color: maroon">sid</span><span style="color: navy"><b> -&gt; </b></span>sRef.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'urn:uuid:'</span><span style="color: navy">, </span><span style="color: maroon">sid</span><span style="color: navy">)</span> <i>&quot;msiSpecimenRef&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiSpecimen&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">effectiveDateTime</span>
+  src.issuedOn<b> as </b><span style="color: maroon">issuedOnDt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">issuedOnDt</span><span style="color: navy">, </span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span> <i>&quot;msiEffectiveDateTime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">valueCodeableConcept — DNPM interpretation code (e.g. MSI-H, MSI-L, MSS)</span>
+  src.value<b> as </b><span style="color: maroon">val</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept<b> as </b><span style="color: maroon">vcc</span><b> then</b><span style="color: navy"> {
+</span>    val<span style="color: navy"><b> -&gt; </b></span>vcc.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      val.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiValueCode&quot;</i><span style="color: navy">;</span>
+      val.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiValueSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;msiValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">method (IHC / PCR / bioinformatics)</span>
+  src.method<b> as </b><span style="color: maroon">meth</span><span style="color: navy"><b> -&gt; </b></span>tgt.method<b> as </b><span style="color: maroon">m</span><b> then</b><span style="color: navy"> {
+</span>    meth<span style="color: navy"><b> -&gt; </b></span>m.coding<b> as </b><span style="color: maroon">c</span><b> then</b><span style="color: navy"> {
+</span>      meth.code<b> as </b><span style="color: maroon">codeV</span><span style="color: navy"><b> -&gt; </b></span>c.code = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">codeV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiMethodCode&quot;</i><span style="color: navy">;</span>
+      meth.system<b> as </b><span style="color: maroon">systemV</span><span style="color: navy"><b> -&gt; </b></span>c.system = <b>cast</b><span style="color: navy">(</span><span style="color: maroon">systemV</span><span style="color: navy">, </span><span style="color: blue">'string'</span><span style="color: navy">)</span> <i>&quot;msiMethodSystem&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;msiMethodCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;msiMethod&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi"/>
+  <version value="2026.0.1"/>
+  <name value="SMSpecimenHistologyIHCMSI"/>
+  <status value="draft"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record"/>
+    <mode value="source"/>
+    <alias value="DNPMPatientRecord"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Specimen"/>
+    <mode value="produced"/>
+    <alias value="Specimen"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport"/>
+    <mode value="produced"/>
+    <alias value="DiagnosticReport"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="produced"/>
+    <alias value="Observation"/>
+  </structure>
+  <group>
+    <name value="SpecimenHistologyIHCMSI"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Root group: iterate over the whole PatientRecord and populate the Bundle&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="bundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="collection"/>
+        </parameter>
+      </target>
+      <documentation value="Bundle type = collection"/>
+    </rule>
+    <rule>
+      <name value="specimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimens"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="s"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Specimen"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="specid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="specid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="spec"/>
+        </source>
+        <target>
+          <context value="s"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapSpecimen"/>
+          <variable value="spec"/>
+          <variable value="s"/>
+        </dependent>
+      </rule>
+      <documentation value="--- Specimen (one per specimens entry) -----------------------------------"/>
+    </rule>
+    <rule>
+      <name value="histologyReport"/>
+      <source>
+        <context value="src"/>
+        <element value="histologyReports"/>
+        <variable value="hr"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="dr"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="DiagnosticReport"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="hr"/>
+          <element value="id"/>
+          <variable value="hrid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="hrid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="hr"/>
+        </source>
+        <target>
+          <context value="dr"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapHistologyReport"/>
+          <variable value="hr"/>
+          <variable value="dr"/>
+          <variable value="bundle"/>
+        </dependent>
+      </rule>
+      <documentation value="--- DiagnosticReport + child Observations per histologyReport -----------"/>
+    </rule>
+    <rule>
+      <name value="ihcReport"/>
+      <source>
+        <context value="src"/>
+        <element value="ihcReports"/>
+        <variable value="ihc"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="dr"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="DiagnosticReport"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="ihc"/>
+          <element value="id"/>
+          <variable value="ihcid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="ihcid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="ihc"/>
+        </source>
+        <target>
+          <context value="dr"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapIHCReport"/>
+          <variable value="ihc"/>
+          <variable value="dr"/>
+          <variable value="bundle"/>
+        </dependent>
+      </rule>
+      <documentation value="--- DiagnosticReport + child Observations per ihcReport -----------------"/>
+    </rule>
+    <rule>
+      <name value="msiFinding"/>
+      <source>
+        <context value="src"/>
+        <element value="msiFindings"/>
+        <variable value="msi"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="obs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Observation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="fullUrl"/>
+        <source>
+          <context value="msi"/>
+          <element value="id"/>
+          <variable value="msiid"/>
+        </source>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="fullUrl"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="msiid"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="map"/>
+        <source>
+          <context value="msi"/>
+        </source>
+        <target>
+          <context value="obs"/>
+          <contextType value="variable"/>
+        </target>
+        <dependent>
+          <name value="MapMSIFinding"/>
+          <variable value="msi"/>
+          <variable value="obs"/>
+        </dependent>
+      </rule>
+      <documentation value="--- Observation per msi finding -----------------------------------------"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapSpecimen"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapSpecimen: DNPM specimen entry → FHIR Specimen&#xD;&#xA;Profile: MII (parent: Specimen)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Specimen"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="specimenId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="specimenMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="specimenProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumor-specimen"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="specimenSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="specimenSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject → Patient reference"/>
+    </rule>
+    <rule>
+      <name value="specimenType"/>
+      <source>
+        <context value="src"/>
+        <element value="type"/>
+        <variable value="t"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <variable value="typ"/>
+      </target>
+      <rule>
+        <name value="specimenTypeCoding"/>
+        <source>
+          <context value="t"/>
+        </source>
+        <target>
+          <context value="typ"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="specimenTypeCode"/>
+          <source>
+            <context value="t"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="specimenTypeSystem"/>
+          <source>
+            <context value="t"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="type → CodeableConcept"/>
+    </rule>
+    <rule>
+      <name value="specimenCollection"/>
+      <source>
+        <context value="src"/>
+        <element value="collection"/>
+        <variable value="col"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="collection"/>
+        <variable value="tcol"/>
+      </target>
+      <dependent>
+        <name value="MapSpecimenCollection"/>
+        <variable value="col"/>
+        <variable value="tcol"/>
+      </dependent>
+      <documentation value="collection block"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapSpecimenCollection"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapSpecimenCollection: DNPM collection → FHIR Specimen.collection&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="BackboneElement"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="collectedDateTime"/>
+      <source>
+        <context value="src"/>
+        <element value="date"/>
+        <variable value="dateDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="collectedDateTime"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="dateDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="bodySite"/>
+      <source>
+        <context value="src"/>
+        <element value="site"/>
+        <variable value="site"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="bodySite"/>
+        <variable value="bs"/>
+      </target>
+      <rule>
+        <name value="bodySiteCoding"/>
+        <source>
+          <context value="site"/>
+        </source>
+        <target>
+          <context value="bs"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="bodySiteCode"/>
+          <source>
+            <context value="site"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="bodySiteSystem"/>
+          <source>
+            <context value="site"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="bodySite"/>
+    </rule>
+    <rule>
+      <name value="collectionMethod"/>
+      <source>
+        <context value="src"/>
+        <element value="method"/>
+        <variable value="meth"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="method"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="methodCoding"/>
+        <source>
+          <context value="meth"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="methodCode"/>
+          <source>
+            <context value="meth"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="methodSystem"/>
+          <source>
+            <context value="meth"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="method"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapHistologyReport"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapHistologyReport: DNPM histologyReport → FHIR DiagnosticReport&#xD;&#xA;Also creates child Observation entries for tumorCellContent and&#xD;&#xA;tumorMorphology and links them as DiagnosticReport.result references.&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="dr"/>
+      <type value="DiagnosticReport"/>
+      <mode value="target"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="drId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="idV"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="idV"/>
+        </parameter>
+        <parameter>
+          <valueString value="string"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="drMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="drProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-befundbericht"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="drStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="drSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="drSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject"/>
+    </rule>
+    <rule>
+      <name value="drSpecimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimen"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="specimen"/>
+        <variable value="sRef"/>
+      </target>
+      <rule>
+        <name value="drSpecimenRef"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="sRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="specimen[0]"/>
+    </rule>
+    <rule>
+      <name value="drIssued"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="d"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="issued"/>
+        <transform value="append"/>
+        <parameter>
+          <valueId value="d"/>
+        </parameter>
+        <parameter>
+          <valueString value="T00:00:00Z"/>
+        </parameter>
+      </target>
+      <documentation value="issued — append timestamp suffix so it becomes a FHIR instant"/>
+    </rule>
+    <rule>
+      <name value="tccEntry"/>
+      <source>
+        <context value="src"/>
+        <element value="results"/>
+        <variable value="res"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="obs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Observation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="tccInner"/>
+        <source>
+          <context value="res"/>
+          <element value="tumorCellContent"/>
+          <variable value="tcc"/>
+        </source>
+        <rule>
+          <name value="fullUrl"/>
+          <source>
+            <context value="tcc"/>
+            <element value="id"/>
+            <variable value="tid"/>
+          </source>
+          <target>
+            <context value="e"/>
+            <contextType value="variable"/>
+            <element value="fullUrl"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="tid"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="tccMap"/>
+          <source>
+            <context value="tcc"/>
+          </source>
+          <target>
+            <context value="obs"/>
+            <contextType value="variable"/>
+          </target>
+          <dependent>
+            <name value="MapTumorCellContent"/>
+            <variable value="tcc"/>
+            <variable value="obs"/>
+          </dependent>
+        </rule>
+      </rule>
+      <documentation value="--- tumorCellContent child Observation -----------------------------------"/>
+    </rule>
+    <rule>
+      <name value="drResultTCC"/>
+      <source>
+        <context value="src"/>
+        <element value="results"/>
+        <variable value="res"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="result"/>
+        <variable value="r"/>
+      </target>
+      <rule>
+        <name value="tccInner"/>
+        <source>
+          <context value="res"/>
+          <element value="tumorCellContent"/>
+          <variable value="tcc"/>
+        </source>
+        <rule>
+          <name value="tccRef"/>
+          <source>
+            <context value="tcc"/>
+            <element value="id"/>
+            <variable value="tid"/>
+          </source>
+          <target>
+            <context value="r"/>
+            <contextType value="variable"/>
+            <element value="reference"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="tid"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="link result reference from DiagnosticReport"/>
+    </rule>
+    <rule>
+      <name value="morphEntry"/>
+      <source>
+        <context value="src"/>
+        <element value="results"/>
+        <variable value="res"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="e"/>
+      </target>
+      <target>
+        <context value="e"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="obs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Observation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="morphInner"/>
+        <source>
+          <context value="res"/>
+          <element value="tumorMorphology"/>
+          <variable value="tm"/>
+        </source>
+        <rule>
+          <name value="fullUrl"/>
+          <source>
+            <context value="tm"/>
+            <element value="id"/>
+            <variable value="tmid"/>
+          </source>
+          <target>
+            <context value="e"/>
+            <contextType value="variable"/>
+            <element value="fullUrl"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="tmid"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="morphMap"/>
+          <source>
+            <context value="tm"/>
+          </source>
+          <target>
+            <context value="obs"/>
+            <contextType value="variable"/>
+          </target>
+          <dependent>
+            <name value="MapTumorMorphology"/>
+            <variable value="tm"/>
+            <variable value="obs"/>
+          </dependent>
+        </rule>
+      </rule>
+      <documentation value="--- tumorMorphology child Observation ------------------------------------"/>
+    </rule>
+    <rule>
+      <name value="drResultMorph"/>
+      <source>
+        <context value="src"/>
+        <element value="results"/>
+        <variable value="res"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="result"/>
+        <variable value="r"/>
+      </target>
+      <rule>
+        <name value="morphInner"/>
+        <source>
+          <context value="res"/>
+          <element value="tumorMorphology"/>
+          <variable value="tm"/>
+        </source>
+        <rule>
+          <name value="morphRef"/>
+          <source>
+            <context value="tm"/>
+            <element value="id"/>
+            <variable value="tmid"/>
+          </source>
+          <target>
+            <context value="r"/>
+            <contextType value="variable"/>
+            <element value="reference"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="tmid"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="link result reference from DiagnosticReport"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapTumorCellContent"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapTumorCellContent: DNPM tumorCellContent → FHIR Observation&#xD;&#xA;Profile: MII_PR_MTB_Tumorzellgehalt&#xD;&#xA;code: LOINC 93356-4 (Cells with cytogenetic abnormality)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Observation"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="tccId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="tccMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="tccProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="tccStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="tccCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="tccCodeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="tccCodeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://loinc.org"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="tccCodeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="93356-4"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Fixed LOINC code per mii-pr-mtb-tumorzellgehalt profile"/>
+    </rule>
+    <rule>
+      <name value="tccSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="tccSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject"/>
+    </rule>
+    <rule>
+      <name value="tccSpecimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimen"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="specimen"/>
+        <variable value="sRef"/>
+      </target>
+      <rule>
+        <name value="tccSpecimenRef"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="sRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="specimen"/>
+    </rule>
+    <rule>
+      <name value="tccValueQuantity"/>
+      <source>
+        <context value="src"/>
+        <element value="value"/>
+        <variable value="v"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="valueQuantity"/>
+        <variable value="vq"/>
+      </target>
+      <rule>
+        <name value="tccQtyValue"/>
+        <source>
+          <context value="v"/>
+        </source>
+        <target>
+          <context value="vq"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="v"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="tccQtyUnit"/>
+        <source>
+          <context value="v"/>
+        </source>
+        <target>
+          <context value="vq"/>
+          <contextType value="variable"/>
+          <element value="unit"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="percent"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="tccQtySystem"/>
+        <source>
+          <context value="v"/>
+        </source>
+        <target>
+          <context value="vq"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="http://unitsofmeasure.org"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="tccQtyCode"/>
+        <source>
+          <context value="v"/>
+        </source>
+        <target>
+          <context value="vq"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="%"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="valueQuantity: multiply fraction × 100 to get percent"/>
+    </rule>
+    <rule>
+      <name value="tccMethod"/>
+      <source>
+        <context value="src"/>
+        <element value="method"/>
+        <variable value="meth"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="method"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="tccMethodCoding"/>
+        <source>
+          <context value="meth"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="tccMethodCode"/>
+          <source>
+            <context value="meth"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="tccMethodSystem"/>
+          <source>
+            <context value="meth"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="method"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapTumorMorphology"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapTumorMorphology: DNPM tumorMorphology → FHIR Observation&#xD;&#xA;Profile: Observation (base — no dedicated MII MTB profile yet)&#xD;&#xA;code: LOINC 59847-4 (Histology and Behavior ICD-O-3)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Observation"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="morphId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="morphStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="morphCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="morphCodeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="morphCodeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://loinc.org"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="morphCodeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="59847-4"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="morphCodeDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Histology and Behavior ICD-O-3 Cancer"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Fixed code for morphology"/>
+    </rule>
+    <rule>
+      <name value="morphSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="morphSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject"/>
+    </rule>
+    <rule>
+      <name value="morphSpecimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimen"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="specimen"/>
+        <variable value="sRef"/>
+      </target>
+      <rule>
+        <name value="morphSpecimenRef"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="sRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="specimen"/>
+    </rule>
+    <rule>
+      <name value="morphValue"/>
+      <source>
+        <context value="src"/>
+        <element value="morphology"/>
+        <variable value="morph"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="valueCodeableConcept"/>
+        <variable value="vcc"/>
+      </target>
+      <rule>
+        <name value="morphValueCoding"/>
+        <source>
+          <context value="morph"/>
+        </source>
+        <target>
+          <context value="vcc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="morphValueCode"/>
+          <source>
+            <context value="morph"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="morphValueSystem"/>
+          <source>
+            <context value="morph"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="valueCodeableConcept from first morphology entry"/>
+    </rule>
+    <rule>
+      <name value="morphNote"/>
+      <source>
+        <context value="src"/>
+        <element value="notes"/>
+        <variable value="n"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="note"/>
+        <variable value="ann"/>
+      </target>
+      <rule>
+        <name value="morphNoteText"/>
+        <source>
+          <context value="n"/>
+        </source>
+        <target>
+          <context value="ann"/>
+          <contextType value="variable"/>
+          <element value="text"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="n"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="notes → Annotation.text (one per note string)"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapIHCReport"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapIHCReport: DNPM ihcReport → FHIR DiagnosticReport&#xD;&#xA;Also creates child Observation entries for each proteinExpression and&#xD;&#xA;each msiMmr entry and links them as DiagnosticReport.result references.&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="dr"/>
+      <type value="DiagnosticReport"/>
+      <mode value="target"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ihcDrId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="idV"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="idV"/>
+        </parameter>
+        <parameter>
+          <valueString value="string"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ihcDrMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="ihcDrProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ihc-befundbericht"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="ihcDrStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ihcDrCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="ihcDrCodeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="ihcDrCodeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="ihcDrCodeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="1264497003"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="ihcDrCodeDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Histology report (record artifact)"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Fixed code for IHC panel report: SNOMED 1264497003 (Histology report)"/>
+    </rule>
+    <rule>
+      <name value="ihcDrSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="ihcDrSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject"/>
+    </rule>
+    <rule>
+      <name value="ihcDrSpecimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimen"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="specimen"/>
+        <variable value="sRef"/>
+      </target>
+      <rule>
+        <name value="ihcDrSpecimenRef"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="sRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="specimen[0]"/>
+    </rule>
+    <rule>
+      <name value="ihcDrIssued"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="d"/>
+      </source>
+      <target>
+        <context value="dr"/>
+        <contextType value="variable"/>
+        <element value="issued"/>
+        <transform value="append"/>
+        <parameter>
+          <valueId value="d"/>
+        </parameter>
+        <parameter>
+          <valueString value="T00:00:00Z"/>
+        </parameter>
+      </target>
+      <documentation value="issued"/>
+    </rule>
+    <rule>
+      <name value="ihcResults"/>
+      <source>
+        <context value="src"/>
+        <element value="results"/>
+        <variable value="res"/>
+      </source>
+      <rule>
+        <name value="peEntry"/>
+        <source>
+          <context value="res"/>
+          <element value="proteinExpression"/>
+          <variable value="pe"/>
+        </source>
+        <target>
+          <context value="bundle"/>
+          <contextType value="variable"/>
+          <element value="entry"/>
+          <variable value="e"/>
+        </target>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="resource"/>
+          <variable value="obs"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="Observation"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="fullUrl"/>
+          <source>
+            <context value="pe"/>
+            <element value="id"/>
+            <variable value="peid"/>
+          </source>
+          <target>
+            <context value="e"/>
+            <contextType value="variable"/>
+            <element value="fullUrl"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="peid"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="map"/>
+          <source>
+            <context value="pe"/>
+          </source>
+          <target>
+            <context value="obs"/>
+            <contextType value="variable"/>
+          </target>
+          <dependent>
+            <name value="MapProteinExpression"/>
+            <variable value="pe"/>
+            <variable value="obs"/>
+          </dependent>
+        </rule>
+      </rule>
+      <rule>
+        <name value="drResultPE"/>
+        <source>
+          <context value="res"/>
+          <element value="proteinExpression"/>
+          <variable value="pe"/>
+        </source>
+        <target>
+          <context value="dr"/>
+          <contextType value="variable"/>
+          <element value="result"/>
+          <variable value="r"/>
+        </target>
+        <rule>
+          <name value="peResultRef"/>
+          <source>
+            <context value="pe"/>
+            <element value="id"/>
+            <variable value="pid"/>
+          </source>
+          <target>
+            <context value="r"/>
+            <contextType value="variable"/>
+            <element value="reference"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="pid"/>
+            </parameter>
+          </target>
+        </rule>
+        <documentation value="link into DiagnosticReport.result"/>
+      </rule>
+      <rule>
+        <name value="mmrEntry"/>
+        <source>
+          <context value="res"/>
+          <element value="msiMmr"/>
+          <variable value="mmr"/>
+        </source>
+        <target>
+          <context value="bundle"/>
+          <contextType value="variable"/>
+          <element value="entry"/>
+          <variable value="e"/>
+        </target>
+        <target>
+          <context value="e"/>
+          <contextType value="variable"/>
+          <element value="resource"/>
+          <variable value="obs"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="Observation"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="fullUrl"/>
+          <source>
+            <context value="mmr"/>
+            <element value="id"/>
+            <variable value="mmrid"/>
+          </source>
+          <target>
+            <context value="e"/>
+            <contextType value="variable"/>
+            <element value="fullUrl"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="mmrid"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="map"/>
+          <source>
+            <context value="mmr"/>
+          </source>
+          <target>
+            <context value="obs"/>
+            <contextType value="variable"/>
+          </target>
+          <dependent>
+            <name value="MapMsiMmrObservation"/>
+            <variable value="mmr"/>
+            <variable value="obs"/>
+          </dependent>
+        </rule>
+        <documentation value="--- msiMmr entries (IHC-based MSI/MMR proteins) ----------------------"/>
+      </rule>
+      <rule>
+        <name value="drResultMMR"/>
+        <source>
+          <context value="res"/>
+          <element value="msiMmr"/>
+          <variable value="mmr"/>
+        </source>
+        <target>
+          <context value="dr"/>
+          <contextType value="variable"/>
+          <element value="result"/>
+          <variable value="r"/>
+        </target>
+        <rule>
+          <name value="mmrResultRef"/>
+          <source>
+            <context value="mmr"/>
+            <element value="id"/>
+            <variable value="mid"/>
+          </source>
+          <target>
+            <context value="r"/>
+            <contextType value="variable"/>
+            <element value="reference"/>
+            <transform value="append"/>
+            <parameter>
+              <valueString value="urn:uuid:"/>
+            </parameter>
+            <parameter>
+              <valueId value="mid"/>
+            </parameter>
+          </target>
+        </rule>
+        <documentation value="link into DiagnosticReport.result"/>
+      </rule>
+      <documentation value="--- proteinExpression entries -------------------------------------------"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapProteinExpression"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapProteinExpression: DNPM proteinExpression → FHIR Observation&#xD;&#xA;Profile: MII_PR_MTB_Immunohistochemistry&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Observation"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="peId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="peMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="peProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="peStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="peCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="peCodeGenCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="cGen"/>
+        </target>
+        <rule>
+          <name value="peCodeGenSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="cGen"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="peCodeGenCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="cGen"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="1234806008"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="peCodeGenDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="cGen"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Observation using immunohistochemistry (observable entity)"/>
+            </parameter>
+          </target>
+        </rule>
+        <documentation value="generic IHC code (pattern)"/>
+      </rule>
+      <rule>
+        <name value="peCodeSpecCoding"/>
+        <source>
+          <context value="src"/>
+          <element value="protein"/>
+          <variable value="prot"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="cSpec"/>
+        </target>
+        <rule>
+          <name value="peCodeSpecCode"/>
+          <source>
+            <context value="prot"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="cSpec"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="peCodeSpecSystem"/>
+          <source>
+            <context value="prot"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="cSpec"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <documentation value="protein-specific code (open slice)"/>
+      </rule>
+      <documentation value="code: always include the generic IHC SNOMED code (profile constraint)"/>
+    </rule>
+    <rule>
+      <name value="peSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="peSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject"/>
+    </rule>
+    <rule>
+      <name value="peSpecimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimen"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="specimen"/>
+        <variable value="sRef"/>
+      </target>
+      <rule>
+        <name value="peSpecimenRef"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="sRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="specimen"/>
+    </rule>
+    <rule>
+      <name value="peValue"/>
+      <source>
+        <context value="src"/>
+        <element value="value"/>
+        <variable value="val"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="valueCodeableConcept"/>
+        <variable value="vcc"/>
+      </target>
+      <rule>
+        <name value="peValueCoding"/>
+        <source>
+          <context value="val"/>
+        </source>
+        <target>
+          <context value="vcc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="peValueCode"/>
+          <source>
+            <context value="val"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="peValueSystem"/>
+          <source>
+            <context value="val"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="valueCodeableConcept"/>
+    </rule>
+    <rule>
+      <name value="peTpsComponent"/>
+      <source>
+        <context value="src"/>
+        <element value="tpsScore"/>
+        <variable value="tps"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="component"/>
+        <variable value="comp"/>
+      </target>
+      <rule>
+        <name value="peTpsCode"/>
+        <source>
+          <context value="tps"/>
+        </source>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <variable value="code"/>
+        </target>
+        <rule>
+          <name value="peTpsCodeCoding"/>
+          <source>
+            <context value="tps"/>
+          </source>
+          <target>
+            <context value="code"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="peTpsCodeSystem"/>
+            <source>
+              <context value="tps"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="http://ncithesaurus.nci.nih.gov"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peTpsCodeCode"/>
+            <source>
+              <context value="tps"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="C184941"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peTpsCodeDisplay"/>
+            <source>
+              <context value="tps"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="PD-L1 Tumor Proportion Score"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <rule>
+        <name value="peTpsValue"/>
+        <source>
+          <context value="tps"/>
+        </source>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="valueInteger"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="tps"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="component: tps-score (integer) — only when present"/>
+    </rule>
+    <rule>
+      <name value="peIcComponent"/>
+      <source>
+        <context value="src"/>
+        <element value="icScore"/>
+        <variable value="ic"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="component"/>
+        <variable value="comp"/>
+      </target>
+      <rule>
+        <name value="peIcCode"/>
+        <source>
+          <context value="ic"/>
+        </source>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <variable value="code"/>
+        </target>
+        <rule>
+          <name value="peIcCodeCoding"/>
+          <source>
+            <context value="ic"/>
+          </source>
+          <target>
+            <context value="code"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="peIcCodeSystem"/>
+            <source>
+              <context value="ic"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="http://loinc.org"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peIcCodeCode"/>
+            <source>
+              <context value="ic"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="85315-2"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peIcCodeDisplay"/>
+            <source>
+              <context value="ic"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="PD-L1 immune cell score [%] in Tissue by Immune stain"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <rule>
+        <name value="peIcValue"/>
+        <source>
+          <context value="ic"/>
+        </source>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="valueCodeableConcept"/>
+          <variable value="vcc"/>
+        </target>
+        <rule>
+          <name value="peIcValueCoding"/>
+          <source>
+            <context value="ic"/>
+          </source>
+          <target>
+            <context value="vcc"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="peIcValueCode"/>
+            <source>
+              <context value="ic"/>
+              <element value="code"/>
+              <variable value="codeV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="codeV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peIcValueSystem"/>
+            <source>
+              <context value="ic"/>
+              <element value="system"/>
+              <variable value="systemV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="systemV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <documentation value="component: ic-score (CodeableConcept) — only when present"/>
+    </rule>
+    <rule>
+      <name value="peTcComponent"/>
+      <source>
+        <context value="src"/>
+        <element value="tcScore"/>
+        <variable value="tc"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="component"/>
+        <variable value="comp"/>
+      </target>
+      <rule>
+        <name value="peTcCode"/>
+        <source>
+          <context value="tc"/>
+        </source>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <variable value="code"/>
+        </target>
+        <rule>
+          <name value="peTcCodeCoding"/>
+          <source>
+            <context value="tc"/>
+          </source>
+          <target>
+            <context value="code"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="peTcCodeSystem"/>
+            <source>
+              <context value="tc"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="http://loinc.org"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peTcCodeCode"/>
+            <source>
+              <context value="tc"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="83053-9"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peTcCodeDisplay"/>
+            <source>
+              <context value="tc"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="Cells.programmed cell death ligand 1/Viable tumor cells in Tissue by Immune stain"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <rule>
+        <name value="peTcValue"/>
+        <source>
+          <context value="tc"/>
+        </source>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="valueCodeableConcept"/>
+          <variable value="vcc"/>
+        </target>
+        <rule>
+          <name value="peTcValueCoding"/>
+          <source>
+            <context value="tc"/>
+          </source>
+          <target>
+            <context value="vcc"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="c"/>
+          </target>
+          <rule>
+            <name value="peTcValueCode"/>
+            <source>
+              <context value="tc"/>
+              <element value="code"/>
+              <variable value="codeV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="codeV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+          <rule>
+            <name value="peTcValueSystem"/>
+            <source>
+              <context value="tc"/>
+              <element value="system"/>
+              <variable value="systemV"/>
+            </source>
+            <target>
+              <context value="c"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="cast"/>
+              <parameter>
+                <valueId value="systemV"/>
+              </parameter>
+              <parameter>
+                <valueString value="string"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <documentation value="component: tc-score (CodeableConcept) — only when present"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapMsiMmrObservation"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapMsiMmrObservation: DNPM ihcReport.results.msiMmr entry → FHIR Observation&#xD;&#xA;Profile: MII_PR_MTB_Immunohistochemistry_MSI (IHC-based MMR protein expression)&#xD;&#xA;code: LOINC 62862-8 (Microsatellite instability … by Immune stain)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Observation"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="mmrId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="mmrMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="mmrProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-msi"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="mmrStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="mmrCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="mmrCodeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="mmrCodeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://loinc.org"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mmrCodeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="62862-8"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mmrCodeDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Microsatellite instability [Presence] in Tissue by Immune stain"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Fixed LOINC code per mii-pr-mtb-immunohistochemistry-msi profile"/>
+    </rule>
+    <rule>
+      <name value="mmrSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="mmrSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject"/>
+    </rule>
+    <rule>
+      <name value="mmrSpecimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimen"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="specimen"/>
+        <variable value="sRef"/>
+      </target>
+      <rule>
+        <name value="mmrSpecimenRef"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="sRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="specimen"/>
+    </rule>
+    <rule>
+      <name value="mmrProtein"/>
+      <source>
+        <context value="src"/>
+        <element value="protein"/>
+        <variable value="prot"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="mmrProteinCoding"/>
+        <source>
+          <context value="prot"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="mmrProteinCode"/>
+          <source>
+            <context value="prot"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mmrProteinSystem"/>
+          <source>
+            <context value="prot"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="code also carries protein info as an additional coding (gene/protein studied)"/>
+    </rule>
+    <rule>
+      <name value="mmrValue"/>
+      <source>
+        <context value="src"/>
+        <element value="value"/>
+        <variable value="val"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="valueCodeableConcept"/>
+        <variable value="vcc"/>
+      </target>
+      <rule>
+        <name value="mmrValueCoding"/>
+        <source>
+          <context value="val"/>
+        </source>
+        <target>
+          <context value="vcc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="mmrValueCode"/>
+          <source>
+            <context value="val"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="mmrValueSystem"/>
+          <source>
+            <context value="val"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="valueCodeableConcept (expression result: exp_present / exp_absent / …)"/>
+    </rule>
+  </group>
+  <group>
+    <name value="MapMSIFinding"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;MapMSIFinding: DNPM msiFindings entry → FHIR Observation&#xD;&#xA;Profile: MII_PR_MTB_Mikrosatelliteninstabilitaet (NGS-based MSI)&#xD;&#xA;code: LOINC 81695-9 (Microsatellite instability [Interpretation] in Cancer specimen Qualitative)&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="BackboneElement"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Observation"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="msiId"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="srcId"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="srcId"/>
+        </parameter>
+        <parameter>
+          <valueString value="id"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="msiMeta"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="msiProfile"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="Profile meta"/>
+    </rule>
+    <rule>
+      <name value="msiStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="msiCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="code"/>
+      </target>
+      <rule>
+        <name value="msiCodeCoding"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <target>
+          <context value="code"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="msiCodeSystem"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://loinc.org"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="msiCodeCode"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="81695-9"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="msiCodeDisplay"/>
+          <source>
+            <context value="src"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="display"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="Microsatellite instability [Interpretation] in Cancer specimen Qualitative"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="Fixed LOINC code per mii-pr-mtb-mikrosatelliteninstabilitaet example"/>
+    </rule>
+    <rule>
+      <name value="msiSubject"/>
+      <source>
+        <context value="src"/>
+        <element value="patient"/>
+        <variable value="pat"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <variable value="subj"/>
+      </target>
+      <rule>
+        <name value="msiSubjectRef"/>
+        <source>
+          <context value="pat"/>
+          <element value="id"/>
+          <variable value="pid"/>
+        </source>
+        <target>
+          <context value="subj"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="pid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="subject"/>
+    </rule>
+    <rule>
+      <name value="msiSpecimen"/>
+      <source>
+        <context value="src"/>
+        <element value="specimen"/>
+        <variable value="spec"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="specimen"/>
+        <variable value="sRef"/>
+      </target>
+      <rule>
+        <name value="msiSpecimenRef"/>
+        <source>
+          <context value="spec"/>
+          <element value="id"/>
+          <variable value="sid"/>
+        </source>
+        <target>
+          <context value="sRef"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="urn:uuid:"/>
+          </parameter>
+          <parameter>
+            <valueId value="sid"/>
+          </parameter>
+        </target>
+      </rule>
+      <documentation value="specimen"/>
+    </rule>
+    <rule>
+      <name value="msiEffectiveDateTime"/>
+      <source>
+        <context value="src"/>
+        <element value="issuedOn"/>
+        <variable value="issuedOnDt"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectiveDateTime"/>
+        <transform value="cast"/>
+        <parameter>
+          <valueId value="issuedOnDt"/>
+        </parameter>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <documentation value="effectiveDateTime"/>
+    </rule>
+    <rule>
+      <name value="msiValue"/>
+      <source>
+        <context value="src"/>
+        <element value="value"/>
+        <variable value="val"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="valueCodeableConcept"/>
+        <variable value="vcc"/>
+      </target>
+      <rule>
+        <name value="msiValueCoding"/>
+        <source>
+          <context value="val"/>
+        </source>
+        <target>
+          <context value="vcc"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="msiValueCode"/>
+          <source>
+            <context value="val"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="msiValueSystem"/>
+          <source>
+            <context value="val"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="valueCodeableConcept — DNPM interpretation code (e.g. MSI-H, MSI-L, MSS)"/>
+    </rule>
+    <rule>
+      <name value="msiMethod"/>
+      <source>
+        <context value="src"/>
+        <element value="method"/>
+        <variable value="meth"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="method"/>
+        <variable value="m"/>
+      </target>
+      <rule>
+        <name value="msiMethodCoding"/>
+        <source>
+          <context value="meth"/>
+        </source>
+        <target>
+          <context value="m"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <variable value="c"/>
+        </target>
+        <rule>
+          <name value="msiMethodCode"/>
+          <source>
+            <context value="meth"/>
+            <element value="code"/>
+            <variable value="codeV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="codeV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="msiMethodSystem"/>
+          <source>
+            <context value="meth"/>
+            <element value="system"/>
+            <variable value="systemV"/>
+          </source>
+          <target>
+            <context value="c"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="cast"/>
+            <parameter>
+              <valueId value="systemV"/>
+            </parameter>
+            <parameter>
+              <valueString value="string"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <documentation value="method (IHC / PCR / bioinformatics)"/>
+    </rule>
+  </group>
+</StructureMap>

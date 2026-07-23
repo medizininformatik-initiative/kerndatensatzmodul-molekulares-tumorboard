@@ -1,0 +1,74 @@
+{
+  "resourceType" : "Observation",
+  "id" : "PatientKimMusterperson-MolecularPathologyObservation-3-WT1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry|2026.0.1"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-MolecularPathologyObservation-3-WT1</b></p><a name=\"PatientKimMusterperson-MolecularPathologyObservation-3-WT1\"> </a><a name=\"hcPatientKimMusterperson-MolecularPathologyObservation-3-WT1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-immunohistochemistry.html\">MII PR MTB Immunohistochemistry</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span>, <span title=\"Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs biomarker-category}\">A characterization of a given biomarker observation.</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 1234806008}\">Observation using immunohistochemistry (observable entity)</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>value</b>: <span title=\"Codes:{http://loinc.org LA6576-8}\">Tumorzellen durchgehend nukleär für WT1</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 84640000}\">Nukleär</span></p><p><b>specimen</b>: <a href=\"Specimen-PatientKimMusterperson-AscitesSpecimen-2.html\">Specimen: accessionIdentifier = Z230201/23; type = Ascitic fluid specimen (specimen)</a></p><h3>Components</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://loinc.org 48018-6}\">Gene studied [ID]</span></td><td><span title=\"Codes:{http://www.genenames.org/geneId HGNC:12796}, {http://loinc.org LP65352-4}\">WT1</span></td></tr></table></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
+      "code" : "biomarker-category"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "1234806008",
+      "display" : "Observation using immunohistochemistry (observable entity)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LA6576-8",
+      "display" : "Positive"
+    }],
+    "text" : "Tumorzellen durchgehend nukleär für WT1"
+  },
+  "bodySite" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "84640000",
+      "display" : "Nucleus (cell structure)"
+    }],
+    "text" : "Nukleär"
+  },
+  "specimen" : {
+    "reference" : "Specimen/PatientKimMusterperson-AscitesSpecimen-2"
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "48018-6",
+        "display" : "Gene studied [ID]"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.genenames.org/geneId",
+        "code" : "HGNC:12796",
+        "display" : "WT1"
+      },
+      {
+        "system" : "http://loinc.org",
+        "code" : "LP65352-4",
+        "display" : "WT-1 Ag"
+      }]
+    }
+  }]
+}

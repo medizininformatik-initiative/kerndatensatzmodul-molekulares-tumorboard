@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1> a fhir:ClinicalImpression ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "MII-EXA-MTB-Follow-Up-ClinicalImpression-1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClinicalImpression MII-EXA-MTB-Follow-Up-ClinicalImpression-1</b></p><a name=\"MII-EXA-MTB-Follow-Up-ClinicalImpression-1\"> </a><a name=\"hcMII-EXA-MTB-Follow-Up-ClinicalImpression-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html\">MII PR MTB Clinical Impresssion</a> version: 2026.0.1</p></div><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 390906007}\">Follow-up encounter (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>effective</b>: 2023-10-22</p><p><b>previous</b>: <a href=\"ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html\">ClinicalImpression: status = completed; effective[x] = 2023-01-20 --&gt; 2023-03-28</a></p><h3>Investigations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status completed}\">completed</span></td></tr></table><p><b>supportingInfo</b>: </p><ul><li><a href=\"Procedure-MII-EXA-MTB-Systemische-Therapie-1.html\">Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie</a></li><li><a href=\"Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-1.html\">Claim: status = active; type = institutional; use = claim; created = 2023-03-10; priority = Normal</a></li><li><a href=\"ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html\">ClaimResponse: status = active; type = institutional; use = claim; created = 2023-05-01; outcome = complete</a></li></ul></div>"
+  ] ;
+  fhir:ClinicalImpression.status [ fhir:value "completed"] ;
+  fhir:ClinicalImpression.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:390906007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "390906007" ] ;
+       fhir:Coding.display [ fhir:value "Follow-up encounter (procedure)" ]
+     ]
+  ] ;
+  fhir:ClinicalImpression.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:ClinicalImpression.effectiveDateTime [ fhir:value "2023-10-22"^^xsd:date] ;
+  fhir:ClinicalImpression.previous [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode> ;
+     fhir:Reference.reference [ fhir:value "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode" ]
+  ] ;
+  fhir:ClinicalImpression.investigation [
+     fhir:index 0 ;
+     fhir:ClinicalImpression.investigation.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status" ] ;
+         fhir:Coding.code [ fhir:value "completed" ]
+       ]
+     ]
+  ] ;
+  fhir:ClinicalImpression.supportingInfo [
+     fhir:index 0 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Procedure/MII-EXA-MTB-Systemische-Therapie-1> ;
+     fhir:Reference.reference [ fhir:value "Procedure/MII-EXA-MTB-Systemische-Therapie-1" ]
+  ], [
+     fhir:index 1 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1> ;
+     fhir:Reference.reference [ fhir:value "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1" ]
+  ], [
+     fhir:index 2 ;
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1> ;
+     fhir:Reference.reference [ fhir:value "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ClinicalImpression/MII-EXA-MTB-Follow-Up-ClinicalImpression-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

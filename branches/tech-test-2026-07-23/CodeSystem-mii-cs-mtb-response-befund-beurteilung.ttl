@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-cs-mtb-response-befund-beurteilung"] ;
+  fhir:Resource.language [ fhir:value "de-DE"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"de-DE\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-DE\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mii-cs-mtb-response-befund-beurteilung</b></p><a name=\"mii-cs-mtb-response-befund-beurteilung\"> </a><a name=\"hcmii-cs-mtb-response-befund-beurteilung\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">CR<a name=\"mii-cs-mtb-response-befund-beurteilung-CR\"> </a></td><td>Complete Response</td></tr><tr><td style=\"white-space:nowrap\">PR<a name=\"mii-cs-mtb-response-befund-beurteilung-PR\"> </a></td><td>Partial Response</td></tr><tr><td style=\"white-space:nowrap\">MR<a name=\"mii-cs-mtb-response-befund-beurteilung-MR\"> </a></td><td>Mixed Response</td></tr><tr><td style=\"white-space:nowrap\">SD<a name=\"mii-cs-mtb-response-befund-beurteilung-SD\"> </a></td><td>Stable Disease</td></tr><tr><td style=\"white-space:nowrap\">PD<a name=\"mii-cs-mtb-response-befund-beurteilung-PD\"> </a></td><td>Progressive Disease</td></tr><tr><td style=\"white-space:nowrap\">NA<a name=\"mii-cs-mtb-response-befund-beurteilung-NA\"> </a></td><td>Not assessable</td></tr><tr><td style=\"white-space:nowrap\">NYA<a name=\"mii-cs-mtb-response-befund-beurteilung-NYA\"> </a></td><td>Not yet assessable</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung"] ;
+  fhir:CodeSystem.version [ fhir:value "2026.0.1"] ;
+  fhir:CodeSystem.name [ fhir:value "MII_CS_MTB_Response_Befund_Beurteilung"] ;
+  fhir:CodeSystem.title [ fhir:value "MII CS Response Befund Beurteilung"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-07-23T12:42:46+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "Medizininformatik-Initiative"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Medizininformatik-Initiative" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.medizininformatik-initiative.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Codesystem für die Beurteilung des Response Befund"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "276" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "7"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CR" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Complete Response" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "PR" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Partial Response" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "MR" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Mixed Response" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "SD" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Stable Disease" ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "PD" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Progressive Disease" ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "NA" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Not assessable" ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "NYA" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Not yet assessable" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

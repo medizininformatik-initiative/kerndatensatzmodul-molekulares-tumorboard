@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="DNPMtoMIIMTB"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap DNPMtoMIIMTB</b></p><a name="DNPMtoMIIMTB"> </a><a name="hcDNPMtoMIIMTB"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/dnpm-to-mii-mtb<span style="color: navy">&quot; = &quot;</span>DNPMtoMIIMTB<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-dnpm-lm-patient-record.html" title="DNPM Patient Record">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style="color: navy">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMPatientDemographics.html" title="SMPatientDemographics">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMDiagnosis.html" title="SMDiagnosis">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMSpecimenHistologyIHCMSI.html" title="SMSpecimenHistologyIHCMSI">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMNGSReport.html" title="SMNGSReport">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-ngs-report</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMCarePlan.html" title="SMCarePlan">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMGuidelineTherapy.html" title="SMGuidelineTherapy">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMFollowUp.html" title="SMFollowUp">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMSystemicTherapy.html" title="SMSystemicTherapy">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-systemic-therapy</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-SMClaims.html" title="SMClaims">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims</a><span style="color: navy">&quot;
+</span>
+<b>group </b>DNPMPatientRecordToBundle<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>DNPMPatientRecord, <b>target</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Set bundle type</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle.type = <span style="color: blue">'transaction'</span> <i>&quot;bundleType&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Patient demographics, episodes, family history</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>PatientDemographics<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;demographics&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Diagnoses + ECOG</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>Diagnoses<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;diagnoses&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Specimens, histology, IHC, MSI</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>SpecimenHistologyIHCMSI<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;pathology&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">NGS Reports</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>NGSReports<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;ngs&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">CarePlans + recommendations</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>CarePlans<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;carePlans&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Guideline therapies + procedures</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>GuidelineTherapy<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;guidelineTherapy&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Follow-ups</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>FollowUps<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;followUps&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Systemic therapies + responses</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>SystemicTherapies<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;systemicTherapies&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Claims + claim responses</span>
+  src<span style="color: navy"><b> -&gt; </b></span>bundle<b> then </b>Claims<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bundle</span><span style="color: navy">)</span> <i>&quot;claims&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/dnpm-to-mii-mtb"/>
+  <version value="2026.0.1"/>
+  <name value="DNPMtoMIIMTB"/>
+  <status value="draft"/>
+  <date value="2026-07-23T12:42:46+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="276"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record"/>
+    <mode value="source"/>
+    <alias value="DNPMPatientRecord"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-patient-demographics"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-diagnosis"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-specimen-histology-ihc-msi"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-ngs-report"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-careplan"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-guideline-therapy"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-systemic-therapy"/>
+  <import value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-claims"/>
+  <group>
+    <name value="DNPMPatientRecordToBundle"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="DNPMPatientRecord"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bundle"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="bundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="transaction"/>
+        </parameter>
+      </target>
+      <documentation value="Set bundle type"/>
+    </rule>
+    <rule>
+      <name value="demographics"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="PatientDemographics"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="Patient demographics, episodes, family history"/>
+    </rule>
+    <rule>
+      <name value="diagnoses"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="Diagnoses"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="Diagnoses + ECOG"/>
+    </rule>
+    <rule>
+      <name value="pathology"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="SpecimenHistologyIHCMSI"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="Specimens, histology, IHC, MSI"/>
+    </rule>
+    <rule>
+      <name value="ngs"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="NGSReports"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="NGS Reports"/>
+    </rule>
+    <rule>
+      <name value="carePlans"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="CarePlans"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="CarePlans + recommendations"/>
+    </rule>
+    <rule>
+      <name value="guidelineTherapy"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="GuidelineTherapy"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="Guideline therapies + procedures"/>
+    </rule>
+    <rule>
+      <name value="followUps"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="FollowUps"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="Follow-ups"/>
+    </rule>
+    <rule>
+      <name value="systemicTherapies"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="SystemicTherapies"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="Systemic therapies + responses"/>
+    </rule>
+    <rule>
+      <name value="claims"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="bundle"/>
+        <contextType value="variable"/>
+      </target>
+      <dependent>
+        <name value="Claims"/>
+        <variable value="src"/>
+        <variable value="bundle"/>
+      </dependent>
+      <documentation value="Claims + claim responses"/>
+    </rule>
+  </group>
+</StructureMap>

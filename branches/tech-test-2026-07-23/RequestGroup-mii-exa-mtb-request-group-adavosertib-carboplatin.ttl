@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin> a fhir:RequestGroup ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-exa-mtb-request-group-adavosertib-carboplatin"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination|2026.0.1" ;
+       fhir:index 0 ;
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination|2026.0.1>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RequestGroup mii-exa-mtb-request-group-adavosertib-carboplatin</b></p><a name=\"mii-exa-mtb-request-group-adavosertib-carboplatin\"> </a><a name=\"hcmii-exa-mtb-request-group-adavosertib-carboplatin\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html\">MII PR MTB Therapieempfehlung Kombinationstherapie</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 4</p><p><b>MII EX MTB Empfehlung Evidenzgraduierung</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad m1B}\">m1B</span></p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/37236033</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>code</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ CZ}\">Chemotherapie + zielgerichtete Substanzen</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>authoredOn</b>: 2023-03-28</p><h3>Actions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Resource</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"MedicationRequest-mii-exa-mtb-medication-request-carboplatin.html\">MedicationRequest: status = draft; intent = option; medication[x] = Carboplatin; authoredOn = 2023-03-28</a></td></tr></table></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet" ] ;
+     fhir:Extension.valuePositiveInt [ fhir:value "4"^^xsd:positiveInteger ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad" ] ;
+         fhir:Coding.code [ fhir:value "m1B" ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "http://www.ncbi.nlm.nih.gov/pubmed" ] ;
+       fhir:Identifier.value [ fhir:value "37236033" ]
+     ]
+  ] ;
+  fhir:RequestGroup.status [ fhir:value "draft"] ;
+  fhir:RequestGroup.intent [ fhir:value "proposal"] ;
+  fhir:RequestGroup.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ" ] ;
+       fhir:Coding.code [ fhir:value "CZ" ] ;
+       fhir:Coding.display [ fhir:value "Chemotherapie + zielgerichtete Substanzen" ]
+     ]
+  ] ;
+  fhir:RequestGroup.subject [
+     fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/Patient/PatientKimMusterperson> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientKimMusterperson" ]
+  ] ;
+  fhir:RequestGroup.authoredOn [ fhir:value "2023-03-28"^^xsd:date] ;
+  fhir:RequestGroup.action [
+     fhir:index 0 ;
+     fhir:RequestGroup.action.resource [
+       fhir:link <https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/MedicationRequest/mii-exa-mtb-medication-request-carboplatin> ;
+       fhir:Reference.reference [ fhir:value "MedicationRequest/mii-exa-mtb-medication-request-carboplatin" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

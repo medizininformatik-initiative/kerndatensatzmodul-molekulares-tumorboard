@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-kim-musterperson-therapieplan"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan|2026.0.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CarePlan mii-exa-mtb-kim-musterperson-therapieplan</b></p><a name="mii-exa-mtb-kim-musterperson-therapieplan"> </a><a name="hcmii-exa-mtb-kim-musterperson-therapieplan"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-therapieplan.html">MII PR MTB Therapieplan</a> version: 2026.0.1</p></div><p><b>status</b>: Active</p><p><b>intent</b>: Plan</p><p><b>category</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ praeth}">prätherapeutische Tumorkonferenz (Festlegung der Therapiestrategie)</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>created</b>: 2023-03-28</p><p><b>addresses</b>: <a href="Condition-PatientKimMusterperson-PrimaryDiagnosis-2.html">Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet</a></p><p><b>supportingInfo</b>: <a href="ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html">ClinicalImpression: status = completed; effective[x] = 2023-01-20 --&gt; 2023-03-28</a></p><blockquote><p><b>activity</b></p><p><b>outcomeReference</b>: <a href="Procedure-MTBChemo2Procedure.html">Procedure Chemotherapy</a></p><p><b>reference</b>: <a href="MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html">MedicationRequest: extension = 1,m1A,http://doi.org#10.1200/JCO.2022.40.16_suppl.5512,http://www.ncbi.nlm.nih.gov/pubmed#38055253; status = completed; intent = proposal; medication[x] = MIRVETUXIMAB SORAVTANSINE; authoredOn = 2023-03-28</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="ServiceRequest-mii-exa-mtb-study-request-cldn6.html">ServiceRequest Referral to clinical trial (procedure)</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="ServiceRequest-mii-exa-mtb-study-request-tedova.html">ServiceRequest Referral to clinical trial (procedure)</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="ServiceRequest-mii-exa-mtb-study-request-ccne1.html">ServiceRequest Referral to clinical trial (procedure)</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="MedicationRequest-mii-exa-mtb-medication-request-trastuzumab-deruxtecan.html">MedicationRequest: extension = 3,m1B,http://www.ncbi.nlm.nih.gov/pubmed#35665782,http://www.ncbi.nlm.nih.gov/pubmed#37870536,http://doi.org#10.1200/JCO.2023.41.17_suppl.LBA3000; status = draft; intent = proposal; medication[x] = Trastuzumab deruxtecan; authoredOn = 2023-03-28</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="RequestGroup-mii-exa-mtb-request-group-adavosertib-carboplatin.html">RequestGroup Chemotherapie + zielgerichtete Substanzen</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="RequestGroup-mii-exa-mtb-request-group-lunresertib-camonsertib.html">RequestGroup zielgerichtete Substanzen</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="MedicationRequest-mii-exa-mtb-medication-request-cobimetinib.html">MedicationRequest: extension = 6,m3,http://www.ncbi.nlm.nih.gov/pubmed#31209687; status = draft; intent = option; medication[x] = COBIMETINIB; authoredOn = 2023-03-28</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="ServiceRequest-mii-exa-mtb-kim-humangenetische-beratung-aszites.html">ServiceRequest Genetic consultation (procedure)</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="ServiceRequest-mii-exa-mtb-kim-histologie-evaluation-aszites.html">ServiceRequest Refer for histology (procedure)</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href="ServiceRequest-mii-exa-mtb-kim-rebiopsie-aszites.html">ServiceRequest Biopsy (procedure)</a></p></blockquote></div>
+  </text>
+  <status value="active"/>
+  <intent value="plan"/>
+  <category>
+    <coding>
+      <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ"/>
+      <code value="praeth"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <created value="2023-03-28"/>
+  <addresses>
+    <reference value="Condition/PatientKimMusterperson-PrimaryDiagnosis-2"/>
+  </addresses>
+  <supportingInfo>
+    <reference value="ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"/>
+  </supportingInfo>
+  <activity>
+    <outcomeReference>
+      <reference value="Procedure/MTBChemo2Procedure"/>
+    </outcomeReference>
+    <reference>
+      <reference value="MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="ServiceRequest/mii-exa-mtb-study-request-cldn6"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="ServiceRequest/mii-exa-mtb-study-request-tedova"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="ServiceRequest/mii-exa-mtb-study-request-ccne1"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="MedicationRequest/mii-exa-mtb-medication-request-trastuzumab-deruxtecan"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="RequestGroup/mii-exa-mtb-request-group-adavosertib-carboplatin"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="RequestGroup/mii-exa-mtb-request-group-lunresertib-camonsertib"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="MedicationRequest/mii-exa-mtb-medication-request-cobimetinib"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="ServiceRequest/mii-exa-mtb-kim-humangenetische-beratung-aszites"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="ServiceRequest/mii-exa-mtb-kim-histologie-evaluation-aszites"/>
+    </reference>
+  </activity>
+  <activity>
+    <reference>
+      <reference value="ServiceRequest/mii-exa-mtb-kim-rebiopsie-aszites"/>
+    </reference>
+  </activity>
+</CarePlan>

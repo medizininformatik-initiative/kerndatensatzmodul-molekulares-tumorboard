@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PatientKimMusterperson-Observation-22"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-22</b></p><a name="PatientKimMusterperson-Observation-22"> </a><a name="hcPatientKimMusterperson-Observation-22"> </a><p><b>partOf</b>: <a href="Procedure-PatientKimMusterperson-Procedure-5.html">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 274744005}">zahlenmäßig vermehrten LK im Mediastinum</span></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 37865006}, {http://snomed.info/sct 385420005}">noch flaue, aber insgesamt regrediente KM-Aufnhame</span></p></div>
+  </text>
+  <partOf>
+    <reference value="Procedure/PatientKimMusterperson-Procedure-5"/>
+  </partOf>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="274744005"/>
+      <display value="Localized enlarged lymph nodes"/>
+    </coding>
+    <text value="zahlenmäßig vermehrten LK im Mediastinum"/>
+  </code>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="37865006"/>
+      <display value="Regressive"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="385420005"/>
+      <display value="Contrast media"/>
+    </coding>
+    <text value="noch flaue, aber insgesamt regrediente KM-Aufnhame"/>
+  </valueCodeableConcept>
+</Observation>

@@ -1,0 +1,526 @@
+{
+  "resourceType" : "StructureMap",
+  "id" : "SMFollowUp",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap SMFollowUp</b></p><a name=\"SMFollowUp\"> </a><a name=\"hcSMFollowUp\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up<span style=\"color: navy\">&quot; = &quot;</span>SMFollowUp<span style=\"color: navy\">&quot;\r\n\r\n</span><b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"StructureDefinition-dnpm-lm-patient-record.html\" title=\"DNPM Patient Record\">https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record</a><span style=\"color: navy\">&quot; </span><b>alias </b>DNPMPatientRecord <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/bundle.html\" title=\"Bundle\">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style=\"color: navy\">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/clinicalimpression.html\" title=\"ClinicalImpression\">http://hl7.org/fhir/StructureDefinition/ClinicalImpression</a><span style=\"color: navy\">&quot; </span><b>alias </b>ClinicalImpression <b>as </b><b>produced</b>\r\n\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Root group: iterate over followUps and populate the Bundle</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<b>group </b>FollowUps<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>DNPMPatientRecord, <b>target</b> <span style=\"color: maroon\">bundle</span><span style=\"color: navy\"> : </span>Bundle<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Bundle type = collection</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>bundle.type = <span style=\"color: blue\">'collection'</span> <i>&quot;bundleType&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">--- ClinicalImpression per follow-up entry --------------------------------</span>\r\n  src.followUps<b> as </b><span style=\"color: maroon\">fu</span><span style=\"color: navy\"><b> -&gt; </b></span> bundle.entry<b> as </b><span style=\"color: maroon\">e</span><span style=\"color: navy\">, </span> e.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'ClinicalImpression'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">ci</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    fu.id<b> as </b><span style=\"color: maroon\">fuid</span><span style=\"color: navy\"><b> -&gt; </b></span>e.fullUrl = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">fuid</span><span style=\"color: navy\">)</span> <i>&quot;fullUrl&quot;</i><span style=\"color: navy\">;</span>\r\n    fu<span style=\"color: navy\"><b> -&gt; </b></span>ci<b> then </b>MapFollowUp<span style=\"color: navy\">(</span><span style=\"color: maroon\">fu</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">ci</span><span style=\"color: navy\">)</span> <i>&quot;map&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;followUp&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">MapFollowUp: DNPM followUps entry → FHIR ClinicalImpression</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Profile: MII_PR_MTB_Follow_Up_ClinicalImpression (Parent: ClinicalImpression)</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<b>group </b>MapFollowUp<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>BackboneElement, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>ClinicalImpression<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.id<b> as </b><span style=\"color: maroon\">srcId</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.id = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">srcId</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'id'</span><span style=\"color: navy\">)</span> <i>&quot;ciId&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Profile meta</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.meta<b> as </b><span style=\"color: maroon\">m</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>m.profile = <span style=\"color: blue\">'https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression'</span> <i>&quot;ciProfile&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ciMeta&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">status: fixed to 'completed' (retrospective data acquisition)</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'completed'</span> <i>&quot;ciStatus&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">code: fixed SNOMED code for follow-up encounter (required by profile)</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>c.coding<b> as </b><span style=\"color: maroon\">coding</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      src<span style=\"color: navy\"><b> -&gt; </b></span>coding.system = <span style=\"color: blue\">'http://snomed.info/sct'</span> <i>&quot;ciCodeSystem&quot;</i><span style=\"color: navy\">;</span>\r\n      src<span style=\"color: navy\"><b> -&gt; </b></span>coding.code = <span style=\"color: blue\">'390906007'</span> <i>&quot;ciCodeCode&quot;</i><span style=\"color: navy\">;</span>\r\n      src<span style=\"color: navy\"><b> -&gt; </b></span>coding.display = <span style=\"color: blue\">'Follow-up encounter (procedure)'</span> <i>&quot;ciCodeDisplay&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;ciCodeCoding&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ciCode&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">subject → Patient reference (urn:uuid)</span>\r\n  src.patient<b> as </b><span style=\"color: maroon\">pat</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject<b> as </b><span style=\"color: maroon\">subj</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    pat.id<b> as </b><span style=\"color: maroon\">pid</span><span style=\"color: navy\"><b> -&gt; </b></span>subj.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">pid</span><span style=\"color: navy\">)</span> <i>&quot;ciSubjectReference&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ciSubject&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">effectiveDateTime ← followUp.date</span>\r\n  src.date<b> as </b><span style=\"color: maroon\">dateDt</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effectiveDateTime = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">dateDt</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'dateTime'</span><span style=\"color: navy\">)</span> <i>&quot;ciEffectiveDateTime&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">note: carry lastContactDate as a note text</span>\r\n  src.lastContactDate<b> as </b><span style=\"color: maroon\">lcd</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.note<b> as </b><span style=\"color: maroon\">note</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    lcd<span style=\"color: navy\"><b> -&gt; </b></span>note.text = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Last contact date: '</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">lcd</span><span style=\"color: navy\">)</span> <i>&quot;ciNoteText&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ciNote&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">investigation: patient status at follow-up</span>\r\n  src.patientStatus<b> as </b><span style=\"color: maroon\">ps</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.investigation<b> as </b><span style=\"color: maroon\">inv</span><b> then </b>MapPatientStatus<span style=\"color: navy\">(</span><span style=\"color: maroon\">ps</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">inv</span><span style=\"color: navy\">)</span> <i>&quot;ciInvestigation&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">supportingInfo[AntraegeKostenuebernahme]: claim references carried at follow-up level</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Note: these are claim IDs referenced in the followUp. The actual Claim resources</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">are created by sm-claims.fml. Here we only write the reference into supportingInfo.</span>\r\n  src.claims<b> as </b><span style=\"color: maroon\">claimRef</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.supportingInfo<b> as </b><span style=\"color: maroon\">si</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    claimRef.id<b> as </b><span style=\"color: maroon\">cid</span><span style=\"color: navy\"><b> -&gt; </b></span>si.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'urn:uuid:'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">cid</span><span style=\"color: navy\">)</span> <i>&quot;claimRefValue&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ciClaimRefs&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">MapPatientStatus: DNPM patientStatus coding → ClinicalImpression.investigation</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<b>group </b>MapPatientStatus<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>BackboneElement, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>BackboneElement<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">investigation.code: use the MII Follow-Up Status CodeSystem</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code<b> as </b><span style=\"color: maroon\">code</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>code.coding<b> as </b><span style=\"color: maroon\">c</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      src.system<b> as </b><span style=\"color: maroon\">systemV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.system = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">systemV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>&quot;invCodeSystem&quot;</i><span style=\"color: navy\">;</span>\r\n      src.code<b> as </b><span style=\"color: maroon\">codeV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.code = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">codeV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>&quot;invCodeCode&quot;</i><span style=\"color: navy\">;</span>\r\n      src.display<b> as </b><span style=\"color: maroon\">displayV</span><span style=\"color: navy\"><b> -&gt; </b></span>c.display = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: maroon\">displayV</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'string'</span><span style=\"color: navy\">)</span> <i>&quot;invCodeDisplay&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;invCoding&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;invCode&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  },
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureMap/sm-follow-up",
+  "version" : "2026.0.1",
+  "name" : "SMFollowUp",
+  "status" : "draft",
+  "date" : "2026-07-23T12:42:46+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "276"
+    }]
+  }],
+  "structure" : [{
+    "url" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record",
+    "mode" : "source",
+    "alias" : "DNPMPatientRecord"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Bundle",
+    "mode" : "target",
+    "alias" : "Bundle"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/ClinicalImpression",
+    "mode" : "produced",
+    "alias" : "ClinicalImpression"
+  }],
+  "group" : [{
+    "name" : "FollowUps",
+    "typeMode" : "none",
+    "documentation" : "---------------------------------------------------------------------------\r\nRoot group: iterate over followUps and populate the Bundle\r\n---------------------------------------------------------------------------",
+    "input" : [{
+      "name" : "src",
+      "type" : "DNPMPatientRecord",
+      "mode" : "source"
+    },
+    {
+      "name" : "bundle",
+      "type" : "Bundle",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "bundleType",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "bundle",
+        "contextType" : "variable",
+        "element" : "type",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "collection"
+        }]
+      }],
+      "documentation" : "Bundle type = collection"
+    },
+    {
+      "name" : "followUp",
+      "source" : [{
+        "context" : "src",
+        "element" : "followUps",
+        "variable" : "fu"
+      }],
+      "target" : [{
+        "context" : "bundle",
+        "contextType" : "variable",
+        "element" : "entry",
+        "variable" : "e"
+      },
+      {
+        "context" : "e",
+        "contextType" : "variable",
+        "element" : "resource",
+        "variable" : "ci",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "ClinicalImpression"
+        }]
+      }],
+      "rule" : [{
+        "name" : "fullUrl",
+        "source" : [{
+          "context" : "fu",
+          "element" : "id",
+          "variable" : "fuid"
+        }],
+        "target" : [{
+          "context" : "e",
+          "contextType" : "variable",
+          "element" : "fullUrl",
+          "transform" : "append",
+          "parameter" : [{
+            "valueString" : "urn:uuid:"
+          },
+          {
+            "valueId" : "fuid"
+          }]
+        }]
+      },
+      {
+        "name" : "map",
+        "source" : [{
+          "context" : "fu"
+        }],
+        "target" : [{
+          "context" : "ci",
+          "contextType" : "variable"
+        }],
+        "dependent" : [{
+          "name" : "MapFollowUp",
+          "variable" : ["fu",
+          "ci"]
+        }]
+      }],
+      "documentation" : "--- ClinicalImpression per follow-up entry --------------------------------"
+    }]
+  },
+  {
+    "name" : "MapFollowUp",
+    "typeMode" : "none",
+    "documentation" : "---------------------------------------------------------------------------\r\nMapFollowUp: DNPM followUps entry → FHIR ClinicalImpression\r\nProfile: MII_PR_MTB_Follow_Up_ClinicalImpression (Parent: ClinicalImpression)\r\n---------------------------------------------------------------------------",
+    "input" : [{
+      "name" : "src",
+      "type" : "BackboneElement",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "ClinicalImpression",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ciId",
+      "source" : [{
+        "context" : "src",
+        "element" : "id",
+        "variable" : "srcId"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "id",
+        "transform" : "cast",
+        "parameter" : [{
+          "valueId" : "srcId"
+        },
+        {
+          "valueString" : "id"
+        }]
+      }]
+    },
+    {
+      "name" : "ciMeta",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "meta",
+        "variable" : "m"
+      }],
+      "rule" : [{
+        "name" : "ciProfile",
+        "source" : [{
+          "context" : "src"
+        }],
+        "target" : [{
+          "context" : "m",
+          "contextType" : "variable",
+          "element" : "profile",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression"
+          }]
+        }]
+      }],
+      "documentation" : "Profile meta"
+    },
+    {
+      "name" : "ciStatus",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "status",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "completed"
+        }]
+      }],
+      "documentation" : "status: fixed to 'completed' (retrospective data acquisition)"
+    },
+    {
+      "name" : "ciCode",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "variable" : "c"
+      }],
+      "rule" : [{
+        "name" : "ciCodeCoding",
+        "source" : [{
+          "context" : "src"
+        }],
+        "target" : [{
+          "context" : "c",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        }],
+        "rule" : [{
+          "name" : "ciCodeSystem",
+          "source" : [{
+            "context" : "src"
+          }],
+          "target" : [{
+            "context" : "coding",
+            "contextType" : "variable",
+            "element" : "system",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "http://snomed.info/sct"
+            }]
+          }]
+        },
+        {
+          "name" : "ciCodeCode",
+          "source" : [{
+            "context" : "src"
+          }],
+          "target" : [{
+            "context" : "coding",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "390906007"
+            }]
+          }]
+        },
+        {
+          "name" : "ciCodeDisplay",
+          "source" : [{
+            "context" : "src"
+          }],
+          "target" : [{
+            "context" : "coding",
+            "contextType" : "variable",
+            "element" : "display",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "Follow-up encounter (procedure)"
+            }]
+          }]
+        }]
+      }],
+      "documentation" : "code: fixed SNOMED code for follow-up encounter (required by profile)"
+    },
+    {
+      "name" : "ciSubject",
+      "source" : [{
+        "context" : "src",
+        "element" : "patient",
+        "variable" : "pat"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "subject",
+        "variable" : "subj"
+      }],
+      "rule" : [{
+        "name" : "ciSubjectReference",
+        "source" : [{
+          "context" : "pat",
+          "element" : "id",
+          "variable" : "pid"
+        }],
+        "target" : [{
+          "context" : "subj",
+          "contextType" : "variable",
+          "element" : "reference",
+          "transform" : "append",
+          "parameter" : [{
+            "valueString" : "urn:uuid:"
+          },
+          {
+            "valueId" : "pid"
+          }]
+        }]
+      }],
+      "documentation" : "subject → Patient reference (urn:uuid)"
+    },
+    {
+      "name" : "ciEffectiveDateTime",
+      "source" : [{
+        "context" : "src",
+        "element" : "date",
+        "variable" : "dateDt"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "effectiveDateTime",
+        "transform" : "cast",
+        "parameter" : [{
+          "valueId" : "dateDt"
+        },
+        {
+          "valueString" : "dateTime"
+        }]
+      }],
+      "documentation" : "effectiveDateTime ← followUp.date"
+    },
+    {
+      "name" : "ciNote",
+      "source" : [{
+        "context" : "src",
+        "element" : "lastContactDate",
+        "variable" : "lcd"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "note",
+        "variable" : "note"
+      }],
+      "rule" : [{
+        "name" : "ciNoteText",
+        "source" : [{
+          "context" : "lcd"
+        }],
+        "target" : [{
+          "context" : "note",
+          "contextType" : "variable",
+          "element" : "text",
+          "transform" : "append",
+          "parameter" : [{
+            "valueString" : "Last contact date: "
+          },
+          {
+            "valueId" : "lcd"
+          }]
+        }]
+      }],
+      "documentation" : "note: carry lastContactDate as a note text"
+    },
+    {
+      "name" : "ciInvestigation",
+      "source" : [{
+        "context" : "src",
+        "element" : "patientStatus",
+        "variable" : "ps"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "investigation",
+        "variable" : "inv"
+      }],
+      "dependent" : [{
+        "name" : "MapPatientStatus",
+        "variable" : ["ps",
+        "inv"]
+      }],
+      "documentation" : "investigation: patient status at follow-up"
+    },
+    {
+      "name" : "ciClaimRefs",
+      "source" : [{
+        "context" : "src",
+        "element" : "claims",
+        "variable" : "claimRef"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "supportingInfo",
+        "variable" : "si"
+      }],
+      "rule" : [{
+        "name" : "claimRefValue",
+        "source" : [{
+          "context" : "claimRef",
+          "element" : "id",
+          "variable" : "cid"
+        }],
+        "target" : [{
+          "context" : "si",
+          "contextType" : "variable",
+          "element" : "reference",
+          "transform" : "append",
+          "parameter" : [{
+            "valueString" : "urn:uuid:"
+          },
+          {
+            "valueId" : "cid"
+          }]
+        }]
+      }],
+      "documentation" : "supportingInfo[AntraegeKostenuebernahme]: claim references carried at follow-up level\r\nNote: these are claim IDs referenced in the followUp. The actual Claim resources\r\nare created by sm-claims.fml. Here we only write the reference into supportingInfo."
+    }]
+  },
+  {
+    "name" : "MapPatientStatus",
+    "typeMode" : "none",
+    "documentation" : "---------------------------------------------------------------------------\r\nMapPatientStatus: DNPM patientStatus coding → ClinicalImpression.investigation\r\n---------------------------------------------------------------------------",
+    "input" : [{
+      "name" : "src",
+      "type" : "BackboneElement",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "BackboneElement",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "invCode",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "variable" : "code"
+      }],
+      "rule" : [{
+        "name" : "invCoding",
+        "source" : [{
+          "context" : "src"
+        }],
+        "target" : [{
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "c"
+        }],
+        "rule" : [{
+          "name" : "invCodeSystem",
+          "source" : [{
+            "context" : "src",
+            "element" : "system",
+            "variable" : "systemV"
+          }],
+          "target" : [{
+            "context" : "c",
+            "contextType" : "variable",
+            "element" : "system",
+            "transform" : "cast",
+            "parameter" : [{
+              "valueId" : "systemV"
+            },
+            {
+              "valueString" : "string"
+            }]
+          }]
+        },
+        {
+          "name" : "invCodeCode",
+          "source" : [{
+            "context" : "src",
+            "element" : "code",
+            "variable" : "codeV"
+          }],
+          "target" : [{
+            "context" : "c",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "cast",
+            "parameter" : [{
+              "valueId" : "codeV"
+            },
+            {
+              "valueString" : "string"
+            }]
+          }]
+        },
+        {
+          "name" : "invCodeDisplay",
+          "source" : [{
+            "context" : "src",
+            "element" : "display",
+            "variable" : "displayV"
+          }],
+          "target" : [{
+            "context" : "c",
+            "contextType" : "variable",
+            "element" : "display",
+            "transform" : "cast",
+            "parameter" : [{
+              "valueId" : "displayV"
+            },
+            {
+              "valueString" : "string"
+            }]
+          }]
+        }]
+      }],
+      "documentation" : "investigation.code: use the MII Follow-Up Status CodeSystem"
+    }]
+  }]
+}
