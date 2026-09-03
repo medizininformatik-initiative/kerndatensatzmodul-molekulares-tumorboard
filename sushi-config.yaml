@@ -1,44 +1,119 @@
-# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
-# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
-# │  used properties are included. For a list of all supported properties and their functions,     │
-# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# MII KDS module IG configuration — Molekulares Tumorboard (MTB).
+# CRMI-profiled metadata contract from the MII KDS module template (v0.13.2),
+# identity carried UNCHANGED from the pre-migration Simplifier/SUSHI project
+# (migration guardrail: canonical URLs, ids and the licence are never changed
+# by a migration; divergences from the template's naming patterns are the
+# SOURCE's published identity and are recorded in migration-log/).
+
+# Source identity: the template pattern would be `mii-ig-mtb`; the module's
+# published IG resource id predates the pattern and is carried unchanged.
 id: mii-kerndatensatzmodul-molekulares-tumorboard
+# Source identity: the template pattern would be .../fhir/modul-mtb; the
+# module's published canonical uses the ext/ space and is carried unchanged.
 canonical: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb
 name: MII_IG_MTB_DE
 title: MII IG Kerndatensatz-Modul Molekulares Tumorboard
-description: Medizininformatik Initiative - Modul Molekulares Tumorboard
+description: "FHIR profiles for molecular tumor board (MTB) documentation based on the DNPM dataset (Deutsches Netzwerk für Personalisierte Medizin), complementing the MII core dataset oncology module." # TODO:REVIEW derived (EN description derived from the German source description/README)
 status: active # draft | active | retired | unknown
-version: 2026.0.1
+# MII modules use CalVer YYYY.n.n per the MII Module Release Workflow.
+version: "2026.0.1"
+packageId: de.medizininformatikinitiative.kerndatensatz.mtb
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
-copyrightYear: 2024+
+copyrightYear: "2024+"
 releaseLabel: release
-license: CC0-1.0
-jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#276
+license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html — source licence, NOT the template default
+date: "2026-03-30" # release date of 2026.0.1 (merge of release/v2026.0.1)
+# The source declared jurisdiction m49.htm#276; the IG Publisher cannot resolve
+# that form in the page header ("Unknown region code '276'"), so the template's
+# equivalent ISO-3166 form is used. TODO:REVIEW Gate A (announced normalization).
+jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: Medizininformatik-Initiative
   url: https://www.medizininformatik-initiative.de
-  # email: test@example.org
-language: de-DE
-
-# The dependencies property corresponds to IG.depends0On. The key is the
-# package id and the value is the version (or dev/current). For advanced
-# use cases, the value can be an object with keys for id, uri, and version.
-#
-# dependencies:
-####### HIER müssen die MII packages rein, die wir verwenden wollen. 
-#### MOLGEN, Onko, Medication, Person, etc... 
-#   hl7.fhir.us.core: 3.1.0
-#   hl7.fhir.us.mcode:
-#     id: mcode
-#     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
-#     version: 1.0.0
+meta:
+  profile:
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide
+experimental: false
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/resource-approvalDate
+    valueDate: "2026-03-30" # TODO:REVIEW Gate A — approval date of the 2026.0.1 release
+  - url: http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability
+    valueCode: shareable
+  - url: http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability
+    valueCode: publishable
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy
+    valueCodeableConcept:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes
+          code: package
+          display: Package
+  - url: http://hl7.org/fhir/StructureDefinition/package-source
+    extension:
+      - url: packageId
+        valueId: de.medizininformatikinitiative.kerndatensatz.mtb
+      - url: version
+        valueString: "2026.0.1"
+      - url: uri
+        valueUri: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb
+  - url: http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod
+    valuePeriod:
+      start: "2026"
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-author
+    valueContactDetail:
+      telecom:
+        - system: email
+          value: "thomas.debertshaeuser@charite.de" # TODO:REVIEW Gate A — module author contact
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-editor
+    valueContactDetail:
+      name: Taskforce Core Data Set
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-reviewer
+    valueContactDetail:
+      name: Interoperability Working Group
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-reviewer
+    valueContactDetail:
+      name: National Steering Committee
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-endorser
+    valueContactDetail:
+      name: Interoperability Working Group
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-endorser
+    valueContactDetail:
+      name: National Steering Committee
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee
+  - url: http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters
+    valueReference:
+      reference: Parameters/mii-param-mtb-manifest
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
+    valueCoding:
+      system: http://hl7.org/fhir/version-algorithm
+      code: semver
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-usage
+    valueMarkdown: "Use this ImplementationGuide resource as a computable definition of all the parts of the corresponding module of the Medical Informatics Initiative core data set."
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-purpose
+    valueMarkdown: "Provide the computable publication unit for the MII Core Dataset Molecular Tumor Board module, enabling implementers to discover, validate, version, and apply the specification consistently."
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: "C3262" # Neoplasm — TODO:REVIEW Gate A (proposal, mirrors kerndatensatzmodul-onkologie)
 dependencies:
-  # Explicitly required dependencies
+  # Source dependencies, carried unchanged (migration-log/identity-claims):
   de.basisprofil.r4: 1.5.4
+  de.medizininformatikinitiative.kerndatensatz.base: 2026.0.0
   de.medizininformatikinitiative.kerndatensatz.biobank: 2026.0.0
   de.medizininformatikinitiative.kerndatensatz.consent: 2026.0.0
-  de.medizininformatikinitiative.kerndatensatz.base: 2026.0.0
   de.medizininformatikinitiative.kerndatensatz.medikation: 2026.0.0
   de.medizininformatikinitiative.kerndatensatz.meta: 2026.0.0
   de.medizininformatikinitiative.kerndatensatz.molgen: 2026.0.4
@@ -46,183 +121,87 @@ dependencies:
   de.medizininformatikinitiative.kerndatensatz.patho: 2026.0.0
   de.medizininformatikinitiative.kerndatensatz.studie: 2026.0.2
   hl7.fhir.uv.genomics-reporting: 3.0.0
-
-# The pages property corresponds to IG.definition.page. SUSHI can
-# auto-generate the page list, but if the author includes pages in
-# this file, it is assumed that the author will fully manage the
-# pages section and SUSHI will not generate any page entries.
-# The page file name is used as the key. If title is not provided,
-# then the title will be generated from the file name.  If a
-# generation value is not provided, it will be inferred from the
-# file name extension.  Any subproperties that are valid filenames
-# with supported extensions (e.g., .md/.xml) will be treated as
-# sub-pages.
-#
-# pages:
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
-#
-#
-# The parameters property represents IG.definition.parameter. Rather
-# than a list of code/value pairs (as in the ImplementationGuide
-# resource), the code is the YAML key. If a parameter allows repeating
-# values, the value in the YAML should be a sequence/array.
-# For parameters defined by core FHIR see:
-# http://build.fhir.org/codesystem-guide-parameter-code.html
-# For parameters defined by the FHIR Tools IG see:
-# http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
-#
-# parameters:
-#   excludettl: true
-#   validation: [allow-any-extensions, no-broken-links]
-#
-# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
-# │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
-# │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
-# │ The IG publisher currently only supports one level deep on sub-menus. To provide a             │
-# │ custom menu.xml file, do not include this property and include a `menu.xml` file in            │
-# │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
-# │ property below.                                                                                │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-menu:
-  Home: index.html
-  Artifacts: artifacts.html
-
-# ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
-# │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
-# │  resource. These properties are less commonly needed than those above.                         │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-#
-# Those who need more control or want to add additional details to the contact values can use
-# contact directly and follow the format outlined in the ImplementationGuide resource and
-# ContactDetail.
-#
-# contact:
-#   - name: Bob Smith
-#     telecom:
-#       - system: email # phone | fax | email | pager | url | sms | other
-#         value: bobsmith@example.org
-#         use: work
-#
-#
-# The global property corresponds to the IG.global property, but it
-# uses the type as the YAML key and the profile as its value. Since
-# FHIR does not explicitly disallow more than one profile per type,
-# neither do we; the value can be a single profile URL or an array
-# of profile URLs. If a value is an id or name, SUSHI will replace
-# it with the correct canonical when generating the IG JSON.
-#
-# global:
-#   Patient: http://example.org/fhir/StructureDefinition/my-patient-profile
-#   Encounter: http://example.org/fhir/StructureDefinition/my-encounter-profile
-#
-#
-# The resources property corresponds to IG.definition.resource.
-# SUSHI can auto-generate all of the resource entries based on
-# the FSH definitions and/or information in any user-provided
-# JSON or XML resource files. If the generated entries are not
-# sufficient or complete, however, the author can add entries
-# here. If the reference matches a generated entry, it will
-# replace the generated entry. If it doesn't match any generated
-# entries, it will be added to the generated entries. The format
-# follows IG.definition.resource with the following differences:
-#   * use IG.definition.resource.reference.reference as the YAML key.
-#   * if the key is an id or name, SUSHI will replace it with the
-#     correct URL when generating the IG JSON.
-#   * specify "omit" to omit a FSH-generated resource from the
-#     resource list.
-#   * if the exampleCanonical is an id or name, SUSHI will replace
-#     it with the correct canonical when generating the IG JSON.
-#   * groupingId can be used, but top-level groups syntax may be a
-#     better option (see below).
-# The following are simple examples to demonstrate what this might
-# look like:
-#
-# resources:
-#   Patient/my-example-patient:
-#     name: My Example Patient
-#     description: An example Patient
-#     exampleBoolean: true
-#   Patient/bad-example: omit
-#
-#
-# Groups can control certain aspects of the IG generation.  The IG
-# documentation recommends that authors use the default groups that
-# are provided by the templating framework, but if authors want to
-# use their own instead, they can use the mechanism below.  This will
-# create IG.definition.grouping entries and associate the individual
-# resource entries with the corresponding groupIds. If a resource
-# is specified by id or name, SUSHI will replace it with the correct
-# URL when generating the IG JSON.
-#
-# groups:
-#   GroupA:
-#     name: Group A
-#     description: The Alpha Group
-#     resources:
-#     - StructureDefinition/animal-patient
-#     - StructureDefinition/arm-procedure
-#   GroupB:
-#     name: Group B
-#     description: The Beta Group
-#     resources:
-#     - StructureDefinition/bark-control
-#     - StructureDefinition/bee-sting
-#
-#
-# The ImplementationGuide resource defines several other properties
-# not represented above. These properties can be used as-is and
-# should follow the format defined in ImplementationGuide:
-# * date
-# * meta
-# * implicitRules
-# * language
-# * text
-# * contained
-# * extension
-# * modifierExtension
-# * experimental
-# * useContext
-# * copyright
-# * packageId
-#
-#
-# ╭──────────────────────────────────────────SUSHI flags───────────────────────────────────────────╮
-# │  The flags below configure aspects of how SUSHI processes FSH.                                 │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-# The FSHOnly flag indicates if only FSH resources should be exported.
-# If set to true, no IG related content will be generated.
-# The default value for this property is false.
-#
-# FSHOnly: false
-#
-#
-# When set to true, the "short" and "definition" field on the root element of an Extension will
-# be set to the "Title" and "Description" of that Extension. Default is true.
-#
-# applyExtensionMetadataToRoot: true
-#
-#
-# The instanceOptions property is used to configure certain aspects of how SUSHI processes instances.
-# See the individual option definitions below for more detail.
-#
+  # Template machinery (CRMI meta.profile claims + template rulesets/pages),
+  # added by the migration, recorded at Gate A:
+  hl7.fhir.uv.crmi: 2.0.0
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
+  hl7.terminology.r4: 7.3.0
+  hl7.fhir.uv.extensions.r4: 5.3.0
+pages:
+  index.md:
+    title: Home
+  guidance.md:
+    title: Guidance
+    researcher-guidance.md: # OPTIONAL (0..1) — kept, see docs/optional-pages.md
+      title: Guidance for Researchers
+    implementer-guidance.md:
+      title: Guidance for Implementers
+    uml-diagrams.md:
+      title: UML Diagrams
+    anwendungsszenarien.md:
+      title: Application Scenarios
+    dnpm-transformation.md:
+      title: DNPM Transformation
+  security-and-privacy.md:
+    title: Security and Privacy
+  profiles.md:
+    title: Profiles
+  extensions.md: # OPTIONAL (0..1) — kept (11 extensions)
+    title: Extensions
+  capability-statements.md:
+    title: Capability Statements
+  logical-models.md:
+    title: Logical Models
+  value-sets.md: # OPTIONAL (0..1) — kept (29 value sets)
+    title: Value Sets
+  code-systems.md: # OPTIONAL (0..1) — kept (19 code systems)
+    title: Code Systems
+  examples.md:
+    title: Examples
+  downloads.md:
+    title: Downloads
+  changes.md:
+    title: Changelog
+  metadata.md: # OPTIONAL (0..1) — kept, see docs/optional-pages.md
+    title: Metadata Overview
+  version-history.md:
+    title: Versioning
+  ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.md:
+    title: MII ImplementationGuide Resource
+  translationinfo.md:
+    title: Translation Information
+parameters:
+  path-resource:
+    - input/predefined-resources
+  path-pages:
+    - input/intro-notes # Custom introductory notes
+  i18n-default-lang: en # Default language
+  i18n-lang:
+    - de # Additional languages
+  translation-sources:
+    - input/translations/de # Path to German translations
+  excludexml: false
+  excludejson: false
+  excludettl: true
+  excludemap: false
+  logging:
+    - init
+    - progress
+    - context
+    - html
+    - tx
+  pin-canonicals: pin-all
+  path-expansion-params: '../../input/resources/Parameters-expansion-manifest.json'
+  pin-manifest: 'mii-param-mtb-manifest'
+  suppress-mappings:
+    - http://hl7.org/v3
+    - http://hl7.org/v3/cda
+  # Canonicals this IG defines that do NOT start with the module canonical
+  # (docs/recipes/regenerate-special-url.md; measured from fsh-generated):
+  special-url:
+    - https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-care-plan
+    - https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-ngs-report
+    - https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record
+    - https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata
 instanceOptions:
-  # When set to true, slices must be referred to by name and not only by a numeric index in order to be used
-  # in an Instance's assignment rule. All slices appear in the order in which they are specified in FSH rules.
-  # While SUSHI defaults to false for legacy reasons, manualSliceOrding is recommended for new projects.
   manualSliceOrdering: true # true | false
-  # Determines for which types of Instances SUSHI will automatically set meta.profile
-  # if InstanceOf references a profile:
-  #
-  # setMetaProfile: always # always | never | inline-only | standalone-only
-  #
-  #
-  # Determines for which types of Instances SUSHI will automatically set id
-  # if InstanceOf references a profile:
-  #
-  # setId: always # always | standalone-only
