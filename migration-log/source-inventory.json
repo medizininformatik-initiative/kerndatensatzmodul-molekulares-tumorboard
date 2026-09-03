@@ -1,0 +1,2375 @@
+{
+ "generated": "step 1 source inventory",
+ "source_commit": "624b767",
+ "fsh": {
+  "Alias": [
+   {
+    "name": "$mii-pr-patho-base-observation",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-pr-patho-service-request",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-pr-patho-specimen",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-intention",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-primaertumor-diagnosesicherung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-residualstatus",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-therapie-stellungzurop",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-therapie-typ",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-therapieabweichung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-therapieplanung-typ",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-therapie-grund-ende",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-pr-onko-specimen",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-onko-systemische-therapie-intention",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-verlauf-lymphknoten",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-verlauf-gesamtbeurteilung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-onko-verlauf-primaertumor",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-pr-medikation-medication-request",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-pr-molgen-diagnostische-implikation",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-pr-molgen-therapeutische-implikation",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-lm-mtb",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-antrag-kostenuebernahme-antragsstadium",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-antwort-kostenuebernahme-entscheidung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-auftrag-begruendung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-bestimmungsmethode-tumorzellgehalt",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-systemische-therapie-status-grund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-follow-up-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-her2neu-interpretation",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-leitlinienbehandlung-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-molekulare-biomarker",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-empfehlung-evidenzgrad",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-empfehlung-status-begruendung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-zulassungsstatus",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-therapiestatusgrund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-antrag-kostenuebernahme-antragsstadium",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-antwort-kostenuebernahme-antragsstadium",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-diagnose",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-ngs-bericht-genomic-study",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-genomic-study-analysis-qc",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-empfehlung-evidenzgraduierung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-empfehlung-publikation",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-empfehlung-prioritaet",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-therapielinie",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-leitlinie-dokumentation",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-leitlinienbehandlung-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-zulassungsstatus",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-therapiestatusgrund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-kostenuebernahme-ablehnungsgrund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-antrag-kostenuebernahme-antragsstadium",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-antrag-kostenuebernahme",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-antwort-kostenuebernahme-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-antwort-kostenuebernahme-entscheidung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-antwort-kostenuebernahme-entscheidung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-auftrag-begruendung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-bestimmungsmethode-tumorzellgehalt",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-systemische-therapie-status-grund",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-follow-up-grund-nicht-umsetzung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-follow-up-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-leitlinienbehandlung-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-molekulare-biomarker",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-empfehlung-evidenzgrad",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-empfehlung-status-begruendung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-tumorausbreitung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-who-grad-tumor-zns",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-zulassungsstatus",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-dosisdichte",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-dosisdichte",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-response-befund-beurteilung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-response-befund-beurteilung",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-response-befund-beurteilungsmethode",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-response-befund-beurteilungsmethode",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-oncotree",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-msi",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-msi-method-type",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-msi-method-type",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-genomic-analysis-method-type",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-genomic-analysis-method-type",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-systemische-therapie-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-cs-mtb-genomicanalysis-devicefunction",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-mmr-proficiency",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-mmr-expression",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-ish-method",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-vs-mtb-immunohistochemistry-specific-codes",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$condition-ver-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$fhir-claim-type",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$fhir-observation-category",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$hl7-organization-type",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$hl7-v2-0074",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$hl7-v2-0203",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$hl7-v3-observation-interpretation",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$hl7-v3-observation-high-low-codes",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$hl7-v3-observation-value",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$medicationrequest-intent",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$medicationrequest-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$process-priority",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$request-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$request-intent",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$systemtherapie-status",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$molecular-biomarker-category",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$fhir-ext-based-on",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$fhir-ext-caused-by",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$ASK",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$ATC_DE",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$ATC_EN",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$EDQM",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$ENS",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$HGNC",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$HGVS",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$ICD10GM",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$ICDO3",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$LNC",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$OPS",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$SCT",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$SNP",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$TBD",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$UCUM",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$UNII",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$UNIPROT",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$NCIT",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$OT",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$bwhc-cnv-type",
+    "file": "input/fsh/Aliases.fsh"
+   },
+   {
+    "name": "$mii-ns-mtb-nct",
+    "file": "input/fsh/NamingSystems.fsh"
+   },
+   {
+    "name": "$mii-ns-studie-drks",
+    "file": "input/fsh/NamingSystems.fsh"
+   },
+   {
+    "name": "$mii-ns-studie-eudract",
+    "file": "input/fsh/NamingSystems.fsh"
+   },
+   {
+    "name": "$exp",
+    "file": "input/fsh/capability-statement.fsh"
+   },
+   {
+    "name": "$mii-cs-consent-category",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "$ngs-category",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   }
+  ],
+  "Instance": [
+   {
+    "name": "mii-ns-mtb-nct",
+    "file": "input/fsh/NamingSystems.fsh"
+   },
+   {
+    "name": "mii-ns-studie-drks",
+    "file": "input/fsh/NamingSystems.fsh"
+   },
+   {
+    "name": "mii-ns-studie-eudract",
+    "file": "input/fsh/NamingSystems.fsh"
+   },
+   {
+    "name": "mii-cps-mtb-capabilitystatement",
+    "file": "input/fsh/capability-statement.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-tumorzellgehalt-aszites",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-auftraege.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-humangenetische-beratung-aszites",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-auftraege.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-histologie-evaluation-aszites",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-auftraege.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-rebiopsie-aszites",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-auftraege.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-behandlungsepisode",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-behandlungsepisode.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-aufklaerung",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-behandlungsepisode.fsh"
+   },
+   {
+    "name": "MTBObservationCA125-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-antigene.fsh"
+   },
+   {
+    "name": "MTBObservationCA125-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-antigene.fsh"
+   },
+   {
+    "name": "MTBObservationCA125-3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-antigene.fsh"
+   },
+   {
+    "name": "MTBObservationCA125-4",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-antigene.fsh"
+   },
+   {
+    "name": "MTBObservationCA125-5",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-antigene.fsh"
+   },
+   {
+    "name": "MTBObservationCA125-6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-antigene.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyReport-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyReport-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-AscitesSpecimen-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-0a-Her2neu",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyInterpret-0a-Her2neu",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-0b-Folat-Ra",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-0c-Trop2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-1-CA125",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-2-Pax8",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-3-WT1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-4-ER",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-5-PR",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-6-p53",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-MolecularPathologyObservation-7-p53",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-cancer-molpatho.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-diagnose",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnose.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-tumorausbreitung",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnose.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-oncotree",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnose.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Procedure-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-4",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Procedure-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-5",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-7",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-8",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Procedure-3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-9",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-10",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-11",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-12",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-13",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-14",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-15",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Procedure-4",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-16",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-17",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-18",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-19",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Procedure-5",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-20",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-21",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-22",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-23",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Procedure-6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-24",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-25",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Procedure-7",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-26",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-27",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-29",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Observation-30",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-diagnostik.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Follow-Up-ClinicalImpression-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-Medication-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-Medication-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-Medication-3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Response-Befund-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-Medication-4",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-Medication-5",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-Medication-6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Response-Befund-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Antrag-Kostenuebernahme-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Antwort-Kostenuebernahme-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-follow-up.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-Specimen-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-histologie.fsh"
+   },
+   {
+    "name": "MTBChemo1Procedure",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement1-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement1-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement2-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement2-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement3-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement3-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement4",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement4-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement4-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement5",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement5-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement5-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement6-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo1MedicationStatement6-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo2Procedure",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo2MedicationStatement1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo2MedicationStatement2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo2MedicationStatement3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo2MedicationStatement4",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo2MedicationStatement5",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "MTBChemo2MedicationStatement6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-ngs-bericht",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-genomic-study",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-genomic-study-analysis-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-genomic-study-analysis-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-genomic-study-analysis-3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-DiagnostischeImplikation-TP53",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-CNVariante-CCNE1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-ngs-bericht.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-request-cldn6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-eligibility-criteria",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-eligibility-criteria-age-groups",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-comparison-group-0",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-evidence-variable-0",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-comparison-group-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-evidence-variable-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-sponsor-biontech",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-investigator-biontech",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-0",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-2",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-3",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-4",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-5",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-6",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-7",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-8",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-9",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-10",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-cldn6-location-11",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-tedova",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-request-tedova",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-ccne1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-study-request-ccne1",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-studienempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-medication-request-mirvetuximab",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-medication-request-trastuzumab-deruxtecan",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-medication-request-adavosertib",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-medication-request-carboplatin",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-request-group-adavosertib-carboplatin",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-medication-request-lunresertib",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-medication-request-camonsertib",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-request-group-lunresertib-camonsertib",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-medication-request-cobimetinib",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieempfehlungen.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-therapieplan",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-therapieplan.fsh"
+   },
+   {
+    "name": "MyHospital",
+    "file": "input/fsh/examples/bundle/addendums.fsh"
+   },
+   {
+    "name": "MyCoverage",
+    "file": "input/fsh/examples/bundle/addendums.fsh"
+   },
+   {
+    "name": "MyInsurer",
+    "file": "input/fsh/examples/bundle/addendums.fsh"
+   },
+   {
+    "name": "PatientKimMusterperson-PrimaryDiagnosis-2",
+    "file": "input/fsh/examples/bundle/external.fsh"
+   },
+   {
+    "name": "mii-exa-onko-allgemeiner-leistungszustand-ecog",
+    "file": "input/fsh/examples/bundle/external.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-kim-musterperson-bundle",
+    "file": "input/fsh/examples/bundle/mii-exa-mtb-kim-musterperson-bundle.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-patient",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-exa-mtb-patient.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-therapieempfehlung-dabrafenib",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-exa-mtb-therapieempfehlung-dabrafenib.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-therapieempfehlung-kombinationstherapie",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-exa-mtb-therapieempfehlung-kombinationstherapie.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-therapieempfehlung-trametinib",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-exa-mtb-therapieempfehlung-trametinib.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-therapieplan-kombinationstherapie",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-exa-mtb-therapieplan-kombinationstherapie.fsh"
+   },
+   {
+    "name": "mii-cm-mtb-therapiestatusgrund-obds",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-cm-mtb-therapiestatusgrund-obds.fsh"
+   },
+   {
+    "name": "mii-cm-mtb-therapiestatusgrund-sct",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-cm-mtb-therapiestatusgrund-sct.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-behandlungsepisode-1",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-exa-mtb-behandlungsepisode.fsh"
+   },
+   {
+    "name": "mii-exa-mtb-who-grad-tumor-zns-1",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-exa-mtb-who-grad-tumor-zns.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1",
+    "file": "input/fsh/profiles/Follow-Up/mii-exa-mtb-follow-up-clinicalimpression.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Response-Befund-Beispiel-1",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-exa-mtb-response-befund-1.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemische-Therapie-Medication-Beispiel-1",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-exa-mtb-systemische-therapie-medication-statement-1.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Systemtherapie-Beispiel-1",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-exa-mtb-systemtherapie-1.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-exa-mtb-antrag-kostenuebernahme-1.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-exa-mtb-antwort-kostenuebernahme-1.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-BRCAness-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-brcaness.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Copy-Number-Variant-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-copy-number-variant.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Diagnostische-Implikation-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-diagnostische-implikation.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-DNA-Fusion-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-dna-fusion.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Einfache-Variante",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-einfache-variante.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-GenomicStudy-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-genomic-study.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-GenomicStudyAnalysis-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-genomic-study.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Device-Sequencer-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-genomic-study.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Device-SequencingKit-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-genomic-study.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Device-LibraryPreparation-Kit-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-genomic-study.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-HRD-Score-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-hrd-score.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Mikrosatelliteninstabilitaet-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-mikrosatelliteninstabilitaet.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Mutationslast-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-mutationslast.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-Ploidie-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-ploidie.fsh"
+   },
+   {
+    "name": "MII-EXA-MTB-RNA-Fusion-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-exa-mtb-rna-fusion.fsh"
+   }
+  ],
+  "RuleSet": [
+   {
+    "name": "SupportResource",
+    "file": "input/fsh/capability-statement.fsh"
+   },
+   {
+    "name": "Profile",
+    "file": "input/fsh/capability-statement.fsh"
+   },
+   {
+    "name": "SupportProfile",
+    "file": "input/fsh/capability-statement.fsh"
+   },
+   {
+    "name": "SupportInteraction",
+    "file": "input/fsh/capability-statement.fsh"
+   },
+   {
+    "name": "SupportSearchParam",
+    "file": "input/fsh/capability-statement.fsh"
+   },
+   {
+    "name": "BeschlussTherapieplan",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Beschluss-Therapieplan.fsh"
+   },
+   {
+    "name": "BeschlussTherapieplanMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Beschluss-Therapieplan.fsh"
+   },
+   {
+    "name": "EvidenzLevel",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Evidenz-Level.fsh"
+   },
+   {
+    "name": "EvidenzLevelMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Evidenz-Level.fsh"
+   },
+   {
+    "name": "HistologieReevaluationAuftrag",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Histologie-Reevaluation-Auftrag.fsh"
+   },
+   {
+    "name": "HistologieReevaluationAuftragMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Histologie-Reevaluation-Auftrag.fsh"
+   },
+   {
+    "name": "HumangenetischeBeratungAuftrag",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Humangenetische-Beratung-Auftrag.fsh"
+   },
+   {
+    "name": "HumangenetischeBeratungAuftragMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Humangenetische-Beratung-Auftrag.fsh"
+   },
+   {
+    "name": "Publikationen",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Publikationen.fsh"
+   },
+   {
+    "name": "PublikationenMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Publikationen.fsh"
+   },
+   {
+    "name": "RebiopsieAuftrag",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Rebiopsie-Auftrag.fsh"
+   },
+   {
+    "name": "RebiopsieAuftragMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Rebiopsie-Auftrag.fsh"
+   },
+   {
+    "name": "Studieneinschlussempfehlung",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Studieneinschlussempfehlung.fsh"
+   },
+   {
+    "name": "StudieneinschlussempfehlungMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Studieneinschlussempfehlung.fsh"
+   },
+   {
+    "name": "Therapieempfehlungen",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Therapieempfehlungen.fsh"
+   },
+   {
+    "name": "TherapieempfehlungenMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Therapieempfehlungen.fsh"
+   },
+   {
+    "name": "Tumorzellgehalt",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Tumorzellgehalt.fsh"
+   },
+   {
+    "name": "TumorzellgehaltMapping",
+    "file": "input/fsh/logical-model/Beschluss-Therapieplan/Tumorzellgehalt.fsh"
+   },
+   {
+    "name": "Behandlungsepisode",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Behandlungsepisode.fsh"
+   },
+   {
+    "name": "BehandlungsepisodeMapping",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Behandlungsepisode.fsh"
+   },
+   {
+    "name": "Diagnose",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Diagnose.fsh"
+   },
+   {
+    "name": "DiagnoseMapping",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Diagnose.fsh"
+   },
+   {
+    "name": "ECOG",
+    "file": "input/fsh/logical-model/Behandlungsepisode/ECOG.fsh"
+   },
+   {
+    "name": "ECOGMapping",
+    "file": "input/fsh/logical-model/Behandlungsepisode/ECOG.fsh"
+   },
+   {
+    "name": "Einwilligung",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Einwilligung.fsh"
+   },
+   {
+    "name": "EinwilligungMapping",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Einwilligung.fsh"
+   },
+   {
+    "name": "Vortherapie",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Votherapie.fsh"
+   },
+   {
+    "name": "VortherapieMapping",
+    "file": "input/fsh/logical-model/Behandlungsepisode/Votherapie.fsh"
+   },
+   {
+    "name": "DNPMCoding",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-shared.fsh"
+   },
+   {
+    "name": "DNPMReference",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-shared.fsh"
+   },
+   {
+    "name": "DNPMPeriod",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-shared.fsh"
+   },
+   {
+    "name": "DNPMExternalId",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-shared.fsh"
+   },
+   {
+    "name": "DNPMGeneCoding",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-shared.fsh"
+   },
+   {
+    "name": "AntragKostenuebernahme",
+    "file": "input/fsh/logical-model/Follow-Up/Antrag-Kostenuebernahme.fsh"
+   },
+   {
+    "name": "AntragKostenuebernahmeMapping",
+    "file": "input/fsh/logical-model/Follow-Up/Antrag-Kostenuebernahme.fsh"
+   },
+   {
+    "name": "AntwortKostenuebernahme",
+    "file": "input/fsh/logical-model/Follow-Up/Antwort-Kostenuebernahme.fsh"
+   },
+   {
+    "name": "AntwortKostenuebernahmeMapping",
+    "file": "input/fsh/logical-model/Follow-Up/Antwort-Kostenuebernahme.fsh"
+   },
+   {
+    "name": "FollowUp",
+    "file": "input/fsh/logical-model/Follow-Up/Follow-Up.fsh"
+   },
+   {
+    "name": "FollowUpMapping",
+    "file": "input/fsh/logical-model/Follow-Up/Follow-Up.fsh"
+   },
+   {
+    "name": "ResponseBefund",
+    "file": "input/fsh/logical-model/Follow-Up/Response-Befund.fsh"
+   },
+   {
+    "name": "ResponseBefundMapping",
+    "file": "input/fsh/logical-model/Follow-Up/Response-Befund.fsh"
+   },
+   {
+    "name": "SystemischeTherapie",
+    "file": "input/fsh/logical-model/Follow-Up/Systemische-Therapie.fsh"
+   },
+   {
+    "name": "SystemischeTherapieMapping",
+    "file": "input/fsh/logical-model/Follow-Up/Systemische-Therapie.fsh"
+   },
+   {
+    "name": "BRCAness",
+    "file": "input/fsh/logical-model/NGS-Bericht/BRCAness.fsh"
+   },
+   {
+    "name": "BRCAnessMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/BRCAness.fsh"
+   },
+   {
+    "name": "CopyNumberVariant",
+    "file": "input/fsh/logical-model/NGS-Bericht/Copy-Number-Variante.fsh"
+   },
+   {
+    "name": "CopyNumberVariantMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Copy-Number-Variante.fsh"
+   },
+   {
+    "name": "DNAFusionPartner",
+    "file": "input/fsh/logical-model/NGS-Bericht/DNA-Fusion-Partner.fsh"
+   },
+   {
+    "name": "DNAFusionPartnerMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/DNA-Fusion-Partner.fsh"
+   },
+   {
+    "name": "DNAFusion",
+    "file": "input/fsh/logical-model/NGS-Bericht/DNA-Fusion.fsh"
+   },
+   {
+    "name": "DNAFusionMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/DNA-Fusion.fsh"
+   },
+   {
+    "name": "EinfacheVariante",
+    "file": "input/fsh/logical-model/NGS-Bericht/Einfache-Variante.fsh"
+   },
+   {
+    "name": "EinfacheVarianteMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Einfache-Variante.fsh"
+   },
+   {
+    "name": "HRDScore",
+    "file": "input/fsh/logical-model/NGS-Bericht/HRD-Score.fsh"
+   },
+   {
+    "name": "HRDScoreMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/HRD-Score.fsh"
+   },
+   {
+    "name": "MicroSatelliteInstabilities",
+    "file": "input/fsh/logical-model/NGS-Bericht/Micro-Satellite-Instabilities.fsh"
+   },
+   {
+    "name": "MicroSatelliteInstabilitiesMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Micro-Satellite-Instabilities.fsh"
+   },
+   {
+    "name": "Molekularpathologie",
+    "file": "input/fsh/logical-model/NGS-Bericht/Molekularpathologie.fsh"
+   },
+   {
+    "name": "IHCBefund",
+    "file": "input/fsh/logical-model/NGS-Bericht/Molekularpathologie.fsh"
+   },
+   {
+    "name": "ISHBefund",
+    "file": "input/fsh/logical-model/NGS-Bericht/Molekularpathologie.fsh"
+   },
+   {
+    "name": "MolekularpathologieMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Molekularpathologie.fsh"
+   },
+   {
+    "name": "IHCBefundMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Molekularpathologie.fsh"
+   },
+   {
+    "name": "ISHBefundMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Molekularpathologie.fsh"
+   },
+   {
+    "name": "NGSBericht",
+    "file": "input/fsh/logical-model/NGS-Bericht/NGS-Bericht.fsh"
+   },
+   {
+    "name": "NGSBerichtMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/NGS-Bericht.fsh"
+   },
+   {
+    "name": "Ploidie",
+    "file": "input/fsh/logical-model/NGS-Bericht/Ploidie.fsh"
+   },
+   {
+    "name": "PloidieMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Ploidie.fsh"
+   },
+   {
+    "name": "Positionsbereich",
+    "file": "input/fsh/logical-model/NGS-Bericht/Positionsbereich.fsh"
+   },
+   {
+    "name": "PositionsbereichMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Positionsbereich.fsh"
+   },
+   {
+    "name": "QC",
+    "file": "input/fsh/logical-model/NGS-Bericht/QC.fsh"
+   },
+   {
+    "name": "QCMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/QC.fsh"
+   },
+   {
+    "name": "RNAFusionPartner",
+    "file": "input/fsh/logical-model/NGS-Bericht/RNA-Fusion-Partner.fsh"
+   },
+   {
+    "name": "RNAFusionPartnerMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/RNA-Fusion-Partner.fsh"
+   },
+   {
+    "name": "RNAFusion",
+    "file": "input/fsh/logical-model/NGS-Bericht/RNA-Fusion.fsh"
+   },
+   {
+    "name": "RNAFusionMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/RNA-Fusion.fsh"
+   },
+   {
+    "name": "RNASeq",
+    "file": "input/fsh/logical-model/NGS-Bericht/RNA-Seq.fsh"
+   },
+   {
+    "name": "RNASeqMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/RNA-Seq.fsh"
+   },
+   {
+    "name": "TumorMutationalBurden",
+    "file": "input/fsh/logical-model/NGS-Bericht/Tumor-Mutational-Burden.fsh"
+   },
+   {
+    "name": "TumorMutationalBurdenMapping",
+    "file": "input/fsh/logical-model/NGS-Bericht/Tumor-Mutational-Burden.fsh"
+   },
+   {
+    "name": "Header",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "PR_Header",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "CM_Header(url,",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "EX_Header(url)",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "CS_Header(url)",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "VS_Header(url)",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "LM_Header(url)",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "Example_Header(canonical)",
+    "file": "input/fsh/common/Header.fsh"
+   },
+   {
+    "name": "Meta",
+    "file": "input/fsh/common/Meta.fsh"
+   },
+   {
+    "name": "CM_Meta(url)",
+    "file": "input/fsh/common/Meta.fsh"
+   },
+   {
+    "name": "CS_VS_Meta(url)",
+    "file": "input/fsh/common/Meta.fsh"
+   },
+   {
+    "name": "CS_Meta(url)",
+    "file": "input/fsh/common/Meta.fsh"
+   },
+   {
+    "name": "VS_Meta(url)",
+    "file": "input/fsh/common/Meta.fsh"
+   },
+   {
+    "name": "EX_Meta(url)",
+    "file": "input/fsh/common/Meta.fsh"
+   },
+   {
+    "name": "LM_Meta(url)",
+    "file": "input/fsh/common/Meta.fsh"
+   },
+   {
+    "name": "Publisher",
+    "file": "input/fsh/common/Publisher.fsh"
+   },
+   {
+    "name": "SP_Publisher",
+    "file": "input/fsh/common/Publisher.fsh"
+   },
+   {
+    "name": "Status",
+    "file": "input/fsh/common/Status.fsh"
+   },
+   {
+    "name": "Translation(path,",
+    "file": "input/fsh/common/Translation.fsh"
+   },
+   {
+    "name": "Version",
+    "file": "input/fsh/common/Version.fsh"
+   },
+   {
+    "name": "PR_CS_VS_Version",
+    "file": "input/fsh/common/Version.fsh"
+   },
+   {
+    "name": "MetaProfile(canonical)",
+    "file": "input/fsh/common/Version.fsh"
+   },
+   {
+    "name": "BeschlussPrioritaet(prio)",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "BeschlussSubPrioritaet(prio)",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "BeschlussEvidenzgrad(grad)",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "BeschlussEvidenzPublikation(quelle,",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "BeschlussEvidenz(grad,",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "BeschlussEvidenzZweiPublikationen(grad,",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "BeschlussEvidenzZweiQuellen(grad,",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "BeschlussEvidenzDreiQuellen(grad,",
+    "file": "input/fsh/examples/aliases-rulesets.fsh"
+   },
+   {
+    "name": "SystemTherapyMedicationStatement(text,",
+    "file": "input/fsh/examples/mii-exa-mtb-kim-musterperson-medikation.fsh"
+   },
+   {
+    "name": "BundleResource(type,id)",
+    "file": "input/fsh/examples/bundle/mii-exa-mtb-kim-musterperson-bundle.fsh"
+   }
+  ],
+  "Logical": [
+   {
+    "name": "MII_LM_MTB",
+    "file": "input/fsh/logical-model/Molekulares-Tumorboard.fsh"
+   },
+   {
+    "name": "DNPM_LM_CarePlan",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-care-plan.fsh"
+   },
+   {
+    "name": "DNPM_LM_NGSReport",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-ngs-report.fsh"
+   },
+   {
+    "name": "DNPM_LM_PatientRecord",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-patient-record.fsh"
+   }
+  ],
+  "Mapping": [
+   {
+    "name": "MII_MAP_MTB",
+    "file": "input/fsh/logical-model/Molekulares-Tumorboard.fsh"
+   },
+   {
+    "name": "DNPM_to_MII_FHIR",
+    "file": "input/fsh/logical-model/dnpm/dnpm-lm-mapping-mii-fhir.fsh"
+   }
+  ],
+  "CodeSystem": [
+   {
+    "name": "MII_CS_MTB_AuftragBegruendung",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-cs-mtb-auftrag-begruendung.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_BestimmungsmethodeTumorzellgehalt",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Empfehlung_Evidenzgrad",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-cs-mtb-empfehlung-evidenzgrad.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Empfehlung_StatusBegruendung",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-cs-mtb-empfehlung-status-begruendung.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Leitlinienbehandlung_Status",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-cs-mtb-leitlinienbehandlung-status.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Therapiestatusgrund",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-cs-mtb-therapiestatusgrund-mvgenomseq.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Zulassungsstatus",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-cs-mtb-zulassungsstatus.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Follow_Up_Status",
+    "file": "input/fsh/profiles/Follow-Up/mii-cs-mtb-follow-up-status.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Response_Befund_Beurteilungsmethode",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-cs-mtb-beurteilungsmethode.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Dosisdichte",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-cs-mtb-dosisdichte.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Response_Befund_Beurteilung",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-cs-mtb-response-befund-beurteilung.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-cs-mtb-antwort-kostenuebernahme-antragsstadium.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-cs-mtb-genomic-analysis-device-function.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Genomic_Analysis_Method_Type",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-cs-mtb-genomic-analysis-method-type.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_Molekulare_Biomarker",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-cs-mtb-molekulare-biomarker.fsh"
+   },
+   {
+    "name": "MII_CS_MTB_MSI_Method_Type",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-cs-mtb-msi-method-type.fsh"
+   }
+  ],
+  "Extension": [
+   {
+    "name": "MII_EX_MTB_Diagnose",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-ex-mtb-diagnose.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Empfehlung_Publikation",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-ex-mtb-empfehlung-evidenzgraduierung-publikation.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Empfehlung_Evidenzgraduierung",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-ex-mtb-empfehlung-evidenzgraduierung.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Empfehlung_Prioritaet",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-ex-mtb-empfehlung-prioritaet.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Leitlinie_Dokumentation",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-ex-mtb-leitlinie-dokumentation.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Leitlinienbehandlung_Status",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-ex-mtb-leitlinienbehandlung-status.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-ex-mtb-antwort-kostenuebernahme-entscheidung.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_GenomicStudyAnalysis_QC",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-ex-mtb-genomic-study-analysis-metrics.fsh"
+   },
+   {
+    "name": "MII_EX_MTB_NGS_Bericht_Genomic_Study",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-ngs-bericht.fsh"
+   }
+  ],
+  "Profile": [
+   {
+    "name": "MII_PR_MTB_Histologie_Evaluation_Auftrag",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-histologie-evaluation-auftrag.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Humangenetische_Beratung_Auftrag",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-humangenetische-beratung-auftrag.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Biopsie_Auftrag",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-rebiopsie-auftrag.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Studie",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-studie.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Studieneinschluss_Anfrage",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-studieneinschluss-anfrage.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Therapieempfehlung_Kombination",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-therapieempfehlung-kombination.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Therapieempfehlung",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-therapieempfehlung.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Therapieplan",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-therapieplan.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Tumorzellgehalt",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-pr-mtb-tumorzellgehalt.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Behandlungsepisode",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-pr-mtb-behandlungsepisode.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Consent_Given",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-pr-mtb-consent-given.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Diagnose_Primaertumor",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-pr-mtb-diagnose.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Oncotree",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-pr-mtb-oncotree.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Systemische_Vortherapie",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-pr-mtb-systemische-vortherapie.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Tumorausbreitung",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-pr-mtb-tumorausbreitung.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_WHO_Grad_Tumor_ZNS",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-pr-mtb-who-grad-tumor-zns.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Follow_Up_ClinicalImpression",
+    "file": "input/fsh/profiles/Follow-Up/mii-pr-mtb-follow-up-clinicalimpression.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Response_Befund",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-pr-mtb-response-befund.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Systemische_Therapie_Medication_Statement",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-pr-mtb-systemische-therapie-medication-statement.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Systemische_Therapie",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-pr-mtb-systemische-therapie.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Antrag_Kostenuebernahme",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-pr-mtb-antrag-kostenuebernahme.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Antwort_Kostenuebernahme",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-pr-mtb-antwort-kostenuebernahme.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_BRCAness",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-brcaness.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Copy_Number_Variant",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-copy-number-variant.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Diagnostische_Implikation",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-diagnostische-implikation.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_DNA_Fusion",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-dna-fusion.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Einfache_Variante",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-einfache-variante.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Genomic_Study_Analysis",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-genomic-study-analysis.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Genomic_Study_Device",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-genomic-study-device.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Genomic_Study",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-genomic-study.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_HISTOCHEMISTRY",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-histochemistry.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_HRD_Score",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-hrd-score.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry-her2.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_INSITUHYBRIDIZATION_HER2",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry-her2.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_BIOMARKER_HER2_STATUS",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry-her2.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Immunohistochemistry_MSI",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry-msi.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Immunohistochemistry_PDL1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry-pdl1.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Immunohistochemistry_Phosphorylation",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry-phosphorylation.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Immunohistochemistry",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Immunohistochemistry_MMR",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry_mmr.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Biomarker_InSituHybridization",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-insituhybridization.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Mikrosatelliteninstabilitaet",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-mikrosatelliteninstabilitaet.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Molecular_Pathology_Report",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-molecular-pathology-report.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Molekularer_Biomarker",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-molukularer-biomarker.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Mutationslast",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-mutationslast.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_NGS_Bericht",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-ngs-bericht.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Ploidie",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-ploidie.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_RNA_Fusion",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-rna-fusion.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_RNA_Seq",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-rna-seq.fsh"
+   },
+   {
+    "name": "MII_PR_MTB_Therapeutische_Implikation",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-therapeutische-implikation.fsh"
+   }
+  ],
+  "ValueSet": [
+   {
+    "name": "MII_VS_MTB_AuftragBegruendung",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-vs-mtb-auftrag-begruendung.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_BestimmungsmethodeTumorzellgehalt",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Empfehlung_EvidenzgradZusatzverweis",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Empfehlung_Evidenzgrad",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-vs-mtb-empfehlung-evidenzgrad.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Empfehlung_StatusBegruendung",
+    "file": "input/fsh/profiles/Beschluss-Therapieplan/mii-vs-mtb-empfehlung-status-begruendung.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Leitlinienbehandlung_Status",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-vs-mtb-leitlinienbehandlung-status.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_OncoTree",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-vs-mtb-oncotree.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Therapiestatusgrund",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-vs-mtb-therapiestatusgrund.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Tumorausbreitung",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-vs-mtb-tumorausbreitung.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_WHO_Grad_Tumor_ZNS",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-vs-mtb-who-grad-tumor-zns.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Zulassungsstatus",
+    "file": "input/fsh/profiles/Behandlungsepisode/mii-vs-mtb-zulassungsstatus.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung",
+    "file": "input/fsh/profiles/Follow-Up/mii-vs-mtb-follow-up-grund-nicht-umsetzung.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Follow_Up_Status",
+    "file": "input/fsh/profiles/Follow-Up/mii-vs-mtb-follow-up-status.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Beurteilungsmethode",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-cs-mtb-beurteilungsmethode.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Dosisdichte",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-cs-mtb-dosisdichte.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Response_Befund_Beurteilung",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-cs-mtb-response-befund-beurteilung.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Systemische_Therapie_Status",
+    "file": "input/fsh/profiles/Follow-Up/Systemtherapie/mii-vs-mtb-systemische-therapie-status.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Antrag_Kostenuebernahme_Type",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-vs-mtb-antrag-kostenuebernahme-type.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-vs-mtb-antwort-kostenuebernahme-antragsstadium.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund",
+    "file": "input/fsh/profiles/Follow-Up/Kostenuebernahme/mii-vs-mtb-antwort-kostenuebernahme-antragsstadium.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Genomic_Analysis_Method_Type",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-genomic-analysis-method-type.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Immunhistochemistry_Specific_Codes",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-immunhistochemistry-targets.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_ISH_Method",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-ish-method.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_MMR_Expression",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-mmr-expression.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_MMR_Proficiency",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-mmr-proficiency.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Molekulare_Biomarker",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-molekulare-biomarker.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_MSI_Method_Type",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-msi-method-type.fsh"
+   },
+   {
+    "name": "MII_VS_MTB_Microsatellite_Instability",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-vs-mtb-msi.fsh"
+   }
+  ],
+  "Invariant": [
+   {
+    "name": "mii-mtb-ihc-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-immunohistochemistry.fsh"
+   },
+   {
+    "name": "mii-mtb-ish-1",
+    "file": "input/fsh/profiles/NGS-Bericht/mii-pr-mtb-insituhybridization.fsh"
+   }
+  ]
+ },
+ "pages": [
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/BeschreibungModulModul.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/Kommentierungsphase.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/KontextimGesamtprojektBezgezuanderenModulen.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/Referenzen.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/ReleaseNotes.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/CapabilityStatement.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/DNPM-Transformation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/Profile-Beziehungen-und-Referenzen.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/Profile-Inhalt-und-Vererbung.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/QA-Validierung.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/Terminologien.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Behandlungsepisode-ClinicalImpression.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Consent-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Systemische-Vortherapie-Procedure.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieplan-CarePlan.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Weitere-Empfehlungen/Biopsie-Auftrag-ServiceRequest.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Weitere-Empfehlungen/Histologie-Evaluation-Auftrag-ServiceRequest.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Weitere-Empfehlungen/Human-genetische-Beratung-Auftrag-ServiceRequest.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Weitere-Empfehlungen/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Kombinationstherapie-Empfehlung-RequestGroup-Alias.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Kombinationstherapie-Empfehlung-RequestGroup.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Therapieempfehlung-MedicationRequest.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Evidenzgraduierung-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Prioritaet-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Publikation-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Studieneinschlussempfehlung/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Studieneinschlussempfehlung/Studieneinschluss-Anfrage-ServiceRequest.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Studieneinschlussempfehlung/Studieneinschluss-Studie-ResearchStudy.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Diagnose/Diagnose-Primaertumor-Condition.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Diagnose/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Diagnose/Oncotree-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Diagnose/Tumorausbreitung-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Diagnose/WHO-Grad-ZNS-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Leitlinienbehandlung-Status-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Leitliniendokumentation-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Therapielinie-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Zulassungsstatus-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Probe/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Probe/Tumorzellgehalt-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Molekular-Pathologie-Befund-DiagnosticReport.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Immunhistochemie/Immunhistochemie-HER2-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Immunhistochemie/Immunhistochemie-MMR-MSI-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Immunhistochemie/Immunhistochemie-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Immunhistochemie/Immunhistochemie-PDL1-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Immunhistochemie/Immunhistochemie-Phosphorylation-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Immunhistochemie/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/Immunhistochemie/P-Immunhistochemie-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/In-Situ-Hybridization/In-Situ-Hybridization-HER2-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/In-Situ-Hybridization/In-Situ-Hybridization-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Molekular-Pathologie-Befund/In-Situ-Hybridization/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Follow-Up-ClinicalImpression.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Systemische-Therapie/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Systemische-Therapie/Systemische-MTB-Therapie-Procedure.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Systemische-Therapie/Systemische-Therapie-Medication-Statement-Medication-Statement.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Systemische-Therapie/Befund-Response/Befund-Response-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Systemische-Therapie/Befund-Response/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Antwort-Kostenuebernahme-ClaimResponse/Ablehnungsgrund-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Antwort-Kostenuebernahme-ClaimResponse/Entscheidung-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Antwort-Kostenuebernahme-ClaimResponse/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Antrag-Kostenuebernahme-Claim/Antragsstadium-Extension.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Antrag-Kostenuebernahme-Claim/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/NGS-Bericht-DiagnosticReport.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Genetische-Implikationen/Diagnostische-Implikation-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Genetische-Implikationen/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Genetische-Implikationen/Therapeutische-Implikation-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/RNA-Seq/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/RNA-Seq/RNA-Seq-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Variante/Copy-Number-Variant-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Variante/DNA-Fusion-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Variante/Einfache-Variante-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Variante/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Variante/RNA-Fusion-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/BRCAness-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/HER2-Status-Biomarker-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/HRD-Score-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/MSI-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/Mikrosatelliteninstabilitaet-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/Molekularer-Biomarker-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/Mutationslast-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/Ploidie-Observation.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Genomic-Study/Genomic-Study-Device-Device.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Genomic-Study/Genomic-Study-Procedure.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Genomic-Study/Genomics-Study-Analysis-Procedure.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Genomic-Study/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/AnwendungsflleInformationsmodell/Datenstzeinkl.Beschreibungen.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/AnwendungsflleInformationsmodell/Index.page.md",
+  "implementation-guides/ImplementationGuide-2026.x-DE/MIIIGModulMTB/AnwendungsflleInformationsmodell/UML.page.md"
+ ],
+ "other_narrative": [
+  "input/pagecontent/index.md",
+  "README.md",
+  "QUESTIONS.md",
+  "TICKET_RESOLUTION_STATUS.md",
+  "known_errors.text"
+ ],
+ "counts": {
+  "fsh": {
+   "Alias": 131,
+   "Instance": 192,
+   "RuleSet": 116,
+   "Logical": 4,
+   "Mapping": 2,
+   "CodeSystem": 19,
+   "Extension": 11,
+   "Profile": 50,
+   "ValueSet": 29,
+   "Invariant": 2
+  },
+  "pages": 101
+ }
+}
