@@ -4457,3 +4457,14 @@
     §5.1b.4). Escalated, not ignored: every item behind it belongs in the
     report's ① decision queue, named individually (spec §10.3, §10.6).
 2026-09-03T18:28:06Z  INFO   9  pull-request  PR #165 opened: https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/pull/165 base=dev (the repo's integration branch — merged PRs and CONTRIBUTING convention; dev is NOT the publication branch, main/tags are, so merging does not publish); branch migration/2026.0.1-template-v0.13.2; report as PR description. NOT published; Gates A-D open.
+2026-09-04T12:01:20Z  INFO   log  run-boundary  ===== run 3 starts  run=3 label=preview-vs-git-tree cross-check (user-supplied preview URL) cwd=/Users/thome/code/fhir-profiling/mtb-template-migration log=migration-log/run.log
+    Every line below belongs to run 3; the lines above are earlier invocations.
+    Per-step raw logs (migration-log/<ACTION>.log) hold THIS run only -- `run`
+    truncates each one and rolls the previous attempt over to <ACTION>.prev.log.
+2026-09-04T12:01:20Z  INFO   5.1d  guide-harvest  guide root fetched  cmd=`curl -sL https://simplifier.net/guide/mii-ig-molekulares-tumorboard-v2026-de?version=current`  http=200 bytes=106362
+2026-09-04T12:01:20Z  ERROR  5.1d  guide-harvest  no-page-links: the page returned 200 but carries no guide page links  url=https://simplifier.net/guide/mii-ig-molekulares-tumorboard-v2026-de?version=current
+    Either --guide-url is a PROJECT page (client-rendered: that URL space really
+    does deliver an application shell) rather than a /guide/<key>/<Root> URL,
+    or the guide renders differently than measured. Do NOT conclude that the
+    module has no narrative -- see the authenticated project download, spec 5.1d.1.
+2026-09-04T12:11:36Z  INFO   5.1c  preview-crosscheck  user-supplied preview URL harvested and compared against the git tree @624b767 (2026-09-04): page tree 63 leaf pages + folder nodes == the source tocs exactly (0 preview-only pages; the 10 non-Index git-only pages are toc-orphans the SOURCE's own toc.yaml files omit — incl. the broken entry 'Plodie-Observation.page.mdg' [typo, .mdg] in Molekularer-Biomarker/toc.yaml — all 10 were migrated anyway); per-page prose containment after entity-unescaping: every residual missing run is directive/markup glue (FQL bodies, {{tree}} placeholder whitespace, style blocks, markdown link syntax), and the one real-difference candidate (CapabilityStatement.page.md) eyeballed IDENTICAL incl. the source typos. CONCLUSION: live preview == git tree; the migration missed no Simplifier-only content. Note: guide-harvest.sh found 0 links on this guide because its hrefs keep the literal .page.md suffix (the measured reference guide de-punctuates) — upstream skill finding.
