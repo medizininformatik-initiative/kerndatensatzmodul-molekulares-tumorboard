@@ -7,7 +7,7 @@ Description: "Beispiel für WHO Grad Tumor"
 * insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns)
 * status = #final
 
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 * focus = Reference(Condition/PrimaertumorDiagnose-1)
 * effectiveDateTime = 2023-03-01
 * code.coding = $SCT#396921005 "WHO grade finding for central nervous system tumor"

@@ -7,7 +7,7 @@ Description: "Beispiel für aktuellen Gesundheitszustand und bisherige Behandlun
 * insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode)
 * status = #completed
 
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 
 * effectivePeriod.start = 2023-03-01
 * effectivePeriod.end = 2023-05-31

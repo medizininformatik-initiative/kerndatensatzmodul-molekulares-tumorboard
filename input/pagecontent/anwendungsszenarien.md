@@ -88,6 +88,8 @@ WHO type: serous carcinoma (ICD-O M-8461/3), unknown primary localization, bilat
 
 The findings support the presence of cells of the known high-grade serous ovarian carcinoma in the ascites.
 
+### Molecular tumor board {#molecular-tumor-board}
+
 #### Treatment episode
 
 | Date | Procedure | Description / assessment |

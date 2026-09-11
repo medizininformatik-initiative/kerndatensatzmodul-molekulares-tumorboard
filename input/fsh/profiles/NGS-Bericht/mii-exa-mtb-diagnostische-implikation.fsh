@@ -8,7 +8,7 @@ Description: "Beispiel fuer diagnostische Implikation im Kontext des Molecular T
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $TBD#diagnostic-implication "Diagnostic Implication"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 * performer = Reference(Practitioner/example)
 * derivedFrom[variant] = Reference(Observation/EinfacheVarianteExample)
 

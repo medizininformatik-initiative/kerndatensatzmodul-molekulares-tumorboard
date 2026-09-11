@@ -10,7 +10,7 @@ Description: "Beispiel fuer eine RNA-Fusion (EML4-ALK) in Tumorzellen."
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 
 // 5' Partner (EML4)
 * component[five-prime-gene].code = $mii-cs-mtb-molekulare-biomarker#five-prime-gene

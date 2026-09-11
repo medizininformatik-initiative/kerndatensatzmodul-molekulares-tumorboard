@@ -8,7 +8,7 @@ Description: "Beispiel fuer PDL1 Immunhistochemie mit Berechnung der relvanten S
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $SCT#1234806008 "Observation using immunohistochemistry (observable entity)"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 * encounter = Reference(Encounter/example)
 * valueQuantity = 2.61 $UCUM#% 
 * specimen = Reference(Specimen/example)

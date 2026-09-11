@@ -6,7 +6,7 @@ Title: "Beispiel fuer eine Antwort auf den Antrag auf Kostenuebernahme"
 * insert Example_Header(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme)
 * type = #institutional
 * use = #claim
-* patient = Reference(Patient/example)
+* patient = Reference(Patient/mii-exa-mtb-patient)
 * created = "2024-07-07"
 * insurer = Reference(Organization/InstitutionID)
 * request = Reference(MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1)
