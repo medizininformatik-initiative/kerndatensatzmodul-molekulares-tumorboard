@@ -22,13 +22,11 @@ Profile: [MII PR MTB Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast
 
 **subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**encounter**: [Encounter/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/example)
-
 **value**: 21 Mutations/Megabase (Details: UCUM code1/1000000{Base} = '1/1000000{Base}')
 
 **interpretation**: High
 
-**specimen**: [Specimen/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Specimen/example)
+**specimen**: [Specimen: status = available; type = Tissue specimen](Specimen-mii-exa-mtb-specimen.md)
 
 
 
@@ -65,9 +63,6 @@ Profile: [MII PR MTB Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast
   "subject" : {
     "reference" : "Patient/mii-exa-mtb-patient"
   },
-  "encounter" : {
-    "reference" : "Encounter/example"
-  },
   "valueQuantity" : {
     "value" : 21,
     "unit" : "Mutations/Megabase",
@@ -82,7 +77,7 @@ Profile: [MII PR MTB Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast
     }]
   }],
   "specimen" : {
-    "reference" : "Specimen/example"
+    "reference" : "Specimen/mii-exa-mtb-specimen"
   }
 }
 

@@ -22,15 +22,11 @@ Profile: [MII PR MTB HRD Score](StructureDefinition-mii-pr-mtb-hrd-score.md) ver
 
 **subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**encounter**: [Encounter/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/example)
-
-**performer**: [Practitioner/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/example)
-
 **value**: 43
 
 **interpretation**: High
 
-**specimen**: [Specimen/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Specimen/example)
+**specimen**: [Specimen: status = available; type = Tissue specimen](Specimen-mii-exa-mtb-specimen.md)
 
 > **component****code**: Loss of Heterozygosity**value**: 14
 
@@ -79,12 +75,6 @@ Profile: [MII PR MTB HRD Score](StructureDefinition-mii-pr-mtb-hrd-score.md) ver
   "subject" : {
     "reference" : "Patient/mii-exa-mtb-patient"
   },
-  "encounter" : {
-    "reference" : "Encounter/example"
-  },
-  "performer" : [{
-    "reference" : "Practitioner/example"
-  }],
   "valueInteger" : 43,
   "interpretation" : [{
     "coding" : [{
@@ -94,7 +84,7 @@ Profile: [MII PR MTB HRD Score](StructureDefinition-mii-pr-mtb-hrd-score.md) ver
     }]
   }],
   "specimen" : {
-    "reference" : "Specimen/example"
+    "reference" : "Specimen/mii-exa-mtb-specimen"
   },
   "component" : [{
     "code" : {

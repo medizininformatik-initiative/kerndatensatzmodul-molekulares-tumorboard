@@ -18,31 +18,27 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
 
 **status**: Completed
 
-**subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
+**subject**: [Kim Musterperson (no stated gender), DoB: 1956-03-14](Patient-PatientKimMusterperson.md)
 
 **effective**: 2023-03-01 --> 2023-05-31
 
-**problem**: [Condition/PrimaertumorDiagnose-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/PrimaertumorDiagnose-1)
+**problem**: [Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet](Condition-mii-exa-mtb-kim-diagnose.md)
 
-> **investigation****code**: Family history taking (procedure)**item**: [FamilyMemberHistory/KrankengeschichteFamilie-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/FamilyMemberHistory/KrankengeschichteFamilie-1)
+> **investigation****code**: Eastern Cooperative Oncology Group scale for physical assessment (assessment scale)**item**: [Observation ECOG performance status](Observation-mii-exa-onko-allgemeiner-leistungszustand-ecog.md)
 
-> **investigation****code**: Eastern Cooperative Oncology Group scale for physical assessment (assessment scale)**item**: [Observation/ECOG-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Observation/ECOG-1)
+> **investigation****code**: Molecular testing, diagnostic (procedure)**item**: [Diagnostic Report for 'Genetic analysis report' for '->Kim Musterperson (no stated gender), DoB: 1956-03-14'](DiagnosticReport-mii-exa-mtb-kim-musterperson-ngs-bericht.md)
 
-> **investigation****code**: Molecular testing, diagnostic (procedure)**item**: [DiagnosticReport/NgsBericht-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/DiagnosticReport/NgsBericht-1)
+> **investigation****code**: Anatomic pathology procedure (procedure)**item**: [Diagnostic Report for 'Pathology synoptic report' for '->Kim Musterperson (no stated gender), DoB: 1956-03-14'](DiagnosticReport-PatientKimMusterperson-MolecularPathologyReport-1.md)
 
-> **investigation****code**: Molecular testing, diagnostic (procedure)**item**: [DiagnosticReport/NgsBericht-2](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/DiagnosticReport/NgsBericht-2)
-
-> **investigation****code**: Anatomic pathology procedure (procedure)**item**: [DiagnosticReport/MolekularPathologieBefund-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/DiagnosticReport/MolekularPathologieBefund-1)
-
-> **investigation****code**: Was consent given**item**: [Observation/ConsentGiven-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Observation/ConsentGiven-1)
+> **investigation****code**: Was consent given**item**: [Observation Was consent given](Observation-mii-exa-mtb-kim-musterperson-aufklaerung.md)
 
 **supportingInfo**: 
 
-* [DiagnosticReport/Bildbefund-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/DiagnosticReport/Bildbefund-1)
-* [Procedure/SystemischeVortherapie-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/SystemischeVortherapie-1)
-* [Procedure/OperativeVortherapie-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/OperativeVortherapie-1)
-* [Procedure/SystemischeVortherapie-2](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/SystemischeVortherapie-2)
-* [CarePlan/Therapieplan-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/CarePlan/Therapieplan-1)
+* [Diagnostic Report for 'Pathology synoptic report' for '->Kim Musterperson (no stated gender), DoB: 1956-03-14'](DiagnosticReport-PatientKimMusterperson-MolecularPathologyReport-1.md)
+* [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-PatientKimMusterperson-SystemicTherapy-1.md)
+* [Procedure Computertomographie [CT], nativ](Procedure-PatientKimMusterperson-Procedure-4.md)
+* [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-PatientKimMusterperson-SystemicTherapy-2.md)
+* [CarePlan: status = active; intent = plan; category = prätherapeutische Tumorkonferenz (Festlegung der Therapiestrategie); created = 2023-03-28](CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.md)
 
 
 
@@ -64,28 +60,16 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
   }],
   "status" : "completed",
   "subject" : {
-    "reference" : "Patient/mii-exa-mtb-patient"
+    "reference" : "Patient/PatientKimMusterperson"
   },
   "effectivePeriod" : {
     "start" : "2023-03-01",
     "end" : "2023-05-31"
   },
   "problem" : [{
-    "reference" : "Condition/PrimaertumorDiagnose-1"
+    "reference" : "Condition/mii-exa-mtb-kim-diagnose"
   }],
   "investigation" : [{
-    "code" : {
-      "coding" : [{
-        "system" : "http://snomed.info/sct",
-        "code" : "410551005",
-        "display" : "Family history taking (procedure)"
-      }]
-    },
-    "item" : [{
-      "reference" : "FamilyMemberHistory/KrankengeschichteFamilie-1"
-    }]
-  },
-  {
     "code" : {
       "coding" : [{
         "system" : "http://snomed.info/sct",
@@ -94,7 +78,7 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
       }]
     },
     "item" : [{
-      "reference" : "Observation/ECOG-1"
+      "reference" : "Observation/mii-exa-onko-allgemeiner-leistungszustand-ecog"
     }]
   },
   {
@@ -106,19 +90,7 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
       }]
     },
     "item" : [{
-      "reference" : "DiagnosticReport/NgsBericht-1"
-    }]
-  },
-  {
-    "code" : {
-      "coding" : [{
-        "system" : "http://snomed.info/sct",
-        "code" : "396927009",
-        "display" : "Molecular testing, diagnostic (procedure)"
-      }]
-    },
-    "item" : [{
-      "reference" : "DiagnosticReport/NgsBericht-2"
+      "reference" : "DiagnosticReport/mii-exa-mtb-kim-musterperson-ngs-bericht"
     }]
   },
   {
@@ -130,7 +102,7 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
       }]
     },
     "item" : [{
-      "reference" : "DiagnosticReport/MolekularPathologieBefund-1"
+      "reference" : "DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1"
     }]
   },
   {
@@ -142,11 +114,11 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
       }]
     },
     "item" : [{
-      "reference" : "Observation/ConsentGiven-1"
+      "reference" : "Observation/mii-exa-mtb-kim-musterperson-aufklaerung"
     }]
   }],
   "supportingInfo" : [{
-    "reference" : "DiagnosticReport/Bildbefund-1"
+    "reference" : "DiagnosticReport/PatientKimMusterperson-MolecularPathologyReport-1"
   },
   {
     "extension" : [{
@@ -165,7 +137,7 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
       }],
       "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
     }],
-    "reference" : "Procedure/SystemischeVortherapie-1"
+    "reference" : "Procedure/PatientKimMusterperson-SystemicTherapy-1"
   },
   {
     "extension" : [{
@@ -175,7 +147,7 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
       }],
       "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
     }],
-    "reference" : "Procedure/OperativeVortherapie-1"
+    "reference" : "Procedure/PatientKimMusterperson-Procedure-4"
   },
   {
     "extension" : [{
@@ -194,10 +166,10 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
       }],
       "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation"
     }],
-    "reference" : "Procedure/SystemischeVortherapie-2"
+    "reference" : "Procedure/PatientKimMusterperson-SystemicTherapy-2"
   },
   {
-    "reference" : "CarePlan/Therapieplan-1"
+    "reference" : "CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"
   }]
 }
 

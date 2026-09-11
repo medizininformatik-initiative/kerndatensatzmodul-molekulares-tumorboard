@@ -33,7 +33,7 @@ Profile: [MII PR Medikation MedicationStatement](https://medizininformatik-initi
 Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22
 
 
-> **dosage**
+> **dosage****timing**: Events: 2023-07-16 
 
 ### DoseAndRates
 
@@ -82,6 +82,9 @@ Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22
     "text" : "Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
   }],
   "dosage" : [{
+    "timing" : {
+      "event" : ["2023-07-16"]
+    },
     "doseAndRate" : [{
       "doseQuantity" : {
         "value" : 6,

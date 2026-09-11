@@ -18,7 +18,7 @@ Profile: [MII PR MTB Clinical Impresssion](StructureDefinition-mii-pr-mtb-follow
 
 **code**: Follow-up encounter (procedure)
 
-**subject**: [Patient/PatientExample](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/PatientExample)
+**subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
 **effective**: 2024-07-07
 
@@ -33,9 +33,9 @@ Profile: [MII PR MTB Clinical Impresssion](StructureDefinition-mii-pr-mtb-follow
 
 **supportingInfo**: 
 
-* [MII_PR_MTB_Systemische_Therapie/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/MII_PR_MTB_Systemische_Therapie/Example)
-* [MII_PR_MTB_Antrag_Kostenuebernahme/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/MII_PR_MTB_Antrag_Kostenuebernahme/Example)
-* [MII_PR_MTB_Antwort_Kostenuebernahme/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/MII_PR_MTB_Antwort_Kostenuebernahme/Example)
+* [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-MII-EXA-MTB-Systemtherapie-Beispiel-1.md)
+* [Claim: status = active; type = institutional; use = claim; created = 2024-07-07; priority = Normal](Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.md)
+* [ClaimResponse: extension = Abgelehnt,Andere Therapie vorgeschlagen; status = active; type = institutional; use = claim; created = 2024-07-07; outcome = complete](ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1.md)
 
 
 
@@ -57,7 +57,7 @@ Profile: [MII PR MTB Clinical Impresssion](StructureDefinition-mii-pr-mtb-follow
     }]
   },
   "subject" : {
-    "reference" : "Patient/PatientExample"
+    "reference" : "Patient/mii-exa-mtb-patient"
   },
   "effectiveDateTime" : "2024-07-07",
   "previous" : {
@@ -72,13 +72,13 @@ Profile: [MII PR MTB Clinical Impresssion](StructureDefinition-mii-pr-mtb-follow
     }
   }],
   "supportingInfo" : [{
-    "reference" : "MII_PR_MTB_Systemische_Therapie/Example"
+    "reference" : "Procedure/MII-EXA-MTB-Systemtherapie-Beispiel-1"
   },
   {
-    "reference" : "MII_PR_MTB_Antrag_Kostenuebernahme/Example"
+    "reference" : "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1"
   },
   {
-    "reference" : "MII_PR_MTB_Antwort_Kostenuebernahme/Example"
+    "reference" : "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-Beispiel-1"
   }]
 }
 

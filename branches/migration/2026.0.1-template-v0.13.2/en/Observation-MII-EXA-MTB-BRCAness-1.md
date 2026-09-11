@@ -22,11 +22,9 @@ Profile: [MII PR MTB BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md) versi
 
 **subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**encounter**: [Encounter/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/example)
-
 **interpretation**: High
 
-**specimen**: [Specimen/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Specimen/example)
+**specimen**: [Specimen: status = available; type = Tissue specimen](Specimen-mii-exa-mtb-specimen.md)
 
 ### Components
 
@@ -75,9 +73,6 @@ Profile: [MII PR MTB BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md) versi
   "subject" : {
     "reference" : "Patient/mii-exa-mtb-patient"
   },
-  "encounter" : {
-    "reference" : "Encounter/example"
-  },
   "interpretation" : [{
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
@@ -86,7 +81,7 @@ Profile: [MII PR MTB BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md) versi
     }]
   }],
   "specimen" : {
-    "reference" : "Specimen/example"
+    "reference" : "Specimen/mii-exa-mtb-specimen"
   },
   "component" : [{
     "code" : {

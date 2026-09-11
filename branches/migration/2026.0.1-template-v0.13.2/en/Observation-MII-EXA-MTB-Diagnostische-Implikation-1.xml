@@ -7,7 +7,7 @@
   </meta>
   <language value="en"/>
   <text>
-    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation MII-EXA-MTB-Diagnostische-Implikation-1</b></p><a name="MII-EXA-MTB-Diagnostische-Implikation-1"> </a><a name="hcMII-EXA-MTB-Diagnostische-Implikation-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-diagnostische-implikation.html">MII PR MTB Diagnostische Implikation</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 GE}">Genetics</span></p><p><b>code</b>: <span title="Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs diagnostic-implication}">Diagnostic Implication</span></p><p><b>subject</b>: <a href="Patient-mii-exa-mtb-patient.html">Maxim Muster  (no stated gender), DoB Unknown</a></p><p><b>performer</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/example">Practitioner/example</a></p><p><b>derivedFrom</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Observation/EinfacheVarianteExample">Observation/EinfacheVarianteExample</a></p><h3>Components</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://loinc.org 53037-8}">Genetic variation clinical significance [Imp]</span></td><td><span title="Codes:{http://loinc.org LA6668-3}">Pathogenic</span></td></tr></table></div>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation MII-EXA-MTB-Diagnostische-Implikation-1</b></p><a name="MII-EXA-MTB-Diagnostische-Implikation-1"> </a><a name="hcMII-EXA-MTB-Diagnostische-Implikation-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-diagnostische-implikation.html">MII PR MTB Diagnostische Implikation</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 GE}">Genetics</span></p><p><b>code</b>: <span title="Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs diagnostic-implication}">Diagnostic Implication</span></p><p><b>subject</b>: <a href="Patient-mii-exa-mtb-patient.html">Maxim Muster  (no stated gender), DoB Unknown</a></p><p><b>derivedFrom</b>: <a href="Observation-MII-EXA-MTB-Einfache-Variante.html">Observation Genetic variant assessment</a></p><h3>Components</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://loinc.org 53037-8}">Genetic variation clinical significance [Imp]</span></td><td><span title="Codes:{http://loinc.org LA6668-3}">Pathogenic</span></td></tr></table></div>
   </text>
   <status value="final"/>
   <category>
@@ -33,11 +33,8 @@
   <subject>
     <reference value="Patient/mii-exa-mtb-patient"/>
   </subject>
-  <performer>
-    <reference value="Practitioner/example"/>
-  </performer>
   <derivedFrom>
-    <reference value="Observation/EinfacheVarianteExample"/>
+    <reference value="Observation/MII-EXA-MTB-Einfache-Variante"/>
   </derivedFrom>
   <component>
     <code>

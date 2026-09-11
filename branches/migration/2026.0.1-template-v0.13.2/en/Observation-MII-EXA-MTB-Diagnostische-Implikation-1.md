@@ -22,9 +22,7 @@ Profile: [MII PR MTB Diagnostische Implikation](StructureDefinition-mii-pr-mtb-d
 
 **subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**performer**: [Practitioner/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/example)
-
-**derivedFrom**: [Observation/EinfacheVarianteExample](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Observation/EinfacheVarianteExample)
+**derivedFrom**: [Observation Genetic variant assessment](Observation-MII-EXA-MTB-Einfache-Variante.md)
 
 ### Components
 
@@ -68,11 +66,8 @@ Profile: [MII PR MTB Diagnostische Implikation](StructureDefinition-mii-pr-mtb-d
   "subject" : {
     "reference" : "Patient/mii-exa-mtb-patient"
   },
-  "performer" : [{
-    "reference" : "Practitioner/example"
-  }],
   "derivedFrom" : [{
-    "reference" : "Observation/EinfacheVarianteExample"
+    "reference" : "Observation/MII-EXA-MTB-Einfache-Variante"
   }],
   "component" : [{
     "code" : {

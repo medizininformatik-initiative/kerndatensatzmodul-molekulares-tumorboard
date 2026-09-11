@@ -7,7 +7,7 @@
   "language" : "en",
   "text" : {
     "status" : "generated",
-    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Observation MII-EXA-MTB-Mikrosatelliteninstabilitaet-1</b></p><a name=\"MII-EXA-MTB-Mikrosatelliteninstabilitaet-1\"> </a><a name=\"hcMII-EXA-MTB-Mikrosatelliteninstabilitaet-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html\">MII PR MTB Mikrosatelliteninstabilität</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span>, <span title=\"Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs biomarker-category}\">A characterization of a given biomarker observation.</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 81695-9}\">Microsatellite instability [Interpretation] in Cancer specimen Qualitative</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-mtb-patient.html\">Maxim Muster  (no stated gender), DoB Unknown</a></p><p><b>encounter</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/example\">Encounter/example</a></p><p><b>value</b>: 2.61 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://loinc.org LA14122-8}\">Stable</span></p><p><b>method</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type bioinformatic}\">Sequenzierung</span></p><p><b>specimen</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Specimen/example\">Specimen/example</a></p></div>"
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Observation MII-EXA-MTB-Mikrosatelliteninstabilitaet-1</b></p><a name=\"MII-EXA-MTB-Mikrosatelliteninstabilitaet-1\"> </a><a name=\"hcMII-EXA-MTB-Mikrosatelliteninstabilitaet-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html\">MII PR MTB Mikrosatelliteninstabilität</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span>, <span title=\"Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs biomarker-category}\">A characterization of a given biomarker observation.</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 81695-9}\">Microsatellite instability [Interpretation] in Cancer specimen Qualitative</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-mtb-patient.html\">Maxim Muster  (no stated gender), DoB Unknown</a></p><p><b>value</b>: 2.61 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://loinc.org LA14122-8}\">Stable</span></p><p><b>method</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type bioinformatic}\">Sequenzierung</span></p><p><b>specimen</b>: <a href=\"Specimen-mii-exa-mtb-specimen.html\">Specimen: status = available; type = Tissue specimen</a></p></div>"
   },
   "status" : "final",
   "category" : [{
@@ -33,9 +33,6 @@
   "subject" : {
     "reference" : "Patient/mii-exa-mtb-patient"
   },
-  "encounter" : {
-    "reference" : "Encounter/example"
-  },
   "valueQuantity" : {
     "value" : 2.61,
     "system" : "http://unitsofmeasure.org",
@@ -56,6 +53,6 @@
     }]
   },
   "specimen" : {
-    "reference" : "Specimen/example"
+    "reference" : "Specimen/mii-exa-mtb-specimen"
   }
 }

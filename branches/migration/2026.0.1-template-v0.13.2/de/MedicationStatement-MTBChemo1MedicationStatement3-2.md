@@ -34,7 +34,7 @@ Profile: [MII PR Onkologie Systemische Therapie Medikation](https://simplifier.n
 Z3 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2 d1
 
 
-> **dosage**
+> **dosage****timing**: Events: 2023-03-01 
 
 ### DoseAndRates
 
@@ -76,6 +76,9 @@ Z3 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2 d1
     "text" : "Z3 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2 d1"
   }],
   "dosage" : [{
+    "timing" : {
+      "event" : ["2023-03-01"]
+    },
     "doseAndRate" : [{
       "doseQuantity" : {
         "value" : 30,

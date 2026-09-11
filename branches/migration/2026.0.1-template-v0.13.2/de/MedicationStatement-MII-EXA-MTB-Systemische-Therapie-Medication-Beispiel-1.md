@@ -33,7 +33,7 @@ Profiles: [MII PR MTB Systemtherapie Medication Statement](StructureDefinition-m
 24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22
 
 
-> **dosage**
+> **dosage****timing**: Events: 2023-06-24 
 
 ### DoseAndRates
 
@@ -86,6 +86,9 @@ Profiles: [MII PR MTB Systemtherapie Medication Statement](StructureDefinition-m
     "text" : "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
   }],
   "dosage" : [{
+    "timing" : {
+      "event" : ["2023-06-24"]
+    },
     "doseAndRate" : [{
       "type" : {
         "coding" : [{

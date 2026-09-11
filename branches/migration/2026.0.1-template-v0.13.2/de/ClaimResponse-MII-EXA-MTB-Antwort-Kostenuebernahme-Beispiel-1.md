@@ -28,7 +28,7 @@ Profile: [MII PR MTB Anwort Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
 
 **created**: 2024-07-07
 
-**insurer**: [Organization/InstitutionID](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Organization/InstitutionID)
+**insurer**: [Organization Example Health Insurance Co.](Organization-MyInsurer.md)
 
 **request**: [Claim: status = active; type = institutional; use = claim; created = 2024-07-07; priority = Normal](Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1.md)
 
@@ -75,7 +75,7 @@ Profile: [MII PR MTB Anwort Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
   },
   "created" : "2024-07-07",
   "insurer" : {
-    "reference" : "Organization/InstitutionID"
+    "reference" : "Organization/MyInsurer"
   },
   "request" : {
     "reference" : "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1"

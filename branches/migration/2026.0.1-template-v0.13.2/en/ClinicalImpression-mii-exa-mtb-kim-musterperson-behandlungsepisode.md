@@ -51,17 +51,17 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
 * [Observation Mediastinal lymph node group](Observation-PatientKimMusterperson-Observation-14.md)
 * [Observation Mediastinal lymph node group](Observation-PatientKimMusterperson-Observation-15.md)
 * [Procedure Computertomographie [CT], nativ](Procedure-PatientKimMusterperson-Procedure-4.md)
-* [Procedure/PatientKimMusterperson-Procedure-4a](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/PatientKimMusterperson-Procedure-4a)
-* [Procedure/PatientKimMusterperson-Procedure-4b](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/PatientKimMusterperson-Procedure-4b)
-* [Procedure/PatientKimMusterperson-Procedure-4c](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/PatientKimMusterperson-Procedure-4c)
-* [Procedure/PatientKimMusterperson-Procedure-4d](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/PatientKimMusterperson-Procedure-4d)
+* [Procedure Resektion von Gewebe in der Bauchregion ohne sichere Organzuordnung: Intraperitoneal](Procedure-PatientKimMusterperson-Procedure-4a.md)
+* [Procedure Uterusexstirpation [Hysterektomie]](Procedure-PatientKimMusterperson-Procedure-4b.md)
+* [Procedure Salpingektomie](Procedure-PatientKimMusterperson-Procedure-4c.md)
+* [Procedure Lokale Exzision und Destruktion von erkranktem Gewebe der Leber (atypische Leberresektion)](Procedure-PatientKimMusterperson-Procedure-4d.md)
 * [Observation Progressive](Observation-PatientKimMusterperson-Observation-16.md)
 * [Observation Entire peritoneal serous membrane of peritoneum](Observation-PatientKimMusterperson-Observation-17.md)
 * [Observation Carcinomatosis of peritoneum](Observation-PatientKimMusterperson-Observation-18.md)
 * [Observation True pelvis](Observation-PatientKimMusterperson-Observation-19.md)
-* [Procedure/PatientKimMusterperson-SystemicTherapy-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/PatientKimMusterperson-SystemicTherapy-1)
-* [Procedure/PatientKimMusterperson-SystemicTherapy-2](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/PatientKimMusterperson-SystemicTherapy-2)
-* [Procedure/PatientKimMusterperson-SystemicTherapy-3](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/PatientKimMusterperson-SystemicTherapy-3)
+* [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-PatientKimMusterperson-SystemicTherapy-1.md)
+* [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-PatientKimMusterperson-SystemicTherapy-2.md)
+* [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-PatientKimMusterperson-SystemicTherapy-3.md)
 * [Procedure Chemotherapy](Procedure-MTBChemo1Procedure.md)
 * [Procedure Computertomographie [CT], nativ](Procedure-PatientKimMusterperson-Procedure-5.md)
 * [Observation Ascites](Observation-PatientKimMusterperson-Observation-20.md)
@@ -75,7 +75,6 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
 * [Procedure Computertomographie [CT], nativ](Procedure-PatientKimMusterperson-Procedure-7.md)
 * [Observation True pelvis](Observation-PatientKimMusterperson-Observation-26.md)
 * [Observation Status post (contextual qualifier) (qualifier value)](Observation-PatientKimMusterperson-Observation-27.md)
-* [Observation/PatientKimMusterperson-Observation-28](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Observation/PatientKimMusterperson-Observation-28)
 * [Observation Mediastinal lymph node group](Observation-PatientKimMusterperson-Observation-29.md)
 * [Observation Mediastinal lymph node group](Observation-PatientKimMusterperson-Observation-30.md)
 
@@ -277,9 +276,6 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
   },
   {
     "reference" : "Observation/PatientKimMusterperson-Observation-27"
-  },
-  {
-    "reference" : "Observation/PatientKimMusterperson-Observation-28"
   },
   {
     "reference" : "Observation/PatientKimMusterperson-Observation-29"

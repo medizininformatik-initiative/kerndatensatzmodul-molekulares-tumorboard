@@ -229,6 +229,7 @@ These are example instances that show what data produced and consumed by systems
 | [ Beispiel fuer einen Sequencer  ](Device-MII-EXA-MTB-Device-Sequencer-1.md) |  |
 | [ Beispiel für ein Library Preparation Kit  ](Device-MII-EXA-MTB-Device-LibraryPreparation-Kit-1.md) |  |
 | [ Beispiel für ein SequencingKit  ](Device-MII-EXA-MTB-Device-SequencingKit-1.md) |  |
+| [ Beispiel-Probe (Tumorgewebe)  ](Specimen-mii-exa-mtb-specimen.md) | Generische Tumorgewebe-Probe als Referenzziel der Profil-Beispiele. |
 | [ Bestätigte Primärdiagnose  ](Condition-mii-exa-mtb-kim-diagnose.md) | Bestätigte Primärdiagnose C48.2 für Kim Musterperson |
 | [ BioNTech Cell & Gene Therapies GmbH  ](Organization-mii-exa-mtb-study-sponsor-biontech.md) | Sponsor: BioNTech Cell & Gene Therapies GmbH |
 | [ BioNTech Responsible Person  ](PractitionerRole-mii-exa-mtb-study-investigator-biontech.md) | Investigator: BioNTech Responsible Person, BioNTech SE |
@@ -361,10 +362,17 @@ These are example instances that show what data produced and consumed by systems
 | [ PatientKimMusterperson-Procedure-2  ](Procedure-PatientKimMusterperson-Procedure-2.md) | 15.07.22 CT T/A |
 | [ PatientKimMusterperson-Procedure-3  ](Procedure-PatientKimMusterperson-Procedure-3.md) | 19.10.22 CT T/A |
 | [ PatientKimMusterperson-Procedure-4  ](Procedure-PatientKimMusterperson-Procedure-4.md) | 19.12.22 CT T/A |
+| [ PatientKimMusterperson-Procedure-4a  ](Procedure-PatientKimMusterperson-Procedure-4a.md) | 30.09.2021 OP Intervalldebulking mittels Längsschnittlaparotomie, Tumorresektion mittels Hysterektomie, bilateraler Adnexektomie, und atpyischer Lebersegmentresektion (Seg. II und V). Postoperativ: R0. |
+| [ PatientKimMusterperson-Procedure-4b  ](Procedure-PatientKimMusterperson-Procedure-4b.md) | 30.09.2021 OP Intervalldebulking mittels Längsschnittlaparotomie, Tumorresektion mittels Hysterektomie, bilateraler Adnexektomie, und atpyischer Lebersegmentresektion (Seg. II und V). Postoperativ: R0. |
+| [ PatientKimMusterperson-Procedure-4c  ](Procedure-PatientKimMusterperson-Procedure-4c.md) | 30.09.2021 OP Intervalldebulking mittels Längsschnittlaparotomie, Tumorresektion mittels Hysterektomie, bilateraler Adnexektomie, und atpyischer Lebersegmentresektion (Seg. II und V). Postoperativ: R0. |
+| [ PatientKimMusterperson-Procedure-4d  ](Procedure-PatientKimMusterperson-Procedure-4d.md) | 30.09.2021 OP Intervalldebulking mittels Längsschnittlaparotomie, Tumorresektion mittels Hysterektomie, bilateraler Adnexektomie, und atpyischer Lebersegmentresektion (Seg. II und V). Postoperativ: R0. |
 | [ PatientKimMusterperson-Procedure-5  ](Procedure-PatientKimMusterperson-Procedure-5.md) | 20.03.2023 CT T/A |
 | [ PatientKimMusterperson-Procedure-6  ](Procedure-PatientKimMusterperson-Procedure-6.md) | 20.08.2023 CT T/A |
 | [ PatientKimMusterperson-Procedure-7  ](Procedure-PatientKimMusterperson-Procedure-7.md) | 22.10.2023 CT T/A |
 | [ PatientKimMusterperson-Specimen-1  ](Specimen-PatientKimMusterperson-Specimen-1.md) | 02.01.2023 Histologie (Z 230201/23) |
+| [ PatientKimMusterperson-SystemicTherapy-1  ](Procedure-PatientKimMusterperson-SystemicTherapy-1.md) |  |
+| [ PatientKimMusterperson-SystemicTherapy-2  ](Procedure-PatientKimMusterperson-SystemicTherapy-2.md) |  |
+| [ PatientKimMusterperson-SystemicTherapy-3  ](Procedure-PatientKimMusterperson-SystemicTherapy-3.md) |  |
 | [ Phase 1/2 CLDN6 CAR-T-Zell-Studie  ](ServiceRequest-mii-exa-mtb-study-request-cldn6.md) | Studieneinschlussempfehlung: Phase 1/2 CLDN6 CAR-T-Zell-Studie, Priorität: 2.1 |
 | [ Ploidie Beispiel  ](Observation-MII-EXA-MTB-Ploidie-1.md) | Beispiel für die Gesamtploidie des Tumors. |
 | [ TEDOVA  ](ResearchStudy-mii-exa-mtb-study-tedova.md) | Studie: TEDOVA - OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA |

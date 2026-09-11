@@ -22,15 +22,13 @@ Profile: [MII PR MTB Mikrosatelliteninstabilität](StructureDefinition-mii-pr-mt
 
 **subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**encounter**: [Encounter/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/example)
-
 **value**: 2.61 % (Details: UCUM code% = '%')
 
 **interpretation**: Stable
 
 **method**: Sequenzierung
 
-**specimen**: [Specimen/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Specimen/example)
+**specimen**: [Specimen: status = available; type = Tissue specimen](Specimen-mii-exa-mtb-specimen.md)
 
 
 
@@ -67,9 +65,6 @@ Profile: [MII PR MTB Mikrosatelliteninstabilität](StructureDefinition-mii-pr-mt
   "subject" : {
     "reference" : "Patient/mii-exa-mtb-patient"
   },
-  "encounter" : {
-    "reference" : "Encounter/example"
-  },
   "valueQuantity" : {
     "value" : 2.61,
     "system" : "http://unitsofmeasure.org",
@@ -90,7 +85,7 @@ Profile: [MII PR MTB Mikrosatelliteninstabilität](StructureDefinition-mii-pr-mt
     }]
   },
   "specimen" : {
-    "reference" : "Specimen/example"
+    "reference" : "Specimen/mii-exa-mtb-specimen"
   }
 }
 

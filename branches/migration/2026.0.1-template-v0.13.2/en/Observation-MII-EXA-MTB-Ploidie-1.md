@@ -20,8 +20,6 @@ Profile: [MII PR MTB Ploidie](StructureDefinition-mii-pr-mtb-ploidie.md) version
 
 **code**: DNA Ploidy Analysis
 
-**focus**: [MII_PR_MTB_Diagnose_Primaertumor/example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/MII_PR_MTB_Diagnose_Primaertumor/example)
-
 **value**: 2.4
 
 **interpretation**: High
@@ -57,9 +55,6 @@ Profile: [MII PR MTB Ploidie](StructureDefinition-mii-pr-mtb-ploidie.md) version
       "display" : "DNA Ploidy Analysis"
     }]
   },
-  "focus" : [{
-    "reference" : "MII_PR_MTB_Diagnose_Primaertumor/example"
-  }],
   "valueQuantity" : {
     "value" : 2.4
   },

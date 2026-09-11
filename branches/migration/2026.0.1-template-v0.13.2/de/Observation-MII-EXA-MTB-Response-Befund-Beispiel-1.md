@@ -14,15 +14,15 @@
 
 Profile: [MII PR MTB Response Befund](StructureDefinition-mii-pr-mtb-response-befund.md) version: 2026.0.1
 
-**partOf**: [Procedure/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Procedure/Example)
+**partOf**: [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-MII-EXA-MTB-Systemtherapie-Beispiel-1.md)
 
 **status**: Registered
 
 **code**: Status of regression of tumor (observable entity)
 
-**subject**: [Patient/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/Example)
+**subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**focus**: [Condition/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/Example)
+**focus**: [Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet](Condition-mii-exa-mtb-kim-diagnose.md)
 
 **effective**: 2014-02-12
 
@@ -49,7 +49,7 @@ Profile: [MII PR MTB Response Befund](StructureDefinition-mii-pr-mtb-response-be
     "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund|2026.0.1"]
   },
   "partOf" : [{
-    "reference" : "Procedure/Example"
+    "reference" : "Procedure/MII-EXA-MTB-Systemtherapie-Beispiel-1"
   }],
   "status" : "registered",
   "code" : {
@@ -60,10 +60,10 @@ Profile: [MII PR MTB Response Befund](StructureDefinition-mii-pr-mtb-response-be
     }]
   },
   "subject" : {
-    "reference" : "Patient/Example"
+    "reference" : "Patient/mii-exa-mtb-patient"
   },
   "focus" : [{
-    "reference" : "Condition/Example"
+    "reference" : "Condition/mii-exa-mtb-kim-diagnose"
   }],
   "effectiveDateTime" : "2014-02-12",
   "valueCodeableConcept" : {

@@ -96,7 +96,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-therap
   "name" : "MII_PR_MTB_Therapieempfehlung_Kombination",
   "title" : "MII PR MTB Therapieempfehlung Kombinationstherapie",
   "status" : "active",
-  "date" : "2026-09-11T14:44:50+00:00",
+  "date" : "2026-09-11T15:11:15+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

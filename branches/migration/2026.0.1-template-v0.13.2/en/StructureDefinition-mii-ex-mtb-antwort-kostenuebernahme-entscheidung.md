@@ -53,7 +53,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-mtb-antwor
   "name" : "MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung",
   "title" : "MII EX MTB Antwort Kostenuebernahme Entscheidung",
   "status" : "active",
-  "date" : "2026-09-11T14:44:50+00:00",
+  "date" : "2026-09-11T15:11:15+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

@@ -16,9 +16,9 @@ Profile: [MII PR MTB Systemische Therapie](StructureDefinition-mii-pr-mtb-system
 
 **MII EX Onko Systemische Therapie Intention**: kurativ
 
-**Procedure Caused By**: [MedicationRequest/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/MedicationRequest/Example)
+**Procedure Caused By**: [MedicationRequest: status = active; intent = option; medication[x] = Dabrafenib; authoredOn = 2024-01-01](MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.md)
 
-**basedOn**: [CarePlan/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/CarePlan/Example)
+**basedOn**: [CarePlan: status = active; intent = plan; category = posttherapeutische Tumorkonferenz (manche Tumore werden nicht operiert); created = 2024-08-09](CarePlan-mii-exa-mtb-therapieplan-kombinationstherapie.md)
 
 **status**: Completed
 
@@ -28,7 +28,7 @@ Profile: [MII PR MTB Systemische Therapie](StructureDefinition-mii-pr-mtb-system
 
 **code**: Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie
 
-**subject**: [Patient/Example](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/Example)
+**subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
 **performed**: 2014-02-12 --> 2014-02-12
 
@@ -62,11 +62,11 @@ Test Text!
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/procedure-causedBy",
     "valueReference" : {
-      "reference" : "MedicationRequest/Example"
+      "reference" : "MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"
     }
   }],
   "basedOn" : [{
-    "reference" : "CarePlan/Example"
+    "reference" : "CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie"
   }],
   "status" : "completed",
   "statusReason" : {
@@ -94,7 +94,7 @@ Test Text!
     }]
   },
   "subject" : {
-    "reference" : "Patient/Example"
+    "reference" : "Patient/mii-exa-mtb-patient"
   },
   "performedPeriod" : {
     "start" : "2014-02-12",

@@ -20,8 +20,6 @@ Profile: [MII PR MTB WHO Grad Tumor ZNS](StructureDefinition-mii-pr-mtb-who-grad
 
 **subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**focus**: [Condition/PrimaertumorDiagnose-1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/PrimaertumorDiagnose-1)
-
 **effective**: 2023-03-01
 
 **value**: World Health Organization grade III central nervous system tumor (finding)
@@ -48,9 +46,6 @@ Profile: [MII PR MTB WHO Grad Tumor ZNS](StructureDefinition-mii-pr-mtb-who-grad
   "subject" : {
     "reference" : "Patient/mii-exa-mtb-patient"
   },
-  "focus" : [{
-    "reference" : "Condition/PrimaertumorDiagnose-1"
-  }],
   "effectiveDateTime" : "2023-03-01",
   "valueCodeableConcept" : {
     "coding" : [{

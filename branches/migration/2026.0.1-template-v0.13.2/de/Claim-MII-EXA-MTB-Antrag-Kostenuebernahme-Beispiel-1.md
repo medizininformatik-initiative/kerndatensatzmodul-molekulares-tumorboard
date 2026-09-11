@@ -24,7 +24,7 @@ Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
 
 **created**: 2024-07-07
 
-**provider**: [Organization/InstitutionID](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Organization/InstitutionID)
+**provider**: [Organization Example General Hospital](Organization-MyHospital.md)
 
 **priority**: Normal
 
@@ -35,21 +35,21 @@ Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
 | - | **Relationship** |
 | * | initial-claim |
 
-**prescription**: [MedicationRequest/TherapieempfehlungExample](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/MedicationRequest/TherapieempfehlungExample)
+**prescription**: [MedicationRequest: status = active; intent = option; medication[x] = Dabrafenib; authoredOn = 2024-01-01](MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.md)
 
 ### CareTeams
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **Sequence** | **Provider** | **Responsible** |
-| * | 1 | [Organization/ZPMExample](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Organization/ZPMExample) | true |
+| * | 1 | [Organization Example General Hospital](Organization-MyHospital.md) | true |
 
 ### Insurances
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **Sequence** | **Focal** | **Coverage** |
-| * | 1 | true | [Coverage/CoverageExample](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Coverage/CoverageExample) |
+| * | 1 | true | [Coverage: status = active; type = extended healthcare; period = 2023-01-01 --> 2025-12-31](Coverage-MyCoverage.md) |
 
 
 
@@ -74,7 +74,7 @@ Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
   },
   "created" : "2024-07-07",
   "provider" : {
-    "reference" : "Organization/InstitutionID"
+    "reference" : "Organization/MyHospital"
   },
   "priority" : {
     "coding" : [{
@@ -90,12 +90,12 @@ Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
     }
   }],
   "prescription" : {
-    "reference" : "MedicationRequest/TherapieempfehlungExample"
+    "reference" : "MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"
   },
   "careTeam" : [{
     "sequence" : 1,
     "provider" : {
-      "reference" : "Organization/ZPMExample"
+      "reference" : "Organization/MyHospital"
     },
     "responsible" : true
   }],
@@ -103,7 +103,7 @@ Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
     "sequence" : 1,
     "focal" : true,
     "coverage" : {
-      "reference" : "Coverage/CoverageExample"
+      "reference" : "Coverage/MyCoverage"
     }
   }]
 }

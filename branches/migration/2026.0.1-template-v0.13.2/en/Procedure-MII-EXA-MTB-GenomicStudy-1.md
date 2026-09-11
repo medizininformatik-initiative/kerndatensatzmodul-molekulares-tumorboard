@@ -22,7 +22,7 @@ Profile: [MII PR MTB Genomic Study](StructureDefinition-mii-pr-mtb-genomic-study
 
 **subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
 
-**reasonReference**: [Condition/Primary_Tumor](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/Primary_Tumor)
+**reasonReference**: [Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet](Condition-mii-exa-mtb-kim-diagnose.md)
 
 
 
@@ -52,7 +52,7 @@ Profile: [MII PR MTB Genomic Study](StructureDefinition-mii-pr-mtb-genomic-study
     "reference" : "Patient/mii-exa-mtb-patient"
   },
   "reasonReference" : [{
-    "reference" : "Condition/Primary_Tumor"
+    "reference" : "Condition/mii-exa-mtb-kim-diagnose"
   }]
 }
 
