@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="mii-vs-mtb-ish-method"/>
+  <language value="de"/>
+  <text>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet mii-vs-mtb-ish-method</b></p><a name="de-mii-vs-mtb-ish-method"> </a><a name="de-hcmii-vs-mtb-ish-method"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-DE</p></div><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://snomed.info/id/1363313004">1363313004</a></td><td>In situ hybridization technique (qualifier value)</td></tr><tr><td><a href="http://snomed.info/id/1303773004">1303773004</a></td><td>Fluorescence in situ hybridization technique (qualifier value)</td></tr><tr><td><a href="http://snomed.info/id/787997001">787997001</a></td><td>Chromogenic in situ hybridization (qualifier value)</td></tr><tr><td><a href="http://snomed.info/id/787998006">787998006</a></td><td>Silver in situ hybridization (qualifier value)</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method"/>
+  <version value="2026.0.1"/>
+  <name value="MII_VS_MTB_ISH_Method"/>
+  <title value="MII VS MTB ISH Method"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-09-11T14:44:50+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <description value="In Situ Hybridization technique methods (FISH, CISH, SISH)"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="1363313004"/>
+        <display value="In situ hybridization technique (qualifier value)"/>
+      </concept>
+      <concept>
+        <code value="1303773004"/>
+        <display value="Fluorescence in situ hybridization technique (qualifier value)"/>
+      </concept>
+      <concept>
+        <code value="787997001"/>
+        <display value="Chromogenic in situ hybridization (qualifier value)"/>
+      </concept>
+      <concept>
+        <code value="787998006"/>
+        <display value="Silver in situ hybridization (qualifier value)"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

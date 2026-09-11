@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="mii-cm-mtb-therapiestatusgrund-obds"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ConceptMap mii-cm-mtb-therapiestatusgrund-obds</b></p><a name="mii-cm-mtb-therapiestatusgrund-obds"> </a><a name="hcmii-cm-mtb-therapiestatusgrund-obds"> </a><p>Mapping from <a href="ValueSet-mii-vs-mtb-therapiestatusgrund.html">MII VS Therapiestatusgrund</a> to https://basisdatensatz.de</p><br/><p>Mapping from <a href="CodeSystem-mii-cs-mtb-therapiestatusgrund.html">MII CS Therapiestatusgrund</a> to <code>https://basisdatensatz.de</code></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>patient-refusal (Therapie durch Patient abgelehnt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>V (Patient verweigert weitere Therapie)</td></tr><tr><td>patient-death (Tod)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>T (Patient verstorben)</td></tr><tr><td>chronic-remission (Anhaltende Remission)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>S (Abbruch aus sonstigen Gründen)</td></tr><tr><td>progression</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>P (Abbruch wegen Progress)</td></tr><tr><td>toxicity (Toxizität)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>A (Abbruch wegen Nebenwirkungen)</td></tr><tr><td>deterioration (Zustandsverschlechterung)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>S (Abbruch aus sonstigen Gründen)</td></tr><tr><td>regular-completion (Reguläres Ende)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>E (reguläres Ende)</td></tr><tr><td>regular-completion-with-dosage-reduction (Reguläres Ende mit Dosisreduktion)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>R (reguläres Ende mit Dosisreduktion)</td></tr><tr><td>regular-completion-with-substance-change (Reguläres Ende mit Substanzwechsel)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>W (reguläres Ende mit Substanzwechsel)</td></tr><tr><td>other (Weitere Gründe)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>S (Abbruch aus sonstigen Gründen)</td></tr><tr><td>unknown (Unbekannt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>U (unbekannt)</td></tr></table></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds"/>
+  <version value="2026.0.1"/>
+  <name value="MII CM MTB Therapiestatusgrund oBDS Mapping"/>
+  <title value="MII CM MTB Therapiestatusgrund oBDS Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-05-01"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <description value="Mapping der Codes zur Begründung des Therapiestatus nach oBDS"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Technische Mappings zur Transformation der Therapiestatusgründe nach oBDS"/>
+  <sourceUri value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund"/>
+  <targetUri value="https://basisdatensatz.de"/>
+  <group>
+    <source value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund"/>
+    <target value="https://basisdatensatz.de"/>
+    <element>
+      <code value="patient-refusal"/>
+      <display value="Therapie durch Patient abgelehnt"/>
+      <target>
+        <code value="V"/>
+        <display value="Patient verweigert weitere Therapie"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="patient-death"/>
+      <display value="Tod"/>
+      <target>
+        <code value="T"/>
+        <display value="Patient verstorben"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="chronic-remission"/>
+      <display value="Anhaltende Remission"/>
+      <target>
+        <code value="S"/>
+        <display value="Abbruch aus sonstigen Gründen"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="progression"/>
+      <display value="Progression"/>
+      <target>
+        <code value="P"/>
+        <display value="Abbruch wegen Progress"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="toxicity"/>
+      <display value="Toxizität"/>
+      <target>
+        <code value="A"/>
+        <display value="Abbruch wegen Nebenwirkungen"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="deterioration"/>
+      <display value="Zustandsverschlechterung"/>
+      <target>
+        <code value="S"/>
+        <display value="Abbruch aus sonstigen Gründen"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="regular-completion"/>
+      <display value="Reguläres Ende"/>
+      <target>
+        <code value="E"/>
+        <display value="reguläres Ende"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="regular-completion-with-dosage-reduction"/>
+      <display value="Reguläres Ende mit Dosisreduktion"/>
+      <target>
+        <code value="R"/>
+        <display value="reguläres Ende mit Dosisreduktion"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="regular-completion-with-substance-change"/>
+      <display value="Reguläres Ende mit Substanzwechsel"/>
+      <target>
+        <code value="W"/>
+        <display value="reguläres Ende mit Substanzwechsel"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="other"/>
+      <display value="Weitere Gründe"/>
+      <target>
+        <code value="S"/>
+        <display value="Abbruch aus sonstigen Gründen"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="unknown"/>
+      <display value="Unbekannt"/>
+      <target>
+        <code value="U"/>
+        <display value="unbekannt"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <unmapped>
+      <mode value="fixed"/>
+      <code value="U"/>
+      <display value="unbekannt"/>
+    </unmapped>
+  </group>
+</ConceptMap>

@@ -1,0 +1,115 @@
+{
+  "resourceType" : "ResearchStudy",
+  "id" : "mii-exa-mtb-study-cldn6",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie|2026.0.1"]
+  },
+  "language" : "de",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ResearchStudy mii-exa-mtb-study-cldn6</b></p><a name=\"de-mii-exa-mtb-study-cldn6\"> </a><a name=\"de-hcmii-exa-mtb-study-cldn6\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-studie.html\">MII PR MTB Studie</a> version: 2026.0.1</p></div><p><b>identifier</b>: <a href=\"NamingSystem-mii-ns-mtb-nct.html\" title=\"NamingSystem für Identifikatoren des Nationalen Centrums für Tumorerkrankungen (NCT)\">MII_NS_MTB_NCT</a>/04503278</p><p><b>status</b>: Active</p><p><b>primaryPurposeType</b>: <span title=\"Codes:\">treatment</span></p><p><b>phase</b>: <span title=\"Codes:\">phase-1</span></p><p><b>condition</b>: <span title=\"Codes:{http://snomed.info/sct 369757002}\">Solid tumor configuration</span></p><p><b>keyword</b>: <span title=\"Codes:\">Non-small cell lung cancer (NSCLC)</span></p><p><b>enrollment</b>: <a href=\"Group-mii-exa-mtb-study-cldn6-eligibility-criteria.html\">Group: type = person; actual = false; quantity = 145</a></p><p><b>period</b>: 2020-09-16 --&gt; 2040-01</p><p><b>sponsor</b>: <a href=\"Organization-mii-exa-mtb-study-sponsor-biontech.html\">Organization BioNTech Cell &amp; Gene Therapies GmbH</a></p><p><b>principalInvestigator</b>: <a href=\"PractitionerRole-mii-exa-mtb-study-investigator-biontech.html\">PractitionerRole Study coordinator</a></p><p><b>site</b>: <a href=\"Location-mii-exa-mtb-study-cldn6-location-11.html\">Location Karolinska Comprehensive Cancer Center Cancerstudieenheten Huddinge Karolinska Universitetssjukhuset</a></p><blockquote><p><b>arm</b></p><p><b>name</b>: Part 1 - CLDN6 CAR-T: Dose escalation in lymphodepleted patients until the MTD and/or RP2D</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: Part 2 Vaccine-modulated - CLDN6 uRNA-LPX/CLDN6 modRNA-LPX: Dose escalation until the MTD and/or RP2D</p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: Occurrence of treatment-emergent adverse events (TEAEs) including ≥ Grade 3, serious, fatal TEAEs by relationship</p><p><b>type</b>: <span title=\"Codes:\">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: Occurrence of dose reduction and discontinuation of investigational medicinal product (IMP) due to TEAEs</p><p><b>type</b>: <span title=\"Codes:\">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: Occurrence of dose-limiting toxicity (DLT) during the DLT evaluation period</p><p><b>type</b>: <span title=\"Codes:\">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: Change from baseline in the levels and kinetics of soluble immune factors measured by cytokine multiplex assay</p><p><b>type</b>: <span title=\"Codes:\">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: Objective response rate (ORR) defined as the proportion of patients in whom a complete response (CR) or partial response (PR) (per response evaluation criteria in solid tumors [RECIST 1.1]) is observed as best overall response</p><p><b>type</b>: <span title=\"Codes:\">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: Disease control rate (DCR) defined as the proportion of patients in whom a CR or PR or stable disease (SD) (per RECIST 1.1, SD assessed at least 6 weeks after the first dose) is observed as best overall response</p><p><b>type</b>: <span title=\"Codes:\">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: Duration of response (DOR) defined as the time from first objective response (CR or PR per RECIST 1.1) to first occurrence of objective progressive disease (PD) per RECIST 1.1/recurrence or death from any cause, whichever occurs first</p><p><b>type</b>: <span title=\"Codes:\">secondary</span></p></blockquote></div>"
+  },
+  "identifier" : [{
+    "system" : "https://www.medizininformatik-initiative.de/fhir/modul-mtb/sid/nct",
+    "value" : "04503278"
+  }],
+  "status" : "active",
+  "primaryPurposeType" : {
+    "coding" : [{
+      "code" : "treatment"
+    }]
+  },
+  "phase" : {
+    "coding" : [{
+      "code" : "phase-1"
+    }]
+  },
+  "condition" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "369757002",
+      "display" : "Solid tumor configuration"
+    }]
+  }],
+  "keyword" : [{
+    "text" : "Non-small cell lung cancer (NSCLC)"
+  }],
+  "enrollment" : [{
+    "reference" : "Group/mii-exa-mtb-study-cldn6-eligibility-criteria"
+  }],
+  "period" : {
+    "start" : "2020-09-16",
+    "end" : "2040-01"
+  },
+  "sponsor" : {
+    "reference" : "Organization/mii-exa-mtb-study-sponsor-biontech"
+  },
+  "principalInvestigator" : {
+    "reference" : "PractitionerRole/mii-exa-mtb-study-investigator-biontech"
+  },
+  "site" : [{
+    "reference" : "Location/mii-exa-mtb-study-cldn6-location-11"
+  }],
+  "arm" : [{
+    "name" : "Part 1 - CLDN6 CAR-T: Dose escalation in lymphodepleted patients until the MTD and/or RP2D"
+  },
+  {
+    "name" : "Part 2 Vaccine-modulated - CLDN6 uRNA-LPX/CLDN6 modRNA-LPX: Dose escalation until the MTD and/or RP2D"
+  }],
+  "objective" : [{
+    "name" : "Occurrence of treatment-emergent adverse events (TEAEs) including ≥ Grade 3, serious, fatal TEAEs by relationship",
+    "type" : {
+      "coding" : [{
+        "code" : "primary"
+      }]
+    }
+  },
+  {
+    "name" : "Occurrence of dose reduction and discontinuation of investigational medicinal product (IMP) due to TEAEs",
+    "type" : {
+      "coding" : [{
+        "code" : "primary"
+      }]
+    }
+  },
+  {
+    "name" : "Occurrence of dose-limiting toxicity (DLT) during the DLT evaluation period",
+    "type" : {
+      "coding" : [{
+        "code" : "primary"
+      }]
+    }
+  },
+  {
+    "name" : "Change from baseline in the levels and kinetics of soluble immune factors measured by cytokine multiplex assay",
+    "type" : {
+      "coding" : [{
+        "code" : "secondary"
+      }]
+    }
+  },
+  {
+    "name" : "Objective response rate (ORR) defined as the proportion of patients in whom a complete response (CR) or partial response (PR) (per response evaluation criteria in solid tumors [RECIST 1.1]) is observed as best overall response",
+    "type" : {
+      "coding" : [{
+        "code" : "secondary"
+      }]
+    }
+  },
+  {
+    "name" : "Disease control rate (DCR) defined as the proportion of patients in whom a CR or PR or stable disease (SD) (per RECIST 1.1, SD assessed at least 6 weeks after the first dose) is observed as best overall response",
+    "type" : {
+      "coding" : [{
+        "code" : "secondary"
+      }]
+    }
+  },
+  {
+    "name" : "Duration of response (DOR) defined as the time from first objective response (CR or PR per RECIST 1.1) to first occurrence of objective progressive disease (PD) per RECIST 1.1/recurrence or death from any cause, whichever occurs first",
+    "type" : {
+      "coding" : [{
+        "code" : "secondary"
+      }]
+    }
+  }]
+}

@@ -1,0 +1,65 @@
+{
+  "resourceType" : "Procedure",
+  "id" : "MII-EXA-MTB-Systemtherapie-Beispiel-1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie|2026.0.1"]
+  },
+  "language" : "de",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Procedure MII-EXA-MTB-Systemtherapie-Beispiel-1</b></p><a name=\"de-MII-EXA-MTB-Systemtherapie-Beispiel-1\"> </a><a name=\"de-hcMII-EXA-MTB-Systemtherapie-Beispiel-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-systemische-therapie.html\">MII PR MTB Systemische Therapie</a> version: 2026.0.1</p></div><p><b>MII EX Onko Systemische Therapie Intention</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-intention K}\">kurativ</span></p><p><b>Procedure Caused By</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/MedicationRequest/Example\">MedicationRequest/Example</a></p><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/CarePlan/Example\">CarePlan/Example</a></p><p><b>status</b>: Completed</p><p><b>statusReason</b>: <span title=\"Codes:\">regular-completion</span></p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 367336001}\">Chemotherapy (procedure)</span></p><p><b>code</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ CH}, {http://fhir.de/CodeSystem/bfarm/ops 8-54}\">Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie</span></p><p><b>subject</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/Example\">Patient/Example</a></p><p><b>performed</b>: 2014-02-12 --&gt; 2014-02-12</p><p><b>note</b>: </p><blockquote><div><p>Test Text!</p>\n</div></blockquote></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-intention",
+        "code" : "K"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/procedure-causedBy",
+    "valueReference" : {
+      "reference" : "MedicationRequest/Example"
+    }
+  }],
+  "basedOn" : [{
+    "reference" : "CarePlan/Example"
+  }],
+  "status" : "completed",
+  "statusReason" : {
+    "coding" : [{
+      "code" : "regular-completion"
+    }]
+  },
+  "category" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "367336001",
+      "display" : "Chemotherapy (procedure)"
+    }]
+  },
+  "code" : {
+    "coding" : [{
+      "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+      "code" : "CH"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/ops",
+      "version" : "2023",
+      "code" : "8-54",
+      "display" : "Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/Example"
+  },
+  "performedPeriod" : {
+    "start" : "2014-02-12",
+    "end" : "2014-02-12"
+  },
+  "note" : [{
+    "text" : "Test Text!"
+  }]
+}

@@ -1,0 +1,628 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Änderungshistorie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Branding override for the fhir2.base.template CSS placeholder
+     (base ships includes/fragment-css.html as a single comment; it is included
+     in <head> AFTER all base stylesheets, so the linked files win the
+     cascade).
+     Load model (docs/styleguide.md §1/§10): bootstrap-accessibility.css
+     (PayPal Bootstrap Accessibility Plugin v1.0.7, vendored + pinned - §8)
+     patches Bootstrap-3 component styling for accessibility (focus outlines,
+     alert contrast) and loads FIRST so the template's own rules can override;
+     then template-base.css carries the
+     brand-INDEPENDENT rule blocks and always loads; then EXACTLY ONE palette
+     file follows - num-diz.css, the DEFAULT design, unless the consuming IG
+     ships input/data/brand.json with { "design": "mii" } (read as
+     site.data.brand.design via the base's input/data -> _data pre-process),
+     which selects mii.css instead. Only the exact value 'mii' selects the
+     MII design; anything else - including no brand.json at all and unknown
+     values - renders NUM-DIZ. Both palettes declare the same variable set
+     (scripts/brand-switch.test.mjs). -->
+<link href="assets/css/bootstrap-accessibility.css" rel="stylesheet"/>
+<link href="assets/css/template-base.css" rel="stylesheet"/>
+
+<link href="assets/css/num-diz.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Branding override for the fhir2.base.template header placeholder
+     (base ships includes/fragment-header.html as a single comment; it is included
+     inside "#segment-header > .container", before the #ig-status block).
+     Language handling: only the asset and its descriptive alt text switch on
+     include.lang (the pattern kerndatensatz-basis uses); no translatable UI
+     strings are hard-coded.
+     Brand handling: the project logo additionally switches on
+     site.data.brand.design (input/data/brand.json in the consuming IG, see
+     docs/styleguide.md §10). Only the exact value 'mii' selects the MII
+     logos - anything else, including no brand.json at all, falls through to
+     the NUM-DIZ default.
+     Two logos, mirroring kerndatensatz-basis: the HL7 FHIR logo (links to the
+     FHIR spec) in #family-nav, and the project logo in #project-nav.
+     fhir-logo-www.png is shipped by fhir2.base.template
+     (content/assets/images/), so it resolves from the inherited assets without
+     shipping it here. -->
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir">
+    <img height="50" alt="HL7 FHIR" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="project-nav">
+
+  <a id="project-logo" no-external="true" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+    <img height="50" alt="NUM-DIZ (Netzwerk Universitätsmedizin — Datenintegrationszentrum)" src="assets/images/logo-num-diz-de.svg"/>
+
+  </a>
+
+</div>
+<!-- Font-size control (A / A+ / A++): three reader-selectable levels; level A
+     is the untouched default. Logic in assets/js/font-size-control.js, the
+     zoom mapping + button styling in template-base.css ("font-size control"
+     block). All three buttons read "A" — the button's own font size shows the level; labels are language-neutral; only the aria texts switch
+     on include.lang. REMOVAL: delete this block, the js file and the CSS
+     block - one commit, styleguide §5a. -->
+
+<div class="ig-fontsize" role="group" aria-label="Schriftgröße">
+  <button type="button" data-level="0" aria-pressed="true" aria-label="Schriftgröße: Standard">A</button>
+  <button type="button" data-level="1" aria-pressed="false" aria-label="Schriftgröße: größer">A</button>
+  <button type="button" data-level="2" aria-pressed="false" aria-label="Schriftgröße: am größten">A</button>
+</div>
+
+<script src="assets/js/font-size-control.js" defer></script>
+<!-- PayPal Bootstrap Accessibility Plugin v1.0.7 (vendored + pinned, §8):
+     patches the Bootstrap-3 components the publisher renders - navbar
+     dropdowns gain ARIA menu semantics + arrow-key navigation, tab panels
+     (structure-tabs) the full ARIA tabs pattern, alerts live-region
+     announcements. `defer` guarantees it executes AFTER the parser-inserted
+     bootstrap.min.js at the end of the body. Vendored from
+     paypal/bootstrap-accessibility-plugin @ v1.0.7 (the admin-ch fork was
+     evaluated and rejected: 151 commits behind upstream, its 6 deltas are
+     site-specific tab tweaks). REMOVAL: delete this tag, both vendored
+     assets and the fragment-css link - guard test pins the hashes. -->
+<script src="assets/js/bootstrap-accessibility.min.js" defer></script>
+<!-- Back-to-top button: appears after one viewport of scrolling (logic in
+     assets/js/back-to-top.js, styling in template-base.css "back-to-top"
+     block). Rendered here inside #segment-header, which is OUTSIDE the
+     data-fontsize zoom regions, so the fixed button never scales. REMOVAL:
+     this block, the js file and the CSS block - one commit, styleguide §8. -->
+
+<button type="button" class="ig-back-to-top" aria-label="Zurück zum Seitenanfang">↑</button>
+
+<script src="assets/js/back-to-top.js" defer></script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII IG Kerndatensatz-Modul Molekulares Tumorboard</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - 
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- German translation of input/includes/menu.xml.
+     Keep the href targets IDENTICAL to the source menu; translate only labels.
+     Structure notes (OPTIONAL entries, link-only entries, the interim
+     meta-wiki links) are documented in the source menu's header and in
+     docs/page-structure.md / docs/optional-pages.md. -->
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Startseite</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="guidance.html">Anleitung</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="researcher-guidance.html">Anleitung für Forschende</a></li>
+      <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
+      <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
+      <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
+      <li><a href="uml-diagrams.html">UML-Diagramme</a></li>
+      <li><a href="anwendungsszenarien.html">Anwendungsszenarien</a></li>
+      <li><a href="dnpm-transformation.html">DNPM-Transformation</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <!-- Eltern-Eintrag und die ersten vier Einträge verlinken die KDS-weiten
+         Konformitätsregeln des Meta-Moduls (INTERIM: Meta-Wiki; siehe
+         Quell-Menü). -->
+    <a data-toggle="dropdown" href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance" class="dropdown-toggle">Konformität<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Konformität</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#anforderungsdokumentation">Allgemeine Anforderungen</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#must-support-ms">Must-Support</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#fehlende-daten">Umgang mit fehlenden Daten</a></li>
+      <li><a href="security-and-privacy.html">Sicherheit und Datenschutz</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
+      <li><a href="profiles.html">Profile</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="extensions.html">Extensions</a></li>
+      <li><a href="capability-statements.html">CapabilityStatements</a></li>
+      <li><a href="logical-models.html">Logische Modelle</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="value-sets.html">ValueSets</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="code-systems.html">CodeSystems</a></li>
+      <li><a href="examples.html">Beispiele</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="changes.html">Änderungshistorie</a></li>
+  <li class="dropdown">
+    <!-- Der Eltern-Eintrag verlinkt bewusst das PFLICHT-Kind (Versionierung):
+         die Metadaten-Übersicht ist optional. -->
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="metadata.html">Metadaten-Übersicht</a></li>
+      <li><a href="version-history.html">Versionierung</a></li>
+      <li><a href="ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html">MII-ImplementationGuide-Ressource</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Sprache:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
+
+    <div><a href="../en/changes.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
+
+  </div>
+</div>
+
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>Änderungshistorie</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII IG Kerndatensatz-Modul Molekulares Tumorboard - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Änderungshistorie</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+
+<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
+
+Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde.  Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie <a href="translationinfo.html">hier</a>.
+
+</p>
+
+<!-- markdownlint-disable MD041 -->
+<!-- Deutsche Übersetzung der Standardsprachseite input/pagecontent/changes.md
+     — beide Dateien müssen dasselbe aussagen. Struktur aus kerndatensatz-basis
+     input/pagecontent/changes.md (Branch main) — ein Abschnitt je Version,
+     neueste zuerst — und aus der MII-Release-Notes-Vorlage
+     (kerndatensatz-meta/implementation-guides/MedizininformatikInitiative-ImplementationGuide-Template/
+     MII-IG-Modul--Modul/Release-notes.page.md), die "Keep a Changelog" vorgibt.
+
+     Pflegeregel: Für jedes Release oben einen neuen Abschnitt
+     `#### Version <x>` ergänzen, in BEIDEN Sprachen, als Teil des
+     Release-Pull-Requests. Einen veröffentlichten Abschnitt danach nicht mehr
+     ändern. -->
+
+<h3 id="änderungshistorie">Änderungshistorie</h3>
+
+<p>Diese Seite hält die Änderungen zwischen den veröffentlichten Versionen des
+Moduls <strong>Molekulares Tumorboard</strong> fest, die neueste Version zuerst. Sie folgt
+<a href="https://keepachangelog.com/de/1.1.0/">Keep a Changelog</a> und dem
+KDS-CalVer-Schema, das die Seite <a href="version-history.html">Versionierung</a>
+beschreibt.</p>
+
+<p>Jede Version erhält einen eigenen Abschnitt mit dem Release-Datum und den nach
+Kategorien gruppierten Änderungen:</p>
+
+<ul>
+  <li><strong>Hinzugefügt</strong> — neue Profile, Extensions, ValueSets, Suchparameter, Seiten.</li>
+  <li><strong>Geändert</strong> — geänderte Einschränkungen, Bindings, Hinweise oder
+Dokumentation.</li>
+  <li><strong>Abgekündigt</strong> — Artefakte, die noch existieren, aber nicht mehr genutzt
+werden sollen.</li>
+  <li><strong>Entfernt</strong> — zurückgezogene Artefakte.</li>
+  <li><strong>Behoben</strong> — Korrekturen von Fehlern.</li>
+  <li><strong>Sicherheit</strong> — Änderungen mit Auswirkung auf Sicherheit oder Datenschutz.</li>
+</ul>
+
+<p>Kategorien ohne Inhalt werden weggelassen. Geht eine Änderung auf ein Issue oder
+einen Pull-Request zurück, wird darauf verlinkt.</p>
+
+<div class="ig-highlight ig-highlight-red">
+<h5>Breaking Changes MÜSSEN berichtet und erläutert werden</h5>
+<p>Ein Versionsabschnitt mit einer Breaking Change ist erst vollständig, wenn
+er ausdrücklich und in diesem Changelog beantwortet:</p>
+<ul>
+<li><b>Was genau sich geändert hat</b> zwischen den beiden Versionen — das
+Artefakt, das Element, die alte und die neue Einschränkung (nicht nur
+„Profil X wurde überarbeitet“).</li>
+<li><b>Was das für bestehende Daten bedeutet:</b> Validieren Daten, die der
+Vorversion entsprachen, weiterhin gegen die neue Version? Falls nein: welche
+Ressourcen und Elemente sind betroffen, und wie zeigt sich der Fehler?</li>
+<li><b>Was Implementierende tun sollten:</b> die Empfehlung der Autorinnen
+und Autoren zur Migration bestehender Daten auf die neue Version —
+Transformationsschritte, Standardwerte, Umkodierungs-Hinweise — oder die
+ausdrückliche Aussage, dass kein Migrationspfad bereitgestellt wird, und
+warum.</li>
+</ul>
+<p><b>Was als Breaking Change zählt</b> — behandeln Sie eine Änderung als
+Breaking Change, wenn sie eines der Folgenden tut, auch wenn sie klein wirkt:
+eine Kardinalität verschärft (<code>0..*</code> → <code>1..1</code>), eine
+Binding-Stärke erhöht (example → required), Codes aus einem required-ValueSet
+entfernt, ein Element oder einen Slice entfernt oder umbenennt, einen Typ
+einengt, eine Invariante oder eine Must-Support-Pflicht hinzufügt oder eine
+kanonische URL ändert. Im Zweifel: als Breaking Change berichten.</p>
+<p><b>Breaking für wen:</b> benennen Sie beide Perspektiven — <i>gespeicherte
+Daten</i> (Instanzen, die gegen die alte Version valide sind) und
+<i>Implementierungen</i> (Clients und Server, die dagegen gebaut wurden; ein
+entfernter Suchparameter bricht Implementierungen, während jede gespeicherte
+Instanz valide bleibt).</p>
+<p><b>Die Versionsnummer warnt niemanden.</b> Das KDS-Kalender-Versionsschema
+(<code>JJJJ.n.n</code>) trägt kein Major-Signal wie SemVer — dieser
+Changelog-Abschnitt ist die <i>einzige</i> Warnung, die Lesende bekommen.</p>
+<p><b>Verlinken Sie das technische Delta.</b> Ab der zweiten formalen
+Publikation aktivieren Sie den Versionsvergleich des IG Publishers
+(<code>version-comparison</code> in <code>sushi-config.yaml</code> — siehe die
+Seite <a href="version-history.html">Versionierung</a> zur Einrichtung und
+ihren Voraussetzungen); er veröffentlicht einen maschinell erzeugten
+Vergleich unter <code>comparison-v&lt;Vorversion&gt;/index.html</code>.
+Verlinken Sie ihn aus dem Versionsabschnitt, damit die Erläuterung und der
+technische Diff nebeneinanderstehen.</p>
+<p>Kennzeichnen Sie solche Einträge deutlich (zum Beispiel mit dem Präfix
+<b>BREAKING:</b>), damit sie beim Überfliegen des Abschnitts nicht übersehen
+werden können.</p>
+</div>
+
+<hr />
+
+<!-- Migriert aus dem Simplifier-IG (ReleaseNotes). TODO:REVIEW -->
+
+<h4 id="version-202601-2026-03-30">Version 2026.0.1 (2026-03-30)</h4>
+
+<p>Dependency-Updates und Dokumentationsverbesserungen.</p>
+
+<h5 id="dependency-updates">Dependency-Updates</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> <strong>Onkologie</strong>: Update von 2026.0.1 auf 2026.0.3 (AppleDouble-Bereinigung, Snapshot-Korrekturen, Extension-Versions-Fix)</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> <strong>Consent</strong>: Update von 2025.0.4 auf 2026.0.0 (2026-Release)</li>
+</ul>
+
+<h5 id="dokumentation">Dokumentation</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>QA-Validierung</strong>: Seite vollständig überarbeitet — alle <code class="language-plaintext highlighter-rouge">advisor.json</code>-Filter dokumentiert, LOINC LIST-Filter-Fehler beschrieben, externe Abhängigkeiten aktualisiert (siehe <a href="implementer-guidance.html">QAValidierung</a>)</li>
+</ul>
+
+<h5 id="build-system">Build-System</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> <strong>package.bake.yaml</strong>: Anpassung für lokalen Build mit <code class="language-plaintext highlighter-rouge">--input fsh-generated/resources</code> und <code class="language-plaintext highlighter-rouge">sushi --snapshot</code></li>
+</ul>
+
+<h5 id="abhängigkeiten">Abhängigkeiten</h5>
+
+<ul>
+  <li>de.basisprofil.r4 1.5.4</li>
+  <li>kerndatensatz.biobank 2026.0.0</li>
+  <li>kerndatensatz.consent 2026.0.0</li>
+  <li>kerndatensatz.base 2026.0.0</li>
+  <li>kerndatensatz.medikation 2026.0.0</li>
+  <li>kerndatensatz.meta 2026.0.0</li>
+  <li>kerndatensatz.molgen 2026.0.4</li>
+  <li>kerndatensatz.onkologie 2026.0.3</li>
+  <li>kerndatensatz.patho 2026.0.0</li>
+  <li>kerndatensatz.studie 2026.0.2</li>
+  <li>hl7.fhir.uv.genomics-reporting 3.0.0</li>
+</ul>
+
+<h4 id="version-202600-2026-01-20">Version 2026.0.0 (2026-01-20)</h4>
+
+<p>Erste stabile Version des MII KDS-Moduls Molekulares Tumorboard nach erfolgreicher Ballot-Phase.</p>
+
+<h5 id="neue-profile-und-funktionalität">Neue Profile und Funktionalität</h5>
+
+<p>Das Modul umfasst Profile für die strukturierte Erfassung von:</p>
+
+<h6 id="ngs-befunde-und-genomische-analysen">NGS-Befunde und Genomische Analysen</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-ngs-bericht.html">NGSBericht</a></strong>: Strukturierte Erfassung von Next-Generation-Sequencing Berichten mit GenomicStudy-basierten Analysen</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-genomic-study.html">GenomicStudy</a></strong>: Integration mit HL7 Genomics Reporting STU3 für genomische Studien und Analysen</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Genomic Study Device</strong>: Strukturierte Erfassung von Sequenzierungsgeräten (Sequencer, Library Preparation Kit, Sequencing Kit) in NGS-Workflows</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Genomische Varianten</strong>: Profile für SNVs (<a href="StructureDefinition-mii-pr-mtb-einfache-variante.html">EinfacheVariante</a>), CNVs (<a href="StructureDefinition-mii-pr-mtb-copy-number-variant.html">CopyNumberVariant</a>), DNA-Fusionen (<a href="StructureDefinition-mii-pr-mtb-dna-fusion.html">DNAFusion</a>), RNA-Fusionen (<a href="StructureDefinition-mii-pr-mtb-rna-fusion.html">RNAFusion</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Biomarker</strong>: Mutationslast (<a href="StructureDefinition-mii-pr-mtb-mutationslast.html">Mutationslast</a>), Mikrosatelliteninstabilität (<a href="StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html">Mikrosatelliteninstabilitaet</a>, <a href="StructureDefinition-mii-pr-mtb-msi.html">MSI</a>), HRD Score (<a href="StructureDefinition-mii-pr-mtb-hrd-score.html">HRDScore</a>), BRCAness (<a href="StructureDefinition-mii-pr-mtb-brcaness.html">BRCAness</a>), Ploidie (<a href="StructureDefinition-mii-pr-mtb-ploidie.html">Ploidie</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Molekulare Biomarker</strong>: Strukturierte Erfassung mit ValueSet für HGNC Gene Symbols und pharmakogenetische Marker</li>
+</ul>
+
+<h6 id="molekularpathologie">Molekularpathologie</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Immunohistochemie</strong>: Profile für IHC-Färbungen (<a href="StructureDefinition-mii-pr-mtb-immunohistochemistry.html">Immunohistochemistry</a>), spezialisierte Profile für HER2 (<a href="StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.html">IHC_HER2</a>), MMR (<a href="StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.html">IHC_MMR</a>), PD-L1 (<a href="StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html">IHC_PDL1</a>), Phosphorylierung (<a href="StructureDefinition-mii-pr-mtb-immunohistochemistry-phosphorylation.html">IHC_Phosphorylation</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>In-Situ-Hybridisierung</strong>: Profile für ISH-Untersuchungen (<a href="StructureDefinition-mii-pr-mtb-insituhybridization.html">InSituHybridization</a>) mit spezialisiertem HER2 ISH-Profil (<a href="StructureDefinition-mii-pr-mtb-insituhybridization-her2.html">ISH_HER2</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>HER2-Status</strong>: Kombiniertes Biomarker-Profil (<a href="StructureDefinition-mii-pr-mtb-biomarker-her2-status.html">BiomarkerHER2Status</a>) für diagnostische und therapeutische Implikationen</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-molecular-pathology-report.html">MolecularPathologyReport</a></strong>: DiagnosticReport für molekularpathologische Befunde mit Integration von IHC/ISH-Ergebnissen</li>
+</ul>
+
+<h6 id="behandlungsepisode-und-therapiemanagement">Behandlungsepisode und Therapiemanagement</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-consent-given.html">Behandlungsepisode</a></strong>: ClinicalImpression-basierte Erfassung von MTB-Empfehlungen und Therapieentscheidungen</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Therapieempfehlungen</strong>: Profile für Einzeltherapien (<a href="StructureDefinition-mii-pr-mtb-therapieempfehlung.html">TherapieempfehlungMedikation</a>) und Kombinationstherapien (<a href="StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html">TherapieempfehlungKombination</a>, <a href="StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html">TherapieempfehlungKombinationstherapieRequestGroup</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Evidenzgraduierung</strong>: Extension für Evidenzgrad-Dokumentation nach NCT-Kriterien mit Zusatzverweisen</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-therapieplan.html">Therapieplan</a></strong>: CarePlan für strukturierte Therapieplanung</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-systemische-therapie.html">SystemischeTherapie</a></strong>: MedicationStatement für durchgeführte Systemtherapien mit Dosisdichte-Extension</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-response-befund.html">ResponseBefund</a></strong>: Observation für Therapieansprechen mit RECIST/iRECIST-Beurteilung</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html">FollowUpClinicalImpression</a></strong>: ClinicalImpression für Follow-Up-Dokumentation mit Umsetzungsstatus</li>
+</ul>
+
+<h6 id="kostenübernahme-und-studieneinschluss">Kostenübernahme und Studieneinschluss</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html">AntragKostenuebernahme</a></strong>: Claim für Kostenübernahme-Anträge bei Off-Label/Compassionate Use mit Antragsstadium-Extension</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html">AntwortKostenuebernahme</a></strong>: ClaimResponse für Krankenversicherungs-Entscheidungen mit Ablehnungsgrund-Extension</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html">StudieneinschlussAnfrage</a></strong>: ServiceRequest für Studieneinschluss-Anfragen</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-studie.html">Studie</a></strong>: ResearchStudy-Profil für klinische Studien</li>
+</ul>
+
+<h6 id="diagnostische-aufträge">Diagnostische Aufträge</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-biopsie-auftrag.html">BiopsieAuftrag</a></strong>: ServiceRequest für Rebiopsie/Neubiopsie mit Begründung-Extension</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.html">HistologieEvaluationAuftrag</a></strong>: ServiceRequest für histologische Reevaluationen</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html">HumangenetischeBeratungAuftrag</a></strong>: ServiceRequest für humangenetische Beratungen</li>
+</ul>
+
+<h6 id="weitere-profile">Weitere Profile</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-diagnose-primaertumor.html">DiagnosePrimaertumor</a></strong>: Condition-Profil mit OncoTree-Kodierung und Tumorausbreitung</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-tumorzellgehalt.html">Tumorzellgehalt</a></strong>: Observation für Tumorzellgehalt mit Bestimmungsmethode</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-diagnostische-implikation.html">DiagnostischeImplikation</a></strong>: Diagnostische Bedeutung genomischer Befunde</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong><a href="StructureDefinition-mii-pr-mtb-therapeutische-implikation.html">TherapeutischeImplikation</a></strong>: Therapeutische Bedeutung genomischer Befunde mit Zulassungsstatus-Extension</li>
+</ul>
+
+<h5 id="terminologie-und-codesystems">Terminologie und CodeSystems</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>MTB-spezifische CodeSystems</strong>: 18 CodeSystems für MTB-spezifische Konzepte (Evidenzgrade, Therapiestatusgrund, Empfehlungsstatus, Follow-Up-Status, Genomic Analysis Method Types, etc.)</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>ValueSets</strong>: 29 ValueSets für strukturierte Kodierung inkl. OncoTree, WHO-Grad ZNS, Molekulare Biomarker, MSI, MMR Expression</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>ConceptMaps</strong>: Mappings von Therapiestatusgrund zu SNOMED CT und oBDS</li>
+</ul>
+
+<h5 id="technische-funktionalität">Technische Funktionalität</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Mehrsprachigkeit (i18n)</strong>: Vollständige Übersetzungen (de-DE, en) für alle 52 Profile, 18 CodeSystems und 29 ValueSets</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>QA-Validierung</strong>: Dokumentation bekannter Validierungslimitationen (siehe <a href="implementer-guidance.html">QAValidierung</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>Beispieldaten</strong>: 120+ Beispielinstanzen demonstrieren typische MTB-Szenarien</li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code> <strong>CapabilityStatement</strong>: Vollständige Server-Capability-Dokumentation</li>
+</ul>
+
+<h5 id="abhängigkeiten-1">Abhängigkeiten</h5>
+
+<ul>
+  <li>de.basisprofil.r4 1.5.4</li>
+  <li>kerndatensatz.biobank 2026.0.0</li>
+  <li>kerndatensatz.consent 2025.0.4</li>
+  <li>kerndatensatz.base 2026.0.0</li>
+  <li>kerndatensatz.medikation 2026.0.0</li>
+  <li>kerndatensatz.meta 2026.0.0</li>
+  <li>kerndatensatz.molgen 2026.0.4</li>
+  <li>kerndatensatz.onkologie 2026.0.0</li>
+  <li>kerndatensatz.patho 2026.0.0</li>
+  <li>kerndatensatz.studie 2026.0.1</li>
+  <li>hl7.fhir.uv.genomics-reporting 3.0.0</li>
+</ul>
+
+<h4 id="version-202500-ballot-2025-05-26">Version 2025.0.0-ballot (2025-05-26)</h4>
+
+<p>Initiale Ballot-Version für die MII Abstimmungsphase.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt <span title="Fri, Sep 11, 2026 14:44+0000">2026-09-11</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+                 
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/impressum">Impressum</a>
+                 <br/>
+                 <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7®, FHIR® and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

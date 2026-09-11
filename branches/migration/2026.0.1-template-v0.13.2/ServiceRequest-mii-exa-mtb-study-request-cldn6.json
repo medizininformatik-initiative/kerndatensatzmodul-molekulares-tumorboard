@@ -1,0 +1,44 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "mii-exa-mtb-study-request-cldn6",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage|2026.0.1"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest mii-exa-mtb-study-request-cldn6</b></p><a name=\"mii-exa-mtb-study-request-cldn6\"> </a><a name=\"hcmii-exa-mtb-study-request-cldn6\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html\">MII PR MTB Studieneinschluss Anfrage</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 2.1</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/37872225</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 110465008}\">Clinical trial (procedure)</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 702475000}\">Referral to clinical trial (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>supportingInfo</b>: <a href=\"ResearchStudy-mii-exa-mtb-study-cldn6.html\">ResearchStudy: identifier = https://www.medizininformatik-initiative.de/fhir/modul-mtb/sid/nct#MII_NS_MTB_NCT#04503278; status = active; primaryPurposeType = treatment; phase = phase-1; condition = Solid tumor configuration; keyword = ; period = 2020-09-16 --&gt; 2040-01</a></p></div><div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest mii-exa-mtb-study-request-cldn6</b></p><a name=\"de-mii-exa-mtb-study-request-cldn6\"> </a><a name=\"de-hcmii-exa-mtb-study-request-cldn6\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html\">MII PR MTB Studieneinschluss Anfrage</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 2.1</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/37872225</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 110465008}\">Clinical trial (procedure)</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 702475000}\">Referral to clinical trial (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>supportingInfo</b>: <a href=\"ResearchStudy-mii-exa-mtb-study-cldn6.html\">ResearchStudy: identifier = https://www.medizininformatik-initiative.de/fhir/modul-mtb/sid/nct#MII_NS_MTB_NCT#04503278; status = active; primaryPurposeType = treatment; phase = phase-1; condition = Solid tumor configuration; keyword = ; period = 2020-09-16 --&gt; 2040-01</a></p></div></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+    "valueDecimal" : 2.1
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+    "valueIdentifier" : {
+      "system" : "http://www.ncbi.nlm.nih.gov/pubmed",
+      "value" : "37872225"
+    }
+  }],
+  "status" : "draft",
+  "intent" : "proposal",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "110465008",
+      "display" : "Clinical trial (procedure)"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "702475000",
+      "display" : "Referral to clinical trial (procedure)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "supportingInfo" : [{
+    "reference" : "ResearchStudy/mii-exa-mtb-study-cldn6"
+  }]
+}

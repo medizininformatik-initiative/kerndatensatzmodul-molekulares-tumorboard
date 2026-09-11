@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Specimen xmlns="http://hl7.org/fhir">
+  <id value="PatientKimMusterperson-Specimen-1"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Specimen PatientKimMusterperson-Specimen-1</b></p><a name="PatientKimMusterperson-Specimen-1"> </a><a name="hcPatientKimMusterperson-Specimen-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot.rc2&amp;canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen">MII PR Patho Specimen</a></p></div><p><b>identifier</b>: Z 230201/23</p><p><b>accessionIdentifier</b>: Z 230201/23</p><p><b>status</b>: Available</p><p><b>type</b>: <span title="Codes:{http://snomed.info/sct 309201001}">Ascitic fluid specimen</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><h3>Collections</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td></tr><tr><td style="display: none">*</td><td>2023-01-02</td><td>20 mL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemL = 'mL')</span></td><td><span title="Codes:{http://snomed.info/sct 178012008}">Percutaneous drainage of ascites</span></td></tr></table></div>
+  </text>
+  <identifier>
+    <value value="Z 230201/23"/>
+  </identifier>
+  <accessionIdentifier>
+    <value value="Z 230201/23"/>
+  </accessionIdentifier>
+  <status value="available"/>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="309201001"/>
+      <display value="Ascitic fluid specimen"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <collection>
+    <collectedDateTime value="2023-01-02"/>
+    <quantity>
+      <value value="20"/>
+      <unit value="mL"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mL"/>
+    </quantity>
+    <method>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="178012008"/>
+      </coding>
+    </method>
+  </collection>
+</Specimen>

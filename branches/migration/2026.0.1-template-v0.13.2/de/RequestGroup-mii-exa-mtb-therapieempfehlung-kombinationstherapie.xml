@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RequestGroup xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-therapieempfehlung-kombinationstherapie"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination|2026.0.1"/>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="extensions"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: RequestGroup mii-exa-mtb-therapieempfehlung-kombinationstherapie</b></p><a name="de-mii-exa-mtb-therapieempfehlung-kombinationstherapie"> </a><a name="de-hcmii-exa-mtb-therapieempfehlung-kombinationstherapie"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html">MII PR MTB Therapieempfehlung Kombinationstherapie</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 1</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>https://doi.org</code>/10.1002/gcc.23222</p><p><b>MII EX MTB Empfehlung Evidenzgraduierung</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad m1C}">m1C</span></p><p><b>status</b>: Active</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href="Patient-mii-exa-mtb-patient.html">Maxim Muster  (no stated gender), DoB Unknown</a></p><p><b>authoredOn</b>: 2024-01-01</p><blockquote><p><b>action</b></p><p><b>title</b>: Therapieempfehlung für Dabrafenib</p><p><b>resource</b>: <a href="MedicationRequest-mii-exa-mtb-therapieempfehlung-dabrafenib.html">MedicationRequest: status = active; intent = option; medication[x] = Dabrafenib; authoredOn = 2024-01-01</a></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Therapieempfehlung für Trametinib</p><p><b>resource</b>: <a href="MedicationRequest-mii-exa-mtb-therapieempfehlung-trametinib.html">MedicationRequest: status = active; intent = option; medication[x] = Trametinib; authoredOn = 2024-01-01</a></p></blockquote></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet">
+    <valuePositiveInt value="1"/>
+  </extension>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation">
+    <valueIdentifier>
+      <system value="https://doi.org"/>
+      <value value="10.1002/gcc.23222"/>
+    </valueIdentifier>
+  </extension>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"/>
+        <code value="m1C"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="active"/>
+  <intent value="proposal"/>
+  <subject>
+    <reference value="Patient/mii-exa-mtb-patient"/>
+  </subject>
+  <authoredOn value="2024-01-01"/>
+  <action>
+    <title value="Therapieempfehlung für Dabrafenib"/>
+    <resource>
+      <reference value="MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib"/>
+    </resource>
+  </action>
+  <action>
+    <title value="Therapieempfehlung für Trametinib"/>
+    <resource>
+      <reference value="MedicationRequest/mii-exa-mtb-therapieempfehlung-trametinib"/>
+    </resource>
+  </action>
+</RequestGroup>

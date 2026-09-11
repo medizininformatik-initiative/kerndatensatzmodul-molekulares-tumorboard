@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"/>
+  <language value="de"/>
+  <text>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CodeSystem mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis</b></p><a name="de-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"> </a><a name="de-hcmii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-DE</p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Definition</b></td><td><b>English (English, en)</b></td></tr><tr><td style="white-space:nowrap">is<a name="de-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis-is"> </a></td><td>In situ-Daten aus Untersuchungen an Patientenmaterial (z.B. IHC, FISH) unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern zusätzlich angegeben werden, z.B. Evidenzgrad 3 is (IHC).</td><td>Several in situ data and studies on patient material (e.g., IHC, FISH) support the biomarker and the level of evidence.</td></tr><tr><td style="white-space:nowrap">iv<a name="de-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis-iv"> </a></td><td>In vitro-Daten/ in vivo-Modelle (z.B. PDX-Modelle) derselben Tumorentität unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern angegeben werden, z.B. Evidenzgrad 2 iv (PDX).</td><td>in vitro data</td></tr><tr><td style="white-space:nowrap">Z<a name="de-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis-Z"> </a></td><td>Zusatzverweis für Zulassungsstatus (Z = EMA-Zulassung liegt vor; Z (FDA) = nur FDA-Zulassung vorhanden)</td><td>Drug is approved for use with the specific biomarker [Z = EMA approval, Z(FDA) = FDA approval]</td></tr><tr><td style="white-space:nowrap">R<a name="de-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis-R"> </a></td><td>Verweis, dass es sich hierbei um einen Resistenzmarker für eine bestimmte Therapie handelt</td><td>Biomarker predicts resistance to the drug.</td></tr></table></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"/>
+  <version value="2026.0.1"/>
+  <name value="MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis"/>
+  <title value="MII CS Empfehlung Evidenzgrad Zusatzverweis"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-09-11T14:44:50+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <description value="Zusatzverweis zum Evidenzgrad einer Empfehlung"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="is"/>
+    <display value="is"/>
+    <definition value="In situ-Daten aus Untersuchungen an Patientenmaterial (z.B. IHC, FISH) unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern zusätzlich angegeben werden, z.B. Evidenzgrad 3 is (IHC)."/>
+    <designation>
+      <language value="en"/>
+      <value value="Several in situ data and studies on patient material (e.g., IHC, FISH) support the biomarker and the level of evidence."/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="iv"/>
+    <display value="iv"/>
+    <definition value="In vitro-Daten/ in vivo-Modelle (z.B. PDX-Modelle) derselben Tumorentität unterstützen den Evidenzgrad. Die unterstützende Methode kann in Klammern angegeben werden, z.B. Evidenzgrad 2 iv (PDX)."/>
+    <designation>
+      <language value="en"/>
+      <value value="in vitro data"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="Z"/>
+    <display value="Z"/>
+    <definition value="Zusatzverweis für Zulassungsstatus (Z = EMA-Zulassung liegt vor; Z (FDA) = nur FDA-Zulassung vorhanden)"/>
+    <designation>
+      <language value="en"/>
+      <value value="Drug is approved for use with the specific biomarker [Z = EMA approval, Z(FDA) = FDA approval]"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="R"/>
+    <display value="R"/>
+    <definition value="Verweis, dass es sich hierbei um einen Resistenzmarker für eine bestimmte Therapie handelt"/>
+    <designation>
+      <language value="en"/>
+      <value value="Biomarker predicts resistance to the drug."/>
+    </designation>
+  </concept>
+</CodeSystem>

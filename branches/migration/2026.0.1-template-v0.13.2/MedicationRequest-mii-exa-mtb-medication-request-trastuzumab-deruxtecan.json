@@ -1,0 +1,62 @@
+{
+  "resourceType" : "MedicationRequest",
+  "id" : "mii-exa-mtb-medication-request-trastuzumab-deruxtecan",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.1"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest mii-exa-mtb-medication-request-trastuzumab-deruxtecan</b></p><a name=\"mii-exa-mtb-medication-request-trastuzumab-deruxtecan\"> </a><a name=\"hcmii-exa-mtb-medication-request-trastuzumab-deruxtecan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-therapieempfehlung.html\">MII PR MTB Therapieempfehlung Systemische Therapie</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 3</p><p><b>MII EX MTB Empfehlung Evidenzgraduierung</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad m1B}\">Predictive value of the biomarker or clinical effectiveness of the drug in a molecularly stratified cohort was demonstrated in a retrospective cohort or case–control study in the same tumor type.</span></p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/35665782</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/37870536</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://doi.org</code>/10.1200/JCO.2023.41.17_suppl.LBA3000</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>medication</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/atc L01FD04}\">Trastuzumab deruxtecan</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>authoredOn</b>: 2023-03-28</p><p><b>reasonReference</b>: <a href=\"Condition-PatientKimMusterperson-PrimaryDiagnosis-2.html\">Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet</a></p></div><div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest mii-exa-mtb-medication-request-trastuzumab-deruxtecan</b></p><a name=\"de-mii-exa-mtb-medication-request-trastuzumab-deruxtecan\"> </a><a name=\"de-hcmii-exa-mtb-medication-request-trastuzumab-deruxtecan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-therapieempfehlung.html\">MII PR MTB Therapieempfehlung Systemische Therapie</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 3</p><p><b>MII EX MTB Empfehlung Evidenzgraduierung</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad m1B}\">m1B</span></p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/35665782</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/37870536</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://doi.org</code>/10.1200/JCO.2023.41.17_suppl.LBA3000</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>medication</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/atc L01FD04}\">Trastuzumab deruxtecan</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>authoredOn</b>: 2023-03-28</p><p><b>reasonReference</b>: <a href=\"Condition-PatientKimMusterperson-PrimaryDiagnosis-2.html\">Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet</a></p></div></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+    "valuePositiveInt" : 3
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+        "code" : "m1B"
+      }]
+    }
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+    "valueIdentifier" : {
+      "system" : "http://www.ncbi.nlm.nih.gov/pubmed",
+      "value" : "35665782"
+    }
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+    "valueIdentifier" : {
+      "system" : "http://www.ncbi.nlm.nih.gov/pubmed",
+      "value" : "37870536"
+    }
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+    "valueIdentifier" : {
+      "system" : "http://doi.org",
+      "value" : "10.1200/JCO.2023.41.17_suppl.LBA3000"
+    }
+  }],
+  "status" : "draft",
+  "intent" : "proposal",
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/bfarm/atc",
+      "version" : "2025",
+      "code" : "L01FD04",
+      "display" : "Trastuzumab deruxtecan"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "authoredOn" : "2023-03-28",
+  "reasonReference" : [{
+    "reference" : "Condition/PatientKimMusterperson-PrimaryDiagnosis-2"
+  }]
+}

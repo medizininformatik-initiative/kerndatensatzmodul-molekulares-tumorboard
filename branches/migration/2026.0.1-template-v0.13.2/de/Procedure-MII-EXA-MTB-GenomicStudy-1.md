@@ -1,0 +1,59 @@
+# Beispiel fuer einen GenomicStudy - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **Beispiel fuer einen GenomicStudy**
+
+## Beispiel Procedure: Beispiel fuer einen GenomicStudy
+
+-------
+
+**German**
+
+-------
+
+Profile: [MII PR MTB Genomic Study](StructureDefinition-mii-pr-mtb-genomic-study.md) version: 2026.0.1
+
+**Genomic Study Analysis Extension**: [Procedure: extension = Next-Generation (NGS)/Massively parallel sequencing (MPS),->Maxim Muster (no stated gender), DoB Unknown,,,,GRCh38; status = completed; category = Laboratory](Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.md)
+
+**status**: Completed
+
+**category**: Laboratory
+
+**subject**: [Maxim Muster (no stated gender), DoB Unknown](Patient-mii-exa-mtb-patient.md)
+
+**reasonReference**: [Condition/Primary_Tumor](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/Primary_Tumor)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Procedure",
+  "id" : "MII-EXA-MTB-GenomicStudy-1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study|2026.0.1"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext",
+    "valueReference" : {
+      "reference" : "Procedure/MII-EXA-MTB-GenomicStudyAnalysis-1"
+    }
+  }],
+  "status" : "completed",
+  "category" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/mii-exa-mtb-patient"
+  },
+  "reasonReference" : [{
+    "reference" : "Condition/Primary_Tumor"
+  }]
+}
+
+```

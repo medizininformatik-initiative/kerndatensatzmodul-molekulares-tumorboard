@@ -1,0 +1,405 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "HighLowCodesVS",
+    "title" : "High Low codes",
+    "description" : "This value set includes high/low codes for Observation Interpretations",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-brcaness.html" : "MII PR MTB BRCAness",
+    "StructureDefinition-mii-pr-mtb-hrd-score.html" : "MII PR MTB HRD Score",
+    "StructureDefinition-mii-pr-mtb-mutationslast.html" : "MII PR MTB Mutationslast",
+    "StructureDefinition-mii-pr-mtb-ploidie.html" : "MII PR MTB Ploidie"
+  },
+  {
+    "url" : "http://loinc.org/vs/LL3593-2",
+    "version" : null,
+    "status" : "active",
+    "name" : "LOINCAnswersLL3593-2",
+    "title" : "LOINC Answer Codes for LL3593-2",
+    "description" : "",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-biomarker-her2-status.html" : "MII PR Biomarker Her2 Status"
+  },
+  {
+    "url" : "http://loinc.org/vs/LL4396-9",
+    "version" : null,
+    "status" : "active",
+    "name" : "LOINCAnswersLL4396-9",
+    "title" : "LOINC Answer Codes for LL4396-9",
+    "description" : "",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.html" : "MII PR MTB Immunohistochemistry"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Antrag_Kostenuebernahme_Type",
+    "title" : "MII VS MTB Antrag Kostenuebernahme",
+    "description" : "MII Logical Model Modul Molekulares Tumorboard",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/claim-type"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html" : "MII PR MTB Anwort Kostenuebernahme",
+    "StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html" : "MII PR MTB Antrag Kostenuebernahme"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium",
+    "title" : "MII VS Antrag Kostenuebernahme Antragsstadium",
+    "description" : "ValueSet zum Stadium des Antrags zur Kostenuebernahme",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.html" : "MII EX MTB Antrag Kostenuebernahme Antragsstadium"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund",
+    "title" : "MII VS Kostenuebernahme Ablehnungsgrund",
+    "description" : "ValueSet zum Grund der Ablehnung des Antrags zur Kostenuebernahme",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.html" : "MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antwort-kostenuebernahme-entscheidung",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung",
+    "title" : "MII VS Antwort Kostenuebernahme Entscheidung",
+    "description" : "ValueSet zur Entscheidung der Antwort auf den Antrags zur Kostenuebernahme",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-entscheidung.html" : "MII EX MTB Antwort Kostenuebernahme Entscheidung"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-auftrag-begruendung",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_AuftragBegruendung",
+    "title" : "MII VS Auftrag Begründung",
+    "description" : "ValueSet für Begründung zum Auftrag zur (erneuten) Untersuchung oder Diagnostik",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.html" : "MII PR MTB Human-genetische Beratung Auftrag"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-bestimmungsmethode-tumorzellgehalt",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_BestimmungsmethodeTumorzellgehalt",
+    "title" : "MII VS Bestimmungsmethode Tumorzellgehalt",
+    "description" : "ValueSet für Angewandte Methode zur Bestimmung des Tumorzellgehalts",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-tumorzellgehalt.html" : "MII PR MTB Tumorzellgehalt"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Dosisdichte",
+    "title" : "MII VS Dosisdichte",
+    "description" : "ValueSet zur Dosisdichte",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.html" : "MII PR MTB Systemtherapie Medication Statement"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-evidenzgrad",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Empfehlung_Evidenzgrad",
+    "title" : "MII VS Empfehlung Evidenzgrad",
+    "description" : "ValueSet für den Evidenzgrad einer Empfehlung",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Empfehlung_EvidenzgradZusatzverweis",
+    "title" : "MII VS Empfehlung Evidenzgrad Zusatzverweis",
+    "description" : "ValueSet für den Zusatzverweis zum Evidenzgrad einer Empfehlung",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis"]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-status-begruendung",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Empfehlung_StatusBegruendung",
+    "title" : "MII VS Empfehlung Status Begründung",
+    "description" : "ValueSet für Begründung bei fehlender Empfehlung im MTB-Beschluss",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-status-begruendung"]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung",
+    "title" : "MII VS Follow-Up Grund Nicht-Umsetzung",
+    "description" : "ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-systemische-therapie-status-grund"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html" : "MII PR MTB Clinical Impresssion"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Follow_Up_Status",
+    "title" : "MII VS Follow-Up Status",
+    "description" : "ValueSet zum Follow-Up Status",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html" : "MII PR MTB Clinical Impresssion"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-genomic-analysis-method-type",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Genomic_Analysis_Method_Type",
+    "title" : "MII VS Genomic Analysis Method Type",
+    "description" : "ValueSet, dass die ursprünglich vom HL7 Clinical Genomics vorgeschlagenen Antwortmöglichkeiten für Genomic Study Analysis Method Type mit dem vom dnpm dekalrierten Antwortspektrum vereint",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type",
+    "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-genomic-study-analysis.html" : "MII PR MTB Genomic Study Analysis"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-immunohistochemistry-specific-codes",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Immunhistochemistry_Specific_Codes",
+    "title" : "MII VS MTB Immunhistochemistry Specific Codes",
+    "description" : "Spezifische LOINC und SNOMED Codes für immunhistochemische Untersuchungen. Diese Codes werden für das Slice 'spezifisch' im Immunohistochemistry Profil verwendet.",
+    "systems" : ["http://loinc.org", "http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_ISH_Method",
+    "title" : "MII VS MTB ISH Method",
+    "description" : "In Situ Hybridization technique methods (FISH, CISH, SISH)",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-insituhybridization.html" : "MII PR MTB In Situ Hybridization",
+    "StructureDefinition-mii-pr-mtb-insituhybridization-her2.html" : "MII PR MTB In Situ Hybridization HER2"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-leitlinienbehandlung-status",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Leitlinienbehandlung_Status",
+    "title" : "MII VS Leitlinienbehandlung Status",
+    "description" : "ValueSet zum Status der Behandlung nach Leitlinie",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-leitlinienbehandlung-status"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.html" : "MII EX MTB Leitlinienbehandlung Status"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_MMR_Expression",
+    "title" : "MII VS Mismatch Repair Proteins Expression",
+    "description" : "ValueSet zum MMR-Protein-Expression auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL3993-4 Intact nuc express|Loss of nuc express|Undet",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.html" : "MII PR MTB Immunohistochemistry Mismatch Repair Status"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_MMR_Proficiency",
+    "title" : "MII VS Mismatch Repair Protein Proficiency",
+    "description" : "ValueSet zum MMR-Protein-Proficiency auf Basis von Immunhistochemie",
+    "systems" : ["https://nih-ncpi.github.io/ncpi-fhir-ig/CodeSystem-ncit.html"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.html" : "MII PR MTB Immunohistochemistry Mismatch Repair Status"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-molekulare-biomarker",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Molekulare_Biomarker",
+    "title" : "MII VS Molekulare Biomarker",
+    "description" : "ValueSet zum CS Molekulare Biomarker",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-brcaness.html" : "MII PR MTB BRCAness",
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.html" : "MII PR MTB Immunohistochemistry Mismatch Repair Status",
+    "StructureDefinition-mii-pr-mtb-mutationslast.html" : "MII PR MTB Mutationslast",
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry.html" : "MII PR MTB Immunohistochemistry",
+    "StructureDefinition-mii-pr-mtb-insituhybridization.html" : "MII PR MTB In Situ Hybridization",
+    "StructureDefinition-mii-pr-mtb-hrd-score.html" : "MII PR MTB HRD Score",
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.html" : "MII PR MTB Immunohistochemistry",
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.html" : "MII PR MTB Immunohistochemistry",
+    "StructureDefinition-mii-pr-mtb-molekularer-biomarker.html" : "MII PR MTB Molekularer Biomarker",
+    "StructureDefinition-mii-pr-mtb-biomarker-her2-status.html" : "MII PR Biomarker Her2 Status",
+    "StructureDefinition-mii-pr-mtb-insituhybridization-her2.html" : "MII PR MTB In Situ Hybridization HER2",
+    "StructureDefinition-mii-pr-mtb-immunohistochemistry-phosphorylation.html" : "MII PR MTB Immunohistochemistry Phosphorylation",
+    "StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html" : "MII PR MTB Mikrosatelliteninstabilität",
+    "StructureDefinition-mii-pr-mtb-ploidie.html" : "MII PR MTB Ploidie"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Microsatellite_Instability",
+    "title" : "MII VS Mikrosatelliteninstabilität",
+    "description" : "ValueSet zum MSI-Status auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL1057-0 Stable|Unstable|Indeterminate",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html" : "MII PR MTB Mikrosatelliteninstabilität"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi-method-type",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_MSI_Method_Type",
+    "title" : "MII VS MSI Method Type",
+    "description" : "ValueSet zum CS MSI Method Type",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.html" : "MII PR MTB Mikrosatelliteninstabilität"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-oncotree",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_OncoTree",
+    "title" : "MII VS OncoTree ValueSet",
+    "description" : "ValueSet der MSKCC OncoTree Klassifikationen",
+    "systems" : ["http://data.mskcc.org/ontologies/oncotree"]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilung",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Response_Befund_Beurteilung",
+    "title" : "MII VS Response Befund Beurteilung",
+    "description" : "ValueSet Response Befund Beurteilung",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-response-befund.html" : "MII PR MTB Response Befund"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilungsmethode",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Beurteilungsmethode",
+    "title" : "MII VS Response Befund Beurteilung",
+    "description" : "ValueSet Beurteilungsmethode eines Response Befunds",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-response-befund.html" : "MII PR MTB Response Befund"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemische-therapie-status",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Systemische_Therapie_Status",
+    "title" : "MII VS MTB Systemtherapie Status",
+    "description" : "Einschränkung der Status für Systemtherapie",
+    "systems" : ["http://hl7.org/fhir/event-status"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-systemische-therapie.html" : "MII PR MTB Systemische Therapie"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Therapiestatusgrund",
+    "title" : "MII VS Therapiestatusgrund",
+    "description" : "ValueSet zum Therapiestatusgrund",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund"],
+    "uses" : {
+    },
+    "ConceptMap-mii-cm-mtb-therapiestatusgrund-sct.html" : "MII CM MTB Therapiestatusgrund SNOMED CT Mapping",
+    "StructureDefinition-mii-pr-mtb-systemische-therapie.html" : "MII PR MTB Systemische Therapie",
+    "ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.html" : "MII CM MTB Therapiestatusgrund oBDS Mapping",
+    "StructureDefinition-mii-pr-mtb-systemische-vortherapie.html" : "MII PR MTB Systemische Vortherapie"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-tumorausbreitung",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Tumorausbreitung",
+    "title" : "MII VS Tumorausbreitung",
+    "description" : "ValueSet zur Angabe der Tumorausbreitung",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-tumorausbreitung.html" : "MII PR MTB Tumorausbreitung"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_WHO_Grad_Tumor_ZNS",
+    "title" : "MII VS WHO Grad Tumor ZNS",
+    "description" : "ValueSet zum Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.html" : "MII PR MTB WHO Grad Tumor ZNS"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-zulassungsstatus",
+    "version" : "2026.0.1",
+    "status" : "active",
+    "name" : "MII_VS_MTB_Zulassungsstatus",
+    "title" : "MII VS Zulassungsstatus",
+    "description" : "ValueSet zum Zulassungsstatus",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-zulassungsstatus"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-ex-mtb-leitlinie-dokumentation.html" : "MII EX MTB Leitlinie Dokumentation"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/ValueSet/mii-vs-onko-verlauf-gesamtbeurteilung",
+    "version" : "2026.0.3",
+    "status" : "active",
+    "name" : "MII_VS_Onko_Verlauf_Gesamtbeurteilung",
+    "title" : "MII VS Onkologie Verlauf Gesamtbeurteilung",
+    "description" : "oBDS-spezifisches ValueSet für die Gesamtbeurteilung im Behandlungsverlauf",
+    "systems" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-verlauf-gesamtbeurteilung"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-mtb-response-befund.html" : "MII PR MTB Response Befund"
+  }]
+}

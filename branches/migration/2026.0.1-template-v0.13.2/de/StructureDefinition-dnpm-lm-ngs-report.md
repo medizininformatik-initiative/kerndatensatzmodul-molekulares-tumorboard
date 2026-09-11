@@ -1,0 +1,2478 @@
+# DNPM NGS Report - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **DNPM NGS Report**
+
+## Logisches Modell: DNPM NGS Report 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-ngs-report | *Version*:2026.0.1 |
+| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:DNPM_LM_NGSReport |
+
+ 
+Logical Model for a single entry in the DNPM DIP MTB Patient Record ngsReports array 
+
+**Usages:**
+
+* This Logical Model is not used by any profiles in this Specification
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.mtb|current/StructureDefinition/StructureDefinition-dnpm-lm-ngs-report.json)
+
+### Formale Ansichten des Profilinhalts
+
+ [Beschreibung von Profilen, Differentials, Snapshots und deren Repräsentationen](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+*  [Schlüsselelemente-Tabelle](#tabs-key) 
+*  [Differential-Tabelle](#tabs-diff) 
+*  [Snapshot-Tabelle](#tabs-snap) 
+*  [Statistiken/Referenzen](#tabs-summ) 
+*  [Alle](#tabs-all) 
+
+#### Constraints
+
+Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
+
+#### Constraints
+
+Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
+
+** Summary **
+
+Mandatory: 2 elements(133 nested mandatory elements)
+
+ **Schlüsselelemente-Ansicht** 
+
+#### Constraints
+
+ **Differential-Ansicht** 
+
+Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
+
+ **Snapshot-AnsichtView** 
+
+#### Constraints
+
+Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
+
+** Summary **
+
+Mandatory: 2 elements(133 nested mandatory elements)
+
+ 
+
+Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-dnpm-lm-ngs-report.csv), [Excel](../StructureDefinition-dnpm-lm-ngs-report.xlsx) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "dnpm-lm-ngs-report",
+  "url" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-ngs-report",
+  "version" : "2026.0.1",
+  "name" : "DNPM_LM_NGSReport",
+  "title" : "DNPM NGS Report",
+  "status" : "active",
+  "date" : "2026-09-11T14:44:50+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "Logical Model for a single entry in the DNPM DIP MTB Patient Record ngsReports array",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-ngs-report",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation" : "specialization",
+  "differential" : {
+    "element" : [{
+      "id" : "dnpm-lm-ngs-report",
+      "path" : "dnpm-lm-ngs-report",
+      "short" : "DNPM NGS Report",
+      "definition" : "Logical Model for a single entry in the DNPM DIP MTB Patient Record ngsReports array"
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.dnpmId",
+      "path" : "dnpm-lm-ngs-report.dnpmId",
+      "short" : "NGS Report UUID (DNPM internal ID)",
+      "definition" : "NGS Report UUID (DNPM internal ID)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.patient",
+      "path" : "dnpm-lm-ngs-report.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.patient.id",
+      "path" : "dnpm-lm-ngs-report.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.patient.type",
+      "path" : "dnpm-lm-ngs-report.patient.type",
+      "short" : "Reference type (Patient)",
+      "definition" : "Reference type (Patient)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.specimen",
+      "path" : "dnpm-lm-ngs-report.specimen",
+      "short" : "Tumor specimen reference",
+      "definition" : "Tumor specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.specimen.id",
+      "path" : "dnpm-lm-ngs-report.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.specimen.type",
+      "path" : "dnpm-lm-ngs-report.specimen.type",
+      "short" : "Reference type (TumorSpecimen)",
+      "definition" : "Reference type (TumorSpecimen)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.issuedOn",
+      "path" : "dnpm-lm-ngs-report.issuedOn",
+      "short" : "Report issue date (YYYY-MM-DD)",
+      "definition" : "Report issue date (YYYY-MM-DD)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.type",
+      "path" : "dnpm-lm-ngs-report.type",
+      "short" : "NGS analysis type (e.g. exome, panel)",
+      "definition" : "NGS analysis type (e.g. exome, panel)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.type.code",
+      "path" : "dnpm-lm-ngs-report.type.code",
+      "short" : "Type code",
+      "definition" : "Type code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.type.display",
+      "path" : "dnpm-lm-ngs-report.type.display",
+      "short" : "Type display",
+      "definition" : "Type display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.type.system",
+      "path" : "dnpm-lm-ngs-report.type.system",
+      "short" : "Type system URI",
+      "definition" : "Type system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata",
+      "path" : "dnpm-lm-ngs-report.metadata",
+      "short" : "NGS run metadata",
+      "definition" : "NGS run metadata",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.referenceGenome",
+      "path" : "dnpm-lm-ngs-report.metadata.referenceGenome",
+      "short" : "Reference genome used",
+      "definition" : "Reference genome used",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.referenceGenome.code",
+      "path" : "dnpm-lm-ngs-report.metadata.referenceGenome.code",
+      "short" : "Genome build code (e.g. GRCh38)",
+      "definition" : "Genome build code (e.g. GRCh38)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.referenceGenome.display",
+      "path" : "dnpm-lm-ngs-report.metadata.referenceGenome.display",
+      "short" : "Genome build display",
+      "definition" : "Genome build display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.referenceGenome.system",
+      "path" : "dnpm-lm-ngs-report.metadata.referenceGenome.system",
+      "short" : "Genome build system URI",
+      "definition" : "Genome build system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.sequencer",
+      "path" : "dnpm-lm-ngs-report.metadata.sequencer",
+      "short" : "Sequencer instrument",
+      "definition" : "Sequencer instrument",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.sequencer.code",
+      "path" : "dnpm-lm-ngs-report.metadata.sequencer.code",
+      "short" : "Sequencer code",
+      "definition" : "Sequencer code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.sequencer.display",
+      "path" : "dnpm-lm-ngs-report.metadata.sequencer.display",
+      "short" : "Sequencer display",
+      "definition" : "Sequencer display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.sequencer.system",
+      "path" : "dnpm-lm-ngs-report.metadata.sequencer.system",
+      "short" : "Sequencer system URI",
+      "definition" : "Sequencer system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.kitManufacturer",
+      "path" : "dnpm-lm-ngs-report.metadata.kitManufacturer",
+      "short" : "Kit manufacturer name",
+      "definition" : "Kit manufacturer name",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.kitType",
+      "path" : "dnpm-lm-ngs-report.metadata.kitType",
+      "short" : "Kit type name",
+      "definition" : "Kit type name",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.pipeline",
+      "path" : "dnpm-lm-ngs-report.metadata.pipeline",
+      "short" : "Bioinformatics pipeline identifier",
+      "definition" : "Bioinformatics pipeline identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.tumorCellContent",
+      "path" : "dnpm-lm-ngs-report.metadata.tumorCellContent",
+      "short" : "Tumor cell content metadata estimate",
+      "definition" : "Tumor cell content metadata estimate",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method",
+      "path" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method",
+      "short" : "Estimation method",
+      "definition" : "Estimation method",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method.code",
+      "path" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method.code",
+      "short" : "Method code",
+      "definition" : "Method code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method.display",
+      "path" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method.display",
+      "short" : "Method display",
+      "definition" : "Method display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method.system",
+      "path" : "dnpm-lm-ngs-report.metadata.tumorCellContent.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.metadata.tumorCellContent.value",
+      "path" : "dnpm-lm-ngs-report.metadata.tumorCellContent.value",
+      "short" : "Tumor cell content fraction (0.0 – 1.0)",
+      "definition" : "Tumor cell content fraction (0.0 – 1.0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results",
+      "path" : "dnpm-lm-ngs-report.results",
+      "short" : "NGS analysis results",
+      "definition" : "NGS analysis results",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent",
+      "short" : "Bioinformatically determined tumor cell content",
+      "definition" : "Bioinformatically determined tumor cell content",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.id",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.id",
+      "short" : "Result ID",
+      "definition" : "Result ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.patient",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.specimen",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.specimen.id",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.specimen.type",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.method",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.method",
+      "short" : "Determination method",
+      "definition" : "Determination method",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.method.code",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.method.code",
+      "short" : "Method code",
+      "definition" : "Method code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.method.display",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.method.display",
+      "short" : "Method display",
+      "definition" : "Method display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.method.system",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.method.system",
+      "short" : "Method system URI",
+      "definition" : "Method system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tumorCellContent.value",
+      "path" : "dnpm-lm-ngs-report.results.tumorCellContent.value",
+      "short" : "Tumor cell content fraction (0.0 – 1.0)",
+      "definition" : "Tumor cell content fraction (0.0 – 1.0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb",
+      "path" : "dnpm-lm-ngs-report.results.tmb",
+      "short" : "Tumor Mutational Burden",
+      "definition" : "Tumor Mutational Burden",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.id",
+      "path" : "dnpm-lm-ngs-report.results.tmb.id",
+      "short" : "TMB result ID",
+      "definition" : "TMB result ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.patient",
+      "path" : "dnpm-lm-ngs-report.results.tmb.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.tmb.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.tmb.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.specimen",
+      "path" : "dnpm-lm-ngs-report.results.tmb.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.specimen.id",
+      "path" : "dnpm-lm-ngs-report.results.tmb.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.specimen.type",
+      "path" : "dnpm-lm-ngs-report.results.tmb.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.value",
+      "path" : "dnpm-lm-ngs-report.results.tmb.value",
+      "short" : "TMB quantity",
+      "definition" : "TMB quantity",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.value.value",
+      "path" : "dnpm-lm-ngs-report.results.tmb.value.value",
+      "short" : "Numeric TMB value",
+      "definition" : "Numeric TMB value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.value.unit",
+      "path" : "dnpm-lm-ngs-report.results.tmb.value.unit",
+      "short" : "Unit (e.g. Mutations per megabase)",
+      "definition" : "Unit (e.g. Mutations per megabase)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.interpretation",
+      "path" : "dnpm-lm-ngs-report.results.tmb.interpretation",
+      "short" : "TMB interpretation",
+      "definition" : "TMB interpretation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.interpretation.code",
+      "path" : "dnpm-lm-ngs-report.results.tmb.interpretation.code",
+      "short" : "Interpretation code (e.g. high)",
+      "definition" : "Interpretation code (e.g. high)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.interpretation.display",
+      "path" : "dnpm-lm-ngs-report.results.tmb.interpretation.display",
+      "short" : "Interpretation display",
+      "definition" : "Interpretation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.tmb.interpretation.system",
+      "path" : "dnpm-lm-ngs-report.results.tmb.interpretation.system",
+      "short" : "Interpretation system URI",
+      "definition" : "Interpretation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness",
+      "path" : "dnpm-lm-ngs-report.results.brcaness",
+      "short" : "BRCAness score",
+      "definition" : "BRCAness score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.id",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.id",
+      "short" : "BRCAness result ID",
+      "definition" : "BRCAness result ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.patient",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.specimen",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.specimen.id",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.specimen.type",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.value",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.value",
+      "short" : "BRCAness score (0.0 – 1.0)",
+      "definition" : "BRCAness score (0.0 – 1.0)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.confidenceRange",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.confidenceRange",
+      "short" : "Confidence range",
+      "definition" : "Confidence range",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.confidenceRange.min",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.confidenceRange.min",
+      "short" : "Minimum confidence value",
+      "definition" : "Minimum confidence value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.brcaness.confidenceRange.max",
+      "path" : "dnpm-lm-ngs-report.results.brcaness.confidenceRange.max",
+      "short" : "Maximum confidence value",
+      "definition" : "Maximum confidence value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore",
+      "short" : "Homologous Recombination Deficiency Score",
+      "definition" : "Homologous Recombination Deficiency Score",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.id",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.id",
+      "short" : "HRD result ID",
+      "definition" : "HRD result ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.patient",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.specimen",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.specimen",
+      "short" : "Specimen reference",
+      "definition" : "Specimen reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.specimen.id",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.specimen.id",
+      "short" : "Specimen ID",
+      "definition" : "Specimen ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.specimen.type",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.specimen.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.value",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.value",
+      "short" : "HRD composite score",
+      "definition" : "HRD composite score",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.components",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.components",
+      "short" : "HRD component scores",
+      "definition" : "HRD component scores",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.components.lst",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.components.lst",
+      "short" : "Large-scale state transitions (LST)",
+      "definition" : "Large-scale state transitions (LST)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.components.loh",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.components.loh",
+      "short" : "Loss of heterozygosity (LOH)",
+      "definition" : "Loss of heterozygosity (LOH)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.components.tai",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.components.tai",
+      "short" : "Telomeric allelic imbalance (TAI)",
+      "definition" : "Telomeric allelic imbalance (TAI)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.interpretation",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.interpretation",
+      "short" : "HRD interpretation",
+      "definition" : "HRD interpretation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.interpretation.code",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.interpretation.code",
+      "short" : "Interpretation code (e.g. low)",
+      "definition" : "Interpretation code (e.g. low)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.interpretation.display",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.interpretation.display",
+      "short" : "Interpretation display",
+      "definition" : "Interpretation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.hrdScore.interpretation.system",
+      "path" : "dnpm-lm-ngs-report.results.hrdScore.interpretation.system",
+      "short" : "Interpretation system URI",
+      "definition" : "Interpretation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants",
+      "short" : "Simple variants (SNV / small indels)",
+      "definition" : "Simple variants (SNV / small indels)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.id",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.id",
+      "short" : "Variant ID",
+      "definition" : "Variant ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.patient",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.externalIds",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.externalIds",
+      "short" : "External variant identifiers (e.g. dbSNP rs-number)",
+      "definition" : "External variant identifiers (e.g. dbSNP rs-number)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.externalIds.value",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.externalIds.value",
+      "short" : "Identifier value",
+      "definition" : "Identifier value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.externalIds.system",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.externalIds.system",
+      "short" : "Identifier system URI",
+      "definition" : "Identifier system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.chromosome",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.chromosome",
+      "short" : "Chromosome (e.g. chr4)",
+      "definition" : "Chromosome (e.g. chr4)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.gene",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.gene",
+      "short" : "Affected gene",
+      "definition" : "Affected gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.gene.code",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.gene.display",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.gene.system",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.localization",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.localization",
+      "short" : "Variant localisation in gene",
+      "definition" : "Variant localisation in gene",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.localization.code",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.localization.code",
+      "short" : "Localisation code",
+      "definition" : "Localisation code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.localization.display",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.localization.display",
+      "short" : "Localisation display",
+      "definition" : "Localisation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.localization.system",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.localization.system",
+      "short" : "Localisation system URI",
+      "definition" : "Localisation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.transcriptId",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.transcriptId",
+      "short" : "Transcript identifier",
+      "definition" : "Transcript identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.transcriptId.value",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.transcriptId.value",
+      "short" : "Transcript ID value (e.g. ENST...)",
+      "definition" : "Transcript ID value (e.g. ENST...)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.transcriptId.system",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.transcriptId.system",
+      "short" : "Transcript system URI",
+      "definition" : "Transcript system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.exonId",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.exonId",
+      "short" : "Exon identifier",
+      "definition" : "Exon identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.position",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.position",
+      "short" : "Genomic position (1-based)",
+      "definition" : "Genomic position (1-based)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.position.start",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.position.start",
+      "short" : "Start position",
+      "definition" : "Start position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.position.end",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.position.end",
+      "short" : "End position",
+      "definition" : "End position",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.altAllele",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.altAllele",
+      "short" : "Alternate allele",
+      "definition" : "Alternate allele",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.refAllele",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.refAllele",
+      "short" : "Reference allele",
+      "definition" : "Reference allele",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.dnaChange",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.dnaChange",
+      "short" : "cDNA / DNA change in HGVS notation (e.g. c.570G>T)",
+      "definition" : "cDNA / DNA change in HGVS notation (e.g. c.570G>T)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.proteinChange",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.proteinChange",
+      "short" : "Protein change in HGVS notation (e.g. p.(Glu125Asp))",
+      "definition" : "Protein change in HGVS notation (e.g. p.(Glu125Asp))",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.readDepth",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.readDepth",
+      "short" : "Read depth at variant position",
+      "definition" : "Read depth at variant position",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.allelicFrequency",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.allelicFrequency",
+      "short" : "Variant allelic frequency",
+      "definition" : "Variant allelic frequency",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation",
+      "short" : "ClinVar / clinical interpretation",
+      "definition" : "ClinVar / clinical interpretation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation.code",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation.code",
+      "short" : "Interpretation code",
+      "definition" : "Interpretation code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation.display",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation.display",
+      "short" : "Interpretation display",
+      "definition" : "Interpretation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation.system",
+      "path" : "dnpm-lm-ngs-report.results.simpleVariants.interpretation.system",
+      "short" : "Interpretation system URI",
+      "definition" : "Interpretation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants",
+      "short" : "Copy number variants (CNV)",
+      "definition" : "Copy number variants (CNV)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.id",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.id",
+      "short" : "CNV ID",
+      "definition" : "CNV ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.patient",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.chromosome",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.chromosome",
+      "short" : "Chromosome (e.g. chr7)",
+      "definition" : "Chromosome (e.g. chr7)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization",
+      "short" : "CNV localisation",
+      "definition" : "CNV localisation",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization.code",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization.code",
+      "short" : "Localisation code",
+      "definition" : "Localisation code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization.display",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization.display",
+      "short" : "Localisation display",
+      "definition" : "Localisation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization.system",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.localization.system",
+      "short" : "Localisation system URI",
+      "definition" : "Localisation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.startRange",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.startRange",
+      "short" : "Start position range",
+      "definition" : "Start position range",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.startRange.start",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.startRange.start",
+      "short" : "Range start",
+      "definition" : "Range start",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.startRange.end",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.startRange.end",
+      "short" : "Range end",
+      "definition" : "Range end",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.endRange",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.endRange",
+      "short" : "End position range",
+      "definition" : "End position range",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.endRange.start",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.endRange.start",
+      "short" : "Range start",
+      "definition" : "Range start",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.endRange.end",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.endRange.end",
+      "short" : "Range end",
+      "definition" : "Range end",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.totalCopyNumber",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.totalCopyNumber",
+      "short" : "Total copy number",
+      "definition" : "Total copy number",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.relativeCopyNumber",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.relativeCopyNumber",
+      "short" : "Relative copy number",
+      "definition" : "Relative copy number",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "decimal"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.cnA",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.cnA",
+      "short" : "Copy number allele A",
+      "definition" : "Copy number allele A",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.cnB",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.cnB",
+      "short" : "Copy number allele B",
+      "definition" : "Copy number allele B",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes",
+      "short" : "Reported affected genes",
+      "definition" : "Reported affected genes",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes.code",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes.display",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes.system",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.reportedAffectedGenes.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality",
+      "short" : "CNV focality",
+      "definition" : "CNV focality",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality.code",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality.code",
+      "short" : "Focality code (e.g. focal)",
+      "definition" : "Focality code (e.g. focal)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality.display",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality.display",
+      "short" : "Focality display",
+      "definition" : "Focality display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality.system",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.focality.system",
+      "short" : "Focality system URI",
+      "definition" : "Focality system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.type",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.type",
+      "short" : "CNV type (gain / loss)",
+      "definition" : "CNV type (gain / loss)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.type.code",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.type.code",
+      "short" : "CNV type code",
+      "definition" : "CNV type code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.type.display",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.type.display",
+      "short" : "CNV type display",
+      "definition" : "CNV type display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.copyNumberVariants.type.system",
+      "path" : "dnpm-lm-ngs-report.results.copyNumberVariants.type.system",
+      "short" : "CNV type system URI",
+      "definition" : "CNV type system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions",
+      "short" : "DNA-level gene fusions",
+      "definition" : "DNA-level gene fusions",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.id",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.id",
+      "short" : "DNA fusion ID",
+      "definition" : "DNA fusion ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.patient",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.localization",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.localization",
+      "short" : "Fusion localisation",
+      "definition" : "Fusion localisation",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.localization.code",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.localization.code",
+      "short" : "Localisation code",
+      "definition" : "Localisation code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.localization.display",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.localization.display",
+      "short" : "Localisation display",
+      "definition" : "Localisation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.localization.system",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.localization.system",
+      "short" : "Localisation system URI",
+      "definition" : "Localisation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime",
+      "short" : "5-prime fusion partner",
+      "definition" : "5-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene",
+      "short" : "5-prime partner gene",
+      "definition" : "5-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene.code",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene.display",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene.system",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.position",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner5prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime",
+      "short" : "3-prime fusion partner",
+      "definition" : "3-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene",
+      "short" : "3-prime partner gene",
+      "definition" : "3-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene.code",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene.display",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene.system",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.position",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.fusionPartner3prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.dnaFusions.reportedNumReads",
+      "path" : "dnpm-lm-ngs-report.results.dnaFusions.reportedNumReads",
+      "short" : "Number of reads supporting fusion",
+      "definition" : "Number of reads supporting fusion",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions",
+      "short" : "RNA-level gene fusions",
+      "definition" : "RNA-level gene fusions",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.id",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.id",
+      "short" : "RNA fusion ID",
+      "definition" : "RNA fusion ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.patient",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.patient",
+      "short" : "Patient reference",
+      "definition" : "Patient reference",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.patient.id",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.patient.id",
+      "short" : "Patient ID",
+      "definition" : "Patient ID",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.patient.type",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.patient.type",
+      "short" : "Reference type",
+      "definition" : "Reference type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.externalIds",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.externalIds",
+      "short" : "External identifiers (e.g. COSMIC fusion ID)",
+      "definition" : "External identifiers (e.g. COSMIC fusion ID)",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.externalIds.value",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.externalIds.value",
+      "short" : "Identifier value",
+      "definition" : "Identifier value",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.externalIds.system",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.externalIds.system",
+      "short" : "Identifier system URI",
+      "definition" : "Identifier system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.localization",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.localization",
+      "short" : "Fusion localisation",
+      "definition" : "Fusion localisation",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.localization.code",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.localization.code",
+      "short" : "Localisation code",
+      "definition" : "Localisation code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.localization.display",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.localization.display",
+      "short" : "Localisation display",
+      "definition" : "Localisation display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.localization.system",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.localization.system",
+      "short" : "Localisation system URI",
+      "definition" : "Localisation system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime",
+      "short" : "5-prime fusion partner",
+      "definition" : "5-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene",
+      "short" : "5-prime partner gene",
+      "definition" : "5-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene.code",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene.display",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene.system",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.transcript",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.transcript",
+      "short" : "5-prime transcript",
+      "definition" : "5-prime transcript",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.transcript.value",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.transcript.value",
+      "short" : "Transcript ID (e.g. ENST...)",
+      "definition" : "Transcript ID (e.g. ENST...)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.transcript.system",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.transcript.system",
+      "short" : "Transcript system URI",
+      "definition" : "Transcript system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.exon",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.exon",
+      "short" : "Exon identifier",
+      "definition" : "Exon identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.position",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.strand",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner5prime.strand",
+      "short" : "Strand (+ or -)",
+      "definition" : "Strand (+ or -)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime",
+      "short" : "3-prime fusion partner",
+      "definition" : "3-prime fusion partner",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene",
+      "short" : "3-prime partner gene",
+      "definition" : "3-prime partner gene",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene.code",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene.code",
+      "short" : "HGNC gene code",
+      "definition" : "HGNC gene code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene.display",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene.display",
+      "short" : "Gene symbol",
+      "definition" : "Gene symbol",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene.system",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.gene.system",
+      "short" : "Gene nomenclature system URI",
+      "definition" : "Gene nomenclature system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.transcript",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.transcript",
+      "short" : "3-prime transcript",
+      "definition" : "3-prime transcript",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.transcript.value",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.transcript.value",
+      "short" : "Transcript ID (e.g. ENST...)",
+      "definition" : "Transcript ID (e.g. ENST...)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.transcript.system",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.transcript.system",
+      "short" : "Transcript system URI",
+      "definition" : "Transcript system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.exon",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.exon",
+      "short" : "Exon identifier",
+      "definition" : "Exon identifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.position",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.position",
+      "short" : "Breakpoint position",
+      "definition" : "Breakpoint position",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.strand",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.fusionPartner3prime.strand",
+      "short" : "Strand (+ or -)",
+      "definition" : "Strand (+ or -)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.effect",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.effect",
+      "short" : "RNA fusion effect",
+      "definition" : "RNA fusion effect",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.effect.code",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.effect.code",
+      "short" : "Effect code (e.g. in-frame)",
+      "definition" : "Effect code (e.g. in-frame)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.effect.display",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.effect.display",
+      "short" : "Effect display",
+      "definition" : "Effect display",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.effect.system",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.effect.system",
+      "short" : "Effect system URI",
+      "definition" : "Effect system URI",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "dnpm-lm-ngs-report.results.rnaFusions.reportedNumReads",
+      "path" : "dnpm-lm-ngs-report.results.rnaFusions.reportedNumReads",
+      "short" : "Number of reads supporting fusion",
+      "definition" : "Number of reads supporting fusion",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    }]
+  }
+}
+
+```

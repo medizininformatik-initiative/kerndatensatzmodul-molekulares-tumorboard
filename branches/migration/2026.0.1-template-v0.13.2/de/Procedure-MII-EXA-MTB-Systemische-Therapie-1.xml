@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Procedure xmlns="http://hl7.org/fhir">
+  <id value="MII-EXA-MTB-Systemische-Therapie-1"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie|2026.0.1"/>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="extensions"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Procedure MII-EXA-MTB-Systemische-Therapie-1</b></p><a name="de-MII-EXA-MTB-Systemische-Therapie-1"> </a><a name="de-hcMII-EXA-MTB-Systemische-Therapie-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-systemische-therapie.html">MII PR MTB Systemische Therapie</a> version: 2026.0.1</p></div><p><b>MII EX Onko Systemische Therapie Intention</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-intention K}">kurativ</span></p><p><b>basedOn</b>: <a href="CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.html">CarePlan: status = active; intent = plan; category = prätherapeutische Tumorkonferenz (Festlegung der Therapiestrategie); created = 2023-03-28</a></p><p><b>status</b>: Completed</p><p><b>statusReason</b>: <span title="Codes:">regular-completion</span></p><p><b>category</b>: <span title="Codes:{http://snomed.info/sct 367336001}">Chemotherapy (procedure)</span></p><p><b>code</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ CH}, {http://fhir.de/CodeSystem/bfarm/ops 8-54}">Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>performed</b>: 2023-06-24 --&gt; 2023-10-12</p></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-intention"/>
+        <code value="K"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <basedOn>
+    <reference value="CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"/>
+  </basedOn>
+  <status value="completed"/>
+  <statusReason>
+    <coding>
+      <code value="regular-completion"/>
+    </coding>
+  </statusReason>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="367336001"/>
+      <display value="Chemotherapy (procedure)"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ"/>
+      <code value="CH"/>
+    </coding>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+      <version value="2023"/>
+      <code value="8-54"/>
+      <display value="Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <performedPeriod>
+    <start value="2023-06-24"/>
+    <end value="2023-10-12"/>
+  </performedPeriod>
+</Procedure>

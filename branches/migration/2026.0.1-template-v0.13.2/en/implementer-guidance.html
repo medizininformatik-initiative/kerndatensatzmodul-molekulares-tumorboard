@@ -1,0 +1,873 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Guidance for Implementers - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Branding override for the fhir2.base.template CSS placeholder
+     (base ships includes/fragment-css.html as a single comment; it is included
+     in <head> AFTER all base stylesheets, so the linked files win the
+     cascade).
+     Load model (docs/styleguide.md §1/§10): bootstrap-accessibility.css
+     (PayPal Bootstrap Accessibility Plugin v1.0.7, vendored + pinned - §8)
+     patches Bootstrap-3 component styling for accessibility (focus outlines,
+     alert contrast) and loads FIRST so the template's own rules can override;
+     then template-base.css carries the
+     brand-INDEPENDENT rule blocks and always loads; then EXACTLY ONE palette
+     file follows - num-diz.css, the DEFAULT design, unless the consuming IG
+     ships input/data/brand.json with { "design": "mii" } (read as
+     site.data.brand.design via the base's input/data -> _data pre-process),
+     which selects mii.css instead. Only the exact value 'mii' selects the
+     MII design; anything else - including no brand.json at all and unknown
+     values - renders NUM-DIZ. Both palettes declare the same variable set
+     (scripts/brand-switch.test.mjs). -->
+<link href="assets/css/bootstrap-accessibility.css" rel="stylesheet"/>
+<link href="assets/css/template-base.css" rel="stylesheet"/>
+
+<link href="assets/css/num-diz.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2.2"}
+    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Branding override for the fhir2.base.template header placeholder
+     (base ships includes/fragment-header.html as a single comment; it is included
+     inside "#segment-header > .container", before the #ig-status block).
+     Language handling: only the asset and its descriptive alt text switch on
+     include.lang (the pattern kerndatensatz-basis uses); no translatable UI
+     strings are hard-coded.
+     Brand handling: the project logo additionally switches on
+     site.data.brand.design (input/data/brand.json in the consuming IG, see
+     docs/styleguide.md §10). Only the exact value 'mii' selects the MII
+     logos - anything else, including no brand.json at all, falls through to
+     the NUM-DIZ default.
+     Two logos, mirroring kerndatensatz-basis: the HL7 FHIR logo (links to the
+     FHIR spec) in #family-nav, and the project logo in #project-nav.
+     fhir-logo-www.png is shipped by fhir2.base.template
+     (content/assets/images/), so it resolves from the inherited assets without
+     shipping it here. -->
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir">
+    <img height="50" alt="HL7 FHIR" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="project-nav">
+
+  <a id="project-logo" no-external="true" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+    <img height="50" alt="NUM-DIZ (Network of University Medicine — Data Integration Center)" src="assets/images/logo-num-diz-en.svg"/>
+
+  </a>
+
+</div>
+<!-- Font-size control (A / A+ / A++): three reader-selectable levels; level A
+     is the untouched default. Logic in assets/js/font-size-control.js, the
+     zoom mapping + button styling in template-base.css ("font-size control"
+     block). All three buttons read "A" — the button's own font size shows the level; labels are language-neutral; only the aria texts switch
+     on include.lang. REMOVAL: delete this block, the js file and the CSS
+     block - one commit, styleguide §5a. -->
+
+<div class="ig-fontsize" role="group" aria-label="Font size">
+  <button type="button" data-level="0" aria-pressed="true" aria-label="Font size: default">A</button>
+  <button type="button" data-level="1" aria-pressed="false" aria-label="Font size: larger">A</button>
+  <button type="button" data-level="2" aria-pressed="false" aria-label="Font size: largest">A</button>
+</div>
+
+<script src="assets/js/font-size-control.js" defer></script>
+<!-- PayPal Bootstrap Accessibility Plugin v1.0.7 (vendored + pinned, §8):
+     patches the Bootstrap-3 components the publisher renders - navbar
+     dropdowns gain ARIA menu semantics + arrow-key navigation, tab panels
+     (structure-tabs) the full ARIA tabs pattern, alerts live-region
+     announcements. `defer` guarantees it executes AFTER the parser-inserted
+     bootstrap.min.js at the end of the body. Vendored from
+     paypal/bootstrap-accessibility-plugin @ v1.0.7 (the admin-ch fork was
+     evaluated and rejected: 151 commits behind upstream, its 6 deltas are
+     site-specific tab tweaks). REMOVAL: delete this tag, both vendored
+     assets and the fragment-css link - guard test pins the hashes. -->
+<script src="assets/js/bootstrap-accessibility.min.js" defer></script>
+<!-- Back-to-top button: appears after one viewport of scrolling (logic in
+     assets/js/back-to-top.js, styling in template-base.css "back-to-top"
+     block). Rendered here inside #segment-header, which is OUTSIDE the
+     data-fontsize zoom regions, so the fixed button never scales. REMOVAL:
+     this block, the js file and the CSS block - one commit, styleguide §8. -->
+
+<button type="button" class="ig-back-to-top" aria-label="Back to top">↑</button>
+
+<script src="assets/js/back-to-top.js" defer></script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII IG Kerndatensatz-Modul Molekulares Tumorboard</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - 
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- Menu in the IG's DEFAULT language (English).
+     The IG Publisher renders the navigation from this file. To translate it,
+     ship a per-language copy at input/translations/<lang>/includes/menu.xml —
+     this is the mechanism the HL7 reference IG FHIR/multi-lang-test-ig uses and
+     the ONLY way to get a TRANSLATED menu: the `menu:` property in
+     sushi-config.yaml generates a single menu.xml that cannot be translated.
+     Rules: keep the href targets identical across languages; dropdown parents
+     must link to a REAL page (href="#" is rejected by the template's menu QA);
+     only one sub-menu level is supported.
+
+     STRUCTURE: this menu implements the TF-KDS-agreed module menu (see
+     docs/page-structure.md for the full structure with cardinalities).
+     Entries marked OPTIONAL (0..1) below may be removed per module — the
+     removal procedure per entry is in docs/optional-pages.md in this
+     repository. Entries without a marker are mandatory (1..1).
+
+     LINK-ONLY ENTRIES (no page of their own):
+     - "Datasets and Descriptions" points at the Logical Models page
+       (logical-models.html) — the module's datasets ARE its logical models.
+       NEITHER Artifacts-Summary anchor is usable for the TF-KDS "Sec.
+       15.0.2" target: the numeric #2 is POSITIONAL (grouping index — wrong
+       section whenever the artifact mix differs from the full standard set),
+       and the browser-generated NAMED AnchorJS anchor
+       (#structures-logical-models) is invisible to the IG Publisher's link
+       validator — it injects a marker anchor into the menu (rendered as an
+       EMPTY menu entry) and logs a broken-link ERROR on every page's QA.
+       Full analysis: docs/page-structure.md, "Datasets and Descriptions".
+     - The four Conformance entries point at the KDS-wide conformance rules of
+       the Meta module (kerndatensatz-meta). INTERIM: the Meta module has no
+       published IG rendering yet (only a CI build with no conformance pages),
+       so these link to the authoritative meta-wiki sections; switch them to
+       the Meta IG's menu entries once a stable rendering exists (Gate item in
+       docs/page-structure.md). -->
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Guidance<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="guidance.html">Guidance</a></li>
+      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
+      <li><a href="researcher-guidance.html">Guidance for Researchers</a></li>
+      <li><a href="implementer-guidance.html">Guidance for Implementers</a></li>
+      <!-- link-only entry: Logical-Models section of the Artifacts Summary (see header note) -->
+      <li><a href="logical-models.html">Datasets and Descriptions</a></li>
+      <li><a href="uml-diagrams.html">UML Diagrams</a></li>
+      <li><a href="anwendungsszenarien.html">Application Scenarios</a></li>
+      <li><a href="dnpm-transformation.html">DNPM Transformation</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <!-- The parent and the first four entries link to the KDS-wide conformance
+         rules of the Meta module (INTERIM: meta-wiki; see header note). -->
+    <a data-toggle="dropdown" href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance" class="dropdown-toggle">Conformance<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Conformance</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#anforderungsdokumentation">General Requirements</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#must-support-ms">Must Support</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#fehlende-daten">Handling Missing Data</a></li>
+      <li><a href="security-and-privacy.html">Security and Privacy</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artifacts<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="artifacts.html">Artifacts Summary</a></li>
+      <li><a href="profiles.html">Profiles</a></li>
+      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
+      <li><a href="extensions.html">Extensions</a></li>
+      <li><a href="capability-statements.html">Capability Statements</a></li>
+      <li><a href="logical-models.html">Logical Models</a></li>
+      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
+      <li><a href="value-sets.html">Value Sets</a></li>
+      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
+      <li><a href="code-systems.html">Code Systems</a></li>
+      <li><a href="examples.html">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="changes.html">Changelog</a></li>
+  <li class="dropdown">
+    <!-- The parent deliberately links the MANDATORY child (Versioning): the
+         Metadata Overview page is optional, and a parent pointing at it would
+         have to be re-targeted when that page is removed. -->
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadata<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
+      <li><a href="metadata.html">Metadata Overview</a></li>
+      <li><a href="version-history.html">Versioning</a></li>
+      <li><a href="ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html">MII ImplementationGuide Resource</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+
+    <div><a href="../de/implementer-guidance.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
+
+  </div>
+</div>
+
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='guidance.html'><b>Guidance</b></a></li><li><b>Guidance for Implementers</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII IG Kerndatensatz-Modul Molekulares Tumorboard - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Guidance for Implementers</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#profile-content-and-inheritance" id="markdown-toc-profile-content-and-inheritance">Profile Content and Inheritance</a></li>
+  <li><a href="#profile-relations-and-references" id="markdown-toc-profile-relations-and-references">Profile Relations and References</a></li>
+  <li><a href="#qa-and-validation" id="markdown-toc-qa-and-validation">QA and Validation</a></li>
+</ul>
+
+</div>
+<!-- markdownlint-disable MD041 -->
+<!-- Migrated from the Simplifier IG (TechnischeImplementierung: Profile-Inhalt-und-Vererbung,
+     Profile-Beziehungen-und-Referenzen, QA-Validierung). TODO:REVIEW machine-translated. -->
+
+<p>Technical guidance for DIC implementers on implementing the profiles of the <strong>Molecular Tumor Board</strong> module (ETL from primary systems, FHIR API, validation).</p>
+
+<h3 id="profile-content-and-inheritance">Profile Content and Inheritance</h3>
+
+<p>The following overview shows the module's profiles, their content and their inheritance relations. The image can be viewed and downloaded <a href="MII_MTB_Overview.svg">individually</a> (provided as <code class="language-plaintext highlighter-rouge">.svg</code>).</p>
+
+<p><a target="_blank" href="MII_MTB_Overview.svg"><img style="width: 100%;" alt="Overview of profile inheritance" src="MII_MTB_Overview.svg" /></a></p>
+
+<h3 id="profile-relations-and-references">Profile Relations and References</h3>
+
+<p>The following overview shows the references between the resources. The image file can be viewed and downloaded <a href="MII-Kerndatensatz-Molekulares-Tumorboard-Beziehungen-und-Referenzen.svg">individually</a> (provided as <code class="language-plaintext highlighter-rouge">.svg</code>).</p>
+
+<p><a target="_blank" href="MII-Kerndatensatz-Molekulares-Tumorboard-Beziehungen-und-Referenzen.svg"><img alt="MTB relations and references" src="MII-Kerndatensatz-Molekulares-Tumorboard-Beziehungen-und-Referenzen.svg" width="100%" /></a></p>
+
+<h3 id="qa-and-validation">QA and Validation</h3>
+
+<p>This section documents the FHIR validation status of the MII module Molecular Tumor Board (MTB).</p>
+
+<p>The module is continuously validated against the FHIR R4 standard and the defined profiles. The validation status is documented here transparently.</p>
+
+<h4 id="terminology-server-and-validation-configuration">Terminology server and validation configuration</h4>
+
+<p><strong>MII Terminology Server</strong>: <a href="https://termserv.mii.medizininformatik-initiative.de/fhir">https://termserv.mii.medizininformatik-initiative.de/fhir</a></p>
+
+<p><strong>Validation configuration</strong>: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/dev/advisor.json"><code class="language-plaintext highlighter-rouge">advisor.json</code></a></p>
+
+<h4 id="filtered-validation-messages">Filtered validation messages</h4>
+
+<p>These messages are suppressed via <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/dev/advisor.json"><code class="language-plaintext highlighter-rouge">advisor.json</code></a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Error code</th>
+      <th>Context</th>
+      <th>Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Terminology_TX_NoValid_16</code></td>
+      <td>ImplementationGuide, StructureDefinition, ValueSet, CodeSystem</td>
+      <td>External terminology-server limitation: the TX server cannot validate certain codes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">UNABLE_TO_INFER_CODESYSTEM</code></td>
+      <td>ImplementationGuide, StructureDefinition, ValueSet, CodeSystem</td>
+      <td>The validator cannot automatically infer the code system</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Structural_VAL_Array_Empty</code></td>
+      <td>ImplementationGuide.definition.page</td>
+      <td>Empty array in the IG page definition (Simplifier artifact)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MSG_DRAFT</code></td>
+      <td>global</td>
+      <td>Expected warning for resources in <code class="language-plaintext highlighter-rouge">draft</code> status during the development phase</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dom-6</code></td>
+      <td>DomainResource</td>
+      <td>FHIR base invariant, known validator artifact</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">eld-20</code></td>
+      <td>ElementDefinition</td>
+      <td>ElementDefinition invariant, known validator artifact</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">LOINC LIST filter</code></td>
+      <td>Observations, Procedures</td>
+      <td><code class="language-plaintext highlighter-rouge">There is no declared filter called LIST on code system http://loinc.org</code> — the CI TX server does not support the LOINC <code class="language-plaintext highlighter-rouge">LIST</code> filter (see below)</td>
+    </tr>
+    <tr>
+      <td>SNOMED code <code class="language-plaintext highlighter-rouge">1381317004</code> not known to the TX server</td>
+      <td>SNOMED CT</td>
+      <td>New SNOMED CT code not yet available in the TX-server version</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Reference_REF_CantMatchChoice</code></td>
+      <td>global</td>
+      <td>The validator cannot resolve choice-type references (known limitation)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Validation_VAL_Profile_NoSnapshot</code></td>
+      <td>global</td>
+      <td>Referenced profile without snapshot (e.g. from dependency packages without snapshots)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="profile-specific-issues">Profile-specific issues</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Genomics Reporting</strong></td>
+      <td>Extension</td>
+      <td>HL7 Genomics Reporting extensions have known validation warnings</td>
+      <td>🔵 EXTERNAL</td>
+    </tr>
+    <tr>
+      <td><strong>GenomicStudyAnalysis</strong></td>
+      <td>Profile mismatch</td>
+      <td>Bundle validation cannot resolve the profile chain (see below)</td>
+      <td>🔵 EXTERNAL</td>
+    </tr>
+    <tr>
+      <td><strong>Immunohistochemistry</strong></td>
+      <td>Slicing</td>
+      <td>code.coding slicing with pattern discriminator and value set (see below)</td>
+      <td>🔵 EXTERNAL</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="profile-mismatch-in-bundle-validation">Profile mismatch in bundle validation</h4>
+
+<p>When validating bundles with nested profile references, the FHIR validator may report <code class="language-plaintext highlighter-rouge">PROFILE_MISMATCH</code> errors although the resources are correctly profiled. This occurs in particular for the <code class="language-plaintext highlighter-rouge">GenomicStudyAnalysis</code> resource, which is referenced through a profile chain:</p>
+
+<p><strong>Profile chain:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">MII_PR_MTB_NGS_Bericht</code> → references <code class="language-plaintext highlighter-rouge">MII_PR_MTB_Genomic_Study</code></li>
+  <li><code class="language-plaintext highlighter-rouge">MII_PR_MTB_Genomic_Study</code> → references <code class="language-plaintext highlighter-rouge">MII_PR_MTB_Genomic_Study_Analysis</code></li>
+  <li><code class="language-plaintext highlighter-rouge">MII_PR_MTB_Genomic_Study_Analysis</code> → based on <code class="language-plaintext highlighter-rouge">MII_PR_MolGen_GenomicStudyAnalysis</code></li>
+</ul>
+
+<p><strong>Error message:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PROFILE_MISMATCH: Unable to find a profile match for Procedure/mii-exa-mtb-...-genomic-study-analysis-1
+</code></pre></div></div>
+
+<p><strong>Cause:</strong> The FHIR validator cannot fully resolve this multi-level profile chain in bundle contexts, because the profile references are distributed across several IG packages (MTB → MolGen → HL7 Genomics Reporting).</p>
+
+<p><strong>Status:</strong> These are validator artifacts, not actual conformance problems. The profiles are correctly defined and the example resources conform.</p>
+
+<h4 id="immunohistochemistry-codecoding-slicing">Immunohistochemistry code.coding slicing</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">MII_PR_MTB_Immunohistochemistry</code> profile uses a slicing on <code class="language-plaintext highlighter-rouge">code.coding</code> with two slices:</p>
+<ul>
+  <li><strong>spezifisch</strong>: for specific LOINC/SNOMED codes (value-set bound)</li>
+  <li><strong>generisch</strong>: for the generic IHC code <code class="language-plaintext highlighter-rouge">1234806008</code> (fixed)</li>
+</ul>
+
+<p><strong>Error message:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Slicing cannot be evaluated: Could not match discriminator ($this) for slice spezifisch
+</code></pre></div></div>
+
+<p><strong>Cause:</strong> The FHIR validator has difficulty evaluating <code class="language-plaintext highlighter-rouge">#pattern</code> discriminators on <code class="language-plaintext highlighter-rouge">$this</code> with value-set-bound slices, because the pattern cannot be derived unambiguously from the value set.</p>
+
+<p><strong>Status:</strong> The profile semantics are correct. The validator cannot fully evaluate the slicing, but the instances conform.</p>
+
+<h4 id="terminology-related-issues">Terminology-related issues</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Terminology</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>HGNC</strong></td>
+      <td>Gene symbols not available on all TX servers</td>
+      <td>🔵 EXTERNAL</td>
+    </tr>
+    <tr>
+      <td><strong>Oncotree</strong></td>
+      <td>Tumor classification is external, not validatable via FHIR TX</td>
+      <td>🔵 EXTERNAL</td>
+    </tr>
+    <tr>
+      <td><strong>LOINC</strong></td>
+      <td>Panel codes for genomics partly not validatable; <code class="language-plaintext highlighter-rouge">LIST</code> filter not supported (see below)</td>
+      <td>🔵 EXTERNAL</td>
+    </tr>
+    <tr>
+      <td><strong>SNOMED CT</strong></td>
+      <td>Newer codes (July 2025+) not available on MII TX servers</td>
+      <td>🔵 EXTERNAL</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="loinc-list-filter-errors-in-ci">LOINC LIST-filter errors in CI</h4>
+
+<p>The CI validation reports 14 errors of the form:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error from http://127.0.0.1:8090/fhir: Error: There is no declared filter called LIST on code system http://loinc.org
+</code></pre></div></div>
+
+<p><strong>Cause:</strong> The <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.genomics-reporting</code> IG (v3.0.0) uses value sets with LOINC <code class="language-plaintext highlighter-rouge">LIST</code> filter expressions. The terminology server used in CI does not support this filter. This affects all resources using LOINC codes from Genomics Reporting value sets.</p>
+
+<p><strong>Affected resources (14):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Element</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bundle (Kim Musterperson)</td>
+      <td>GenomicStudyAnalysis, EinfacheVariante (TP53, PIK3R1), CNVariante (CCNE1)</td>
+    </tr>
+    <tr>
+      <td>Observation (Einfache Variante)</td>
+      <td><code class="language-plaintext highlighter-rouge">value</code>, <code class="language-plaintext highlighter-rouge">method</code>, <code class="language-plaintext highlighter-rouge">component[0].value</code></td>
+    </tr>
+    <tr>
+      <td>Observation (Copy Number Variant)</td>
+      <td><code class="language-plaintext highlighter-rouge">component[0].value</code></td>
+    </tr>
+    <tr>
+      <td>Observation (RNA Fusion)</td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+    </tr>
+    <tr>
+      <td>Procedure (GenomicStudyAnalysis)</td>
+      <td><code class="language-plaintext highlighter-rouge">extension.value</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Status:</strong> 🔵 EXTERNAL — the error lies in the CI TX server, not in the profiles or examples. The message is filtered via <code class="language-plaintext highlighter-rouge">advisor.json</code>.</p>
+
+<h4 id="non-validatable-snomed-ct-codes">Non-validatable SNOMED CT codes</h4>
+
+<p>The following SNOMED CT codes are correct, but newer than the version available on the terminology server. They therefore cannot be validated automatically.</p>
+
+<h5 id="in-situ-hybridization-ish-methods">In-situ hybridization (ISH) methods</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Display</th>
+      <th>Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1363313004</code></td>
+      <td>In situ hybridization technique (qualifier value)</td>
+      <td>ISH method (generic)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1303773004</code></td>
+      <td>Fluorescence in situ hybridization technique (qualifier value)</td>
+      <td>FISH method</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">787997001</code></td>
+      <td>Chromogenic in situ hybridization (qualifier value)</td>
+      <td>CISH method</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">787998006</code></td>
+      <td>Silver in situ hybridization (qualifier value)</td>
+      <td>SISH method</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="in-situ-hybridization-observable-entities">In-situ hybridization observable entities</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Display</th>
+      <th>Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1365744007</code></td>
+      <td>Ratio of erb-b2 receptor tyrosine kinase 2 to chromosome 17 centromere signals per cell in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)</td>
+      <td>HER2/CEP17 ratio ISH</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1365743001</code></td>
+      <td>Human epidermal growth factor receptor 2 gene copy number in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)</td>
+      <td>HER2 copy number ISH</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1365742006</code></td>
+      <td>Human epidermal growth factor receptor 2/centromeric probe 17 ratio in malignant neoplasm of breast in excised tissue specimen by in situ hybridization technique (observable entity)</td>
+      <td>HER2/CEP17 ratio (alternative)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="further-newer-snomed-ct-codes">Further newer SNOMED CT codes</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Display</th>
+      <th>Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1234806008</code></td>
+      <td>Observation using immunohistochemistry (observable entity)</td>
+      <td>IHC observation (generic)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">12645001</code></td>
+      <td>Gene amplification (finding)</td>
+      <td>ISH interpretation</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="external-dependencies">External dependencies</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Version</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.meta</code></td>
+      <td>2026.0.0</td>
+      <td>MII Core Dataset Meta</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code></td>
+      <td>2026.0.0</td>
+      <td>MII Core Dataset Base</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.onkologie</code></td>
+      <td>2026.0.3</td>
+      <td>MII Oncology module</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.molgen</code></td>
+      <td>2026.0.4</td>
+      <td>MII Molecular Genetics module</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.patho</code></td>
+      <td>2026.0.0</td>
+      <td>MII Pathology module</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.consent</code></td>
+      <td>2026.0.0</td>
+      <td>MII Consent module</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hl7.fhir.uv.genomics-reporting</code></td>
+      <td>3.0.0</td>
+      <td>HL7 Genomics Reporting IG</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="status-legend">Status legend</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Status</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🔴</td>
+      <td><strong>TODO</strong></td>
+      <td>Errors to be actively fixed</td>
+    </tr>
+    <tr>
+      <td>🟡</td>
+      <td><strong>MONITOR</strong></td>
+      <td>Watch, action may be required</td>
+    </tr>
+    <tr>
+      <td>🔵</td>
+      <td><strong>EXTERNAL</strong></td>
+      <td>External problem, outside our control</td>
+    </tr>
+    <tr>
+      <td>⚪</td>
+      <td><strong>FILTERED</strong></td>
+      <td>Filtered via advisor.json</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="continuous-integration">Continuous integration</h4>
+
+<p>The FHIR validation runs automatically on every push via GitHub Actions:</p>
+
+<ul>
+  <li><strong>JAVA_FHIR_VALIDATION</strong>: HL7 FHIR Validator (official)</li>
+  <li><strong>DOTNET_FHIR_VALIDATION</strong>: Firely .NET validator (alternative)</li>
+</ul>
+
+<p>🔗 <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/actions">Show current CI runs</a></p>
+
+<p>The validation results, including detailed output, are available as artifacts in the workflow runs.</p>
+
+<h4 id="how-can-i-help">How can I help?</h4>
+
+<p>If you would like to contribute to improving validation:</p>
+
+<ol>
+  <li><strong>Check</strong> the issues in the GitHub repository</li>
+  <li><strong>Look</strong> for a <code class="language-plaintext highlighter-rouge">TODO</code>-marked error that interests you</li>
+  <li><strong>Create</strong> an issue or pull request in the <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard">GitHub repository</a></li>
+  <li><strong>Discuss</strong> complex validation questions in the MII community</li>
+</ol>
+
+<p><strong>Note</strong>: this section is maintained manually. For the most current technical state see the CI runs in the repository.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Fri, Sep 11, 2026 14:44+0000">2026-09-11</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice">Legal notice</a>
+                 <br/>
+                 <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7®, FHIR® and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

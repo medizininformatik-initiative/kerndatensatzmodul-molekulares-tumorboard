@@ -1,0 +1,833 @@
+[{
+  "id" : "dnpm-lm-care-plan",
+  "type" : "StructureDefinition",
+  "url" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-care-plan",
+  "version" : "2026.0.1",
+  "name" : "DNPM_LM_CarePlan"
+},
+{
+  "id" : "dnpm-lm-ngs-report",
+  "type" : "StructureDefinition",
+  "url" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-ngs-report",
+  "version" : "2026.0.1",
+  "name" : "DNPM_LM_NGSReport"
+},
+{
+  "id" : "dnpm-lm-patient-record",
+  "type" : "StructureDefinition",
+  "url" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record",
+  "version" : "2026.0.1",
+  "name" : "DNPM_LM_PatientRecord"
+},
+{
+  "id" : "mii-cs-mtb-antrag-kostenuebernahme-antragsstadium",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antrag-kostenuebernahme-antragsstadium",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium"
+},
+{
+  "id" : "mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund"
+},
+{
+  "id" : "mii-cs-mtb-antwort-kostenuebernahme-entscheidung",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-antwort-kostenuebernahme-entscheidung",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung"
+},
+{
+  "id" : "mii-cs-mtb-auftrag-begruendung",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-auftrag-begruendung",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_AuftragBegruendung"
+},
+{
+  "id" : "mii-cs-mtb-bestimmungsmethode-tumorzellgehalt",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-bestimmungsmethode-tumorzellgehalt",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_BestimmungsmethodeTumorzellgehalt"
+},
+{
+  "id" : "mii-cs-mtb-dosisdichte",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Dosisdichte"
+},
+{
+  "id" : "mii-cs-mtb-empfehlung-evidenzgrad-nct",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Empfehlung_Evidenzgrad"
+},
+{
+  "id" : "mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis"
+},
+{
+  "id" : "mii-cs-mtb-empfehlung-status-begruendung",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-status-begruendung",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Empfehlung_StatusBegruendung"
+},
+{
+  "id" : "mii-cs-mtb-follow-up-status",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Follow_Up_Status"
+},
+{
+  "id" : "mii-cs-mtb-genomic-analysis-method-type",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Genomic_Analysis_Method_Type"
+},
+{
+  "id" : "mii-cs-mtb-genomicanalysis-devicefunction",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction"
+},
+{
+  "id" : "mii-cs-mtb-leitlinienbehandlung-status",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-leitlinienbehandlung-status",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Leitlinienbehandlung_Status"
+},
+{
+  "id" : "mii-cs-mtb-molekulare-biomarker",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Molekulare_Biomarker"
+},
+{
+  "id" : "mii-cs-mtb-msi-method-type",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_MSI_Method_Type"
+},
+{
+  "id" : "mii-cs-mtb-response-befund-beurteilung",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Response_Befund_Beurteilung"
+},
+{
+  "id" : "mii-cs-mtb-response-befund-beurteilungsmethode",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Response_Befund_Beurteilungsmethode"
+},
+{
+  "id" : "mii-cs-mtb-therapiestatusgrund",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Therapiestatusgrund"
+},
+{
+  "id" : "mii-cs-mtb-zulassungsstatus",
+  "type" : "CodeSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-zulassungsstatus",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Zulassungsstatus"
+},
+{
+  "id" : "mii-cm-mtb-therapiestatusgrund-obds",
+  "type" : "ConceptMap",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds",
+  "version" : "2026.0.1",
+  "name" : "MII CM MTB Therapiestatusgrund oBDS Mapping"
+},
+{
+  "id" : "mii-cm-mtb-therapiestatusgrund-sct",
+  "type" : "ConceptMap",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct",
+  "version" : "2026.0.1",
+  "name" : "MII CM MTB Therapiestatusgrund SNOMED CT Mapping"
+},
+{
+  "id" : "mii-kerndatensatzmodul-molekulares-tumorboard",
+  "type" : "ImplementationGuide",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard",
+  "version" : "2026.0.1",
+  "name" : "MII_IG_MTB_DE"
+},
+{
+  "id" : "mii-ns-mtb-nct",
+  "type" : "NamingSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/NamingSystem/mii-ns-mtb-nct",
+  "version" : "2026.0.1",
+  "name" : "MII_NS_MTB_NCT"
+},
+{
+  "id" : "mii-ns-studie-drks",
+  "type" : "NamingSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/NamingSystem/mii-ns-studie-drks",
+  "version" : "2026.0.1",
+  "name" : "MII_NS_Studie_DRKS"
+},
+{
+  "id" : "mii-ns-studie-eudract",
+  "type" : "NamingSystem",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/NamingSystem/mii-ns-studie-eudract",
+  "version" : "2026.0.1",
+  "name" : "MII_NS_Studie_EudraCT"
+},
+{
+  "id" : "mii-lm-mtb",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb",
+  "version" : "2026.0.1",
+  "name" : "MII_LM_MTB"
+},
+{
+  "id" : "genomic-study-device",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Genomic_Study_Device"
+},
+{
+  "id" : "mii-ex-mtb-antrag-kostenuebernahme-antragsstadium",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium"
+},
+{
+  "id" : "mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund"
+},
+{
+  "id" : "mii-ex-mtb-antwort-kostenuebernahme-entscheidung",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung"
+},
+{
+  "id" : "mii-ex-mtb-diagnose",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Diagnose"
+},
+{
+  "id" : "mii-ex-mtb-empfehlung-evidenzgraduierung",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Empfehlung_Evidenzgraduierung"
+},
+{
+  "id" : "mii-ex-mtb-empfehlung-prioritaet",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Empfehlung_Prioritaet"
+},
+{
+  "id" : "mii-ex-mtb-empfehlung-publikation",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Empfehlung_Publikation"
+},
+{
+  "id" : "mii-ex-mtb-genomic-study-analysis-qc",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-genomic-study-analysis-qc",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_GenomicStudyAnalysis_QC"
+},
+{
+  "id" : "mii-ex-mtb-leitlinie-dokumentation",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinie-dokumentation",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Leitlinie_Dokumentation"
+},
+{
+  "id" : "mii-ex-mtb-leitlinienbehandlung-status",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_Leitlinienbehandlung_Status"
+},
+{
+  "id" : "mii-ex-mtb-ngs-bericht-genomic-study",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-ngs-bericht-genomic-study",
+  "version" : "2026.0.1",
+  "name" : "MII_EX_MTB_NGS_Bericht_Genomic_Study"
+},
+{
+  "id" : "mii-pr-mtb-antrag-kostenuebernahme",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Antrag_Kostenuebernahme"
+},
+{
+  "id" : "mii-pr-mtb-antwort-kostenuebernahme",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antwort-kostenuebernahme",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Antwort_Kostenuebernahme"
+},
+{
+  "id" : "mii-pr-mtb-behandlungsepisode",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Behandlungsepisode"
+},
+{
+  "id" : "mii-pr-mtb-biomarker-her2-status",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biomarker-her2-status",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_BIOMARKER_HER2_STATUS"
+},
+{
+  "id" : "mii-pr-mtb-biopsie-auftrag",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Biopsie_Auftrag"
+},
+{
+  "id" : "mii-pr-mtb-brcaness",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_BRCAness"
+},
+{
+  "id" : "mii-pr-mtb-consent-given",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Consent_Given"
+},
+{
+  "id" : "mii-pr-mtb-copy-number-variant",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Copy_Number_Variant"
+},
+{
+  "id" : "mii-pr-mtb-diagnose-primaertumor",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Diagnose_Primaertumor"
+},
+{
+  "id" : "mii-pr-mtb-diagnostische-implikation",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Diagnostische_Implikation"
+},
+{
+  "id" : "mii-pr-mtb-dna-fusion",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_DNA_Fusion"
+},
+{
+  "id" : "mii-pr-mtb-einfache-variante",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Einfache_Variante"
+},
+{
+  "id" : "mii-pr-mtb-follow-up-clinicalimpression",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Follow_Up_ClinicalImpression"
+},
+{
+  "id" : "mii-pr-mtb-genomic-study",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Genomic_Study"
+},
+{
+  "id" : "mii-pr-mtb-genomic-study-analysis",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Genomic_Study_Analysis"
+},
+{
+  "id" : "mii-pr-mtb-histologie-evaluation-auftrag",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Histologie_Evaluation_Auftrag"
+},
+{
+  "id" : "mii-pr-mtb-hrd-score",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_HRD_Score"
+},
+{
+  "id" : "mii-pr-mtb-humangenetische-beratung-auftrag",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Humangenetische_Beratung_Auftrag"
+},
+{
+  "id" : "mii-pr-mtb-immunohistochemistry",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Immunohistochemistry"
+},
+{
+  "id" : "mii-pr-mtb-immunohistochemistry-her2",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-her2",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2"
+},
+{
+  "id" : "mii-pr-mtb-immunohistochemistry-mmr",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-mmr",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Immunohistochemistry_MMR"
+},
+{
+  "id" : "mii-pr-mtb-immunohistochemistry-pdl1",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-pdl1",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Immunohistochemistry_PDL1"
+},
+{
+  "id" : "mii-pr-mtb-immunohistochemistry-phosphorylation",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-phosphorylation",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Immunohistochemistry_Phosphorylation"
+},
+{
+  "id" : "mii-pr-mtb-insituhybridization",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Biomarker_InSituHybridization"
+},
+{
+  "id" : "mii-pr-mtb-insituhybridization-her2",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_INSITUHYBRIDIZATION_HER2"
+},
+{
+  "id" : "mii-pr-mtb-mikrosatelliteninstabilitaet",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Mikrosatelliteninstabilitaet"
+},
+{
+  "id" : "mii-pr-mtb-molecular-pathology-report",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Molecular_Pathology_Report"
+},
+{
+  "id" : "mii-pr-mtb-molekularer-biomarker",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Molekularer_Biomarker"
+},
+{
+  "id" : "mii-pr-mtb-msi",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-msi",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Immunohistochemistry_MSI"
+},
+{
+  "id" : "mii-pr-mtb-mutationslast",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Mutationslast"
+},
+{
+  "id" : "mii-pr-mtb-ngs-bericht",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_NGS_Bericht"
+},
+{
+  "id" : "mii-pr-mtb-oncotree",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Oncotree"
+},
+{
+  "id" : "mii-pr-mtb-ploidie",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ploidie",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Ploidie"
+},
+{
+  "id" : "mii-pr-mtb-response-befund",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Response_Befund"
+},
+{
+  "id" : "mii-pr-mtb-rna-fusion",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_RNA_Fusion"
+},
+{
+  "id" : "mii-pr-mtb-rna-seq",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-seq",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_RNA_Seq"
+},
+{
+  "id" : "mii-pr-mtb-studie",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Studie"
+},
+{
+  "id" : "mii-pr-mtb-studieneinschluss-anfrage",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Studieneinschluss_Anfrage"
+},
+{
+  "id" : "mii-pr-mtb-systemische-therapie",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Systemische_Therapie"
+},
+{
+  "id" : "mii-pr-mtb-systemische-vortherapie",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Systemische_Vortherapie"
+},
+{
+  "id" : "mii-pr-mtb-systemtherapie-medication-statement",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Systemische_Therapie_Medication_Statement"
+},
+{
+  "id" : "mii-pr-mtb-therapeutische-implikation",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapeutische-implikation",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Therapeutische_Implikation"
+},
+{
+  "id" : "mii-pr-mtb-therapieempfehlung",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Therapieempfehlung"
+},
+{
+  "id" : "mii-pr-mtb-therapieempfehlung-kombination",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Therapieempfehlung_Kombination"
+},
+{
+  "id" : "mii-pr-mtb-therapieplan",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Therapieplan"
+},
+{
+  "id" : "mii-pr-mtb-tumorausbreitung",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Tumorausbreitung"
+},
+{
+  "id" : "mii-pr-mtb-tumorzellgehalt",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_Tumorzellgehalt"
+},
+{
+  "id" : "mii-pr-mtb-who-grad-tumor-zns",
+  "type" : "StructureDefinition",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-who-grad-tumor-zns",
+  "version" : "2026.0.1",
+  "name" : "MII_PR_MTB_WHO_Grad_Tumor_ZNS"
+},
+{
+  "id" : "mii-vs-mtb-antrag-kostenuebernahme",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Antrag_Kostenuebernahme_Type"
+},
+{
+  "id" : "mii-vs-mtb-antrag-kostenuebernahme-antragsstadium",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium"
+},
+{
+  "id" : "mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund"
+},
+{
+  "id" : "mii-vs-mtb-antwort-kostenuebernahme-entscheidung",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antwort-kostenuebernahme-entscheidung",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung"
+},
+{
+  "id" : "mii-vs-mtb-auftrag-begruendung",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-auftrag-begruendung",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_AuftragBegruendung"
+},
+{
+  "id" : "mii-vs-mtb-bestimmungsmethode-tumorzellgehalt",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-bestimmungsmethode-tumorzellgehalt",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_BestimmungsmethodeTumorzellgehalt"
+},
+{
+  "id" : "mii-vs-mtb-dosisdichte",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Dosisdichte"
+},
+{
+  "id" : "mii-vs-mtb-empfehlung-evidenzgrad",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-evidenzgrad",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Empfehlung_Evidenzgrad"
+},
+{
+  "id" : "mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Empfehlung_EvidenzgradZusatzverweis"
+},
+{
+  "id" : "mii-vs-mtb-empfehlung-status-begruendung",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-status-begruendung",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Empfehlung_StatusBegruendung"
+},
+{
+  "id" : "mii-vs-mtb-follow-grund-nicht-umsetzung",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung"
+},
+{
+  "id" : "mii-vs-mtb-follow-up-status",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-status",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Follow_Up_Status"
+},
+{
+  "id" : "mii-vs-mtb-genomic-analysis-method-type",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-genomic-analysis-method-type",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Genomic_Analysis_Method_Type"
+},
+{
+  "id" : "mii-vs-mtb-immunohistochemistry-specific-codes",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-immunohistochemistry-specific-codes",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Immunhistochemistry_Specific_Codes"
+},
+{
+  "id" : "mii-vs-mtb-ish-method",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-ish-method",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_ISH_Method"
+},
+{
+  "id" : "mii-vs-mtb-leitlinienbehandlung-status",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-leitlinienbehandlung-status",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Leitlinienbehandlung_Status"
+},
+{
+  "id" : "mii-vs-mtb-mmr-expression",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-expression",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_MMR_Expression"
+},
+{
+  "id" : "mii-vs-mtb-mmr-proficiency",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-mmr-proficiency",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_MMR_Proficiency"
+},
+{
+  "id" : "mii-vs-mtb-molekulare-biomarker",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-molekulare-biomarker",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Molekulare_Biomarker"
+},
+{
+  "id" : "mii-vs-mtb-msi",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Microsatellite_Instability"
+},
+{
+  "id" : "mii-vs-mtb-msi-method-type",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi-method-type",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_MSI_Method_Type"
+},
+{
+  "id" : "mii-vs-mtb-oncotree",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-oncotree",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_OncoTree"
+},
+{
+  "id" : "mii-vs-mtb-response-befund-beurteilung",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilung",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Response_Befund_Beurteilung"
+},
+{
+  "id" : "mii-vs-mtb-beurteilungsmethode-response-befund",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-response-befund-beurteilungsmethode",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Beurteilungsmethode"
+},
+{
+  "id" : "mii-vs-mtb-systemische-therapie-status",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemische-therapie-status",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Systemische_Therapie_Status"
+},
+{
+  "id" : "mii-vs-mtb-therapiestatusgrund",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Therapiestatusgrund"
+},
+{
+  "id" : "mii-vs-mtb-tumorausbreitung",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-tumorausbreitung",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Tumorausbreitung"
+},
+{
+  "id" : "mii-vs-mtb-who-grad-tumor-zns",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_WHO_Grad_Tumor_ZNS"
+},
+{
+  "id" : "mii-vs-mtb-zulassungsstatus",
+  "type" : "ValueSet",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-zulassungsstatus",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Zulassungsstatus"
+},
+{
+  "id" : "mii-cps-mtb-capabilitystatement",
+  "type" : "CapabilityStatement",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata",
+  "version" : "2026.0.1",
+  "name" : "MII_CPS_MTB_CapabilityStatement"
+}]

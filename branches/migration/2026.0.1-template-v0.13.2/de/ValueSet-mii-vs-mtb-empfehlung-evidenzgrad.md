@@ -1,0 +1,70 @@
+# MII VS Empfehlung Evidenzgrad - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII VS Empfehlung Evidenzgrad**
+
+## ValueSet: MII VS Empfehlung Evidenzgrad 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-evidenzgrad | *Version*:2026.0.1 |
+| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_VS_MTB_Empfehlung_Evidenzgrad |
+
+ 
+ValueSet für den Evidenzgrad einer Empfehlung 
+
+ **References** 
+
+This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+
+### Logical Definition (CLD)
+
+ 
+
+### Expansion
+
+-------
+
+ [Beschreibung der obigen Tabelle(n)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ValueSet",
+  "id" : "mii-vs-mtb-empfehlung-evidenzgrad",
+  "language" : "de-DE",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-evidenzgrad",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_Empfehlung_Evidenzgrad",
+  "title" : "MII VS Empfehlung Evidenzgrad",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-11T14:44:50+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "ValueSet für den Evidenzgrad einer Empfehlung",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"
+    }]
+  }
+}
+
+```

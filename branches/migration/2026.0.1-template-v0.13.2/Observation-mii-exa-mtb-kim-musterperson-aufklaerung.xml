@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-kim-musterperson-aufklaerung"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given|2026.0.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation mii-exa-mtb-kim-musterperson-aufklaerung</b></p><a name="mii-exa-mtb-kim-musterperson-aufklaerung"> </a><a name="hcmii-exa-mtb-kim-musterperson-aufklaerung"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-consent-given.html">MII PR MTB Consent</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://loinc.org 105511-0}">Was consent given</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>effective</b>: 2023-01-02</p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 373066001}">Yes (qualifier value)</span></p></div><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation mii-exa-mtb-kim-musterperson-aufklaerung</b></p><a name="de-mii-exa-mtb-kim-musterperson-aufklaerung"> </a><a name="de-hcmii-exa-mtb-kim-musterperson-aufklaerung"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-consent-given.html">MII PR MTB Consent</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://loinc.org 105511-0}">Was consent given</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>effective</b>: 2023-01-02</p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 373066001}">Yes (qualifier value)</span></p></div></div>
+  </text>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="105511-0"/>
+      <display value="Was consent given"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <effectiveDateTime value="2023-01-02"/>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="373066001"/>
+      <display value="Yes (qualifier value)"/>
+    </coding>
+  </valueCodeableConcept>
+</Observation>

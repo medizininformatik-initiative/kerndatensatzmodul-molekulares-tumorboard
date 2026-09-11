@@ -1,0 +1,40 @@
+{
+  "resourceType" : "Procedure",
+  "id" : "mii-exa-mtb-kim-musterperson-genomic-study",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study|2026.0.1"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Procedure mii-exa-mtb-kim-musterperson-genomic-study</b></p><a name=\"mii-exa-mtb-kim-musterperson-genomic-study\"> </a><a name=\"hcmii-exa-mtb-kim-musterperson-genomic-study\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-genomic-study.html\">MII PR MTB Genomic Study</a> version: 2026.0.1</p></div><p><b>Genomic Study Analysis Extension</b>: <a href=\"Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-1.html\">Procedure: extension = Next-Generation (NGS)/Massively parallel sequencing (MPS),SNV,SNV,GRCh38; status = completed; category = Laboratory</a></p><p><b>Genomic Study Analysis Extension</b>: <a href=\"Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-2.html\">Procedure: status = completed; category = Laboratory</a></p><p><b>Genomic Study Analysis Extension</b>: <a href=\"Procedure-mii-exa-mtb-kim-musterperson-genomic-study-analysis-3.html\">Procedure: extension = Immunohistochemistry; status = completed; category = Laboratory</a></p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext",
+    "valueReference" : {
+      "reference" : "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-1"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext",
+    "valueReference" : {
+      "reference" : "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-2"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext",
+    "valueReference" : {
+      "reference" : "Procedure/mii-exa-mtb-kim-musterperson-genomic-study-analysis-3"
+    }
+  }],
+  "status" : "completed",
+  "category" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  }
+}

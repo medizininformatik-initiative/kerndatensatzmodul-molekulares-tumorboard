@@ -1,0 +1,53 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "mii-vs-mtb-who-grad-tumor-zns",
+  "language" : "de",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-mtb-who-grad-tumor-zns</b></p><a name=\"de-mii-vs-mtb-who-grad-tumor-zns\"> </a><a name=\"de-hcmii-vs-mtb-who-grad-tumor-zns\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/396922003\">396922003</a></td><td>World Health Organization grade I central nervous system tumor (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/396923008\">396923008</a></td><td>World Health Organization grade II central nervous system tumor (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/396924002\">396924002</a></td><td>World Health Organization grade III central nervous system tumor (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/396925001\">396925001</a></td><td>World Health Organization grade IV central nervous system tumor (finding)</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns",
+  "version" : "2026.0.1",
+  "name" : "MII_VS_MTB_WHO_Grad_Tumor_ZNS",
+  "title" : "MII VS WHO Grad Tumor ZNS",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-11T14:44:50+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "ValueSet zum Grad eines Tumors nach WHO-Klassifikation der Tumoren des zentralen Nervensystems",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "396922003",
+        "display" : "World Health Organization grade I central nervous system tumor (finding)"
+      },
+      {
+        "code" : "396923008",
+        "display" : "World Health Organization grade II central nervous system tumor (finding)"
+      },
+      {
+        "code" : "396924002",
+        "display" : "World Health Organization grade III central nervous system tumor (finding)"
+      },
+      {
+        "code" : "396925001",
+        "display" : "World Health Organization grade IV central nervous system tumor (finding)"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType" : "ClinicalImpression",
+  "id" : "MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression|2026.0.1"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ClinicalImpression MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1</b></p><a name=\"MII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1\"> </a><a name=\"hcMII-EXA-MTB-Follow-Up-ClinicalImpression-Beispiel-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html\">MII PR MTB Clinical Impresssion</a> version: 2026.0.1</p></div><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 390906007}\">Follow-up encounter (procedure)</span></p><p><b>subject</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/PatientExample\">Patient/PatientExample</a></p><p><b>effective</b>: 2024-07-07</p><p><b>previous</b>: <a href=\"ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html\">ClinicalImpression: status = completed; effective[x] = 2023-01-20 --&gt; 2023-03-28</a></p><h3>Investigations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status ongoing}\">ongoing</span></td></tr></table><p><b>supportingInfo</b>: </p><ul><li><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/MII_PR_MTB_Systemische_Therapie/Example\">MII_PR_MTB_Systemische_Therapie/Example</a></li><li><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/MII_PR_MTB_Antrag_Kostenuebernahme/Example\">MII_PR_MTB_Antrag_Kostenuebernahme/Example</a></li><li><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/MII_PR_MTB_Antwort_Kostenuebernahme/Example\">MII_PR_MTB_Antwort_Kostenuebernahme/Example</a></li></ul></div>"
+  },
+  "status" : "completed",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "390906007",
+      "display" : "Follow-up encounter (procedure)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2024-07-07",
+  "previous" : {
+    "reference" : "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
+  },
+  "investigation" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status",
+        "code" : "ongoing"
+      }]
+    }
+  }],
+  "supportingInfo" : [{
+    "reference" : "MII_PR_MTB_Systemische_Therapie/Example"
+  },
+  {
+    "reference" : "MII_PR_MTB_Antrag_Kostenuebernahme/Example"
+  },
+  {
+    "reference" : "MII_PR_MTB_Antwort_Kostenuebernahme/Example"
+  }]
+}

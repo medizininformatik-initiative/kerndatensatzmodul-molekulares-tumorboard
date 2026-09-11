@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="mii-vs-mtb-msi"/>
+  <language value="de-DE"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet mii-vs-mtb-msi</b></p><a name="mii-vs-mtb-msi"> </a><a name="hcmii-vs-mtb-msi"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-DE</p></div><ul><li>Include these codes as defined in <a href="http://loinc.org"><code>http://loinc.org</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://loinc.org/LA14122-8/">LA14122-8</a></td><td>Stable</td></tr><tr><td><a href="https://loinc.org/LA14123-6/">LA14123-6</a></td><td>Instable</td></tr><tr><td><a href="https://loinc.org/LA11884-6/">LA11884-6</a></td><td>Indeterminate</td></tr><tr><td><a href="https://loinc.org/LA26202-4/">LA26202-4</a></td><td>MSI-L</td></tr><tr><td><a href="https://loinc.org/LA26203-2/">LA26203-2</a></td><td>MSI-H</td></tr></table></li></ul></div><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet mii-vs-mtb-msi</b></p><a name="de-mii-vs-mtb-msi"> </a><a name="de-hcmii-vs-mtb-msi"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-DE</p></div><ul><li>Include these codes as defined in <a href="http://loinc.org"><code>http://loinc.org</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://loinc.org/LA14122-8/">LA14122-8</a></td><td>Stable</td></tr><tr><td><a href="https://loinc.org/LA14123-6/">LA14123-6</a></td><td>Instable</td></tr><tr><td><a href="https://loinc.org/LA11884-6/">LA11884-6</a></td><td>Indeterminate</td></tr><tr><td><a href="https://loinc.org/LA26202-4/">LA26202-4</a></td><td>MSI-L</td></tr><tr><td><a href="https://loinc.org/LA26203-2/">LA26203-2</a></td><td>MSI-H</td></tr></table></li></ul></div></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-msi"/>
+  <version value="2026.0.1"/>
+  <name value="MII_VS_MTB_Microsatellite_Instability"/>
+  <title value="MII VS Mikrosatelliteninstabilität"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-09-11T14:44:50+00:00"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet zum MSI-Status auf Basis von Immunhistochemie, basierend auf der LOINC-AnswerList LL1057-0 Stable|Unstable|Indeterminate"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <concept>
+        <code value="LA14122-8"/>
+        <display value="Stable"/>
+      </concept>
+      <concept>
+        <code value="LA14123-6"/>
+        <display value="Instable"/>
+      </concept>
+      <concept>
+        <code value="LA11884-6"/>
+        <display value="Indeterminate"/>
+      </concept>
+      <concept>
+        <code value="LA26202-4"/>
+        <display value="MSI-L"/>
+      </concept>
+      <concept>
+        <code value="LA26203-2"/>
+        <display value="MSI-H"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

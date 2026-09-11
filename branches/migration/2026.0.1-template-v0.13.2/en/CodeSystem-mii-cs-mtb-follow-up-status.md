@@ -1,0 +1,74 @@
+# MII CS Follow-Up Status - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII CS Follow-Up Status**
+
+## CodeSystem: MII CS Follow-Up Status 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status | *Version*:2026.0.1 |
+| Active as of 2026-09-11 | *Computable Name*:MII_CS_MTB_Follow_Up_Status |
+
+ 
+Codesystem zum Follow-Up Status 
+
+This Code system is referenced in the definition of the following value sets:
+
+* [MII VS Follow-Up Status](ValueSet-mii-vs-mtb-follow-up-status.md)
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "mii-cs-mtb-follow-up-status",
+  "language" : "de-DE",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status",
+  "version" : "2026.0.1",
+  "name" : "MII_CS_MTB_Follow_Up_Status",
+  "title" : "MII CS Follow-Up Status",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-11T14:44:50+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "Codesystem zum Follow-Up Status",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [{
+    "code" : "ongoing",
+    "display" : "ongoing"
+  },
+  {
+    "code" : "completed",
+    "display" : "completed"
+  },
+  {
+    "code" : "not-done",
+    "display" : "not done"
+  }]
+}
+
+```

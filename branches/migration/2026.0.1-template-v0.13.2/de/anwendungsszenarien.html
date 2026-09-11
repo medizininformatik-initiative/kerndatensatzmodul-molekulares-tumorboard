@@ -1,0 +1,791 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Anwendungsszenarien - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Branding override for the fhir2.base.template CSS placeholder
+     (base ships includes/fragment-css.html as a single comment; it is included
+     in <head> AFTER all base stylesheets, so the linked files win the
+     cascade).
+     Load model (docs/styleguide.md §1/§10): bootstrap-accessibility.css
+     (PayPal Bootstrap Accessibility Plugin v1.0.7, vendored + pinned - §8)
+     patches Bootstrap-3 component styling for accessibility (focus outlines,
+     alert contrast) and loads FIRST so the template's own rules can override;
+     then template-base.css carries the
+     brand-INDEPENDENT rule blocks and always loads; then EXACTLY ONE palette
+     file follows - num-diz.css, the DEFAULT design, unless the consuming IG
+     ships input/data/brand.json with { "design": "mii" } (read as
+     site.data.brand.design via the base's input/data -> _data pre-process),
+     which selects mii.css instead. Only the exact value 'mii' selects the
+     MII design; anything else - including no brand.json at all and unknown
+     values - renders NUM-DIZ. Both palettes declare the same variable set
+     (scripts/brand-switch.test.mjs). -->
+<link href="assets/css/bootstrap-accessibility.css" rel="stylesheet"/>
+<link href="assets/css/template-base.css" rel="stylesheet"/>
+
+<link href="assets/css/num-diz.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2.4"}
+    h3,h4,h5,h6{--heading-prefix:"2.4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Branding override for the fhir2.base.template header placeholder
+     (base ships includes/fragment-header.html as a single comment; it is included
+     inside "#segment-header > .container", before the #ig-status block).
+     Language handling: only the asset and its descriptive alt text switch on
+     include.lang (the pattern kerndatensatz-basis uses); no translatable UI
+     strings are hard-coded.
+     Brand handling: the project logo additionally switches on
+     site.data.brand.design (input/data/brand.json in the consuming IG, see
+     docs/styleguide.md §10). Only the exact value 'mii' selects the MII
+     logos - anything else, including no brand.json at all, falls through to
+     the NUM-DIZ default.
+     Two logos, mirroring kerndatensatz-basis: the HL7 FHIR logo (links to the
+     FHIR spec) in #family-nav, and the project logo in #project-nav.
+     fhir-logo-www.png is shipped by fhir2.base.template
+     (content/assets/images/), so it resolves from the inherited assets without
+     shipping it here. -->
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir">
+    <img height="50" alt="HL7 FHIR" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="project-nav">
+
+  <a id="project-logo" no-external="true" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+    <img height="50" alt="NUM-DIZ (Netzwerk Universitätsmedizin — Datenintegrationszentrum)" src="assets/images/logo-num-diz-de.svg"/>
+
+  </a>
+
+</div>
+<!-- Font-size control (A / A+ / A++): three reader-selectable levels; level A
+     is the untouched default. Logic in assets/js/font-size-control.js, the
+     zoom mapping + button styling in template-base.css ("font-size control"
+     block). All three buttons read "A" — the button's own font size shows the level; labels are language-neutral; only the aria texts switch
+     on include.lang. REMOVAL: delete this block, the js file and the CSS
+     block - one commit, styleguide §5a. -->
+
+<div class="ig-fontsize" role="group" aria-label="Schriftgröße">
+  <button type="button" data-level="0" aria-pressed="true" aria-label="Schriftgröße: Standard">A</button>
+  <button type="button" data-level="1" aria-pressed="false" aria-label="Schriftgröße: größer">A</button>
+  <button type="button" data-level="2" aria-pressed="false" aria-label="Schriftgröße: am größten">A</button>
+</div>
+
+<script src="assets/js/font-size-control.js" defer></script>
+<!-- PayPal Bootstrap Accessibility Plugin v1.0.7 (vendored + pinned, §8):
+     patches the Bootstrap-3 components the publisher renders - navbar
+     dropdowns gain ARIA menu semantics + arrow-key navigation, tab panels
+     (structure-tabs) the full ARIA tabs pattern, alerts live-region
+     announcements. `defer` guarantees it executes AFTER the parser-inserted
+     bootstrap.min.js at the end of the body. Vendored from
+     paypal/bootstrap-accessibility-plugin @ v1.0.7 (the admin-ch fork was
+     evaluated and rejected: 151 commits behind upstream, its 6 deltas are
+     site-specific tab tweaks). REMOVAL: delete this tag, both vendored
+     assets and the fragment-css link - guard test pins the hashes. -->
+<script src="assets/js/bootstrap-accessibility.min.js" defer></script>
+<!-- Back-to-top button: appears after one viewport of scrolling (logic in
+     assets/js/back-to-top.js, styling in template-base.css "back-to-top"
+     block). Rendered here inside #segment-header, which is OUTSIDE the
+     data-fontsize zoom regions, so the fixed button never scales. REMOVAL:
+     this block, the js file and the CSS block - one commit, styleguide §8. -->
+
+<button type="button" class="ig-back-to-top" aria-label="Zurück zum Seitenanfang">↑</button>
+
+<script src="assets/js/back-to-top.js" defer></script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII IG Kerndatensatz-Modul Molekulares Tumorboard</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - 
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- German translation of input/includes/menu.xml.
+     Keep the href targets IDENTICAL to the source menu; translate only labels.
+     Structure notes (OPTIONAL entries, link-only entries, the interim
+     meta-wiki links) are documented in the source menu's header and in
+     docs/page-structure.md / docs/optional-pages.md. -->
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Startseite</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="guidance.html">Anleitung</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="researcher-guidance.html">Anleitung für Forschende</a></li>
+      <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
+      <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
+      <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
+      <li><a href="uml-diagrams.html">UML-Diagramme</a></li>
+      <li><a href="anwendungsszenarien.html">Anwendungsszenarien</a></li>
+      <li><a href="dnpm-transformation.html">DNPM-Transformation</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <!-- Eltern-Eintrag und die ersten vier Einträge verlinken die KDS-weiten
+         Konformitätsregeln des Meta-Moduls (INTERIM: Meta-Wiki; siehe
+         Quell-Menü). -->
+    <a data-toggle="dropdown" href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance" class="dropdown-toggle">Konformität<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Konformität</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#anforderungsdokumentation">Allgemeine Anforderungen</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#must-support-ms">Must-Support</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#fehlende-daten">Umgang mit fehlenden Daten</a></li>
+      <li><a href="security-and-privacy.html">Sicherheit und Datenschutz</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
+      <li><a href="profiles.html">Profile</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="extensions.html">Extensions</a></li>
+      <li><a href="capability-statements.html">CapabilityStatements</a></li>
+      <li><a href="logical-models.html">Logische Modelle</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="value-sets.html">ValueSets</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="code-systems.html">CodeSystems</a></li>
+      <li><a href="examples.html">Beispiele</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="changes.html">Änderungshistorie</a></li>
+  <li class="dropdown">
+    <!-- Der Eltern-Eintrag verlinkt bewusst das PFLICHT-Kind (Versionierung):
+         die Metadaten-Übersicht ist optional. -->
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="metadata.html">Metadaten-Übersicht</a></li>
+      <li><a href="version-history.html">Versionierung</a></li>
+      <li><a href="ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html">MII-ImplementationGuide-Ressource</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Sprache:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
+
+    <div><a href="../en/anwendungsszenarien.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
+
+  </div>
+</div>
+
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='guidance.html'><b>Anleitung</b></a></li><li><b>Anwendungsszenarien</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII IG Kerndatensatz-Modul Molekulares Tumorboard - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Anwendungsszenarien</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#disclaimer" id="markdown-toc-disclaimer">Disclaimer</a></li>
+  <li><a href="#kurzfassung" id="markdown-toc-kurzfassung">Kurzfassung</a></li>
+  <li><a href="#langfassung" id="markdown-toc-langfassung">Langfassung</a></li>
+  <li><a href="#therapieverlauf" id="markdown-toc-therapieverlauf">Therapieverlauf</a></li>
+  <li><a href="#leitliniengerechte-vortherapie-und-monitoring" id="markdown-toc-leitliniengerechte-vortherapie-und-monitoring">Leitliniengerechte Vortherapie und Monitoring</a></li>
+  <li><a href="#molekulares-tumorboard" id="markdown-toc-molekulares-tumorboard">Molekulares Tumorboard</a></li>
+</ul>
+
+</div>
+<!-- markdownlint-disable MD041 -->
+<!-- Migriert aus dem Simplifier-IG (AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule). TODO:REVIEW -->
+<style>
+ul.toc {
+  padding: 0;
+}
+
+ul.toc li {
+  list-style-type: none;
+}
+</style>
+
+<h3 id="disclaimer">Disclaimer</h3>
+
+<p>Der <a href="#therapieverlauf">Therapieverlauf</a> entspricht einer möglichen Therapie, Daten und Verlauf sind für Testzwecke konstruiert, Ähnlichkeiten mit tatsächlichen Krankheitsverläufen sind zufällig.</p>
+
+<h3 id="kurzfassung">Kurzfassung</h3>
+
+<p><a href="https://simplifier.net/guide/mii-ig-modul-onkologie-2024-de/MIIIGModulOnkologie/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md?version=current">Patientin Kim Musterperson, geb. 14.03.1956, wurde mit der Diagnose Bauchfellkrebs vorgestellt und zunächst operativ (atypische Lebersegmentresektion) sowie bildgebend (CT) beurteilt. Sie erhielt daraufhin eine begleitende Erhaltungstherapie mit Niraparib.</a> In regelmäßigen CT-Kontrollen und Tumorboard-Besprechungen zeigte sich zunächst ein stabiler Verlauf, bis sich ein Lokalrezidiv, zunehmender Aszites und lymphonodale Metastasierungen manifestierten. Aufgrund der Progression erfolgte eine platinbasierte Erstlinien-Chemotherapie (Carboplatin plus pegliposomales Doxorubicin) gemäß Leitlinienempfehlungen. Nach histologischer Bestätigung der malignen Zellen wurde im molekularen Tumorboard – an zwei Vorstellungen – eine gezielte Therapie erörtert. Hierbei wurde als erste priorisierte Empfehlung die Umstellung auf Mirvetuximab soravtansine beschlossen, was nach positiver Krankenkassengenehmigung umgesetzt wurde.</p>
+
+<h3 id="langfassung">Langfassung</h3>
+
+<p><a href="https://simplifier.net/guide/mii-ig-modul-onkologie-2024-de/MIIIGModulOnkologie/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md?version=current">Patientin Kim Musterperson, geb. 14.03.1956, wurde mit der Diagnose Bauchfellkrebs vorgestellt. In der Erstbeurteilung wurde eine atypische Lebersegmentresektion durchgeführt, und erste bildgebende Kontrollen mittels CT sowie verschiedene Tumorboard-Sitzungen erfolgten, um den weiteren Behandlungsverlauf zu beurteilen. Zu Beginn erhielt die Patientin eine begleitende Erhaltungstherapie in Form einer Monotherapie mit Niraparib.</a> Über mehrere kontrollierte CT-Untersuchungen und Tumorboard-Diskussionen zeigte sich zunächst ein stabiler Krankheitsverlauf, bis allmählich Anzeichen eines Lokalrezidivs, ein zunehmender Aszites sowie lymphonodale Metastasierungen erkennbar wurden.</p>
+
+<p>Aufgrund dieses Progresses wurde, gemäß den etablierten Leitlinien, eine platinbasierte Erstlinien-Chemotherapie in Angriff genommen. Diese umfasste eine Kombination aus Carboplatin und pegliposomalem Doxorubicin, die entsprechend der Leitlinienempfehlungen im Rezidivsetting angewendet wurde. Eine erneute histologische Untersuchung des Aszites bestätigte das Vorliegen malignen Zellgeschehens, wodurch eine weiterführende präzise Therapieplanung in einem molekularen Tumorboard (MTB) erfolgt ist.</p>
+
+<p>Im Rahmen des MTBs wurden die aktuellen histologischen Befunde sowie molekulare Marker eingehend diskutiert. Hierbei erfolgte eine erste Vorstellung, in der neben dem Abbau der bisherigen Therapie auch mögliche weiterführende gezielte Therapieoptionen erläutert wurden. Bei der zweiten MTB-Vorstellung wurden insbesondere die Ergebnisse der molekularen Diagnostik und mögliche modulare Therapieansätze nochmals eingehend erörtert. Aufgrund des Befundbildes und basierend auf den priorisierten Therapieempfehlungen wurde schließlich als erste Option die Umstellung auf Mirvetuximab soravtansine beschlossen. Ein entsprechender Antrag wurde bei der Krankenkasse gestellt und letztlich genehmigt, sodass die Patientin nun diese zielgerichtete Therapie erhält.</p>
+
+<h3 id="therapieverlauf">Therapieverlauf</h3>
+
+<ul class="toc" role="list">
+    <li>
+        <a href="#leitliniengerechte-vortherapie-und-monitoring">Leitliniengerechte Vorherapie und Monitoring</a>
+    </li>
+    <li>
+        <ul role="list">
+            <li><a href="#nachbericht">Nachbericht</a></li>
+            <li><a href="#diagnose">Diagnose</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#molekulares-tumorboard">Molekulars Tumorboard</a>
+    </li>
+    <li>
+        <ul role="list">
+            <li><a href="#behandlungsepisode">Behandlungsepisode</a></li>
+            <li><a href="#vorstellungen">Vorstellungen</a></li>
+            <li><a href="#priorisierte-beschlusse">Priorisierte Beschlüsse</a></li>
+        </ul>
+    </li>
+</ul>
+
+<h3 id="leitliniengerechte-vortherapie-und-monitoring">Leitliniengerechte Vortherapie und Monitoring</h3>
+
+<p>Die initiale Diagnostik, Therapien und Beurteilungen sind dem Therapieverlauf der Patientin im <a href="https://simplifier.net/guide/mii-ig-modul-onkologie-2024-de/MIIIGModulOnkologie/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule.page.md?version=current">MII KDS-Modul Onkologie zu entnehmen</a>. Der im Folgenden geschilderte Therapieverlauf knüpft daran nahtlos an, um einen komplexen und zusammenhängenden Fall zu beschreiben mit dem Ziel, dessen Umsetzung durch die MII KDS-Module darzustellen.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datum</th>
+      <th>Prozedur</th>
+      <th>Beschreibung / Beurteilung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>20.04.2022</td>
+      <td>CT T/A</td>
+      <td>• Z.n. atypischer Lebersegmentresektion, kein eindeutiger Hinweis auf Metastasierung; Flüssigkeitskollektion angrenzend DD postoperativ<br />• kein Aszites<br />• kein Hinweis auf Lokalrezidiv<br />• kein Hinweis auf thorakale Metastasierung</td>
+    </tr>
+    <tr>
+      <td>22.04.2022</td>
+      <td>Tumorboard</td>
+      <td>• CT: a.e. SD, CA 125 42,3 IU/ml<br />• Fortführung Niraparib</td>
+    </tr>
+    <tr>
+      <td>15.07.2022</td>
+      <td>CT T/A</td>
+      <td>• konstante Flüssigkeitskollektion angrenzend bei Z.n. atpyischer Lebersegmentresktion, a.e. postoperativ<br />• kein Aszites, kein Hinweis auf Lokalrezidiv<br />• im linken Oberlappen der Lunge diskrete milchglasartige Trübung DD atypisch entzündlich, klinische Korrelation empfohlen, darüber hinaus kein Hinweis auf thorakale Filiae</td>
+    </tr>
+    <tr>
+      <td>18.07.2022</td>
+      <td>Tumorboard</td>
+      <td>• CT: a.e. SD, CA 125 45,8 IU/ml<br />• Fortführung Niraparib</td>
+    </tr>
+    <tr>
+      <td>19.10.2022</td>
+      <td>CT T/A</td>
+      <td>• regrediente Flüssigkeitskollektion am Leberrand, Z.n. atypische Lebersegmentresektion; darüber hinaus kein Hinweis auf Leberfilialisierung<br />• kein Aszites, kein Hinweis auf Lokalrezidiv<br />• regrediente Milchglasinfiltrate im linken Oberlappen, somit a.e. atypisch entzündlich; leicht vermehrter mediastinaler Lymphknotenbesatz ohne Kontrastmittelaufnahme und ohne pathologische Vergrößerung, Verlaufskontrolle empfohlen</td>
+    </tr>
+    <tr>
+      <td>24.10.2022</td>
+      <td>Tumorboard</td>
+      <td>• CT: vermehrte mediastinale LK nicht eindeutig metastasensuspekt; CA 125 49,7 IU/ml, somit a.e. SD<br />• Fortführung Niraparib, kurzfristige VK mittels CT und TM in 2 Monaten</td>
+    </tr>
+    <tr>
+      <td>19.12.2022</td>
+      <td>CT T/A</td>
+      <td>• progredienter Aszites (ca. 700ml), Peritonealblatt mit zunehmender, unregelmäßiger KM-Aufnahme, suspekt auf Progress der bekannten Peritonealkarzinose; V.a. Lokalrezidiv bei kontrastmittelaufnehmender Raumforderung im kleinen Becken<br />• KM-affine Vermehrung sowie pathologische Vergrößerung mehrerer mediastinaler Lymphknoten suspekt auf lymphonodale Metastasierung</td>
+    </tr>
+    <tr>
+      <td>27.12.2022</td>
+      <td>Tumorboard</td>
+      <td>• CT: V.a. Lokalrezidiv, zunehmender Aszites, lymphonodale Metastasierung im Mediastinum, CA 125 67,2 IU/ml<br />• Erneute histologische Probenentnahme (Aszites? Thoraxchirurgie?), dann Re-Induktion Platin; <a href="#molekulares-tumorboard">Vorstellung MTB</a></td>
+    </tr>
+    <tr>
+      <td>02.01.2023</td>
+      <td>Histologie (Z 230201/23)</td>
+      <td>• Aszites (20ml): mit malignen Tumorzellen<br />• Diagnose: Hier Zellbild wie bei malignen Tumorzellen im Aszites, über eine affirmative Färbung folgt ebenfalls ein <a href="#nachbericht">Nachbericht</a></td>
+    </tr>
+    <tr>
+      <td>04.01.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z1 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28</td>
+    </tr>
+    <tr>
+      <td>01.02.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z2 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28</td>
+    </tr>
+    <tr>
+      <td>01.03.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z3 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28</td>
+    </tr>
+    <tr>
+      <td>20.03.2023</td>
+      <td>CT T/A</td>
+      <td>• regredienter Aszites, rückläufige KM-Aufnahme der lokalrezidivsuspekten Raumforderung im kleinen Becken<br />• noch flaue, aber insgesamt regrediente KM-Aufnhame der zahlenmäßig vermehrten LK im Mediastinum<br />• keine neue metastasensuspekte Läsion</td>
+    </tr>
+    <tr>
+      <td>24.03.2023</td>
+      <td>Tumorboard</td>
+      <td>• CT: a.e. PR, CA 125 deutlich rückläufig (43,7 IU/ml)<br />• Komplettierung auf 6 Zyklen Platin</td>
+    </tr>
+    <tr>
+      <td>29.03.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z4 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28</td>
+    </tr>
+    <tr>
+      <td>26.04.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z5 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28</td>
+    </tr>
+    <tr>
+      <td>24.05.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z6 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2, d1, Wdh. d28</td>
+    </tr>
+    <tr>
+      <td>15.06.2023</td>
+      <td>CT T/A</td>
+      <td>• deutlich zunehmender Aszites, größenprogredientes Lokalrezidiv<br />• anhaltend vermehrte und schwach kontrastmittelaffine mediastinale Lymphknoten</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="nachbericht">Nachbericht</h4>
+
+<p>Die Tumorzellen sind partiell positiv für CA125, durchgehend nukleär für Pax 8 und WT1, Östrogenrezeptorpositivität in ca. 70 % der Tumorzellen und das Progesteronrezeptorprotein wird in ca. 30 % der Tumorzellen exprimiert. Kräftige nukleäre Überexpression von p53. Zudem sind die Tumorzellen negativ für CDX2.</p>
+
+<h4 id="diagnose">Diagnose</h4>
+
+<p>WHO-Typ: Seröses Karzinom (ICD-O M-8461/3) Unbekannte Primärlokalisation beidseits (ICD-O-C80.9) (ICD-10-C80.0)</p>
+
+<h5 id="kommentar">Kommentar</h5>
+
+<p>Die Befunde sprechen für das Vorkommen von Zellen des bekannten high-grade serösen Ovarialkarzinoms im Aszites.</p>
+
+<h3 id="molekulares-tumorboard">Molekulares Tumorboard</h3>
+
+<h4 id="behandlungsepisode">Behandlungsepisode</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datum</th>
+      <th>Prozedur</th>
+      <th>Beschreibung / Beurteilung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>20.01.2023</td>
+      <td>Molekulares Tumorboard</td>
+      <td>• siehe <a href="#erstvorstellung">Erstvorstellung</a></td>
+    </tr>
+    <tr>
+      <td>10.03.2023</td>
+      <td>-</td>
+      <td>• Krankenkassenantrag gestellt Mirvetuximab soravtansine</td>
+    </tr>
+    <tr>
+      <td>28.03.2023</td>
+      <td>Molekulares Tumorboard</td>
+      <td>• siehe <a href="#wiedervorstellung">Wiedervorstellung</a></td>
+    </tr>
+    <tr>
+      <td>01.05.2023</td>
+      <td>-</td>
+      <td>• Krankenkassenantrag Mirvetuximab soravtansine genehmigt</td>
+    </tr>
+    <tr>
+      <td>20.06.2023</td>
+      <td>Tumorboard</td>
+      <td>• im CT PD, CA 125 78,2 IU/ml<br />• KK-Antrag für Mirvetuximab genehmigt, Umstellung auf MIRV</td>
+    </tr>
+    <tr>
+      <td>24.06.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22</td>
+    </tr>
+    <tr>
+      <td>16.07.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22</td>
+    </tr>
+    <tr>
+      <td>07.08.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22</td>
+    </tr>
+    <tr>
+      <td>20.08.2023</td>
+      <td>CT T/A</td>
+      <td>• kein Aszites, fast vollständig regredientes Lokalrezidiv ohne KM-Aufnahme im kleinen Becken</td>
+    </tr>
+    <tr>
+      <td>22.08.2023</td>
+      <td>Tumorboard</td>
+      <td>• sehr gute PR, CA 125 normwertig<br />• Fortsetzung Mirvetuximab soravtansine</td>
+    </tr>
+    <tr>
+      <td>29.08.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22</td>
+    </tr>
+    <tr>
+      <td>20.09.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22</td>
+    </tr>
+    <tr>
+      <td>12.10.2023</td>
+      <td>Chemotherapie</td>
+      <td>• Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22</td>
+    </tr>
+    <tr>
+      <td>22.10.2023</td>
+      <td>CT T/A</td>
+      <td>• lediglich geringer Aszites im kleinen Becken, vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken aktuell metrisch nur noch schwer fassbar<br />• formal noch vermehrte, jedoch nicht mehr KM-aufnehmende mediastinale Lymphknoten</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="vorstellungen">Vorstellungen</h4>
+
+<h5 id="erstvorstellung">Erstvorstellung</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priorität</th>
+      <th>Beschluss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>Vorstellungsgrund:<br /><br />Absehbare Ausschöpfung der leitliniengerechten Therapie</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Die MTB-Aufklärung vom 02.01.2023 liegt vor.</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>Durchführung molekulare Diagnostik via SOP Ovar (inkl. IHC für Her2neu, Folat-Ra, Trop2) aus aktuellster Histologie (Aszitespunktion Z 230201/23) sowie TSO500 Panelsequenzierung inkl. HLA-Status.</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>Studiencheck (inkl. QuickQueck Suche):<br /><br />Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225 ).<br />Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2).</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Wiedervorstellung nach Eingang der Befunde.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="wiedervorstellung">Wiedervorstellung</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priorität</th>
+      <th>Beschluss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>Her2neu Score 2+:<br /><br />Bei Her2low in der immunhistochemischen Untersuchung besteht eine off-label Therapieoption mit Trastuzumab Deruxtecan. In einer Phase-III-Studie Trastuzumab Deruxtecan vs. Physicians choice Chemotherapie bei Her2low Mamma-Cas zeigte sich ein deutlich positiver Effekt sowohl auf PFS als auch auf OS durch die Behandlung mit Trastuzumab deruxtecan (PMID 35665782, EL m1A).<br />Daten aus der DESTINY-PanTumor02-Studie (Phase II), wurden auf dem ASCO2023 präsentiert: hier zeigt sich eine sehr gute ORR von 45% in der Kohorte für Ovarialkarzinome, wobei gemäß zentralem Assessment auch Score1+-Patient*innen eingeschlossen worden waren. 57% vom Patientinnen mit HER2-pos Endometrium Karzinom haben auf die Therapie mit Trastuzumab- Deruxtecan angesprochen (10.1200/JCO.2023.41.17_suppl.LBA3000, PMID: 37870536, EL m1B).</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Auf Grundlage der hohen Expression von Folat Rezeptor alpha (80% d. Tumorzellen) besteht die Rationale für einen Therapieversuch mit Mirvetuximab Soravtansine (EL m1A; DOI: 10.1200/JCO.2022.40.16_suppl.5512 Journal of Clinical Oncology 40, no. 16_suppl (June 01, 2022) 5512-5512 und PMID 38055253).</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>TP53mut (R81X):<br /><br />Nachweis einer pathogenen TP53-Mutation ohne direkte therapeutische Relevanz.</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>PIK3R1mut (E160*):<br /><br />Ausweislich präklinischer Daten liegt ein Ansprechen auf MEK-Inhibition nahe (PMID: 31209687, EL m3).</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>CCNE1ampl (CN=7):<br /><br />Eine Phase I-Studie mit dem first-in-class PKMYT1-Inhibitor Lunresertib und dem ATR Inhibitor Camonsertib zeigte erste klinische Aktivität mit ordentlichem Ansprechen (OR 23,6%, 2x cPR bei OvarialCA mit CCNE1ampl dokumentiert, https://www.reparerx.com/wp-content/uploads/2023/10/ANE_B156_MYTHIC-clinical_poster.pdf und https://doi.org/10.1158/1535-7163.TARG-23-PR008, EL m1B). Verfügbarkeit prüfen.<br />Zudem bei CCNE1 ampl Rationale für Kombination aus WEE1-Inhibitor Adavosertib +/- Carboplatin (PMID: 37236033, EL m1B), Verfügbarkeit prüfen, jeweils nach Ausschöpfung der LL-Therapie.</td>
+    </tr>
+    <tr>
+      <td>6.</td>
+      <td>Studiencheck (inkl. QuickQueck Suche):<br /><br />Evaluation einer CLDN6 (Claudin-6)-Expression und darauf basierend eines möglichen Einschlusses in die Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs) mit CLDN6 RNA-LPX (PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg, NCT 04503278, erste Ergebnisse publiziert unter PMID: 37872225).<br />Einschluss prüfen in TEDOVA: OSE2101 (Neo-Epitop-Vakzin)+/- Pembrolizumab vs. BSC in Platin-sensitiven rez. Ov-CA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2).<br />Zudem Beachtung einer geplanten Studie bei CCNE1 ampl. OvCA (UKF, PI Prof. Duque, ID ausstehend).</td>
+    </tr>
+    <tr>
+      <td>7.</td>
+      <td>Sollte eine der o.g. Therapieempfehlungen zur Anwendung kommen, empfiehlt sich zur bildgebenden Verlaufskontrolle ein CT Thorax / Abdomen vor Therapiebeginn und im Intervall von 10-12 Wochen, alternativ einmalig MT1-PET/CT vor Therapiebeginn.</td>
+    </tr>
+    <tr>
+      <td>8.</td>
+      <td>Der MTB-Fall ist hiermit <a href="#priorisierte-beschlusse">abgeschlossen</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="priorisierte-beschlusse">Priorisierte Beschlüsse</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priorität</th>
+      <th>Beschluss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>Mirvetuximab soravtansine (m1A)</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Studieneinschlüsse prüfen, in folgender Priorisierung:</td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>Phase 1/2 CLDN6 CAR-T-Zell-Studie (Kohorte 2: Eierstockkrebs, PI Dr. Desuki, Mainz oder Prof. Ungerechts, Heidelberg).</td>
+    </tr>
+    <tr>
+      <td>2.2</td>
+      <td>TEDOVA (NCT04713514, PI Prof. Schochter, Ulm. platin-sensibles Rezidiv (=CR, PR oder SD), nach mind. 4 Zyklen Platin im Rezidiv und HLA-A2)</td>
+    </tr>
+    <tr>
+      <td>2.3</td>
+      <td>Studie bei CCNE1 ampl. OvCA (UKF, PI Prof. Duque, ID ausstehend)</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>Trastuzumab deruxtecan (m1B)</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>Adavosertib +/- Carboplatin (m1B) sofern verfügbar</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Lunresertib + Camonsertib (m1B) sofern verfügbar</td>
+    </tr>
+    <tr>
+      <td>6.</td>
+      <td>MEKi, z.B. Cobimetinib (m3)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt <span title="Fri, Sep 11, 2026 14:44+0000">2026-09-11</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+                 
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/impressum">Impressum</a>
+                 <br/>
+                 <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7®, FHIR® and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
