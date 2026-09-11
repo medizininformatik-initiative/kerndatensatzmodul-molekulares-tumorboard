@@ -109,16 +109,19 @@ extension:
         - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
           code: "C3262" # Neoplasm — TODO:REVIEW Gate A (proposal, mirrors kerndatensatzmodul-onkologie)
 dependencies:
-  # Source dependencies, carried unchanged (migration-log/identity-claims):
+  # Source dependencies (refreshed 2026-09-11 to the latest stable 2026-generation
+  # releases at the user's request — base/biobank/medikation 2026.0.1, patho 2026.0.2;
+  # de.basisprofil stays 1.5.4: the 2026 KDS generation itself pins 1.5.x, and 1.6.0
+  # would sit beside it — see migration-log/run.log `deps dependency-refresh`):
   de.basisprofil.r4: 1.5.4
-  de.medizininformatikinitiative.kerndatensatz.base: 2026.0.0
-  de.medizininformatikinitiative.kerndatensatz.biobank: 2026.0.0
+  de.medizininformatikinitiative.kerndatensatz.base: 2026.0.1
+  de.medizininformatikinitiative.kerndatensatz.biobank: 2026.0.1
   de.medizininformatikinitiative.kerndatensatz.consent: 2026.0.0
-  de.medizininformatikinitiative.kerndatensatz.medikation: 2026.0.0
+  de.medizininformatikinitiative.kerndatensatz.medikation: 2026.0.1
   de.medizininformatikinitiative.kerndatensatz.meta: 2026.0.0
   de.medizininformatikinitiative.kerndatensatz.molgen: 2026.0.4
   de.medizininformatikinitiative.kerndatensatz.onkologie: 2026.0.3
-  de.medizininformatikinitiative.kerndatensatz.patho: 2026.0.0
+  de.medizininformatikinitiative.kerndatensatz.patho: 2026.0.2
   de.medizininformatikinitiative.kerndatensatz.studie: 2026.0.2
   hl7.fhir.uv.genomics-reporting: 3.0.0
   # Template machinery (CRMI meta.profile claims + template rulesets/pages),
