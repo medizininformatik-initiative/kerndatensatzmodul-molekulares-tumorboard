@@ -8,9 +8,8 @@ Description: "Beispiel fuer diagnostische Implikation im Kontext des Molecular T
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $TBD#diagnostic-implication "Diagnostic Implication"
-* subject = Reference(Patient/example)
-* performer = Reference(Practitioner/example)
-* derivedFrom[variant] = Reference(Observation/EinfacheVarianteExample)
+* subject = Reference(Patient/mii-exa-mtb-patient)
+* derivedFrom[variant] = Reference(Observation/MII-EXA-MTB-Einfache-Variante)
 
 * component[clinical-significance].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[clinical-significance].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"

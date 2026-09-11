@@ -31,6 +31,7 @@
 [MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
 [MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
 [MII-EXA-MTB-RNA-Fusion-1]: Observation-MII-EXA-MTB-RNA-Fusion-1.html
+[mii-exa-mtb-specimen]: Specimen-mii-exa-mtb-specimen.html
 [mii-exa-mtb-kim-diagnose]: Condition-mii-exa-mtb-kim-diagnose.html
 [mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
 [mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
@@ -64,7 +65,6 @@
 [mii-cm-mtb-therapiestatusgrund-obds]: ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.html
 [mii-cm-mtb-therapiestatusgrund-sct]: ConceptMap-mii-cm-mtb-therapiestatusgrund-sct.html
 [mii-cps-mtb-capabilitystatement]: CapabilityStatement-mii-cps-mtb-capabilitystatement.html
-[mii-lib-mtb-outcomes]: Library-mii-lib-mtb-outcomes.html
 [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium]: CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.html
 [MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
@@ -96,9 +96,6 @@
 [MII_EX_MTB_Leitlinienbehandlung_Status]: StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.html
 [MII_EX_MTB_NGS_Bericht_Genomic_Study]: StructureDefinition-mii-ex-mtb-ngs-bericht-genomic-study.html
 [MII_LM_MTB]: StructureDefinition-mii-lm-mtb.html
-[mii-measure-mtb-deskriptiv]: Measure-mii-measure-mtb-deskriptiv.html
-[mii-measure-mtb-os]: Measure-mii-measure-mtb-os.html
-[mii-measure-mtb-pfs]: Measure-mii-measure-mtb-pfs.html
 [mii-ns-mtb-nct]: NamingSystem-mii-ns-mtb-nct.html
 [mii-ns-studie-drks]: NamingSystem-mii-ns-studie-drks.html
 [mii-ns-studie-eudract]: NamingSystem-mii-ns-studie-eudract.html
@@ -188,6 +185,7 @@
 [mii-exa-mtb-therapieempfehlung-trametinib]: MedicationRequest-mii-exa-mtb-therapieempfehlung-trametinib.html
 [mii-exa-mtb-therapieplan-kombinationstherapie]: CarePlan-mii-exa-mtb-therapieplan-kombinationstherapie.html
 [mii-exa-onko-allgemeiner-leistungszustand-ecog]: Observation-mii-exa-onko-allgemeiner-leistungszustand-ecog.html
+[mii-param-mtb-manifest]: Parameters-mii-param-mtb-manifest.html
 [mii-exa-mtb-medication-request-mirvetuximab]: MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html
 [mii-exa-mtb-kim-musterperson-behandlungsepisode]: ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html
 [mii-exa-mtb-kim-musterperson-therapieplan]: CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.html
@@ -291,10 +289,17 @@
 [PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
 [PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html
 [PatientKimMusterperson-Procedure-4]: Procedure-PatientKimMusterperson-Procedure-4.html
+[PatientKimMusterperson-Procedure-4a]: Procedure-PatientKimMusterperson-Procedure-4a.html
+[PatientKimMusterperson-Procedure-4b]: Procedure-PatientKimMusterperson-Procedure-4b.html
+[PatientKimMusterperson-Procedure-4c]: Procedure-PatientKimMusterperson-Procedure-4c.html
+[PatientKimMusterperson-Procedure-4d]: Procedure-PatientKimMusterperson-Procedure-4d.html
 [PatientKimMusterperson-Procedure-5]: Procedure-PatientKimMusterperson-Procedure-5.html
 [PatientKimMusterperson-Procedure-6]: Procedure-PatientKimMusterperson-Procedure-6.html
 [PatientKimMusterperson-Procedure-7]: Procedure-PatientKimMusterperson-Procedure-7.html
 [PatientKimMusterperson-Specimen-1]: Specimen-PatientKimMusterperson-Specimen-1.html
+[PatientKimMusterperson-SystemicTherapy-1]: Procedure-PatientKimMusterperson-SystemicTherapy-1.html
+[PatientKimMusterperson-SystemicTherapy-2]: Procedure-PatientKimMusterperson-SystemicTherapy-2.html
+[PatientKimMusterperson-SystemicTherapy-3]: Procedure-PatientKimMusterperson-SystemicTherapy-3.html
 [mii-exa-mtb-study-request-cldn6]: ServiceRequest-mii-exa-mtb-study-request-cldn6.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html
 [mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1.html

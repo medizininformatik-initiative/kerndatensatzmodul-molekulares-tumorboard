@@ -9,7 +9,7 @@ Description: "Beispiel fuer eine Copy Number Variant (CNV)."
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"
 
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 
 * component[chromosome-identifier].code = $LNC#48000-4
 * component[chromosome-identifier].valueCodeableConcept = $LNC#LA21270-6 "Chromosome 17"

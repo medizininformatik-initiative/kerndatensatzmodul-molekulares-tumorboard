@@ -14,9 +14,8 @@ Description: "Dieses Beispiel beschreibt eine BRCAness-Analyse, die das Verhalte
 
 * code = $mii-cs-mtb-molekulare-biomarker#brcaness "BRCAness"
 
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
-* specimen = Reference(Specimen/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
+* specimen = Reference(Specimen/mii-exa-mtb-specimen)
 
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 // Components

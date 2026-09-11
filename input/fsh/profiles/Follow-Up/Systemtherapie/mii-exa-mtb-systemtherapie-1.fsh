@@ -8,12 +8,12 @@ Title: "Beispiel fuer eine Systemtherapie"
 * statusReason.coding.code = #regular-completion
 * category = $SCT#367336001 "Chemotherapy (procedure)"
 * extension[Intention].valueCodeableConcept.coding[0] = $mii-cs-onko-intention#K
-* extension[causedBy].valueReference = Reference(MedicationRequest/Example)
-* basedOn = Reference(CarePlan/Example)
+* extension[causedBy].valueReference = Reference(MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib)
+* basedOn = Reference(CarePlan/mii-exa-mtb-therapieplan-kombinationstherapie)
 * code.coding[systemische_therapie_art] = $mii-cs-onko-therapie-typ#CH // Chemotherapy
 * code.coding[ops] = $OPS#8-54 "Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie"
 * code.coding[ops].version = "2023"
-* subject = Reference(Patient/Example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 * performedPeriod.start = "2014-02-12"
 * performedPeriod.end = "2014-02-12"
 * note.text = "Test Text!"
