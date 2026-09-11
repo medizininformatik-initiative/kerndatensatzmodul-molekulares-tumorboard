@@ -98,7 +98,6 @@ Usage: #example
 * supportingInfo[Vortherapie][+] = Reference(Procedure/PatientKimMusterperson-Procedure-7)
 * supportingInfo[Vorbefund][+] = Reference(Observation/PatientKimMusterperson-Observation-26)
 * supportingInfo[Vorbefund][+] = Reference(Observation/PatientKimMusterperson-Observation-27)
-* supportingInfo[Vorbefund][+] = Reference(Observation/PatientKimMusterperson-Observation-28)
 * supportingInfo[Vorbefund][+] = Reference(Observation/PatientKimMusterperson-Observation-29)
 * supportingInfo[Vorbefund][+] = Reference(Observation/PatientKimMusterperson-Observation-30)
 

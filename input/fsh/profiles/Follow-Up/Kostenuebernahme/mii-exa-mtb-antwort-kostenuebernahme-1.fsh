@@ -8,7 +8,7 @@ Title: "Beispiel fuer eine Antwort auf den Antrag auf Kostenuebernahme"
 * use = #claim
 * patient = Reference(Patient/mii-exa-mtb-patient)
 * created = "2024-07-07"
-* insurer = Reference(Organization/InstitutionID)
+* insurer = Reference(Organization/MyInsurer)
 * request = Reference(MII-EXA-MTB-Antrag-Kostenuebernahme-Beispiel-1)
 
 * extension[Entscheidung].valueCodeableConcept.coding = $mii-cs-mtb-antwort-kostenuebernahme-entscheidung#rejected

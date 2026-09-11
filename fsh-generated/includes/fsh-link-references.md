@@ -31,6 +31,7 @@
 [MII-EXA-MTB-Mikrosatelliteninstabilitaet-1]: Observation-MII-EXA-MTB-Mikrosatelliteninstabilitaet-1.html
 [MII-EXA-MTB-Mutationslast-1]: Observation-MII-EXA-MTB-Mutationslast-1.html
 [MII-EXA-MTB-RNA-Fusion-1]: Observation-MII-EXA-MTB-RNA-Fusion-1.html
+[mii-exa-mtb-specimen]: Specimen-mii-exa-mtb-specimen.html
 [mii-exa-mtb-kim-diagnose]: Condition-mii-exa-mtb-kim-diagnose.html
 [mii-exa-mtb-study-sponsor-biontech]: Organization-mii-exa-mtb-study-sponsor-biontech.html
 [mii-exa-mtb-study-investigator-biontech]: PractitionerRole-mii-exa-mtb-study-investigator-biontech.html
@@ -288,10 +289,17 @@
 [PatientKimMusterperson-Procedure-2]: Procedure-PatientKimMusterperson-Procedure-2.html
 [PatientKimMusterperson-Procedure-3]: Procedure-PatientKimMusterperson-Procedure-3.html
 [PatientKimMusterperson-Procedure-4]: Procedure-PatientKimMusterperson-Procedure-4.html
+[PatientKimMusterperson-Procedure-4a]: Procedure-PatientKimMusterperson-Procedure-4a.html
+[PatientKimMusterperson-Procedure-4b]: Procedure-PatientKimMusterperson-Procedure-4b.html
+[PatientKimMusterperson-Procedure-4c]: Procedure-PatientKimMusterperson-Procedure-4c.html
+[PatientKimMusterperson-Procedure-4d]: Procedure-PatientKimMusterperson-Procedure-4d.html
 [PatientKimMusterperson-Procedure-5]: Procedure-PatientKimMusterperson-Procedure-5.html
 [PatientKimMusterperson-Procedure-6]: Procedure-PatientKimMusterperson-Procedure-6.html
 [PatientKimMusterperson-Procedure-7]: Procedure-PatientKimMusterperson-Procedure-7.html
 [PatientKimMusterperson-Specimen-1]: Specimen-PatientKimMusterperson-Specimen-1.html
+[PatientKimMusterperson-SystemicTherapy-1]: Procedure-PatientKimMusterperson-SystemicTherapy-1.html
+[PatientKimMusterperson-SystemicTherapy-2]: Procedure-PatientKimMusterperson-SystemicTherapy-2.html
+[PatientKimMusterperson-SystemicTherapy-3]: Procedure-PatientKimMusterperson-SystemicTherapy-3.html
 [mii-exa-mtb-study-request-cldn6]: ServiceRequest-mii-exa-mtb-study-request-cldn6.html
 [mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html
 [mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1]: Observation-mii-exa-mtb-kim-musterperson-TherapeutischeImplikation-PIK3R1.html

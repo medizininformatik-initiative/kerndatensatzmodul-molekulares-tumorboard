@@ -7,7 +7,7 @@ Title: "Beispiel fuer einen GenomicStudy"
 * extension[genomic-study-analysis][+].valueReference = Reference(MII-EXA-MTB-GenomicStudyAnalysis-1)
 * status = #completed
 * subject = Reference(Patient/mii-exa-mtb-patient)
-* reasonReference = Reference(Condition/Primary_Tumor)
+* reasonReference = Reference(Condition/mii-exa-mtb-kim-diagnose)
 
 Instance: MII-EXA-MTB-GenomicStudyAnalysis-1
 InstanceOf: MII_PR_MTB_Genomic_Study_Analysis

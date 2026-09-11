@@ -8,10 +8,10 @@ Title: "Beispiel fuer einen Antrag auf Kostenuebernahme"
 * use = #claim
 * patient = Reference(Patient/mii-exa-mtb-patient)
 * created = "2024-07-07"
-* provider = Reference(Organization/InstitutionID)
-* prescription = Reference(MedicationRequest/TherapieempfehlungExample)
+* provider = Reference(Organization/MyHospital)
+* prescription = Reference(MedicationRequest/mii-exa-mtb-therapieempfehlung-dabrafenib)
 * insurance.sequence = 1
-* insurance.coverage = Reference(Coverage/CoverageExample)
-* careTeam[ZPMBeteiligung].provider = Reference(Organization/ZPMExample)
+* insurance.coverage = Reference(Coverage/MyCoverage)
+* careTeam[ZPMBeteiligung].provider = Reference(Organization/MyHospital)
 * careTeam[ZPMBeteiligung].responsible = true
 * related.relationship.coding.code = #initial-claim
