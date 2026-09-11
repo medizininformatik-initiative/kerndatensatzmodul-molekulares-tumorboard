@@ -443,6 +443,12 @@ jobs:
           rm -rf "${branch_dir}"
           mkdir -p "${branch_dir}"
           cp -R "output/." "${branch_dir}/"
+          # GitHub rejects files >100 MB on push (GH001) and the 2027-ballot
+          # dependency set pushes full-ig.zip past that (measured 104.59 MB,
+          # run 34606641638). The offline bundle is dead weight for a BRANCH
+          # PREVIEW, so drop every >95 MB file here and say so; the formal
+          # -go-publish output is not affected by this step.
+          find "${branch_dir}" -type f -size +95M -print -delete | sed 's/^/preview: dropped >95MB file: /'
           # Marker consumed by cleanup-gh-pages.yml to detect deleted branches.
           echo "${BRANCH}" > "${branch_dir}/.branch-name"
           # TEMPLATE REPOSITORY ONLY: (re)generate the root index — a plain
