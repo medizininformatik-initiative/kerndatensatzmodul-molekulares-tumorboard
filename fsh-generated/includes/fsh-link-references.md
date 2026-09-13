@@ -169,6 +169,7 @@
 [MII_VS_MTB_MSI_Method_Type]: ValueSet-mii-vs-mtb-msi-method-type.html
 [MII_VS_MTB_Antrag_Kostenuebernahme_Type]: ValueSet-mii-vs-mtb-antrag-kostenuebernahme.html
 [MII_VS_MTB_Immunhistochemistry_Specific_Codes]: ValueSet-mii-vs-mtb-immunohistochemistry-specific-codes.html
+[MII_VS_MTB_Interpretation_High_Low]: ValueSet-mii-vs-mtb-interpretation-high-low.html
 [MII_VS_MTB_ISH_Method]: ValueSet-mii-vs-mtb-ish-method.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html

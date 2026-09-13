@@ -76,6 +76,7 @@ Alias: $mii-vs-mtb-empfehlung-status-begruendung = https://www.medizininformatik
 Alias: $mii-vs-mtb-tumorausbreitung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-tumorausbreitung
 Alias: $mii-vs-mtb-who-grad-tumor-zns = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns
 Alias: $mii-vs-mtb-zulassungsstatus = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-zulassungsstatus
+Alias: $mii-vs-mtb-interpretation-high-low = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-interpretation-high-low
 Alias: $mii-cs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte
 Alias: $mii-vs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte
 Alias: $mii-cs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung
@@ -102,7 +103,9 @@ Alias: $hl7-organization-type = http://terminology.hl7.org/CodeSystem/organizati
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
-Alias: $hl7-v3-observation-high-low-codes = http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs
+// Genomics Reporting STU3 entfernte high-low-codes-vs (STU2); Bindung zeigt jetzt
+// auf das moduleigene Äquivalent (siehe mii-vs-mtb-interpretation-high-low). TODO:REVIEW
+Alias: $hl7-v3-observation-high-low-codes = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-interpretation-high-low
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
 Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
