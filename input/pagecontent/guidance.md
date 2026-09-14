@@ -20,6 +20,8 @@ This section collects the domain guidance for implementing and using the
   applying the module's profiles.
 * **[DNPM Transformation](dnpm-transformation.html)** — the mapping and
   transformation pipeline between the DNPM dataset and the MII MTB profiles.
+* **[Panel Catalog](panel-katalog.html)** — sequencing-panel products as
+  DeviceDefinition templates with expandable gene-list ValueSets.
 
 ### Audience-Specific Guidance
 

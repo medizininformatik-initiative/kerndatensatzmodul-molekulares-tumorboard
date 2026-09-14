@@ -18,6 +18,8 @@ Moduls **Molekulares Tumorboard**.
   für die Anwendung der Modul-Profile.
 * **[DNPM-Transformation](dnpm-transformation.html)** — Mapping und
   Transformations-Pipeline zwischen DNPM-Datensatz und den MII-MTB-Profilen.
+* **[Panel-Katalog](panel-katalog.html)** — Sequenzier-Panel-Produkte als
+  DeviceDefinition-Templates mit expandierbaren Genlisten-ValueSets.
 
 ### Zielgruppenspezifische Hinweise
 
