@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Medikation MedicationStatement](https://medizininformatik-initiative.github.io/kerndatensatzmodul-medikation/2027.0.0-ballot.rc5/StructureDefinition-mii-pr-medikation-medication-statement.html)
+Profile: [MII PR Medikation MedicationStatement](https://medizininformatik-initiative.github.io/kerndatensatzmodul-medikation/2027.0.0-ballot/StructureDefinition-mii-pr-medikation-medication-statement.html)
 
 **partOf**: [Procedure Chemotherapy](Procedure-MTBChemo1Procedure.md)
 

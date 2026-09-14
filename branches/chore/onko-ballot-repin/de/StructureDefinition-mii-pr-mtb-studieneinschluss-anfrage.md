@@ -108,7 +108,7 @@ This structure refers to these other structures:
 
 * [MII PR MTB Diagnose Primärtumor (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor)](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md)
 * [MII PR MTB Studie (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie)](StructureDefinition-mii-pr-mtb-studie.md)
-* [MII PR Studie Studie (https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-pr-studie-studie)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.studie@2027.0.0-ballot.rc1&canonical=https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-pr-studie-studie)
+* [MII PR Studie Studie (https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-pr-studie-studie)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-studie/2027.0.0-ballot/StructureDefinition-mii-pr-studie-studie.html)
 
 **Extensions**
 
@@ -154,7 +154,7 @@ This structure refers to these other structures:
 
 * [MII PR MTB Diagnose Primärtumor (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor)](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md)
 * [MII PR MTB Studie (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie)](StructureDefinition-mii-pr-mtb-studie.md)
-* [MII PR Studie Studie (https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-pr-studie-studie)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.studie@2027.0.0-ballot.rc1&canonical=https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-pr-studie-studie)
+* [MII PR Studie Studie (https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-pr-studie-studie)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-studie/2027.0.0-ballot/StructureDefinition-mii-pr-studie-studie.html)
 
 **Extensions**
 
@@ -187,7 +187,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-s
   "name" : "MII_PR_MTB_Studieneinschluss_Anfrage",
   "title" : "MII PR MTB Studieneinschluss Anfrage",
   "status" : "active",
-  "date" : "2026-09-14T21:08:50+00:00",
+  "date" : "2026-09-14T21:38:27+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

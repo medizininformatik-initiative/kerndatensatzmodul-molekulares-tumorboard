@@ -57,7 +57,7 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
 
 #### Terminology Bindings (Differential)
 
@@ -65,7 +65,7 @@ Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://m
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
 
 ** Summary **
 
@@ -86,7 +86,7 @@ This structure refers to these other structures:
 
  **Differential-Ansicht** 
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
 
 #### Terminology Bindings (Differential)
 
@@ -96,7 +96,7 @@ Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://m
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_MolekularerBiomarker](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-molekularer-biomarker.html) 
 
 ** Summary **
 
@@ -231,7 +231,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-m
   "name" : "MII_PR_MTB_Molekularer_Biomarker",
   "title" : "MII PR MTB Molekularer Biomarker",
   "status" : "active",
-  "date" : "2026-09-14T21:08:50+00:00",
+  "date" : "2026-09-14T21:38:27+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

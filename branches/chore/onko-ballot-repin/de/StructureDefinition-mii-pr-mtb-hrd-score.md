@@ -240,7 +240,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-h
   "name" : "MII_PR_MTB_HRD_Score",
   "title" : "MII PR MTB HRD Score",
   "status" : "active",
-  "date" : "2026-09-14T21:08:50+00:00",
+  "date" : "2026-09-14T21:38:27+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

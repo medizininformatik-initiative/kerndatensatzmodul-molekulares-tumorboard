@@ -82,7 +82,7 @@ Must-Support: 9 elements
 This structure refers to these other structures:
 
 * [MII PR MTB Genomic Study Analysis (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)](StructureDefinition-mii-pr-mtb-genomic-study-analysis.md)
-* [MII PR MolGen Genomic Study Analysis (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mii-pr-molgen-genomic-study-analysis)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-genomic-study-analysis.html)
+* [MII PR MolGen Genomic Study Analysis (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mii-pr-molgen-genomic-study-analysis)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-genomic-study-analysis.html)
 * [Genomic Study Analysis (http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis)](http://hl7.org/fhir/uv/genomics-reporting/STU3/StructureDefinition-genomic-study-analysis.html)
 * [MII PR Onkologie Diagnose Primärtumor (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-diagnose-primaertumor.html)
 
@@ -113,7 +113,7 @@ Must-Support: 9 elements
 This structure refers to these other structures:
 
 * [MII PR MTB Genomic Study Analysis (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis)](StructureDefinition-mii-pr-mtb-genomic-study-analysis.md)
-* [MII PR MolGen Genomic Study Analysis (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mii-pr-molgen-genomic-study-analysis)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-genomic-study-analysis.html)
+* [MII PR MolGen Genomic Study Analysis (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/mii-pr-molgen-genomic-study-analysis)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-genomic-study-analysis.html)
 * [Genomic Study Analysis (http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis)](http://hl7.org/fhir/uv/genomics-reporting/STU3/StructureDefinition-genomic-study-analysis.html)
 * [MII PR Onkologie Diagnose Primärtumor (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-diagnose-primaertumor.html)
 
@@ -134,7 +134,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-g
   "name" : "MII_PR_MTB_Genomic_Study",
   "title" : "MII PR MTB Genomic Study",
   "status" : "active",
-  "date" : "2026-09-14T21:08:50+00:00",
+  "date" : "2026-09-14T21:38:27+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

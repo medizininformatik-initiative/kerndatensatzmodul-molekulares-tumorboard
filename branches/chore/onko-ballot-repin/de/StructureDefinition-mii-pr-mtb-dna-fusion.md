@@ -75,13 +75,13 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-variante.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-variante.html) 
 
 #### Terminology Bindings
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-variante.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-variante.html) 
 
 ** Summary **
 
@@ -109,7 +109,7 @@ This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.h
 
  **Differential-Ansicht** 
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-variante.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-variante.html) 
 
  **Snapshot-AnsichtView** 
 
@@ -117,7 +117,7 @@ Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininform
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.rc3/StructureDefinition-mii-pr-molgen-variante.html) 
+Diese Struktur ist abgeleitet von [MII_PR_MolGen_Variante](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-variante.html) 
 
 ** Summary **
 
@@ -259,7 +259,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-d
   "name" : "MII_PR_MTB_DNA_Fusion",
   "title" : "MII PR MTB DNA Fusion",
   "status" : "active",
-  "date" : "2026-09-14T21:08:50+00:00",
+  "date" : "2026-09-14T21:38:27+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

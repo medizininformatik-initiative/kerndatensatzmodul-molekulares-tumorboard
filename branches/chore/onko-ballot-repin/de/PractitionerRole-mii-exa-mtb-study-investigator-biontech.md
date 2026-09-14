@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Studie Beteiligte Person](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.studie@2027.0.0-ballot.rc1&canonical=https://www.medizininformatik-initiative.de/fhir/modul-studie/StructureDefinition/mii-pr-studie-beteiligte-person)
+Profile: [MII PR Studie Beteiligte Person](https://medizininformatik-initiative.github.io/kerndatensatzmodul-studie/2027.0.0-ballot/StructureDefinition-mii-pr-studie-beteiligte-person.html)
 
 **code**: Study coordinator
 
