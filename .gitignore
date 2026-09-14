@@ -26,3 +26,11 @@ node_modules/
 /translations/
 # but the migration evidence trail IS committed (mii-ig-migration guardrail 7)
 !migration-log/*.log
+
+# Laufzeit-Artefakte der Validierungs-Workflows — nie einchecken (stale
+# Kopien kollidieren mit dem frischen Report und wurden als aktueller Stand
+# fehlinterpretiert):
+validation.json
+validation.html
+validation-output/
+.validation-history/
