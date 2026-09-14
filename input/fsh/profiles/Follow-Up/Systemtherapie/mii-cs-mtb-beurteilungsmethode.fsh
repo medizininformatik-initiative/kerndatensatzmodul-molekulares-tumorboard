@@ -9,7 +9,7 @@ Description: "Codesystem für die Beurteilungsmethode eines Response Befunds"
 * #RANO                              "RANO"
 
 ValueSet: MII_VS_MTB_Beurteilungsmethode
-Id: mii-vs-mtb-beurteilungsmethode-response-befund
+Id: mii-vs-mtb-response-befund-beurteilungsmethode
 Title: "MII VS Response Befund Beurteilung"
 Description: "ValueSet Beurteilungsmethode eines Response Befunds"
 * insert VS_Header($mii-vs-mtb-response-befund-beurteilungsmethode)

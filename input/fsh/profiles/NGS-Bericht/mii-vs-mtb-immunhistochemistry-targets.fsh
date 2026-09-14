@@ -13,7 +13,7 @@ Description: "Spezifische LOINC und SNOMED Codes für immunhistochemische Unters
 
 // HER2/ERBB2
 * $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
-* $LNC#48676-1 "HER2 [Interpretation] in Tissue"
+* $LNC#48676-1 "HER2 Ag [Interpretation] in Tissue"
 * $LNC#85319-2 "HER2 [Presence] in Breast cancer specimen by Immune stain"
 
 // Hormone receptors (ER, PR)
@@ -31,10 +31,10 @@ Description: "Spezifische LOINC und SNOMED Codes für immunhistochemische Unters
 * $LNC#83057-0 "PD-L1 by clone SP142 [Presence] in Tissue by Immune stain"
 
 // MMR proteins (MLH1, MSH2, MSH6, PMS2)
-* $LNC#81691-8 "DNA mismatch repair protein Mlh1 [Presence] in Cancer specimen by Immune stain"
-* $LNC#81692-6 "DNA mismatch repair protein Msh2 [Presence] in Cancer specimen by Immune stain"
-* $LNC#81693-4 "DNA mismatch repair protein Msh6 [Presence] in Cancer specimen by Immune stain"
-* $LNC#81694-2 "Mismatch repair endonuclease PMS2 [Presence] in Cancer specimen by Immune stain"
+* $LNC#81691-8 "MLH-1 Ag [Presence] in Cancer specimen by Immune stain"
+* $LNC#81692-6 "MSH-2 Ag [Presence] in Cancer specimen by Immune stain"
+* $LNC#81693-4 "MSH-6 Ag [Presence] in Cancer specimen by Immune stain"
+* $LNC#81694-2 "PMS2 Ag [Presence] in Cancer specimen by Immune stain"
 
 // p53 tumor suppressor
 * $LNC#14229-9 "P53 protein Ag [Presence] in Tissue by Immune stain"

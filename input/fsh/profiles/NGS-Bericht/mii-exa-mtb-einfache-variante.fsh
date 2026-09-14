@@ -37,7 +37,7 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_004333.4:c.1799T>A
 
 * component[representative-protein-hgvs].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#p.(Val600Glu)
+* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_004324.2:p.(Val600Glu)
 
 // allellic read-depth
 

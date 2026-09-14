@@ -162,7 +162,7 @@ Usage: #definition
 * insert SupportSearchParam(created, http://hl7.org/fhir/SearchParameter/Claim-created, #date, #SHALL) 
 * insert SupportSearchParam(provider, http://hl7.org/fhir/SearchParameter/Claim-provider, #reference, #SHALL)
 * insert SupportSearchParam(priority, http://hl7.org/fhir/SearchParameter/Claim-priority, #token, #SHALL)
-* insert SupportSearchParam(care-team, http://hl7.org/fhir/SearchParameter/care-team, #reference, #SHALL)
+* insert SupportSearchParam(care-team, http://hl7.org/fhir/SearchParameter/Claim-care-team, #reference, #SHALL)
 * insert SupportSearchParam(claim-type, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-claim-type, #token, #SHALL)
 * insert SupportSearchParam(claim-related, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-claim-related-claim, #reference, #SHALL)
 * insert SupportSearchParam(claim-related-relationship, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-claim-related-relationship, #token, #SHALL)
@@ -256,7 +256,7 @@ Usage: #definition
 * insert SupportSearchParam(value-concept, http://hl7.org/fhir/SearchParameter/Observation-value-concept, #token, #SHALL)
 * insert SupportSearchParam(part-of, http://hl7.org/fhir/SearchParameter/Observation-part-of, #reference, #SHALL)
 * insert SupportSearchParam(derived-from, http://hl7.org/fhir/SearchParameter/Observation-derived-from, #reference, #SHALL)
-* insert SupportSearchParam(specimen, http://hl7.org/fhir/SearchParameter/specimen, #reference, #SHALL)
+* insert SupportSearchParam(specimen, http://hl7.org/fhir/SearchParameter/Observation-specimen, #reference, #SHALL)
 * insert SupportSearchParam(component-value-concept, http://hl7.org/fhir/SearchParameter/Observation-component-value-concept, #token, #SHALL)
 * insert SupportSearchParam(component-code, http://hl7.org/fhir/SearchParameter/Observation-component-code, #token, #SHALL)
 * insert SupportSearchParam(component-value-range-high, https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/SearchParameter/mii-sp-meta-mtb-observation-valuerange-high, #quantity, #SHALL) //new
