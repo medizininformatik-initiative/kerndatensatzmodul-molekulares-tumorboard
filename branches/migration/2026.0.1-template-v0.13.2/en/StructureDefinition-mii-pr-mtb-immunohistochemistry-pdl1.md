@@ -79,7 +79,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-immuno
   "name" : "MII_PR_MTB_Immunohistochemistry_PDL1",
   "title" : "MII PR MTB Immunohistochemistry",
   "status" : "active",
-  "date" : "2026-09-14T12:53:39+00:00",
+  "date" : "2026-09-14T13:42:50+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

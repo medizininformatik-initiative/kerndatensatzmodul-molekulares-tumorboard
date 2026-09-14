@@ -43,7 +43,7 @@ In Situ Hybridization technique methods (FISH, CISH, SISH)
   "title" : "MII VS MTB ISH Method",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T12:53:39+00:00",
+  "date" : "2026-09-14T13:42:50+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

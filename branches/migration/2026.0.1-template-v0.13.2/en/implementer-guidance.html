@@ -404,6 +404,11 @@ describes that public-tx-only family; none of it appears on SU-TermServ.</p>
       <td>&lt;10</td>
       <td>display/version drift between the pinned packages and the tx server</td>
     </tr>
+    <tr>
+      <td>the nine panel gene-list ValueSets: per-concept <code class="language-plaintext highlighter-rouge">$validate-code</code> rejected ("must specify either valueSet or url parameter")</td>
+      <td>up to ~2,486</td>
+      <td>SU-TermServ (Ontoserver) rejects the IG Publisher's batch validation of enumerated <code class="language-plaintext highlighter-rouge">ValueSet.compose</code> concepts from the second concept on — for symbol and HGNC-ID coding alike, while the module's own HGNC instance codings validate fine. Validation for exactly these nine resources is skipped via the IG <code class="language-plaintext highlighter-rouge">no-validate</code> parameter until the server issue is fixed (reported upstream); the codes themselves are verified HGNC IDs from hgnc_complete_set</td>
+    </tr>
   </tbody>
 </table>
 
@@ -854,7 +859,7 @@ of being suppressed.</p>
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Sep 14, 2026 12:53+0000">2026-09-14</span>
+          Generated <span title="Mon, Sep 14, 2026 13:42+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

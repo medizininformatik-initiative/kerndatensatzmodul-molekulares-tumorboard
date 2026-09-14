@@ -379,6 +379,11 @@ Familie; auf dem SU-TermServ tritt nichts davon auf.</p>
       <td>&lt;10</td>
       <td>Display-/Versionsdrift zwischen gepinnten Paketen und TX-Server</td>
     </tr>
+    <tr>
+      <td>die neun Panel-Genlisten-ValueSets: <code class="language-plaintext highlighter-rouge">$validate-code</code> je Konzept abgelehnt („must specify either valueSet or url parameter")</td>
+      <td>bis ~2.486</td>
+      <td>der SU-TermServ (Ontoserver) lehnt die Batch-Validierung enumerierter <code class="language-plaintext highlighter-rouge">ValueSet.compose</code>-Konzepte des IG Publishers ab dem zweiten Konzept ab — für Symbol- wie HGNC-ID-Kodierung gleichermaßen, während die HGNC-Instanz-Kodierungen des Moduls sauber validieren. Die Validierung genau dieser neun Ressourcen ist per IG-Parameter <code class="language-plaintext highlighter-rouge">no-validate</code> ausgesetzt, bis das Server-Problem behoben ist (upstream gemeldet); die Codes selbst sind verifizierte HGNC-IDs aus dem hgnc_complete_set</td>
+    </tr>
   </tbody>
 </table>
 
@@ -829,7 +834,7 @@ statt unterdrückt.</p>
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Sep 14, 2026 12:53+0000">2026-09-14</span>
+          Erstellt <span title="Mon, Sep 14, 2026 13:42+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
