@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD041 -->
-<!-- Migrated from the Simplifier IG (AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungderModule). TODO:REVIEW machine-translated from German. -->
 
 <style>
 ul.toc {

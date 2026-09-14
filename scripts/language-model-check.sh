@@ -49,7 +49,7 @@ PATTERNS=(
 # Reviewed exceptions: "<path>|<substring of the offending line>", one per line.
 # A module author writing their own prose can record a legitimate hit here
 # without blanking a whole file from the scan.
-ALLOW=''
+ALLOW='migration-log/migration-report.md|The German mirrors carry the source text'
 
 args=()
 for pattern in "${PATTERNS[@]}"; do

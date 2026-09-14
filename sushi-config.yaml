@@ -14,7 +14,7 @@ id: mii-ig-mtb
 canonical: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb
 name: MII_IG_MTB_DE
 title: MII IG Kerndatensatz-Modul Molekulares Tumorboard
-description: "FHIR profiles for molecular tumor board (MTB) documentation based on the DNPM dataset (Deutsches Netzwerk für Personalisierte Medizin), complementing the MII core dataset oncology module." # TODO:REVIEW derived (EN description derived from the German source description/README)
+description: "FHIR profiles for molecular tumor board (MTB) documentation based on the DNPM dataset (Deutsches Netzwerk für Personalisierte Medizin), complementing the MII core dataset oncology module." # TODO:REVIEW derived (EN description derived from the German-language description/README)
 status: active # draft | active | retired | unknown
 # MII modules use CalVer YYYY.n.n per the MII Module Release Workflow.
 version: "2026.0.1"
@@ -123,7 +123,13 @@ dependencies:
   de.medizininformatikinitiative.kerndatensatz.meta: 2027.0.0-ballot.rc3
   de.medizininformatikinitiative.kerndatensatz.molgen: 2027.0.0-ballot.rc3
   de.medizininformatikinitiative.kerndatensatz.onkologie: 2027.0.0-ballot
-  de.medizininformatikinitiative.kerndatensatz.patho: 2027.0.0-ballot.rc2
+  # patho ships no ImplementationGuide resource in its package, so SUSHI
+  # derives dependsOn.uri from the bare package canonical, which the publisher
+  # flags (BUSINESSRULE: uri should contain /ImplementationGuide/). Explicit
+  # uri override to the patho repo's IG id (mii-ig-modul-patho).
+  de.medizininformatikinitiative.kerndatensatz.patho:
+    uri: https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ImplementationGuide/mii-ig-modul-patho
+    version: 2027.0.0-ballot.rc2
   de.medizininformatikinitiative.kerndatensatz.studie: 2027.0.0-ballot.rc1
   hl7.fhir.uv.genomics-reporting: 3.0.0
   # Template machinery (CRMI meta.profile claims + template rulesets/pages),

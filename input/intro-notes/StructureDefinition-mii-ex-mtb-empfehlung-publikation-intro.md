@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Publikation-Extension.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Publikation-Extension.page.md). TODO:REVIEW machine-translated from German. -->
 ### Content
 This extension can be used to specify sources that support the stated level of evidence of a recommendation of the Molekulares Tumorboard (molecular tumor board).
 Where possible, these sources should be given as a DOI or a PubMed ID. 

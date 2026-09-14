@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD041 -->
-<!-- Migrated from the Simplifier IG (MIIIGModulMTB/Index + BeschreibungModulModul). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (MIIIGModulMTB/Index + BeschreibungModulModul). TODO:REVIEW machine-translated from German. -->
 
 ### Introduction
 
