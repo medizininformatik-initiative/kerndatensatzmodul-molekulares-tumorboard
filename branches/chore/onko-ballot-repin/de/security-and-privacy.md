@@ -1,0 +1,27 @@
+# Sicherheit und Datenschutz - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+
+* [**Inhaltsverzeichnis**](toc.md)
+* **Sicherheit und Datenschutz**
+
+## Sicherheit und Datenschutz
+
+ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+
+Dieser Abschnitt richtet sich an Sicherheits- und Datenschutz-Fachleute. Allgemeine Anforderungen stehen in der FHIR-Kernspezifikation — [Security & Privacy Module](https://build.fhir.org/secpriv-module.html) und die [Security-Checkliste](https://build.fhir.org/security.html). Diese Seite wiederholt sie nicht; sie verlinkt den übergreifenden Datenschutzrahmen und nennt, was **für dieses Modul spezifisch** ist.
+
+#### 1. Das übergreifende Datenschutzkonzept
+
+Das [übergreifende Datenschutzkonzept der Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/de/datenschutzkonzept) regelt, wie Patientendaten über das Netz der Datenintegrationszentren hinweg für die Forschung verarbeitet werden dürfen: die Rechtsgrundlage (der Broad Consent der MII), die Rollen der Datenintegrationszentren und der Use-&-Access-Committees sowie die standortübergreifenden Anwendungsszenarien (Machbarkeitsanfragen, verteilte Analysen, Daten- und Bioproben-Bereitstellung). Alles, was dieses Modul spezifiziert, bewegt sich innerhalb dieses Rahmens — dieser Leitfaden fügt keinen eigenen Verarbeitungszweck hinzu.
+
+#### 2. De-Identifikation, Minimierung und Pseudonymisierung (DIMP)
+
+Wie Daten, die ein Datenintegrationszentrum verlassen, praktisch de-identifiziert werden, spezifiziert [DIMP (De-Identification — Minimisation — Pseudonymisation)](https://medizininformatik-initiative.github.io/dataportal/data-node/DIMP.html) in der Dokumentation des Datenportals: direkte Identifikatoren werden entfernt, vom genehmigten Projekt nicht benötigte Datenelemente entfallen, und identifizierende Werte werden durch projektspezifische Pseudonyme ersetzt (FHIR-Pseudonymizer-Konfiguration). Die Profile dieses Moduls beschreiben die Daten **vor** Anwendung von DIMP; welche Elemente eine konkrete Datenbereitstellung erreicht, entscheidet je Projekt die DIMP-Konfiguration, nicht dieser Leitfaden.
+
+#### 3. Modul-spezifische Aspekte
+
+Dies ist der eigene Beitrag des Moduls: die Sicherheits- und Datenschutz-Eigenschaften, die aus der **Art der Daten dieses Moduls** folgen. **Der Inhalt dieses Abschnitts ist optional** — nicht jedes Modul hat eigene Aspekte. Hat Ihres keine, besteht der gesamte Abschnitt aus dem folgenden Standardtext (löschen Sie die Beispiel- und TODO-Boxen unten und übernehmen Sie ihn wörtlich):
+
+> Über den oben verlinkten übergreifenden Rahmen hinaus — das übergreifende Datenschutzkonzept, den ihm zugrunde liegenden Broad Consent und DIMP — führt dieses Modul keine Datenkategorie, die eigene Sicherheits- oder Datenschutzaspekte aufwirft, und stellt keine modulspezifischen Sicherheits- oder Datenschutzanforderungen an Implementierende.
+
+> **Written during migration - review before release.** Der Quell-Leitfaden enthält keinen Abschnitt zu Sicherheit und Datenschutz; die folgenden modul-spezifischen Aspekte sind aus den Datenkategorien des Moduls VORGESCHLAGEN und vom Modulteam zu prüfen (Gate B): Dieses Modul transportiert **genomische Daten** (somatische und potenziell Keimbahn-Varianten aus NGS-Panel-/Exom-/Genom-Sequenzierung), dokumentiert im Rahmen des Modellvorhabens Genomsequenzierung (§ 64e SGB V). Genomische Roh- und Variantendaten haben ein hohes intrinsisches Re-Identifikationspotenzial, das eine Pseudonymisierung auf Profilebene nicht beseitigt; Keimbahnbefunde können Informationen über biologische Verwandte tragen. Implementierende SOLLTEN die Varianten-Ressourcen (Einfache Variante, Copy Number Variant, DNA-/RNA-Fusion, molekulare Biomarker) in DIMP-Konfigurationen als besonders sensibel behandeln und die Governance-Regeln von DNPM/MV GenomSeq beachten, wenn Daten den Standort verlassen.
+

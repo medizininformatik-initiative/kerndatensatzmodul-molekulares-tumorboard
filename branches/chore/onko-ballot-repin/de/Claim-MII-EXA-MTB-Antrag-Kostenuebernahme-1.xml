@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Claim xmlns="http://hl7.org/fhir">
+  <id value="MII-EXA-MTB-Antrag-Kostenuebernahme-1"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme|2026.0.1"/>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Claim MII-EXA-MTB-Antrag-Kostenuebernahme-1</b></p><a name="de-MII-EXA-MTB-Antrag-Kostenuebernahme-1"> </a><a name="de-hcMII-EXA-MTB-Antrag-Kostenuebernahme-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html">MII PR MTB Antrag Kostenuebernahme</a> version: 2026.0.1</p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title="Codes:">institutional</span></p><p><b>use</b>: Claim</p><p><b>patient</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>created</b>: 2023-03-10</p><p><b>provider</b>: <a href="Organization-MyHospital.html">Organization Example General Hospital</a></p><p><b>priority</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}">Normal</span></p><h3>Relateds</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Relationship</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:">initial-claim</span></td></tr></table><p><b>prescription</b>: <a href="MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.html">MedicationRequest: extension = 1,m1A,http://doi.org#10.1200/JCO.2022.40.16_suppl.5512,http://www.ncbi.nlm.nih.gov/pubmed#38055253; status = completed; intent = proposal; medication[x] = MIRVETUXIMAB SORAVTANSINE; authoredOn = 2023-03-28</a></p><h3>CareTeams</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Sequence</b></td><td><b>Provider</b></td><td><b>Responsible</b></td></tr><tr><td style="display: none">*</td><td>1</td><td><a href="Organization-MyInsurer.html">Organization Example Health Insurance Co.</a></td><td>true</td></tr></table><h3>Insurances</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td><td><b>ClaimResponse</b></td></tr><tr><td style="display: none">*</td><td>1</td><td>true</td><td><a href="Coverage-MyCoverage.html">Coverage: status = active; type = extended healthcare; period = 2023-01-01 --&gt; 2025-12-31</a></td><td><a href="ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html">ClaimResponse: status = active; type = institutional; use = claim; created = 2023-05-01; outcome = complete</a></td></tr></table></div>
+  </text>
+  <status value="active"/>
+  <type>
+    <coding>
+      <code value="institutional"/>
+    </coding>
+  </type>
+  <use value="claim"/>
+  <patient>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </patient>
+  <created value="2023-03-10"/>
+  <provider>
+    <reference value="Organization/MyHospital"/>
+  </provider>
+  <priority>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/processpriority"/>
+      <code value="normal"/>
+    </coding>
+  </priority>
+  <related>
+    <relationship>
+      <coding>
+        <code value="initial-claim"/>
+      </coding>
+    </relationship>
+  </related>
+  <prescription>
+    <reference value="MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"/>
+  </prescription>
+  <careTeam>
+    <sequence value="1"/>
+    <provider>
+      <reference value="Organization/MyInsurer"/>
+    </provider>
+    <responsible value="true"/>
+  </careTeam>
+  <insurance>
+    <sequence value="1"/>
+    <focal value="true"/>
+    <coverage>
+      <reference value="Coverage/MyCoverage"/>
+    </coverage>
+    <claimResponse>
+      <reference value="ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"/>
+    </claimResponse>
+  </insurance>
+</Claim>

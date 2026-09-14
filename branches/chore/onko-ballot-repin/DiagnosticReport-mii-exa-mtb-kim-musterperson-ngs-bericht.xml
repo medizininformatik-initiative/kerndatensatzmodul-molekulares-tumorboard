@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-kim-musterperson-ngs-bericht"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht|2026.0.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: DiagnosticReport mii-exa-mtb-kim-musterperson-ngs-bericht</b></p><a name="mii-exa-mtb-kim-musterperson-ngs-bericht"> </a><a name="hcmii-exa-mtb-kim-musterperson-ngs-bericht"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-ngs-bericht.html">MII PR MTB NGS-Bericht</a> version: 2026.0.1</p></div><h2><span title="Codes:{http://loinc.org 51969-4}">Genetic analysis report</span> (<span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 GE}">Genetics</span>) </h2><table class="grid"><tr><td>Subject</td><td>Kim Musterperson  (no stated gender), DoB: 1956-03-14</td></tr><tr><td>Reported</td><td>2023-03-28 00:00:00+0000</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Flags</b></td></tr><tr><td><a href="Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53.html"><span title="Codes:{http://loinc.org 69548-6}">Genetic variant assessment</span></a></td><td><span title="Codes:{http://loinc.org LA9633-4}">Present</span></td><td>Final</td></tr><tr><td><a href="Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html"><span title="Codes:{http://loinc.org 69548-6}">Genetic variant assessment</span></a></td><td><span title="Codes:{http://loinc.org LA9633-4}">Present</span></td><td>Final</td></tr><tr><td><a href="Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html"><span title="Codes:{http://loinc.org 69548-6}">Genetic variant assessment</span></a></td><td><span title="Codes:{http://loinc.org LA9633-4}">Present</span></td><td>Final</td></tr></table></div><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: DiagnosticReport mii-exa-mtb-kim-musterperson-ngs-bericht</b></p><a name="de-mii-exa-mtb-kim-musterperson-ngs-bericht"> </a><a name="de-hcmii-exa-mtb-kim-musterperson-ngs-bericht"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-ngs-bericht.html">MII PR MTB NGS-Bericht</a> version: 2026.0.1</p></div><h2><span title="Codes:{http://loinc.org 51969-4}">Genetic analysis report</span> (<span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 GE}">Genetics</span>) </h2><table class="grid"><tr><td>Subject</td><td>Kim Musterperson  (no stated gender), DoB: 1956-03-14</td></tr><tr><td>Reported</td><td>2023-03-28 00:00:00+0000</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Flags</b></td></tr><tr><td><a href="Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53.html"><span title="Codes:{http://loinc.org 69548-6}">Genetic variant assessment</span></a></td><td><span title="Codes:{http://loinc.org LA9633-4}">Present</span></td><td>Final</td></tr><tr><td><a href="Observation-mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1.html"><span title="Codes:{http://loinc.org 69548-6}">Genetic variant assessment</span></a></td><td><span title="Codes:{http://loinc.org LA9633-4}">Present</span></td><td>Final</td></tr><tr><td><a href="Observation-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1.html"><span title="Codes:{http://loinc.org 69548-6}">Genetic variant assessment</span></a></td><td><span title="Codes:{http://loinc.org LA9633-4}">Present</span></td><td>Final</td></tr></table></div></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="GE"/>
+      <display value="Genetics"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="51969-4"/>
+      <display value="Genetic analysis report"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <issued value="2023-03-28T00:00:00.000Z"/>
+  <specimen>
+    <reference value="Specimen/PatientKimMusterperson-AscitesSpecimen-2"/>
+  </specimen>
+  <result>
+    <reference value="Observation/mii-exa-mtb-kim-musterperson-EinfacheVariante-TP53"/>
+  </result>
+  <result>
+    <reference value="Observation/mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1"/>
+  </result>
+  <result>
+    <reference value="Observation/mii-exa-mtb-kim-musterperson-CNVariante-CCNE1"/>
+  </result>
+</DiagnosticReport>

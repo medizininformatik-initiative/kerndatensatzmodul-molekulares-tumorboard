@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<EvidenceVariable xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-study-cldn6-evidence-variable-0"/>
+  <language value="de"/>
+  <text>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: EvidenceVariable mii-exa-mtb-study-cldn6-evidence-variable-0</b></p><a name="de-mii-exa-mtb-study-cldn6-evidence-variable-0"> </a><a name="de-hcmii-exa-mtb-study-cldn6-evidence-variable-0"> </a><p><b>status</b>: Active</p><h3>UseContexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><a href="http://snomed.info/id/362956003">SNOMED CT: 362956003</a> (Procedure/intervention (navigational concept))</td><td><span title="Codes:{http://snomed.info/sct 12893009}">Biological</span></td></tr></table><h3>Characteristics</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Definition[x]</b></td></tr><tr><td style="display: none">*</td><td><a href="Group-mii-exa-mtb-study-cldn6-eligibility-criteria.html">Group: type = person; actual = false; quantity = 145</a></td></tr></table></div>
+  </text>
+  <status value="active"/>
+  <useContext>
+    <code>
+      <system value="http://snomed.info/sct"/>
+      <code value="362956003"/>
+      <display value="Procedure/intervention (navigational concept)"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="12893009"/>
+        <display value="Biological"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <characteristic>
+    <definitionReference>
+      <reference value="Group/mii-exa-mtb-study-cldn6-eligibility-criteria"/>
+    </definitionReference>
+  </characteristic>
+</EvidenceVariable>
