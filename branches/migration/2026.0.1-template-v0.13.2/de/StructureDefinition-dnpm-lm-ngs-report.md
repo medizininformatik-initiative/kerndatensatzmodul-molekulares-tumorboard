@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-ngs-report | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:DNPM_LM_NGSReport |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:DNPM_LM_NGSReport |
 
  
 Logical Model for a single entry in the DNPM DIP MTB Patient Record ngsReports array 
@@ -77,7 +77,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-dnpm-lm-ngs-
   "name" : "DNPM_LM_NGSReport",
   "title" : "DNPM NGS Report",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

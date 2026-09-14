@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-leitlinienbehandlung-status | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_EX_MTB_Leitlinienbehandlung_Status |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_EX_MTB_Leitlinienbehandlung_Status |
 
 Status der Behandlung nach Leitlinie
 
@@ -92,7 +92,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-l
   "name" : "MII_EX_MTB_Leitlinienbehandlung_Status",
   "title" : "MII EX MTB Leitlinienbehandlung Status",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

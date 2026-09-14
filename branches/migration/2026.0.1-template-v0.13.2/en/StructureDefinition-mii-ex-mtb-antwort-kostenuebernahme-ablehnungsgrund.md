@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund |
+| Active as of 2026-09-14 | *Computable Name*:MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund |
 
 Ablehnungsgrund des Antrags auf Kostenuebernahme
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-mtb-antwor
   "name" : "MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund",
   "title" : "MII EX MTB Antwort Kostenuebernahme Ablehnungsgrund",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antwort-kostenuebernahme-entscheidung | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung |
 
 Entscheidung zum Antrag zur Kostenuebernahme
 
@@ -90,7 +90,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-a
   "name" : "MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung",
   "title" : "MII EX MTB Antwort Kostenuebernahme Entscheidung",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

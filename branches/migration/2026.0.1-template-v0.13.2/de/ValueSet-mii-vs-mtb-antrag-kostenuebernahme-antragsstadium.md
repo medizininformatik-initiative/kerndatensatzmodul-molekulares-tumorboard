@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-antrag-kostenuebernahme-antragsstadium | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium |
 
  
 ValueSet zum Stadium des Antrags zur Kostenuebernahme 
@@ -43,7 +43,7 @@ ValueSet zum Stadium des Antrags zur Kostenuebernahme
   "title" : "MII VS Antrag Kostenuebernahme Antragsstadium",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

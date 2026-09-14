@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-genomic-study-analysis-qc | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_EX_MTB_GenomicStudyAnalysis_QC |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_EX_MTB_GenomicStudyAnalysis_QC |
 
 Sequenzierbezogenen Metriken der Genomic Study Analysis
 
@@ -73,7 +73,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-g
   "name" : "MII_EX_MTB_GenomicStudyAnalysis_QC",
   "title" : "MII EX MTB Antrag GenomicsStudyAnalysis Metrics",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

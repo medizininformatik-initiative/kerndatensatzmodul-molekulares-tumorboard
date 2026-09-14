@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_PR_MTB_Follow_Up_ClinicalImpression |
+| Active as of 2026-09-14 | *Computable Name*:MII_PR_MTB_Follow_Up_ClinicalImpression |
 
  
 Follow-Up als Prozess des Einholens von Informationen über durchgeführte Therapien & Kostenuebernahmen 
@@ -72,7 +72,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-follow
   "name" : "MII_PR_MTB_Follow_Up_ClinicalImpression",
   "title" : "MII PR MTB Clinical Impresssion",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

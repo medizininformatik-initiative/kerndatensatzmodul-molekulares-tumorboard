@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-empfehlung-status-begruendung | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_VS_MTB_Empfehlung_StatusBegruendung |
+| Active as of 2026-09-14 | *Computable Name*:MII_VS_MTB_Empfehlung_StatusBegruendung |
 
  
 ValueSet für Begründung bei fehlender Empfehlung im MTB-Beschluss 
@@ -43,7 +43,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "MII VS Empfehlung Status Begründung",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

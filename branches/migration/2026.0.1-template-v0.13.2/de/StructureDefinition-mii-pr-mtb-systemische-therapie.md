@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_PR_MTB_Systemische_Therapie |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_PR_MTB_Systemische_Therapie |
 
  
 Systemische Therapie im Follow-Up nach Abschluss des MTB 
@@ -168,7 +168,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-s
   "name" : "MII_PR_MTB_Systemische_Therapie",
   "title" : "MII PR MTB Systemische Therapie",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

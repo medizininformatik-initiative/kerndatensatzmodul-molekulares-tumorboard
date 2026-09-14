@@ -2862,6 +2862,17 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/mii-vs-mtb-interpretation-high-low"/>
+      </reference>
+      <name value="MII VS MTB Interpretation High/Low"/>
+      <description value="Interpretation qualitativer Biomarker-Ergebnisse als hoch/niedrig (High/Low aus HL7 v3 ObservationInterpretation). Ersetzt das in Genomics Reporting STU3 entfallene high-low-codes-vs (STU2)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/mii-vs-mtb-ish-method"/>
       </reference>
       <name value="MII VS MTB ISH Method"/>

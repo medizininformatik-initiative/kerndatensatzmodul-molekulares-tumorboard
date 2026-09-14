@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_PR_MTB_Einfache_Variante |
+| Active as of 2026-09-14 | *Computable Name*:MII_PR_MTB_Einfache_Variante |
 
  
 Beschreibt eine gefundene genetische Variante. 
@@ -76,7 +76,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-einfac
   "name" : "MII_PR_MTB_Einfache_Variante",
   "title" : "MII PR MTB Einfache Variante",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

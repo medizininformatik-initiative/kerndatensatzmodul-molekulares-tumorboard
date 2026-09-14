@@ -331,10 +331,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#guidance-for-researchers" id="markdown-toc-guidance-for-researchers">Guidance for Researchers</a></li>
+  <li><a href="#outcome-endpoints-os-pfs-and-time-to-next-treatment" id="markdown-toc-outcome-endpoints-os-pfs-and-time-to-next-treatment">Outcome endpoints: OS, PFS and time to next treatment</a></li>
+</ul>
 
+</div>
 <!-- markdownlint-disable MD041 -->
 <!-- Source: kerndatensatz-basis input/pagecontent/researcher-guidance.md.
      German mirror: input/translations/de/pagecontent/researcher-guidance.md. -->
@@ -343,9 +346,56 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Guidance for researchers using the data of the <strong>Molecular Tumor Board</strong> module for research purposes — e.g. which data elements are relevant to which research questions, and how they are to be interpreted.</p>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Describe the research-relevant aspects of your module.]</p>
+<!-- DERIVED:suggestion source=none gate=B -->
+<blockquote class="ig-highlight ig-highlight-blue">
+  <p><strong>Written during migration - review before release.</strong> The source guide ships
+no researcher guidance; the following outcome-endpoint section is PROPOSED
+from the module's data elements and requires review by the module team.</p>
 </blockquote>
+
+<h3 id="outcome-endpoints-os-pfs-and-time-to-next-treatment">Outcome endpoints: OS, PFS and time to next treatment</h3>
+
+<p>The module's follow-up documentation is designed so that the standard
+real-world oncology endpoints can be derived from routine data. The reference
+point (t₀) for all three is typically the <strong>start of the MTB-recommended
+therapy</strong> (<a href="StructureDefinition-mii-pr-mtb-systemische-therapie.html">SystemischeTherapie</a><code class="language-plaintext highlighter-rouge">.performedPeriod.start</code>);
+depending on the research question, the <strong>MTB decision date</strong>
+(<a href="StructureDefinition-mii-pr-mtb-therapieplan.html">Therapieplan</a>) can serve as
+an alternative index date.</p>
+
+<p><strong>Overall survival (OS)</strong> — time from t₀ to death from any cause.
+Death and its date come from <code class="language-plaintext highlighter-rouge">Patient.deceasedDateTime</code> (MII Person module);
+patients without a death record are censored at their last documented contact
+(most recently dated <a href="StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html">Follow-Up
+ClinicalImpression</a>,
+Response-Befund or therapy documentation).</p>
+
+<p><strong>Progression-free survival (PFS)</strong> — time from t₀ to the first documented
+progression or death, whichever comes first. Progression is read from the
+<a href="StructureDefinition-mii-pr-mtb-response-befund.html">Response-Befund</a>: a
+RECIST/iRECIST assessment of <em>progressive disease</em> (<code class="language-plaintext highlighter-rouge">PD</code>) in
+<code class="language-plaintext highlighter-rouge">valueCodeableConcept</code>, with <code class="language-plaintext highlighter-rouge">effectiveDateTime</code> as the event date and the
+assessment method (RECIST, RANO, clinical) in the profile's method element.
+Response findings are tied to their therapy via <code class="language-plaintext highlighter-rouge">partOf</code>, so PFS is computed
+<strong>per therapy line</strong>, not per patient alone.</p>
+
+<p><strong>Time to next treatment (TTNT)</strong> — time from t₀ to the start of the <em>next</em>
+systemic therapy line (<code class="language-plaintext highlighter-rouge">performedPeriod.start</code> of the following
+SystemischeTherapie, or the first MedicationStatement of the next line);
+patients without a subsequent line are censored at last contact. TTNT is the
+robust real-world surrogate when imaging-based progression assessment is
+incompletely documented — in this module's data it needs no imaging at all,
+only the therapy sequence, and the reason a line ended is available in the
+therapy's status reason (<code class="language-plaintext highlighter-rouge">mii-cs-mtb-therapiestatusgrund</code> /
+<code class="language-plaintext highlighter-rouge">statusReason</code>) and, for non-implementation of a recommendation, in the
+Follow-Up's <code class="language-plaintext highlighter-rouge">Grund Nicht-Umsetzung</code> coding.</p>
+
+<p>Practical notes: therapy lines are ordered by <code class="language-plaintext highlighter-rouge">performedPeriod</code>; the
+<code class="language-plaintext highlighter-rouge">Leitliniendokumentation</code> extension on prior therapies carries the line number
+(<code class="language-plaintext highlighter-rouge">Therapielinie</code>) where documented. Cost-coverage delays (visible as the span
+between <a href="StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html">Antrag</a>
+and <a href="StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html">Antwort Kostenübernahme</a>)
+can systematically shift t₀ and are themselves a researchable quantity.</p>
 
 
 
@@ -372,7 +422,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Fri, Sep 11, 2026 15:11+0000">2026-09-11</span>
+          Generated <span title="Mon, Sep 14, 2026 07:29+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

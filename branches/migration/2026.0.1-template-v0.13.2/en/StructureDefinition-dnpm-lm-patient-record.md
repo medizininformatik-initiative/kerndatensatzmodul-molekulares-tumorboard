@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-patient-record | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:DNPM_LM_PatientRecord |
+| Active as of 2026-09-14 | *Computable Name*:DNPM_LM_PatientRecord |
 
  
 Logical Model for the DNPM DIP MTB Patient Record JSON structure (all 19 top-level keys) 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](../StructureDefinition-dnpm-lm-patient-r
   "name" : "DNPM_LM_PatientRecord",
   "title" : "DNPM Patient Record",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

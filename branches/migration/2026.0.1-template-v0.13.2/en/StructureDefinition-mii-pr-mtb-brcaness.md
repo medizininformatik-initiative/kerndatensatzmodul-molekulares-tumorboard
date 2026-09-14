@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_PR_MTB_BRCAness |
+| Active as of 2026-09-14 | *Computable Name*:MII_PR_MTB_BRCAness |
 
  
 Beschreibt die BRCAness, also wie sehr ein Tumor ein Verhalten zeigt, welches BRCA1- oder BRCA2-Mutationen entspricht. Die BRCAness ist ein Indikator für die Wirksamkeit von PARP-Inhibitoren. 
@@ -69,7 +69,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-brcane
   "name" : "MII_PR_MTB_BRCAness",
   "title" : "MII PR MTB BRCAness",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -292,7 +292,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-brcane
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs"
+        "valueSet" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-interpretation-high-low"
       }
     },
     {

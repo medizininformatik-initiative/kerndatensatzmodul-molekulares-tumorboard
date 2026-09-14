@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2 | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_PR_MTB_INSITUHYBRIDIZATION_HER2 |
+| Active as of 2026-09-14 | *Computable Name*:MII_PR_MTB_INSITUHYBRIDIZATION_HER2 |
 
  
 HER2/ERBB2 In Situ Hybridization (FISH) Bericht. Basiert auf LOINC Panel 74885-5. 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-insitu
   "name" : "MII_PR_MTB_INSITUHYBRIDIZATION_HER2",
   "title" : "MII PR MTB In Situ Hybridization HER2",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

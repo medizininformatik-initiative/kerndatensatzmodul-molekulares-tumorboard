@@ -363,6 +363,50 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The module is continuously validated against the FHIR R4 standard and the defined profiles. The validation status is documented here transparently.</p>
 
+<h4 id="known-issues-of-the-template-build-status-2026-09">Known issues of the template build (status 2026-09)</h4>
+
+<p>The remaining QA errors of this build are <strong>one family: the public HL7
+terminology server (tx.fhir.org) does not host the German terminology content
+this module validates against.</strong> They are expected to disappear once CI
+validates against the MII terminology server (SU-TermServ; see
+<code class="language-plaintext highlighter-rouge">scripts/set-su-termserv-secrets.sh</code> — requires repository secrets).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>~Count</th>
+      <th>Root cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ATC codes (<code class="language-plaintext highlighter-rouge">L01XA02</code> carboplatin, <code class="language-plaintext highlighter-rouge">L01DB01</code> doxorubicin) "not in ValueSet <code class="language-plaintext highlighter-rouge">mii-vs-medikation-atc</code>"</td>
+      <td>24</td>
+      <td>the Medikation module's ValueSet includes BfArM ATC <strong>per yearly version</strong> (2020–2026); tx.fhir.org hosts no BfArM ATC at all ("Invalid criteria version"), so the expansion fails and every membership check errors</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition/PatientKimMusterperson-PrimaryDiagnosis-2</code>: "no matching profile" + <code class="language-plaintext highlighter-rouge">reasonReference:Primaertumor</code> "matching slice not found" + <code class="language-plaintext highlighter-rouge">C56.9</code> not in the ICD-O-3 topography ValueSet</td>
+      <td>30 (4+10+16)</td>
+      <td><strong>one cascade</strong>: tx.fhir.org cannot expand ICD-O-3, so the diagnosis's <code class="language-plaintext highlighter-rouge">bodySite</code> (<code class="language-plaintext highlighter-rouge">C56.9</code>) cannot be validated → the instance fails its profile check → the therapy recommendations' <code class="language-plaintext highlighter-rouge">resolve()</code>-based <code class="language-plaintext highlighter-rouge">Primaertumor</code> slice discriminator cannot match. The instance and the slices are correctly authored</td>
+    </tr>
+    <tr>
+      <td>SNOMED CT edition <code class="language-plaintext highlighter-rouge">…/900000000000207008/version/20250701</code> "definition not found"</td>
+      <td>12</td>
+      <td>the expansion manifest (<code class="language-plaintext highlighter-rouge">input/resources/Parameters-expansion-manifest.json</code>) pins the international edition 2025-07-01, which tx.fhir.org does not serve</td>
+    </tr>
+    <tr>
+      <td>LOINC display-name deviations, single Genomics-Reporting ValueSet misses</td>
+      <td>&lt;10</td>
+      <td>display/version drift between the pinned packages and the tx server</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>None of these is a defect in the module's profiles or examples; they are
+terminology-server capability gaps and are tracked here deliberately instead
+of being suppressed.</p>
+
 <h4 id="terminology-server-and-validation-configuration">Terminology server and validation configuration</h4>
 
 <p><strong>MII Terminology Server</strong>: <a href="https://termserv.mii.medizininformatik-initiative.de/fhir">https://termserv.mii.medizininformatik-initiative.de/fhir</a></p>
@@ -806,7 +850,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Fri, Sep 11, 2026 15:11+0000">2026-09-11</span>
+          Generated <span title="Mon, Sep 14, 2026 07:29+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

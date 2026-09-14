@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_PR_MTB_Systemische_Therapie_Medication_Statement |
+| Active as of 2026-09-14 | *Computable Name*:MII_PR_MTB_Systemische_Therapie_Medication_Statement |
 
  
 Medication Statement zur MTB-Systemtherapie mit Wirkstoff und Dosis 
@@ -83,7 +83,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-system
   "name" : "MII_PR_MTB_Systemische_Therapie_Medication_Statement",
   "title" : "MII PR MTB Systemtherapie Medication Statement",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-msi-method-type | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_CS_MTB_MSI_Method_Type |
+| Active as of 2026-09-14 | *Computable Name*:MII_CS_MTB_MSI_Method_Type |
 
  
 Codesystem, welches die verwendete MSI-Bestimmungsmethode gemäß dnpm-Kodierung auflistet. 
@@ -37,7 +37,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "MII CS MSI Method Type",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

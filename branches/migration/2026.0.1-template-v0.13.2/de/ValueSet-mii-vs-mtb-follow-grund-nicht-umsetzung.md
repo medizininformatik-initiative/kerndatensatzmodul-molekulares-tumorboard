@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-follow-up-grund-nicht-umsetzung | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung |
 
  
 ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund 
@@ -45,7 +45,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "MII VS Follow-Up Grund Nicht-Umsetzung",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

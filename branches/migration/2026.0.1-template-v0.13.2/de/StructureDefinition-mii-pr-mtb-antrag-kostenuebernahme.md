@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_PR_MTB_Antrag_Kostenuebernahme |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_PR_MTB_Antrag_Kostenuebernahme |
 
  
 Antrag Kostenübernahme 
@@ -152,7 +152,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-a
   "name" : "MII_PR_MTB_Antrag_Kostenuebernahme",
   "title" : "MII PR MTB Antrag Kostenuebernahme",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

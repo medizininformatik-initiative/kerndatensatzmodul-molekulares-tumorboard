@@ -123,6 +123,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | [ MII VS MTB Antrag Kostenuebernahme  ](ValueSet-mii-vs-mtb-antrag-kostenuebernahme.md) | MII Logical Model Modul Molekulares Tumorboard |
 | [ MII VS MTB ISH Method  ](ValueSet-mii-vs-mtb-ish-method.md) | In Situ Hybridization technique methods (FISH, CISH, SISH) |
 | [ MII VS MTB Immunhistochemistry Specific Codes  ](ValueSet-mii-vs-mtb-immunohistochemistry-specific-codes.md) | Spezifische LOINC und SNOMED Codes für immunhistochemische Untersuchungen. Diese Codes werden für das Slice 'spezifisch' im Immunohistochemistry Profil verwendet. |
+| [ MII VS MTB Interpretation High/Low  ](ValueSet-mii-vs-mtb-interpretation-high-low.md) | Interpretation qualitativer Biomarker-Ergebnisse als hoch/niedrig (High/Low aus HL7 v3 ObservationInterpretation). Ersetzt das in Genomics Reporting STU3 entfallene high-low-codes-vs (STU2). |
 | [ MII VS MTB Systemtherapie Status  ](ValueSet-mii-vs-mtb-systemische-therapie-status.md) | Einschränkung der Status für Systemtherapie |
 | [ MII VS Mikrosatelliteninstabilität  ](ValueSet-mii-vs-mtb-msi.md) | 
 | | | |

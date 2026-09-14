@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-seq | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_PR_MTB_RNA_Seq |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_PR_MTB_RNA_Seq |
 
  
 RNA Seq 
@@ -152,7 +152,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-r
   "name" : "MII_PR_MTB_RNA_Seq",
   "title" : "MII PR MTB RNA Seq",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

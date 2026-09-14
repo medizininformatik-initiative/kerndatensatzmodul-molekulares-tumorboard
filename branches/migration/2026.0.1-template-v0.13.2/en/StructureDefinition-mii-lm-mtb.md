@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_LM_MTB |
+| Active as of 2026-09-14 | *Computable Name*:MII_LM_MTB |
 
  
 MII Logical Model Modul Molekulares Tumorboard 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-mtb.csv), 
   "name" : "MII_LM_MTB",
   "title" : "MII LM Molekulares Tumorboard",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

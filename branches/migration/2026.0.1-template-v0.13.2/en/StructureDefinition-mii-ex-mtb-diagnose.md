@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-diagnose | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_EX_MTB_Diagnose |
+| Active as of 2026-09-14 | *Computable Name*:MII_EX_MTB_Diagnose |
 
 Onkologische Diagnose
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-mtb-diagno
   "name" : "MII_EX_MTB_Diagnose",
   "title" : "MII EX MTB Diagnose",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-antrag-kostenuebernahme-antragsstadium | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium |
+| Active as of 2026-09-14 | *Computable Name*:MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium |
 
 Stadium des Antrags zur Kostenuebernahme
 
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-mtb-antrag
   "name" : "MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium",
   "title" : "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

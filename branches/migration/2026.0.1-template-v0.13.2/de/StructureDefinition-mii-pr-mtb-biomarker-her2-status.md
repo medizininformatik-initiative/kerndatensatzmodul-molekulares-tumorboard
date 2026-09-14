@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biomarker-her2-status | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_PR_MTB_BIOMARKER_HER2_STATUS |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_PR_MTB_BIOMARKER_HER2_STATUS |
 
  
 … 
@@ -103,7 +103,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-b
   "name" : "MII_PR_MTB_BIOMARKER_HER2_STATUS",
   "title" : "MII PR Biomarker Her2 Status",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

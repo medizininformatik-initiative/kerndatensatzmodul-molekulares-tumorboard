@@ -83,6 +83,10 @@
   },
   {
     "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|4.0.0"
+  },
+  {
+    "name" : "system-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-leitlinienbehandlung-status|2026.0.1"
   },
   {
@@ -892,6 +896,10 @@
   {
     "name" : "default-canonical-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore|2027.0.0-ballot.rc2"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-interpretation-high-low|2026.0.1"
   },
   {
     "name" : "default-canonical-version",

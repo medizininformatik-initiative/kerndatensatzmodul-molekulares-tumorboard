@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:MII_PR_MTB_Copy_Number_Variant |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_PR_MTB_Copy_Number_Variant |
 
  
 Copy Number Variant (CNV) 
@@ -153,7 +153,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-c
   "name" : "MII_PR_MTB_Copy_Number_Variant",
   "title" : "MII PR MTB Copy Number Variant",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

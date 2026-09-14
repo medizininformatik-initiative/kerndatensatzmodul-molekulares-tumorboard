@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molekularer-biomarker | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_PR_MTB_Molekularer_Biomarker |
+| Active as of 2026-09-14 | *Computable Name*:MII_PR_MTB_Molekularer_Biomarker |
 
  
 Stellt einen gefundenden Biomarker dar. Das Profil ist auf Basis von https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-molecular-biomarker.html nachgebaut. 
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-moleku
   "name" : "MII_PR_MTB_Molekularer_Biomarker",
   "title" : "MII PR MTB Molekularer Biomarker",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

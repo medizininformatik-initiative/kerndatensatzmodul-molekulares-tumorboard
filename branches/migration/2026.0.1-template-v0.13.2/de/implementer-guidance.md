@@ -28,6 +28,19 @@ Diese Seite dokumentiert den aktuellen Stand der FHIR-Validierung für das MII M
 
 Das Modul wird kontinuierlich gegen den FHIR R4 Standard und die definierten Profile validiert. Da Simplifier keinen öffentlichen QA-Report bereitstellt wie bei klassischen FHIR IG Publisher Builds, dokumentieren wir hier transparent den Validierungsstatus.
 
+#### Bekannte Befunde des Template-Builds (Stand 2026-09)
+
+Die verbleibenden QA-Fehler dieses Builds sind **eine Familie: der öffentliche HL7-Terminologieserver (tx.fhir.org) hält die deutschen Terminologie-Inhalte nicht vor, gegen die dieses Modul validiert.** Sie verschwinden voraussichtlich, sobald die CI gegen den MII-Terminologieserver (SU-TermServ) validiert (siehe `scripts/set-su-termserv-secrets.sh` — benötigt Repository-Secrets).
+
+| | | |
+| :--- | :--- | :--- |
+| ATC-Codes (`L01XA02`Carboplatin,`L01DB01`Doxorubicin) „nicht im ValueSet`mii-vs-medikation-atc`" | 24 | das ValueSet des Medikationsmoduls inkludiert BfArM-ATC**pro Jahresversion**(2020–2026); tx.fhir.org führt gar kein BfArM-ATC („Invalid criteria version"), die Expansion scheitert und jede Mitgliedschaftsprüfung schlägt fehl |
+| `Condition/PatientKimMusterperson-PrimaryDiagnosis-2`: „kein passendes Profil" +`reasonReference:Primaertumor`„matching slice not found" +`C56.9`nicht im ICD-O-3-Topographie-ValueSet | 30 (4+10+16) | **eine Kaskade**: tx.fhir.org kann ICD-O-3 nicht expandieren, die`bodySite`(`C56.9`) der Diagnose ist nicht validierbar → die Instanz fällt beim Profil-Check durch → der`resolve()`-basierte`Primaertumor`-Slice-Diskriminator der Therapieempfehlungen kann nicht matchen. Instanz und Slices sind korrekt modelliert |
+| SNOMED-CT-Edition`…/900000000000207008/version/20250701`„definition not found" | 12 | das Expansion-Manifest (`input/resources/Parameters-expansion-manifest.json`) pinnt die internationale Edition 2025-07-01, die tx.fhir.org nicht ausliefert |
+| LOINC-Display-Abweichungen, einzelne Genomics-Reporting-ValueSet-Treffer | <10 | Display-/Versionsdrift zwischen gepinnten Paketen und TX-Server |
+
+Nichts davon ist ein Defekt der Profile oder Beispiele des Moduls; es sind Fähigkeitslücken des Terminologieservers und werden hier bewusst dokumentiert statt unterdrückt.
+
 #### Terminologie-Server und Validierungskonfiguration
 
 **MII Terminology Server**: [https://termserv.mii.medizininformatik-initiative.de/fhir](https://termserv.mii.medizininformatik-initiative.de/fhir)

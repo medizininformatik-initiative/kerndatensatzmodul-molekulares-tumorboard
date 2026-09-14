@@ -337,6 +337,50 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Das Modul wird kontinuierlich gegen den FHIR R4 Standard und die definierten Profile validiert. Da Simplifier keinen öffentlichen QA-Report bereitstellt wie bei klassischen FHIR IG Publisher Builds, dokumentieren wir hier transparent den Validierungsstatus.</p>
 
+<h4 id="bekannte-befunde-des-template-builds-stand-2026-09">Bekannte Befunde des Template-Builds (Stand 2026-09)</h4>
+
+<p>Die verbleibenden QA-Fehler dieses Builds sind <strong>eine Familie: der öffentliche
+HL7-Terminologieserver (tx.fhir.org) hält die deutschen Terminologie-Inhalte
+nicht vor, gegen die dieses Modul validiert.</strong> Sie verschwinden voraussichtlich,
+sobald die CI gegen den MII-Terminologieserver (SU-TermServ) validiert (siehe
+<code class="language-plaintext highlighter-rouge">scripts/set-su-termserv-secrets.sh</code> — benötigt Repository-Secrets).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Klasse</th>
+      <th>~Anzahl</th>
+      <th>Ursache</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ATC-Codes (<code class="language-plaintext highlighter-rouge">L01XA02</code> Carboplatin, <code class="language-plaintext highlighter-rouge">L01DB01</code> Doxorubicin) „nicht im ValueSet <code class="language-plaintext highlighter-rouge">mii-vs-medikation-atc</code>"</td>
+      <td>24</td>
+      <td>das ValueSet des Medikationsmoduls inkludiert BfArM-ATC <strong>pro Jahresversion</strong> (2020–2026); tx.fhir.org führt gar kein BfArM-ATC („Invalid criteria version"), die Expansion scheitert und jede Mitgliedschaftsprüfung schlägt fehl</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition/PatientKimMusterperson-PrimaryDiagnosis-2</code>: „kein passendes Profil" + <code class="language-plaintext highlighter-rouge">reasonReference:Primaertumor</code> „matching slice not found" + <code class="language-plaintext highlighter-rouge">C56.9</code> nicht im ICD-O-3-Topographie-ValueSet</td>
+      <td>30 (4+10+16)</td>
+      <td><strong>eine Kaskade</strong>: tx.fhir.org kann ICD-O-3 nicht expandieren, die <code class="language-plaintext highlighter-rouge">bodySite</code> (<code class="language-plaintext highlighter-rouge">C56.9</code>) der Diagnose ist nicht validierbar → die Instanz fällt beim Profil-Check durch → der <code class="language-plaintext highlighter-rouge">resolve()</code>-basierte <code class="language-plaintext highlighter-rouge">Primaertumor</code>-Slice-Diskriminator der Therapieempfehlungen kann nicht matchen. Instanz und Slices sind korrekt modelliert</td>
+    </tr>
+    <tr>
+      <td>SNOMED-CT-Edition <code class="language-plaintext highlighter-rouge">…/900000000000207008/version/20250701</code> „definition not found"</td>
+      <td>12</td>
+      <td>das Expansion-Manifest (<code class="language-plaintext highlighter-rouge">input/resources/Parameters-expansion-manifest.json</code>) pinnt die internationale Edition 2025-07-01, die tx.fhir.org nicht ausliefert</td>
+    </tr>
+    <tr>
+      <td>LOINC-Display-Abweichungen, einzelne Genomics-Reporting-ValueSet-Treffer</td>
+      <td>&lt;10</td>
+      <td>Display-/Versionsdrift zwischen gepinnten Paketen und TX-Server</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nichts davon ist ein Defekt der Profile oder Beispiele des Moduls; es sind
+Fähigkeitslücken des Terminologieservers und werden hier bewusst dokumentiert
+statt unterdrückt.</p>
+
 <h4 id="terminologie-server-und-validierungskonfiguration">Terminologie-Server und Validierungskonfiguration</h4>
 
 <p><strong>MII Terminology Server</strong>: <a href="https://termserv.mii.medizininformatik-initiative.de/fhir">https://termserv.mii.medizininformatik-initiative.de/fhir</a></p>
@@ -780,7 +824,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Fri, Sep 11, 2026 15:11+0000">2026-09-11</span>
+          Erstellt <span title="Mon, Sep 14, 2026 07:29+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

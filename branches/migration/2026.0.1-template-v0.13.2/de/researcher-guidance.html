@@ -303,25 +303,71 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#anleitung-für-forschende" id="markdown-toc-anleitung-für-forschende">Anleitung für Forschende</a></li>
+  <li><a href="#outcome-endpunkte-os-pfs-und-time-to-next-treatment" id="markdown-toc-outcome-endpunkte-os-pfs-und-time-to-next-treatment">Outcome-Endpunkte: OS, PFS und Time to Next Treatment</a></li>
+</ul>
+
 </div>
-
-<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
-
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde.  Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie <a href="translationinfo.html">hier</a>.
-
-</p>
-
 <!-- markdownlint-disable MD041 -->
 
 <h3 id="anleitung-für-forschende">Anleitung für Forschende</h3>
 
 <p>Hinweise für Forschende, die die Daten des Moduls <strong>Molekulares Tumorboard</strong> für Forschungszwecke nutzen — z. B. welche Datenelemente für welche Fragestellungen relevant sind und wie sie interpretiert werden.</p>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Beschreiben Sie die forschungsrelevanten Aspekte des Moduls.]</p>
+<!-- DERIVED:suggestion source=none gate=B -->
+<blockquote class="ig-highlight ig-highlight-blue">
+  <p><strong>Written during migration - review before release.</strong> Der Quell-Leitfaden
+enthält keine Forschenden-Anleitung; der folgende Endpunkt-Abschnitt ist aus
+den Datenelementen des Moduls VORGESCHLAGEN und vom Modulteam zu prüfen.</p>
 </blockquote>
+
+<h3 id="outcome-endpunkte-os-pfs-und-time-to-next-treatment">Outcome-Endpunkte: OS, PFS und Time to Next Treatment</h3>
+
+<p>Die Follow-Up-Dokumentation des Moduls ist so angelegt, dass die üblichen
+Real-World-Endpunkte der Onkologie aus Routinedaten ableitbar sind.
+Referenzzeitpunkt (t₀) ist für alle drei typischerweise der <strong>Beginn der
+MTB-empfohlenen Therapie</strong>
+(<a href="StructureDefinition-mii-pr-mtb-systemische-therapie.html">SystemischeTherapie</a><code class="language-plaintext highlighter-rouge">.performedPeriod.start</code>);
+je nach Fragestellung kann alternativ das <strong>MTB-Beschlussdatum</strong>
+(<a href="StructureDefinition-mii-pr-mtb-therapieplan.html">Therapieplan</a>) als
+Indexdatum dienen.</p>
+
+<p><strong>Overall Survival (OS)</strong> — Zeit von t₀ bis zum Tod jeglicher Ursache.
+Todesereignis und -datum kommen aus <code class="language-plaintext highlighter-rouge">Patient.deceasedDateTime</code> (MII-Modul
+Person); Patienten ohne Todeseintrag werden zum letzten dokumentierten Kontakt
+zensiert (jüngste datierte <a href="StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html">Follow-Up
+ClinicalImpression</a>,
+Response-Befund oder Therapiedokumentation).</p>
+
+<p><strong>Progression-Free Survival (PFS)</strong> — Zeit von t₀ bis zur ersten
+dokumentierten Progression oder zum Tod, je nachdem, was zuerst eintritt.
+Die Progression wird aus dem
+<a href="StructureDefinition-mii-pr-mtb-response-befund.html">Response-Befund</a>
+gelesen: RECIST-/iRECIST-Beurteilung <em>progressive disease</em> (<code class="language-plaintext highlighter-rouge">PD</code>) im
+<code class="language-plaintext highlighter-rouge">valueCodeableConcept</code>, mit <code class="language-plaintext highlighter-rouge">effectiveDateTime</code> als Ereignisdatum und der
+Beurteilungsmethode (RECIST, RANO, klinisch) im Method-Element des Profils.
+Response-Befunde hängen über <code class="language-plaintext highlighter-rouge">partOf</code> an ihrer Therapie — PFS wird damit <strong>pro
+Therapielinie</strong> berechnet, nicht nur pro Patient.</p>
+
+<p><strong>Time to Next Treatment (TTNT)</strong> — Zeit von t₀ bis zum Beginn der <em>nächsten</em>
+systemischen Therapielinie (<code class="language-plaintext highlighter-rouge">performedPeriod.start</code> der folgenden
+SystemischeTherapie bzw. erstes MedicationStatement der Folgelinie); ohne
+Folgelinie wird zum letzten Kontakt zensiert. TTNT ist das robuste
+Real-World-Surrogat, wenn die bildgebende Progressionsbeurteilung unvollständig
+dokumentiert ist — in den Daten dieses Moduls braucht es gar keine Bildgebung,
+nur die Therapiesequenz; der Grund für ein Linienende steht im
+Statusgrund der Therapie (<code class="language-plaintext highlighter-rouge">mii-cs-mtb-therapiestatusgrund</code> / <code class="language-plaintext highlighter-rouge">statusReason</code>),
+die Nicht-Umsetzung einer Empfehlung im Follow-Up-Coding
+<code class="language-plaintext highlighter-rouge">Grund Nicht-Umsetzung</code>.</p>
+
+<p>Praktische Hinweise: Therapielinien werden über <code class="language-plaintext highlighter-rouge">performedPeriod</code> geordnet;
+die <code class="language-plaintext highlighter-rouge">Leitliniendokumentation</code>-Extension an Vortherapien trägt, wo dokumentiert,
+die Liniennummer (<code class="language-plaintext highlighter-rouge">Therapielinie</code>). Kostenübernahme-Latenzen (sichtbar als
+Spanne zwischen <a href="StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.html">Antrag</a>
+und <a href="StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.html">Antwort Kostenübernahme</a>)
+können t₀ systematisch verschieben und sind selbst eine untersuchbare Größe.</p>
 
 
 
@@ -348,7 +394,7 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Fri, Sep 11, 2026 15:11+0000">2026-09-11</span>
+          Erstellt <span title="Mon, Sep 14, 2026 07:29+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

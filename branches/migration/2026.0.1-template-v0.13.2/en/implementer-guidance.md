@@ -26,6 +26,19 @@ This section documents the FHIR validation status of the MII module Molecular Tu
 
 The module is continuously validated against the FHIR R4 standard and the defined profiles. The validation status is documented here transparently.
 
+#### Known issues of the template build (status 2026-09)
+
+The remaining QA errors of this build are **one family: the public HL7 terminology server (tx.fhir.org) does not host the German terminology content this module validates against.** They are expected to disappear once CI validates against the MII terminology server (SU-TermServ; see `scripts/set-su-termserv-secrets.sh` — requires repository secrets).
+
+| | | |
+| :--- | :--- | :--- |
+| ATC codes (`L01XA02`carboplatin,`L01DB01`doxorubicin) "not in ValueSet`mii-vs-medikation-atc`" | 24 | the Medikation module's ValueSet includes BfArM ATC**per yearly version**(2020–2026); tx.fhir.org hosts no BfArM ATC at all ("Invalid criteria version"), so the expansion fails and every membership check errors |
+| `Condition/PatientKimMusterperson-PrimaryDiagnosis-2`: "no matching profile" +`reasonReference:Primaertumor`"matching slice not found" +`C56.9`not in the ICD-O-3 topography ValueSet | 30 (4+10+16) | **one cascade**: tx.fhir.org cannot expand ICD-O-3, so the diagnosis's`bodySite`(`C56.9`) cannot be validated → the instance fails its profile check → the therapy recommendations'`resolve()`-based`Primaertumor`slice discriminator cannot match. The instance and the slices are correctly authored |
+| SNOMED CT edition`…/900000000000207008/version/20250701`"definition not found" | 12 | the expansion manifest (`input/resources/Parameters-expansion-manifest.json`) pins the international edition 2025-07-01, which tx.fhir.org does not serve |
+| LOINC display-name deviations, single Genomics-Reporting ValueSet misses | <10 | display/version drift between the pinned packages and the tx server |
+
+None of these is a defect in the module's profiles or examples; they are terminology-server capability gaps and are tracked here deliberately instead of being suppressed.
+
 #### Terminology server and validation configuration
 
 **MII Terminology Server**: [https://termserv.mii.medizininformatik-initiative.de/fhir](https://termserv.mii.medizininformatik-initiative.de/fhir)

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-care-plan | *Version*:2026.0.1 |
-| Active Stand: 2026-09-11 | *Maschinenlesbarer Name*:DNPM_LM_CarePlan |
+| Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:DNPM_LM_CarePlan |
 
  
 Logical Model for a single entry in the DNPM DIP MTB Patient Record carePlans array 
@@ -77,7 +77,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-dnpm-lm-care
   "name" : "DNPM_LM_CarePlan",
   "title" : "DNPM MTB Care Plan",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

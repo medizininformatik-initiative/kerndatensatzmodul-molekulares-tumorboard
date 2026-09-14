@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast | *Version*:2026.0.1 |
-| Active as of 2026-09-11 | *Computable Name*:MII_PR_MTB_Mutationslast |
+| Active as of 2026-09-14 | *Computable Name*:MII_PR_MTB_Mutationslast |
 
  
 Beschreibt die Gesamtzahl von in Krebszellen gefundenen Mutationen pro 1 Mio. Basen. 
@@ -71,7 +71,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-mutati
   "name" : "MII_PR_MTB_Mutationslast",
   "title" : "MII PR MTB Mutationslast",
   "status" : "active",
-  "date" : "2026-09-11T15:11:15+00:00",
+  "date" : "2026-09-14T07:29:46+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -162,7 +162,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-mutati
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs"
+        "valueSet" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-interpretation-high-low"
       }
     },
     {
