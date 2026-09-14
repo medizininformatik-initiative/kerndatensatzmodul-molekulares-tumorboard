@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/Molekularer-Biomarker-Observation.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/NGS-Bericht/Molekularer-Biomarker/Molekularer-Biomarker-Observation.page.md). TODO:REVIEW machine-translated from German. -->
 ---
 
 ### Content

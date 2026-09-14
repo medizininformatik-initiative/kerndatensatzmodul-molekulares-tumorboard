@@ -89,7 +89,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-a
   "name" : "MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium",
   "title" : "MII EX MTB Antrag Kostenuebernahme Antragsstadium",
   "status" : "active",
-  "date" : "2026-09-14T19:45:33+00:00",
+  "date" : "2026-09-14T20:15:28+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

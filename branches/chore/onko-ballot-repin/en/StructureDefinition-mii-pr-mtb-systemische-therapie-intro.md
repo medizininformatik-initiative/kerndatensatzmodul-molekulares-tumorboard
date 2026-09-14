@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Systemische-Therapie/Systemische-MTB-Therapie-Procedure.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Systemische-Therapie/Systemische-MTB-Therapie-Procedure.page.md). TODO:REVIEW machine-translated from German. -->
 ---
 
 ### Content

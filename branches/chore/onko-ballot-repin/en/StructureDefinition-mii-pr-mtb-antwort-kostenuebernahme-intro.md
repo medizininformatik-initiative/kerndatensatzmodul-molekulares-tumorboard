@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Antwort-Kostenuebernahme-ClaimResponse/Index.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Follow-Up/Antrag-Kostenuebernahme/Antwort-Kostenuebernahme-ClaimResponse/Index.page.md). TODO:REVIEW machine-translated from German. -->
 ---
 
 ### Content

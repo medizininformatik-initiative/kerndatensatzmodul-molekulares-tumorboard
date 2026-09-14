@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Leitliniendokumentation-Extension.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Leitliniendokumentation-Extension.page.md). TODO:REVIEW machine-translated from German. -->
 ### Content
 
 This extension is used to annotate prior therapies with the corresponding *therapy line* and *approval status*. 

@@ -7,7 +7,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-ig-mtb | *Version*:2026.0.1 |
 | Active Stand: 2026-03-30 | *Maschinenlesbarer Name*:MII_IG_MTB_DE |
 
 ### Einleitung
@@ -57,13 +57,13 @@ Wissenschaftler:innen, die KDS-Daten für die medizinische Forschung nutzen.
 * **Konformität** — die KDS-weiten Konformitätsregeln (Anforderungssprache, Must-Support, Umgang mit fehlenden Daten) pflegt zentral das [Meta-Modul](https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance); die modul-spezifischen Aspekte zu [Sicherheit und Datenschutz](security-and-privacy.md) sind Teil dieses Leitfadens.
 * **[Profile](profiles.md)** und die weiteren **[Artefakt-Seiten](artifacts.md)** — die technischen Artefakte.
 * **[Beispiele](examples.md)** — Beispielinstanzen.
-* **[Abhängigkeiten](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.md)** — die ImplementationGuide-Ressource mit Abhängigkeitstabelle, versionsübergreifender Analyse und Urheberrechtshinweisen.
+* **[Abhängigkeiten](ImplementationGuide-mii-ig-mtb.md)** — die ImplementationGuide-Ressource mit Abhängigkeitstabelle, versionsübergreifender Analyse und Urheberrechtshinweisen.
 
 ### Verwandte Leitfäden
 
 Dieses Modul ist Teil des MII-Kerndatensatzes; die weiteren KDS-Module und ihre Abhängigkeiten sind unter [medizininformatik-initiative.de](https://www.medizininformatik-initiative.de/) beschrieben.
 
-Dieses Modul baut auf den MII-KDS-Modulen [Onkologie](https://github.com/medizininformatik-initiative/kerndatensatzmodul-onkologie), [Molekulargenetischer Befundbericht (MolGen)](https://github.com/medizininformatik-initiative/kerndatensatzmodul-GenetischeTests), Pathologie-Befund, Studie, Medikation, Biobank, Consent sowie den MII-Basismodulen (Person, Diagnose, Prozedur) auf, außerdem auf dem HL7 [Genomics Reporting IG](https://hl7.org/fhir/uv/genomics-reporting/); die genauen Versions-Pins listet die [ImplementationGuide-Ressource](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.md).
+Dieses Modul baut auf den MII-KDS-Modulen [Onkologie](https://github.com/medizininformatik-initiative/kerndatensatzmodul-onkologie), [Molekulargenetischer Befundbericht (MolGen)](https://github.com/medizininformatik-initiative/kerndatensatzmodul-GenetischeTests), Pathologie-Befund, Studie, Medikation, Biobank, Consent sowie den MII-Basismodulen (Person, Diagnose, Prozedur) auf, außerdem auf dem HL7 [Genomics Reporting IG](https://hl7.org/fhir/uv/genomics-reporting/); die genauen Versions-Pins listet die [ImplementationGuide-Ressource](ImplementationGuide-mii-ig-mtb.md).
 
 Weitere FHIR-Implementierungsleitfäden finden Sie im offiziellen **[FHIR IG Registry](https://fhir.org/guides/registry/)** (Quelle: [`FHIR/ig-registry`](https://github.com/FHIR/ig-registry)).
 

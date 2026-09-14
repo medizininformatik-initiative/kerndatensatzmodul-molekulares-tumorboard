@@ -3,10 +3,10 @@
 <!DOCTYPE HTML>
 
 
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MII ImplementationGuide Resource - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
+    <title>MII ImplementationGuide Ressource - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -97,7 +97,7 @@
 
   <a id="project-logo" no-external="true" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
 
-    <img height="50" alt="NUM-DIZ (Network of University Medicine — Data Integration Center)" src="assets/images/logo-num-diz-en.svg"/>
+    <img height="50" alt="NUM-DIZ (Netzwerk Universitätsmedizin — Datenintegrationszentrum)" src="assets/images/logo-num-diz-de.svg"/>
 
   </a>
 
@@ -109,10 +109,10 @@
      on include.lang. REMOVAL: delete this block, the js file and the CSS
      block - one commit, styleguide §5a. -->
 
-<div class="ig-fontsize" role="group" aria-label="Font size">
-  <button type="button" data-level="0" aria-pressed="true" aria-label="Font size: default">A</button>
-  <button type="button" data-level="1" aria-pressed="false" aria-label="Font size: larger">A</button>
-  <button type="button" data-level="2" aria-pressed="false" aria-label="Font size: largest">A</button>
+<div class="ig-fontsize" role="group" aria-label="Schriftgröße">
+  <button type="button" data-level="0" aria-pressed="true" aria-label="Schriftgröße: Standard">A</button>
+  <button type="button" data-level="1" aria-pressed="false" aria-label="Schriftgröße: größer">A</button>
+  <button type="button" data-level="2" aria-pressed="false" aria-label="Schriftgröße: am größten">A</button>
 </div>
 
 <script src="assets/js/font-size-control.js" defer></script>
@@ -133,7 +133,7 @@
      data-fontsize zoom regions, so the fixed button never scales. REMOVAL:
      this block, the js file and the CSS block - one commit, styleguide §8. -->
 
-<button type="button" class="ig-back-to-top" aria-label="Back to top">↑</button>
+<button type="button" class="ig-back-to-top" aria-label="Zurück zum Seitenanfang">↑</button>
 
 <script src="assets/js/back-to-top.js" defer></script>
 
@@ -170,96 +170,68 @@
             </button>
             <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-              <!-- Menu in the IG's DEFAULT language (English).
-     The IG Publisher renders the navigation from this file. To translate it,
-     ship a per-language copy at input/translations/<lang>/includes/menu.xml —
-     this is the mechanism the HL7 reference IG FHIR/multi-lang-test-ig uses and
-     the ONLY way to get a TRANSLATED menu: the `menu:` property in
-     sushi-config.yaml generates a single menu.xml that cannot be translated.
-     Rules: keep the href targets identical across languages; dropdown parents
-     must link to a REAL page (href="#" is rejected by the template's menu QA);
-     only one sub-menu level is supported.
-
-     STRUCTURE: this menu implements the TF-KDS-agreed module menu (see
-     docs/page-structure.md for the full structure with cardinalities).
-     Entries marked OPTIONAL (0..1) below may be removed per module — the
-     removal procedure per entry is in docs/optional-pages.md in this
-     repository. Entries without a marker are mandatory (1..1).
-
-     LINK-ONLY ENTRIES (no page of their own):
-     - "Datasets and Descriptions" points at the Logical Models page
-       (logical-models.html) — the module's datasets ARE its logical models.
-       NEITHER Artifacts-Summary anchor is usable for the TF-KDS "Sec.
-       15.0.2" target: the numeric #2 is POSITIONAL (grouping index — wrong
-       section whenever the artifact mix differs from the full standard set),
-       and the browser-generated NAMED AnchorJS anchor
-       (#structures-logical-models) is invisible to the IG Publisher's link
-       validator — it injects a marker anchor into the menu (rendered as an
-       EMPTY menu entry) and logs a broken-link ERROR on every page's QA.
-       Full analysis: docs/page-structure.md, "Datasets and Descriptions".
-     - The four Conformance entries point at the KDS-wide conformance rules of
-       the Meta module (kerndatensatz-meta). INTERIM: the Meta module has no
-       published IG rendering yet (only a CI build with no conformance pages),
-       so these link to the authoritative meta-wiki sections; switch them to
-       the Meta IG's menu entries once a stable rendering exists (Gate item in
-       docs/page-structure.md). -->
+              <!-- German translation of input/includes/menu.xml.
+     Keep the href targets IDENTICAL to the source menu; translate only labels.
+     Structure notes (OPTIONAL entries, link-only entries, the interim
+     meta-wiki links) are documented in the source menu's header and in
+     docs/page-structure.md / docs/optional-pages.md. -->
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html">Startseite</a></li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Guidance<b class="caret"> </b></a>
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <li><a href="guidance.html">Guidance</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Guidance for Researchers</a></li>
-      <li><a href="implementer-guidance.html">Guidance for Implementers</a></li>
-      <!-- link-only entry: Logical-Models section of the Artifacts Summary (see header note) -->
-      <li><a href="logical-models.html">Datasets and Descriptions</a></li>
-      <li><a href="uml-diagrams.html">UML Diagrams</a></li>
-      <li><a href="anwendungsszenarien.html">Application Scenarios</a></li>
-      <li><a href="dnpm-transformation.html">DNPM Transformation</a></li>
-      <li><a href="panel-katalog.html">Panel Catalog</a></li>
+      <li><a href="guidance.html">Anleitung</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="researcher-guidance.html">Anleitung für Forschende</a></li>
+      <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
+      <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
+      <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
+      <li><a href="uml-diagrams.html">UML-Diagramme</a></li>
+      <li><a href="anwendungsszenarien.html">Anwendungsszenarien</a></li>
+      <li><a href="dnpm-transformation.html">DNPM-Transformation</a></li>
+      <li><a href="panel-katalog.html">Panel-Katalog</a></li>
     </ul>
   </li>
   <li class="dropdown">
-    <!-- The parent and the first four entries link to the KDS-wide conformance
-         rules of the Meta module (INTERIM: meta-wiki; see header note). -->
-    <a data-toggle="dropdown" href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance" class="dropdown-toggle">Conformance<b class="caret"> </b></a>
+    <!-- Eltern-Eintrag und die ersten vier Einträge verlinken die KDS-weiten
+         Konformitätsregeln des Meta-Moduls (INTERIM: Meta-Wiki; siehe
+         Quell-Menü). -->
+    <a data-toggle="dropdown" href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance" class="dropdown-toggle">Konformität<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Conformance</a></li>
-      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#anforderungsdokumentation">General Requirements</a></li>
-      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#must-support-ms">Must Support</a></li>
-      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#fehlende-daten">Handling Missing Data</a></li>
-      <li><a href="security-and-privacy.html">Security and Privacy</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Konformität</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#anforderungsdokumentation">Allgemeine Anforderungen</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#must-support-ms">Must-Support</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#fehlende-daten">Umgang mit fehlenden Daten</a></li>
+      <li><a href="security-and-privacy.html">Sicherheit und Datenschutz</a></li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artifacts<b class="caret"> </b></a>
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <li><a href="artifacts.html">Artifacts Summary</a></li>
-      <li><a href="profiles.html">Profiles</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
+      <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
+      <li><a href="profiles.html">Profile</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="extensions.html">Extensions</a></li>
-      <li><a href="capability-statements.html">Capability Statements</a></li>
-      <li><a href="logical-models.html">Logical Models</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="value-sets.html">Value Sets</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="code-systems.html">Code Systems</a></li>
-      <li><a href="examples.html">Examples</a></li>
+      <li><a href="capability-statements.html">CapabilityStatements</a></li>
+      <li><a href="logical-models.html">Logische Modelle</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="value-sets.html">ValueSets</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="code-systems.html">CodeSystems</a></li>
+      <li><a href="examples.html">Beispiele</a></li>
     </ul>
   </li>
   <li><a href="downloads.html">Downloads</a></li>
-  <li><a href="changes.html">Changelog</a></li>
+  <li><a href="changes.html">Änderungshistorie</a></li>
   <li class="dropdown">
-    <!-- The parent deliberately links the MANDATORY child (Versioning): the
-         Metadata Overview page is optional, and a parent pointing at it would
-         have to be re-targeted when that page is removed. -->
-    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadata<b class="caret"> </b></a>
+    <!-- Der Eltern-Eintrag verlinkt bewusst das PFLICHT-Kind (Versionierung):
+         die Metadaten-Übersicht ist optional. -->
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadata Overview</a></li>
-      <li><a href="version-history.html">Versioning</a></li>
-      <li><a href="ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html">MII ImplementationGuide Resource</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="metadata.html">Metadaten-Übersicht</a></li>
+      <li><a href="version-history.html">Versionierung</a></li>
+      <li><a href="ImplementationGuide-mii-ig-mtb.html">MII-ImplementationGuide-Ressource</a></li>
     </ul>
   </li>
 </ul>
@@ -273,13 +245,13 @@
 
 <div style="float: var(--ig-right);padding: 8px 0px;" id="language">
   <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
-    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
   </div>
-  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Sprache:</div>
  	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
-    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
 
-    <div><a href="../de/ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
+    <div><a href="../en/ImplementationGuide-mii-ig-mtb.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
 
   </div>
 </div>
@@ -296,7 +268,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>MII ImplementationGuide Resource</b></li>
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>MII ImplementationGuide Ressource</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -317,7 +289,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">MII IG Kerndatensatz-Modul Molekulares Tumorboard - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>MII ImplementationGuide Resource</h2>
+  <h2>MII ImplementationGuide Ressource</h2>
   
 
 
@@ -334,37 +306,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#cross-version-analysis" id="markdown-toc-cross-version-analysis">Cross Version Analysis</a></li>
-  <li><a href="#ig-dependencies" id="markdown-toc-ig-dependencies">IG Dependencies</a></li>
-  <li><a href="#global-profiles" id="markdown-toc-global-profiles">Global Profiles</a></li>
-  <li><a href="#copyrights" id="markdown-toc-copyrights">Copyrights</a></li>
-  <li><a href="#ig-parameter-settings-and-expansion-parameters" id="markdown-toc-ig-parameter-settings-and-expansion-parameters">IG Parameter Settings and Expansion Parameters</a></li>
+  <li><a href="#versionsübergreifende-analyse" id="markdown-toc-versionsübergreifende-analyse">Versionsübergreifende Analyse</a></li>
+  <li><a href="#ig-abhängigkeiten" id="markdown-toc-ig-abhängigkeiten">IG-Abhängigkeiten</a></li>
+  <li><a href="#globale-profile" id="markdown-toc-globale-profile">Globale Profile</a></li>
+  <li><a href="#urheberrechte" id="markdown-toc-urheberrechte">Urheberrechte</a></li>
+  <li><a href="#ig-parametereinstellungen-und-expansionsparameter" id="markdown-toc-ig-parametereinstellungen-und-expansionsparameter">IG-Parametereinstellungen und Expansionsparameter</a></li>
 </ul>
 
 </div>
 <!-- markdownlint-disable MD041 -->
-<!-- Default-language (English) intro for the ImplementationGuide RESOURCE page —
-     the artifact page the IG Publisher generates for the IG resource itself
-     (ImplementationGuide-<id>.html). Without this file the page renders bare:
-     no dependency table, no cross-version analysis, no copyright statements.
-     Ported from kerndatensatz-basis input/pagecontent/ImplementationGuide-mii-ig-base.md
-     and adapted to the scaffold.
-     German mirror: input/translations/de/pagecontent/ (same file name) — both
-     files must say the same thing.
-     FILE NAME CARRIES THE IG ID: like the IG-level .po catalogue, this file and
-     its German mirror must be RENAMED to your concrete IG id when you create a
-     module (docs/recipes/create-a-new-module.md step 4) — the pages: entry in
-     sushi-config.yaml references it by that name. The template repo's CI
-     self-check renames all three automatically for the preview. -->
-<p>This ImplementationGuide resource defines the technical details of this
-publication, including dependencies and publishing parameters.</p>
+<!-- German mirror of input/pagecontent/ImplementationGuide-mii-ig-mtb.md —
+     both files must say the same thing. ALL generated fragments (cross-version
+     analysis included) are language-selected via lang-fragment: the pinned
+     publisher writes _includes/<name>-<lang>.xhtml plus a bare default-language
+     alias, and no .html variant — kerndatensatz-basis' .html include names
+     belong to a different publisher version, do not copy them here.
+     FILE NAME CARRIES THE IG ID — rename together with the English page and
+     the IG-level .po catalogue (docs/recipes/create-a-new-module.md step 4). -->
+<p>Diese ImplementationGuide-Ressource definiert die technischen Details dieser
+Publikation, einschließlich Abhängigkeiten und Veröffentlichungsparametern.</p>
 
 <ul>
-  <li><a href="../ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.xml">XML</a></li>
-  <li><a href="../ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.json">JSON</a></li>
+  <li><a href="../ImplementationGuide-mii-ig-mtb.xml">XML</a></li>
+  <li><a href="../ImplementationGuide-mii-ig-mtb.json">JSON</a></li>
 </ul>
 
-<h3 id="cross-version-analysis">Cross Version Analysis</h3>
+<h3 id="versionsübergreifende-analyse">Versionsübergreifende Analyse</h3>
 
 <p>This is an R4 IG that is not compatible with R4B" because: 
 </p>
@@ -375,9 +342,9 @@ publication, including dependencies and publishing parameters.</p>
 </ul>
 <!--$$2$$-->
 
-<h3 id="ig-dependencies">IG Dependencies</h3>
+<h3 id="ig-abhängigkeiten">IG-Abhängigkeiten</h3>
 
-<p>This IG contains the following dependencies on other IGs.</p>
+<p>Dieser IG enthält die folgenden Abhängigkeiten von anderen IGs.</p>
 
 <div><table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;" id="dep" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top" data-fhir="generated-heirarchy"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><span title="Implementation Guide Reference">IG</span></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><span title="The NPM Package Id">Package</span></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><span title="The version of FHIR that the package is based on">FHIR</span></th></tr><tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="a" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/home/runner/work/kerndatensatzmodul-molekulares-tumorboard/kerndatensatzmodul-molekulares-tumorboard/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy" /><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy" /> <span title="Canonical: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb">MII IG Kerndatensatz-Modul Molekulares Tumorboard</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/de.medizininformatikinitiative.kerndatensatz.mtb/2026.0.1">de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/home/runner/work/kerndatensatzmodul-molekulares-tumorboard/kerndatensatzmodul-molekulares-tumorboard/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy" /><img onclick="tableRowAction(this)" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAACwSURBVDhP7ZLBDsIwCIaLZz34xG3f2cQYo5UfYalJoY07ePFL4GcbpZSVWmvJgwifG+njkLDACgfVIehAQ5ffdMDvxSS2Dmqty62UUmS1rIWD8UuWd9xxVt1AnoaSGx6Buap+0G80K3BTtbtwhLPZQL0CSIA9OwUXON7dZkBeASTAThb3bffMjnCHGy00ZgUeqi5f3YOcsw01vsqYMrMljwgLrBDOwP53xL+D3R2k9ALHsmr3Yu73+gAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy" /><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy" /> <span title="Canonical: null">de.basisprofil.r4</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/de.basisprofil.r4/1.6.0">de.basisprofil.r4#1.6.0</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td></tr>
@@ -558,32 +525,30 @@ Version 2025</p>
 <!--$$3$$-->
 
 <blockquote class="ig-highlight ig-highlight-grey">
-  <p><strong>Where the versions come from.</strong> Every package in the table is pinned
-directly in
+  <p><strong>Woher die Versionen kommen.</strong> Jedes Paket der Tabelle ist direkt in
 <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/main/sushi-config.yaml"><code class="language-plaintext highlighter-rouge">sushi-config.yaml</code></a>
-(<code class="language-plaintext highlighter-rouge">dependencies:</code>) — including <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> (THO) and
-<code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code>, and those two deliberately so: the IG
-Publisher's
-<a href="https://build.fhir.org/ig/FHIR/ig-guidance/versions.html#automatic-packages">automatic-packages rule</a>
-consults only this guide's <strong>own</strong> dependency list, so without a direct pin
-every build would silently inject the latest THO/extensions release — a
-version pinned by the MII meta package alone cannot control the build
-(verified in the publisher source at the pinned release). A weekly check
-warns when these two pins drift from what the pinned meta package ships,
-and the exact versions a concrete build used are recorded in its
-<code class="language-plaintext highlighter-rouge">qa-versions.json</code> output.</p>
+(<code class="language-plaintext highlighter-rouge">dependencies:</code>) gepinnt — auch <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> (THO) und
+<code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code>, und diese beiden mit Bedacht: Die
+<a href="https://build.fhir.org/ig/FHIR/ig-guidance/versions.html#automatic-packages">Automatik des IG Publishers</a>
+liest ausschließlich die <strong>eigene</strong> Abhängigkeitsliste dieses Leitfadens;
+ohne direkten Pin würde jeder Build stillschweigend das jeweils aktuellste
+THO-/Extensions-Release injizieren — eine allein im MII-Meta-Paket gepinnte
+Version kann den Build nicht steuern (verifiziert im Publisher-Quellcode des
+gepinnten Release). Eine wöchentliche Prüfung warnt, wenn diese beiden Pins
+von den Vorgaben des gepinnten Meta-Pakets abweichen; die von einem
+konkreten Build verwendeten Versionen stehen in dessen <code class="language-plaintext highlighter-rouge">qa-versions.json</code>.</p>
 </blockquote>
 
-<h3 id="global-profiles">Global Profiles</h3>
+<h3 id="globale-profile">Globale Profile</h3>
 
-<p>This IG declares the following global profiles — profiles that apply to every
-instance of their resource type exchanged under this guide. An empty table
-means this module declares none.</p>
+<p>Dieser IG deklariert die folgenden globalen Profile — Profile, die für jede
+unter diesem Leitfaden ausgetauschte Instanz ihres Ressourcentyps gelten. Eine
+leere Tabelle bedeutet: Dieses Modul deklariert keine.</p>
 
 <p><i>There are no Global profiles defined</i></p>
 <!--$$4$$-->
 
-<h3 id="copyrights">Copyrights</h3>
+<h3 id="urheberrechte">Urheberrechte</h3>
 
 <p>This publication includes IP covered under the following statements.</p>
 <ul>
@@ -656,18 +621,20 @@ Please also include the version of SO used.Sequence Ontology data and data produ
 </ul>
 <!--$$1$$-->
 
-<h3 id="ig-parameter-settings-and-expansion-parameters">IG Parameter Settings and Expansion Parameters</h3>
+<h3 id="ig-parametereinstellungen-und-expansionsparameter">IG-Parametereinstellungen und Expansionsparameter</h3>
 
-<p>Expansion parameters are query parameters that can be passed to a <code class="language-plaintext highlighter-rouge">ValueSet</code>
-<code class="language-plaintext highlighter-rouge">$expand</code> operation to control how the ValueSet is expanded — that is, how the
-full list of codes is generated from the ValueSet definition. The
-<a href="https://hl7.org/fhir/tools/en/CodeSystem-ig-parameters.html">IG Parameters</a>
-used for this IG are declared in
+<p>Expansionsparameter sind Query-Parameter, die an eine <code class="language-plaintext highlighter-rouge">ValueSet</code>-
+<code class="language-plaintext highlighter-rouge">$expand</code>-Operation übergeben werden können, um zu steuern, wie das ValueSet
+expandiert wird — also wie die vollständige Liste der Codes aus der
+ValueSet-Definition erzeugt wird. Die für diesen IG verwendeten
+<a href="https://hl7.org/fhir/tools/en/CodeSystem-ig-parameters.html">IG-Parameter</a>
+sind in
 <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/main/sushi-config.yaml"><code class="language-plaintext highlighter-rouge">sushi-config.yaml</code></a>
-(<code class="language-plaintext highlighter-rouge">parameters:</code>). A module that pins its expansion parameters through a CRMI
-manifest additionally links the generated <code class="language-plaintext highlighter-rouge">Parameters</code> resource from here (see
-the commented manifest blocks in <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code> and the Metadata Overview
-page, if the module keeps it).</p>
+(<code class="language-plaintext highlighter-rouge">parameters:</code>) deklariert. Ein Modul, das seine Expansionsparameter über ein
+CRMI-Manifest pinnt, verlinkt hier zusätzlich die generierte
+<code class="language-plaintext highlighter-rouge">Parameters</code>-Ressource (siehe die auskommentierten Manifest-Blöcke in
+<code class="language-plaintext highlighter-rouge">sushi-config.yaml</code> und die Seite Metadata Overview, sofern das Modul sie
+behält).</p>
 
 
 
@@ -693,8 +660,8 @@ page, if the module keeps it).</p>
 
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Sep 14, 2026 19:45+0000">2026-09-14</span>
+          Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt <span title="Mon, Sep 14, 2026 20:15+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
@@ -719,12 +686,12 @@ page, if the module keeps it).</p>
      the NUM-DIZ counterpart where one exists) - German /impressum and English
      /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
 
-          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
                  
                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/">netzwerk-universitaetsmedizin.de</a>
                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
-                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice">Legal notice</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/impressum">Impressum</a>
                  <br/>
                  <!-- HL7 trademark attribution (required wherever the FHIR flame
                       renders - the header shows it on every page; see HL7's

@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Evidenzgraduierung-Extension.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Evidenzgraduierung-Extension.page.md). TODO:REVIEW machine-translated from German. -->
 ### Content
 
 This extension specifies the level of evidence, including an optional additional reference, that was assigned to a recommendation by the Molekulares Tumorboard (molecular tumor board).

@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Leitlinienbehandlung-Status-Extension.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Extensions/Leitlinienbehandlung-Status-Extension.page.md). TODO:REVIEW machine-translated from German. -->
 ### Content
 
 This extension describes the status of guideline-based treatment. It is a classification made by the MTB physicians of the exhaustion of the applicable guidelines, which are in part almost or fully exhausted, in part cannot be applied, and in part.

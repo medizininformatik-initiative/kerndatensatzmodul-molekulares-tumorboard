@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="mii-kerndatensatzmodul-molekulares-tumorboard"/>
+  <id value="mii-ig-mtb"/>
   <meta>
     <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide"/>
     <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide"/>
     <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide"/>
   </meta>
-  <language value="de"/>
+  <language value="en"/>
   <text>
-    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ImplementationGuide mii-kerndatensatzmodul-molekulares-tumorboard</b></p><a name="de-mii-kerndatensatzmodul-molekulares-tumorboard"> </a><a name="de-hcmii-kerndatensatzmodul-molekulares-tumorboard"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p><p style="margin-bottom: 0px">Profiles: <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-shareableimplementationguide.html">CRMI Shareable ImplementationGuide</a>, <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishableimplementationguide.html">CRMI Publishable ImplementationGuide</a>, <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-implementationguide.html">CRMI ImplementationGuide</a></p></div><h2>MII_IG_MTB_DE</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard</pre><div><p>FHIR profiles for molecular tumor board (MTB) documentation based on the DNPM dataset (Deutsches Netzwerk für Personalisierte Medizin), complementing the MII core dataset oncology module.</p>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ImplementationGuide mii-ig-mtb</b></p><a name="mii-ig-mtb"> </a><a name="hcmii-ig-mtb"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p><p style="margin-bottom: 0px">Profiles: <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-shareableimplementationguide.html">CRMI Shareable ImplementationGuide</a>, <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishableimplementationguide.html">CRMI Publishable ImplementationGuide</a>, <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-implementationguide.html">CRMI ImplementationGuide</a></p></div><h2>MII_IG_MTB_DE</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-ig-mtb</pre><div><p>FHIR profiles for molecular tumor board (MTB) documentation based on the DNPM dataset (Deutsches Netzwerk für Personalisierte Medizin), complementing the MII core dataset oncology module.</p>
 </div></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/resource-approvalDate">
@@ -120,7 +120,7 @@
       </coding>
     </valueCodeableConcept>
   </extension>
-  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard"/>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-ig-mtb"/>
   <version value="2026.0.1"/>
   <name value="MII_IG_MTB_DE"/>
   <title value="MII IG Kerndatensatz-Modul Molekulares Tumorboard"/>
@@ -182,7 +182,7 @@
     <version value="2027.0.0-ballot"/>
   </dependsOn>
   <dependsOn id="de_medizininformatikinitiative_kerndatensatz_patho">
-    <uri value="https://www.medizininformatik-initiative.de/fhir/ext/modul-patho"/>
+    <uri value="https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ImplementationGuide/mii-ig-modul-patho"/>
     <packageId value="de.medizininformatikinitiative.kerndatensatz.patho"/>
     <version value="2027.0.0-ballot.rc2"/>
   </dependsOn>
@@ -4779,14 +4779,14 @@
         <valueUrl value="toc.html"/>
       </extension>
       <nameUrl value="toc.html"/>
-      <title value="Inhaltsverzeichnis"/>
+      <title value="Table of Contents"/>
       <generation value="html"/>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="index.html"/>
         </extension>
         <nameUrl value="index.html"/>
-        <title value="Startseite"/>
+        <title value="Home"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4794,14 +4794,14 @@
           <valueUrl value="guidance.html"/>
         </extension>
         <nameUrl value="guidance.html"/>
-        <title value="Anleitung"/>
+        <title value="Guidance"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
             <valueUrl value="researcher-guidance.html"/>
           </extension>
           <nameUrl value="researcher-guidance.html"/>
-          <title value="Anleitung für Forschende"/>
+          <title value="Guidance for Researchers"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -4809,7 +4809,7 @@
             <valueUrl value="implementer-guidance.html"/>
           </extension>
           <nameUrl value="implementer-guidance.html"/>
-          <title value="Anleitung für Implementierende"/>
+          <title value="Guidance for Implementers"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -4817,7 +4817,7 @@
             <valueUrl value="uml-diagrams.html"/>
           </extension>
           <nameUrl value="uml-diagrams.html"/>
-          <title value="UML-Diagramme"/>
+          <title value="UML Diagrams"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -4825,7 +4825,7 @@
             <valueUrl value="anwendungsszenarien.html"/>
           </extension>
           <nameUrl value="anwendungsszenarien.html"/>
-          <title value="Anwendungsszenarien"/>
+          <title value="Application Scenarios"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -4833,7 +4833,7 @@
             <valueUrl value="dnpm-transformation.html"/>
           </extension>
           <nameUrl value="dnpm-transformation.html"/>
-          <title value="DNPM-Transformation"/>
+          <title value="DNPM Transformation"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -4841,7 +4841,7 @@
             <valueUrl value="panel-katalog.html"/>
           </extension>
           <nameUrl value="panel-katalog.html"/>
-          <title value="Panel-Katalog"/>
+          <title value="Panel Catalog"/>
           <generation value="markdown"/>
         </page>
       </page>
@@ -4850,7 +4850,7 @@
           <valueUrl value="security-and-privacy.html"/>
         </extension>
         <nameUrl value="security-and-privacy.html"/>
-        <title value="Sicherheit und Datenschutz"/>
+        <title value="Security and Privacy"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4858,7 +4858,7 @@
           <valueUrl value="profiles.html"/>
         </extension>
         <nameUrl value="profiles.html"/>
-        <title value="Profile"/>
+        <title value="Profiles"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4874,7 +4874,7 @@
           <valueUrl value="capability-statements.html"/>
         </extension>
         <nameUrl value="capability-statements.html"/>
-        <title value="CapabilityStatements"/>
+        <title value="Capability Statements"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4882,7 +4882,7 @@
           <valueUrl value="logical-models.html"/>
         </extension>
         <nameUrl value="logical-models.html"/>
-        <title value="Logische Modelle"/>
+        <title value="Logical Models"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4890,7 +4890,7 @@
           <valueUrl value="value-sets.html"/>
         </extension>
         <nameUrl value="value-sets.html"/>
-        <title value="ValueSets"/>
+        <title value="Value Sets"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4898,7 +4898,7 @@
           <valueUrl value="code-systems.html"/>
         </extension>
         <nameUrl value="code-systems.html"/>
-        <title value="CodeSystems"/>
+        <title value="Code Systems"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4906,7 +4906,7 @@
           <valueUrl value="examples.html"/>
         </extension>
         <nameUrl value="examples.html"/>
-        <title value="Beispiele"/>
+        <title value="Examples"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4922,7 +4922,7 @@
           <valueUrl value="changes.html"/>
         </extension>
         <nameUrl value="changes.html"/>
-        <title value="Änderungshistorie"/>
+        <title value="Changelog"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4930,7 +4930,7 @@
           <valueUrl value="metadata.html"/>
         </extension>
         <nameUrl value="metadata.html"/>
-        <title value="Metadaten-Übersicht"/>
+        <title value="Metadata Overview"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4938,15 +4938,15 @@
           <valueUrl value="version-history.html"/>
         </extension>
         <nameUrl value="version-history.html"/>
-        <title value="Versionierung"/>
+        <title value="Versioning"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html"/>
+          <valueUrl value="ImplementationGuide-mii-ig-mtb.html"/>
         </extension>
-        <nameUrl value="ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html"/>
-        <title value="MII ImplementationGuide Ressource"/>
+        <nameUrl value="ImplementationGuide-mii-ig-mtb.html"/>
+        <title value="MII ImplementationGuide Resource"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4954,7 +4954,7 @@
           <valueUrl value="translationinfo.html"/>
         </extension>
         <nameUrl value="translationinfo.html"/>
-        <title value="Hinweise zur Übersetzung"/>
+        <title value="Translation Information"/>
         <generation value="markdown"/>
       </page>
     </page>

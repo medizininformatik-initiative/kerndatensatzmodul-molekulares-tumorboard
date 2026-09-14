@@ -73,7 +73,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-n
   "name" : "MII_EX_MTB_NGS_Bericht_Genomic_Study",
   "title" : "MII EX MTB NGS Bericht Metadaten",
   "status" : "active",
-  "date" : "2026-09-14T19:45:33+00:00",
+  "date" : "2026-09-14T20:15:28+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

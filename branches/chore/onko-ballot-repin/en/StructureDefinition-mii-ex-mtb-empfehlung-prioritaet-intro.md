@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Prioritaet-Extension.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Prioritaet-Extension.page.md). TODO:REVIEW machine-translated from German. -->
 ### Content
 
 This extension represents the priority with which the respective recommendation was issued by the Molekulares Tumorboard (molecular tumor board).

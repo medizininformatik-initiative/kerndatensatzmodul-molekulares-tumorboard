@@ -53,7 +53,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-mtb-empfeh
   "name" : "MII_EX_MTB_Empfehlung_Prioritaet",
   "title" : "MII EX MTB Empfehlung Priorität",
   "status" : "active",
-  "date" : "2026-09-14T19:45:33+00:00",
+  "date" : "2026-09-14T20:15:28+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

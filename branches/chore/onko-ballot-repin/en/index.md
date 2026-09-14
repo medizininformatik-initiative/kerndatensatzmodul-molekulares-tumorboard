@@ -7,7 +7,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-kerndatensatzmodul-molekulares-tumorboard | *Version*:2026.0.1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-ig-mtb | *Version*:2026.0.1 |
 | Active as of 2026-03-30 | *Computable Name*:MII_IG_MTB_DE |
 
 ### Introduction
@@ -53,13 +53,13 @@ Scientists using KDS data for medical research.
 * **Conformance** — the KDS-wide conformance rules (requirements language, Must Support, handling missing data) are maintained centrally by the [Meta module](https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance); the module-specific [Security and Privacy](security-and-privacy.md) considerations are part of this guide.
 * **[Profiles](profiles.md)** and the further **[artifact pages](artifacts.md)** — the technical artifacts.
 * **[Examples](examples.md)** — example instances.
-* **[Dependencies](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.md)** — the ImplementationGuide resource with the dependency table, cross-version analysis and copyright statements.
+* **[Dependencies](ImplementationGuide-mii-ig-mtb.md)** — the ImplementationGuide resource with the dependency table, cross-version analysis and copyright statements.
 
 ### Related guides
 
 This module is part of the MII Core Dataset; the other KDS modules and their dependencies are described at [medizininformatik-initiative.de](https://www.medizininformatik-initiative.de/).
 
-This module builds on the MII CDS modules [Oncology](https://github.com/medizininformatik-initiative/kerndatensatzmodul-onkologie), [Molecular Genetic Report (MolGen)](https://github.com/medizininformatik-initiative/kerndatensatzmodul-GenetischeTests), Pathology Report, Study, Medication, Biobank, Consent and the MII base modules (Person, Diagnosis, Procedure), as well as the HL7 [Genomics Reporting IG](https://hl7.org/fhir/uv/genomics-reporting/); the exact version pins are listed in the [ImplementationGuide resource](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.md).
+This module builds on the MII CDS modules [Oncology](https://github.com/medizininformatik-initiative/kerndatensatzmodul-onkologie), [Molecular Genetic Report (MolGen)](https://github.com/medizininformatik-initiative/kerndatensatzmodul-GenetischeTests), Pathology Report, Study, Medication, Biobank, Consent and the MII base modules (Person, Diagnosis, Procedure), as well as the HL7 [Genomics Reporting IG](https://hl7.org/fhir/uv/genomics-reporting/); the exact version pins are listed in the [ImplementationGuide resource](ImplementationGuide-mii-ig-mtb.md).
 
 More FHIR implementation guides can be found in the official **[FHIR IG Registry](https://fhir.org/guides/registry/)** (source: [`FHIR/ig-registry`](https://github.com/FHIR/ig-registry)).
 
