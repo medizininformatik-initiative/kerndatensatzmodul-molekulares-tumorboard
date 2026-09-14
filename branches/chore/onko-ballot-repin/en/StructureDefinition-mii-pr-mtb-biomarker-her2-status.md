@@ -152,7 +152,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-biomar
   "name" : "MII_PR_MTB_BIOMARKER_HER2_STATUS",
   "title" : "MII PR Biomarker Her2 Status",
   "status" : "active",
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -211,7 +211,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-biomar
       "patternCoding" : {
         "system" : "http://loinc.org",
         "code" : "48676-1",
-        "display" : "HER2 [Interpretation] in Tissue"
+        "display" : "HER2 Ag [Interpretation] in Tissue"
       }
     },
     {

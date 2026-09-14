@@ -183,7 +183,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-genomi
   "name" : "MII_PR_MTB_Genomic_Study_Analysis",
   "title" : "MII PR MTB Genomic Study Analysis",
   "status" : "active",
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

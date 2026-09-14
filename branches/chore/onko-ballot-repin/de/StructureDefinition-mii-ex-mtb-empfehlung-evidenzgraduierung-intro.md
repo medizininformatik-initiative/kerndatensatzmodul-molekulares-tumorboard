@@ -7,6 +7,6 @@ Dieser Evidenzgrad basiert auf der höchsten Evidenz, die eine Therapie dieser A
 
 ### Inhalt
 
-[mii-cs-mtb-empfehlung-evidenzgrad-nct](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.html)
+[mii-cs-mtb-empfehlung-evidenzgrad](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad.html)
 
 [mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.html)

@@ -43,7 +43,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "MII VS MTB Immunhistochemistry Specific Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -81,7 +81,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
       },
       {
         "code" : "48676-1",
-        "display" : "HER2 [Interpretation] in Tissue"
+        "display" : "HER2 Ag [Interpretation] in Tissue"
       },
       {
         "code" : "85319-2",
@@ -121,19 +121,19 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
       },
       {
         "code" : "81691-8",
-        "display" : "DNA mismatch repair protein Mlh1 [Presence] in Cancer specimen by Immune stain"
+        "display" : "MLH-1 Ag [Presence] in Cancer specimen by Immune stain"
       },
       {
         "code" : "81692-6",
-        "display" : "DNA mismatch repair protein Msh2 [Presence] in Cancer specimen by Immune stain"
+        "display" : "MSH-2 Ag [Presence] in Cancer specimen by Immune stain"
       },
       {
         "code" : "81693-4",
-        "display" : "DNA mismatch repair protein Msh6 [Presence] in Cancer specimen by Immune stain"
+        "display" : "MSH-6 Ag [Presence] in Cancer specimen by Immune stain"
       },
       {
         "code" : "81694-2",
-        "display" : "Mismatch repair endonuclease PMS2 [Presence] in Cancer specimen by Immune stain"
+        "display" : "PMS2 Ag [Presence] in Cancer specimen by Immune stain"
       },
       {
         "code" : "14229-9",

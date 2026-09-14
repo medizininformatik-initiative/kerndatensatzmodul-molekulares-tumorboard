@@ -23,7 +23,7 @@ Dieser Evidenzgrad basiert auf der höchsten Evidenz, die eine Therapie dieser A
 
 ### Inhalt
 
-[mii-cs-mtb-empfehlung-evidenzgrad-nct](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.md)
+[mii-cs-mtb-empfehlung-evidenzgrad](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad.md)
 
 [mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.md)
 
@@ -86,7 +86,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-e
   "name" : "MII_EX_MTB_Empfehlung_Evidenzgraduierung",
   "title" : "MII EX MTB Empfehlung Evidenzgraduierung",
   "status" : "active",
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

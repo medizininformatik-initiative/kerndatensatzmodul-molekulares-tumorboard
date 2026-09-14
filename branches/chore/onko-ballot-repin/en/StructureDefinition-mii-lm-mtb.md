@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb | *Version*:2026.0.1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-lm-mtb | *Version*:2026.0.1 |
 | Active as of 2026-09-14 | *Computable Name*:MII_LM_MTB |
 
  
@@ -36,12 +36,12 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-mtb.csv), 
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-lm-mtb",
-  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-lm-mtb",
   "version" : "2026.0.1",
   "name" : "MII_LM_MTB",
   "title" : "MII LM Molekulares Tumorboard",
   "status" : "active",
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -66,7 +66,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-mtb.csv), 
   }],
   "kind" : "logical",
   "abstract" : false,
-  "type" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/LogicalModel/mii-lm-mtb",
+  "type" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-lm-mtb",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Element",
   "derivation" : "specialization",
   "differential" : {

@@ -237,7 +237,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
   "name" : "MII_PR_MTB_Immunohistochemistry_MMR",
   "title" : "MII PR MTB Immunohistochemistry Mismatch Repair Status",
   "status" : "active",
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -405,7 +405,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
       "patternCoding" : {
         "system" : "http://loinc.org",
         "code" : "81691-8",
-        "display" : "DNA mismatch repair protein Mlh1 [Presence] in Cancer specimen by Immune stain"
+        "display" : "MLH-1 Ag [Presence] in Cancer specimen by Immune stain"
       }
     },
     {
@@ -452,7 +452,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
       "patternCoding" : {
         "system" : "http://loinc.org",
         "code" : "81692-6",
-        "display" : "DNA mismatch repair protein Msh2 [Presence] in Cancer specimen by Immune stain"
+        "display" : "MSH-2 Ag [Presence] in Cancer specimen by Immune stain"
       }
     },
     {
@@ -499,7 +499,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
       "patternCoding" : {
         "system" : "http://loinc.org",
         "code" : "81693-4",
-        "display" : "DNA mismatch repair protein Msh6 [Presence] in Cancer specimen by Immune stain"
+        "display" : "MSH-6 Ag [Presence] in Cancer specimen by Immune stain"
       }
     },
     {
@@ -546,7 +546,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
       "patternCoding" : {
         "system" : "http://loinc.org",
         "code" : "81694-2",
-        "display" : "Mismatch repair endonuclease PMS2 [Presence] in Cancer specimen by Immune stain"
+        "display" : "PMS2 Ag [Presence] in Cancer specimen by Immune stain"
       }
     },
     {
@@ -593,7 +593,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
       "patternCoding" : {
         "system" : "http://loinc.org",
         "code" : "96271-2",
-        "display" : "DNA mismatch repair protein Msh3 [Presence] in Cancer specimen by Immune stain"
+        "display" : "DNA mismatch repair protein Msh3 Ag [Presence] in Cancer specimen by Immune stain"
       }
     },
     {
@@ -640,7 +640,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
       "patternCoding" : {
         "system" : "http://loinc.org",
         "code" : "96272-0",
-        "display" : "DNA mismatch repair protein Mlh3 [Presence] in Cancer specimen by Immune stain"
+        "display" : "DNA mismatch repair protein Mlh3 Ag [Presence] in Cancer specimen by Immune stain"
       }
     },
     {

@@ -26,7 +26,7 @@ Profile: [MII PR MTB Einfache Variante](StructureDefinition-mii-pr-mtb-einfache-
 
 > **component****code**: Gene studied [ID]**value**: PIK3R1
 
-> **component****code**: Amino acid change (pHGVS)**value**: NM_181523.2:p.E160*
+> **component****code**: Amino acid change (pHGVS)**value**: NP_852664.1:p.(Glu160Ter)
 
 
 
@@ -97,7 +97,7 @@ Profile: [MII PR MTB Einfache Variante](StructureDefinition-mii-pr-mtb-einfache-
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://varnomen.hgvs.org",
-        "code" : "NM_181523.2:p.E160*"
+        "code" : "NP_852664.1:p.(Glu160Ter)"
       }]
     }
   }]

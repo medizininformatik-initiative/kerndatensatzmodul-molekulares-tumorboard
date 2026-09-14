@@ -51,10 +51,6 @@
   },
   {
     "name" : "system-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode|2026.0.1"
-  },
-  {
-    "name" : "system-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte|2026.0.1"
   },
   {
@@ -104,6 +100,10 @@
   {
     "name" : "system-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung|2026.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilungsmethode|2026.0.1"
   },
   {
     "name" : "system-version",
@@ -299,6 +299,10 @@
   },
   {
     "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Claim-care-team|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
     "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ClaimResponse|4.0.1"
   },
   {
@@ -448,6 +452,10 @@
   {
     "name" : "default-canonical-version",
     "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Observation-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Observation-specimen|4.0.1"
   },
   {
     "name" : "default-canonical-version",

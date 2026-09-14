@@ -23,7 +23,7 @@ This level of evidence is based on the highest evidence that can be found for a 
 
 ### Content
 
-[mii-cs-mtb-empfehlung-evidenzgrad-nct](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.md)
+[mii-cs-mtb-empfehlung-evidenzgrad](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad.md)
 
 [mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.md)
 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-mtb-empfeh
   "name" : "MII_EX_MTB_Empfehlung_Evidenzgraduierung",
   "title" : "MII EX MTB Empfehlung Evidenzgraduierung",
   "status" : "active",
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

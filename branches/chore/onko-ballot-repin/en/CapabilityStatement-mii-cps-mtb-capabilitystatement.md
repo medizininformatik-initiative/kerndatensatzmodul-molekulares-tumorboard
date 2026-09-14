@@ -772,7 +772,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "valueCode" : "SHALL"
         }],
         "name" : "care-team",
-        "definition" : "http://hl7.org/fhir/SearchParameter/care-team",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Claim-care-team",
         "type" : "reference"
       },
       {
@@ -1339,7 +1339,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "valueCode" : "SHALL"
         }],
         "name" : "specimen",
-        "definition" : "http://hl7.org/fhir/SearchParameter/specimen",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-specimen",
         "type" : "reference"
       },
       {

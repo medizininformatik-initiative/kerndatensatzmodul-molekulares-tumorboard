@@ -40,7 +40,7 @@ Profile: [MII PR MTB Einfache Variante](StructureDefinition-mii-pr-mtb-einfache-
 
 > **component****code**: DNA change (c.HGVS)**value**: NM_004333.4:c.1799T>A
 
-> **component****code**: Amino acid change (pHGVS)**value**: p.(Val600Glu)
+> **component****code**: Amino acid change (pHGVS)**value**: NP_004324.2:p.(Val600Glu)
 
 > **component****code**: Sample variant allelic frequency [NFr]**value**: 30.25 % (Details: UCUM code% = '%')
 
@@ -202,7 +202,7 @@ Profile: [MII PR MTB Einfache Variante](StructureDefinition-mii-pr-mtb-einfache-
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://varnomen.hgvs.org",
-        "code" : "p.(Val600Glu)"
+        "code" : "NP_004324.2:p.(Val600Glu)"
       }]
     }
   },

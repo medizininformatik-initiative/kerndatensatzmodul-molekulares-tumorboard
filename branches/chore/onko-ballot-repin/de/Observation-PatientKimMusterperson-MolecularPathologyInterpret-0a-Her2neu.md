@@ -18,7 +18,7 @@ Profile: [MII PR MTB Immunohistochemistry](StructureDefinition-mii-pr-mtb-immuno
 
 **category**: Laboratory, A characterization of a given biomarker observation.
 
-**code**: HER2 [Interpretation] in Tissue
+**code**: HER2 Ag [Interpretation] in Tissue
 
 **subject**: [Kim Musterperson (no stated gender), DoB: 1956-03-14](Patient-PatientKimMusterperson.md)
 
@@ -61,7 +61,7 @@ Profile: [MII PR MTB Immunohistochemistry](StructureDefinition-mii-pr-mtb-immuno
     "coding" : [{
       "system" : "http://loinc.org",
       "code" : "48676-1",
-      "display" : "HER2 [Interpretation] in Tissue"
+      "display" : "HER2 Ag [Interpretation] in Tissue"
     },
     {
       "system" : "http://snomed.info/sct",

@@ -16,7 +16,7 @@ Codesystem für die Beurteilungsmethode eines Response Befunds
 
 This Code system is referenced in the definition of the following value sets:
 
-* [MII VS Response Befund Beurteilung](ValueSet-mii-vs-mtb-beurteilungsmethode-response-befund.md)
+* [MII VS Response Befund Beurteilung](ValueSet-mii-vs-mtb-response-befund-beurteilungsmethode.md)
 
 -------
 
@@ -37,7 +37,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "MII CS Response Befund Beurteilungsmethode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

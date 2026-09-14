@@ -44,7 +44,7 @@ Analytische Faehigkeiten eines Sequenzier-Panels.
   "title" : "MII VS MTB Panel Capability",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T19:12:38+00:00",
+  "date" : "2026-09-14T19:45:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
