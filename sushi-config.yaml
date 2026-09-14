@@ -111,17 +111,19 @@ extension:
           code: "C3262" # Neoplasm — TODO:REVIEW Gate A (proposal, mirrors kerndatensatzmodul-onkologie)
 dependencies:
   # 2027-BALLOT pins (user decision 2026-09-11): every MII module on its latest
-  # published 2027.0.0-ballot[.rc*]; onkologie on 2027.0.0-ballot since
-  # 2026-09-14 (its first published 2027). consent REMOVED (2026-09-14): no
+  # published version — final 2027.0.0-ballot (base/medikation/meta/studie),
+  # post-ballot fix (molgen ballot.1), or latest rc where no final exists yet
+  # (biobank/patho rc2). Publish DATES from packages2.fhir.org decide, not
+  # version-string ordering: the finals were published AFTER the rcs. consent REMOVED (2026-09-14): no
   # artifact consumes it — mii-pr-mtb-consent-given parents plain Observation,
   # the only namespace hit was a never-used alias. basisprofil 1.6.0 per the
-  # ballot wave (base 2027-ballot.rc1 pins it). run.log `deps ballot-repin`.
+  # ballot wave (base 2027-ballot pins it). run.log `deps ballot-repin`.
   de.basisprofil.r4: 1.6.0
-  de.medizininformatikinitiative.kerndatensatz.base: 2027.0.0-ballot.rc1
+  de.medizininformatikinitiative.kerndatensatz.base: 2027.0.0-ballot
   de.medizininformatikinitiative.kerndatensatz.biobank: 2027.0.0-ballot.rc2
-  de.medizininformatikinitiative.kerndatensatz.medikation: 2027.0.0-ballot.rc5
-  de.medizininformatikinitiative.kerndatensatz.meta: 2027.0.0-ballot.rc3
-  de.medizininformatikinitiative.kerndatensatz.molgen: 2027.0.0-ballot.rc3
+  de.medizininformatikinitiative.kerndatensatz.medikation: 2027.0.0-ballot
+  de.medizininformatikinitiative.kerndatensatz.meta: 2027.0.0-ballot
+  de.medizininformatikinitiative.kerndatensatz.molgen: 2027.0.0-ballot.1
   de.medizininformatikinitiative.kerndatensatz.onkologie: 2027.0.0-ballot
   # patho ships no ImplementationGuide resource in its package, so SUSHI
   # derives dependsOn.uri from the bare package canonical, which the publisher
@@ -130,7 +132,7 @@ dependencies:
   de.medizininformatikinitiative.kerndatensatz.patho:
     uri: https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ImplementationGuide/mii-ig-modul-patho
     version: 2027.0.0-ballot.rc2
-  de.medizininformatikinitiative.kerndatensatz.studie: 2027.0.0-ballot.rc1
+  de.medizininformatikinitiative.kerndatensatz.studie: 2027.0.0-ballot
   hl7.fhir.uv.genomics-reporting: 3.0.0
   # Template machinery (CRMI meta.profile claims + template rulesets/pages),
   # added by the migration, recorded at Gate A:
