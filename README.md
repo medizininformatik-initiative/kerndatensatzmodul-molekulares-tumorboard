@@ -21,7 +21,7 @@ ab und berücksichtigt die Anforderungen des Modellvorhabens Genomsequenzierung 
 
 ### Links
 
-- **Implementation Guide**: [Simplifier.net](https://simplifier.net/guide/MII-IG-MTB-DE)
+- **Implementation Guide**: [Simplifier.net](https://simplifier.net/guide/mii-ig-molekulares-tumorboard-v2026-de)
 - **FHIR Package**: [de.medizininformatikinitiative.kerndatensatz.mtb](https://simplifier.net/packages/de.medizininformatikinitiative.kerndatensatz.mtb)
 - **MII Kerndatensatz Übersicht**: [medizininformatik-initiative.de](https://www.medizininformatik-initiative.de/de/der-kerndatensatz-der-medizininformatik-initiative)
 
