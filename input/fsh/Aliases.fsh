@@ -76,6 +76,7 @@ Alias: $mii-vs-mtb-empfehlung-status-begruendung = https://www.medizininformatik
 Alias: $mii-vs-mtb-tumorausbreitung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-tumorausbreitung
 Alias: $mii-vs-mtb-who-grad-tumor-zns = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-who-grad-tumor-zns
 Alias: $mii-vs-mtb-zulassungsstatus = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-zulassungsstatus
+Alias: $mii-vs-mtb-interpretation-high-low = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-interpretation-high-low
 Alias: $mii-cs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte
 Alias: $mii-vs-mtb-dosisdichte = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-dosisdichte
 Alias: $mii-cs-mtb-response-befund-beurteilung = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-response-befund-beurteilung
@@ -102,7 +103,9 @@ Alias: $hl7-organization-type = http://terminology.hl7.org/CodeSystem/organizati
 Alias: $hl7-v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $hl7-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $hl7-v3-observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
-Alias: $hl7-v3-observation-high-low-codes = http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-codes-vs
+// Genomics Reporting STU3 entfernte high-low-codes-vs (STU2); Bindung zeigt jetzt
+// auf das moduleigene Äquivalent (siehe mii-vs-mtb-interpretation-high-low). TODO:REVIEW
+Alias: $hl7-v3-observation-high-low-codes = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-interpretation-high-low
 Alias: $hl7-v3-observation-value = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
 Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
@@ -140,3 +143,64 @@ Alias: $OT = http://data.mskcc.org/ontologies/oncotree
 
 // Sonstige Aliases
 Alias: $bwhc-cnv-type = http://bwhc.de/mtb/genetics-copy-number-variant
+// ── Appended by the template migration (module-template v0.13.2 scaffold
+//    aliases the module lacked; per-definition merge, module definitions win) ──
+Alias: $sct = http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250701
+Alias: $sct-no-ver = http://snomed.info/sct
+Alias: $loinc = http://loinc.org
+Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
+Alias: $icd-10-gm = http://fhir.de/CodeSystem/bfarm/icd-10-gm
+Alias: $icd-o-3 = http://terminology.hl7.org/CodeSystem/icd-o-3
+Alias: $alpha-id = http://fhir.de/CodeSystem/bfarm/alpha-id
+Alias: $alpha-id-vs = http://fhir.de/ValueSet/bfarm/alpha-id
+Alias: $ops = http://fhir.de/CodeSystem/bfarm/ops
+Alias: $orpha = http://www.orpha.net
+Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $v3-ObservationValue = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
+Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
+Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
+Alias: $identifier-type-de-basis = http://fhir.de/CodeSystem/identifier-type-de-basis
+Alias: $gender-amtlich-de = http://fhir.de/CodeSystem/gender-amtlich-de
+Alias: $ags = http://fhir.de/sid/destatis/ags
+Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
+Alias: $MII-Reference = https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference
+Alias: $crmi-license = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license
+Alias: $crmi-license-detail = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-licenseDetail
+Alias: $crmi-manifestlibrary = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary
+Alias: $crmi-manifestparameters = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestparameters
+Alias: $crmi-referenceSource = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-referenceSource
+Alias: $crmi-softwaresystem = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem
+Alias: $crmi-shareableimplementationguide = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide
+Alias: $crmi-publishableimplementationguide = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide
+Alias: $crmi-shareablestructuredefinition = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition
+Alias: $crmi-publishablestructuredefinition = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition
+Alias: $crmi-shareablevalueset = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset
+Alias: $crmi-computablevalueset = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset
+Alias: $crmi-publishablevalueset = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset
+Alias: $crmi-expandedvalueset = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset
+Alias: $crmi-shareablecodesystem = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecodesystem
+Alias: $crmi-publishablecodesystem = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem
+Alias: $crmi-shareablecapabilitystatement = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement
+Alias: $crmi-publishablecapabilitystatement = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement
+Alias: $crmi-shareablesearchparameter = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablesearchparameter
+Alias: $crmi-publishablesearchparameter = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablesearchparameter
+Alias: $crmi-publishable-bundle = http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishable-bundle
+Alias: $crmi-release-version-behavior-codes = http://hl7.org/fhir/uv/crmi/CodeSystem/crmi-release-version-behavior-codes
+Alias: $crmi-release-experimental-behavior-codes = http://hl7.org/fhir/uv/crmi/CodeSystem/crmi-release-experimental-behavior-codes
+Alias: $crmi-release-version-behavior = http://hl7.org/fhir/uv/crmi/ValueSet/crmi-release-version-behavior
+Alias: $crmi-release-experimental-behavior = http://hl7.org/fhir/uv/crmi/ValueSet/crmi-release-experimental-behavior
+
+// ── Panel-Katalog (DeviceDefinition-Templates, 2026-09-14) ──
+Alias: $mii-cs-mtb-panel-capability = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability
+Alias: $mii-vs-mtb-panel-capability = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-capability
+Alias: $mii-ex-mtb-panel-gene-list = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list
+Alias: $mii-vs-mtb-panel-ofa = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-ofa
+Alias: $mii-vs-mtb-panel-ofa-plus = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-ofa-plus
+Alias: $mii-vs-mtb-panel-dhs-3501z = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-dhs-3501z
+Alias: $mii-vs-mtb-panel-cgp = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-cgp
+Alias: $mii-vs-mtb-panel-archer-lung-v2 = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-archer-lung-v2
+Alias: $mii-vs-mtb-panel-tcm-ngs = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tcm-ngs
+Alias: $mii-vs-mtb-panel-basic-ngs = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-basic-ngs
+Alias: $mii-vs-mtb-panel-tso-500-snv = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-snv
+Alias: $mii-vs-mtb-panel-tso-500-fusion = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-fusion

@@ -7,6 +7,7 @@ RuleSet: SystemTherapyMedicationStatement(text, dateTime, procedure, parent, atc
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = {dateTime}
 * note.text = {text}
+* dosage.timing.event = {dateTime}
 * dosage.doseAndRate.doseQuantity.value = {doseValue}
 * dosage.doseAndRate.doseQuantity.unit = {doseUnit}
 * dosage.doseAndRate.doseQuantity.code = {doseUnitCode}
@@ -197,6 +198,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-06-24"
 * note.text = "Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage.timing.event = "2023-06-24"
 * dosage.doseAndRate.doseQuantity.value = 6
 * dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
@@ -215,6 +217,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-07-16"
 * note.text = "Z2 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage.timing.event = "2023-07-16"
 * dosage.doseAndRate.doseQuantity.value = 6
 * dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
@@ -233,6 +236,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-08-07"
 * note.text = "Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage.timing.event = "2023-08-07"
 * dosage.doseAndRate.doseQuantity.value = 6
 * dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
@@ -251,6 +255,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-08-29"
 * note.text = "Z4 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage.timing.event = "2023-08-29"
 * dosage.doseAndRate.doseQuantity.value = 6
 * dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
@@ -269,6 +274,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-09-20"
 * note.text = "Z5 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage.timing.event = "2023-09-20"
 * dosage.doseAndRate.doseQuantity.value = 6
 * dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}
@@ -287,6 +293,7 @@ Usage: #example
 * subject = Reference(Patient/PatientKimMusterperson)
 * effectiveDateTime = "2023-10-12"
 * note.text = "Z6 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage.timing.event = "2023-10-12"
 * dosage.doseAndRate.doseQuantity.value = 6
 * dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}

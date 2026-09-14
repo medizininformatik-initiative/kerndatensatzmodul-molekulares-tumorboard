@@ -9,7 +9,7 @@ Description: "Beispiel fuer eine DNA-Fusion in Tumorzellen."
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#69548-6 "Genetic variant assessment"
 
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 
 * component[five-prime-chromosome].valueCodeableConcept = $LNC#LA21255-7 "Chromosome 2"
 

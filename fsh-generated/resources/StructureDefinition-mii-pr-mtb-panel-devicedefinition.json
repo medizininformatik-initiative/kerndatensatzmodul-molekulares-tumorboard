@@ -1,0 +1,136 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-mtb-panel-devicedefinition",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-panel-devicedefinition",
+  "version": "2026.0.1",
+  "name": "MII_PR_MTB_Panel_DeviceDefinition",
+  "title": "MII PR MTB Panel DeviceDefinition",
+  "status": "active",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Katalog-Template eines Sequenzier-Panel-Produkts (Genpanel): Hersteller, Produktname/Version, analytische Faehigkeiten und Genliste(n). Konkrete Geraete/Kits einer Einrichtung verweisen via Device.definition auf ihr Template.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DeviceDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DeviceDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DeviceDefinition.meta",
+        "path": "DeviceDefinition.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.meta.profile",
+        "path": "DeviceDefinition.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.extension",
+        "path": "DeviceDefinition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "DeviceDefinition.extension:geneList",
+        "path": "DeviceDefinition.extension",
+        "sliceName": "geneList",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.manufacturer[x]",
+        "path": "DeviceDefinition.manufacturer[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.deviceName",
+        "path": "DeviceDefinition.deviceName",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.deviceName.name",
+        "path": "DeviceDefinition.deviceName.name",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.deviceName.type",
+        "path": "DeviceDefinition.deviceName.type",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.type",
+        "path": "DeviceDefinition.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "gene-panel",
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.version",
+        "path": "DeviceDefinition.version",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.capability",
+        "path": "DeviceDefinition.capability",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.capability.type",
+        "path": "DeviceDefinition.capability.type",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-capability"
+        }
+      },
+      {
+        "id": "DeviceDefinition.onlineInformation",
+        "path": "DeviceDefinition.onlineInformation",
+        "short": "Herstellerseite / Produktdokumentation",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceDefinition.note",
+        "path": "DeviceDefinition.note",
+        "mustSupport": true
+      }
+    ]
+  }
+}

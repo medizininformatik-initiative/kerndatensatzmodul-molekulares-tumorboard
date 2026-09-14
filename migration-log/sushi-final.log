@@ -1,0 +1,57 @@
+info  Running SUSHI v3.20.1 (implements FHIR Shorthand specification v3.0.0)
+info  Arguments:
+info    /Users/thome/code/fhir-profiling/mtb-template-migration
+info  No output path specified. Output to .
+info  Using configuration file: /Users/thome/code/fhir-profiling/mtb-template-migration/sushi-config.yaml
+info  Importing FSH text...
+info  Preprocessed 205 documents with 178 aliases.
+info  Imported 112 definitions and 191 instances.
+info  Loaded virtual package sushi-r5forR4#1.0.0 with 7 resources
+info  Resolved hl7.fhir.uv.tools.r4#latest to concrete version 1.1.2
+info  Loaded hl7.fhir.uv.tools.r4#1.1.2 with 119 resources
+info  Loaded hl7.terminology.r4#7.3.0 with 4176 resources
+info  Loaded de.basisprofil.r4#1.5.4 with 168 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 with 37 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.biobank#2026.0.0 with 42 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 with 16 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.medikation#2026.0.0 with 16 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.meta#2026.0.0 with 173 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.molgen#2026.0.4 with 33 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.onkologie#2026.0.3 with 286 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.patho#2026.0.0 with 30 resources
+info  Loaded de.medizininformatikinitiative.kerndatensatz.studie#2026.0.2 with 45 resources
+info  Loaded hl7.fhir.uv.genomics-reporting#3.0.0 with 93 resources
+info  Loaded hl7.fhir.uv.crmi#2.0.0 with 123 resources
+info  Loaded hl7.fhir.uv.xver-r5.r4#0.1.0 with 4707 resources
+info  Loaded hl7.fhir.r4.core#4.0.1 with 4581 resources
+info  Loaded hl7.fhir.uv.extensions.r4#5.3.0 with 885 resources
+info  Found 1 non-JSON / non-XML file(s) in directory: /Users/thome/code/fhir-profiling/mtb-template-migration/input/resources. Only resource files with JSON or XML extensions are supported. To see the skipped files in the logs, use debug logging.
+info  Loaded virtual package sushi-local#LOCAL with 1 resources
+info  Converting FSH to FHIR resources...
+info  Converted 64 FHIR StructureDefinitions.
+info  Converted 19 FHIR CodeSystems.
+info  Converted 29 FHIR ValueSets.
+info  Converted 191 FHIR instances.
+info  Exporting FHIR resources as JSON...
+info  Exported 303 FHIR resources as JSON.
+info  Assembling Implementation Guide sources...
+info  Generated ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.json
+info  Assembled Implementation Guide sources; ready for IG Publisher.
+info  The _build script hosted at https://github.com/HL7/ig-publisher-scripts is useful for downloading and running the IG Publisher.
+
+========================= SUSHI RESULTS ===========================
+|  -------------------------------------------------------------  |
+| |    Profiles   |  Extensions  |   Logicals   |   Resources   | |
+| |-------------------------------------------------------------| |
+| |      49       |      11      |      4       |       0       | |
+|  -------------------------------------------------------------  |
+|  -------------------------------------------------------------  |
+| |      ValueSets     |    CodeSystems    |     Instances      | |
+| |-------------------------------------------------------------| |
+| |         29         |        19         |        191         | |
+|  -------------------------------------------------------------  |
+|                                                                 |
+===================================================================
+| You're making waves now!               0 Errors      0 Warnings |
+===================================================================
+

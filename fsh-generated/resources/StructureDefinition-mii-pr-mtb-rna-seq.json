@@ -51,6 +51,20 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
         "id": "Observation.component:gene-studied",
         "path": "Observation.component",
         "sliceName": "gene-studied",

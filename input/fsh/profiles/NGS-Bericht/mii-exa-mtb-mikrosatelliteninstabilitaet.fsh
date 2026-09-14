@@ -8,9 +8,8 @@ Description: "Beispiel fuer Mikrosatelliteninstabilität in Tumorzellen aufgrund
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 * valueQuantity = 2.61 $UCUM#% 
 * method = $mii-cs-mtb-msi-method-type#bioinformatic "Sequenzierung"
-* specimen = Reference(Specimen/example)
+* specimen = Reference(Specimen/mii-exa-mtb-specimen)
 * interpretation = $LNC#LA14122-8 "Stable"

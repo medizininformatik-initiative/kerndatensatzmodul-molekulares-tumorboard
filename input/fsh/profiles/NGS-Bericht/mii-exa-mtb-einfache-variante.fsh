@@ -13,7 +13,7 @@ Description: "Beispiel fuer einfache genetische Variante im BRAF Gen an Hand von
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 
 * component[chromosome-identifier].valueCodeableConcept.coding = $LNC#LA21270-6 "Chromosome 17"
 

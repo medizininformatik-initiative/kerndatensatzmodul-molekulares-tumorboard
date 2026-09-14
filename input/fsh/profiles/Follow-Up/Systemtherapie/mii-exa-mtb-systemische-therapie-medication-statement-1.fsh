@@ -14,6 +14,7 @@ Title: "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
 * effectivePeriod.start = "2023-06-24"
 * effectivePeriod.end = "2023-06-24"
 * note.text = "24.06.2023 Z1 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22"
+* dosage.timing.event = "2023-06-24"
 * dosage.doseAndRate.doseQuantity.value = 6
 * dosage.doseAndRate.doseQuantity.unit = "mg/kg KG"
 * dosage.doseAndRate.doseQuantity.code = #mg/kg{KG}

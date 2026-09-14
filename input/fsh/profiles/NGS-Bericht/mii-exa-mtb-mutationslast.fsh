@@ -8,8 +8,7 @@ Description: "Beispiel fuer die Mutationslast in einer Tumorprobe mit Bezug zu m
 * status = #final
 * category[labCategory] = $fhir-observation-category#laboratory "Laboratory"
 * code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(Patient/mii-exa-mtb-patient)
 * valueQuantity = 21 $UCUM#1/1000000{Base} "Mutations/Megabase"
-* specimen = Reference(Specimen/example)
+* specimen = Reference(Specimen/mii-exa-mtb-specimen)
 * interpretation = $hl7-v3-observation-interpretation#H "High"
