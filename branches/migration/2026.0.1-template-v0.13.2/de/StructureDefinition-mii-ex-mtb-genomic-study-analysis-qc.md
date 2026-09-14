@@ -73,7 +73,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-g
   "name" : "MII_EX_MTB_GenomicStudyAnalysis_QC",
   "title" : "MII EX MTB Antrag GenomicsStudyAnalysis Metrics",
   "status" : "active",
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

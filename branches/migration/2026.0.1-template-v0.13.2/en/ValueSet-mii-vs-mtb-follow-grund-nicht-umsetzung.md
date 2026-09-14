@@ -45,7 +45,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "MII VS Follow-Up Grund Nicht-Umsetzung",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

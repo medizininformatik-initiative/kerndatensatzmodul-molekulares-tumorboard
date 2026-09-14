@@ -20,5 +20,6 @@ Genomics-Reporting extension `genomic-study-analysis-device`, as before.
 The shipped catalog covers eleven products (Oncomine Focus/Focus Plus, Qiagen
 DHS-3501Z, Agilent MH IVD 600+ and SureSelect Cancer CGP, DKTK/MASTER WGS,
 generic WGS, FusionPlex Archer Lung V2, TCM NGS, Basic-NGS, TruSight
-Oncology 500) with nine gene-list ValueSets (17–602 genes, coded as HGNC
-symbols — mapping to stable HGNC IDs is an open TODO:REVIEW).
+Oncology 500) with nine gene-list ValueSets (17–602 genes, coded with stable
+HGNC IDs; displays are the current approved symbols, outdated source symbols
+were remapped and annotated).

@@ -126,16 +126,16 @@ These define sets of codes used by systems conforming to this implementation gui
 | [ MII VS MTB ISH Method  ](ValueSet-mii-vs-mtb-ish-method.md) | In Situ Hybridization technique methods (FISH, CISH, SISH) |
 | [ MII VS MTB Immunhistochemistry Specific Codes  ](ValueSet-mii-vs-mtb-immunohistochemistry-specific-codes.md) | Spezifische LOINC und SNOMED Codes für immunhistochemische Untersuchungen. Diese Codes werden für das Slice 'spezifisch' im Immunohistochemistry Profil verwendet. |
 | [ MII VS MTB Interpretation High/Low  ](ValueSet-mii-vs-mtb-interpretation-high-low.md) | Interpretation qualitativer Biomarker-Ergebnisse als hoch/niedrig (High/Low aus HL7 v3 ObservationInterpretation). Ersetzt das in Genomics Reporting STU3 entfallene high-low-codes-vs (STU2). |
-| [ MII VS MTB Panel Archer  ](ValueSet-mii-vs-mtb-panel-archer-lung-v2.md) | Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
-| [ MII VS MTB Panel Basic-NGS  ](ValueSet-mii-vs-mtb-panel-basic-ngs.md) | Genliste des Panels: Basic-NGS Panel (36 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
-| [ MII VS MTB Panel CGP  ](ValueSet-mii-vs-mtb-panel-cgp.md) | Genliste des Panels: SureSelect Cancer CGP Assay (602 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel Archer  ](ValueSet-mii-vs-mtb-panel-archer-lung-v2.md) | Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
+| [ MII VS MTB Panel Basic-NGS  ](ValueSet-mii-vs-mtb-panel-basic-ngs.md) | Genliste des Panels: Basic-NGS Panel (36 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
+| [ MII VS MTB Panel CGP  ](ValueSet-mii-vs-mtb-panel-cgp.md) | Genliste des Panels: SureSelect Cancer CGP Assay (602 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
 | [ MII VS MTB Panel Capability  ](ValueSet-mii-vs-mtb-panel-capability.md) | Analytische Faehigkeiten eines Sequenzier-Panels. |
-| [ MII VS MTB Panel DHS-3501Z  ](ValueSet-mii-vs-mtb-panel-dhs-3501z.md) | Genliste des Panels: Qiagen DHS-3501Z (275 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
-| [ MII VS MTB Panel OFA  ](ValueSet-mii-vs-mtb-panel-ofa.md) | Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
-| [ MII VS MTB Panel OFA plus  ](ValueSet-mii-vs-mtb-panel-ofa-plus.md) | Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
-| [ MII VS MTB Panel TCM NGS  ](ValueSet-mii-vs-mtb-panel-tcm-ngs.md) | Genliste des Panels: TCM NGS Panel (409 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
-| [ MII VS MTB Panel TSO 500 Fusions  ](ValueSet-mii-vs-mtb-panel-tso-500-fusion.md) | Genliste des Panels: TruSight Oncology 500 — Fusions-Genliste (55 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
-| [ MII VS MTB Panel TSO 500 SNVs  ](ValueSet-mii-vs-mtb-panel-tso-500-snv.md) | Genliste des Panels: TruSight Oncology 500 — SNV-Genliste (523 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel DHS-3501Z  ](ValueSet-mii-vs-mtb-panel-dhs-3501z.md) | Genliste des Panels: Qiagen DHS-3501Z (275 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
+| [ MII VS MTB Panel OFA  ](ValueSet-mii-vs-mtb-panel-ofa.md) | Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
+| [ MII VS MTB Panel OFA plus  ](ValueSet-mii-vs-mtb-panel-ofa-plus.md) | Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
+| [ MII VS MTB Panel TCM NGS  ](ValueSet-mii-vs-mtb-panel-tcm-ngs.md) | Genliste des Panels: TCM NGS Panel (409 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
+| [ MII VS MTB Panel TSO 500 Fusions  ](ValueSet-mii-vs-mtb-panel-tso-500-fusion.md) | Genliste des Panels: TruSight Oncology 500 — Fusions-Genliste (55 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
+| [ MII VS MTB Panel TSO 500 SNVs  ](ValueSet-mii-vs-mtb-panel-tso-500-snv.md) | Genliste des Panels: TruSight Oncology 500 — SNV-Genliste (523 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. |
 | [ MII VS MTB Systemtherapie Status  ](ValueSet-mii-vs-mtb-systemische-therapie-status.md) | Einschränkung der Status für Systemtherapie |
 | [ MII VS Mikrosatelliteninstabilität  ](ValueSet-mii-vs-mtb-msi.md) | 
 | | | |

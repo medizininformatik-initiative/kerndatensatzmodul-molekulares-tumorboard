@@ -165,7 +165,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-b
   "name" : "MII_PR_MTB_Biopsie_Auftrag",
   "title" : "MII PR MTB Biopsie Auftrag",
   "status" : "active",
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

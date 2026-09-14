@@ -12,7 +12,7 @@
 | Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_VS_MTB_Panel_OfaPlus |
 
  
-Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. 
+Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. 
 
  **References** 
 
@@ -43,7 +43,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "MII VS MTB Panel OFA plus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -52,7 +52,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
       "value" : "https://www.medizininformatik-initiative.de"
     }]
   }],
-  "description" : "Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+  "description" : "Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -62,2073 +62,2073 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   }],
   "compose" : {
     "include" : [{
-      "system" : "http://www.genenames.org",
+      "system" : "http://www.genenames.org/geneId",
       "concept" : [{
-        "code" : "A1CF",
+        "code" : "HGNC:24086",
         "display" : "A1CF"
       },
       {
-        "code" : "ABCB1",
+        "code" : "HGNC:40",
         "display" : "ABCB1"
       },
       {
-        "code" : "ABL1",
+        "code" : "HGNC:76",
         "display" : "ABL1"
       },
       {
-        "code" : "ABL2",
+        "code" : "HGNC:77",
         "display" : "ABL2"
       },
       {
-        "code" : "ABRAXAS1",
+        "code" : "HGNC:25829",
         "display" : "ABRAXAS1"
       },
       {
-        "code" : "ACSM2B",
+        "code" : "HGNC:30931",
         "display" : "ACSM2B"
       },
       {
-        "code" : "ACVR1",
+        "code" : "HGNC:171",
         "display" : "ACVR1"
       },
       {
-        "code" : "ACVR1B",
+        "code" : "HGNC:172",
         "display" : "ACVR1B"
       },
       {
-        "code" : "ACVR2A",
+        "code" : "HGNC:173",
         "display" : "ACVR2A"
       },
       {
-        "code" : "ADAM18",
+        "code" : "HGNC:196",
         "display" : "ADAM18"
       },
       {
-        "code" : "ADAMTS12",
+        "code" : "HGNC:14605",
         "display" : "ADAMTS12"
       },
       {
-        "code" : "ADAMTS2",
+        "code" : "HGNC:218",
         "display" : "ADAMTS2"
       },
       {
-        "code" : "AKT1",
+        "code" : "HGNC:391",
         "display" : "AKT1"
       },
       {
-        "code" : "AKT2",
+        "code" : "HGNC:392",
         "display" : "AKT2"
       },
       {
-        "code" : "AKT3",
+        "code" : "HGNC:393",
         "display" : "AKT3"
       },
       {
-        "code" : "ALK",
+        "code" : "HGNC:427",
         "display" : "ALK"
       },
       {
-        "code" : "AMER1",
+        "code" : "HGNC:26837",
         "display" : "AMER1"
       },
       {
-        "code" : "ANO4",
+        "code" : "HGNC:23837",
         "display" : "ANO4"
       },
       {
-        "code" : "APC",
+        "code" : "HGNC:583",
         "display" : "APC"
       },
       {
-        "code" : "AR",
+        "code" : "HGNC:644",
         "display" : "AR"
       },
       {
-        "code" : "ARAF",
+        "code" : "HGNC:646",
         "display" : "ARAF"
       },
       {
-        "code" : "ARHGAP35",
+        "code" : "HGNC:4591",
         "display" : "ARHGAP35"
       },
       {
-        "code" : "ARID1A",
+        "code" : "HGNC:11110",
         "display" : "ARID1A"
       },
       {
-        "code" : "ARID1B",
+        "code" : "HGNC:18040",
         "display" : "ARID1B"
       },
       {
-        "code" : "ARID2",
+        "code" : "HGNC:18037",
         "display" : "ARID2"
       },
       {
-        "code" : "ARID5B",
+        "code" : "HGNC:17362",
         "display" : "ARID5B"
       },
       {
-        "code" : "ODAD2",
+        "code" : "HGNC:25583",
         "display" : "ODAD2"
       },
       {
-        "code" : "ASXL1",
+        "code" : "HGNC:18318",
         "display" : "ASXL1"
       },
       {
-        "code" : "ASXL2",
+        "code" : "HGNC:23805",
         "display" : "ASXL2"
       },
       {
-        "code" : "ATM",
+        "code" : "HGNC:795",
         "display" : "ATM"
       },
       {
-        "code" : "ATP1A1",
+        "code" : "HGNC:799",
         "display" : "ATP1A1"
       },
       {
-        "code" : "ATR",
+        "code" : "HGNC:882",
         "display" : "ATR"
       },
       {
-        "code" : "ATRX",
+        "code" : "HGNC:886",
         "display" : "ATRX"
       },
       {
-        "code" : "AURKA",
+        "code" : "HGNC:11393",
         "display" : "AURKA"
       },
       {
-        "code" : "AURKB",
+        "code" : "HGNC:11390",
         "display" : "AURKB"
       },
       {
-        "code" : "AURKC",
+        "code" : "HGNC:11391",
         "display" : "AURKC"
       },
       {
-        "code" : "AXIN1",
+        "code" : "HGNC:903",
         "display" : "AXIN1"
       },
       {
-        "code" : "AXIN2",
+        "code" : "HGNC:904",
         "display" : "AXIN2"
       },
       {
-        "code" : "AXL",
+        "code" : "HGNC:905",
         "display" : "AXL"
       },
       {
-        "code" : "B2M",
+        "code" : "HGNC:914",
         "display" : "B2M"
       },
       {
-        "code" : "BAP1",
+        "code" : "HGNC:950",
         "display" : "BAP1"
       },
       {
-        "code" : "BARD1",
+        "code" : "HGNC:952",
         "display" : "BARD1"
       },
       {
-        "code" : "BCL2",
+        "code" : "HGNC:990",
         "display" : "BCL2"
       },
       {
-        "code" : "BCL2L12",
+        "code" : "HGNC:13787",
         "display" : "BCL2L12"
       },
       {
-        "code" : "BCL6",
+        "code" : "HGNC:1001",
         "display" : "BCL6"
       },
       {
-        "code" : "BCOR",
+        "code" : "HGNC:20893",
         "display" : "BCOR"
       },
       {
-        "code" : "BCR",
+        "code" : "HGNC:1014",
         "display" : "BCR"
       },
       {
-        "code" : "BLM",
+        "code" : "HGNC:1058",
         "display" : "BLM"
       },
       {
-        "code" : "BMP5",
+        "code" : "HGNC:1072",
         "display" : "BMP5"
       },
       {
-        "code" : "BMPR2",
+        "code" : "HGNC:1078",
         "display" : "BMPR2"
       },
       {
-        "code" : "BRAF",
+        "code" : "HGNC:1097",
         "display" : "BRAF"
       },
       {
-        "code" : "BRCA1",
+        "code" : "HGNC:1100",
         "display" : "BRCA1"
       },
       {
-        "code" : "BRCA2",
+        "code" : "HGNC:1101",
         "display" : "BRCA2"
       },
       {
-        "code" : "BRINP3",
+        "code" : "HGNC:22393",
         "display" : "BRINP3"
       },
       {
-        "code" : "BRIP1",
+        "code" : "HGNC:20473",
         "display" : "BRIP1"
       },
       {
-        "code" : "BTK",
+        "code" : "HGNC:1133",
         "display" : "BTK"
       },
       {
-        "code" : "C6",
+        "code" : "HGNC:1339",
         "display" : "C6"
       },
       {
-        "code" : "C8A",
+        "code" : "HGNC:1352",
         "display" : "C8A"
       },
       {
-        "code" : "C8B",
+        "code" : "HGNC:1353",
         "display" : "C8B"
       },
       {
-        "code" : "CACNA1D",
+        "code" : "HGNC:1391",
         "display" : "CACNA1D"
       },
       {
-        "code" : "CALR",
+        "code" : "HGNC:1455",
         "display" : "CALR"
       },
       {
-        "code" : "CANX",
+        "code" : "HGNC:1473",
         "display" : "CANX"
       },
       {
-        "code" : "CARD11",
+        "code" : "HGNC:16393",
         "display" : "CARD11"
       },
       {
-        "code" : "CASP8",
+        "code" : "HGNC:1509",
         "display" : "CASP8"
       },
       {
-        "code" : "CASR",
+        "code" : "HGNC:1514",
         "display" : "CASR"
       },
       {
-        "code" : "CBFB",
+        "code" : "HGNC:1539",
         "display" : "CBFB"
       },
       {
-        "code" : "CBL",
+        "code" : "HGNC:1541",
         "display" : "CBL"
       },
       {
-        "code" : "CCND1",
+        "code" : "HGNC:1582",
         "display" : "CCND1"
       },
       {
-        "code" : "CCND2",
+        "code" : "HGNC:1583",
         "display" : "CCND2"
       },
       {
-        "code" : "CCND3",
+        "code" : "HGNC:1585",
         "display" : "CCND3"
       },
       {
-        "code" : "CCNE1",
+        "code" : "HGNC:1589",
         "display" : "CCNE1"
       },
       {
-        "code" : "CD163",
+        "code" : "HGNC:1631",
         "display" : "CD163"
       },
       {
-        "code" : "CD274",
+        "code" : "HGNC:17635",
         "display" : "CD274"
       },
       {
-        "code" : "CD276",
+        "code" : "HGNC:19137",
         "display" : "CD276"
       },
       {
-        "code" : "CD79B",
+        "code" : "HGNC:1699",
         "display" : "CD79B"
       },
       {
-        "code" : "CDC73",
+        "code" : "HGNC:16783",
         "display" : "CDC73"
       },
       {
-        "code" : "CDH1",
+        "code" : "HGNC:1748",
         "display" : "CDH1"
       },
       {
-        "code" : "CDH10",
+        "code" : "HGNC:1749",
         "display" : "CDH10"
       },
       {
-        "code" : "CDK12",
+        "code" : "HGNC:24224",
         "display" : "CDK12"
       },
       {
-        "code" : "CDK4",
+        "code" : "HGNC:1773",
         "display" : "CDK4"
       },
       {
-        "code" : "CDK6",
+        "code" : "HGNC:1777",
         "display" : "CDK6"
       },
       {
-        "code" : "CDKN1A",
+        "code" : "HGNC:1784",
         "display" : "CDKN1A"
       },
       {
-        "code" : "CDKN1B",
+        "code" : "HGNC:1785",
         "display" : "CDKN1B"
       },
       {
-        "code" : "CDKN2A",
+        "code" : "HGNC:1787",
         "display" : "CDKN2A"
       },
       {
-        "code" : "CDKN2B",
+        "code" : "HGNC:1788",
         "display" : "CDKN2B"
       },
       {
-        "code" : "CDKN2C",
+        "code" : "HGNC:1789",
         "display" : "CDKN2C"
       },
       {
-        "code" : "CHD4",
+        "code" : "HGNC:1919",
         "display" : "CHD4"
       },
       {
-        "code" : "CHEK1",
+        "code" : "HGNC:1925",
         "display" : "CHEK1"
       },
       {
-        "code" : "CHEK2",
+        "code" : "HGNC:16627",
         "display" : "CHEK2"
       },
       {
-        "code" : "CIC",
+        "code" : "HGNC:14214",
         "display" : "CIC"
       },
       {
-        "code" : "CIITA",
+        "code" : "HGNC:7067",
         "display" : "CIITA"
       },
       {
-        "code" : "CNTN6",
+        "code" : "HGNC:2176",
         "display" : "CNTN6"
       },
       {
-        "code" : "CNTNAP4",
+        "code" : "HGNC:18747",
         "display" : "CNTNAP4"
       },
       {
-        "code" : "CNTNAP5",
+        "code" : "HGNC:18748",
         "display" : "CNTNAP5"
       },
       {
-        "code" : "COL11A1",
+        "code" : "HGNC:2186",
         "display" : "COL11A1"
       },
       {
-        "code" : "CREBBP",
+        "code" : "HGNC:2348",
         "display" : "CREBBP"
       },
       {
-        "code" : "CSF1R",
+        "code" : "HGNC:2433",
         "display" : "CSF1R"
       },
       {
-        "code" : "CSMD3",
+        "code" : "HGNC:19291",
         "display" : "CSMD3"
       },
       {
-        "code" : "CTCF",
+        "code" : "HGNC:13723",
         "display" : "CTCF"
       },
       {
-        "code" : "CTLA4",
+        "code" : "HGNC:2505",
         "display" : "CTLA4"
       },
       {
-        "code" : "CTNNB1",
+        "code" : "HGNC:2514",
         "display" : "CTNNB1"
       },
       {
-        "code" : "CTNND2",
+        "code" : "HGNC:2516",
         "display" : "CTNND2"
       },
       {
-        "code" : "CUL1",
+        "code" : "HGNC:2551",
         "display" : "CUL1"
       },
       {
-        "code" : "CUL3",
+        "code" : "HGNC:2553",
         "display" : "CUL3"
       },
       {
-        "code" : "CUL4A",
+        "code" : "HGNC:2554",
         "display" : "CUL4A"
       },
       {
-        "code" : "CUL4B",
+        "code" : "HGNC:2555",
         "display" : "CUL4B"
       },
       {
-        "code" : "CYLD",
+        "code" : "HGNC:2584",
         "display" : "CYLD"
       },
       {
-        "code" : "CYP2C9",
+        "code" : "HGNC:2623",
         "display" : "CYP2C9"
       },
       {
-        "code" : "CYP2D6",
+        "code" : "HGNC:2625",
         "display" : "CYP2D6"
       },
       {
-        "code" : "CYSLTR2",
+        "code" : "HGNC:18274",
         "display" : "CYSLTR2"
       },
       {
-        "code" : "DAXX",
+        "code" : "HGNC:2681",
         "display" : "DAXX"
       },
       {
-        "code" : "DCAF4L2",
+        "code" : "HGNC:26657",
         "display" : "DCAF4L2"
       },
       {
-        "code" : "DCDC1",
+        "code" : "HGNC:20625",
         "display" : "DCDC1"
       },
       {
-        "code" : "DDR1",
+        "code" : "HGNC:2730",
         "display" : "DDR1"
       },
       {
-        "code" : "DDR2",
+        "code" : "HGNC:2731",
         "display" : "DDR2"
       },
       {
-        "code" : "DDX3X",
+        "code" : "HGNC:2745",
         "display" : "DDX3X"
       },
       {
-        "code" : "DGCR8",
+        "code" : "HGNC:2847",
         "display" : "DGCR8"
       },
       {
-        "code" : "DICER1",
+        "code" : "HGNC:17098",
         "display" : "DICER1"
       },
       {
-        "code" : "DNMT3A",
+        "code" : "HGNC:2978",
         "display" : "DNMT3A"
       },
       {
-        "code" : "DOCK3",
+        "code" : "HGNC:2989",
         "display" : "DOCK3"
       },
       {
-        "code" : "DPYD",
+        "code" : "HGNC:3012",
         "display" : "DPYD"
       },
       {
-        "code" : "DROSHA",
+        "code" : "HGNC:17904",
         "display" : "DROSHA"
       },
       {
-        "code" : "DSC1",
+        "code" : "HGNC:3035",
         "display" : "DSC1"
       },
       {
-        "code" : "DSC3",
+        "code" : "HGNC:3037",
         "display" : "DSC3"
       },
       {
-        "code" : "E2F1",
+        "code" : "HGNC:3113",
         "display" : "E2F1"
       },
       {
-        "code" : "EGFR",
+        "code" : "HGNC:3236",
         "display" : "EGFR"
       },
       {
-        "code" : "EIF1AX",
+        "code" : "HGNC:3250",
         "display" : "EIF1AX"
       },
       {
-        "code" : "ELF3",
+        "code" : "HGNC:3318",
         "display" : "ELF3"
       },
       {
-        "code" : "EMSY",
+        "code" : "HGNC:18071",
         "display" : "EMSY"
       },
       {
-        "code" : "ENO1",
+        "code" : "HGNC:3350",
         "display" : "ENO1"
       },
       {
-        "code" : "EP300",
+        "code" : "HGNC:3373",
         "display" : "EP300"
       },
       {
-        "code" : "EPAS1",
+        "code" : "HGNC:3374",
         "display" : "EPAS1"
       },
       {
-        "code" : "EPCAM",
+        "code" : "HGNC:11529",
         "display" : "EPCAM"
       },
       {
-        "code" : "EPHA2",
+        "code" : "HGNC:3386",
         "display" : "EPHA2"
       },
       {
-        "code" : "ERAP1",
+        "code" : "HGNC:18173",
         "display" : "ERAP1"
       },
       {
-        "code" : "ERAP2",
+        "code" : "HGNC:29499",
         "display" : "ERAP2"
       },
       {
-        "code" : "ERBB2",
+        "code" : "HGNC:3430",
         "display" : "ERBB2"
       },
       {
-        "code" : "ERBB3",
+        "code" : "HGNC:3431",
         "display" : "ERBB3"
       },
       {
-        "code" : "ERBB4",
+        "code" : "HGNC:3432",
         "display" : "ERBB4"
       },
       {
-        "code" : "ERCC2",
+        "code" : "HGNC:3434",
         "display" : "ERCC2"
       },
       {
-        "code" : "ERCC4",
+        "code" : "HGNC:3436",
         "display" : "ERCC4"
       },
       {
-        "code" : "ERCC5",
+        "code" : "HGNC:3437",
         "display" : "ERCC5"
       },
       {
-        "code" : "ERG",
+        "code" : "HGNC:3446",
         "display" : "ERG"
       },
       {
-        "code" : "ERRFI1",
+        "code" : "HGNC:18185",
         "display" : "ERRFI1"
       },
       {
-        "code" : "ESR1",
+        "code" : "HGNC:3467",
         "display" : "ESR1"
       },
       {
-        "code" : "ETV1",
+        "code" : "HGNC:3490",
         "display" : "ETV1"
       },
       {
-        "code" : "ETV4",
+        "code" : "HGNC:3493",
         "display" : "ETV4"
       },
       {
-        "code" : "ETV5",
+        "code" : "HGNC:3494",
         "display" : "ETV5"
       },
       {
-        "code" : "ETV6",
+        "code" : "HGNC:3495",
         "display" : "ETV6"
       },
       {
-        "code" : "EZH2",
+        "code" : "HGNC:3527",
         "display" : "EZH2"
       },
       {
-        "code" : "FAM135B",
+        "code" : "HGNC:28029",
         "display" : "FAM135B"
       },
       {
-        "code" : "FANCA",
+        "code" : "HGNC:3582",
         "display" : "FANCA"
       },
       {
-        "code" : "FANCC",
+        "code" : "HGNC:3584",
         "display" : "FANCC"
       },
       {
-        "code" : "FANCD2",
+        "code" : "HGNC:3585",
         "display" : "FANCD2"
       },
       {
-        "code" : "FANCE",
+        "code" : "HGNC:3586",
         "display" : "FANCE"
       },
       {
-        "code" : "FANCF",
+        "code" : "HGNC:3587",
         "display" : "FANCF"
       },
       {
-        "code" : "FANCG",
+        "code" : "HGNC:3588",
         "display" : "FANCG"
       },
       {
-        "code" : "FANCI",
+        "code" : "HGNC:25568",
         "display" : "FANCI"
       },
       {
-        "code" : "FANCL",
+        "code" : "HGNC:20748",
         "display" : "FANCL"
       },
       {
-        "code" : "FANCM",
+        "code" : "HGNC:23168",
         "display" : "FANCM"
       },
       {
-        "code" : "FAS",
+        "code" : "HGNC:11920",
         "display" : "FAS"
       },
       {
-        "code" : "FAT1",
+        "code" : "HGNC:3595",
         "display" : "FAT1"
       },
       {
-        "code" : "FBXW7",
+        "code" : "HGNC:16712",
         "display" : "FBXW7"
       },
       {
-        "code" : "FGF19",
+        "code" : "HGNC:3675",
         "display" : "FGF19"
       },
       {
-        "code" : "FGF23",
+        "code" : "HGNC:3680",
         "display" : "FGF23"
       },
       {
-        "code" : "FGF3",
+        "code" : "HGNC:3681",
         "display" : "FGF3"
       },
       {
-        "code" : "FGF4",
+        "code" : "HGNC:3682",
         "display" : "FGF4"
       },
       {
-        "code" : "FGF7",
+        "code" : "HGNC:3685",
         "display" : "FGF7"
       },
       {
-        "code" : "FGF9",
+        "code" : "HGNC:3687",
         "display" : "FGF9"
       },
       {
-        "code" : "FGFR1",
+        "code" : "HGNC:3688",
         "display" : "FGFR1"
       },
       {
-        "code" : "FGFR2",
+        "code" : "HGNC:3689",
         "display" : "FGFR2"
       },
       {
-        "code" : "FGFR3",
+        "code" : "HGNC:3690",
         "display" : "FGFR3"
       },
       {
-        "code" : "FGFR4",
+        "code" : "HGNC:3691",
         "display" : "FGFR4"
       },
       {
-        "code" : "FLT3",
+        "code" : "HGNC:3765",
         "display" : "FLT3"
       },
       {
-        "code" : "FLT4",
+        "code" : "HGNC:3767",
         "display" : "FLT4"
       },
       {
-        "code" : "FOXA1",
+        "code" : "HGNC:5021",
         "display" : "FOXA1"
       },
       {
-        "code" : "FOXL2",
+        "code" : "HGNC:1092",
         "display" : "FOXL2"
       },
       {
-        "code" : "FOXO1",
+        "code" : "HGNC:3819",
         "display" : "FOXO1"
       },
       {
-        "code" : "FUBP1",
+        "code" : "HGNC:4004",
         "display" : "FUBP1"
       },
       {
-        "code" : "FYN",
+        "code" : "HGNC:4037",
         "display" : "FYN"
       },
       {
-        "code" : "GALNT17",
+        "code" : "HGNC:16347",
         "display" : "GALNT17"
       },
       {
-        "code" : "GATA2",
+        "code" : "HGNC:4171",
         "display" : "GATA2"
       },
       {
-        "code" : "GATA3",
+        "code" : "HGNC:4172",
         "display" : "GATA3"
       },
       {
-        "code" : "GLI1",
+        "code" : "HGNC:4317",
         "display" : "GLI1"
       },
       {
-        "code" : "GLI3",
+        "code" : "HGNC:4319",
         "display" : "GLI3"
       },
       {
-        "code" : "GNA11",
+        "code" : "HGNC:4379",
         "display" : "GNA11"
       },
       {
-        "code" : "GNA13",
+        "code" : "HGNC:4381",
         "display" : "GNA13"
       },
       {
-        "code" : "GNAQ",
+        "code" : "HGNC:4390",
         "display" : "GNAQ"
       },
       {
-        "code" : "GNAS",
+        "code" : "HGNC:4392",
         "display" : "GNAS"
       },
       {
-        "code" : "GPR158",
+        "code" : "HGNC:23689",
         "display" : "GPR158"
       },
       {
-        "code" : "GPS2",
+        "code" : "HGNC:4550",
         "display" : "GPS2"
       },
       {
-        "code" : "GRID2",
+        "code" : "HGNC:4576",
         "display" : "GRID2"
       },
       {
-        "code" : "H1-4",
+        "code" : "HGNC:4718",
         "display" : "H1-4"
       },
       {
-        "code" : "H2BC5",
+        "code" : "HGNC:4747",
         "display" : "H2BC5"
       },
       {
-        "code" : "H3-3A",
+        "code" : "HGNC:4764",
         "display" : "H3-3A"
       },
       {
-        "code" : "H3-3B",
+        "code" : "HGNC:4765",
         "display" : "H3-3B"
       },
       {
-        "code" : "H3C2",
+        "code" : "HGNC:4776",
         "display" : "H3C2"
       },
       {
-        "code" : "HCN1",
+        "code" : "HGNC:4845",
         "display" : "HCN1"
       },
       {
-        "code" : "HDAC2",
+        "code" : "HGNC:4853",
         "display" : "HDAC2"
       },
       {
-        "code" : "HDAC9",
+        "code" : "HGNC:14065",
         "display" : "HDAC9"
       },
       {
-        "code" : "HIF1A",
+        "code" : "HGNC:4910",
         "display" : "HIF1A"
       },
       {
-        "code" : "HLA-A",
+        "code" : "HGNC:4931",
         "display" : "HLA-A"
       },
       {
-        "code" : "HLA-B",
+        "code" : "HGNC:4932",
         "display" : "HLA-B"
       },
       {
-        "code" : "HLA-C",
+        "code" : "HGNC:4933",
         "display" : "HLA-C"
       },
       {
-        "code" : "HNF1A",
+        "code" : "HGNC:11621",
         "display" : "HNF1A"
       },
       {
-        "code" : "HRAS",
+        "code" : "HGNC:5173",
         "display" : "HRAS"
       },
       {
-        "code" : "ID3",
+        "code" : "HGNC:5362",
         "display" : "ID3"
       },
       {
-        "code" : "IDH1",
+        "code" : "HGNC:5382",
         "display" : "IDH1"
       },
       {
-        "code" : "IDH2",
+        "code" : "HGNC:5383",
         "display" : "IDH2"
       },
       {
-        "code" : "IGF1R",
+        "code" : "HGNC:5465",
         "display" : "IGF1R"
       },
       {
-        "code" : "IKBKB",
+        "code" : "HGNC:5960",
         "display" : "IKBKB"
       },
       {
-        "code" : "IL6ST",
+        "code" : "HGNC:6021",
         "display" : "IL6ST"
       },
       {
-        "code" : "IL7R",
+        "code" : "HGNC:6024",
         "display" : "IL7R"
       },
       {
-        "code" : "INPP4B",
+        "code" : "HGNC:6075",
         "display" : "INPP4B"
       },
       {
-        "code" : "IRF4",
+        "code" : "HGNC:6119",
         "display" : "IRF4"
       },
       {
-        "code" : "IRS4",
+        "code" : "HGNC:6128",
         "display" : "IRS4"
       },
       {
-        "code" : "JAK1",
+        "code" : "HGNC:6190",
         "display" : "JAK1"
       },
       {
-        "code" : "JAK2",
+        "code" : "HGNC:6192",
         "display" : "JAK2"
       },
       {
-        "code" : "JAK3",
+        "code" : "HGNC:6193",
         "display" : "JAK3"
       },
       {
-        "code" : "KCND2",
+        "code" : "HGNC:6238",
         "display" : "KCND2"
       },
       {
-        "code" : "KCNH7",
+        "code" : "HGNC:18863",
         "display" : "KCNH7"
       },
       {
-        "code" : "KCNJ5",
+        "code" : "HGNC:6266",
         "display" : "KCNJ5"
       },
       {
-        "code" : "KDM5C",
+        "code" : "HGNC:11114",
         "display" : "KDM5C"
       },
       {
-        "code" : "KDM6A",
+        "code" : "HGNC:12637",
         "display" : "KDM6A"
       },
       {
-        "code" : "KDR",
+        "code" : "HGNC:6307",
         "display" : "KDR"
       },
       {
-        "code" : "KEAP1",
+        "code" : "HGNC:23177",
         "display" : "KEAP1"
       },
       {
-        "code" : "KEL",
+        "code" : "HGNC:6308",
         "display" : "KEL"
       },
       {
-        "code" : "KIR3DL1",
+        "code" : "HGNC:6338",
         "display" : "KIR3DL1"
       },
       {
-        "code" : "KIT",
+        "code" : "HGNC:6342",
         "display" : "KIT"
       },
       {
-        "code" : "KLF4",
+        "code" : "HGNC:6348",
         "display" : "KLF4"
       },
       {
-        "code" : "KLF5",
+        "code" : "HGNC:6349",
         "display" : "KLF5"
       },
       {
-        "code" : "KLHL13",
+        "code" : "HGNC:22931",
         "display" : "KLHL13"
       },
       {
-        "code" : "KMT2A",
+        "code" : "HGNC:7132",
         "display" : "KMT2A"
       },
       {
-        "code" : "KMT2B",
+        "code" : "HGNC:15840",
         "display" : "KMT2B"
       },
       {
-        "code" : "KMT2C",
+        "code" : "HGNC:13726",
         "display" : "KMT2C"
       },
       {
-        "code" : "KMT2D",
+        "code" : "HGNC:7133",
         "display" : "KMT2D"
       },
       {
-        "code" : "KNSTRN",
+        "code" : "HGNC:30767",
         "display" : "KNSTRN"
       },
       {
-        "code" : "KRAS",
+        "code" : "HGNC:6407",
         "display" : "KRAS"
       },
       {
-        "code" : "KRTAP21-1",
+        "code" : "HGNC:18945",
         "display" : "KRTAP21-1"
       },
       {
-        "code" : "KRTAP6-2",
+        "code" : "HGNC:18932",
         "display" : "KRTAP6-2"
       },
       {
-        "code" : "LARP4B",
+        "code" : "HGNC:28987",
         "display" : "LARP4B"
       },
       {
-        "code" : "LATS1",
+        "code" : "HGNC:6514",
         "display" : "LATS1"
       },
       {
-        "code" : "LATS2",
+        "code" : "HGNC:6515",
         "display" : "LATS2"
       },
       {
-        "code" : "LRRC7",
+        "code" : "HGNC:18531",
         "display" : "LRRC7"
       },
       {
-        "code" : "MAGOH",
+        "code" : "HGNC:6815",
         "display" : "MAGOH"
       },
       {
-        "code" : "MAP2K1",
+        "code" : "HGNC:6840",
         "display" : "MAP2K1"
       },
       {
-        "code" : "MAP2K2",
+        "code" : "HGNC:6842",
         "display" : "MAP2K2"
       },
       {
-        "code" : "MAP2K4",
+        "code" : "HGNC:6844",
         "display" : "MAP2K4"
       },
       {
-        "code" : "MAP2K7",
+        "code" : "HGNC:6847",
         "display" : "MAP2K7"
       },
       {
-        "code" : "MAP3K1",
+        "code" : "HGNC:6848",
         "display" : "MAP3K1"
       },
       {
-        "code" : "MAP3K4",
+        "code" : "HGNC:6856",
         "display" : "MAP3K4"
       },
       {
-        "code" : "MAP3K8",
+        "code" : "HGNC:6860",
         "display" : "MAP3K8"
       },
       {
-        "code" : "MAPK1",
+        "code" : "HGNC:6871",
         "display" : "MAPK1"
       },
       {
-        "code" : "MAPK8",
+        "code" : "HGNC:6881",
         "display" : "MAPK8"
       },
       {
-        "code" : "MARCO",
+        "code" : "HGNC:6895",
         "display" : "MARCO"
       },
       {
-        "code" : "MAX",
+        "code" : "HGNC:6913",
         "display" : "MAX"
       },
       {
-        "code" : "MCL1",
+        "code" : "HGNC:6943",
         "display" : "MCL1"
       },
       {
-        "code" : "MDM2",
+        "code" : "HGNC:6973",
         "display" : "MDM2"
       },
       {
-        "code" : "MDM4",
+        "code" : "HGNC:6974",
         "display" : "MDM4"
       },
       {
-        "code" : "MECOM",
+        "code" : "HGNC:3498",
         "display" : "MECOM"
       },
       {
-        "code" : "MED12",
+        "code" : "HGNC:11957",
         "display" : "MED12"
       },
       {
-        "code" : "MEF2B",
+        "code" : "HGNC:6995",
         "display" : "MEF2B"
       },
       {
-        "code" : "MEN1",
+        "code" : "HGNC:7010",
         "display" : "MEN1"
       },
       {
-        "code" : "MET",
+        "code" : "HGNC:7029",
         "display" : "MET"
       },
       {
-        "code" : "MGA",
+        "code" : "HGNC:14010",
         "display" : "MGA"
       },
       {
-        "code" : "MITF",
+        "code" : "HGNC:7105",
         "display" : "MITF"
       },
       {
-        "code" : "MLH1",
+        "code" : "HGNC:7127",
         "display" : "MLH1"
       },
       {
-        "code" : "MLH3",
+        "code" : "HGNC:7128",
         "display" : "MLH3"
       },
       {
-        "code" : "MPL",
+        "code" : "HGNC:7217",
         "display" : "MPL"
       },
       {
-        "code" : "MRE11",
+        "code" : "HGNC:7230",
         "display" : "MRE11"
       },
       {
-        "code" : "MSH2",
+        "code" : "HGNC:7325",
         "display" : "MSH2"
       },
       {
-        "code" : "MSH3",
+        "code" : "HGNC:7326",
         "display" : "MSH3"
       },
       {
-        "code" : "MSH6",
+        "code" : "HGNC:7329",
         "display" : "MSH6"
       },
       {
-        "code" : "MTAP",
+        "code" : "HGNC:7413",
         "display" : "MTAP"
       },
       {
-        "code" : "MTOR",
+        "code" : "HGNC:3942",
         "display" : "MTOR"
       },
       {
-        "code" : "MTUS2",
+        "code" : "HGNC:20595",
         "display" : "MTUS2"
       },
       {
-        "code" : "MUTYH",
+        "code" : "HGNC:7527",
         "display" : "MUTYH"
       },
       {
-        "code" : "MYB",
+        "code" : "HGNC:7545",
         "display" : "MYB"
       },
       {
-        "code" : "MYBL1",
+        "code" : "HGNC:7547",
         "display" : "MYBL1"
       },
       {
-        "code" : "MYC",
+        "code" : "HGNC:7553",
         "display" : "MYC"
       },
       {
-        "code" : "MYCL",
+        "code" : "HGNC:7555",
         "display" : "MYCL"
       },
       {
-        "code" : "MYCN",
+        "code" : "HGNC:7559",
         "display" : "MYCN"
       },
       {
-        "code" : "MYD88",
+        "code" : "HGNC:7562",
         "display" : "MYD88"
       },
       {
-        "code" : "MYOD1",
+        "code" : "HGNC:7611",
         "display" : "MYOD1"
       },
       {
-        "code" : "NBN",
+        "code" : "HGNC:7652",
         "display" : "NBN"
       },
       {
-        "code" : "NCOR1",
+        "code" : "HGNC:7672",
         "display" : "NCOR1"
       },
       {
-        "code" : "NF1",
+        "code" : "HGNC:7765",
         "display" : "NF1"
       },
       {
-        "code" : "NF2",
+        "code" : "HGNC:7773",
         "display" : "NF2"
       },
       {
-        "code" : "NFE2L2",
+        "code" : "HGNC:7782",
         "display" : "NFE2L2"
       },
       {
-        "code" : "NLRC5",
+        "code" : "HGNC:29933",
         "display" : "NLRC5"
       },
       {
-        "code" : "NOL4",
+        "code" : "HGNC:7870",
         "display" : "NOL4"
       },
       {
-        "code" : "NOTCH1",
+        "code" : "HGNC:7881",
         "display" : "NOTCH1"
       },
       {
-        "code" : "NOTCH2",
+        "code" : "HGNC:7882",
         "display" : "NOTCH2"
       },
       {
-        "code" : "NOTCH3",
+        "code" : "HGNC:7883",
         "display" : "NOTCH3"
       },
       {
-        "code" : "NOTCH4",
+        "code" : "HGNC:7884",
         "display" : "NOTCH4"
       },
       {
-        "code" : "NRAS",
+        "code" : "HGNC:7989",
         "display" : "NRAS"
       },
       {
-        "code" : "NRG1",
+        "code" : "HGNC:7997",
         "display" : "NRG1"
       },
       {
-        "code" : "NRXN1",
+        "code" : "HGNC:8008",
         "display" : "NRXN1"
       },
       {
-        "code" : "NSD2",
+        "code" : "HGNC:12766",
         "display" : "NSD2"
       },
       {
-        "code" : "NT5C2",
+        "code" : "HGNC:8022",
         "display" : "NT5C2"
       },
       {
-        "code" : "NTRK1",
+        "code" : "HGNC:8031",
         "display" : "NTRK1"
       },
       {
-        "code" : "NTRK2",
+        "code" : "HGNC:8032",
         "display" : "NTRK2"
       },
       {
-        "code" : "NTRK3",
+        "code" : "HGNC:8033",
         "display" : "NTRK3"
       },
       {
-        "code" : "NUP93",
+        "code" : "HGNC:28958",
         "display" : "NUP93"
       },
       {
-        "code" : "NUTM1",
+        "code" : "HGNC:29919",
         "display" : "NUTM1"
       },
       {
-        "code" : "NYAP2",
+        "code" : "HGNC:29291",
         "display" : "NYAP2"
       },
       {
-        "code" : "OR10G8",
+        "code" : "HGNC:14845",
         "display" : "OR10G8"
       },
       {
-        "code" : "OR2G6",
+        "code" : "HGNC:27019",
         "display" : "OR2G6"
       },
       {
-        "code" : "OR2L13",
+        "code" : "HGNC:19578",
         "display" : "OR2L13"
       },
       {
-        "code" : "OR2L2",
+        "code" : "HGNC:8266",
         "display" : "OR2L2"
       },
       {
-        "code" : "OR2L8",
+        "code" : "HGNC:15014",
         "display" : "OR2L8"
       },
       {
-        "code" : "OR2M3",
+        "code" : "HGNC:8269",
         "display" : "OR2M3"
       },
       {
-        "code" : "OR2T3",
+        "code" : "HGNC:14727",
         "display" : "OR2T3"
       },
       {
-        "code" : "OR2T33",
+        "code" : "HGNC:31255",
         "display" : "OR2T33"
       },
       {
-        "code" : "OR2T4",
+        "code" : "HGNC:15016",
         "display" : "OR2T4"
       },
       {
-        "code" : "OR2W3",
+        "code" : "HGNC:15021",
         "display" : "OR2W3"
       },
       {
-        "code" : "OR4A15",
+        "code" : "HGNC:15152",
         "display" : "OR4A15"
       },
       {
-        "code" : "OR4C15",
+        "code" : "HGNC:15171",
         "display" : "OR4C15"
       },
       {
-        "code" : "OR4C6",
+        "code" : "HGNC:14743",
         "display" : "OR4C6"
       },
       {
-        "code" : "OR4M1",
+        "code" : "HGNC:14735",
         "display" : "OR4M1"
       },
       {
-        "code" : "OR4M2",
+        "code" : "HGNC:15373",
         "display" : "OR4M2"
       },
       {
-        "code" : "OR5D18",
+        "code" : "HGNC:15285",
         "display" : "OR5D18"
       },
       {
-        "code" : "OR5F1",
+        "code" : "HGNC:8343",
         "display" : "OR5F1"
       },
       {
-        "code" : "OR5L1",
+        "code" : "HGNC:8350",
         "display" : "OR5L1"
       },
       {
-        "code" : "OR5L2",
+        "code" : "HGNC:8351",
         "display" : "OR5L2"
       },
       {
-        "code" : "OR6F1",
+        "code" : "HGNC:15027",
         "display" : "OR6F1"
       },
       {
-        "code" : "OR8H2",
+        "code" : "HGNC:15308",
         "display" : "OR8H2"
       },
       {
-        "code" : "OR8I2",
+        "code" : "HGNC:15310",
         "display" : "OR8I2"
       },
       {
-        "code" : "OR8U1",
+        "code" : "HGNC:19611",
         "display" : "OR8U1"
       },
       {
-        "code" : "ORC4",
+        "code" : "HGNC:8490",
         "display" : "ORC4"
       },
       {
-        "code" : "PAK5",
+        "code" : "HGNC:15916",
         "display" : "PAK5"
       },
       {
-        "code" : "PALB2",
+        "code" : "HGNC:26144",
         "display" : "PALB2"
       },
       {
-        "code" : "PARP1",
+        "code" : "HGNC:270",
         "display" : "PARP1"
       },
       {
-        "code" : "PARP2",
+        "code" : "HGNC:272",
         "display" : "PARP2"
       },
       {
-        "code" : "PARP3",
+        "code" : "HGNC:273",
         "display" : "PARP3"
       },
       {
-        "code" : "PARP4",
+        "code" : "HGNC:271",
         "display" : "PARP4"
       },
       {
-        "code" : "PAX5",
+        "code" : "HGNC:8619",
         "display" : "PAX5"
       },
       {
-        "code" : "PBRM1",
+        "code" : "HGNC:30064",
         "display" : "PBRM1"
       },
       {
-        "code" : "PCBP1",
+        "code" : "HGNC:8647",
         "display" : "PCBP1"
       },
       {
-        "code" : "PCDH17",
+        "code" : "HGNC:14267",
         "display" : "PCDH17"
       },
       {
-        "code" : "PDCD1",
+        "code" : "HGNC:8760",
         "display" : "PDCD1"
       },
       {
-        "code" : "PDCD1LG2",
+        "code" : "HGNC:18731",
         "display" : "PDCD1LG2"
       },
       {
-        "code" : "PDE1A",
+        "code" : "HGNC:8774",
         "display" : "PDE1A"
       },
       {
-        "code" : "PDE1C",
+        "code" : "HGNC:8776",
         "display" : "PDE1C"
       },
       {
-        "code" : "PDGFRA",
+        "code" : "HGNC:8803",
         "display" : "PDGFRA"
       },
       {
-        "code" : "PDGFRB",
+        "code" : "HGNC:8804",
         "display" : "PDGFRB"
       },
       {
-        "code" : "PDIA3",
+        "code" : "HGNC:4606",
         "display" : "PDIA3"
       },
       {
-        "code" : "PGD",
+        "code" : "HGNC:8891",
         "display" : "PGD"
       },
       {
-        "code" : "PHF6",
+        "code" : "HGNC:18145",
         "display" : "PHF6"
       },
       {
-        "code" : "PIK3C2B",
+        "code" : "HGNC:8972",
         "display" : "PIK3C2B"
       },
       {
-        "code" : "PIK3CA",
+        "code" : "HGNC:8975",
         "display" : "PIK3CA"
       },
       {
-        "code" : "PIK3CB",
+        "code" : "HGNC:8976",
         "display" : "PIK3CB"
       },
       {
-        "code" : "PIK3CD",
+        "code" : "HGNC:8977",
         "display" : "PIK3CD"
       },
       {
-        "code" : "PIK3CG",
+        "code" : "HGNC:8978",
         "display" : "PIK3CG"
       },
       {
-        "code" : "PIK3R1",
+        "code" : "HGNC:8979",
         "display" : "PIK3R1"
       },
       {
-        "code" : "PIK3R2",
+        "code" : "HGNC:8980",
         "display" : "PIK3R2"
       },
       {
-        "code" : "PIM1",
+        "code" : "HGNC:8986",
         "display" : "PIM1"
       },
       {
-        "code" : "PLCG1",
+        "code" : "HGNC:9065",
         "display" : "PLCG1"
       },
       {
-        "code" : "PLXDC2",
+        "code" : "HGNC:21013",
         "display" : "PLXDC2"
       },
       {
-        "code" : "PMS1",
+        "code" : "HGNC:9121",
         "display" : "PMS1"
       },
       {
-        "code" : "PMS2",
+        "code" : "HGNC:9122",
         "display" : "PMS2"
       },
       {
-        "code" : "POLD1",
+        "code" : "HGNC:9175",
         "display" : "POLD1"
       },
       {
-        "code" : "POLE",
+        "code" : "HGNC:9177",
         "display" : "POLE"
       },
       {
-        "code" : "POM121L12",
+        "code" : "HGNC:25369",
         "display" : "POM121L12"
       },
       {
-        "code" : "POT1",
+        "code" : "HGNC:17284",
         "display" : "POT1"
       },
       {
-        "code" : "PPARG",
+        "code" : "HGNC:9236",
         "display" : "PPARG"
       },
       {
-        "code" : "PPFIA2",
+        "code" : "HGNC:9246",
         "display" : "PPFIA2"
       },
       {
-        "code" : "PPM1D",
+        "code" : "HGNC:9277",
         "display" : "PPM1D"
       },
       {
-        "code" : "PPP2R1A",
+        "code" : "HGNC:9302",
         "display" : "PPP2R1A"
       },
       {
-        "code" : "PPP2R2A",
+        "code" : "HGNC:9304",
         "display" : "PPP2R2A"
       },
       {
-        "code" : "PPP6C",
+        "code" : "HGNC:9323",
         "display" : "PPP6C"
       },
       {
-        "code" : "PRDM1",
+        "code" : "HGNC:9346",
         "display" : "PRDM1"
       },
       {
-        "code" : "PRDM9",
+        "code" : "HGNC:13994",
         "display" : "PRDM9"
       },
       {
-        "code" : "PRKACA",
+        "code" : "HGNC:9380",
         "display" : "PRKACA"
       },
       {
-        "code" : "PRKACB",
+        "code" : "HGNC:9381",
         "display" : "PRKACB"
       },
       {
-        "code" : "PRKAR1A",
+        "code" : "HGNC:9388",
         "display" : "PRKAR1A"
       },
       {
-        "code" : "PSMB10",
+        "code" : "HGNC:9538",
         "display" : "PSMB10"
       },
       {
-        "code" : "PSMB8",
+        "code" : "HGNC:9545",
         "display" : "PSMB8"
       },
       {
-        "code" : "PSMB9",
+        "code" : "HGNC:9546",
         "display" : "PSMB9"
       },
       {
-        "code" : "PTCH1",
+        "code" : "HGNC:9585",
         "display" : "PTCH1"
       },
       {
-        "code" : "PTEN",
+        "code" : "HGNC:9588",
         "display" : "PTEN"
       },
       {
-        "code" : "PTPN11",
+        "code" : "HGNC:9644",
         "display" : "PTPN11"
       },
       {
-        "code" : "PTPRD",
+        "code" : "HGNC:9668",
         "display" : "PTPRD"
       },
       {
-        "code" : "PTPRT",
+        "code" : "HGNC:9682",
         "display" : "PTPRT"
       },
       {
-        "code" : "PXDNL",
+        "code" : "HGNC:26359",
         "display" : "PXDNL"
       },
       {
-        "code" : "RAC1",
+        "code" : "HGNC:9801",
         "display" : "RAC1"
       },
       {
-        "code" : "RAD50",
+        "code" : "HGNC:9816",
         "display" : "RAD50"
       },
       {
-        "code" : "RAD51",
+        "code" : "HGNC:9817",
         "display" : "RAD51"
       },
       {
-        "code" : "RAD51B",
+        "code" : "HGNC:9822",
         "display" : "RAD51B"
       },
       {
-        "code" : "RAD51C",
+        "code" : "HGNC:9820",
         "display" : "RAD51C"
       },
       {
-        "code" : "RAD51D",
+        "code" : "HGNC:9823",
         "display" : "RAD51D"
       },
       {
-        "code" : "RAD52",
+        "code" : "HGNC:9824",
         "display" : "RAD52"
       },
       {
-        "code" : "RAD54L",
+        "code" : "HGNC:9826",
         "display" : "RAD54L"
       },
       {
-        "code" : "RAF1",
+        "code" : "HGNC:9829",
         "display" : "RAF1"
       },
       {
-        "code" : "RARA",
+        "code" : "HGNC:9864",
         "display" : "RARA"
       },
       {
-        "code" : "RASA1",
+        "code" : "HGNC:9871",
         "display" : "RASA1"
       },
       {
-        "code" : "RASA2",
+        "code" : "HGNC:9872",
         "display" : "RASA2"
       },
       {
-        "code" : "RB1",
+        "code" : "HGNC:9884",
         "display" : "RB1"
       },
       {
-        "code" : "RBM10",
+        "code" : "HGNC:9896",
         "display" : "RBM10"
       },
       {
-        "code" : "RBP3",
+        "code" : "HGNC:9921",
         "display" : "RBP3"
       },
       {
-        "code" : "RECQL4",
+        "code" : "HGNC:9949",
         "display" : "RECQL4"
       },
       {
-        "code" : "REG1A",
+        "code" : "HGNC:9951",
         "display" : "REG1A"
       },
       {
-        "code" : "REG1B",
+        "code" : "HGNC:9952",
         "display" : "REG1B"
       },
       {
-        "code" : "REG3A",
+        "code" : "HGNC:8601",
         "display" : "REG3A"
       },
       {
-        "code" : "REG3G",
+        "code" : "HGNC:29595",
         "display" : "REG3G"
       },
       {
-        "code" : "RELA",
+        "code" : "HGNC:9955",
         "display" : "RELA"
       },
       {
-        "code" : "RET",
+        "code" : "HGNC:9967",
         "display" : "RET"
       },
       {
-        "code" : "RGS7",
+        "code" : "HGNC:10003",
         "display" : "RGS7"
       },
       {
-        "code" : "RHEB",
+        "code" : "HGNC:10011",
         "display" : "RHEB"
       },
       {
-        "code" : "RHOA",
+        "code" : "HGNC:667",
         "display" : "RHOA"
       },
       {
-        "code" : "RICTOR",
+        "code" : "HGNC:28611",
         "display" : "RICTOR"
       },
       {
-        "code" : "RIT1",
+        "code" : "HGNC:10023",
         "display" : "RIT1"
       },
       {
-        "code" : "RNASEH2A",
+        "code" : "HGNC:18518",
         "display" : "RNASEH2A"
       },
       {
-        "code" : "RNASEH2B",
+        "code" : "HGNC:25671",
         "display" : "RNASEH2B"
       },
       {
-        "code" : "RNASEH2C",
+        "code" : "HGNC:24116",
         "display" : "RNASEH2C"
       },
       {
-        "code" : "RNF43",
+        "code" : "HGNC:18505",
         "display" : "RNF43"
       },
       {
-        "code" : "ROS1",
+        "code" : "HGNC:10261",
         "display" : "ROS1"
       },
       {
-        "code" : "RPA1",
+        "code" : "HGNC:10289",
         "display" : "RPA1"
       },
       {
-        "code" : "RPL10",
+        "code" : "HGNC:10298",
         "display" : "RPL10"
       },
       {
-        "code" : "RPL22",
+        "code" : "HGNC:10315",
         "display" : "RPL22"
       },
       {
-        "code" : "RPL5",
+        "code" : "HGNC:10360",
         "display" : "RPL5"
       },
       {
-        "code" : "RPS6KB1",
+        "code" : "HGNC:10436",
         "display" : "RPS6KB1"
       },
       {
-        "code" : "RPTN",
+        "code" : "HGNC:26809",
         "display" : "RPTN"
       },
       {
-        "code" : "RPTOR",
+        "code" : "HGNC:30287",
         "display" : "RPTOR"
       },
       {
-        "code" : "RSPO2",
+        "code" : "HGNC:28583",
         "display" : "RSPO2"
       },
       {
-        "code" : "RSPO3",
+        "code" : "HGNC:20866",
         "display" : "RSPO3"
       },
       {
-        "code" : "RUNDC3B",
+        "code" : "HGNC:30286",
         "display" : "RUNDC3B"
       },
       {
-        "code" : "RUNX1",
+        "code" : "HGNC:10471",
         "display" : "RUNX1"
       },
       {
-        "code" : "RUNX1T1",
+        "code" : "HGNC:1535",
         "display" : "RUNX1T1"
       },
       {
-        "code" : "SDHA",
+        "code" : "HGNC:10680",
         "display" : "SDHA"
       },
       {
-        "code" : "SDHB",
+        "code" : "HGNC:10681",
         "display" : "SDHB"
       },
       {
-        "code" : "SDHC",
+        "code" : "HGNC:10682",
         "display" : "SDHC"
       },
       {
-        "code" : "SDHD",
+        "code" : "HGNC:10683",
         "display" : "SDHD"
       },
       {
-        "code" : "SETBP1",
+        "code" : "HGNC:15573",
         "display" : "SETBP1"
       },
       {
-        "code" : "SETD2",
+        "code" : "HGNC:18420",
         "display" : "SETD2"
       },
       {
-        "code" : "SF3B1",
+        "code" : "HGNC:10768",
         "display" : "SF3B1"
       },
       {
-        "code" : "SH3RF2",
+        "code" : "HGNC:26299",
         "display" : "SH3RF2"
       },
       {
-        "code" : "SIX1",
+        "code" : "HGNC:10887",
         "display" : "SIX1"
       },
       {
-        "code" : "SIX2",
+        "code" : "HGNC:10888",
         "display" : "SIX2"
       },
       {
-        "code" : "SLC15A2",
+        "code" : "HGNC:10921",
         "display" : "SLC15A2"
       },
       {
-        "code" : "SLC8A1",
+        "code" : "HGNC:11068",
         "display" : "SLC8A1"
       },
       {
-        "code" : "SLCO1B3",
+        "code" : "HGNC:10961",
         "display" : "SLCO1B3"
       },
       {
-        "code" : "SLX4",
+        "code" : "HGNC:23845",
         "display" : "SLX4"
       },
       {
-        "code" : "SMAD2",
+        "code" : "HGNC:6768",
         "display" : "SMAD2"
       },
       {
-        "code" : "SMAD4",
+        "code" : "HGNC:6770",
         "display" : "SMAD4"
       },
       {
-        "code" : "SMARCA4",
+        "code" : "HGNC:11100",
         "display" : "SMARCA4"
       },
       {
-        "code" : "SMARCB1",
+        "code" : "HGNC:11103",
         "display" : "SMARCB1"
       },
       {
-        "code" : "SMC1A",
+        "code" : "HGNC:11111",
         "display" : "SMC1A"
       },
       {
-        "code" : "SMO",
+        "code" : "HGNC:11119",
         "display" : "SMO"
       },
       {
-        "code" : "SNCAIP",
+        "code" : "HGNC:11139",
         "display" : "SNCAIP"
       },
       {
-        "code" : "SOCS1",
+        "code" : "HGNC:19383",
         "display" : "SOCS1"
       },
       {
-        "code" : "SOS1",
+        "code" : "HGNC:11187",
         "display" : "SOS1"
       },
       {
-        "code" : "SOX2",
+        "code" : "HGNC:11195",
         "display" : "SOX2"
       },
       {
-        "code" : "SOX9",
+        "code" : "HGNC:11204",
         "display" : "SOX9"
       },
       {
-        "code" : "SPEN",
+        "code" : "HGNC:17575",
         "display" : "SPEN"
       },
       {
-        "code" : "SPOP",
+        "code" : "HGNC:11254",
         "display" : "SPOP"
       },
       {
-        "code" : "SRC",
+        "code" : "HGNC:11283",
         "display" : "SRC"
       },
       {
-        "code" : "SRSF2",
+        "code" : "HGNC:10783",
         "display" : "SRSF2"
       },
       {
-        "code" : "STAG2",
+        "code" : "HGNC:11355",
         "display" : "STAG2"
       },
       {
-        "code" : "STAT1",
+        "code" : "HGNC:11362",
         "display" : "STAT1"
       },
       {
-        "code" : "STAT3",
+        "code" : "HGNC:11364",
         "display" : "STAT3"
       },
       {
-        "code" : "STAT5B",
+        "code" : "HGNC:11367",
         "display" : "STAT5B"
       },
       {
-        "code" : "STAT6",
+        "code" : "HGNC:11368",
         "display" : "STAT6"
       },
       {
-        "code" : "STK11",
+        "code" : "HGNC:11389",
         "display" : "STK11"
       },
       {
-        "code" : "SUFU",
+        "code" : "HGNC:16466",
         "display" : "SUFU"
       },
       {
-        "code" : "SYT10",
+        "code" : "HGNC:19266",
         "display" : "SYT10"
       },
       {
-        "code" : "SYT16",
+        "code" : "HGNC:23142",
         "display" : "SYT16"
       },
       {
-        "code" : "TAF1",
+        "code" : "HGNC:11535",
         "display" : "TAF1"
       },
       {
-        "code" : "TAP1",
+        "code" : "HGNC:43",
         "display" : "TAP1"
       },
       {
-        "code" : "TAP2",
+        "code" : "HGNC:44",
         "display" : "TAP2"
       },
       {
-        "code" : "TAPBP",
+        "code" : "HGNC:11566",
         "display" : "TAPBP"
       },
       {
-        "code" : "TBX3",
+        "code" : "HGNC:11602",
         "display" : "TBX3"
       },
       {
-        "code" : "TCF7L2",
+        "code" : "HGNC:11641",
         "display" : "TCF7L2"
       },
       {
-        "code" : "TERT",
+        "code" : "HGNC:11730",
         "display" : "TERT"
       },
       {
-        "code" : "TET2",
+        "code" : "HGNC:25941",
         "display" : "TET2"
       },
       {
-        "code" : "TFE3",
+        "code" : "HGNC:11752",
         "display" : "TFE3"
       },
       {
-        "code" : "TFEB",
+        "code" : "HGNC:11753",
         "display" : "TFEB"
       },
       {
-        "code" : "TGFBR1",
+        "code" : "HGNC:11772",
         "display" : "TGFBR1"
       },
       {
-        "code" : "TGFBR2",
+        "code" : "HGNC:11773",
         "display" : "TGFBR2"
       },
       {
-        "code" : "TMEM132D",
+        "code" : "HGNC:29411",
         "display" : "TMEM132D"
       },
       {
-        "code" : "TNFAIP3",
+        "code" : "HGNC:11896",
         "display" : "TNFAIP3"
       },
       {
-        "code" : "TNFRSF14",
+        "code" : "HGNC:11912",
         "display" : "TNFRSF14"
       },
       {
-        "code" : "TOP1",
+        "code" : "HGNC:11986",
         "display" : "TOP1"
       },
       {
-        "code" : "TOP2A",
+        "code" : "HGNC:11989",
         "display" : "TOP2A"
       },
       {
-        "code" : "TP53",
+        "code" : "HGNC:11998",
         "display" : "TP53"
       },
       {
-        "code" : "TP63",
+        "code" : "HGNC:15979",
         "display" : "TP63"
       },
       {
-        "code" : "TPMT",
+        "code" : "HGNC:12014",
         "display" : "TPMT"
       },
       {
-        "code" : "TPP2",
+        "code" : "HGNC:12016",
         "display" : "TPP2"
       },
       {
-        "code" : "TPTE",
+        "code" : "HGNC:12023",
         "display" : "TPTE"
       },
       {
-        "code" : "TRHDE",
+        "code" : "HGNC:30748",
         "display" : "TRHDE"
       },
       {
-        "code" : "TRIM48",
+        "code" : "HGNC:19021",
         "display" : "TRIM48"
       },
       {
-        "code" : "TRIM51",
+        "code" : "HGNC:19023",
         "display" : "TRIM51"
       },
       {
-        "code" : "TRRAP",
+        "code" : "HGNC:12347",
         "display" : "TRRAP"
       },
       {
-        "code" : "TSC1",
+        "code" : "HGNC:12362",
         "display" : "TSC1"
       },
       {
-        "code" : "TSC2",
+        "code" : "HGNC:12363",
         "display" : "TSC2"
       },
       {
-        "code" : "TSHR",
+        "code" : "HGNC:12373",
         "display" : "TSHR"
       },
       {
-        "code" : "U2AF1",
+        "code" : "HGNC:12453",
         "display" : "U2AF1"
       },
       {
-        "code" : "UGT1A1",
+        "code" : "HGNC:12530",
         "display" : "UGT1A1"
       },
       {
-        "code" : "USP8",
+        "code" : "HGNC:12631",
         "display" : "USP8"
       },
       {
-        "code" : "USP9X",
+        "code" : "HGNC:12632",
         "display" : "USP9X"
       },
       {
-        "code" : "VHL",
+        "code" : "HGNC:12687",
         "display" : "VHL"
       },
       {
-        "code" : "WAS",
+        "code" : "HGNC:12731",
         "display" : "WAS"
       },
       {
-        "code" : "WT1",
+        "code" : "HGNC:12796",
         "display" : "WT1"
       },
       {
-        "code" : "XPO1",
+        "code" : "HGNC:12825",
         "display" : "XPO1"
       },
       {
-        "code" : "XRCC2",
+        "code" : "HGNC:12829",
         "display" : "XRCC2"
       },
       {
-        "code" : "XRCC3",
+        "code" : "HGNC:12830",
         "display" : "XRCC3"
       },
       {
-        "code" : "YAP1",
+        "code" : "HGNC:16262",
         "display" : "YAP1"
       },
       {
-        "code" : "YES1",
+        "code" : "HGNC:12841",
         "display" : "YES1"
       },
       {
-        "code" : "ZBTB20",
+        "code" : "HGNC:13503",
         "display" : "ZBTB20"
       },
       {
-        "code" : "ZFHX3",
+        "code" : "HGNC:777",
         "display" : "ZFHX3"
       },
       {
-        "code" : "ZIM3",
+        "code" : "HGNC:16366",
         "display" : "ZIM3"
       },
       {
-        "code" : "ZMYM3",
+        "code" : "HGNC:13054",
         "display" : "ZMYM3"
       },
       {
-        "code" : "ZNF217",
+        "code" : "HGNC:13009",
         "display" : "ZNF217"
       },
       {
-        "code" : "ZNF429",
+        "code" : "HGNC:20817",
         "display" : "ZNF429"
       },
       {
-        "code" : "ZNF479",
+        "code" : "HGNC:23258",
         "display" : "ZNF479"
       },
       {
-        "code" : "ZNF536",
+        "code" : "HGNC:29025",
         "display" : "ZNF536"
       },
       {
-        "code" : "ZRSR2",
+        "code" : "HGNC:23019",
         "display" : "ZRSR2"
       }]
     }]

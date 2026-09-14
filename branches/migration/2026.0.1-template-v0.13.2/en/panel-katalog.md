@@ -23,7 +23,7 @@ A site's concrete sequencer, kit or panel instance points at its catalog templat
 
 #### Interested? Feedback wanted
 
-This catalog is a **proposal**. Before investing in completeness — stable HGNC-ID coding, per-release versioning of vendor gene lists, additional products, central maintenance beyond this module — we would like to know whether sites and research projects would actually use panel metadata **in this or a similar form**. If you would (or if you need a different shape, e.g. `PlanDefinition`-based order catalogs or plain CSV downloads), please tell us:
+This catalog is a **proposal**. Before investing in completeness — per-release versioning of vendor gene lists, additional products, central maintenance beyond this module — we would like to know whether sites and research projects would actually use panel metadata **in this or a similar form**. If you would (or if you need a different shape, e.g. `PlanDefinition`-based order catalogs or plain CSV downloads), please tell us:
 
 * as an issue in the [module repository](https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/issues), or
 * on Zulip: [chat.fhir.org](https://chat.fhir.org) stream `german/mi-initiative`, or [mii.zulipchat.com](https://mii.zulipchat.com/) stream `MII-Kerndatensatz`.

@@ -21,5 +21,6 @@ Sequenzier-Workflow.
 Der mitgelieferte Katalog umfasst elf Produkte (Oncomine Focus/Focus Plus,
 Qiagen DHS-3501Z, Agilent MH IVD 600+ und SureSelect Cancer CGP, DKTK/MASTER
 WGS, generisches WGS, FusionPlex Archer Lung V2, TCM NGS, Basic-NGS, TruSight
-Oncology 500) mit neun Genlisten-ValueSets (17–602 Gene, kodiert als
-HGNC-Symbole — das Mapping auf stabile HGNC-IDs ist ein offenes TODO:REVIEW).
+Oncology 500) mit neun Genlisten-ValueSets (17–602 Gene, kodiert mit stabilen
+HGNC-IDs; Displays sind die aktuellen Approved-Symbole, veraltete
+Quellsymbole wurden gemappt und annotiert).

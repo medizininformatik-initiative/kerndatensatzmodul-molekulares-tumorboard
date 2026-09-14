@@ -22,7 +22,7 @@ Dieses Profil trägt den **Sequenzier-Panel-Produktkatalog** auf **Definitionseb
 
 Die konkrete Geräte-/Kit-Instanz einer Einrichtung verweist via `Device.definition` auf ihr Template und hängt wie bisher über die Genomics-Reporting-Extension `genomic-study-analysis-device` am Sequenzier-Workflow.
 
-Der mitgelieferte Katalog umfasst elf Produkte (Oncomine Focus/Focus Plus, Qiagen DHS-3501Z, Agilent MH IVD 600+ und SureSelect Cancer CGP, DKTK/MASTER WGS, generisches WGS, FusionPlex Archer Lung V2, TCM NGS, Basic-NGS, TruSight Oncology 500) mit neun Genlisten-ValueSets (17–602 Gene, kodiert als HGNC-Symbole — das Mapping auf stabile HGNC-IDs ist ein offenes TODO:REVIEW).
+Der mitgelieferte Katalog umfasst elf Produkte (Oncomine Focus/Focus Plus, Qiagen DHS-3501Z, Agilent MH IVD 600+ und SureSelect Cancer CGP, DKTK/MASTER WGS, generisches WGS, FusionPlex Archer Lung V2, TCM NGS, Basic-NGS, TruSight Oncology 500) mit neun Genlisten-ValueSets (17–602 Gene, kodiert mit stabilen HGNC-IDs; Displays sind die aktuellen Approved-Symbole, veraltete Quellsymbole wurden gemappt und annotiert).
 
 **Usages:**
 
@@ -113,7 +113,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-p
   "name" : "MII_PR_MTB_Panel_DeviceDefinition",
   "title" : "MII PR MTB Panel DeviceDefinition",
   "status" : "active",
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

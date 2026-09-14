@@ -22,7 +22,7 @@ This profile carries the **sequencing-panel product catalog** at the **definitio
 
 A site's concrete device or kit instance points at its template via `Device.definition` and attaches to the sequencing workflow through the Genomics-Reporting extension `genomic-study-analysis-device`, as before.
 
-The shipped catalog covers eleven products (Oncomine Focus/Focus Plus, Qiagen DHS-3501Z, Agilent MH IVD 600+ and SureSelect Cancer CGP, DKTK/MASTER WGS, generic WGS, FusionPlex Archer Lung V2, TCM NGS, Basic-NGS, TruSight Oncology 500) with nine gene-list ValueSets (17–602 genes, coded as HGNC symbols — mapping to stable HGNC IDs is an open TODO:REVIEW).
+The shipped catalog covers eleven products (Oncomine Focus/Focus Plus, Qiagen DHS-3501Z, Agilent MH IVD 600+ and SureSelect Cancer CGP, DKTK/MASTER WGS, generic WGS, FusionPlex Archer Lung V2, TCM NGS, Basic-NGS, TruSight Oncology 500) with nine gene-list ValueSets (17–602 genes, coded with stable HGNC IDs; displays are the current approved symbols, outdated source symbols were remapped and annotated).
 
 **Usages:**
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-panel-
   "name" : "MII_PR_MTB_Panel_DeviceDefinition",
   "title" : "MII PR MTB Panel DeviceDefinition",
   "status" : "active",
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

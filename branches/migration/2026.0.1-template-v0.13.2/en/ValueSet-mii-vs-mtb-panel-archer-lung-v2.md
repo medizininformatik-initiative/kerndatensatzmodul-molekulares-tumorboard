@@ -12,7 +12,7 @@
 | Active as of 2026-09-14 | *Computable Name*:MII_VS_MTB_Panel_ArcherLungV2 |
 
  
-Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. 
+Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. 
 
  **References** 
 
@@ -43,7 +43,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "MII VS MTB Panel Archer",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -52,7 +52,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
       "value" : "https://www.medizininformatik-initiative.de"
     }]
   }],
-  "description" : "Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+  "description" : "Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -62,73 +62,73 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   }],
   "compose" : {
     "include" : [{
-      "system" : "http://www.genenames.org",
+      "system" : "http://www.genenames.org/geneId",
       "concept" : [{
-        "code" : "ALK",
+        "code" : "HGNC:427",
         "display" : "ALK"
       },
       {
-        "code" : "BRAF",
+        "code" : "HGNC:1097",
         "display" : "BRAF"
       },
       {
-        "code" : "EGFR",
+        "code" : "HGNC:3236",
         "display" : "EGFR"
       },
       {
-        "code" : "ERBB2",
+        "code" : "HGNC:3430",
         "display" : "ERBB2"
       },
       {
-        "code" : "FGFR1",
+        "code" : "HGNC:3688",
         "display" : "FGFR1"
       },
       {
-        "code" : "FGFR2",
+        "code" : "HGNC:3689",
         "display" : "FGFR2"
       },
       {
-        "code" : "FGFR3",
+        "code" : "HGNC:3690",
         "display" : "FGFR3"
       },
       {
-        "code" : "KRAS",
+        "code" : "HGNC:6407",
         "display" : "KRAS"
       },
       {
-        "code" : "MET",
+        "code" : "HGNC:7029",
         "display" : "MET"
       },
       {
-        "code" : "NRG1",
+        "code" : "HGNC:7997",
         "display" : "NRG1"
       },
       {
-        "code" : "NTRK1",
+        "code" : "HGNC:8031",
         "display" : "NTRK1"
       },
       {
-        "code" : "NTRK2",
+        "code" : "HGNC:8032",
         "display" : "NTRK2"
       },
       {
-        "code" : "NTRK3",
+        "code" : "HGNC:8033",
         "display" : "NTRK3"
       },
       {
-        "code" : "NUTM1",
+        "code" : "HGNC:29919",
         "display" : "NUTM1"
       },
       {
-        "code" : "PIK3CA",
+        "code" : "HGNC:8975",
         "display" : "PIK3CA"
       },
       {
-        "code" : "RET",
+        "code" : "HGNC:9967",
         "display" : "RET"
       },
       {
-        "code" : "ROS1",
+        "code" : "HGNC:10261",
         "display" : "ROS1"
       }]
     }]

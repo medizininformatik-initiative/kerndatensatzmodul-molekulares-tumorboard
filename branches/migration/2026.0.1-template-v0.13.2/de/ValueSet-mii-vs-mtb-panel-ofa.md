@@ -12,7 +12,7 @@
 | Active Stand: 2026-09-14 | *Maschinenlesbarer Name*:MII_VS_MTB_Panel_Ofa |
 
  
-Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. 
+Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole. 
 
  **References** 
 
@@ -43,7 +43,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "MII VS MTB Panel OFA",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -52,7 +52,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
       "value" : "https://www.medizininformatik-initiative.de"
     }]
   }],
-  "description" : "Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+  "description" : "Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -62,213 +62,213 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   }],
   "compose" : {
     "include" : [{
-      "system" : "http://www.genenames.org",
+      "system" : "http://www.genenames.org/geneId",
       "concept" : [{
-        "code" : "ABL1",
+        "code" : "HGNC:76",
         "display" : "ABL1"
       },
       {
-        "code" : "AKT1",
+        "code" : "HGNC:391",
         "display" : "AKT1"
       },
       {
-        "code" : "AKT3",
+        "code" : "HGNC:393",
         "display" : "AKT3"
       },
       {
-        "code" : "ALK",
+        "code" : "HGNC:427",
         "display" : "ALK"
       },
       {
-        "code" : "AR",
+        "code" : "HGNC:644",
         "display" : "AR"
       },
       {
-        "code" : "AXL",
+        "code" : "HGNC:905",
         "display" : "AXL"
       },
       {
-        "code" : "BRAF",
+        "code" : "HGNC:1097",
         "display" : "BRAF"
       },
       {
-        "code" : "CCND1",
+        "code" : "HGNC:1582",
         "display" : "CCND1"
       },
       {
-        "code" : "CDK4",
+        "code" : "HGNC:1773",
         "display" : "CDK4"
       },
       {
-        "code" : "CDK6",
+        "code" : "HGNC:1777",
         "display" : "CDK6"
       },
       {
-        "code" : "CTNNB1",
+        "code" : "HGNC:2514",
         "display" : "CTNNB1"
       },
       {
-        "code" : "DDR2",
+        "code" : "HGNC:2731",
         "display" : "DDR2"
       },
       {
-        "code" : "EGFR",
+        "code" : "HGNC:3236",
         "display" : "EGFR"
       },
       {
-        "code" : "ERBB2",
+        "code" : "HGNC:3430",
         "display" : "ERBB2"
       },
       {
-        "code" : "ERBB3",
+        "code" : "HGNC:3431",
         "display" : "ERBB3"
       },
       {
-        "code" : "ERBB4",
+        "code" : "HGNC:3432",
         "display" : "ERBB4"
       },
       {
-        "code" : "ERG",
+        "code" : "HGNC:3446",
         "display" : "ERG"
       },
       {
-        "code" : "ESR1",
+        "code" : "HGNC:3467",
         "display" : "ESR1"
       },
       {
-        "code" : "ETV1",
+        "code" : "HGNC:3490",
         "display" : "ETV1"
       },
       {
-        "code" : "ETV4",
+        "code" : "HGNC:3493",
         "display" : "ETV4"
       },
       {
-        "code" : "ETV5",
+        "code" : "HGNC:3494",
         "display" : "ETV5"
       },
       {
-        "code" : "FGFR1",
+        "code" : "HGNC:3688",
         "display" : "FGFR1"
       },
       {
-        "code" : "FGFR2",
+        "code" : "HGNC:3689",
         "display" : "FGFR2"
       },
       {
-        "code" : "FGFR3",
+        "code" : "HGNC:3690",
         "display" : "FGFR3"
       },
       {
-        "code" : "FGFR4",
+        "code" : "HGNC:3691",
         "display" : "FGFR4"
       },
       {
-        "code" : "GNA11",
+        "code" : "HGNC:4379",
         "display" : "GNA11"
       },
       {
-        "code" : "GNAQ",
+        "code" : "HGNC:4390",
         "display" : "GNAQ"
       },
       {
-        "code" : "HRAS",
+        "code" : "HGNC:5173",
         "display" : "HRAS"
       },
       {
-        "code" : "IDH1",
+        "code" : "HGNC:5382",
         "display" : "IDH1"
       },
       {
-        "code" : "IDH2",
+        "code" : "HGNC:5383",
         "display" : "IDH2"
       },
       {
-        "code" : "JAK1",
+        "code" : "HGNC:6190",
         "display" : "JAK1"
       },
       {
-        "code" : "JAK2",
+        "code" : "HGNC:6192",
         "display" : "JAK2"
       },
       {
-        "code" : "JAK3",
+        "code" : "HGNC:6193",
         "display" : "JAK3"
       },
       {
-        "code" : "KIT",
+        "code" : "HGNC:6342",
         "display" : "KIT"
       },
       {
-        "code" : "KRAS",
+        "code" : "HGNC:6407",
         "display" : "KRAS"
       },
       {
-        "code" : "MAP2K1",
+        "code" : "HGNC:6840",
         "display" : "MAP2K1"
       },
       {
-        "code" : "MAP2K2",
+        "code" : "HGNC:6842",
         "display" : "MAP2K2"
       },
       {
-        "code" : "MET",
+        "code" : "HGNC:7029",
         "display" : "MET"
       },
       {
-        "code" : "MTOR",
+        "code" : "HGNC:3942",
         "display" : "MTOR"
       },
       {
-        "code" : "MYC",
+        "code" : "HGNC:7553",
         "display" : "MYC"
       },
       {
-        "code" : "MYCN",
+        "code" : "HGNC:7559",
         "display" : "MYCN"
       },
       {
-        "code" : "NRAS",
+        "code" : "HGNC:7989",
         "display" : "NRAS"
       },
       {
-        "code" : "NTRK1",
+        "code" : "HGNC:8031",
         "display" : "NTRK1"
       },
       {
-        "code" : "NTRK2",
+        "code" : "HGNC:8032",
         "display" : "NTRK2"
       },
       {
-        "code" : "NTRK3",
+        "code" : "HGNC:8033",
         "display" : "NTRK3"
       },
       {
-        "code" : "PDGFRA",
+        "code" : "HGNC:8803",
         "display" : "PDGFRA"
       },
       {
-        "code" : "PIK3CA",
+        "code" : "HGNC:8975",
         "display" : "PIK3CA"
       },
       {
-        "code" : "PPARG",
+        "code" : "HGNC:9236",
         "display" : "PPARG"
       },
       {
-        "code" : "RAF1",
+        "code" : "HGNC:9829",
         "display" : "RAF1"
       },
       {
-        "code" : "RET",
+        "code" : "HGNC:9967",
         "display" : "RET"
       },
       {
-        "code" : "ROS1",
+        "code" : "HGNC:10261",
         "display" : "ROS1"
       },
       {
-        "code" : "SMO",
+        "code" : "HGNC:11119",
         "display" : "SMO"
       }]
     }]

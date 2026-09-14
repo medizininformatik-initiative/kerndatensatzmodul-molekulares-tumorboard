@@ -25,7 +25,7 @@ Die konkrete Sequencer-, Kit- oder Panel-Instanz einer Einrichtung verweist via 
 
 #### Interesse? Feedback erwünscht
 
-Dieser Katalog ist ein **Vorschlag**. Bevor wir in Vollständigkeit investieren — stabile HGNC-ID-Kodierung, Versionierung der Hersteller-Genlisten je Release, weitere Produkte, zentrale Pflege über dieses Modul hinaus — möchten wir wissen, ob Standorte und Forschungsprojekte Panel-Metadaten **in dieser oder ähnlicher Form** tatsächlich nutzen würden. Wenn ja (oder wenn ihr eine andere Form braucht, z. B. `PlanDefinition`-basierte Auftragskataloge oder schlichte CSV-Downloads), meldet euch:
+Dieser Katalog ist ein **Vorschlag**. Bevor wir in Vollständigkeit investieren — Versionierung der Hersteller-Genlisten je Release, weitere Produkte, zentrale Pflege über dieses Modul hinaus — möchten wir wissen, ob Standorte und Forschungsprojekte Panel-Metadaten **in dieser oder ähnlicher Form** tatsächlich nutzen würden. Wenn ja (oder wenn ihr eine andere Form braucht, z. B. `PlanDefinition`-basierte Auftragskataloge oder schlichte CSV-Downloads), meldet euch:
 
 * als Issue im [Modul-Repository](https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/issues), oder
 * im Zulip: [chat.fhir.org](https://chat.fhir.org), Stream `german/mi-initiative`, oder [mii.zulipchat.com](https://mii.zulipchat.com/), Stream `MII-Kerndatensatz`.

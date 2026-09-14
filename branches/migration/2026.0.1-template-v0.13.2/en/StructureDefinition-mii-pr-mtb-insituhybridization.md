@@ -110,7 +110,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-insitu
   "name" : "MII_PR_MTB_Biomarker_InSituHybridization",
   "title" : "MII PR MTB In Situ Hybridization",
   "status" : "active",
-  "date" : "2026-09-14T12:20:33+00:00",
+  "date" : "2026-09-14T12:53:39+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
