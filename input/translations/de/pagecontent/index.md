@@ -63,7 +63,7 @@ Dieser Implementierungsleitfaden richtet sich an:
 - **[Profile](profiles.html)** und die weiteren
   **[Artefakt-Seiten](artifacts.html)** — die technischen Artefakte.
 - **[Beispiele](examples.html)** — Beispielinstanzen.
-- **[Abhängigkeiten](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html)** — die
+- **[Abhängigkeiten](ImplementationGuide-mii-ig-mtb.html)** — die
   ImplementationGuide-Ressource mit Abhängigkeitstabelle, versionsübergreifender
   Analyse und Urheberrechtshinweisen.
 
@@ -81,7 +81,7 @@ Pathologie-Befund, Studie, Medikation, Biobank, Consent sowie den MII-Basismodul
 (Person, Diagnose, Prozedur) auf, außerdem auf dem HL7
 [Genomics Reporting IG](https://hl7.org/fhir/uv/genomics-reporting/); die
 genauen Versions-Pins listet die
-[ImplementationGuide-Ressource](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html).
+[ImplementationGuide-Ressource](ImplementationGuide-mii-ig-mtb.html).
 
 Weitere FHIR-Implementierungsleitfäden finden Sie im offiziellen
 **[FHIR IG Registry](https://fhir.org/guides/registry/)** (Quelle:

@@ -5,9 +5,10 @@
 # by a migration; divergences from the template's naming patterns are the
 # SOURCE's published identity and are recorded in migration-log/).
 
-# Source identity: the template pattern would be `mii-ig-mtb`; the module's
-# published IG resource id predates the pattern and is carried unchanged.
-id: mii-kerndatensatzmodul-molekulares-tumorboard
+# Renamed to the template pattern on 2026-09-14 (user decision, PR #168; was
+# mii-kerndatensatzmodul-molekulares-tumorboard). Only the IG resource id/page
+# changed — packageId and canonical are untouched.
+id: mii-ig-mtb
 # Source identity: the template pattern would be .../fhir/modul-mtb; the
 # module's published canonical uses the ext/ space and is carried unchanged.
 canonical: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb
@@ -172,7 +173,7 @@ pages:
     title: Metadata Overview
   version-history.md:
     title: Versioning
-  ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.md:
+  ImplementationGuide-mii-ig-mtb.md:
     title: MII ImplementationGuide Resource
   translationinfo.md:
     title: Translation Information

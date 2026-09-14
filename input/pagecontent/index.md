@@ -68,7 +68,7 @@ explicitly
 - **[Profiles](profiles.html)** and the further
   **[artifact pages](artifacts.html)** — the technical artifacts.
 - **[Examples](examples.html)** — example instances.
-- **[Dependencies](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html)** — the
+- **[Dependencies](ImplementationGuide-mii-ig-mtb.html)** — the
   ImplementationGuide resource with the dependency table, cross-version
   analysis and copyright statements.
 
@@ -85,7 +85,7 @@ Pathology Report, Study, Medication, Biobank, Consent and the MII base modules
 (Person, Diagnosis, Procedure), as well as the HL7
 [Genomics Reporting IG](https://hl7.org/fhir/uv/genomics-reporting/); the exact
 version pins are listed in the
-[ImplementationGuide resource](ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html).
+[ImplementationGuide resource](ImplementationGuide-mii-ig-mtb.html).
 
 More FHIR implementation guides can be found in the official
 **[FHIR IG Registry](https://fhir.org/guides/registry/)** (source:
