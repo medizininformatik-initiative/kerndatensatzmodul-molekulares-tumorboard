@@ -46,8 +46,8 @@ Kohorten, die auf unterschiedlichen Panels sequenziert wurden.
 #### Interesse? Feedback erwünscht
 
 Dieser Katalog ist ein **Vorschlag**. Bevor wir in Vollständigkeit investieren
-— stabile HGNC-ID-Kodierung, Versionierung der Hersteller-Genlisten je
-Release, weitere Produkte, zentrale Pflege über dieses Modul hinaus — möchten
+— Versionierung der Hersteller-Genlisten je Release, weitere Produkte,
+zentrale Pflege über dieses Modul hinaus — möchten
 wir wissen, ob Standorte und Forschungsprojekte Panel-Metadaten **in dieser
 oder ähnlicher Form** tatsächlich nutzen würden. Wenn ja (oder wenn ihr eine
 andere Form braucht, z. B. `PlanDefinition`-basierte Auftragskataloge oder

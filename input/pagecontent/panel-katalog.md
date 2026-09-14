@@ -43,9 +43,8 @@ variant call, or when pooling cohorts sequenced on different panels.
 
 #### Interested? Feedback wanted
 
-This catalog is a **proposal**. Before investing in completeness — stable
-HGNC-ID coding, per-release versioning of vendor gene lists, additional
-products, central maintenance beyond this module — we would like to know
+This catalog is a **proposal**. Before investing in completeness — per-release versioning of vendor gene
+lists, additional products, central maintenance beyond this module — we would like to know
 whether sites and research projects would actually use panel metadata **in
 this or a similar form**. If you would (or if you need a different shape,
 e.g. `PlanDefinition`-based order catalogs or plain CSV downloads), please

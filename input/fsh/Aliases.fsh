@@ -192,7 +192,6 @@ Alias: $crmi-release-version-behavior = http://hl7.org/fhir/uv/crmi/ValueSet/crm
 Alias: $crmi-release-experimental-behavior = http://hl7.org/fhir/uv/crmi/ValueSet/crmi-release-experimental-behavior
 
 // ── Panel-Katalog (DeviceDefinition-Templates, 2026-09-14) ──
-Alias: $hgnc-symbol = http://www.genenames.org
 Alias: $mii-cs-mtb-panel-capability = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability
 Alias: $mii-vs-mtb-panel-capability = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-capability
 Alias: $mii-ex-mtb-panel-gene-list = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list
