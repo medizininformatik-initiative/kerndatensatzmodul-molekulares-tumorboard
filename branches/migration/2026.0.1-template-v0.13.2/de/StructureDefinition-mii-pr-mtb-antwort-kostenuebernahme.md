@@ -152,7 +152,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-a
   "name" : "MII_PR_MTB_Antwort_Kostenuebernahme",
   "title" : "MII PR MTB Anwort Kostenuebernahme",
   "status" : "active",
-  "date" : "2026-09-14T07:29:46+00:00",
+  "date" : "2026-09-14T08:03:24+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

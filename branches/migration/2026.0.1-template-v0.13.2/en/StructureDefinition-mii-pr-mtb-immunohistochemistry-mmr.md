@@ -68,7 +68,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-immuno
   "name" : "MII_PR_MTB_Immunohistochemistry_MMR",
   "title" : "MII PR MTB Immunohistochemistry Mismatch Repair Status",
   "status" : "active",
-  "date" : "2026-09-14T07:29:46+00:00",
+  "date" : "2026-09-14T08:03:24+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

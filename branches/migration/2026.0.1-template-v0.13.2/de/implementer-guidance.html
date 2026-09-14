@@ -339,11 +339,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="bekannte-befunde-des-template-builds-stand-2026-09">Bekannte Befunde des Template-Builds (Stand 2026-09)</h4>
 
-<p>Die verbleibenden QA-Fehler dieses Builds sind <strong>eine Familie: der öffentliche
-HL7-Terminologieserver (tx.fhir.org) hält die deutschen Terminologie-Inhalte
-nicht vor, gegen die dieses Modul validiert.</strong> Sie verschwinden voraussichtlich,
-sobald die CI gegen den MII-Terminologieserver (SU-TermServ) validiert (siehe
-<code class="language-plaintext highlighter-rouge">scripts/set-su-termserv-secrets.sh</code> — benötigt Repository-Secrets).</p>
+<p><strong>Welche Zahl von welchem Terminologieserver stammt, ist hier entscheidend.</strong>
+Der CI-Build validiert über das Client-Zertifikat der Organisation (der
+Proxy-Mechanismus des Templates) gegen den <strong>MII-Terminologieserver
+(SU-TermServ)</strong> und meldet aktuell <strong>91 Fehler</strong>. Ein Build ohne dieses
+Zertifikat — z. B. lokal — fällt auf den öffentlichen HL7-Server (tx.fhir.org)
+zurück und meldet <strong>144 Fehler</strong>: die Differenz ist <strong>eine Familie —
+tx.fhir.org hält die deutschen Terminologie-Inhalte nicht vor, gegen die
+dieses Modul validiert.</strong> Die Tabelle unten beschreibt diese Nur-Public-TX-
+Familie; auf dem SU-TermServ tritt nichts davon auf.</p>
 
 <table>
   <thead>
@@ -824,7 +828,7 @@ statt unterdrückt.</p>
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Sep 14, 2026 07:29+0000">2026-09-14</span>
+          Erstellt <span title="Mon, Sep 14, 2026 08:03+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

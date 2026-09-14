@@ -365,11 +365,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="known-issues-of-the-template-build-status-2026-09">Known issues of the template build (status 2026-09)</h4>
 
-<p>The remaining QA errors of this build are <strong>one family: the public HL7
-terminology server (tx.fhir.org) does not host the German terminology content
-this module validates against.</strong> They are expected to disappear once CI
-validates against the MII terminology server (SU-TermServ; see
-<code class="language-plaintext highlighter-rouge">scripts/set-su-termserv-secrets.sh</code> — requires repository secrets).</p>
+<p><strong>Which numbers come from which terminology server matters here.</strong> The CI
+build validates against the <strong>MII terminology server (SU-TermServ)</strong> through
+the organization's client certificate (the template's proxy mechanism) and
+currently reports <strong>91 errors</strong>. A build without that certificate — e.g. a
+local build — falls back to the public HL7 server (tx.fhir.org) and reports
+<strong>144 errors</strong>: the difference is <strong>one family — tx.fhir.org does not host the
+German terminology content this module validates against.</strong> The table below
+describes that public-tx-only family; none of it appears on SU-TermServ.</p>
 
 <table>
   <thead>
@@ -850,7 +853,7 @@ of being suppressed.</p>
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Sep 14, 2026 07:29+0000">2026-09-14</span>
+          Generated <span title="Mon, Sep 14, 2026 08:03+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

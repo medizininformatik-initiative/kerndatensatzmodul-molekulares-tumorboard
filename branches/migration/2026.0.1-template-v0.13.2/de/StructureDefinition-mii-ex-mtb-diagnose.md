@@ -73,7 +73,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-d
   "name" : "MII_EX_MTB_Diagnose",
   "title" : "MII EX MTB Diagnose",
   "status" : "active",
-  "date" : "2026-09-14T07:29:46+00:00",
+  "date" : "2026-09-14T08:03:24+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

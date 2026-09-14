@@ -30,7 +30,7 @@ Das Modul wird kontinuierlich gegen den FHIR R4 Standard und die definierten Pro
 
 #### Bekannte Befunde des Template-Builds (Stand 2026-09)
 
-Die verbleibenden QA-Fehler dieses Builds sind **eine Familie: der öffentliche HL7-Terminologieserver (tx.fhir.org) hält die deutschen Terminologie-Inhalte nicht vor, gegen die dieses Modul validiert.** Sie verschwinden voraussichtlich, sobald die CI gegen den MII-Terminologieserver (SU-TermServ) validiert (siehe `scripts/set-su-termserv-secrets.sh` — benötigt Repository-Secrets).
+**Welche Zahl von welchem Terminologieserver stammt, ist hier entscheidend.** Der CI-Build validiert über das Client-Zertifikat der Organisation (der Proxy-Mechanismus des Templates) gegen den **MII-Terminologieserver (SU-TermServ)** und meldet aktuell **91 Fehler**. Ein Build ohne dieses Zertifikat — z. B. lokal — fällt auf den öffentlichen HL7-Server (tx.fhir.org) zurück und meldet **144 Fehler**: die Differenz ist **eine Familie — tx.fhir.org hält die deutschen Terminologie-Inhalte nicht vor, gegen die dieses Modul validiert.** Die Tabelle unten beschreibt diese Nur-Public-TX- Familie; auf dem SU-TermServ tritt nichts davon auf.
 
 | | | |
 | :--- | :--- | :--- |
