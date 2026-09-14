@@ -1,0 +1,64 @@
+{
+  "resourceType": "DeviceDefinition",
+  "id": "mii-dd-mtb-panel-mh600plus",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-panel-devicedefinition"
+    ]
+  },
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-mh600plus",
+  "deviceName": [
+    {
+      "name": "MH IVD 600+",
+      "type": "user-friendly-name"
+    }
+  ],
+  "capability": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "snv-detection",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "geneList",
+          "valueCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-cgp"
+        },
+        {
+          "url": "scope",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "snv-detection",
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+    }
+  ],
+  "note": [
+    {
+      "text": "Laut Katalog 617 Gene; nur SNVs."
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "gene-panel",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction"
+      }
+    ]
+  },
+  "manufacturerString": "Agilent Technologies"
+}

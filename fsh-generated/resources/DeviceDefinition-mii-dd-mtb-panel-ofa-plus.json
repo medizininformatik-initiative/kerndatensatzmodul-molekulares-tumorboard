@@ -1,0 +1,95 @@
+{
+  "resourceType": "DeviceDefinition",
+  "id": "mii-dd-mtb-panel-ofa-plus",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-panel-devicedefinition"
+    ]
+  },
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-ofa-plus",
+  "deviceName": [
+    {
+      "name": "Oncomine Focus Assay Plus",
+      "type": "user-friendly-name"
+    }
+  ],
+  "capability": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "snv-detection",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+          }
+        ]
+      }
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "fusion-detection",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "geneList",
+          "valueCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-ofa-plus"
+        },
+        {
+          "url": "scope",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "snv-detection",
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+    },
+    {
+      "extension": [
+        {
+          "url": "geneList",
+          "valueCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-ofa-plus"
+        },
+        {
+          "url": "scope",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "fusion-detection",
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+    }
+  ],
+  "note": [
+    {
+      "text": "517 Gene; SNVs + Fusionen."
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "gene-panel",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction"
+      }
+    ]
+  },
+  "manufacturerString": "Thermo Fisher Scientific",
+  "onlineInformation": "https://documents.thermofisher.com/TFS-Assets/GSD/Product-Information/oca-plus-gene-list.pdf"
+}

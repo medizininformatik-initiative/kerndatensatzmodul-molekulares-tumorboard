@@ -1,0 +1,105 @@
+{
+  "resourceType": "DeviceDefinition",
+  "id": "mii-dd-mtb-panel-tso-500",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-panel-devicedefinition"
+    ]
+  },
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-tso-500",
+  "deviceName": [
+    {
+      "name": "TruSight Oncology 500",
+      "type": "user-friendly-name"
+    }
+  ],
+  "capability": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "snv-detection",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+          }
+        ]
+      }
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "fusion-detection",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+          }
+        ]
+      }
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "signature-detection",
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "geneList",
+          "valueCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-snv"
+        },
+        {
+          "url": "scope",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "snv-detection",
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+    },
+    {
+      "extension": [
+        {
+          "url": "geneList",
+          "valueCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-fusion"
+        },
+        {
+          "url": "scope",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "fusion-detection",
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+    }
+  ],
+  "note": [
+    {
+      "text": "523 SNV-Gene, 55 Fusions-Gene; misst u. a. auch TMB/MSI."
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "gene-panel",
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction"
+      }
+    ]
+  },
+  "manufacturerString": "Illumina",
+  "onlineInformation": "https://www.illumina.com/products/by-type/clinical-research-products/trusight-oncology-500.html"
+}

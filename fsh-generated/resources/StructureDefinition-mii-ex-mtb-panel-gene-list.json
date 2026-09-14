@@ -1,0 +1,117 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-mtb-panel-gene-list",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list",
+  "version": "2026.0.1",
+  "name": "MII_EX_MTB_Panel_Gene_List",
+  "title": "MII EX MTB Panel Gene List",
+  "status": "active",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "description": "Genliste eines Sequenzier-Panels als Kanonische Referenz auf ein ValueSet mit HGNC-Genen, optional nach analytischem Scope (SNV/Fusion) unterschieden.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "DeviceDefinition",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MII EX MTB Panel Gene List",
+        "definition": "Genliste eines Sequenzier-Panels als Kanonische Referenz auf ein ValueSet mit HGNC-Genen, optional nach analytischem Scope (SNV/Fusion) unterschieden."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:geneList",
+        "path": "Extension.extension",
+        "sliceName": "geneList",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:geneList.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:geneList.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "geneList"
+      },
+      {
+        "id": "Extension.extension:geneList.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "canonical"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:scope",
+        "path": "Extension.extension",
+        "sliceName": "scope",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:scope.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:scope.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "scope"
+      },
+      {
+        "id": "Extension.extension:scope.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-capability"
+        }
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}
