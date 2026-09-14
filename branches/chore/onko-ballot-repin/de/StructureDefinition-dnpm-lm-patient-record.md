@@ -77,7 +77,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-dnpm-lm-pati
   "name" : "DNPM_LM_PatientRecord",
   "title" : "DNPM Patient Record",
   "status" : "active",
-  "date" : "2026-09-14T20:43:02+00:00",
+  "date" : "2026-09-14T21:08:50+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

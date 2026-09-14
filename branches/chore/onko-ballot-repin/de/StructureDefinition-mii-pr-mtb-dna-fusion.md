@@ -259,7 +259,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-d
   "name" : "MII_PR_MTB_DNA_Fusion",
   "title" : "MII PR MTB DNA Fusion",
   "status" : "active",
-  "date" : "2026-09-14T20:43:02+00:00",
+  "date" : "2026-09-14T21:08:50+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
