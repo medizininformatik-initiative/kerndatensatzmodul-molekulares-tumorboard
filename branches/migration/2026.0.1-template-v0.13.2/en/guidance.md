@@ -13,6 +13,7 @@ This section collects the domain guidance for implementing and using the **Molec
 * **[UML Diagrams](uml-diagrams.md)** — visual representation of the data models and their relationships.
 * **[Application Scenarios](anwendungsszenarien.md)** — worked scenarios for applying the module's profiles.
 * **[DNPM Transformation](dnpm-transformation.md)** — the mapping and transformation pipeline between the DNPM dataset and the MII MTB profiles.
+* **[Panel Catalog](panel-katalog.md)** — sequencing-panel products as DeviceDefinition templates with expandable gene-list ValueSets.
 
 ### Audience-Specific Guidance
 

@@ -6963,6 +6963,28 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
             }]
           },
           "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "panel-katalog.html"
+          }],
+          "nameUrl" : "panel-katalog.html",
+          "title" : "Panel Catalog",
+          "_title" : {
+            "extension" : [{
+              "extension" : [{
+                "url" : "lang",
+                "valueCode" : "de"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Panel-Katalog"
+              }],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }]
+          },
+          "generation" : "markdown"
         }]
       },
       {

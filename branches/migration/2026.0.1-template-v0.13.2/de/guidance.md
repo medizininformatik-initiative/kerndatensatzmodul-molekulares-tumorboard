@@ -13,6 +13,7 @@ Dieser Abschnitt bündelt die fachlichen Hinweise zur Umsetzung und Nutzung des 
 * **[UML-Diagramme](uml-diagrams.md)** — visuelle Darstellung der Datenmodelle und ihrer Beziehungen.
 * **[Anwendungsszenarien](anwendungsszenarien.md)** — ausgearbeitete Szenarien für die Anwendung der Modul-Profile.
 * **[DNPM-Transformation](dnpm-transformation.md)** — Mapping und Transformations-Pipeline zwischen DNPM-Datensatz und den MII-MTB-Profilen.
+* **[Panel-Katalog](panel-katalog.md)** — Sequenzier-Panel-Produkte als DeviceDefinition-Templates mit expandierbaren Genlisten-ValueSets.
 
 ### Zielgruppenspezifische Hinweise
 

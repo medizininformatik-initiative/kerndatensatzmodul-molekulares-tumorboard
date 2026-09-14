@@ -51,7 +51,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-panel-
   "name" : "MII_PR_MTB_Panel_DeviceDefinition",
   "title" : "MII PR MTB Panel DeviceDefinition",
   "status" : "active",
-  "date" : "2026-09-14T11:48:09+00:00",
+  "date" : "2026-09-14T12:20:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

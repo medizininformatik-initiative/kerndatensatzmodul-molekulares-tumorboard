@@ -82,7 +82,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-p
   "name" : "MII_EX_MTB_Panel_Gene_List",
   "title" : "MII EX MTB Panel Gene List",
   "status" : "active",
-  "date" : "2026-09-14T11:48:09+00:00",
+  "date" : "2026-09-14T12:20:33+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
