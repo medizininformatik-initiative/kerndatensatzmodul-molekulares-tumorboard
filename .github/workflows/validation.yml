@@ -141,7 +141,7 @@ jobs:
       JAVA_VALIDATION_ENABLED: true
       # Pinned Java validator (fixed versions); mirrors the reusable workflow's
       # own default at the pinned SHA. Overridable via the repo variable.
-      JAVA_VALIDATOR_VERSION: ${{ vars.JAVA_VALIDATOR_VERSION || '6.5.7' }}
+      JAVA_VALIDATOR_VERSION: ${{ vars.JAVA_VALIDATOR_VERSION || '6.10.4' }}
       # Wire the repo's advisor file into the validator CLI. The reusable
       # workflow passes JAVA_VALIDATION_OPTIONS verbatim to validator_cli.jar
       # (verified at the pinned SHA); without this the advisor.json shipped at
