@@ -6,3 +6,4 @@ Description: "Codesystem, welches verschiedene Molekulare Biomarker enthäldie v
 * #sequencing-device                                "Sequenziergerät"
 * #sequencing-kit                                   "Sequenzier-Kit"
 * #library-preparation-kit                          "Library-Preparation Kit"
+* #gene-panel "Genpanel" "Sequenzier-Panel-Produkt (Genpanel) — Katalogebene via DeviceDefinition-Template. TODO:REVIEW (2026-09-14 ergaenzt fuer den Panel-Katalog)"

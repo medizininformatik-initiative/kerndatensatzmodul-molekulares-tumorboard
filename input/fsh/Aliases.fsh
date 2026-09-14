@@ -190,3 +190,18 @@ Alias: $crmi-release-version-behavior-codes = http://hl7.org/fhir/uv/crmi/CodeSy
 Alias: $crmi-release-experimental-behavior-codes = http://hl7.org/fhir/uv/crmi/CodeSystem/crmi-release-experimental-behavior-codes
 Alias: $crmi-release-version-behavior = http://hl7.org/fhir/uv/crmi/ValueSet/crmi-release-version-behavior
 Alias: $crmi-release-experimental-behavior = http://hl7.org/fhir/uv/crmi/ValueSet/crmi-release-experimental-behavior
+
+// ── Panel-Katalog (DeviceDefinition-Templates, 2026-09-14) ──
+Alias: $hgnc-symbol = http://www.genenames.org
+Alias: $mii-cs-mtb-panel-capability = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability
+Alias: $mii-vs-mtb-panel-capability = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-capability
+Alias: $mii-ex-mtb-panel-gene-list = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list
+Alias: $mii-vs-mtb-panel-ofa = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-ofa
+Alias: $mii-vs-mtb-panel-ofa-plus = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-ofa-plus
+Alias: $mii-vs-mtb-panel-dhs-3501z = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-dhs-3501z
+Alias: $mii-vs-mtb-panel-cgp = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-cgp
+Alias: $mii-vs-mtb-panel-archer-lung-v2 = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-archer-lung-v2
+Alias: $mii-vs-mtb-panel-tcm-ngs = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tcm-ngs
+Alias: $mii-vs-mtb-panel-basic-ngs = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-basic-ngs
+Alias: $mii-vs-mtb-panel-tso-500-snv = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-snv
+Alias: $mii-vs-mtb-panel-tso-500-fusion = https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-fusion
