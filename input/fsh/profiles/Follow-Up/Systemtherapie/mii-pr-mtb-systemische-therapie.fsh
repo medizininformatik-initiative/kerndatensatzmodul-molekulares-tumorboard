@@ -36,13 +36,17 @@ Description: "Systemische Therapie im Follow-Up nach Abschluss des MTB"
 // performed[x] inherited from parent profile MII_PR_Onko_Systemische_Therapie
 
 * basedOn 0..1 MS
-* basedOn only Reference(MII_PR_MTB_Therapieplan or CarePlan)
 * basedOn ^short = "MTB Therapieplan"
 * basedOn ^definition = "Therapieplan gemäß Beschluss des Molekularen Tumorboards"
 * insert Translation(basedOn ^short, de-DE, MTB Therapieplan)
 * insert Translation(basedOn ^definition, de-DE, Therapieplan gemäß Beschluss des Molekularen Tumorboards)
 * insert Translation(basedOn ^short, en, MTB therapy plan)
 * insert Translation(basedOn ^definition, en, Therapy plan according to the molecular tumor board decision)
+// Onko 2027-ballot slict basedOn selbst (Slice "tumorkonferenz"); der geerbte
+// Slice wird auf den MTB-Therapieplan eingeschränkt (MII_PR_MTB_Therapieplan
+// erbt von MII_PR_Onko_Tumorkonferenz).
+* basedOn[tumorkonferenz] MS
+* basedOn[tumorkonferenz] only Reference(MII_PR_MTB_Therapieplan)
 
 * note 0..1 MS
 * note ^short = "Bemerkungen"

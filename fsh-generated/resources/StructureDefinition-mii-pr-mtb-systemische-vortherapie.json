@@ -154,25 +154,10 @@
         "mustSupport": true
       },
       {
-        "id": "Procedure.basedOn",
+        "id": "Procedure.basedOn:tumorkonferenz",
         "path": "Procedure.basedOn",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "profile",
-              "path": "$this"
-            }
-          ],
-          "rules": "open",
-          "description": "Slice für referenzierten Therapieplan",
-          "ordered": false
-        }
-      },
-      {
-        "id": "Procedure.basedOn:Therapieplan",
-        "path": "Procedure.basedOn",
-        "sliceName": "Therapieplan",
-        "short": "Therpieplan",
+        "sliceName": "tumorkonferenz",
+        "short": "Therapieplan",
         "_short": {
           "extension": [
             {
@@ -203,7 +188,7 @@
             }
           ]
         },
-        "definition": "Verweis auf den im Molekularen Tumorboard beschlossenen Therpieplan",
+        "definition": "Verweis auf den im Molekularen Tumorboard beschlossenen Therapieplan",
         "_definition": {
           "extension": [
             {
@@ -234,8 +219,6 @@
             }
           ]
         },
-        "min": 0,
-        "max": "1",
         "type": [
           {
             "code": "Reference",
@@ -243,8 +226,7 @@
               "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan"
             ]
           }
-        ],
-        "mustSupport": true
+        ]
       },
       {
         "id": "Procedure.statusReason",
