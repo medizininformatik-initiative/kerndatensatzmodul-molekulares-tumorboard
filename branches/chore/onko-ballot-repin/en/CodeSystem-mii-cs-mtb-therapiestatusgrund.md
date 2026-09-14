@@ -37,7 +37,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "MII CS Therapiestatusgrund",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T20:15:28+00:00",
+  "date" : "2026-09-14T20:43:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

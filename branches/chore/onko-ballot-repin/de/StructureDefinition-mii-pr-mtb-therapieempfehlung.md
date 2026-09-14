@@ -311,7 +311,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-t
   "name" : "MII_PR_MTB_Therapieempfehlung",
   "title" : "MII PR MTB Therapieempfehlung Systemische Therapie",
   "status" : "active",
-  "date" : "2026-09-14T20:15:28+00:00",
+  "date" : "2026-09-14T20:43:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
