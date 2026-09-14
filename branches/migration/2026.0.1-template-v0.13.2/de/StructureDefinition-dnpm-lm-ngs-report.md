@@ -77,7 +77,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-dnpm-lm-ngs-
   "name" : "DNPM_LM_NGSReport",
   "title" : "DNPM NGS Report",
   "status" : "active",
-  "date" : "2026-09-14T13:42:50+00:00",
+  "date" : "2026-09-14T17:51:44+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

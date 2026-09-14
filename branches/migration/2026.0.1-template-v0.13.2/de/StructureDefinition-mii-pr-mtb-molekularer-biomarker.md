@@ -126,7 +126,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-m
   "name" : "MII_PR_MTB_Molekularer_Biomarker",
   "title" : "MII PR MTB Molekularer Biomarker",
   "status" : "active",
-  "date" : "2026-09-14T13:42:50+00:00",
+  "date" : "2026-09-14T17:51:44+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

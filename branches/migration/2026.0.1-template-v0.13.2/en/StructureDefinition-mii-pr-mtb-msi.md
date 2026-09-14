@@ -47,7 +47,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-msi.cs
   "name" : "MII_PR_MTB_Immunohistochemistry_MSI",
   "title" : "MII PR MTB Immunohistochemistry Microsatellite Instability",
   "status" : "active",
-  "date" : "2026-09-14T13:42:50+00:00",
+  "date" : "2026-09-14T17:51:44+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
