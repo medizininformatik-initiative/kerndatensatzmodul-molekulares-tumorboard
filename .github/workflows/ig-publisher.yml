@@ -448,7 +448,14 @@ jobs:
           # run 34606641638). The offline bundle is dead weight for a BRANCH
           # PREVIEW, so drop every >95 MB file here and say so; the formal
           # -go-publish output is not affected by this step.
-          find "${branch_dir}" -type f -size +95M -print -delete | sed 's/^/preview: dropped >95MB file: /'
+          # Keep the BRANCH preview lean: GitHub rejected the full two-language
+          # site with 'fatal error in commit_refs' (run 34748063692) even after
+          # the >95MB GH001 fix — the push itself is too heavy. Previews are for
+          # REVIEW; the heavy regenerable payloads (offline bundle, validator
+          # pack, package db, expansion cache) add nothing to review and are
+          # rebuilt by every CI run anyway. The formal go-publish output is
+          # untouched.
+          find "${branch_dir}" -type f \( -size +50M -o -name 'full-ig.zip' -o -name 'validator.pack' -o -name 'validator-*.json' -o -name 'package.db' -o -name 'expansions.json' -o -name 'expansions.db' -o -name 'package.tgz.zip' \) -print -delete | sed 's/^/preview: dropped heavy file: /'
           # Marker consumed by cleanup-gh-pages.yml to detect deleted branches.
           echo "${BRANCH}" > "${branch_dir}/.branch-name"
           # TEMPLATE REPOSITORY ONLY: (re)generate the root index — a plain
