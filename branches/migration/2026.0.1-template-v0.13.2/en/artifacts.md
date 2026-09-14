@@ -65,6 +65,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [ MII PR MTB Mutationslast  ](StructureDefinition-mii-pr-mtb-mutationslast.md) | Beschreibt die Gesamtzahl von in Krebszellen gefundenen Mutationen pro 1 Mio. Basen. |
 | [ MII PR MTB NGS-Bericht  ](StructureDefinition-mii-pr-mtb-ngs-bericht.md) | NGS-Bericht zu einer Probe |
 | [ MII PR MTB Oncotree Klassifikation  ](StructureDefinition-mii-pr-mtb-oncotree.md) | Grad des Tumors nach MSKCC Oncotree Klassifikation |
+| [ MII PR MTB Panel DeviceDefinition  ](StructureDefinition-mii-pr-mtb-panel-devicedefinition.md) | Katalog-Template eines Sequenzier-Panel-Produkts (Genpanel): Hersteller, Produktname/Version, analytische Faehigkeiten und Genliste(n). Konkrete Geraete/Kits einer Einrichtung verweisen via Device.definition auf ihr Template. |
 | [ MII PR MTB Ploidie  ](StructureDefinition-mii-pr-mtb-ploidie.md) | Beschreibt die Gesamtploidie des Tumors. Die Ploidie ist ein Indikator für die Tumorproliferation und die Tumoraggressivität. |
 | [ MII PR MTB RNA Fusion  ](StructureDefinition-mii-pr-mtb-rna-fusion.md) | RNA-Fusion |
 | [ MII PR MTB RNA Seq  ](StructureDefinition-mii-pr-mtb-rna-seq.md) | RNA Seq |
@@ -99,6 +100,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 | [ MII EX MTB Leitlinie Dokumentation  ](StructureDefinition-mii-ex-mtb-leitlinie-dokumentation.md) | Dokumentation zur Leitlinien-konformen Umsetzung der Prozedur |
 | [ MII EX MTB Leitlinienbehandlung Status  ](StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.md) | Status der Behandlung nach Leitlinie |
 | [ MII EX MTB NGS Bericht Metadaten  ](StructureDefinition-mii-ex-mtb-ngs-bericht-genomic-study.md) | Metadaten des NGS-Berichts |
+| [ MII EX MTB Panel Gene List  ](StructureDefinition-mii-ex-mtb-panel-gene-list.md) | Genliste eines Sequenzier-Panels als Kanonische Referenz auf ein ValueSet mit HGNC-Genen, optional nach analytischem Scope (SNV/Fusion) unterschieden. |
 
 ### Terminology: Value Sets 
 
@@ -124,6 +126,16 @@ These define sets of codes used by systems conforming to this implementation gui
 | [ MII VS MTB ISH Method  ](ValueSet-mii-vs-mtb-ish-method.md) | In Situ Hybridization technique methods (FISH, CISH, SISH) |
 | [ MII VS MTB Immunhistochemistry Specific Codes  ](ValueSet-mii-vs-mtb-immunohistochemistry-specific-codes.md) | Spezifische LOINC und SNOMED Codes für immunhistochemische Untersuchungen. Diese Codes werden für das Slice 'spezifisch' im Immunohistochemistry Profil verwendet. |
 | [ MII VS MTB Interpretation High/Low  ](ValueSet-mii-vs-mtb-interpretation-high-low.md) | Interpretation qualitativer Biomarker-Ergebnisse als hoch/niedrig (High/Low aus HL7 v3 ObservationInterpretation). Ersetzt das in Genomics Reporting STU3 entfallene high-low-codes-vs (STU2). |
+| [ MII VS MTB Panel Archer  ](ValueSet-mii-vs-mtb-panel-archer-lung-v2.md) | Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel Basic-NGS  ](ValueSet-mii-vs-mtb-panel-basic-ngs.md) | Genliste des Panels: Basic-NGS Panel (36 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel CGP  ](ValueSet-mii-vs-mtb-panel-cgp.md) | Genliste des Panels: SureSelect Cancer CGP Assay (602 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel Capability  ](ValueSet-mii-vs-mtb-panel-capability.md) | Analytische Faehigkeiten eines Sequenzier-Panels. |
+| [ MII VS MTB Panel DHS-3501Z  ](ValueSet-mii-vs-mtb-panel-dhs-3501z.md) | Genliste des Panels: Qiagen DHS-3501Z (275 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel OFA  ](ValueSet-mii-vs-mtb-panel-ofa.md) | Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel OFA plus  ](ValueSet-mii-vs-mtb-panel-ofa-plus.md) | Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel TCM NGS  ](ValueSet-mii-vs-mtb-panel-tcm-ngs.md) | Genliste des Panels: TCM NGS Panel (409 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel TSO 500 Fusions  ](ValueSet-mii-vs-mtb-panel-tso-500-fusion.md) | Genliste des Panels: TruSight Oncology 500 — Fusions-Genliste (55 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
+| [ MII VS MTB Panel TSO 500 SNVs  ](ValueSet-mii-vs-mtb-panel-tso-500-snv.md) | Genliste des Panels: TruSight Oncology 500 — SNV-Genliste (523 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping. |
 | [ MII VS MTB Systemtherapie Status  ](ValueSet-mii-vs-mtb-systemische-therapie-status.md) | Einschränkung der Status für Systemtherapie |
 | [ MII VS Mikrosatelliteninstabilität  ](ValueSet-mii-vs-mtb-msi.md) | 
 | | | |
@@ -165,6 +177,7 @@ These define new code systems used by systems conforming to this implementation 
 | [ MII CS Kostenuebernahme Ablehnungsgrund  ](CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund.md) | Codesystem zum Grund der Ablehnung der Kostenuebernahme nach DNPM |
 | [ MII CS Leitlinienbehandlung Status  ](CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.md) | Status der Behandlung nach Leitlinie |
 | [ MII CS MSI Method Type  ](CodeSystem-mii-cs-mtb-msi-method-type.md) | Codesystem, welches die verwendete MSI-Bestimmungsmethode gemäß dnpm-Kodierung auflistet. |
+| [ MII CS MTB Panel Capability  ](CodeSystem-mii-cs-mtb-panel-capability.md) | Analytische Faehigkeiten eines Sequenzier-Panels (aus dem Panel-Metadatenkatalog abgeleitet). TODO:REVIEW |
 | [ MII CS Molekulare Biomarker  ](CodeSystem-mii-cs-mtb-molekulare-biomarker.md) | Codesystem, welches verschiedene Molekulare Biomarker enthält, die nicht in anderen offenen semantischen Standards wie LOINC oder SNOMED-CT abgebildet sind |
 | [ MII CS Response Befund Beurteilung  ](CodeSystem-mii-cs-mtb-response-befund-beurteilung.md) | Codesystem für die Beurteilung des Response Befund |
 | [ MII CS Response Befund Beurteilungsmethode  ](CodeSystem-mii-cs-mtb-response-befund-beurteilungsmethode.md) | Codesystem für die Beurteilungsmethode eines Response Befunds |
@@ -394,7 +407,18 @@ These are example instances that show what data produced and consumed by systems
 
 These are resources that are used within this implementation guide that do not fit into one of the other categories.
 
-| |
-| :--- |
-| [ mii-param-mtb-manifest  ](Parameters-mii-param-mtb-manifest.md) |
+| | |
+| :--- | :--- |
+| [ Basic-NGS Panel  ](DeviceDefinition-mii-dd-mtb-panel-basic-ngs.md) | Panel-Template: Basic-NGS Panel. 36 Gene; nur SNVs. TODO:REVIEW Betreiber/Hersteller des Hauspanels ergaenzen. |
+| [ DKTK/MASTER Whole-Genome/-Exome Sequencing  ](DeviceDefinition-mii-dd-mtb-panel-master.md) | Panel-Template: DKTK/MASTER Whole-Genome/-Exome Sequencing. Analyse im DKTK/MASTER-Programm; genomweit, keine endliche Panelliste (all_assessed). TODO:REVIEW Hersteller/Betreiber ergaenzen (Konsortium, kein Produkt). |
+| [ FusionPlex Archer Lung V2  ](DeviceDefinition-mii-dd-mtb-panel-archer-lung-v2.md) | Panel-Template: FusionPlex Archer Lung V2. Fusionsanalyse, 17 Gene. |
+| [ MH IVD 600+  ](DeviceDefinition-mii-dd-mtb-panel-mh600plus.md) | Panel-Template: MH IVD 600+. Laut Katalog 617 Gene; nur SNVs. TODO:REVIEW Quelle nennt 617 Gene, verweist aber auf die CGP-Genliste (602) — pruefen. |
+| [ Oncomine Focus Assay  ](DeviceDefinition-mii-dd-mtb-panel-ofa.md) | Panel-Template: Oncomine Focus Assay. DNA + RNA, 52 Gene; SNVs + Fusionen. |
+| [ Oncomine Focus Assay Plus  ](DeviceDefinition-mii-dd-mtb-panel-ofa-plus.md) | Panel-Template: Oncomine Focus Assay Plus. 517 Gene; SNVs + Fusionen. |
+| [ Qiagen DHS-3501Z  ](DeviceDefinition-mii-dd-mtb-panel-dhs-3501z.md) | Panel-Template: Qiagen DHS-3501Z. 275 Gene; nur SNVs (keine Fusionsanalyse). |
+| [ SureSelect Cancer CGP Assay  ](DeviceDefinition-mii-dd-mtb-panel-cgp.md) | Panel-Template: SureSelect Cancer CGP Assay. 602 Gene; nur SNVs. |
+| [ TCM NGS Panel  ](DeviceDefinition-mii-dd-mtb-panel-tcm-ngs.md) | Panel-Template: TCM NGS Panel. 409 Gene; SNVs + Fusionen. TODO:REVIEW Betreiber/Hersteller des Hauspanels ergaenzen. |
+| [ TruSight Oncology 500  ](DeviceDefinition-mii-dd-mtb-panel-tso-500.md) | Panel-Template: TruSight Oncology 500. 523 SNV-Gene, 55 Fusions-Gene; misst u. a. auch TMB/MSI. TODO:REVIEW Version (vermutlich v2) und vollstaendige Faehigkeiten bestaetigen. |
+| [ Whole Genome Sequencing (generisch)  ](DeviceDefinition-mii-dd-mtb-panel-wgs.md) | Panel-Template: Whole Genome Sequencing (generisch). Genomweite Sequenzierung; keine endliche Panelliste (all_assessed). TODO:REVIEW generisches Verfahren, kein Produkt — behalten oder streichen. |
+| [ mii-param-mtb-manifest  ](Parameters-mii-param-mtb-manifest.md) |  |
 

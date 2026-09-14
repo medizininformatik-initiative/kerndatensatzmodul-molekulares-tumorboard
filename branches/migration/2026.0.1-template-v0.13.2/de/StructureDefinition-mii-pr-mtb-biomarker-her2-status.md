@@ -103,7 +103,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-b
   "name" : "MII_PR_MTB_BIOMARKER_HER2_STATUS",
   "title" : "MII PR Biomarker Her2 Status",
   "status" : "active",
-  "date" : "2026-09-14T08:03:24+00:00",
+  "date" : "2026-09-14T11:48:09+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

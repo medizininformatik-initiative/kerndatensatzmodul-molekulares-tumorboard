@@ -88,7 +88,12 @@ This publication includes IP covered under the following statements.
 
 * ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
 
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [DNPM_LM_CarePlan](StructureDefinition-dnpm-lm-care-plan.md), [DNPM_LM_NGSReport](StructureDefinition-dnpm-lm-ngs-report.md)... Show 118 more, [DNPM_LM_PatientRecord](StructureDefinition-dnpm-lm-patient-record.md), [MII CM MTB Therapiestatusgrund SNOMED CT Mapping](ConceptMap-mii-cm-mtb-therapiestatusgrund-sct.md), [MII CM MTB Therapiestatusgrund oBDS Mapping](ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.md), [MII_CPS_MTB_CapabilityStatement](CapabilityStatement-mii-cps-mtb-capabilitystatement.md), [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium](CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.md), [MII_CS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund](CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund.md), [MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung](CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.md), [MII_CS_MTB_AuftragBegruendung](CodeSystem-mii-cs-mtb-auftrag-begruendung.md), [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt](CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.md), [MII_CS_MTB_Dosisdichte](CodeSystem-mii-cs-mtb-dosisdichte.md), [MII_CS_MTB_Empfehlung_Evidenzgrad](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.md), [MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.md), [MII_CS_MTB_Empfehlung_StatusBegruendung](CodeSystem-mii-cs-mtb-empfehlung-status-begruendung.md), [MII_CS_MTB_Follow_Up_Status](CodeSystem-mii-cs-mtb-follow-up-status.md), [MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction](CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.md), [MII_CS_MTB_Genomic_Analysis_Method_Type](CodeSystem-mii-cs-mtb-genomic-analysis-method-type.md), [MII_CS_MTB_Leitlinienbehandlung_Status](CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.md), [MII_CS_MTB_MSI_Method_Type](CodeSystem-mii-cs-mtb-msi-method-type.md), [MII_CS_MTB_Molekulare_Biomarker](CodeSystem-mii-cs-mtb-molekulare-biomarker.md), [MII_CS_MTB_Response_Befund_Beurteilung](CodeSystem-mii-cs-mtb-response-befund-beurteilung.md), [MII_CS_MTB_Response_Befund_Beurteilungsmethode](CodeSystem-mii-cs-mtb-response-befund-beurteilungsmethode.md), [MII_CS_MTB_Therapiestatusgrund](CodeSystem-mii-cs-mtb-therapiestatusgrund.md), [MII_CS_MTB_Zulassungsstatus](CodeSystem-mii-cs-mtb-zulassungsstatus.md), [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium](StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.md), [MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund](StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.md), [MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung](StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-entscheidung.md), [MII_EX_MTB_Diagnose](StructureDefinition-mii-ex-mtb-diagnose.md), [MII_EX_MTB_Empfehlung_Evidenzgraduierung](StructureDefinition-mii-ex-mtb-empfehlung-evidenzgraduierung.md), [MII_EX_MTB_Empfehlung_Prioritaet](StructureDefinition-mii-ex-mtb-empfehlung-prioritaet.md), [MII_EX_MTB_Empfehlung_Publikation](StructureDefinition-mii-ex-mtb-empfehlung-publikation.md), [MII_EX_MTB_GenomicStudyAnalysis_QC](StructureDefinition-mii-ex-mtb-genomic-study-analysis-qc.md), [MII_EX_MTB_Leitlinie_Dokumentation](StructureDefinition-mii-ex-mtb-leitlinie-dokumentation.md), [MII_EX_MTB_Leitlinienbehandlung_Status](StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.md), [MII_EX_MTB_NGS_Bericht_Genomic_Study](StructureDefinition-mii-ex-mtb-ngs-bericht-genomic-study.md), [MII_IG_MTB_DE](index.md), [MII_LM_MTB](StructureDefinition-mii-lm-mtb.md), [MII_NS_MTB_NCT](NamingSystem-mii-ns-mtb-nct.md), [MII_NS_Studie_DRKS](NamingSystem-mii-ns-studie-drks.md), [MII_NS_Studie_EudraCT](NamingSystem-mii-ns-studie-eudract.md), [MII_PR_MTB_Antrag_Kostenuebernahme](StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.md), [MII_PR_MTB_Antwort_Kostenuebernahme](StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.md), [MII_PR_MTB_BIOMARKER_HER2_STATUS](StructureDefinition-mii-pr-mtb-biomarker-her2-status.md), [MII_PR_MTB_BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md), [MII_PR_MTB_Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlungsepisode.md), [MII_PR_MTB_Biomarker_InSituHybridization](StructureDefinition-mii-pr-mtb-insituhybridization.md), [MII_PR_MTB_Biopsie_Auftrag](StructureDefinition-mii-pr-mtb-biopsie-auftrag.md), [MII_PR_MTB_Consent_Given](StructureDefinition-mii-pr-mtb-consent-given.md), [MII_PR_MTB_Copy_Number_Variant](StructureDefinition-mii-pr-mtb-copy-number-variant.md), [MII_PR_MTB_DNA_Fusion](StructureDefinition-mii-pr-mtb-dna-fusion.md), [MII_PR_MTB_Diagnose_Primaertumor](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md), [MII_PR_MTB_Diagnostische_Implikation](StructureDefinition-mii-pr-mtb-diagnostische-implikation.md), [MII_PR_MTB_Einfache_Variante](StructureDefinition-mii-pr-mtb-einfache-variante.md), [MII_PR_MTB_Follow_Up_ClinicalImpression](StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.md), [MII_PR_MTB_Genomic_Study](StructureDefinition-mii-pr-mtb-genomic-study.md), [MII_PR_MTB_Genomic_Study_Analysis](StructureDefinition-mii-pr-mtb-genomic-study-analysis.md), [MII_PR_MTB_Genomic_Study_Device](StructureDefinition-genomic-study-device.md), [MII_PR_MTB_HRD_Score](StructureDefinition-mii-pr-mtb-hrd-score.md), [MII_PR_MTB_Histologie_Evaluation_Auftrag](StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.md), [MII_PR_MTB_Humangenetische_Beratung_Auftrag](StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.md), [MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2](StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.md), [MII_PR_MTB_INSITUHYBRIDIZATION_HER2](StructureDefinition-mii-pr-mtb-insituhybridization-her2.md), [MII_PR_MTB_Immunohistochemistry](StructureDefinition-mii-pr-mtb-immunohistochemistry.md), [MII_PR_MTB_Immunohistochemistry_MMR](StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.md), [MII_PR_MTB_Immunohistochemistry_MSI](StructureDefinition-mii-pr-mtb-msi.md), [MII_PR_MTB_Immunohistochemistry_PDL1](StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.md), [MII_PR_MTB_Immunohistochemistry_Phosphorylation](StructureDefinition-mii-pr-mtb-immunohistochemistry-phosphorylation.md), [MII_PR_MTB_Mikrosatelliteninstabilitaet](StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.md), [MII_PR_MTB_Molecular_Pathology_Report](StructureDefinition-mii-pr-mtb-molecular-pathology-report.md), [MII_PR_MTB_Molekularer_Biomarker](StructureDefinition-mii-pr-mtb-molekularer-biomarker.md), [MII_PR_MTB_Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast.md), [MII_PR_MTB_NGS_Bericht](StructureDefinition-mii-pr-mtb-ngs-bericht.md), [MII_PR_MTB_Oncotree](StructureDefinition-mii-pr-mtb-oncotree.md), [MII_PR_MTB_Ploidie](StructureDefinition-mii-pr-mtb-ploidie.md), [MII_PR_MTB_RNA_Fusion](StructureDefinition-mii-pr-mtb-rna-fusion.md), [MII_PR_MTB_RNA_Seq](StructureDefinition-mii-pr-mtb-rna-seq.md), [MII_PR_MTB_Response_Befund](StructureDefinition-mii-pr-mtb-response-befund.md), [MII_PR_MTB_Studie](StructureDefinition-mii-pr-mtb-studie.md), [MII_PR_MTB_Studieneinschluss_Anfrage](StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.md), [MII_PR_MTB_Systemische_Therapie](StructureDefinition-mii-pr-mtb-systemische-therapie.md), [MII_PR_MTB_Systemische_Therapie_Medication_Statement](StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.md), [MII_PR_MTB_Systemische_Vortherapie](StructureDefinition-mii-pr-mtb-systemische-vortherapie.md), [MII_PR_MTB_Therapeutische_Implikation](StructureDefinition-mii-pr-mtb-therapeutische-implikation.md), [MII_PR_MTB_Therapieempfehlung](StructureDefinition-mii-pr-mtb-therapieempfehlung.md), [MII_PR_MTB_Therapieempfehlung_Kombination](StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.md), [MII_PR_MTB_Therapieplan](StructureDefinition-mii-pr-mtb-therapieplan.md), [MII_PR_MTB_Tumorausbreitung](StructureDefinition-mii-pr-mtb-tumorausbreitung.md), [MII_PR_MTB_Tumorzellgehalt](StructureDefinition-mii-pr-mtb-tumorzellgehalt.md), [MII_PR_MTB_WHO_Grad_Tumor_ZNS](StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.md), [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium](ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.md), [MII_VS_MTB_Antrag_Kostenuebernahme_Type](ValueSet-mii-vs-mtb-antrag-kostenuebernahme.md), [MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund](ValueSet-mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund.md), [MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung](ValueSet-mii-vs-mtb-antwort-kostenuebernahme-entscheidung.md), [MII_VS_MTB_AuftragBegruendung](ValueSet-mii-vs-mtb-auftrag-begruendung.md), [MII_VS_MTB_BestimmungsmethodeTumorzellgehalt](ValueSet-mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.md), [MII_VS_MTB_Beurteilungsmethode](ValueSet-mii-vs-mtb-beurteilungsmethode-response-befund.md), [MII_VS_MTB_Dosisdichte](ValueSet-mii-vs-mtb-dosisdichte.md), [MII_VS_MTB_Empfehlung_Evidenzgrad](ValueSet-mii-vs-mtb-empfehlung-evidenzgrad.md), [MII_VS_MTB_Empfehlung_EvidenzgradZusatzverweis](ValueSet-mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis.md), [MII_VS_MTB_Empfehlung_StatusBegruendung](ValueSet-mii-vs-mtb-empfehlung-status-begruendung.md), [MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung](ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.md), [MII_VS_MTB_Follow_Up_Status](ValueSet-mii-vs-mtb-follow-up-status.md), [MII_VS_MTB_Genomic_Analysis_Method_Type](ValueSet-mii-vs-mtb-genomic-analysis-method-type.md), [MII_VS_MTB_ISH_Method](ValueSet-mii-vs-mtb-ish-method.md), [MII_VS_MTB_Immunhistochemistry_Specific_Codes](ValueSet-mii-vs-mtb-immunohistochemistry-specific-codes.md), [MII_VS_MTB_Interpretation_High_Low](ValueSet-mii-vs-mtb-interpretation-high-low.md), [MII_VS_MTB_Leitlinienbehandlung_Status](ValueSet-mii-vs-mtb-leitlinienbehandlung-status.md), [MII_VS_MTB_MMR_Expression](ValueSet-mii-vs-mtb-mmr-expression.md), [MII_VS_MTB_MMR_Proficiency](ValueSet-mii-vs-mtb-mmr-proficiency.md), [MII_VS_MTB_MSI_Method_Type](ValueSet-mii-vs-mtb-msi-method-type.md), [MII_VS_MTB_Microsatellite_Instability](ValueSet-mii-vs-mtb-msi.md), [MII_VS_MTB_Molekulare_Biomarker](ValueSet-mii-vs-mtb-molekulare-biomarker.md), [MII_VS_MTB_OncoTree](ValueSet-mii-vs-mtb-oncotree.md), [MII_VS_MTB_Response_Befund_Beurteilung](ValueSet-mii-vs-mtb-response-befund-beurteilung.md), [MII_VS_MTB_Systemische_Therapie_Status](ValueSet-mii-vs-mtb-systemische-therapie-status.md), [MII_VS_MTB_Therapiestatusgrund](ValueSet-mii-vs-mtb-therapiestatusgrund.md), [MII_VS_MTB_Tumorausbreitung](ValueSet-mii-vs-mtb-tumorausbreitung.md), [MII_VS_MTB_WHO_Grad_Tumor_ZNS](ValueSet-mii-vs-mtb-who-grad-tumor-zns.md) and [MII_VS_MTB_Zulassungsstatus](ValueSet-mii-vs-mtb-zulassungsstatus.md)
+* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [DNPM_LM_CarePlan](StructureDefinition-dnpm-lm-care-plan.md), [DNPM_LM_NGSReport](StructureDefinition-dnpm-lm-ngs-report.md)... Show 131 more, [DNPM_LM_PatientRecord](StructureDefinition-dnpm-lm-patient-record.md), [MII CM MTB Therapiestatusgrund SNOMED CT Mapping](ConceptMap-mii-cm-mtb-therapiestatusgrund-sct.md), [MII CM MTB Therapiestatusgrund oBDS Mapping](ConceptMap-mii-cm-mtb-therapiestatusgrund-obds.md), [MII_CPS_MTB_CapabilityStatement](CapabilityStatement-mii-cps-mtb-capabilitystatement.md), [MII_CS_MTB_Antrag_Kostenuebernahme_Antragsstadium](CodeSystem-mii-cs-mtb-antrag-kostenuebernahme-antragsstadium.md), [MII_CS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund](CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-ablehnungsgrund.md), [MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung](CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.md), [MII_CS_MTB_AuftragBegruendung](CodeSystem-mii-cs-mtb-auftrag-begruendung.md), [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt](CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.md), [MII_CS_MTB_Dosisdichte](CodeSystem-mii-cs-mtb-dosisdichte.md), [MII_CS_MTB_Empfehlung_Evidenzgrad](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.md), [MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.md), [MII_CS_MTB_Empfehlung_StatusBegruendung](CodeSystem-mii-cs-mtb-empfehlung-status-begruendung.md), [MII_CS_MTB_Follow_Up_Status](CodeSystem-mii-cs-mtb-follow-up-status.md), [MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction](CodeSystem-mii-cs-mtb-genomicanalysis-devicefunction.md), [MII_CS_MTB_Genomic_Analysis_Method_Type](CodeSystem-mii-cs-mtb-genomic-analysis-method-type.md), [MII_CS_MTB_Leitlinienbehandlung_Status](CodeSystem-mii-cs-mtb-leitlinienbehandlung-status.md), [MII_CS_MTB_MSI_Method_Type](CodeSystem-mii-cs-mtb-msi-method-type.md), [MII_CS_MTB_Molekulare_Biomarker](CodeSystem-mii-cs-mtb-molekulare-biomarker.md), [MII_CS_MTB_Panel_Capability](CodeSystem-mii-cs-mtb-panel-capability.md), [MII_CS_MTB_Response_Befund_Beurteilung](CodeSystem-mii-cs-mtb-response-befund-beurteilung.md), [MII_CS_MTB_Response_Befund_Beurteilungsmethode](CodeSystem-mii-cs-mtb-response-befund-beurteilungsmethode.md), [MII_CS_MTB_Therapiestatusgrund](CodeSystem-mii-cs-mtb-therapiestatusgrund.md), [MII_CS_MTB_Zulassungsstatus](CodeSystem-mii-cs-mtb-zulassungsstatus.md), [MII_EX_MTB_Antrag_Kostenuebernahme_Antragsstadium](StructureDefinition-mii-ex-mtb-antrag-kostenuebernahme-antragsstadium.md), [MII_EX_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund](StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-ablehnungsgrund.md), [MII_EX_MTB_Antwort_Kostenuebernahme_Entscheidung](StructureDefinition-mii-ex-mtb-antwort-kostenuebernahme-entscheidung.md), [MII_EX_MTB_Diagnose](StructureDefinition-mii-ex-mtb-diagnose.md), [MII_EX_MTB_Empfehlung_Evidenzgraduierung](StructureDefinition-mii-ex-mtb-empfehlung-evidenzgraduierung.md), [MII_EX_MTB_Empfehlung_Prioritaet](StructureDefinition-mii-ex-mtb-empfehlung-prioritaet.md), [MII_EX_MTB_Empfehlung_Publikation](StructureDefinition-mii-ex-mtb-empfehlung-publikation.md), [MII_EX_MTB_GenomicStudyAnalysis_QC](StructureDefinition-mii-ex-mtb-genomic-study-analysis-qc.md), [MII_EX_MTB_Leitlinie_Dokumentation](StructureDefinition-mii-ex-mtb-leitlinie-dokumentation.md), [MII_EX_MTB_Leitlinienbehandlung_Status](StructureDefinition-mii-ex-mtb-leitlinienbehandlung-status.md), [MII_EX_MTB_NGS_Bericht_Genomic_Study](StructureDefinition-mii-ex-mtb-ngs-bericht-genomic-study.md), [MII_EX_MTB_Panel_Gene_List](StructureDefinition-mii-ex-mtb-panel-gene-list.md), [MII_IG_MTB_DE](index.md), [MII_LM_MTB](StructureDefinition-mii-lm-mtb.md), [MII_NS_MTB_NCT](NamingSystem-mii-ns-mtb-nct.md), [MII_NS_Studie_DRKS](NamingSystem-mii-ns-studie-drks.md), [MII_NS_Studie_EudraCT](NamingSystem-mii-ns-studie-eudract.md), [MII_PR_MTB_Antrag_Kostenuebernahme](StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.md), [MII_PR_MTB_Antwort_Kostenuebernahme](StructureDefinition-mii-pr-mtb-antwort-kostenuebernahme.md), [MII_PR_MTB_BIOMARKER_HER2_STATUS](StructureDefinition-mii-pr-mtb-biomarker-her2-status.md), [MII_PR_MTB_BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md), [MII_PR_MTB_Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlungsepisode.md), [MII_PR_MTB_Biomarker_InSituHybridization](StructureDefinition-mii-pr-mtb-insituhybridization.md), [MII_PR_MTB_Biopsie_Auftrag](StructureDefinition-mii-pr-mtb-biopsie-auftrag.md), [MII_PR_MTB_Consent_Given](StructureDefinition-mii-pr-mtb-consent-given.md), [MII_PR_MTB_Copy_Number_Variant](StructureDefinition-mii-pr-mtb-copy-number-variant.md), [MII_PR_MTB_DNA_Fusion](StructureDefinition-mii-pr-mtb-dna-fusion.md), [MII_PR_MTB_Diagnose_Primaertumor](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md), [MII_PR_MTB_Diagnostische_Implikation](StructureDefinition-mii-pr-mtb-diagnostische-implikation.md), [MII_PR_MTB_Einfache_Variante](StructureDefinition-mii-pr-mtb-einfache-variante.md), [MII_PR_MTB_Follow_Up_ClinicalImpression](StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.md), [MII_PR_MTB_Genomic_Study](StructureDefinition-mii-pr-mtb-genomic-study.md), [MII_PR_MTB_Genomic_Study_Analysis](StructureDefinition-mii-pr-mtb-genomic-study-analysis.md), [MII_PR_MTB_Genomic_Study_Device](StructureDefinition-genomic-study-device.md), [MII_PR_MTB_HRD_Score](StructureDefinition-mii-pr-mtb-hrd-score.md), [MII_PR_MTB_Histologie_Evaluation_Auftrag](StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.md), [MII_PR_MTB_Humangenetische_Beratung_Auftrag](StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.md), [MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2](StructureDefinition-mii-pr-mtb-immunohistochemistry-her2.md), [MII_PR_MTB_INSITUHYBRIDIZATION_HER2](StructureDefinition-mii-pr-mtb-insituhybridization-her2.md), [MII_PR_MTB_Immunohistochemistry](StructureDefinition-mii-pr-mtb-immunohistochemistry.md), [MII_PR_MTB_Immunohistochemistry_MMR](StructureDefinition-mii-pr-mtb-immunohistochemistry-mmr.md), [MII_PR_MTB_Immunohistochemistry_MSI](StructureDefinition-mii-pr-mtb-msi.md), [MII_PR_MTB_Immunohistochemistry_PDL1](StructureDefinition-mii-pr-mtb-immunohistochemistry-pdl1.md), [MII_PR_MTB_Immunohistochemistry_Phosphorylation](StructureDefinition-mii-pr-mtb-immunohistochemistry-phosphorylation.md), [MII_PR_MTB_Mikrosatelliteninstabilitaet](StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.md), [MII_PR_MTB_Molecular_Pathology_Report](StructureDefinition-mii-pr-mtb-molecular-pathology-report.md), [MII_PR_MTB_Molekularer_Biomarker](StructureDefinition-mii-pr-mtb-molekularer-biomarker.md), [MII_PR_MTB_Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast.md), [MII_PR_MTB_NGS_Bericht](StructureDefinition-mii-pr-mtb-ngs-bericht.md), [MII_PR_MTB_Oncotree](StructureDefinition-mii-pr-mtb-oncotree.md), [MII_PR_MTB_Panel_DeviceDefinition](StructureDefinition-mii-pr-mtb-panel-devicedefinition.md), [MII_PR_MTB_Ploidie](StructureDefinition-mii-pr-mtb-ploidie.md), [MII_PR_MTB_RNA_Fusion](StructureDefinition-mii-pr-mtb-rna-fusion.md), [MII_PR_MTB_RNA_Seq](StructureDefinition-mii-pr-mtb-rna-seq.md), [MII_PR_MTB_Response_Befund](StructureDefinition-mii-pr-mtb-response-befund.md), [MII_PR_MTB_Studie](StructureDefinition-mii-pr-mtb-studie.md), [MII_PR_MTB_Studieneinschluss_Anfrage](StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.md), [MII_PR_MTB_Systemische_Therapie](StructureDefinition-mii-pr-mtb-systemische-therapie.md), [MII_PR_MTB_Systemische_Therapie_Medication_Statement](StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.md), [MII_PR_MTB_Systemische_Vortherapie](StructureDefinition-mii-pr-mtb-systemische-vortherapie.md), [MII_PR_MTB_Therapeutische_Implikation](StructureDefinition-mii-pr-mtb-therapeutische-implikation.md), [MII_PR_MTB_Therapieempfehlung](StructureDefinition-mii-pr-mtb-therapieempfehlung.md), [MII_PR_MTB_Therapieempfehlung_Kombination](StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.md), [MII_PR_MTB_Therapieplan](StructureDefinition-mii-pr-mtb-therapieplan.md), [MII_PR_MTB_Tumorausbreitung](StructureDefinition-mii-pr-mtb-tumorausbreitung.md), [MII_PR_MTB_Tumorzellgehalt](StructureDefinition-mii-pr-mtb-tumorzellgehalt.md), [MII_PR_MTB_WHO_Grad_Tumor_ZNS](StructureDefinition-mii-pr-mtb-who-grad-tumor-zns.md), [MII_VS_MTB_Antrag_Kostenuebernahme_Antragsstadium](ValueSet-mii-vs-mtb-antrag-kostenuebernahme-antragsstadium.md), [MII_VS_MTB_Antrag_Kostenuebernahme_Type](ValueSet-mii-vs-mtb-antrag-kostenuebernahme.md), [MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund](ValueSet-mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund.md), [MII_VS_MTB_Antwort_Kostenuebernahme_Entscheidung](ValueSet-mii-vs-mtb-antwort-kostenuebernahme-entscheidung.md), [MII_VS_MTB_AuftragBegruendung](ValueSet-mii-vs-mtb-auftrag-begruendung.md), [MII_VS_MTB_BestimmungsmethodeTumorzellgehalt](ValueSet-mii-vs-mtb-bestimmungsmethode-tumorzellgehalt.md), [MII_VS_MTB_Beurteilungsmethode](ValueSet-mii-vs-mtb-beurteilungsmethode-response-befund.md), [MII_VS_MTB_Dosisdichte](ValueSet-mii-vs-mtb-dosisdichte.md), [MII_VS_MTB_Empfehlung_Evidenzgrad](ValueSet-mii-vs-mtb-empfehlung-evidenzgrad.md), [MII_VS_MTB_Empfehlung_EvidenzgradZusatzverweis](ValueSet-mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis.md), [MII_VS_MTB_Empfehlung_StatusBegruendung](ValueSet-mii-vs-mtb-empfehlung-status-begruendung.md), [MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung](ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.md), [MII_VS_MTB_Follow_Up_Status](ValueSet-mii-vs-mtb-follow-up-status.md), [MII_VS_MTB_Genomic_Analysis_Method_Type](ValueSet-mii-vs-mtb-genomic-analysis-method-type.md), [MII_VS_MTB_ISH_Method](ValueSet-mii-vs-mtb-ish-method.md), [MII_VS_MTB_Immunhistochemistry_Specific_Codes](ValueSet-mii-vs-mtb-immunohistochemistry-specific-codes.md), [MII_VS_MTB_Interpretation_High_Low](ValueSet-mii-vs-mtb-interpretation-high-low.md), [MII_VS_MTB_Leitlinienbehandlung_Status](ValueSet-mii-vs-mtb-leitlinienbehandlung-status.md), [MII_VS_MTB_MMR_Expression](ValueSet-mii-vs-mtb-mmr-expression.md), [MII_VS_MTB_MMR_Proficiency](ValueSet-mii-vs-mtb-mmr-proficiency.md), [MII_VS_MTB_MSI_Method_Type](ValueSet-mii-vs-mtb-msi-method-type.md), [MII_VS_MTB_Microsatellite_Instability](ValueSet-mii-vs-mtb-msi.md), [MII_VS_MTB_Molekulare_Biomarker](ValueSet-mii-vs-mtb-molekulare-biomarker.md), [MII_VS_MTB_OncoTree](ValueSet-mii-vs-mtb-oncotree.md), [MII_VS_MTB_Panel_ArcherLungV2](ValueSet-mii-vs-mtb-panel-archer-lung-v2.md), [MII_VS_MTB_Panel_BasicNgs](ValueSet-mii-vs-mtb-panel-basic-ngs.md), [MII_VS_MTB_Panel_Capability](ValueSet-mii-vs-mtb-panel-capability.md), [MII_VS_MTB_Panel_Cgp](ValueSet-mii-vs-mtb-panel-cgp.md), [MII_VS_MTB_Panel_Dhs3501z](ValueSet-mii-vs-mtb-panel-dhs-3501z.md), [MII_VS_MTB_Panel_Ofa](ValueSet-mii-vs-mtb-panel-ofa.md), [MII_VS_MTB_Panel_OfaPlus](ValueSet-mii-vs-mtb-panel-ofa-plus.md), [MII_VS_MTB_Panel_TcmNgs](ValueSet-mii-vs-mtb-panel-tcm-ngs.md), [MII_VS_MTB_Panel_Tso500Fusion](ValueSet-mii-vs-mtb-panel-tso-500-fusion.md), [MII_VS_MTB_Panel_Tso500Snv](ValueSet-mii-vs-mtb-panel-tso-500-snv.md), [MII_VS_MTB_Response_Befund_Beurteilung](ValueSet-mii-vs-mtb-response-befund-beurteilung.md), [MII_VS_MTB_Systemische_Therapie_Status](ValueSet-mii-vs-mtb-systemische-therapie-status.md), [MII_VS_MTB_Therapiestatusgrund](ValueSet-mii-vs-mtb-therapiestatusgrund.md), [MII_VS_MTB_Tumorausbreitung](ValueSet-mii-vs-mtb-tumorausbreitung.md), [MII_VS_MTB_WHO_Grad_Tumor_ZNS](ValueSet-mii-vs-mtb-who-grad-tumor-zns.md) and [MII_VS_MTB_Zulassungsstatus](ValueSet-mii-vs-mtb-zulassungsstatus.md)
+
+
+* It is a condition of HGNC funding from NIH and the Welcome Trust that the nomenclature and information provided is freely available to all. Anyone may use the HGNC data, but we request that they reference the **"HUGO Gene Nomenclature Committee at the European Bioinformatics Institute"** and the website where possible.
+
+* [HUGO Gene Nomenclature Committee Genes](http://terminology.hl7.org/6.5.0/CodeSystem-v3-hgnc.html): [MII_VS_MTB_Panel_ArcherLungV2](ValueSet-mii-vs-mtb-panel-archer-lung-v2.md), [MII_VS_MTB_Panel_BasicNgs](ValueSet-mii-vs-mtb-panel-basic-ngs.md)... Show 7 more, [MII_VS_MTB_Panel_Cgp](ValueSet-mii-vs-mtb-panel-cgp.md), [MII_VS_MTB_Panel_Dhs3501z](ValueSet-mii-vs-mtb-panel-dhs-3501z.md), [MII_VS_MTB_Panel_Ofa](ValueSet-mii-vs-mtb-panel-ofa.md), [MII_VS_MTB_Panel_OfaPlus](ValueSet-mii-vs-mtb-panel-ofa-plus.md), [MII_VS_MTB_Panel_TcmNgs](ValueSet-mii-vs-mtb-panel-tcm-ngs.md), [MII_VS_MTB_Panel_Tso500Fusion](ValueSet-mii-vs-mtb-panel-tso-500-fusion.md) and [MII_VS_MTB_Panel_Tso500Snv](ValueSet-mii-vs-mtb-panel-tso-500-snv.md)
 
 
 * The Sequence Ontology: A tool for the unification of genome annotations. Eilbeck K., Lewis S.E., Mungall C.J., Yandell M., Stein L., Durbin R., Ashburner M. [Genome Biology (2005) 6:R44](http://genomebiology.com/2005/6/5/R44) Please also include the version of SO used.Sequence Ontology data and data products are licensed under the [Creative Commons Attribution 4.0 Unported License](https://creativecommons.org/licenses/by/4.0/legalcode) .
@@ -1694,6 +1699,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-basic-ngs.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-basic-ngs"
+      },
+      "name" : "Basic-NGS Panel",
+      "description" : "Panel-Template: Basic-NGS Panel. 36 Gene; nur SNVs. TODO:REVIEW Betreiber/Hersteller des Hauspanels ergaenzen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
       },
       {
@@ -2244,6 +2265,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-master.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-master"
+      },
+      "name" : "DKTK/MASTER Whole-Genome/-Exome Sequencing",
+      "description" : "Panel-Template: DKTK/MASTER Whole-Genome/-Exome Sequencing. Analyse im DKTK/MASTER-Programm; genomweit, keine endliche Panelliste (all_assessed). TODO:REVIEW Hersteller/Betreiber ergaenzen (Konsortium, kein Produkt).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
       },
       {
@@ -2387,6 +2424,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-archer-lung-v2.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-archer-lung-v2"
+      },
+      "name" : "FusionPlex Archer Lung V2",
+      "description" : "Panel-Template: FusionPlex Archer Lung V2. Fusionsanalyse, 17 Gene.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -2463,6 +2516,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
       "name" : "Lunresertib + Camonsertib",
       "description" : "Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib, Priorität: 5, Evidenzgrad: m1B",
       "exampleCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-mh600plus.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-mh600plus"
+      },
+      "name" : "MH IVD 600+",
+      "description" : "Panel-Template: MH IVD 600+. Laut Katalog 617 Gene; nur SNVs. TODO:REVIEW Quelle nennt 617 Gene, verweist aber auf die CGP-Genliste (602) — pruefen.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -2759,6 +2828,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-mii-cs-mtb-panel-capability.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mii-cs-mtb-panel-capability"
+      },
+      "name" : "MII CS MTB Panel Capability",
+      "description" : "Analytische Faehigkeiten eines Sequenzier-Panels (aus dem Panel-Metadatenkatalog abgeleitet). TODO:REVIEW",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "CodeSystem-mii-cs-mtb-response-befund-beurteilung.html"
       }],
       "reference" : {
@@ -2990,6 +3075,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
       },
       "name" : "MII EX MTB NGS Bericht Metadaten",
       "description" : "Metadaten des NGS-Berichts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-ex-mtb-panel-gene-list.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-ex-mtb-panel-gene-list"
+      },
+      "name" : "MII EX MTB Panel Gene List",
+      "description" : "Genliste eines Sequenzier-Panels als Kanonische Referenz auf ein ValueSet mit HGNC-Genen, optional nach analytischem Scope (SNV/Fusion) unterschieden.",
       "exampleBoolean" : false
     },
     {
@@ -3582,6 +3683,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
       },
       "name" : "MII PR MTB Oncotree Klassifikation",
       "description" : "Grad des Tumors nach MSKCC Oncotree Klassifikation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-mtb-panel-devicedefinition.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-mtb-panel-devicedefinition"
+      },
+      "name" : "MII PR MTB Panel DeviceDefinition",
+      "description" : "Katalog-Template eines Sequenzier-Panel-Produkts (Genpanel): Hersteller, Produktname/Version, analytische Faehigkeiten und Genliste(n). Konkrete Geraete/Kits einer Einrichtung verweisen via Device.definition auf ihr Template.",
       "exampleBoolean" : false
     },
     {
@@ -4206,6 +4323,166 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
       },
       "name" : "MII VS MTB ISH Method",
       "description" : "In Situ Hybridization technique methods (FISH, CISH, SISH)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-archer-lung-v2.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-archer-lung-v2"
+      },
+      "name" : "MII VS MTB Panel Archer",
+      "description" : "Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-basic-ngs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-basic-ngs"
+      },
+      "name" : "MII VS MTB Panel Basic-NGS",
+      "description" : "Genliste des Panels: Basic-NGS Panel (36 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-capability.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-capability"
+      },
+      "name" : "MII VS MTB Panel Capability",
+      "description" : "Analytische Faehigkeiten eines Sequenzier-Panels.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-cgp.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-cgp"
+      },
+      "name" : "MII VS MTB Panel CGP",
+      "description" : "Genliste des Panels: SureSelect Cancer CGP Assay (602 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-dhs-3501z.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-dhs-3501z"
+      },
+      "name" : "MII VS MTB Panel DHS-3501Z",
+      "description" : "Genliste des Panels: Qiagen DHS-3501Z (275 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-ofa.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-ofa"
+      },
+      "name" : "MII VS MTB Panel OFA",
+      "description" : "Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-ofa-plus.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-ofa-plus"
+      },
+      "name" : "MII VS MTB Panel OFA plus",
+      "description" : "Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-tcm-ngs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-tcm-ngs"
+      },
+      "name" : "MII VS MTB Panel TCM NGS",
+      "description" : "Genliste des Panels: TCM NGS Panel (409 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-tso-500-fusion.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-tso-500-fusion"
+      },
+      "name" : "MII VS MTB Panel TSO 500 Fusions",
+      "description" : "Genliste des Panels: TruSight Oncology 500 — Fusions-Genliste (55 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-mtb-panel-tso-500-snv.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-mtb-panel-tso-500-snv"
+      },
+      "name" : "MII VS MTB Panel TSO 500 SNVs",
+      "description" : "Genliste des Panels: TruSight Oncology 500 — SNV-Genliste (523 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping.",
       "exampleBoolean" : false
     },
     {
@@ -5317,6 +5594,38 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-ofa.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-ofa"
+      },
+      "name" : "Oncomine Focus Assay",
+      "description" : "Panel-Template: Oncomine Focus Assay. DNA + RNA, 52 Gene; SNVs + Fusionen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-ofa-plus.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-ofa-plus"
+      },
+      "name" : "Oncomine Focus Assay Plus",
+      "description" : "Panel-Template: Oncomine Focus Assay Plus. 517 Gene; SNVs + Fusionen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
       },
       {
@@ -6308,6 +6617,54 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-dhs-3501z.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-dhs-3501z"
+      },
+      "name" : "Qiagen DHS-3501Z",
+      "description" : "Panel-Template: Qiagen DHS-3501Z. 275 Gene; nur SNVs (keine Fusionsanalyse).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-cgp.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-cgp"
+      },
+      "name" : "SureSelect Cancer CGP Assay",
+      "description" : "Panel-Template: SureSelect Cancer CGP Assay. 602 Gene; nur SNVs.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-tcm-ngs.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-tcm-ngs"
+      },
+      "name" : "TCM NGS Panel",
+      "description" : "Panel-Template: TCM NGS Panel. 409 Gene; SNVs + Fusionen. TODO:REVIEW Betreiber/Hersteller des Hauspanels ergaenzen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ResearchStudy"
       },
       {
@@ -6388,6 +6745,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-tso-500.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-tso-500"
+      },
+      "name" : "TruSight Oncology 500",
+      "description" : "Panel-Template: TruSight Oncology 500. 523 SNV-Gene, 55 Fusions-Gene; misst u. a. auch TMB/MSI. TODO:REVIEW Version (vermutlich v2) und vollstaendige Faehigkeiten bestaetigen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
       },
       {
@@ -6400,6 +6773,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
       "name" : "Tumorzellgehalt Aszites",
       "description" : "Tumorzellgehalt progrediente Aszites (20ml/700ml maligne Tumorzellen)",
       "exampleCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DeviceDefinition-mii-dd-mtb-panel-wgs.html"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/mii-dd-mtb-panel-wgs"
+      },
+      "name" : "Whole Genome Sequencing (generisch)",
+      "description" : "Panel-Template: Whole Genome Sequencing (generisch). Genomweite Sequenzierung; keine endliche Panelliste (all_assessed). TODO:REVIEW generisches Verfahren, kein Produkt — behalten oder streichen.",
+      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{

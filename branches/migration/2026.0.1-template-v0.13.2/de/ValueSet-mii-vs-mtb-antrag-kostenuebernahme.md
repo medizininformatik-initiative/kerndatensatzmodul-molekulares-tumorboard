@@ -44,7 +44,7 @@ MII Logical Model Modul Molekulares Tumorboard
   "title" : "MII VS MTB Antrag Kostenuebernahme",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T08:03:24+00:00",
+  "date" : "2026-09-14T11:48:09+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

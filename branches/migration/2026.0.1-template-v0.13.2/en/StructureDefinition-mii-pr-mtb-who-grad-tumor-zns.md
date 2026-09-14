@@ -74,7 +74,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-who-gr
   "name" : "MII_PR_MTB_WHO_Grad_Tumor_ZNS",
   "title" : "MII PR MTB WHO Grad Tumor ZNS",
   "status" : "active",
-  "date" : "2026-09-14T08:03:24+00:00",
+  "date" : "2026-09-14T11:48:09+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

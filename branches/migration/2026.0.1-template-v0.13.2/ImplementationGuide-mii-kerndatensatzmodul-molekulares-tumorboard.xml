@@ -1154,6 +1154,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-basic-ngs"/>
+      </reference>
+      <name value="Basic-NGS Panel"/>
+      <description value="Panel-Template: Basic-NGS Panel. 36 Gene; nur SNVs. TODO:REVIEW Betreiber/Hersteller des Hauspanels ergaenzen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -1529,6 +1540,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-master"/>
+      </reference>
+      <name value="DKTK/MASTER Whole-Genome/-Exome Sequencing"/>
+      <description value="Panel-Template: DKTK/MASTER Whole-Genome/-Exome Sequencing. Analyse im DKTK/MASTER-Programm; genomweit, keine endliche Panelliste (all_assessed). TODO:REVIEW Hersteller/Betreiber ergaenzen (Konsortium, kein Produkt)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
@@ -1627,6 +1649,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-archer-lung-v2"/>
+      </reference>
+      <name value="FusionPlex Archer Lung V2"/>
+      <description value="Panel-Template: FusionPlex Archer Lung V2. Fusionsanalyse, 17 Gene."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1679,6 +1712,17 @@
       <name value="Lunresertib + Camonsertib"/>
       <description value="Therapieempfehlung Kombinationstherapie: Lunresertib + Camonsertib, Priorität: 5, Evidenzgrad: m1B"/>
       <exampleCanonical value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-mh600plus"/>
+      </reference>
+      <name value="MH IVD 600+"/>
+      <description value="Panel-Template: MH IVD 600+. Laut Katalog 617 Gene; nur SNVs. TODO:REVIEW Quelle nennt 617 Gene, verweist aber auf die CGP-Genliste (602) — pruefen."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1883,6 +1927,17 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/mii-cs-mtb-panel-capability"/>
+      </reference>
+      <name value="MII CS MTB Panel Capability"/>
+      <description value="Analytische Faehigkeiten eines Sequenzier-Panels (aus dem Panel-Metadatenkatalog abgeleitet). TODO:REVIEW"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/mii-cs-mtb-response-befund-beurteilung"/>
       </reference>
       <name value="MII CS Response Befund Beurteilung"/>
@@ -2041,6 +2096,17 @@
       </reference>
       <name value="MII EX MTB NGS Bericht Metadaten"/>
       <description value="Metadaten des NGS-Berichts"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mii-ex-mtb-panel-gene-list"/>
+      </reference>
+      <name value="MII EX MTB Panel Gene List"/>
+      <description value="Genliste eines Sequenzier-Panels als Kanonische Referenz auf ein ValueSet mit HGNC-Genen, optional nach analytischem Scope (SNV/Fusion) unterschieden."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2448,6 +2514,17 @@
       </reference>
       <name value="MII PR MTB Oncotree Klassifikation"/>
       <description value="Grad des Tumors nach MSKCC Oncotree Klassifikation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mii-pr-mtb-panel-devicedefinition"/>
+      </reference>
+      <name value="MII PR MTB Panel DeviceDefinition"/>
+      <description value="Katalog-Template eines Sequenzier-Panel-Produkts (Genpanel): Hersteller, Produktname/Version, analytische Faehigkeiten und Genliste(n). Konkrete Geraete/Kits einer Einrichtung verweisen via Device.definition auf ihr Template."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2877,6 +2954,116 @@
       </reference>
       <name value="MII VS MTB ISH Method"/>
       <description value="In Situ Hybridization technique methods (FISH, CISH, SISH)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-archer-lung-v2"/>
+      </reference>
+      <name value="MII VS MTB Panel Archer"/>
+      <description value="Genliste des Panels: FusionPlex Archer Lung V2 (17 Gene, Fusionsanalyse). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-basic-ngs"/>
+      </reference>
+      <name value="MII VS MTB Panel Basic-NGS"/>
+      <description value="Genliste des Panels: Basic-NGS Panel (36 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-capability"/>
+      </reference>
+      <name value="MII VS MTB Panel Capability"/>
+      <description value="Analytische Faehigkeiten eines Sequenzier-Panels."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-cgp"/>
+      </reference>
+      <name value="MII VS MTB Panel CGP"/>
+      <description value="Genliste des Panels: SureSelect Cancer CGP Assay (602 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-dhs-3501z"/>
+      </reference>
+      <name value="MII VS MTB Panel DHS-3501Z"/>
+      <description value="Genliste des Panels: Qiagen DHS-3501Z (275 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-ofa"/>
+      </reference>
+      <name value="MII VS MTB Panel OFA"/>
+      <description value="Genliste des Panels: Oncomine Focus Assay (52 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-ofa-plus"/>
+      </reference>
+      <name value="MII VS MTB Panel OFA plus"/>
+      <description value="Genliste des Panels: Oncomine Focus Assay Plus (517 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-tcm-ngs"/>
+      </reference>
+      <name value="MII VS MTB Panel TCM NGS"/>
+      <description value="Genliste des Panels: TCM NGS Panel (409 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-tso-500-fusion"/>
+      </reference>
+      <name value="MII VS MTB Panel TSO 500 Fusions"/>
+      <description value="Genliste des Panels: TruSight Oncology 500 — Fusions-Genliste (55 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mii-vs-mtb-panel-tso-500-snv"/>
+      </reference>
+      <name value="MII VS MTB Panel TSO 500 SNVs"/>
+      <description value="Genliste des Panels: TruSight Oncology 500 — SNV-Genliste (523 Gene). Kodiert als HGNC-Gensymbole; TODO:REVIEW HGNC-ID-Mapping."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3632,6 +3819,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-ofa"/>
+      </reference>
+      <name value="Oncomine Focus Assay"/>
+      <description value="Panel-Template: Oncomine Focus Assay. DNA + RNA, 52 Gene; SNVs + Fusionen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-ofa-plus"/>
+      </reference>
+      <name value="Oncomine Focus Assay Plus"/>
+      <description value="Panel-Template: Oncomine Focus Assay Plus. 517 Gene; SNVs + Fusionen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
       </extension>
       <reference>
@@ -4308,6 +4517,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-dhs-3501z"/>
+      </reference>
+      <name value="Qiagen DHS-3501Z"/>
+      <description value="Panel-Template: Qiagen DHS-3501Z. 275 Gene; nur SNVs (keine Fusionsanalyse)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-cgp"/>
+      </reference>
+      <name value="SureSelect Cancer CGP Assay"/>
+      <description value="Panel-Template: SureSelect Cancer CGP Assay. 602 Gene; nur SNVs."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-tcm-ngs"/>
+      </reference>
+      <name value="TCM NGS Panel"/>
+      <description value="Panel-Template: TCM NGS Panel. 409 Gene; SNVs + Fusionen. TODO:REVIEW Betreiber/Hersteller des Hauspanels ergaenzen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ResearchStudy"/>
       </extension>
       <reference>
@@ -4363,6 +4605,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-tso-500"/>
+      </reference>
+      <name value="TruSight Oncology 500"/>
+      <description value="Panel-Template: TruSight Oncology 500. 523 SNV-Gene, 55 Fusions-Gene; misst u. a. auch TMB/MSI. TODO:REVIEW Version (vermutlich v2) und vollstaendige Faehigkeiten bestaetigen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -4371,6 +4624,17 @@
       <name value="Tumorzellgehalt Aszites"/>
       <description value="Tumorzellgehalt progrediente Aszites (20ml/700ml maligne Tumorzellen)"/>
       <exampleCanonical value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/mii-dd-mtb-panel-wgs"/>
+      </reference>
+      <name value="Whole Genome Sequencing (generisch)"/>
+      <description value="Panel-Template: Whole Genome Sequencing (generisch). Genomweite Sequenzierung; keine endliche Panelliste (all_assessed). TODO:REVIEW generisches Verfahren, kein Produkt — behalten oder streichen."/>
+      <exampleBoolean value="false"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

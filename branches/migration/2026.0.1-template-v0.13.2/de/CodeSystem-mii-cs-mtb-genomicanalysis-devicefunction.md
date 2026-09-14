@@ -37,7 +37,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
   "title" : "MII CS GenomicAnalysis DeviceType",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-14T08:03:24+00:00",
+  "date" : "2026-09-14T11:48:09+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",
@@ -56,7 +56,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
   }],
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 3,
+  "count" : 4,
   "concept" : [{
     "code" : "sequencing-device",
     "display" : "Sequenziergerät"
@@ -68,6 +68,11 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
   {
     "code" : "library-preparation-kit",
     "display" : "Library-Preparation Kit"
+  },
+  {
+    "code" : "gene-panel",
+    "display" : "Genpanel",
+    "definition" : "Sequenzier-Panel-Produkt (Genpanel) — Katalogebene via DeviceDefinition-Template. TODO:REVIEW (2026-09-14 ergaenzt fuer den Panel-Katalog)"
   }]
 }
 
