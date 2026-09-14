@@ -1,5 +1,4 @@
 // Aliases für dieses Komplexbeispiel
-Alias: $mii-cs-consent-category = https://www.medizininformatik-initiative.de/fhir/modul-consent/CodeSystem/mii-cs-consent-consent_category
 Alias: $ngs-category = http://terminology.hl7.org/CodeSystem/v2-0074
 
 // RuleSets für dieses Komplexbeispiel

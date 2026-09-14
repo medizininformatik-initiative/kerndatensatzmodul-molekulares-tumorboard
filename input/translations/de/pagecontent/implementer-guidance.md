@@ -175,13 +175,20 @@ Die folgenden SNOMED CT Codes sind korrekt, aber neuer als die auf dem Terminolo
 
 | Paket | Version | Beschreibung |
 |-------|---------|--------------|
-| `de.medizininformatikinitiative.kerndatensatz.meta` | 2026.0.0 | MII Kerndatensatz Meta |
-| `de.medizininformatikinitiative.kerndatensatz.base` | 2026.0.0 | MII Kerndatensatz Basis |
-| `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2026.0.3 | MII Modul Onkologie |
-| `de.medizininformatikinitiative.kerndatensatz.molgen` | 2026.0.4 | MII Modul Molekulargenetik |
-| `de.medizininformatikinitiative.kerndatensatz.patho` | 2026.0.0 | MII Modul Pathologie |
-| `de.medizininformatikinitiative.kerndatensatz.consent` | 2026.0.0 | MII Modul Consent |
+| `de.medizininformatikinitiative.kerndatensatz.meta` | 2027.0.0-ballot.rc3 | MII Kerndatensatz Meta |
+| `de.medizininformatikinitiative.kerndatensatz.base` | 2027.0.0-ballot.rc1 | MII Kerndatensatz Basis |
+| `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2027.0.0-ballot | MII Modul Onkologie |
+| `de.medizininformatikinitiative.kerndatensatz.molgen` | 2027.0.0-ballot.rc3 | MII Modul Molekulargenetik |
+| `de.medizininformatikinitiative.kerndatensatz.patho` | 2027.0.0-ballot.rc2 | MII Modul Pathologie |
+| `de.medizininformatikinitiative.kerndatensatz.medikation` | 2027.0.0-ballot.rc5 | MII Modul Medikation |
+| `de.medizininformatikinitiative.kerndatensatz.biobank` | 2027.0.0-ballot.rc2 | MII Modul Biobank |
+| `de.medizininformatikinitiative.kerndatensatz.studie` | 2027.0.0-ballot.rc1 | MII Modul Studie |
 | `hl7.fhir.uv.genomics-reporting` | 3.0.0 | HL7 Genomics Reporting IG |
+
+Die frühere Abhängigkeit auf `de.medizininformatikinitiative.kerndatensatz.consent`
+wurde entfernt: Kein Artefakt dieses Moduls konsumiert das Consent-Paket — das
+Aufklärungs-Profil des Moduls (`mii-pr-mtb-consent-given`) leitet direkt von
+`Observation` ab.
 
 #### Status-Legende
 
