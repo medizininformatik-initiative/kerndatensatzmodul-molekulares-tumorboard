@@ -24,11 +24,14 @@ The module is continuously validated against the FHIR R4 standard and the define
 
 #### Known issues of the template build (status 2026-09)
 
-The remaining QA errors of this build are **one family: the public HL7
-terminology server (tx.fhir.org) does not host the German terminology content
-this module validates against.** They are expected to disappear once CI
-validates against the MII terminology server (SU-TermServ; see
-`scripts/set-su-termserv-secrets.sh` — requires repository secrets).
+**Which numbers come from which terminology server matters here.** The CI
+build validates against the **MII terminology server (SU-TermServ)** through
+the organization's client certificate (the template's proxy mechanism) and
+currently reports **91 errors**. A build without that certificate — e.g. a
+local build — falls back to the public HL7 server (tx.fhir.org) and reports
+**144 errors**: the difference is **one family — tx.fhir.org does not host the
+German terminology content this module validates against.** The table below
+describes that public-tx-only family; none of it appears on SU-TermServ.
 
 | Class | ~Count | Root cause |
 |---|---|---|
