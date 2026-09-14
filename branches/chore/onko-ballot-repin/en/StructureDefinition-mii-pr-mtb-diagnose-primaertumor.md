@@ -189,7 +189,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-mtb-diagno
   "name" : "MII_PR_MTB_Diagnose_Primaertumor",
   "title" : "MII PR MTB Diagnose Primärtumor",
   "status" : "active",
-  "date" : "2026-09-14T22:18:02+00:00",
+  "date" : "2026-09-14T22:51:17+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

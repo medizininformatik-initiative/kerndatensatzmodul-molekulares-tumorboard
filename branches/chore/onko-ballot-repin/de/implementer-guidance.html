@@ -338,14 +338,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Das Modul wird kontinuierlich gegen den FHIR R4 Standard und die definierten Profile validiert. Da Simplifier keinen öffentlichen QA-Report bereitstellt wie bei klassischen FHIR IG Publisher Builds, dokumentieren wir hier transparent den Validierungsstatus.</p>
 
-<h4 id="bekannte-befunde-des-template-builds-stand-2026-09">Bekannte Befunde des Template-Builds (Stand 2026-09)</h4>
+<h4 id="bekannte-befunde-des-template-builds-stand-2026-09-aktualisiert-nach-dem-2027-ballot-re-pin">Bekannte Befunde des Template-Builds (Stand 2026-09, aktualisiert nach dem 2027-Ballot-Re-Pin)</h4>
 
 <p><strong>Welche Zahl von welchem Terminologieserver stammt, ist hier entscheidend.</strong>
 Der CI-Build validiert über das Client-Zertifikat der Organisation (der
 Proxy-Mechanismus des Templates) gegen den <strong>MII-Terminologieserver
-(SU-TermServ)</strong> und meldet aktuell <strong>91 Fehler</strong>. Ein Build ohne dieses
+(SU-TermServ)</strong> und meldet aktuell <strong>55 Fehler</strong> (alle Abhängigkeiten auf ihren finalen 2027.0.0-ballot-Versionen). Ein Build ohne dieses
 Zertifikat — z. B. lokal — fällt auf den öffentlichen HL7-Server (tx.fhir.org)
-zurück und meldet <strong>144 Fehler</strong>: die Differenz ist <strong>eine Familie —
+zurück und meldet rund <strong>107 Fehler</strong>: die Differenz ist <strong>eine Familie —
 tx.fhir.org hält die deutschen Terminologie-Inhalte nicht vor, gegen die
 dieses Modul validiert.</strong> Die Tabelle unten beschreibt diese Nur-Public-TX-
 Familie; auf dem SU-TermServ tritt nichts davon auf.</p>
@@ -849,7 +849,7 @@ Aufklärungs-Profil des Moduls (<code class="language-plaintext highlighter-roug
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Sep 14, 2026 22:18+0000">2026-09-14</span>
+          Erstellt <span title="Mon, Sep 14, 2026 22:51+0000">2026-09-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

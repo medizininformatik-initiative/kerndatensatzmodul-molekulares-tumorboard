@@ -86,7 +86,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-e
   "name" : "MII_EX_MTB_Empfehlung_Evidenzgraduierung",
   "title" : "MII EX MTB Empfehlung Evidenzgraduierung",
   "status" : "active",
-  "date" : "2026-09-14T22:18:02+00:00",
+  "date" : "2026-09-14T22:51:17+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

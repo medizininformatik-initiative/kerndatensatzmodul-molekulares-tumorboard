@@ -26,9 +26,9 @@ This section documents the FHIR validation status of the MII module Molecular Tu
 
 The module is continuously validated against the FHIR R4 standard and the defined profiles. The validation status is documented here transparently.
 
-#### Known issues of the template build (status 2026-09)
+#### Known issues of the template build (status 2026-09, updated after the 2027-ballot re-pin)
 
-**Which numbers come from which terminology server matters here.** The CI build validates against the **MII terminology server (SU-TermServ)** through the organization's client certificate (the template's proxy mechanism) and currently reports **91 errors**. A build without that certificate — e.g. a local build — falls back to the public HL7 server (tx.fhir.org) and reports **144 errors**: the difference is **one family — tx.fhir.org does not host the German terminology content this module validates against.** The table below describes that public-tx-only family; none of it appears on SU-TermServ.
+**Which numbers come from which terminology server matters here.** The CI build validates against the **MII terminology server (SU-TermServ)** through the organization's client certificate (the template's proxy mechanism) and currently reports **55 errors** (all dependencies on their final 2027.0.0-ballot versions). A build without that certificate — e.g. a local build — falls back to the public HL7 server (tx.fhir.org) and reports around **107 errors**: the difference is **one family — tx.fhir.org does not host the German terminology content this module validates against.** The table below describes that public-tx-only family; none of it appears on SU-TermServ.
 
 | | | |
 | :--- | :--- | :--- |

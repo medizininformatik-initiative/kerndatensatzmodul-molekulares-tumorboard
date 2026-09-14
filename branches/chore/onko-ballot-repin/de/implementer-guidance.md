@@ -28,9 +28,9 @@ Diese Seite dokumentiert den aktuellen Stand der FHIR-Validierung für das MII M
 
 Das Modul wird kontinuierlich gegen den FHIR R4 Standard und die definierten Profile validiert. Da Simplifier keinen öffentlichen QA-Report bereitstellt wie bei klassischen FHIR IG Publisher Builds, dokumentieren wir hier transparent den Validierungsstatus.
 
-#### Bekannte Befunde des Template-Builds (Stand 2026-09)
+#### Bekannte Befunde des Template-Builds (Stand 2026-09, aktualisiert nach dem 2027-Ballot-Re-Pin)
 
-**Welche Zahl von welchem Terminologieserver stammt, ist hier entscheidend.** Der CI-Build validiert über das Client-Zertifikat der Organisation (der Proxy-Mechanismus des Templates) gegen den **MII-Terminologieserver (SU-TermServ)** und meldet aktuell **91 Fehler**. Ein Build ohne dieses Zertifikat — z. B. lokal — fällt auf den öffentlichen HL7-Server (tx.fhir.org) zurück und meldet **144 Fehler**: die Differenz ist **eine Familie — tx.fhir.org hält die deutschen Terminologie-Inhalte nicht vor, gegen die dieses Modul validiert.** Die Tabelle unten beschreibt diese Nur-Public-TX- Familie; auf dem SU-TermServ tritt nichts davon auf.
+**Welche Zahl von welchem Terminologieserver stammt, ist hier entscheidend.** Der CI-Build validiert über das Client-Zertifikat der Organisation (der Proxy-Mechanismus des Templates) gegen den **MII-Terminologieserver (SU-TermServ)** und meldet aktuell **55 Fehler** (alle Abhängigkeiten auf ihren finalen 2027.0.0-ballot-Versionen). Ein Build ohne dieses Zertifikat — z. B. lokal — fällt auf den öffentlichen HL7-Server (tx.fhir.org) zurück und meldet rund **107 Fehler**: die Differenz ist **eine Familie — tx.fhir.org hält die deutschen Terminologie-Inhalte nicht vor, gegen die dieses Modul validiert.** Die Tabelle unten beschreibt diese Nur-Public-TX- Familie; auf dem SU-TermServ tritt nichts davon auf.
 
 | | | |
 | :--- | :--- | :--- |
