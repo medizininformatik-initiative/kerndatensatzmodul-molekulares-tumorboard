@@ -77,7 +77,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-mtb.c
   "name" : "MII_LM_MTB",
   "title" : "MII LM Molekulares Tumorboard",
   "status" : "active",
-  "date" : "2026-09-14T21:38:27+00:00",
+  "date" : "2026-09-14T22:18:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

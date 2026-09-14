@@ -77,7 +77,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-dnpm-lm-care
   "name" : "DNPM_LM_CarePlan",
   "title" : "DNPM MTB Care Plan",
   "status" : "active",
-  "date" : "2026-09-14T21:38:27+00:00",
+  "date" : "2026-09-14T22:18:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

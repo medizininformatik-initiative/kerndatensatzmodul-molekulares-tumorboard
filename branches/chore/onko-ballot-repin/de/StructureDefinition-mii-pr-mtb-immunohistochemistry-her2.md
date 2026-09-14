@@ -220,7 +220,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-i
   "name" : "MII_PR_MTB_IMMUNOHISTOCHEMISTRY_HER2",
   "title" : "MII PR MTB Immunohistochemistry",
   "status" : "active",
-  "date" : "2026-09-14T21:38:27+00:00",
+  "date" : "2026-09-14T22:18:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

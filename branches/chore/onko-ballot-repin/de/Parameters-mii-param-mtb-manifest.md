@@ -907,7 +907,7 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen|2027.0.0-ballot.rc2"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen|2027.0.0-ballot"
   },
   {
     "name" : "default-canonical-version",
@@ -1575,7 +1575,7 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding|2027.0.0-ballot.rc2"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding|2027.0.0-ballot"
   },
   {
     "name" : "default-valueset-version",

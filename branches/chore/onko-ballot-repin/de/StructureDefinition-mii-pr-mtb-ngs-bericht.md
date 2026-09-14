@@ -77,8 +77,8 @@ Must-Support: 18 elements
 This structure refers to these other structures:
 
 * [MII PR Onkologie Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-specimen.html)
-* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
-* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.biobank@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
+* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
+* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.molgen@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
 * [MII PR MTB Mutationslast (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast)](StructureDefinition-mii-pr-mtb-mutationslast.md)
 * [MII PR MTB Mikrosatelliteninstabilität (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet)](StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.md)
 * [MII PR MTB Ploidie (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ploidie)](StructureDefinition-mii-pr-mtb-ploidie.md)
@@ -125,8 +125,8 @@ Must-Support: 18 elements
 This structure refers to these other structures:
 
 * [MII PR Onkologie Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-specimen.html)
-* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
-* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.biobank@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
+* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
+* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.molgen@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
 * [MII PR MTB Mutationslast (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast)](StructureDefinition-mii-pr-mtb-mutationslast.md)
 * [MII PR MTB Mikrosatelliteninstabilität (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet)](StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.md)
 * [MII PR MTB Ploidie (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ploidie)](StructureDefinition-mii-pr-mtb-ploidie.md)
@@ -163,7 +163,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-n
   "name" : "MII_PR_MTB_NGS_Bericht",
   "title" : "MII PR MTB NGS-Bericht",
   "status" : "active",
-  "date" : "2026-09-14T21:38:27+00:00",
+  "date" : "2026-09-14T22:18:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

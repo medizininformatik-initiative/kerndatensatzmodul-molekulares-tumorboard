@@ -99,8 +99,8 @@ This structure refers to these other structures:
 * [MII PR Onkologie Befund (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-befund)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-befund.html)
 * [MII PR MTB Tumorzellgehalt (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt)](StructureDefinition-mii-pr-mtb-tumorzellgehalt.md)
 * [MII PR Onkologie Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-specimen.html)
-* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
-* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.biobank@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
+* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
+* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.molgen@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
 
 **Slices**
 
@@ -139,8 +139,8 @@ This structure refers to these other structures:
 * [MII PR Onkologie Befund (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-befund)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-befund.html)
 * [MII PR MTB Tumorzellgehalt (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt)](StructureDefinition-mii-pr-mtb-tumorzellgehalt.md)
 * [MII PR Onkologie Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-specimen)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-specimen.html)
-* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
-* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.biobank@2027.0.0-ballot.rc2&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
+* [MII PR Patho Specimen (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen)
+* [MII PR Biobank Specimen Bioprobe Core (https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.molgen@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/StructureDefinition/SpecimenCore)
 
 **Slices**
 
@@ -165,7 +165,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-b
   "name" : "MII_PR_MTB_Biopsie_Auftrag",
   "title" : "MII PR MTB Biopsie Auftrag",
   "status" : "active",
-  "date" : "2026-09-14T21:38:27+00:00",
+  "date" : "2026-09-14T22:18:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

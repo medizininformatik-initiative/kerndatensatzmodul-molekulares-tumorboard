@@ -92,7 +92,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-mtb-l
   "name" : "MII_EX_MTB_Leitlinienbehandlung_Status",
   "title" : "MII EX MTB Leitlinienbehandlung Status",
   "status" : "active",
-  "date" : "2026-09-14T21:38:27+00:00",
+  "date" : "2026-09-14T22:18:02+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

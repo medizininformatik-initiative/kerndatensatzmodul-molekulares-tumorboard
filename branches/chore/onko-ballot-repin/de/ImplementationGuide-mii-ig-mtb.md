@@ -322,9 +322,9 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
   },
   {
     "id" : "de_medizininformatikinitiative_kerndatensatz_biobank",
-    "uri" : "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.biobank/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.biobank",
+    "uri" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-biobank/ImplementationGuide/mii-ig-biobank",
     "packageId" : "de.medizininformatikinitiative.kerndatensatz.biobank",
-    "version" : "2027.0.0-ballot.rc2"
+    "version" : "2027.0.0-ballot"
   },
   {
     "id" : "de_medizininformatikinitiative_kerndatensatz_medikation",
@@ -354,7 +354,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     "id" : "de_medizininformatikinitiative_kerndatensatz_patho",
     "uri" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ImplementationGuide/mii-ig-modul-patho",
     "packageId" : "de.medizininformatikinitiative.kerndatensatz.patho",
-    "version" : "2027.0.0-ballot.rc2"
+    "version" : "2027.0.0-ballot"
   },
   {
     "id" : "de_medizininformatikinitiative_kerndatensatz_studie",
