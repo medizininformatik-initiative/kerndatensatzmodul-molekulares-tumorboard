@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="MII-EXA-MTB-Copy-Number-Variant-1"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant|2026.0.1"/>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation MII-EXA-MTB-Copy-Number-Variant-1</b></p><a name="de-MII-EXA-MTB-Copy-Number-Variant-1"> </a><a name="de-hcMII-EXA-MTB-Copy-Number-Variant-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-copy-number-variant.html">MII PR MTB Copy Number Variant</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 GE}">Genetik</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 69548-6}">Genetic variant assessment</span></p><p><b>subject</b>: <a href="Patient-mii-exa-mtb-patient.html">Maxim Muster  (no stated gender), DoB Unknown</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 48000-4}">Chromosome [Identifier] in Blood or Tissue by Molecular genetics method</span></p><p><b>value</b>: <span title="Codes:{http://loinc.org LA21270-6}">Chromosome 17</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 81254-5}">Genomic allele start-end</span></p><p><b>value</b>: 43044295-43125364</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 82155-3}">Genomic structural variant copy number</span></p><p><b>value</b>: 3 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker relative-copy-number}">Relative Copy Number of Allele A and B</span></p><p><b>value</b>: 1.5 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker copy-number-allele-a}">Copy Number of Allele B</span></p><p><b>value</b>: 1 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker copy-number-allele-b}">Copy Number of Allele A</span></p><p><b>value</b>: 2 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 48018-6}">Gene studied [ID]</span></p><p><b>value</b>: <span title="Codes:">BRCA1</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker reported-focality}">Reported focality</span></p><p><b>value</b>: 100 %<span style="background: LightGoldenRodYellow"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://bwhc.de/mtb/genetics-copy-number-variant type}">type</span></p><p><b>value</b>: <span title="Codes:{http://bwhc.de/mtb/genetics-copy-number-variant high-level-gain}">high-level-gain</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker copy-number-neutral-loh}">Copy Number Neutral Loss of Heterozygosity</span></p><p><b>value</b>: <span title="Codes:{http://loinc.org LA33-6}">Yes</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="laboratory"/>
+      <display value="Laboratory"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="GE"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="69548-6"/>
+      <display value="Genetic variant assessment"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/mii-exa-mtb-patient"/>
+  </subject>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="48000-4"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="LA21270-6"/>
+        <display value="Chromosome 17"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="81254-5"/>
+      </coding>
+    </code>
+    <valueRange>
+      <low>
+        <value value="43044295"/>
+      </low>
+      <high>
+        <value value="43125364"/>
+      </high>
+    </valueRange>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="82155-3"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="3"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"/>
+        <code value="relative-copy-number"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="1.5"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"/>
+        <code value="copy-number-allele-a"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="1"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"/>
+        <code value="copy-number-allele-b"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="2"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="48018-6"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="HGNC:1100"/>
+        <display value="BRCA1"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"/>
+        <code value="reported-focality"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="100"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://bwhc.de/mtb/genetics-copy-number-variant"/>
+        <code value="type"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://bwhc.de/mtb/genetics-copy-number-variant"/>
+        <code value="high-level-gain"/>
+        <display value="high-level-gain"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-molekulare-biomarker"/>
+        <code value="copy-number-neutral-loh"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="LA33-6"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+</Observation>

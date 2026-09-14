@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-study-request-tedova"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage|2026.0.1"/>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="extensions"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ServiceRequest mii-exa-mtb-study-request-tedova</b></p><a name="de-mii-exa-mtb-study-request-tedova"> </a><a name="de-hcmii-exa-mtb-study-request-tedova"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.html">MII PR MTB Studieneinschluss Anfrage</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 2.2</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>category</b>: <span title="Codes:{http://snomed.info/sct 110465008}">Clinical trial (procedure)</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 702475000}">Referral to clinical trial (procedure)</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>supportingInfo</b>: <a href="ResearchStudy-mii-exa-mtb-study-tedova.html">ResearchStudy: identifier = https://www.medizininformatik-initiative.de/fhir/modul-mtb/sid/nct#MII_NS_MTB_NCT#04713514; status = active</a></p></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet">
+    <valueDecimal value="2.2"/>
+  </extension>
+  <status value="draft"/>
+  <intent value="proposal"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="110465008"/>
+      <display value="Clinical trial (procedure)"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="702475000"/>
+      <display value="Referral to clinical trial (procedure)"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <supportingInfo>
+    <reference value="ResearchStudy/mii-exa-mtb-study-tedova"/>
+  </supportingInfo>
+</ServiceRequest>

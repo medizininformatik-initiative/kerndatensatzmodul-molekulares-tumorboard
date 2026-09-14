@@ -1,0 +1,499 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>MII VS MTB Panel TCM NGS - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Branding override for the fhir2.base.template CSS placeholder
+     (base ships includes/fragment-css.html as a single comment; it is included
+     in <head> AFTER all base stylesheets, so the linked files win the
+     cascade).
+     Load model (docs/styleguide.md §1/§10): bootstrap-accessibility.css
+     (PayPal Bootstrap Accessibility Plugin v1.0.7, vendored + pinned - §8)
+     patches Bootstrap-3 component styling for accessibility (focus outlines,
+     alert contrast) and loads FIRST so the template's own rules can override;
+     then template-base.css carries the
+     brand-INDEPENDENT rule blocks and always loads; then EXACTLY ONE palette
+     file follows - num-diz.css, the DEFAULT design, unless the consuming IG
+     ships input/data/brand.json with { "design": "mii" } (read as
+     site.data.brand.design via the base's input/data -> _data pre-process),
+     which selects mii.css instead. Only the exact value 'mii' selects the
+     MII design; anything else - including no brand.json at all and unknown
+     values - renders NUM-DIZ. Both palettes declare the same variable set
+     (scripts/brand-switch.test.mjs). -->
+<link href="assets/css/bootstrap-accessibility.css" rel="stylesheet"/>
+<link href="assets/css/template-base.css" rel="stylesheet"/>
+
+<link href="assets/css/num-diz.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"17.97"}
+    h3,h4,h5,h6{--heading-prefix:"17.97"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Branding override for the fhir2.base.template header placeholder
+     (base ships includes/fragment-header.html as a single comment; it is included
+     inside "#segment-header > .container", before the #ig-status block).
+     Language handling: only the asset and its descriptive alt text switch on
+     include.lang (the pattern kerndatensatz-basis uses); no translatable UI
+     strings are hard-coded.
+     Brand handling: the project logo additionally switches on
+     site.data.brand.design (input/data/brand.json in the consuming IG, see
+     docs/styleguide.md §10). Only the exact value 'mii' selects the MII
+     logos - anything else, including no brand.json at all, falls through to
+     the NUM-DIZ default.
+     Two logos, mirroring kerndatensatz-basis: the HL7 FHIR logo (links to the
+     FHIR spec) in #family-nav, and the project logo in #project-nav.
+     fhir-logo-www.png is shipped by fhir2.base.template
+     (content/assets/images/), so it resolves from the inherited assets without
+     shipping it here. -->
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir">
+    <img height="50" alt="HL7 FHIR" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="project-nav">
+
+  <a id="project-logo" no-external="true" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+    <img height="50" alt="NUM-DIZ (Netzwerk Universitätsmedizin — Datenintegrationszentrum)" src="assets/images/logo-num-diz-de.svg"/>
+
+  </a>
+
+</div>
+<!-- Font-size control (A / A+ / A++): three reader-selectable levels; level A
+     is the untouched default. Logic in assets/js/font-size-control.js, the
+     zoom mapping + button styling in template-base.css ("font-size control"
+     block). All three buttons read "A" — the button's own font size shows the level; labels are language-neutral; only the aria texts switch
+     on include.lang. REMOVAL: delete this block, the js file and the CSS
+     block - one commit, styleguide §5a. -->
+
+<div class="ig-fontsize" role="group" aria-label="Schriftgröße">
+  <button type="button" data-level="0" aria-pressed="true" aria-label="Schriftgröße: Standard">A</button>
+  <button type="button" data-level="1" aria-pressed="false" aria-label="Schriftgröße: größer">A</button>
+  <button type="button" data-level="2" aria-pressed="false" aria-label="Schriftgröße: am größten">A</button>
+</div>
+
+<script src="assets/js/font-size-control.js" defer></script>
+<!-- PayPal Bootstrap Accessibility Plugin v1.0.7 (vendored + pinned, §8):
+     patches the Bootstrap-3 components the publisher renders - navbar
+     dropdowns gain ARIA menu semantics + arrow-key navigation, tab panels
+     (structure-tabs) the full ARIA tabs pattern, alerts live-region
+     announcements. `defer` guarantees it executes AFTER the parser-inserted
+     bootstrap.min.js at the end of the body. Vendored from
+     paypal/bootstrap-accessibility-plugin @ v1.0.7 (the admin-ch fork was
+     evaluated and rejected: 151 commits behind upstream, its 6 deltas are
+     site-specific tab tweaks). REMOVAL: delete this tag, both vendored
+     assets and the fragment-css link - guard test pins the hashes. -->
+<script src="assets/js/bootstrap-accessibility.min.js" defer></script>
+<!-- Back-to-top button: appears after one viewport of scrolling (logic in
+     assets/js/back-to-top.js, styling in template-base.css "back-to-top"
+     block). Rendered here inside #segment-header, which is OUTSIDE the
+     data-fontsize zoom regions, so the fixed button never scales. REMOVAL:
+     this block, the js file and the CSS block - one commit, styleguide §8. -->
+
+<button type="button" class="ig-back-to-top" aria-label="Zurück zum Seitenanfang">↑</button>
+
+<script src="assets/js/back-to-top.js" defer></script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII IG Kerndatensatz-Modul Molekulares Tumorboard</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - 
+
+
+
+  <img alt="Germany Flagge" src="assets/images/deu.svg" height="16" title="Germany"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- German translation of input/includes/menu.xml.
+     Keep the href targets IDENTICAL to the source menu; translate only labels.
+     Structure notes (OPTIONAL entries, link-only entries, the interim
+     meta-wiki links) are documented in the source menu's header and in
+     docs/page-structure.md / docs/optional-pages.md. -->
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Startseite</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="guidance.html">Anleitung</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="researcher-guidance.html">Anleitung für Forschende</a></li>
+      <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
+      <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
+      <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
+      <li><a href="uml-diagrams.html">UML-Diagramme</a></li>
+      <li><a href="anwendungsszenarien.html">Anwendungsszenarien</a></li>
+      <li><a href="dnpm-transformation.html">DNPM-Transformation</a></li>
+      <li><a href="panel-katalog.html">Panel-Katalog</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <!-- Eltern-Eintrag und die ersten vier Einträge verlinken die KDS-weiten
+         Konformitätsregeln des Meta-Moduls (INTERIM: Meta-Wiki; siehe
+         Quell-Menü). -->
+    <a data-toggle="dropdown" href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance" class="dropdown-toggle">Konformität<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Konformität</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#anforderungsdokumentation">Allgemeine Anforderungen</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#must-support-ms">Must-Support</a></li>
+      <li><a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance#fehlende-daten">Umgang mit fehlenden Daten</a></li>
+      <li><a href="security-and-privacy.html">Sicherheit und Datenschutz</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
+      <li><a href="profiles.html">Profile</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="extensions.html">Extensions</a></li>
+      <li><a href="capability-statements.html">CapabilityStatements</a></li>
+      <li><a href="logical-models.html">Logische Modelle</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="value-sets.html">ValueSets</a></li>
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="code-systems.html">CodeSystems</a></li>
+      <li><a href="examples.html">Beispiele</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="changes.html">Änderungshistorie</a></li>
+  <li class="dropdown">
+    <!-- Der Eltern-Eintrag verlinkt bewusst das PFLICHT-Kind (Versionierung):
+         die Metadaten-Übersicht ist optional. -->
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
+      <li><a href="metadata.html">Metadaten-Übersicht</a></li>
+      <li><a href="version-history.html">Versionierung</a></li>
+      <li><a href="ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.html">MII-ImplementationGuide-Ressource</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Sprache:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
+
+    <div><a href="../en/ValueSet-mii-vs-mtb-panel-tcm-ngs.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
+
+  </div>
+</div>
+
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='artifacts.html'><b>Artefaktübersicht</b></a></li><li><b>MII VS MTB Panel TCM NGS</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-valueset -->
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII IG Kerndatensatz-Modul Molekulares Tumorboard - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrativer Inhalt</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-mtb-panel-tcm-ngs.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-mtb-panel-tcm-ngs.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: MII VS MTB Panel TCM NGS
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Offizielle URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tcm-ngs<button title="Klicken zum Kopieren der URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tcm-ngs"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2026.0.1<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tcm-ngs|2026.0.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+
+            Stand: 
+2026-09-14
+
+          
+        
+      </td>
+
+
+
+      <td><i>Maschinenlesbarer Name</i>: <span style="font-family: monospace;">MII_VS_MTB_Panel_TcmNgs</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Genliste des Panels: TCM NGS Panel (409 Gene). Kodiert mit stabilen HGNC-IDs (System genenames.org/geneId), Displays = aktuelle HGNC-Symbole.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<p>This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-DE" lang="de-DE" data-fhir="generated"><p class="res-header-id"></p><a name="mii-vs-mtb-panel-tcm-ngs"> </a><a name="hcmii-vs-mtb-panel-tcm-ngs"> </a>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-DE</p></div>
+<ul><li>Include these codes as defined in <code>http://www.genenames.org/geneId</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>HGNC:76</td><td>ABL1</td></tr><tr><td>HGNC:77</td><td>ABL2</td></tr><tr><td>HGNC:173</td><td>ACVR2A</td></tr><tr><td>HGNC:17178</td><td>ADAMTS20</td></tr><tr><td>HGNC:7135</td><td>AFF1</td></tr><tr><td>HGNC:6473</td><td>AFF3</td></tr><tr><td>HGNC:379</td><td>AKAP9</td></tr><tr><td>HGNC:391</td><td>AKT1</td></tr><tr><td>HGNC:392</td><td>AKT2</td></tr><tr><td>HGNC:393</td><td>AKT3</td></tr><tr><td>HGNC:427</td><td>ALK</td></tr><tr><td>HGNC:583</td><td>APC</td></tr><tr><td>HGNC:644</td><td>AR</td></tr><tr><td>HGNC:11110</td><td>ARID1A</td></tr><tr><td>HGNC:18037</td><td>ARID2</td></tr><tr><td>HGNC:700</td><td>ARNT</td></tr><tr><td>HGNC:18318</td><td>ASXL1</td></tr><tr><td>HGNC:783</td><td>ATF1</td></tr><tr><td>HGNC:795</td><td>ATM</td></tr><tr><td>HGNC:882</td><td>ATR</td></tr><tr><td>HGNC:886</td><td>ATRX</td></tr><tr><td>HGNC:11393</td><td>AURKA</td></tr><tr><td>HGNC:11390</td><td>AURKB</td></tr><tr><td>HGNC:11391</td><td>AURKC</td></tr><tr><td>HGNC:905</td><td>AXL</td></tr><tr><td>HGNC:945</td><td>ADGRB3</td></tr><tr><td>HGNC:950</td><td>BAP1</td></tr><tr><td>HGNC:989</td><td>BCL10</td></tr><tr><td>HGNC:13221</td><td>BCL11A</td></tr><tr><td>HGNC:13222</td><td>BCL11B</td></tr><tr><td>HGNC:990</td><td>BCL2</td></tr><tr><td>HGNC:992</td><td>BCL2L1</td></tr><tr><td>HGNC:995</td><td>BCL2L2</td></tr><tr><td>HGNC:998</td><td>BCL3</td></tr><tr><td>HGNC:1001</td><td>BCL6</td></tr><tr><td>HGNC:1008</td><td>BCL9</td></tr><tr><td>HGNC:1014</td><td>BCR</td></tr><tr><td>HGNC:590</td><td>BIRC2</td></tr><tr><td>HGNC:591</td><td>BIRC3</td></tr><tr><td>HGNC:593</td><td>BIRC5</td></tr><tr><td>HGNC:1058</td><td>BLM</td></tr><tr><td>HGNC:14211</td><td>BLNK</td></tr><tr><td>HGNC:1076</td><td>BMPR1A</td></tr><tr><td>HGNC:1097</td><td>BRAF</td></tr><tr><td>HGNC:1104</td><td>BRD3</td></tr><tr><td>HGNC:20473</td><td>BRIP1</td></tr><tr><td>HGNC:1133</td><td>BTK</td></tr><tr><td>HGNC:1149</td><td>BUB1B</td></tr><tr><td>HGNC:16393</td><td>CARD11</td></tr><tr><td>HGNC:24054</td><td>KNL1</td></tr><tr><td>HGNC:1541</td><td>CBL</td></tr><tr><td>HGNC:1582</td><td>CCND1</td></tr><tr><td>HGNC:1583</td><td>CCND2</td></tr><tr><td>HGNC:1589</td><td>CCNE1</td></tr><tr><td>HGNC:1698</td><td>CD79A</td></tr><tr><td>HGNC:1699</td><td>CD79B</td></tr><tr><td>HGNC:16783</td><td>CDC73</td></tr><tr><td>HGNC:1748</td><td>CDH1</td></tr><tr><td>HGNC:1750</td><td>CDH11</td></tr><tr><td>HGNC:1759</td><td>CDH2</td></tr><tr><td>HGNC:1760</td><td>CDH20</td></tr><tr><td>HGNC:1764</td><td>CDH5</td></tr><tr><td>HGNC:24224</td><td>CDK12</td></tr><tr><td>HGNC:1773</td><td>CDK4</td></tr><tr><td>HGNC:1777</td><td>CDK6</td></tr><tr><td>HGNC:1779</td><td>CDK8</td></tr><tr><td>HGNC:1787</td><td>CDKN2A</td></tr><tr><td>HGNC:1788</td><td>CDKN2B</td></tr><tr><td>HGNC:1789</td><td>CDKN2C</td></tr><tr><td>HGNC:1833</td><td>CEBPA</td></tr><tr><td>HGNC:1925</td><td>CHEK1</td></tr><tr><td>HGNC:16627</td><td>CHEK2</td></tr><tr><td>HGNC:14214</td><td>CIC</td></tr><tr><td>HGNC:19083</td><td>CKS1B</td></tr><tr><td>HGNC:18170</td><td>CMPK1</td></tr><tr><td>HGNC:2197</td><td>COL1A1</td></tr><tr><td>HGNC:30185</td><td>CRBN</td></tr><tr><td>HGNC:2345</td><td>CREB1</td></tr><tr><td>HGNC:2348</td><td>CREBBP</td></tr><tr><td>HGNC:2363</td><td>CRKL</td></tr><tr><td>HGNC:16062</td><td>CRTC1</td></tr><tr><td>HGNC:2433</td><td>CSF1R</td></tr><tr><td>HGNC:19291</td><td>CSMD3</td></tr><tr><td>HGNC:2509</td><td>CTNNA1</td></tr><tr><td>HGNC:2514</td><td>CTNNB1</td></tr><tr><td>HGNC:2584</td><td>CYLD</td></tr><tr><td>HGNC:2621</td><td>CYP2C19</td></tr><tr><td>HGNC:2625</td><td>CYP2D6</td></tr><tr><td>HGNC:2681</td><td>DAXX</td></tr><tr><td>HGNC:2701</td><td>DCC</td></tr><tr><td>HGNC:2718</td><td>DDB2</td></tr><tr><td>HGNC:2726</td><td>DDIT3</td></tr><tr><td>HGNC:2731</td><td>DDR2</td></tr><tr><td>HGNC:2768</td><td>DEK</td></tr><tr><td>HGNC:17098</td><td>DICER1</td></tr><tr><td>HGNC:2978</td><td>DNMT3A</td></tr><tr><td>HGNC:3012</td><td>DPYD</td></tr><tr><td>HGNC:1090</td><td>DST</td></tr><tr><td>HGNC:3236</td><td>EGFR</td></tr><tr><td>HGNC:1316</td><td>EML4</td></tr><tr><td>HGNC:3373</td><td>EP300</td></tr><tr><td>HGNC:11958</td><td>EP400</td></tr><tr><td>HGNC:3387</td><td>EPHA3</td></tr><tr><td>HGNC:3390</td><td>EPHA7</td></tr><tr><td>HGNC:3392</td><td>EPHB1</td></tr><tr><td>HGNC:3395</td><td>EPHB4</td></tr><tr><td>HGNC:3396</td><td>EPHB6</td></tr><tr><td>HGNC:3430</td><td>ERBB2</td></tr><tr><td>HGNC:3431</td><td>ERBB3</td></tr><tr><td>HGNC:3432</td><td>ERBB4</td></tr><tr><td>HGNC:3433</td><td>ERCC1</td></tr><tr><td>HGNC:3434</td><td>ERCC2</td></tr><tr><td>HGNC:3435</td><td>ERCC3</td></tr><tr><td>HGNC:3436</td><td>ERCC4</td></tr><tr><td>HGNC:3437</td><td>ERCC5</td></tr><tr><td>HGNC:3446</td><td>ERG</td></tr><tr><td>HGNC:3467</td><td>ESR1</td></tr><tr><td>HGNC:3488</td><td>ETS1</td></tr><tr><td>HGNC:3490</td><td>ETV1</td></tr><tr><td>HGNC:3493</td><td>ETV4</td></tr><tr><td>HGNC:3512</td><td>EXT1</td></tr><tr><td>HGNC:3513</td><td>EXT2</td></tr><tr><td>HGNC:3527</td><td>EZH2</td></tr><tr><td>HGNC:26837</td><td>AMER1</td></tr><tr><td>HGNC:3582</td><td>FANCA</td></tr><tr><td>HGNC:3584</td><td>FANCC</td></tr><tr><td>HGNC:3585</td><td>FANCD2</td></tr><tr><td>HGNC:3587</td><td>FANCF</td></tr><tr><td>HGNC:3588</td><td>FANCG</td></tr><tr><td>HGNC:11920</td><td>FAS</td></tr><tr><td>HGNC:16712</td><td>FBXW7</td></tr><tr><td>HGNC:3688</td><td>FGFR1</td></tr><tr><td>HGNC:3689</td><td>FGFR2</td></tr><tr><td>HGNC:3690</td><td>FGFR3</td></tr><tr><td>HGNC:3691</td><td>FGFR4</td></tr><tr><td>HGNC:3700</td><td>FH</td></tr><tr><td>HGNC:27310</td><td>FLCN</td></tr><tr><td>HGNC:3749</td><td>FLI1</td></tr><tr><td>HGNC:3763</td><td>FLT1</td></tr><tr><td>HGNC:3765</td><td>FLT3</td></tr><tr><td>HGNC:3767</td><td>FLT4</td></tr><tr><td>HGNC:3778</td><td>FN1</td></tr><tr><td>HGNC:1092</td><td>FOXL2</td></tr><tr><td>HGNC:3819</td><td>FOXO1</td></tr><tr><td>HGNC:3821</td><td>FOXO3</td></tr><tr><td>HGNC:3823</td><td>FOXP1</td></tr><tr><td>HGNC:20842</td><td>FOXP4</td></tr><tr><td>HGNC:24824</td><td>FZR1</td></tr><tr><td>HGNC:4057</td><td>G6PD</td></tr><tr><td>HGNC:4170</td><td>GATA1</td></tr><tr><td>HGNC:4171</td><td>GATA2</td></tr><tr><td>HGNC:4172</td><td>GATA3</td></tr><tr><td>HGNC:4232</td><td>GDNF</td></tr><tr><td>HGNC:4379</td><td>GNA11</td></tr><tr><td>HGNC:4390</td><td>GNAQ</td></tr><tr><td>HGNC:4392</td><td>GNAS</td></tr><tr><td>HGNC:17849</td><td>ADGRA2</td></tr><tr><td>HGNC:4600</td><td>GRM8</td></tr><tr><td>HGNC:4684</td><td>GUCY1A2</td></tr><tr><td>HGNC:4532</td><td>HCAR1</td></tr><tr><td>HGNC:4910</td><td>HIF1A</td></tr><tr><td>HGNC:4977</td><td>HLF</td></tr><tr><td>HGNC:11621</td><td>HNF1A</td></tr><tr><td>HGNC:23576</td><td>HOOK3</td></tr><tr><td>HGNC:5173</td><td>HRAS</td></tr><tr><td>HGNC:5253</td><td>HSP90AA1</td></tr><tr><td>HGNC:5258</td><td>HSP90AB1</td></tr><tr><td>HGNC:21219</td><td>CILK1</td></tr><tr><td>HGNC:5382</td><td>IDH1</td></tr><tr><td>HGNC:5383</td><td>IDH2</td></tr><tr><td>HGNC:5465</td><td>IGF1R</td></tr><tr><td>HGNC:5466</td><td>IGF2</td></tr><tr><td>HGNC:5467</td><td>IGF2R</td></tr><tr><td>HGNC:5960</td><td>IKBKB</td></tr><tr><td>HGNC:14552</td><td>IKBKE</td></tr><tr><td>HGNC:13176</td><td>IKZF1</td></tr><tr><td>HGNC:6001</td><td>IL2</td></tr><tr><td>HGNC:6006</td><td>IL21R</td></tr><tr><td>HGNC:6021</td><td>IL6ST</td></tr><tr><td>HGNC:6024</td><td>IL7R</td></tr><tr><td>HGNC:19423</td><td>ING4</td></tr><tr><td>HGNC:6119</td><td>IRF4</td></tr><tr><td>HGNC:6126</td><td>IRS2</td></tr><tr><td>HGNC:6135</td><td>ITGA10</td></tr><tr><td>HGNC:6145</td><td>ITGA9</td></tr><tr><td>HGNC:6155</td><td>ITGB2</td></tr><tr><td>HGNC:6156</td><td>ITGB3</td></tr><tr><td>HGNC:6190</td><td>JAK1</td></tr><tr><td>HGNC:6192</td><td>JAK2</td></tr><tr><td>HGNC:6193</td><td>JAK3</td></tr><tr><td>HGNC:6204</td><td>JUN</td></tr><tr><td>HGNC:13013</td><td>KAT6A</td></tr><tr><td>HGNC:17582</td><td>KAT6B</td></tr><tr><td>HGNC:11114</td><td>KDM5C</td></tr><tr><td>HGNC:12637</td><td>KDM6A</td></tr><tr><td>HGNC:6307</td><td>KDR</td></tr><tr><td>HGNC:23177</td><td>KEAP1</td></tr><tr><td>HGNC:6342</td><td>KIT</td></tr><tr><td>HGNC:2235</td><td>KLF6</td></tr><tr><td>HGNC:6407</td><td>KRAS</td></tr><tr><td>HGNC:6499</td><td>LAMP1</td></tr><tr><td>HGNC:6524</td><td>LCK</td></tr><tr><td>HGNC:6597</td><td>LIFR</td></tr><tr><td>HGNC:20974</td><td>ADGRL3</td></tr><tr><td>HGNC:17284</td><td>POT1</td></tr><tr><td>HGNC:6679</td><td>LPP</td></tr><tr><td>HGNC:6693</td><td>LRP1B</td></tr><tr><td>HGNC:6720</td><td>LTF</td></tr><tr><td>HGNC:6721</td><td>LTK</td></tr><tr><td>HGNC:6776</td><td>MAF</td></tr><tr><td>HGNC:6408</td><td>MAFB</td></tr><tr><td>HGNC:6796</td><td>MAGEA1</td></tr><tr><td>HGNC:946</td><td>MAGI1</td></tr><tr><td>HGNC:6819</td><td>MALT1</td></tr><tr><td>HGNC:16259</td><td>MAML2</td></tr><tr><td>HGNC:6840</td><td>MAP2K1</td></tr><tr><td>HGNC:6842</td><td>MAP2K2</td></tr><tr><td>HGNC:6844</td><td>MAP2K4</td></tr><tr><td>HGNC:6859</td><td>MAP3K7</td></tr><tr><td>HGNC:6871</td><td>MAPK1</td></tr><tr><td>HGNC:6881</td><td>MAPK8</td></tr><tr><td>HGNC:6896</td><td>MARK1</td></tr><tr><td>HGNC:13538</td><td>MARK4</td></tr><tr><td>HGNC:6916</td><td>MBD1</td></tr><tr><td>HGNC:6943</td><td>MCL1</td></tr><tr><td>HGNC:6973</td><td>MDM2</td></tr><tr><td>HGNC:6974</td><td>MDM4</td></tr><tr><td>HGNC:7010</td><td>MEN1</td></tr><tr><td>HGNC:7029</td><td>MET</td></tr><tr><td>HGNC:7105</td><td>MITF</td></tr><tr><td>HGNC:7127</td><td>MLH1</td></tr><tr><td>HGNC:7132</td><td>KMT2A</td></tr><tr><td>HGNC:7133</td><td>KMT2D</td></tr><tr><td>HGNC:13726</td><td>KMT2C</td></tr><tr><td>HGNC:16063</td><td>MLLT10</td></tr><tr><td>HGNC:7166</td><td>MMP2</td></tr><tr><td>HGNC:7180</td><td>MN1</td></tr><tr><td>HGNC:7217</td><td>MPL</td></tr><tr><td>HGNC:7230</td><td>MRE11</td></tr><tr><td>HGNC:7325</td><td>MSH2</td></tr><tr><td>HGNC:7329</td><td>MSH6</td></tr><tr><td>HGNC:3942</td><td>MTOR</td></tr><tr><td>HGNC:7468</td><td>MTR</td></tr><tr><td>HGNC:7473</td><td>MTRR</td></tr><tr><td>HGNC:7508</td><td>MUC1</td></tr><tr><td>HGNC:7527</td><td>MUTYH</td></tr><tr><td>HGNC:7545</td><td>MYB</td></tr><tr><td>HGNC:7553</td><td>MYC</td></tr><tr><td>HGNC:7555</td><td>MYCL</td></tr><tr><td>HGNC:7559</td><td>MYCN</td></tr><tr><td>HGNC:7562</td><td>MYD88</td></tr><tr><td>HGNC:7569</td><td>MYH11</td></tr><tr><td>HGNC:7579</td><td>MYH9</td></tr><tr><td>HGNC:7652</td><td>NBN</td></tr><tr><td>HGNC:7668</td><td>NCOA1</td></tr><tr><td>HGNC:7669</td><td>NCOA2</td></tr><tr><td>HGNC:7671</td><td>NCOA4</td></tr><tr><td>HGNC:7765</td><td>NF1</td></tr><tr><td>HGNC:7773</td><td>NF2</td></tr><tr><td>HGNC:7782</td><td>NFE2L2</td></tr><tr><td>HGNC:7794</td><td>NFKB1</td></tr><tr><td>HGNC:7795</td><td>NFKB2</td></tr><tr><td>HGNC:14906</td><td>NIN</td></tr><tr><td>HGNC:11825</td><td>NKX2-1</td></tr><tr><td>HGNC:14374</td><td>NLRP1</td></tr><tr><td>HGNC:7881</td><td>NOTCH1</td></tr><tr><td>HGNC:7882</td><td>NOTCH2</td></tr><tr><td>HGNC:7884</td><td>NOTCH4</td></tr><tr><td>HGNC:7910</td><td>NPM1</td></tr><tr><td>HGNC:7989</td><td>NRAS</td></tr><tr><td>HGNC:14234</td><td>NSD1</td></tr><tr><td>HGNC:8031</td><td>NTRK1</td></tr><tr><td>HGNC:8033</td><td>NTRK3</td></tr><tr><td>HGNC:8059</td><td>NUMA1</td></tr><tr><td>HGNC:8064</td><td>NUP214</td></tr><tr><td>HGNC:8068</td><td>NUP98</td></tr><tr><td>HGNC:8592</td><td>PAK3</td></tr><tr><td>HGNC:26144</td><td>PALB2</td></tr><tr><td>HGNC:270</td><td>PARP1</td></tr><tr><td>HGNC:8617</td><td>PAX3</td></tr><tr><td>HGNC:8619</td><td>PAX5</td></tr><tr><td>HGNC:8621</td><td>PAX7</td></tr><tr><td>HGNC:8622</td><td>PAX8</td></tr><tr><td>HGNC:30064</td><td>PBRM1</td></tr><tr><td>HGNC:8632</td><td>PBX1</td></tr><tr><td>HGNC:15580</td><td>PDE4DIP</td></tr><tr><td>HGNC:8800</td><td>PDGFB</td></tr><tr><td>HGNC:8803</td><td>PDGFRA</td></tr><tr><td>HGNC:8804</td><td>PDGFRB</td></tr><tr><td>HGNC:8845</td><td>PER1</td></tr><tr><td>HGNC:23719</td><td>PGAP3</td></tr><tr><td>HGNC:9143</td><td>PHOX2B</td></tr><tr><td>HGNC:8972</td><td>PIK3C2B</td></tr><tr><td>HGNC:8975</td><td>PIK3CA</td></tr><tr><td>HGNC:8976</td><td>PIK3CB</td></tr><tr><td>HGNC:8977</td><td>PIK3CD</td></tr><tr><td>HGNC:8978</td><td>PIK3CG</td></tr><tr><td>HGNC:8979</td><td>PIK3R1</td></tr><tr><td>HGNC:8980</td><td>PIK3R2</td></tr><tr><td>HGNC:8986</td><td>PIM1</td></tr><tr><td>HGNC:9016</td><td>PKHD1</td></tr><tr><td>HGNC:9045</td><td>PLAG1</td></tr><tr><td>HGNC:9065</td><td>PLCG1</td></tr><tr><td>HGNC:29105</td><td>PLEKHG5</td></tr><tr><td>HGNC:9113</td><td>PML</td></tr><tr><td>HGNC:9121</td><td>PMS1</td></tr><tr><td>HGNC:9122</td><td>PMS2</td></tr><tr><td>HGNC:9221</td><td>POU5F1</td></tr><tr><td>HGNC:9236</td><td>PPARG</td></tr><tr><td>HGNC:9302</td><td>PPP2R1A</td></tr><tr><td>HGNC:9346</td><td>PRDM1</td></tr><tr><td>HGNC:9388</td><td>PRKAR1A</td></tr><tr><td>HGNC:9413</td><td>PRKDC</td></tr><tr><td>HGNC:9527</td><td>PSIP1</td></tr><tr><td>HGNC:9585</td><td>PTCH1</td></tr><tr><td>HGNC:9588</td><td>PTEN</td></tr><tr><td>HGNC:9605</td><td>PTGS2</td></tr><tr><td>HGNC:9644</td><td>PTPN11</td></tr><tr><td>HGNC:9668</td><td>PTPRD</td></tr><tr><td>HGNC:9682</td><td>PTPRT</td></tr><tr><td>HGNC:9816</td><td>RAD50</td></tr><tr><td>HGNC:9829</td><td>RAF1</td></tr><tr><td>HGNC:9842</td><td>RALGDS</td></tr><tr><td>HGNC:9864</td><td>RARA</td></tr><tr><td>HGNC:9884</td><td>RB1</td></tr><tr><td>HGNC:9949</td><td>RECQL4</td></tr><tr><td>HGNC:9954</td><td>REL</td></tr><tr><td>HGNC:9967</td><td>RET</td></tr><tr><td>HGNC:686</td><td>RHOH</td></tr><tr><td>HGNC:10050</td><td>RNASEL</td></tr><tr><td>HGNC:10061</td><td>RNF2</td></tr><tr><td>HGNC:14539</td><td>RNF213</td></tr><tr><td>HGNC:10261</td><td>ROS1</td></tr><tr><td>HGNC:10431</td><td>RPS6KA2</td></tr><tr><td>HGNC:10451</td><td>RRM1</td></tr><tr><td>HGNC:10471</td><td>RUNX1</td></tr><tr><td>HGNC:1535</td><td>RUNX1T1</td></tr><tr><td>HGNC:1348</td><td>SAMD9</td></tr><tr><td>HGNC:19440</td><td>SBDS</td></tr><tr><td>HGNC:10680</td><td>SDHA</td></tr><tr><td>HGNC:10681</td><td>SDHB</td></tr><tr><td>HGNC:10682</td><td>SDHC</td></tr><tr><td>HGNC:10683</td><td>SDHD</td></tr><tr><td>HGNC:7323</td><td>SEPTIN9</td></tr><tr><td>HGNC:18420</td><td>SETD2</td></tr><tr><td>HGNC:10768</td><td>SF3B1</td></tr><tr><td>HGNC:10810</td><td>SGK1</td></tr><tr><td>HGNC:10820</td><td>SH2D1A</td></tr><tr><td>HGNC:6768</td><td>SMAD2</td></tr><tr><td>HGNC:6770</td><td>SMAD4</td></tr><tr><td>HGNC:11100</td><td>SMARCA4</td></tr><tr><td>HGNC:11103</td><td>SMARCB1</td></tr><tr><td>HGNC:11119</td><td>SMO</td></tr><tr><td>HGNC:17148</td><td>SMUG1</td></tr><tr><td>HGNC:19383</td><td>SOCS1</td></tr><tr><td>HGNC:11191</td><td>SOX11</td></tr><tr><td>HGNC:11195</td><td>SOX2</td></tr><tr><td>HGNC:11283</td><td>SRC</td></tr><tr><td>HGNC:11335</td><td>SSX1</td></tr><tr><td>HGNC:11389</td><td>STK11</td></tr><tr><td>HGNC:17209</td><td>STK36</td></tr><tr><td>HGNC:16466</td><td>SUFU</td></tr><tr><td>HGNC:11491</td><td>SYK</td></tr><tr><td>HGNC:17089</td><td>SYNE1</td></tr><tr><td>HGNC:11535</td><td>TAF1</td></tr><tr><td>HGNC:18056</td><td>TAF1L</td></tr><tr><td>HGNC:11556</td><td>TAL1</td></tr><tr><td>HGNC:11600</td><td>TBX22</td></tr><tr><td>HGNC:11623</td><td>TCF12</td></tr><tr><td>HGNC:11633</td><td>TCF3</td></tr><tr><td>HGNC:11640</td><td>TCF7L1</td></tr><tr><td>HGNC:11641</td><td>TCF7L2</td></tr><tr><td>HGNC:11648</td><td>TCL1A</td></tr><tr><td>HGNC:29484</td><td>TET1</td></tr><tr><td>HGNC:25941</td><td>TET2</td></tr><tr><td>HGNC:11752</td><td>TFE3</td></tr><tr><td>HGNC:11773</td><td>TGFBR2</td></tr><tr><td>HGNC:30790</td><td>TGM7</td></tr><tr><td>HGNC:11785</td><td>THBS1</td></tr><tr><td>HGNC:11822</td><td>TIMP3</td></tr><tr><td>HGNC:11850</td><td>TLR4</td></tr><tr><td>HGNC:5056</td><td>TLX1</td></tr><tr><td>HGNC:11896</td><td>TNFAIP3</td></tr><tr><td>HGNC:11912</td><td>TNFRSF14</td></tr><tr><td>HGNC:19297</td><td>TNK2</td></tr><tr><td>HGNC:11986</td><td>TOP1</td></tr><tr><td>HGNC:11998</td><td>TP53</td></tr><tr><td>HGNC:12017</td><td>TPR</td></tr><tr><td>HGNC:11812</td><td>TRIM24</td></tr><tr><td>HGNC:16290</td><td>TRIM33</td></tr><tr><td>HGNC:12305</td><td>TRIP11</td></tr><tr><td>HGNC:12347</td><td>TRRAP</td></tr><tr><td>HGNC:12362</td><td>TSC1</td></tr><tr><td>HGNC:12363</td><td>TSC2</td></tr><tr><td>HGNC:12373</td><td>TSHR</td></tr><tr><td>HGNC:16806</td><td>UBR5</td></tr><tr><td>HGNC:12530</td><td>UGT1A1</td></tr><tr><td>HGNC:12632</td><td>USP9X</td></tr><tr><td>HGNC:12687</td><td>VHL</td></tr><tr><td>HGNC:12731</td><td>WAS</td></tr><tr><td>HGNC:12766</td><td>NSD2</td></tr><tr><td>HGNC:12791</td><td>WRN</td></tr><tr><td>HGNC:12796</td><td>WT1</td></tr><tr><td>HGNC:12814</td><td>XPA</td></tr><tr><td>HGNC:12816</td><td>XPC</td></tr><tr><td>HGNC:12825</td><td>XPO1</td></tr><tr><td>HGNC:12829</td><td>XRCC2</td></tr><tr><td>HGNC:11955</td><td>ZNF384</td></tr><tr><td>HGNC:24605</td><td>ZNF521</td></tr></table></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <p style="border: maroon 1px solid; background-color: #FFCCCC; font-weight: bold; padding: 8px" title="No Expansion for this valueset (Unknown Code System&lt;!-- [Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'http://www.genenames.org/geneId' could not be found, so the value set cannot be expanded] --&gt;)">No Expansion for this valueset (Unknown Code System<!-- [Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'http://www.genenames.org/geneId' could not be found, so the value set cannot be expanded] -->)</p>
+
+
+  <hr/>
+  <p>
+    <a href="http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology">Beschreibung der obigen Tabelle(n)</a>.
+  </p>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt <span title="Mon, Sep 14, 2026 18:22+0000">2026-09-14</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+                 
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/impressum">Impressum</a>
+                 <br/>
+                 <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7®, FHIR® and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

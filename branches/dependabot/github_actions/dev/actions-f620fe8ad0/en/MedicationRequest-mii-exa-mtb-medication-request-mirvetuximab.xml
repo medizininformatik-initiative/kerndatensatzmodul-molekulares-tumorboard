@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-mtb-medication-request-mirvetuximab"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.1"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: MedicationRequest mii-exa-mtb-medication-request-mirvetuximab</b></p><a name="mii-exa-mtb-medication-request-mirvetuximab"> </a><a name="hcmii-exa-mtb-medication-request-mirvetuximab"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-therapieempfehlung.html">MII PR MTB Therapieempfehlung Systemische Therapie</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 1</p><p><b>MII EX MTB Empfehlung Evidenzgraduierung</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad m1A}">Predictive value of the biomarker or clinical effectiveness of the corresponding drug in a molecularly stratified cohort was demonstrated in a prospective study or a meta-analysis in the same tumor type.</span></p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://doi.org</code>/10.1200/JCO.2022.40.16_suppl.5512</p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/38055253</p><p><b>status</b>: Completed</p><p><b>intent</b>: Proposal</p><p><b>medication</b>: <span title="Codes:{http://fdasis.nlm.nih.gov 98DE7VN88D}, {http://fhir.de/CodeSystem/bfarm/atc L01FX26}, {http://fhir.de/CodeSystem/bfarm/atc L01FX}">MIRVETUXIMAB SORAVTANSINE</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>authoredOn</b>: 2023-03-28</p><p><b>reasonReference</b>: <a href="Condition-PatientKimMusterperson-PrimaryDiagnosis-2.html">Condition Bösartige Neubildung: Peritoneum, nicht näher bezeichnet</a></p><p><b>basedOn</b>: <a href="CarePlan-mii-exa-mtb-kim-musterperson-therapieplan.html">CarePlan: status = active; intent = plan; category = prätherapeutische Tumorkonferenz (Festlegung der Therapiestrategie); created = 2023-03-28</a></p></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet">
+    <valuePositiveInt value="1"/>
+  </extension>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad"/>
+        <code value="m1A"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation">
+    <valueIdentifier>
+      <system value="http://doi.org"/>
+      <value value="10.1200/JCO.2022.40.16_suppl.5512"/>
+    </valueIdentifier>
+  </extension>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation">
+    <valueIdentifier>
+      <system value="http://www.ncbi.nlm.nih.gov/pubmed"/>
+      <value value="38055253"/>
+    </valueIdentifier>
+  </extension>
+  <status value="completed"/>
+  <intent value="proposal"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://fdasis.nlm.nih.gov"/>
+      <code value="98DE7VN88D"/>
+      <display value="MIRVETUXIMAB SORAVTANSINE"/>
+    </coding>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/bfarm/atc"/>
+      <version value="2025"/>
+      <code value="L01FX26"/>
+      <display value="Mirvetuximab soravtansin"/>
+    </coding>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/bfarm/atc"/>
+      <version value="2025"/>
+      <code value="L01FX"/>
+      <display value="Andere monoklonale Antikörper und Antikörper-Wirkstoff-Konjugate"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <authoredOn value="2023-03-28"/>
+  <reasonReference>
+    <reference value="Condition/PatientKimMusterperson-PrimaryDiagnosis-2"/>
+  </reasonReference>
+  <basedOn>
+    <reference value="CarePlan/mii-exa-mtb-kim-musterperson-therapieplan"/>
+  </basedOn>
+</MedicationRequest>
