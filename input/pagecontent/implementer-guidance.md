@@ -176,9 +176,9 @@ The following SNOMED CT codes are correct, but newer than the version available 
 | `de.medizininformatikinitiative.kerndatensatz.base` | 2027.0.0-ballot | MII Core Dataset Base |
 | `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2027.0.0-ballot | MII Oncology module |
 | `de.medizininformatikinitiative.kerndatensatz.molgen` | 2027.0.0-ballot.1 | MII Molecular Genetics module |
-| `de.medizininformatikinitiative.kerndatensatz.patho` | 2027.0.0-ballot.rc2 | MII Pathology module |
+| `de.medizininformatikinitiative.kerndatensatz.patho` | 2027.0.0-ballot | MII Pathology module |
 | `de.medizininformatikinitiative.kerndatensatz.medikation` | 2027.0.0-ballot | MII Medication module |
-| `de.medizininformatikinitiative.kerndatensatz.biobank` | 2027.0.0-ballot.rc2 | MII Biobank module |
+| `de.medizininformatikinitiative.kerndatensatz.biobank` | 2027.0.0-ballot | MII Biobank module |
 | `de.medizininformatikinitiative.kerndatensatz.studie` | 2027.0.0-ballot | MII Study module |
 | `hl7.fhir.uv.genomics-reporting` | 3.0.0 | HL7 Genomics Reporting IG |
 
