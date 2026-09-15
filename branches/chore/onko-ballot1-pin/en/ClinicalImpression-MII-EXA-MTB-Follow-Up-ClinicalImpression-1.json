@@ -1,0 +1,44 @@
+{
+  "resourceType" : "ClinicalImpression",
+  "id" : "MII-EXA-MTB-Follow-Up-ClinicalImpression-1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-follow-up-clinicalimpression|2026.0.1"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ClinicalImpression MII-EXA-MTB-Follow-Up-ClinicalImpression-1</b></p><a name=\"MII-EXA-MTB-Follow-Up-ClinicalImpression-1\"> </a><a name=\"hcMII-EXA-MTB-Follow-Up-ClinicalImpression-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html\">MII PR MTB Clinical Impresssion</a> version: 2026.0.1</p></div><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 390906007}\">Follow-up encounter (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>effective</b>: 2023-10-22</p><p><b>previous</b>: <a href=\"ClinicalImpression-mii-exa-mtb-kim-musterperson-behandlungsepisode.html\">ClinicalImpression: status = completed; effective[x] = 2023-01-20 --&gt; 2023-03-28</a></p><h3>Investigations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status completed}\">completed</span></td></tr></table><p><b>supportingInfo</b>: </p><ul><li><a href=\"Procedure-MII-EXA-MTB-Systemische-Therapie-1.html\">Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie</a></li><li><a href=\"Claim-MII-EXA-MTB-Antrag-Kostenuebernahme-1.html\">Claim: status = active; type = institutional; use = claim; created = 2023-03-10; priority = Normal</a></li><li><a href=\"ClaimResponse-MII-EXA-MTB-Antwort-Kostenuebernahme-1.html\">ClaimResponse: status = active; type = institutional; use = claim; created = 2023-05-01; outcome = complete</a></li></ul></div>"
+  },
+  "status" : "completed",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "390906007",
+      "display" : "Follow-up encounter (procedure)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime" : "2023-10-22",
+  "previous" : {
+    "reference" : "ClinicalImpression/mii-exa-mtb-kim-musterperson-behandlungsepisode"
+  },
+  "investigation" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-follow-up-status",
+        "code" : "completed"
+      }]
+    }
+  }],
+  "supportingInfo" : [{
+    "reference" : "Procedure/MII-EXA-MTB-Systemische-Therapie-1"
+  },
+  {
+    "reference" : "Claim/MII-EXA-MTB-Antrag-Kostenuebernahme-1"
+  },
+  {
+    "reference" : "ClaimResponse/MII-EXA-MTB-Antwort-Kostenuebernahme-1"
+  }]
+}

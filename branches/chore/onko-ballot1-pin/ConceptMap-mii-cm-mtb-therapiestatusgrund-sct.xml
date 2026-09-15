@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="mii-cm-mtb-therapiestatusgrund-sct"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ConceptMap mii-cm-mtb-therapiestatusgrund-sct</b></p><a name="mii-cm-mtb-therapiestatusgrund-sct"> </a><a name="hcmii-cm-mtb-therapiestatusgrund-sct"> </a><p>Mapping from <a href="ValueSet-mii-vs-mtb-therapiestatusgrund.html">MII VS Therapiestatusgrund</a> to http://snomed.info/sct/900000000000207008/version/20250501</p><br/><p>Mapping from <a href="CodeSystem-mii-cs-mtb-therapiestatusgrund.html">MII CS Therapiestatusgrund</a> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>payment-refused (Kostenübernahme abgelehnt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>302179005 (Benefit application rejected (finding))</td></tr><tr><td>payment-pending (Kostenübernahme noch ausstehend)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>302178002 (Outcome of benefit application awaited (finding))</td></tr><tr><td>payment-ended (Ende der Kostenübernahme)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>224196001 (Benefits received (finding))</td></tr><tr><td>no-indication (Klinisch keine Indikation)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>71653005 (No indication of (contextual qualifier) (qualifier value))</td></tr><tr><td>medical-reasons (Medizinische Gründe)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>373788008 (Treatment delay - clinical reason (finding))</td></tr><tr><td>patient-refusal (Therapie durch Patient abgelehnt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>413311005 (Patient non-compliant - declined intervention / support (situation))</td></tr><tr><td>patient-wish (Auf Wunsch des Patienten)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>1186606009 (Patient request observable (observable entity))</td></tr><tr><td>patient-death (Tod)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>419099009 (Dead (finding))</td></tr><tr><td>lost-to-fu (Lost to follow-up)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>399307001 (Lost to follow-up (finding))</td></tr><tr><td>chronic-remission (Anhaltende Remission)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>277022003 (Remission phase (qualifier value))</td></tr><tr><td>progression</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>419835002 (Tumor progression (finding))</td></tr><tr><td>toxicity (Toxizität)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>75478009 (Toxicity)</td></tr><tr><td>other-therapy-chosen (Wahl einer anderen Therapie durch Behandler)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>182868002 (Treatment stopped - alternative therapy undertaken (situation))</td></tr><tr><td>best-supportive-care</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>243114000 (Supportive care)</td></tr><tr><td>deterioration (Zustandsverschlechterung)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>285384003 (General health deterioration (finding))</td></tr><tr><td>regular-completion (Reguläres Ende)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>385656004 (Ended (qualifier value))</td></tr><tr><td>regular-completion-with-dosage-reduction (Reguläres Ende mit Dosisreduktion)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>182822000 (Reducing dose prescribed (situation))</td></tr><tr><td>regular-completion-with-substance-change (Reguläres Ende mit Substanzwechsel)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>417886001 (Treatment adjusted per protocol (situation))</td></tr><tr><td>other (Weitere Gründe)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>74964007 (Other (qualifier value))</td></tr><tr><td>unknown (Unbekannt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>261665006 (Unknown (qualifier value))</td></tr></table></div><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ConceptMap mii-cm-mtb-therapiestatusgrund-sct</b></p><a name="de-mii-cm-mtb-therapiestatusgrund-sct"> </a><a name="de-hcmii-cm-mtb-therapiestatusgrund-sct"> </a><p>Mapping from <a href="ValueSet-mii-vs-mtb-therapiestatusgrund.html">MII VS Therapiestatusgrund</a> to http://snomed.info/sct/900000000000207008/version/20250501</p><br/><p>Mapping from <a href="CodeSystem-mii-cs-mtb-therapiestatusgrund.html">MII CS Therapiestatusgrund</a> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>payment-refused (Kostenübernahme abgelehnt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>302179005 (Benefit application rejected (finding))</td></tr><tr><td>payment-pending (Kostenübernahme noch ausstehend)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>302178002 (Outcome of benefit application awaited (finding))</td></tr><tr><td>payment-ended (Ende der Kostenübernahme)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>224196001 (Benefits received (finding))</td></tr><tr><td>no-indication (Klinisch keine Indikation)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>71653005 (No indication of (contextual qualifier) (qualifier value))</td></tr><tr><td>medical-reasons (Medizinische Gründe)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>373788008 (Treatment delay - clinical reason (finding))</td></tr><tr><td>patient-refusal (Therapie durch Patient abgelehnt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>413311005 (Patient non-compliant - declined intervention / support (situation))</td></tr><tr><td>patient-wish (Auf Wunsch des Patienten)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>1186606009 (Patient request observable (observable entity))</td></tr><tr><td>patient-death (Tod)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>419099009 (Dead (finding))</td></tr><tr><td>lost-to-fu (Lost to follow-up)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>399307001 (Lost to follow-up (finding))</td></tr><tr><td>chronic-remission (Anhaltende Remission)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>277022003 (Remission phase (qualifier value))</td></tr><tr><td>progression</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>419835002 (Tumor progression (finding))</td></tr><tr><td>toxicity (Toxizität)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>75478009 (Toxicity)</td></tr><tr><td>other-therapy-chosen (Wahl einer anderen Therapie durch Behandler)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>182868002 (Treatment stopped - alternative therapy undertaken (situation))</td></tr><tr><td>best-supportive-care</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>243114000 (Supportive care)</td></tr><tr><td>deterioration (Zustandsverschlechterung)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>285384003 (General health deterioration (finding))</td></tr><tr><td>regular-completion (Reguläres Ende)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>385656004 (Ended (qualifier value))</td></tr><tr><td>regular-completion-with-dosage-reduction (Reguläres Ende mit Dosisreduktion)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>182822000 (Reducing dose prescribed (situation))</td></tr><tr><td>regular-completion-with-substance-change (Reguläres Ende mit Substanzwechsel)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>417886001 (Treatment adjusted per protocol (situation))</td></tr><tr><td>other (Weitere Gründe)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>74964007 (Other (qualifier value))</td></tr><tr><td>unknown (Unbekannt)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>261665006 (Unknown (qualifier value))</td></tr></table></div></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct"/>
+  <version value="2026.0.1"/>
+  <name value="MII CM MTB Therapiestatusgrund SNOMED CT Mapping"/>
+  <title value="MII CM MTB Therapiestatusgrund SNOMED CT Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-05-01"/>
+  <publisher value="Medizininformatik-Initiative"/>
+  <contact>
+    <name value="Medizininformatik-Initiative"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de"/>
+    </telecom>
+  </contact>
+  <description value="Mapping der Codes zur Begründung des Therapiestatus nach SNOMED CT"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Technische Mappings zur Transformation der Therapiestatusgründe nach SNOMED CT"/>
+  <sourceUri value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-therapiestatusgrund"/>
+  <targetUri value="http://snomed.info/sct/900000000000207008/version/20250501"/>
+  <group>
+    <source value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-therapiestatusgrund"/>
+    <target value="http://snomed.info/sct"/>
+    <element>
+      <code value="payment-refused"/>
+      <display value="Kostenübernahme abgelehnt"/>
+      <target>
+        <code value="302179005"/>
+        <display value="Benefit application rejected (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="payment-pending"/>
+      <display value="Kostenübernahme noch ausstehend"/>
+      <target>
+        <code value="302178002"/>
+        <display value="Outcome of benefit application awaited (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="payment-ended"/>
+      <display value="Ende der Kostenübernahme"/>
+      <target>
+        <code value="224196001"/>
+        <display value="Benefits received (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="no-indication"/>
+      <display value="Klinisch keine Indikation"/>
+      <target>
+        <code value="71653005"/>
+        <display value="No indication of (contextual qualifier) (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="medical-reasons"/>
+      <display value="Medizinische Gründe"/>
+      <target>
+        <code value="373788008"/>
+        <display value="Treatment delay - clinical reason (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="patient-refusal"/>
+      <display value="Therapie durch Patient abgelehnt"/>
+      <target>
+        <code value="413311005"/>
+        <display value="Patient non-compliant - declined intervention / support (situation)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="patient-wish"/>
+      <display value="Auf Wunsch des Patienten"/>
+      <target>
+        <code value="1186606009"/>
+        <display value="Patient request observable (observable entity)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="patient-death"/>
+      <display value="Tod"/>
+      <target>
+        <code value="419099009"/>
+        <display value="Dead (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="lost-to-fu"/>
+      <display value="Lost to follow-up"/>
+      <target>
+        <code value="399307001"/>
+        <display value="Lost to follow-up (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="chronic-remission"/>
+      <display value="Anhaltende Remission"/>
+      <target>
+        <code value="277022003"/>
+        <display value="Remission phase (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="progression"/>
+      <display value="Progression"/>
+      <target>
+        <code value="419835002"/>
+        <display value="Tumor progression (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="toxicity"/>
+      <display value="Toxizität"/>
+      <target>
+        <code value="75478009"/>
+        <display value="Toxicity"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="other-therapy-chosen"/>
+      <display value="Wahl einer anderen Therapie durch Behandler"/>
+      <target>
+        <code value="182868002"/>
+        <display value="Treatment stopped - alternative therapy undertaken (situation)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="best-supportive-care"/>
+      <display value="Best Supportive Care"/>
+      <target>
+        <code value="243114000"/>
+        <display value="Supportive care"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="deterioration"/>
+      <display value="Zustandsverschlechterung"/>
+      <target>
+        <code value="285384003"/>
+        <display value="General health deterioration (finding)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="regular-completion"/>
+      <display value="Reguläres Ende"/>
+      <target>
+        <code value="385656004"/>
+        <display value="Ended (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="regular-completion-with-dosage-reduction"/>
+      <display value="Reguläres Ende mit Dosisreduktion"/>
+      <target>
+        <code value="182822000"/>
+        <display value="Reducing dose prescribed (situation)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="regular-completion-with-substance-change"/>
+      <display value="Reguläres Ende mit Substanzwechsel"/>
+      <target>
+        <code value="417886001"/>
+        <display value="Treatment adjusted per protocol (situation)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="other"/>
+      <display value="Weitere Gründe"/>
+      <target>
+        <code value="74964007"/>
+        <display value="Other (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="unknown"/>
+      <display value="Unbekannt"/>
+      <target>
+        <code value="261665006"/>
+        <display value="Unknown (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>
