@@ -278,7 +278,18 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
-        "code" : "C3262"
+        "code" : "C3262",
+        "display" : "Neoplasm"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C93304",
+        "display" : "Tumor Board Review"
       }]
     }
   }],

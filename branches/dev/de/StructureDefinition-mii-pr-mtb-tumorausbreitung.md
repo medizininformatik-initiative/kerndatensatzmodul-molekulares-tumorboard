@@ -154,7 +154,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-t
   "name" : "MII_PR_MTB_Tumorausbreitung",
   "title" : "MII PR MTB Tumorausbreitung",
   "status" : "active",
-  "date" : "2026-09-15T04:08:55+00:00",
+  "date" : "2026-09-15T04:40:11+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

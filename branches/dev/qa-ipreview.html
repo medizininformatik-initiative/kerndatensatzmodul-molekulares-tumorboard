@@ -943,7 +943,7 @@ Konformität<b class="caret"> </b>          </a>
 .  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt           <span title="Tue, Sep 15, 2026 04:08+0000">2026-09-15</span>
+          Erstellt           <span title="Tue, Sep 15, 2026 04:40+0000">2026-09-15</span>
 
                     <br/>
 
@@ -3310,6 +3310,33 @@ Stream           <code class="language-plaintext highlighter-rouge">MII-Kerndate
       </tr>
       <tr>
         <td>
+          <a href="de/researcher-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+          <strong>Overall Survival (OS)</strong>
+ — Zeit von t₀ bis zum Tod jeglicher Ursache.
+Todesereignis und -datum kommen aus           <code class="language-plaintext highlighter-rouge">Patient.deceasedDateTime</code>
+ (MII-Modul
+Person); zusätzlich führt das Modul Person die
+          <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus">Vitalstatus</a>
+-Observation
+den Vitalstatus je Kontaktdatum, und die
+          <a href="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-tod">Tod</a>
+-Observation
+des Onkologie-Moduls dokumentiert Sterbedatum, Todesursache und deren
+Tumorbezug — zur Bestätigung des Ereignisses und für ursachenspezifische
+Analysen (tumorbedingte Todesfälle). Patienten ohne Todeseintrag werden zum
+letzten dokumentierten Kontakt zensiert (jüngste datierte           <a href="StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html">Follow-Up
+ClinicalImpression</a>
+,
+Response-Befund oder Therapiedokumentation).
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="de/security-and-privacy.html">web</a>
         </td>
         <td>
@@ -3511,7 +3538,7 @@ Conformance<b class="caret"> </b>          </a>
 .  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated           <span title="Tue, Sep 15, 2026 04:08+0000">2026-09-15</span>
+          Generated           <span title="Tue, Sep 15, 2026 04:40+0000">2026-09-15</span>
 
                     <br/>
 
@@ -4551,6 +4578,34 @@ on Zulip:           <a href="https://chat.fhir.org">chat.fhir.org</a>
 
 stream           <code class="language-plaintext highlighter-rouge">MII-Kerndatensatz</code>
 .
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/researcher-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+          <strong>Overall survival (OS)</strong>
+ — time from t₀ to death from any cause.
+Death and its date come from           <code class="language-plaintext highlighter-rouge">Patient.deceasedDateTime</code>
+ (MII Person module);
+in addition, the Person module's
+          <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus">Vitalstatus</a>
+
+observation carries the vital status per contact date, and the Oncology
+module's
+          <a href="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-tod">Tod</a>
+
+observation documents death date, cause of death and its tumor relation —
+use them to confirm the event and, for cause-specific analyses, to
+distinguish tumor-related deaths. Patients without a death record are
+censored at their last documented contact (most recently dated           <a href="StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html">Follow-Up
+ClinicalImpression</a>
+,
+Response-Befund or therapy documentation).
         </td>
       </tr>
       <tr>

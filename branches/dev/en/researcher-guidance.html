@@ -347,13 +347,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Guidance for researchers using the data of the <strong>Molecular Tumor Board</strong> module for research purposes — e.g. which data elements are relevant to which research questions, and how they are to be interpreted.</p>
 
-<!-- DERIVED:suggestion source=none gate=B -->
-<blockquote class="ig-highlight ig-highlight-blue">
-  <p><strong>Written during migration - review before release.</strong> The source guide ships
-no researcher guidance; the following outcome-endpoint section is PROPOSED
-from the module's data elements and requires review by the module team.</p>
-</blockquote>
-
+<!-- DERIVED:accepted source=none gate=B signed-off=2026-09-15 (user; Vitalstatus/Tod-Ergänzung eingearbeitet) -->
 <h3 id="outcome-endpoints-os-pfs-and-time-to-next-treatment">Outcome endpoints: OS, PFS and time to next treatment</h3>
 
 <p>The module's follow-up documentation is designed so that the standard
@@ -366,8 +360,15 @@ an alternative index date.</p>
 
 <p><strong>Overall survival (OS)</strong> — time from t₀ to death from any cause.
 Death and its date come from <code class="language-plaintext highlighter-rouge">Patient.deceasedDateTime</code> (MII Person module);
-patients without a death record are censored at their last documented contact
-(most recently dated <a href="StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html">Follow-Up
+in addition, the Person module's
+<a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus">Vitalstatus</a>
+observation carries the vital status per contact date, and the Oncology
+module's
+<a href="https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-tod">Tod</a>
+observation documents death date, cause of death and its tumor relation —
+use them to confirm the event and, for cause-specific analyses, to
+distinguish tumor-related deaths. Patients without a death record are
+censored at their last documented contact (most recently dated <a href="StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html">Follow-Up
 ClinicalImpression</a>,
 Response-Befund or therapy documentation).</p>
 
@@ -423,7 +424,7 @@ can systematically shift t₀ and are themselves a researchable quantity.</p>
 
           IG © 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medizininformatik-Initiative</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.mtb#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Tue, Sep 15, 2026 04:08+0000">2026-09-15</span>
+          Generated <span title="Tue, Sep 15, 2026 04:40+0000">2026-09-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
