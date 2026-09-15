@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PatientKimMusterperson-Observation-27"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-27</b></p><a name="PatientKimMusterperson-Observation-27"> </a><a name="hcPatientKimMusterperson-Observation-27"> </a><p><b>partOf</b>: <a href="Procedure-PatientKimMusterperson-Procedure-7.html">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 246455001}">vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken</span></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 246455001}, {http://snomed.info/sct 263920009}">aktuell metrisch nur noch schwer fassbar</span></p><p><b>bodySite</b>: <span title="Codes:{http://snomed.info/sct 80266002}">True pelvis</span></p></div>
+  </text>
+  <partOf>
+    <reference value="Procedure/PatientKimMusterperson-Procedure-7"/>
+  </partOf>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="237679004"/>
+      <display value="Status post (contextual qualifier) (qualifier value)"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="246455001"/>
+      <display value="Recurrence"/>
+    </coding>
+    <text value="vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken"/>
+  </code>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="246455001"/>
+      <display value="Recurrence"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="263920009"/>
+      <display value="Unrecordable"/>
+    </coding>
+    <text value="aktuell metrisch nur noch schwer fassbar"/>
+  </valueCodeableConcept>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="80266002"/>
+      <display value="True pelvis"/>
+    </coding>
+  </bodySite>
+</Observation>
