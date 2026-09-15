@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD041 -->
-<!-- Übersichtsseite "Anleitung". Ersetzen Sie die [TODO]-Hinweise; die
+<!-- Übersichtsseite "Anleitung". Autoren-Hinweise zum Release aufgelöst; die
      Unterseiten-Struktur folgt kerndatensatz-basis. -->
 
 Dieser Abschnitt bündelt die fachlichen Hinweise zur Umsetzung und Nutzung des

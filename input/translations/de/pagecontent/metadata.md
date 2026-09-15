@@ -98,13 +98,6 @@ In diesem Gerüst nicht aktiviert, aber als auskommentierte Blöcke in
   [CRMI-Manifest-Parameters](https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-manifestparameters.html)-Ressource
   und den Parametern `path-expansion-params` / `pin-manifest`.
 
-> [TODO: Aktivieren Sie die für Ihr Modul nötigen Blöcke und ziehen Sie die
-> Tabellen oben nach. Wenn Ihr Modul die CRMI-Shareable-/Publishable-Profile
-> zusätzlich auf seine eigenen StructureDefinitions, CapabilityStatements,
-> CodeSysteme und ValueSets anwendet — das Idiom aus `kerndatensatz-basis` ist
-> ein gemeinsames `RuleSet` in [`input/fsh/rulesets/crmi.fsh`](https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/main/input/fsh/rulesets/crmi.fsh) —, ergänzen Sie die
-> entsprechenden Zeilen.]
-{: .ig-highlight .ig-highlight-grey}
 
 ##### CodeSystem-Supplements
 
@@ -157,11 +150,9 @@ Publisher mit `path-expansion-params` und `pin-manifest` darauf hin. Lesende wie
 Werkzeuge haben dann eine stabile Stelle, an der die Parameter für Expansion und
 Paket-Pinnung einsehbar sind.
 
-> [TODO: Ergänzen Sie das Manifest Ihres Moduls (siehe die auskommentierten
-> Blöcke in `sushi-config.yaml`) und verlinken Sie hier die erzeugte
-> `Parameters`-Seite — oder halten Sie ausdrücklich fest, dass dieses Modul
-> keine Expansions-Parameter pinnt.]
-{: .ig-highlight .ig-highlight-grey}
+Dieses Modul pinnt seine Expansions-Parameter im Manifest
+[Parameters-mii-param-mtb-manifest](Parameters-mii-param-mtb-manifest.html)
+(referenziert aus dem ImplementationGuide über `cqf-expansionParameters`).
 
 #### Bezug zu FAIR
 
@@ -213,11 +204,6 @@ dauerhaft identifizierter FAIR-Datensatz behauptet.
 | R1.3 | RDA-R1.3-01D | Daten entsprechen einem Community-Standard | Die Beispiele deklarieren die Profile dieses Moduls. Produktiv muss die Konformität gegen Profile, Bindings und CapabilityStatement-Erwartungen validiert werden. |
 | R1.3 | RDA-R1.3-02M | Metadaten sind gemäß einem Community-Standard maschinenverständlich | CRMI-konforme FHIR-Metadaten als JSON/XML und als FHIR-Paket im NPM-Format des IG-Publisher-Ökosystems. |
 
-> [TODO: Die Tabelle führt die Indikatoren der Priorität *Essential* auf. Wenn
-> Ihr Modul die vollständige Selbsteinschätzung will, ergänzen Sie die
-> Indikatoren der Prioritäten *Important* und *Useful* — `kerndatensatz-basis`
-> führt die vollständige Tabelle.]
-{: .ig-highlight .ig-highlight-grey}
 
 #### Praktische Nutzung
 

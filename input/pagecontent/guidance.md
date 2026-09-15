@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 <!-- Source: kerndatensatz-basis input/pagecontent/guidance.md (MII module page set).
-     "Guidance" overview page. Replace the [TODO] prompts; the sub-page structure
+     "Guidance" overview page. Authoring prompts resolved for release; the sub-page structure
      follows kerndatensatz-basis. German mirror:
      input/translations/de/pagecontent/guidance.md — keep both in step. -->
 

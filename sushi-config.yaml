@@ -17,13 +17,13 @@ title: MII IG Kerndatensatz-Modul Molekulares Tumorboard
 description: "FHIR profiles for molecular tumor board (MTB) documentation based on the DNPM dataset (Deutsches Netzwerk für Personalisierte Medizin), complementing the MII core dataset oncology module." # TODO:REVIEW derived (EN description derived from the German-language description/README)
 status: active # draft | active | retired | unknown
 # MII modules use CalVer YYYY.n.n per the MII Module Release Workflow.
-version: "2026.0.1"
+version: "2027.0.0-ballot.1"
 packageId: de.medizininformatikinitiative.kerndatensatz.mtb
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: "2024+"
-releaseLabel: release
+releaseLabel: ballot
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html — source licence, NOT the template default
-date: "2026-03-30" # release date of 2026.0.1 (merge of release/v2026.0.1)
+date: "2026-09-15" # release date of 2027.0.0-ballot.1 (the 2027 ballot line)
 # The source declared jurisdiction m49.htm#276; the IG Publisher cannot resolve
 # that form in the page header ("Unknown region code '276'"), so the template's
 # equivalent ISO-3166 form is used. TODO:REVIEW Gate A (announced normalization).
@@ -55,7 +55,7 @@ extension:
       - url: packageId
         valueId: de.medizininformatikinitiative.kerndatensatz.mtb
       - url: version
-        valueString: "2026.0.1"
+        valueString: "2027.0.0-ballot.1"
       - url: uri
         valueUri: https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb
   - url: http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod
