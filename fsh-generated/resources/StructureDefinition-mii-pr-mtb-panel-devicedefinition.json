@@ -37,6 +37,20 @@
         "mustSupport": true
       },
       {
+        "id": "DeviceDefinition.extension",
+        "path": "DeviceDefinition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
         "id": "DeviceDefinition.extension:geneList",
         "path": "DeviceDefinition.extension",
         "sliceName": "geneList",
