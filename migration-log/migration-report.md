@@ -146,7 +146,7 @@ Merging accepts all of them; to reject one, revert its commit on this branch.
 ### Hand-written review items
 
 **REV-1 — machine-translated English default pages** · severity **high** · Gate C
-- **What it is:** English is now the default language; every default-language page and all 57 intro notes are **machine translations of the German source**, marked with a provenance comment `TODO:REVIEW machine-translated`. The German mirrors carry the source text (verbatim where possible — see REV-2).
+- **What it is:** English is now the default language; every default-language page and all 57 intro notes are **machine translations of the German-language text**, marked with a provenance comment `TODO:REVIEW machine-translated`. The German mirrors carry the source text (verbatim where possible — see REV-2).
 - **Where:** grep handle: `grep -rl 'TODO:REVIEW machine-translated' input/pagecontent input/intro-notes` (≈78 files).
 - **If nobody acts:** unreviewed machine English ships as the guide's default language.
 - **Next action:** review per page, remove the marker. Translation defects inherited from the source (broken sentences in Leitlinienbehandlung-Status, IHC-Phosphorylation, genomic-study-analysis, systemische-therapie, systemische-vortherapie, IHC-PDL1; a `ttps://` typo; stray list numbers) were **preserved 1:1** — run.log `5.4 source-prose-defects` lists them; fixing them is a source-content decision, not a translation fix.

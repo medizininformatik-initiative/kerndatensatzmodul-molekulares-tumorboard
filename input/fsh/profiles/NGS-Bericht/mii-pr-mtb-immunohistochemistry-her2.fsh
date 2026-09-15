@@ -90,7 +90,7 @@ Id: mii-pr-mtb-biomarker-her2-status
 Title: "MII PR Biomarker Her2 Status"
 Description: "..."
 * insert PR_Header
-* code.coding = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
+* code.coding = $LNC#48676-1 "HER2 Ag [Interpretation] in Tissue"
 * valueCodeableConcept.coding.system = $LNC
 * valueCodeableConcept.coding.code from http://loinc.org/vs/LL3593-2 //Pos|Weak pos|Neg -> maybe also Her2low as explicit response option in self-defined value set
 

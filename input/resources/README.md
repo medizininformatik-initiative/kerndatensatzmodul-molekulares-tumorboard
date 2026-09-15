@@ -63,7 +63,7 @@ Three places in `sushi-config.yaml` reference this file — all three are active
    module: `path-expansion-params` in `sushi-config.yaml` hard-codes the path.
    (The one file in this repository whose *name* does carry a placeholder is the
    IG-level translation catalogue
-   `input/translations/de/ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.po`, which
+   `input/translations/de/ImplementationGuide-mii-ig-mtb.po`, which
    **must** be renamed — see `docs/recipes/add-translation.md` §5.)
 2. Check the SNOMED CT pin against the wiki table for your CalVer line.
 3. Add a `system-version` entry per further code system you bind.

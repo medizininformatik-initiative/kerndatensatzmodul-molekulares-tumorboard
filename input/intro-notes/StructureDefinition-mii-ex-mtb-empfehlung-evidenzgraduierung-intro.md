@@ -1,4 +1,4 @@
-<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Evidenzgraduierung-Extension.page.md). TODO:REVIEW machine-translated from the German source. -->
+<!-- Migrated from the Simplifier IG (source(s): MIIIGModulMTB/TechnischeImplementierung/FHIRProfile/Behandlungsepisode/Therapieplan-MTB-Beschluss/Therapieempfehlung/Extensions/Evidenzgraduierung-Extension.page.md). TODO:REVIEW machine-translated from German. -->
 ### Content
 
 This extension specifies the level of evidence, including an optional additional reference, that was assigned to a recommendation by the Molekulares Tumorboard (molecular tumor board).
@@ -7,6 +7,6 @@ This level of evidence is based on the highest evidence that can be found for a 
 
 ### Content
 
-[mii-cs-mtb-empfehlung-evidenzgrad-nct](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.html)
+[mii-cs-mtb-empfehlung-evidenzgrad](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad.html)
 
 [mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis](CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.html)

@@ -141,13 +141,13 @@ jobs:
       JAVA_VALIDATION_ENABLED: true
       # Pinned Java validator (fixed versions); mirrors the reusable workflow's
       # own default at the pinned SHA. Overridable via the repo variable.
-      JAVA_VALIDATOR_VERSION: ${{ vars.JAVA_VALIDATOR_VERSION || '6.5.7' }}
+      JAVA_VALIDATOR_VERSION: ${{ vars.JAVA_VALIDATOR_VERSION || '6.10.4' }}
       # Wire the repo's advisor file into the validator CLI. The reusable
       # workflow passes JAVA_VALIDATION_OPTIONS verbatim to validator_cli.jar
       # (verified at the pinned SHA); without this the advisor.json shipped at
       # the repo root would be read by NOTHING and the "suppressed via
       # advisor.json" contract in this file's header would be false.
-      JAVA_VALIDATION_OPTIONS: "-advisor-file advisor.json"
+      JAVA_VALIDATION_OPTIONS: ${{ vars.JAVA_VALIDATION_OPTIONS || '-advisor-file advisor.json -resolution-context file:fsh-generated/resources/ -txLog txlog.html -forPublication -authorise-non-conformant-tx-servers -html-output validation.html -output validation.json' }}
       VALIDATION_REPORT_FILTERS: |
         filename | messageId | detailsWildcard | location
     # Secret-name reconciliation: the MII reusable workflow declares

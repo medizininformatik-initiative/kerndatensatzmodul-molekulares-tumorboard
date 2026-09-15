@@ -1,6 +1,6 @@
 
 ValueSet: MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung
-Id: mii-vs-mtb-follow-grund-nicht-umsetzung
+Id: mii-vs-mtb-follow-up-grund-nicht-umsetzung
 Title: "MII VS Follow-Up Grund Nicht-Umsetzung"
 Description: "ValueSet zum Follow-Up Grund Nicht-Umsetzung des Therapieplans. Abgeleitet von mii-cs-mtb-systemische-therapie-status-grund"
 * insert VS_Header($mii-vs-mtb-follow-up-grund-nicht-umsetzung)

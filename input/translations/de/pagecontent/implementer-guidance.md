@@ -24,14 +24,14 @@ Diese Seite dokumentiert den aktuellen Stand der FHIR-Validierung für das MII M
 
 Das Modul wird kontinuierlich gegen den FHIR R4 Standard und die definierten Profile validiert. Da Simplifier keinen öffentlichen QA-Report bereitstellt wie bei klassischen FHIR IG Publisher Builds, dokumentieren wir hier transparent den Validierungsstatus.
 
-#### Bekannte Befunde des Template-Builds (Stand 2026-09)
+#### Bekannte Befunde des Template-Builds (Stand 2026-09, aktualisiert nach dem 2027-Ballot-Re-Pin)
 
 **Welche Zahl von welchem Terminologieserver stammt, ist hier entscheidend.**
 Der CI-Build validiert über das Client-Zertifikat der Organisation (der
 Proxy-Mechanismus des Templates) gegen den **MII-Terminologieserver
-(SU-TermServ)** und meldet aktuell **91 Fehler**. Ein Build ohne dieses
+(SU-TermServ)** und meldet aktuell **55 Fehler** (alle Abhängigkeiten auf ihren finalen 2027.0.0-ballot-Versionen). Ein Build ohne dieses
 Zertifikat — z. B. lokal — fällt auf den öffentlichen HL7-Server (tx.fhir.org)
-zurück und meldet **144 Fehler**: die Differenz ist **eine Familie —
+zurück und meldet rund **107 Fehler**: die Differenz ist **eine Familie —
 tx.fhir.org hält die deutschen Terminologie-Inhalte nicht vor, gegen die
 dieses Modul validiert.** Die Tabelle unten beschreibt diese Nur-Public-TX-
 Familie; auf dem SU-TermServ tritt nichts davon auf.
@@ -175,13 +175,20 @@ Die folgenden SNOMED CT Codes sind korrekt, aber neuer als die auf dem Terminolo
 
 | Paket | Version | Beschreibung |
 |-------|---------|--------------|
-| `de.medizininformatikinitiative.kerndatensatz.meta` | 2026.0.0 | MII Kerndatensatz Meta |
-| `de.medizininformatikinitiative.kerndatensatz.base` | 2026.0.0 | MII Kerndatensatz Basis |
-| `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2026.0.3 | MII Modul Onkologie |
-| `de.medizininformatikinitiative.kerndatensatz.molgen` | 2026.0.4 | MII Modul Molekulargenetik |
-| `de.medizininformatikinitiative.kerndatensatz.patho` | 2026.0.0 | MII Modul Pathologie |
-| `de.medizininformatikinitiative.kerndatensatz.consent` | 2026.0.0 | MII Modul Consent |
+| `de.medizininformatikinitiative.kerndatensatz.meta` | 2027.0.0-ballot | MII Kerndatensatz Meta |
+| `de.medizininformatikinitiative.kerndatensatz.base` | 2027.0.0-ballot | MII Kerndatensatz Basis |
+| `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2027.0.0-ballot | MII Modul Onkologie |
+| `de.medizininformatikinitiative.kerndatensatz.molgen` | 2027.0.0-ballot.1 | MII Modul Molekulargenetik |
+| `de.medizininformatikinitiative.kerndatensatz.patho` | 2027.0.0-ballot | MII Modul Pathologie |
+| `de.medizininformatikinitiative.kerndatensatz.medikation` | 2027.0.0-ballot | MII Modul Medikation |
+| `de.medizininformatikinitiative.kerndatensatz.biobank` | 2027.0.0-ballot | MII Modul Biobank |
+| `de.medizininformatikinitiative.kerndatensatz.studie` | 2027.0.0-ballot | MII Modul Studie |
 | `hl7.fhir.uv.genomics-reporting` | 3.0.0 | HL7 Genomics Reporting IG |
+
+Die frühere Abhängigkeit auf `de.medizininformatikinitiative.kerndatensatz.consent`
+wurde entfernt: Kein Artefakt dieses Moduls konsumiert das Consent-Paket — das
+Aufklärungs-Profil des Moduls (`mii-pr-mtb-consent-given`) leitet direkt von
+`Observation` ab.
 
 #### Status-Legende
 

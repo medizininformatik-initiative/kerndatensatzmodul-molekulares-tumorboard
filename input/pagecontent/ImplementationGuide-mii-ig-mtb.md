@@ -15,8 +15,8 @@
 This ImplementationGuide resource defines the technical details of this
 publication, including dependencies and publishing parameters.
 
-- [XML](../ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.xml)
-- [JSON](../ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.json)
+- [XML](../ImplementationGuide-mii-ig-mtb.xml)
+- [JSON](../ImplementationGuide-mii-ig-mtb.json)
 
 ### Cross Version Analysis
 

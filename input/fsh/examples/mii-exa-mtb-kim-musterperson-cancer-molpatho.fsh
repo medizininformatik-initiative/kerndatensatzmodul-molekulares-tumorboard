@@ -76,7 +76,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientKimMusterperson)
 * specimen = Reference(PatientKimMusterperson-AscitesSpecimen-2)
-* code.coding[+] = $LNC#48676-1 "HER2 [Interpretation] in Tissue"
+* code.coding[+] = $LNC#48676-1 "HER2 Ag [Interpretation] in Tissue"
 * valueCodeableConcept.coding = $SCT#1381317004 "Human epidermal growth factor receptor 2 low"
 * valueCodeableConcept.text = "HER2-low (IHC 2+/ISH negative)"
 * component[+].code.coding = $LNC#48018-6 "Gene studied [ID]"

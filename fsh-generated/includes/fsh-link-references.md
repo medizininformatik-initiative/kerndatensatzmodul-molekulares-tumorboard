@@ -73,7 +73,7 @@
 [MII_CS_MTB_Antwort_Kostenuebernahme_Entscheidung]: CodeSystem-mii-cs-mtb-antwort-kostenuebernahme-entscheidung.html
 [MII_CS_MTB_BestimmungsmethodeTumorzellgehalt]: CodeSystem-mii-cs-mtb-bestimmungsmethode-tumorzellgehalt.html
 [MII_CS_MTB_Dosisdichte]: CodeSystem-mii-cs-mtb-dosisdichte.html
-[MII_CS_MTB_Empfehlung_Evidenzgrad]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-nct.html
+[MII_CS_MTB_Empfehlung_Evidenzgrad]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad.html
 [MII_CS_MTB_Empfehlung_EvidenzgradZusatzverweis]: CodeSystem-mii-cs-mtb-empfehlung-evidenzgrad-zusatzverweis.html
 [MII_CS_MTB_Empfehlung_StatusBegruendung]: CodeSystem-mii-cs-mtb-empfehlung-status-begruendung.html
 [MII_CS_MTB_Follow_Up_Status]: CodeSystem-mii-cs-mtb-follow-up-status.html
@@ -164,7 +164,7 @@
 [MII_VS_MTB_Empfehlung_Evidenzgrad]: ValueSet-mii-vs-mtb-empfehlung-evidenzgrad.html
 [MII_VS_MTB_Empfehlung_EvidenzgradZusatzverweis]: ValueSet-mii-vs-mtb-empfehlung-evidenzgrad-zusatzverweis.html
 [MII_VS_MTB_Empfehlung_StatusBegruendung]: ValueSet-mii-vs-mtb-empfehlung-status-begruendung.html
-[MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: ValueSet-mii-vs-mtb-follow-grund-nicht-umsetzung.html
+[MII_VS_MTB_Follow_Up_Grund_Nicht_Umsetzung]: ValueSet-mii-vs-mtb-follow-up-grund-nicht-umsetzung.html
 [MII_VS_MTB_Follow_Up_Status]: ValueSet-mii-vs-mtb-follow-up-status.html
 [MII_VS_MTB_Genomic_Analysis_Method_Type]: ValueSet-mii-vs-mtb-genomic-analysis-method-type.html
 [MII_VS_MTB_Antwort_Kostenuebernahme_Ablehnungsgrund]: ValueSet-mii-vs-mtb-antwort-kostenuebernahme-ablehnungsgrund.html
@@ -190,7 +190,7 @@
 [MII_VS_MTB_Panel_Tso500Snv]: ValueSet-mii-vs-mtb-panel-tso-500-snv.html
 [MII_VS_MTB_Systemische_Therapie_Status]: ValueSet-mii-vs-mtb-systemische-therapie-status.html
 [MII_VS_MTB_OncoTree]: ValueSet-mii-vs-mtb-oncotree.html
-[MII_VS_MTB_Beurteilungsmethode]: ValueSet-mii-vs-mtb-beurteilungsmethode-response-befund.html
+[MII_VS_MTB_Beurteilungsmethode]: ValueSet-mii-vs-mtb-response-befund-beurteilungsmethode.html
 [MII_VS_MTB_Response_Befund_Beurteilung]: ValueSet-mii-vs-mtb-response-befund-beurteilung.html
 [MII_VS_MTB_Therapiestatusgrund]: ValueSet-mii-vs-mtb-therapiestatusgrund.html
 [MII_VS_MTB_Tumorausbreitung]: ValueSet-mii-vs-mtb-tumorausbreitung.html

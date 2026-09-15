@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD041 -->
-<!-- German mirror of input/pagecontent/ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.md —
+<!-- German mirror of input/pagecontent/ImplementationGuide-mii-ig-mtb.md —
      both files must say the same thing. ALL generated fragments (cross-version
      analysis included) are language-selected via lang-fragment: the pinned
      publisher writes _includes/<name>-<lang>.xhtml plus a bare default-language
@@ -10,8 +10,8 @@
 Diese ImplementationGuide-Ressource definiert die technischen Details dieser
 Publikation, einschließlich Abhängigkeiten und Veröffentlichungsparametern.
 
-- [XML](../ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.xml)
-- [JSON](../ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.json)
+- [XML](../ImplementationGuide-mii-ig-mtb.xml)
+- [JSON](../ImplementationGuide-mii-ig-mtb.json)
 
 ### Versionsübergreifende Analyse
 

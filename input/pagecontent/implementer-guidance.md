@@ -22,14 +22,14 @@ This section documents the FHIR validation status of the MII module Molecular Tu
 
 The module is continuously validated against the FHIR R4 standard and the defined profiles. The validation status is documented here transparently.
 
-#### Known issues of the template build (status 2026-09)
+#### Known issues of the template build (status 2026-09, updated after the 2027-ballot re-pin)
 
 **Which numbers come from which terminology server matters here.** The CI
 build validates against the **MII terminology server (SU-TermServ)** through
 the organization's client certificate (the template's proxy mechanism) and
-currently reports **91 errors**. A build without that certificate — e.g. a
+currently reports **55 errors** (all dependencies on their final 2027.0.0-ballot versions). A build without that certificate — e.g. a
 local build — falls back to the public HL7 server (tx.fhir.org) and reports
-**144 errors**: the difference is **one family — tx.fhir.org does not host the
+around **107 errors**: the difference is **one family — tx.fhir.org does not host the
 German terminology content this module validates against.** The table below
 describes that public-tx-only family; none of it appears on SU-TermServ.
 
@@ -172,13 +172,20 @@ The following SNOMED CT codes are correct, but newer than the version available 
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| `de.medizininformatikinitiative.kerndatensatz.meta` | 2026.0.0 | MII Core Dataset Meta |
-| `de.medizininformatikinitiative.kerndatensatz.base` | 2026.0.0 | MII Core Dataset Base |
-| `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2026.0.3 | MII Oncology module |
-| `de.medizininformatikinitiative.kerndatensatz.molgen` | 2026.0.4 | MII Molecular Genetics module |
-| `de.medizininformatikinitiative.kerndatensatz.patho` | 2026.0.0 | MII Pathology module |
-| `de.medizininformatikinitiative.kerndatensatz.consent` | 2026.0.0 | MII Consent module |
+| `de.medizininformatikinitiative.kerndatensatz.meta` | 2027.0.0-ballot | MII Core Dataset Meta |
+| `de.medizininformatikinitiative.kerndatensatz.base` | 2027.0.0-ballot | MII Core Dataset Base |
+| `de.medizininformatikinitiative.kerndatensatz.onkologie` | 2027.0.0-ballot | MII Oncology module |
+| `de.medizininformatikinitiative.kerndatensatz.molgen` | 2027.0.0-ballot.1 | MII Molecular Genetics module |
+| `de.medizininformatikinitiative.kerndatensatz.patho` | 2027.0.0-ballot | MII Pathology module |
+| `de.medizininformatikinitiative.kerndatensatz.medikation` | 2027.0.0-ballot | MII Medication module |
+| `de.medizininformatikinitiative.kerndatensatz.biobank` | 2027.0.0-ballot | MII Biobank module |
+| `de.medizininformatikinitiative.kerndatensatz.studie` | 2027.0.0-ballot | MII Study module |
 | `hl7.fhir.uv.genomics-reporting` | 3.0.0 | HL7 Genomics Reporting IG |
+
+The former dependency on `de.medizininformatikinitiative.kerndatensatz.consent`
+was removed: no artifact of this module consumes the Consent package — the
+module's informed-consent profile (`mii-pr-mtb-consent-given`) derives from
+plain `Observation`.
 
 #### Status legend
 

@@ -38,17 +38,17 @@ Description: "Immunhistorchemistry report"
     mmr-msh3 0..1 MS and
     mmr-mlh3 0..1 MS 
 
-* component[mmr-mlh1].code.coding = $LNC#81691-8 "DNA mismatch repair protein Mlh1 [Presence] in Cancer specimen by Immune stain"
+* component[mmr-mlh1].code.coding = $LNC#81691-8 "MLH-1 Ag [Presence] in Cancer specimen by Immune stain"
 * component[mmr-mlh1].valueCodeableConcept.coding from $mii-vs-mtb-mmr-expression
-* component[mmr-msh2].code.coding = $LNC#81692-6  "DNA mismatch repair protein Msh2 [Presence] in Cancer specimen by Immune stain"
+* component[mmr-msh2].code.coding = $LNC#81692-6  "MSH-2 Ag [Presence] in Cancer specimen by Immune stain"
 * component[mmr-msh2].valueCodeableConcept.coding from $mii-vs-mtb-mmr-expression
-* component[mmr-msh6].code.coding = $LNC#81693-4 "DNA mismatch repair protein Msh6 [Presence] in Cancer specimen by Immune stain"
+* component[mmr-msh6].code.coding = $LNC#81693-4 "MSH-6 Ag [Presence] in Cancer specimen by Immune stain"
 * component[mmr-msh6].valueCodeableConcept.coding from $mii-vs-mtb-mmr-expression
-* component[mmr-pms2].code.coding = $LNC#81694-2 "Mismatch repair endonuclease PMS2 [Presence] in Cancer specimen by Immune stain"
+* component[mmr-pms2].code.coding = $LNC#81694-2 "PMS2 Ag [Presence] in Cancer specimen by Immune stain"
 * component[mmr-pms2].valueCodeableConcept.coding from $mii-vs-mtb-mmr-expression
-* component[mmr-msh3].code.coding = $LNC#96271-2 "DNA mismatch repair protein Msh3 [Presence] in Cancer specimen by Immune stain"
+* component[mmr-msh3].code.coding = $LNC#96271-2 "DNA mismatch repair protein Msh3 Ag [Presence] in Cancer specimen by Immune stain"
 * component[mmr-msh3].valueCodeableConcept.coding from $mii-vs-mtb-mmr-expression
-* component[mmr-mlh3].code.coding = $LNC#96272-0 "DNA mismatch repair protein Mlh3 [Presence] in Cancer specimen by Immune stain"
+* component[mmr-mlh3].code.coding = $LNC#96272-0 "DNA mismatch repair protein Mlh3 Ag [Presence] in Cancer specimen by Immune stain"
 * component[mmr-mlh3].valueCodeableConcept.coding from $mii-vs-mtb-mmr-expression
 
 

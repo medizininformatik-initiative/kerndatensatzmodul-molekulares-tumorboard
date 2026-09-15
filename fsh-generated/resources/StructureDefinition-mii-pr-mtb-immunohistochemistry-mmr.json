@@ -1,6 +1,117 @@
 {
   "resourceType": "StructureDefinition",
   "id": "mii-pr-mtb-immunohistochemistry-mmr",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "shareable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+      "valueMarkdown": "Use this profile as the technical FHIR representation of the corresponding Medical Informatics Initiative logical model. The profile constrains a base FHIR resource for the MII module context by specifying how elements are used, which elements are required or not used, which extensions and terminology bindings apply, and how the resource maps to the module-specific content model. Implementers should produce and consume resource instances that conform to this profile when exchanging data for the corresponding MII module."
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+            "version": "3.0.0",
+            "code": "package",
+            "display": "Package"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+            "code": "C17457"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-author",
+      "valueContactDetail": {
+        "telecom": [
+          {
+            "system": "email",
+            "value": "thomas.debertshaeuser@charite.de"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+      "valueContactDetail": {
+        "name": "Taskforce Core Data Set"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver",
+        "display": "SemVer"
+      }
+    }
+  ],
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-mmr",
   "version": "2026.0.1",
   "name": "MII_PR_MTB_Immunohistochemistry_MMR",
@@ -159,7 +270,7 @@
         "patternCoding": {
           "code": "81691-8",
           "system": "http://loinc.org",
-          "display": "DNA mismatch repair protein Mlh1 [Presence] in Cancer specimen by Immune stain"
+          "display": "MLH-1 Ag [Presence] in Cancer specimen by Immune stain"
         }
       },
       {
@@ -210,7 +321,7 @@
         "patternCoding": {
           "code": "81692-6",
           "system": "http://loinc.org",
-          "display": "DNA mismatch repair protein Msh2 [Presence] in Cancer specimen by Immune stain"
+          "display": "MSH-2 Ag [Presence] in Cancer specimen by Immune stain"
         }
       },
       {
@@ -261,7 +372,7 @@
         "patternCoding": {
           "code": "81693-4",
           "system": "http://loinc.org",
-          "display": "DNA mismatch repair protein Msh6 [Presence] in Cancer specimen by Immune stain"
+          "display": "MSH-6 Ag [Presence] in Cancer specimen by Immune stain"
         }
       },
       {
@@ -312,7 +423,7 @@
         "patternCoding": {
           "code": "81694-2",
           "system": "http://loinc.org",
-          "display": "Mismatch repair endonuclease PMS2 [Presence] in Cancer specimen by Immune stain"
+          "display": "PMS2 Ag [Presence] in Cancer specimen by Immune stain"
         }
       },
       {
@@ -363,7 +474,7 @@
         "patternCoding": {
           "code": "96271-2",
           "system": "http://loinc.org",
-          "display": "DNA mismatch repair protein Msh3 [Presence] in Cancer specimen by Immune stain"
+          "display": "DNA mismatch repair protein Msh3 Ag [Presence] in Cancer specimen by Immune stain"
         }
       },
       {
@@ -414,7 +525,7 @@
         "patternCoding": {
           "code": "96272-0",
           "system": "http://loinc.org",
-          "display": "DNA mismatch repair protein Mlh3 [Presence] in Cancer specimen by Immune stain"
+          "display": "DNA mismatch repair protein Mlh3 Ag [Presence] in Cancer specimen by Immune stain"
         }
       },
       {

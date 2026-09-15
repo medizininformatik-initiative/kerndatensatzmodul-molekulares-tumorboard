@@ -52,7 +52,7 @@ input/
 5. **Page titles, breadcrumbs and the table of contents:** these come from the
    ImplementationGuide resource, not from the pages, so they need the IG-level
    catalogue `ImplementationGuide-<your-ig-id>.po`. This repository ships it as
-   `ImplementationGuide-mii-kerndatensatzmodul-molekulares-tumorboard.po` — **rename it** to match your
+   `ImplementationGuide-mii-ig-mtb.po` — **rename it** to match your
    IG's `id` when you replace the placeholders, or the publisher never finds it
    and silently leaves those labels in English. Each `msgid` is the exact page
    `title` from `sushi-config.yaml`, plus the generated root page

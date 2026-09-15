@@ -6,20 +6,17 @@ Description: "Systemische Vortherapie zum Molekularen Tumorboard"
 * insert PR_Header
 
 * basedOn 0..* MS
-* basedOn ^slicing.discriminator.type = #profile
-* basedOn ^slicing.discriminator.path = "$this"
-* basedOn ^slicing.rules = #open
-* basedOn ^slicing.description = "Slice für referenzierten Therapieplan"
-* basedOn ^slicing.ordered = false
-
-* basedOn contains Therapieplan 0..1 MS
-* basedOn[Therapieplan] ^short = "Therpieplan"
-* basedOn[Therapieplan] ^definition = "Verweis auf den im Molekularen Tumorboard beschlossenen Therpieplan"
-* insert Translation(basedOn[Therapieplan] ^short, de-DE, Therapieplan)
-* insert Translation(basedOn[Therapieplan] ^definition, de-DE, Verweis auf den im Molekularen Tumorboard beschlossenen Therapieplan)
-* insert Translation(basedOn[Therapieplan] ^short, en, Therapy Plan)
-* insert Translation(basedOn[Therapieplan] ^definition, en, Reference to the therapy plan decided by the Molecular Tumor Board)
-* basedOn[Therapieplan] only Reference(MII_PR_MTB_Therapieplan)
+// Onko 2027-ballot slict basedOn selbst (Slice "tumorkonferenz", Diskriminator
+// type:$this.resolve()); der geerbte Slice wird hier auf den MTB-Therapieplan
+// eingeschränkt (MII_PR_MTB_Therapieplan erbt von MII_PR_Onko_Tumorkonferenz).
+* basedOn[tumorkonferenz] MS
+* basedOn[tumorkonferenz] ^short = "Therapieplan"
+* basedOn[tumorkonferenz] ^definition = "Verweis auf den im Molekularen Tumorboard beschlossenen Therapieplan"
+* insert Translation(basedOn[tumorkonferenz] ^short, de-DE, Therapieplan)
+* insert Translation(basedOn[tumorkonferenz] ^definition, de-DE, Verweis auf den im Molekularen Tumorboard beschlossenen Therapieplan)
+* insert Translation(basedOn[tumorkonferenz] ^short, en, Therapy Plan)
+* insert Translation(basedOn[tumorkonferenz] ^definition, en, Reference to the therapy plan decided by the Molecular Tumor Board)
+* basedOn[tumorkonferenz] only Reference(MII_PR_MTB_Therapieplan)
 
 // TODO: Nochmal überlegen, ob man das in Onko auch doppelt darstellen kann -> die Trennung zwischen Status und Grund
 * statusReason 0..1 MS
