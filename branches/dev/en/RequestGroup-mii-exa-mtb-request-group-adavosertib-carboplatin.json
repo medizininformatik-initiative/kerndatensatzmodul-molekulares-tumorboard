@@ -1,0 +1,50 @@
+{
+  "resourceType" : "RequestGroup",
+  "id" : "mii-exa-mtb-request-group-adavosertib-carboplatin",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination|2026.0.1"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: RequestGroup mii-exa-mtb-request-group-adavosertib-carboplatin</b></p><a name=\"mii-exa-mtb-request-group-adavosertib-carboplatin\"> </a><a name=\"hcmii-exa-mtb-request-group-adavosertib-carboplatin\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.html\">MII PR MTB Therapieempfehlung Kombinationstherapie</a> version: 2026.0.1</p></div><p><b>MII EX MTB Empfehlung Priorität</b>: 4</p><p><b>MII EX MTB Empfehlung Evidenzgraduierung</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad m1B}\">Predictive value of the biomarker or clinical effectiveness of the drug in a molecularly stratified cohort was demonstrated in a retrospective cohort or case–control study in the same tumor type.</span></p><p><b>MII EX MTB Empfehlung Publikation</b>: <code>http://www.ncbi.nlm.nih.gov/pubmed</code>/37236033</p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>code</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ CZ}\">Chemotherapie + zielgerichtete Substanzen</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>authoredOn</b>: 2023-03-28</p><h3>Actions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Resource</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"MedicationRequest-mii-exa-mtb-medication-request-carboplatin.html\">MedicationRequest: status = draft; intent = option; medication[x] = Carboplatin; authoredOn = 2023-03-28</a></td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",
+    "valuePositiveInt" : 4
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-evidenzgraduierung",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-empfehlung-evidenzgrad",
+        "code" : "m1B"
+      }]
+    }
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-publikation",
+    "valueIdentifier" : {
+      "system" : "http://www.ncbi.nlm.nih.gov/pubmed",
+      "value" : "37236033"
+    }
+  }],
+  "status" : "draft",
+  "intent" : "proposal",
+  "code" : {
+    "coding" : [{
+      "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+      "code" : "CZ",
+      "display" : "Chemotherapie + zielgerichtete Substanzen"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "authoredOn" : "2023-03-28",
+  "action" : [{
+    "resource" : {
+      "reference" : "MedicationRequest/mii-exa-mtb-medication-request-carboplatin"
+    }
+  }]
+}
