@@ -1,0 +1,79 @@
+# MII CS GenomicAnalysis DeviceType - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
+
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII CS GenomicAnalysis DeviceType**
+
+## CodeSystem: MII CS GenomicAnalysis DeviceType 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction | *Version*:2027.0.0-ballot.1 |
+| Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction |
+
+ 
+Codesystem, welches verschiedene Molekulare Biomarker enthäldie verschiedenen Arten von Geräten und Produkten enthält, die im Rahmen einer NGS-Analyse genutzt werden 
+
+Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
+
+* This CodeSystem is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+
+-------
+
+ [Beschreibung der obigen Tabelle(n)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "mii-cs-mtb-genomicanalysis-devicefunction",
+  "language" : "de-DE",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction",
+  "version" : "2027.0.0-ballot.1",
+  "name" : "MII_CS_MTB_GenomicStudyAnalysis_DeviceFunction",
+  "title" : "MII CS GenomicAnalysis DeviceType",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-15T13:47:30+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "Codesystem, welches verschiedene Molekulare Biomarker enthäldie verschiedenen Arten von Geräten und Produkten enthält, die im Rahmen einer NGS-Analyse genutzt werden",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "sequencing-device",
+    "display" : "Sequenziergerät"
+  },
+  {
+    "code" : "sequencing-kit",
+    "display" : "Sequenzier-Kit"
+  },
+  {
+    "code" : "library-preparation-kit",
+    "display" : "Library-Preparation Kit"
+  },
+  {
+    "code" : "gene-panel",
+    "display" : "Genpanel",
+    "definition" : "Sequenzier-Panel-Produkt (Genpanel) — Katalogebene via DeviceDefinition-Template. TODO:REVIEW (2026-09-14 ergaenzt fuer den Panel-Katalog)"
+  }]
+}
+
+```
