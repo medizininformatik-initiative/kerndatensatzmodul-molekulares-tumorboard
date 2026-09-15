@@ -7,12 +7,7 @@
 
 Guidance for researchers using the data of the **Molecular Tumor Board** module for research purposes — e.g. which data elements are relevant to which research questions, and how they are to be interpreted.
 
-<!-- DERIVED:suggestion source=none gate=B -->
-> **Written during migration - review before release.** The source guide ships
-> no researcher guidance; the following outcome-endpoint section is PROPOSED
-> from the module's data elements and requires review by the module team.
-{: .ig-highlight .ig-highlight-blue}
-
+<!-- DERIVED:accepted source=none gate=B signed-off=2026-09-15 (user; Vitalstatus/Tod-Ergänzung eingearbeitet) -->
 ### Outcome endpoints: OS, PFS and time to next treatment
 
 The module's follow-up documentation is designed so that the standard
@@ -25,8 +20,15 @@ an alternative index date.
 
 **Overall survival (OS)** — time from t₀ to death from any cause.
 Death and its date come from `Patient.deceasedDateTime` (MII Person module);
-patients without a death record are censored at their last documented contact
-(most recently dated [Follow-Up
+in addition, the Person module's
+[Vitalstatus](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus)
+observation carries the vital status per contact date, and the Oncology
+module's
+[Tod](https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-tod)
+observation documents death date, cause of death and its tumor relation —
+use them to confirm the event and, for cause-specific analyses, to
+distinguish tumor-related deaths. Patients without a death record are
+censored at their last documented contact (most recently dated [Follow-Up
 ClinicalImpression](StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html),
 Response-Befund or therapy documentation).
 

@@ -5,12 +5,7 @@
 
 Hinweise für Forschende, die die Daten des Moduls **Molekulares Tumorboard** für Forschungszwecke nutzen — z. B. welche Datenelemente für welche Fragestellungen relevant sind und wie sie interpretiert werden.
 
-<!-- DERIVED:suggestion source=none gate=B -->
-> **Written during migration - review before release.** Der Quell-Leitfaden
-> enthält keine Forschenden-Anleitung; der folgende Endpunkt-Abschnitt ist aus
-> den Datenelementen des Moduls VORGESCHLAGEN und vom Modulteam zu prüfen.
-{: .ig-highlight .ig-highlight-blue}
-
+<!-- DERIVED:accepted source=none gate=B signed-off=2026-09-15 (user; Vitalstatus/Tod-Ergänzung eingearbeitet) -->
 ### Outcome-Endpunkte: OS, PFS und Time to Next Treatment
 
 Die Follow-Up-Dokumentation des Moduls ist so angelegt, dass die üblichen
@@ -24,8 +19,14 @@ Indexdatum dienen.
 
 **Overall Survival (OS)** — Zeit von t₀ bis zum Tod jeglicher Ursache.
 Todesereignis und -datum kommen aus `Patient.deceasedDateTime` (MII-Modul
-Person); Patienten ohne Todeseintrag werden zum letzten dokumentierten Kontakt
-zensiert (jüngste datierte [Follow-Up
+Person); zusätzlich führt das Modul Person die
+[Vitalstatus](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus)-Observation
+den Vitalstatus je Kontaktdatum, und die
+[Tod](https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-tod)-Observation
+des Onkologie-Moduls dokumentiert Sterbedatum, Todesursache und deren
+Tumorbezug — zur Bestätigung des Ereignisses und für ursachenspezifische
+Analysen (tumorbedingte Todesfälle). Patienten ohne Todeseintrag werden zum
+letzten dokumentierten Kontakt zensiert (jüngste datierte [Follow-Up
 ClinicalImpression](StructureDefinition-mii-pr-mtb-follow-up-clinicalimpression.html),
 Response-Befund oder Therapiedokumentation).
 
