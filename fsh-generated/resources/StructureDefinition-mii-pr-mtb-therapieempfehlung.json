@@ -161,20 +161,6 @@
   "differential": {
     "element": [
       {
-        "id": "MedicationRequest.extension",
-        "path": "MedicationRequest.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
         "id": "MedicationRequest.extension:Prioritaet",
         "path": "MedicationRequest.extension",
         "sliceName": "Prioritaet",
@@ -326,7 +312,6 @@
         "_short": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
               "extension": [
                 {
                   "url": "lang",
@@ -336,10 +321,10 @@
                   "url": "content",
                   "valueString": "proposal | option"
                 }
-              ]
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
             },
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/translation",
               "extension": [
                 {
                   "url": "lang",
@@ -349,7 +334,8 @@
                   "url": "content",
                   "valueString": "proposal | option"
                 }
-              ]
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/translation"
             }
           ]
         }

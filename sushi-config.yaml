@@ -27,7 +27,7 @@ date: "2026-03-30" # release date of 2026.0.1 (merge of release/v2026.0.1)
 # The source declared jurisdiction m49.htm#276; the IG Publisher cannot resolve
 # that form in the page header ("Unknown region code '276'"), so the template's
 # equivalent ISO-3166 form is used. TODO:REVIEW Gate A (announced normalization).
-jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+jurisdiction: urn:iso:std:iso:3166#DE "Germany" # Gate A signed off 2026-09-15 (announced normalization of m49.htm#276)
 publisher:
   name: Medizininformatik-Initiative
   url: https://www.medizininformatik-initiative.de
@@ -39,7 +39,7 @@ meta:
 experimental: false
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/resource-approvalDate
-    valueDate: "2026-03-30" # TODO:REVIEW Gate A — approval date of the 2026.0.1 release
+    valueDate: "2026-03-30" # Gate A signed off 2026-09-15 ("wie onko"): approval date of the 2026.0.1 release
   - url: http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability
     valueCode: shareable
   - url: http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability
@@ -65,7 +65,7 @@ extension:
     valueContactDetail:
       telecom:
         - system: email
-          value: "thomas.debertshaeuser@charite.de" # TODO:REVIEW Gate A — module author contact
+          value: "thomas.debertshaeuser@charite.de" # Gate A signed off 2026-09-15: module author contact
   - url: http://hl7.org/fhir/StructureDefinition/artifact-editor
     valueContactDetail:
       name: Taskforce Core Data Set
@@ -104,11 +104,21 @@ extension:
     valueMarkdown: "Use this ImplementationGuide resource as a computable definition of all the parts of the corresponding module of the Medical Informatics Initiative core data set."
   - url: http://hl7.org/fhir/StructureDefinition/artifact-purpose
     valueMarkdown: "Provide the computable publication unit for the MII Core Dataset Molecular Tumor Board module, enabling implementers to discover, validate, version, and apply the specification consistently."
+  # Gate A signed off 2026-09-15: C3262 mirrors kerndatensatzmodul-onkologie
+  # ("wie onko"); NCIt has no molecular-tumor-board concept, the closest is
+  # C93304 "Tumor Board Review", added as a second topic.
   - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
     valueCodeableConcept:
       coding:
         - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-          code: "C3262" # Neoplasm — TODO:REVIEW Gate A (proposal, mirrors kerndatensatzmodul-onkologie)
+          code: "C3262"
+          display: Neoplasm
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: "C93304"
+          display: Tumor Board Review
 dependencies:
   # 2027-BALLOT pins (user decision 2026-09-11): every MII module on its latest
   # published version — final 2027.0.0-ballot (base/medikation/meta/studie),
