@@ -1,0 +1,88 @@
+{
+  "resourceType" : "Observation",
+  "id" : "mii-exa-mtb-kim-musterperson-CNVariante-CCNE1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant|2026.0.1"]
+  },
+  "language" : "de",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Observation mii-exa-mtb-kim-musterperson-CNVariante-CCNE1</b></p><a name=\"de-mii-exa-mtb-kim-musterperson-CNVariante-CCNE1\"> </a><a name=\"de-hcmii-exa-mtb-kim-musterperson-CNVariante-CCNE1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-copy-number-variant.html\">MII PR MTB Copy Number Variant</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span>, <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 GE}\">Genetik</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 69548-6}\">Genetic variant assessment</span></p><p><b>subject</b>: <a href=\"Patient-PatientKimMusterperson.html\">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>value</b>: <span title=\"Codes:{http://loinc.org LA9633-4}\">Present</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 48018-6}\">Gene studied [ID]</span></p><p><b>value</b>: <span title=\"Codes:{http://www.genenames.org/geneId HGNC:1589}\">CCNE1</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://bwhc.de/mtb/genetics-copy-number-variant type}\">type</span></p><p><b>value</b>: <span title=\"Codes:{http://bwhc.de/mtb/genetics-copy-number-variant high-level-gain}\">high-level-gain</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 82155-3}\">Genomic structural variant copy number</span></p><p><b>value</b>: 7 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory",
+      "display" : "Laboratory"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code" : "GE"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "69548-6",
+      "display" : "Genetic variant assessment"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LA9633-4",
+      "display" : "Present"
+    }]
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "48018-6",
+        "display" : "Gene studied [ID]"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.genenames.org/geneId",
+        "code" : "HGNC:1589",
+        "display" : "CCNE1"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://bwhc.de/mtb/genetics-copy-number-variant",
+        "code" : "type"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://bwhc.de/mtb/genetics-copy-number-variant",
+        "code" : "high-level-gain",
+        "display" : "high-level-gain"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "82155-3",
+        "display" : "Genomic structural variant copy number"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 7,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  }]
+}

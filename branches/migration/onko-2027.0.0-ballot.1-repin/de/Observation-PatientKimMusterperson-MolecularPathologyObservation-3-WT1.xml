@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PatientKimMusterperson-MolecularPathologyObservation-3-WT1"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry|2026.0.1"/>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation PatientKimMusterperson-MolecularPathologyObservation-3-WT1</b></p><a name="de-PatientKimMusterperson-MolecularPathologyObservation-3-WT1"> </a><a name="de-hcPatientKimMusterperson-MolecularPathologyObservation-3-WT1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-immunohistochemistry.html">MII PR MTB Immunohistochemistry</a> version: 2026.0.1</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs biomarker-category}">A characterization of a given biomarker observation.</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 1234806008}">Observation using immunohistochemistry (observable entity)</span></p><p><b>subject</b>: <a href="Patient-PatientKimMusterperson.html">Kim Musterperson  (no stated gender), DoB: 1956-03-14</a></p><p><b>value</b>: <span title="Codes:{http://loinc.org LA6576-8}">Tumorzellen durchgehend nukleär für WT1</span></p><p><b>bodySite</b>: <span title="Codes:{http://snomed.info/sct 84640000}">Nukleär</span></p><p><b>specimen</b>: <a href="Specimen-PatientKimMusterperson-AscitesSpecimen-2.html">Specimen: accessionIdentifier = Z230201/23; type = Ascitic fluid specimen (specimen)</a></p><h3>Components</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://loinc.org 48018-6}">Gene studied [ID]</span></td><td><span title="Codes:{http://www.genenames.org/geneId HGNC:12796}, {http://loinc.org LP65352-4}">WT1</span></td></tr></table></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="laboratory"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+      <code value="biomarker-category"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="1234806008"/>
+      <display value="Observation using immunohistochemistry (observable entity)"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientKimMusterperson"/>
+  </subject>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LA6576-8"/>
+      <display value="Positive"/>
+    </coding>
+    <text value="Tumorzellen durchgehend nukleär für WT1"/>
+  </valueCodeableConcept>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="84640000"/>
+      <display value="Nucleus (cell structure)"/>
+    </coding>
+    <text value="Nukleär"/>
+  </bodySite>
+  <specimen>
+    <reference value="Specimen/PatientKimMusterperson-AscitesSpecimen-2"/>
+  </specimen>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="48018-6"/>
+        <display value="Gene studied [ID]"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://www.genenames.org/geneId"/>
+        <code value="HGNC:12796"/>
+        <display value="WT1"/>
+      </coding>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="LP65352-4"/>
+        <display value="WT-1 Ag"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+</Observation>
