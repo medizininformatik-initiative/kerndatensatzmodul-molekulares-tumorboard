@@ -1,4 +1,4 @@
-# Beispiel Mutationslast in Tumorprobe (MTB) - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel Mutationslast in Tumorprobe (MTB) - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast.md) version: 2026.0.1
+Profile: [MII PR MTB Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -37,7 +37,7 @@ Profile: [MII PR MTB Mutationslast](StructureDefinition-mii-pr-mtb-mutationslast
   "resourceType" : "Observation",
   "id" : "MII-EXA-MTB-Mutationslast-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

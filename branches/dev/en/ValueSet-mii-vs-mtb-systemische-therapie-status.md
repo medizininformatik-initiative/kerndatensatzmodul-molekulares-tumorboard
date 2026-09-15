@@ -1,4 +1,4 @@
-# MII VS MTB Systemtherapie Status - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII VS MTB Systemtherapie Status - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemische-therapie-status | *Version*:2026.0.1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemische-therapie-status | *Version*:2027.0.0-ballot.1 |
 | Active as of 2026-09-15 | *Computable Name*:MII_VS_MTB_Systemische_Therapie_Status |
 
  
@@ -38,12 +38,12 @@ Einschränkung der Status für Systemtherapie
   "id" : "mii-vs-mtb-systemische-therapie-status",
   "language" : "de-DE",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-systemische-therapie-status",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_VS_MTB_Systemische_Therapie_Status",
   "title" : "MII VS MTB Systemtherapie Status",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

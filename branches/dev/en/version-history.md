@@ -1,4 +1,4 @@
-# Versioning - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Versioning - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * **Versioning**
@@ -40,6 +40,4 @@ From the second **formal publication** on, this guide also publishes a **machine
 **How it is performed.** The IG Publisher's previous-version comparator loads the previous release's package, pairs every profile, value set and code system with its counterpart by canonical URL, compares the pairs, and renders the report into the build output — so it publishes with the site, with no extra deployment step. It is enabled by the `version-comparison` parameter — an official IG Publisher parameter from the [ig-parameters registry](https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html), passed through `sushi-config.yaml` (the commented block there explains the setup and its two prerequisites: a publication history at the canonical, and a loadable previous package). Absent, it defaults to `{last}`; the value `n/a` is the documented way to switch the comparison off.
 
 **The demonstration below** (this template repository's preview only) shows the same kind of report before any formal publication exists: the build compares itself against the previous `dev` preview using the FHIR validator's `-compare` command and publishes the result at `comparison-demo/index.html`. The repository variable `ENABLE_VERSION_COMPARISON=false` switches the whole feature off — the publisher's comparison in every build workflow and this demonstration alike; a created module never renders the demonstration.
-
-> [TODO: If your module has a versioning policy of its own beyond the KDS scheme — for example a support window for older versions, or a deprecation policy for profiles — describe it here. Delete this prompt afterwards.]
 

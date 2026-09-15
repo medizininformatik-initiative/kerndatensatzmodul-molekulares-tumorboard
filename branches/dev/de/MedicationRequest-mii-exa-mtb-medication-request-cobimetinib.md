@@ -1,4 +1,4 @@
-# Cobimetinib - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Cobimetinib - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Therapieempfehlung Systemische Therapie](StructureDefinition-mii-pr-mtb-therapieempfehlung.md) version: 2026.0.1
+Profile: [MII PR MTB Therapieempfehlung Systemische Therapie](StructureDefinition-mii-pr-mtb-therapieempfehlung.md) version: 2027.0.0-ballot.1
 
 **MII EX MTB Empfehlung Priorität**: 6
 
@@ -41,7 +41,7 @@ Profile: [MII PR MTB Therapieempfehlung Systemische Therapie](StructureDefinitio
   "resourceType" : "MedicationRequest",
   "id" : "mii-exa-mtb-medication-request-cobimetinib",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",

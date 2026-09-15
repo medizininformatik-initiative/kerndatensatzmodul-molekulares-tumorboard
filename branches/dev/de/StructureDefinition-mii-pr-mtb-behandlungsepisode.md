@@ -1,4 +1,4 @@
-# MII PR MTB Behandlungsepisode - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII PR MTB Behandlungsepisode - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:MII_PR_MTB_Behandlungsepisode |
 
  
@@ -95,18 +95,18 @@ Mandatory: 2 elements(10 nested mandatory elements)
 
 This structure refers to these other structures:
 
-* [MII PR Person Patient (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot.rc1/StructureDefinition-mii-pr-person-patient.html)
-* [MII PR Person Patient (Pseudonymisiert) (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot.rc1/StructureDefinition-mii-pr-person-patient-pseudonymisiert.html)
+* [MII PR Person Patient (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/StructureDefinition-mii-pr-person-patient.html)
+* [MII PR Person Patient (Pseudonymisiert) (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/StructureDefinition-mii-pr-person-patient-pseudonymisiert.html)
 * [MII PR MTB Diagnose Primärtumor (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor)](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md)
 * [MII PR MolGen Familienanamnese (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/familienanamnese)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-familienanamnese.html)
-* [MII PR Onkologie Allgemeiner Leistungszustand ECOG (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-allgemeiner-leistungszustand-ecog)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-allgemeiner-leistungszustand-ecog.html)
+* [MII PR Onkologie Allgemeiner Leistungszustand ECOG (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-allgemeiner-leistungszustand-ecog)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-allgemeiner-leistungszustand-ecog.html)
 * [MII PR MTB NGS-Bericht (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht)](StructureDefinition-mii-pr-mtb-ngs-bericht.md)
 * [MII PR MTB Molecular Pathology Report (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report)](StructureDefinition-mii-pr-mtb-molecular-pathology-report.md)
 * [MII PR MTB Consent (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given)](StructureDefinition-mii-pr-mtb-consent-given.md)
 * [MII PR MTB Systemische Vortherapie (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie)](StructureDefinition-mii-pr-mtb-systemische-vortherapie.md)
-* [MII PR Onkologie Strahlentherapie (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-strahlentherapie)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-strahlentherapie.html)
-* [MII PR Onkologie Operation (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-operation)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-operation.html)
-* [MII PR Prozedur Procedure (https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot.rc1/StructureDefinition-mii-pr-prozedur-procedure.html)
+* [MII PR Onkologie Strahlentherapie (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-strahlentherapie)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-strahlentherapie.html)
+* [MII PR Onkologie Operation (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-operation)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-operation.html)
+* [MII PR Prozedur Procedure (https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/StructureDefinition-mii-pr-prozedur-procedure.html)
 * [MII PR MTB Therapieplan (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan)](StructureDefinition-mii-pr-mtb-therapieplan.md)
 
 **Extensions**
@@ -152,18 +152,18 @@ Mandatory: 2 elements(10 nested mandatory elements)
 
 This structure refers to these other structures:
 
-* [MII PR Person Patient (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot.rc1/StructureDefinition-mii-pr-person-patient.html)
-* [MII PR Person Patient (Pseudonymisiert) (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot.rc1/StructureDefinition-mii-pr-person-patient-pseudonymisiert.html)
+* [MII PR Person Patient (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/StructureDefinition-mii-pr-person-patient.html)
+* [MII PR Person Patient (Pseudonymisiert) (https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/StructureDefinition-mii-pr-person-patient-pseudonymisiert.html)
 * [MII PR MTB Diagnose Primärtumor (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor)](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md)
 * [MII PR MolGen Familienanamnese (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/familienanamnese)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-familienanamnese.html)
-* [MII PR Onkologie Allgemeiner Leistungszustand ECOG (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-allgemeiner-leistungszustand-ecog)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-allgemeiner-leistungszustand-ecog.html)
+* [MII PR Onkologie Allgemeiner Leistungszustand ECOG (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-allgemeiner-leistungszustand-ecog)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-allgemeiner-leistungszustand-ecog.html)
 * [MII PR MTB NGS-Bericht (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-ngs-bericht)](StructureDefinition-mii-pr-mtb-ngs-bericht.md)
 * [MII PR MTB Molecular Pathology Report (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report)](StructureDefinition-mii-pr-mtb-molecular-pathology-report.md)
 * [MII PR MTB Consent (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given)](StructureDefinition-mii-pr-mtb-consent-given.md)
 * [MII PR MTB Systemische Vortherapie (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie)](StructureDefinition-mii-pr-mtb-systemische-vortherapie.md)
-* [MII PR Onkologie Strahlentherapie (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-strahlentherapie)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-strahlentherapie.html)
-* [MII PR Onkologie Operation (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-operation)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-operation.html)
-* [MII PR Prozedur Procedure (https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot.rc1/StructureDefinition-mii-pr-prozedur-procedure.html)
+* [MII PR Onkologie Strahlentherapie (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-strahlentherapie)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-strahlentherapie.html)
+* [MII PR Onkologie Operation (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-operation)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-operation.html)
+* [MII PR Prozedur Procedure (https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)](https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/StructureDefinition-mii-pr-prozedur-procedure.html)
 * [MII PR MTB Therapieplan (https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan)](StructureDefinition-mii-pr-mtb-therapieplan.md)
 
 **Extensions**
@@ -195,11 +195,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-b
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-mtb-behandlungsepisode",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_PR_MTB_Behandlungsepisode",
   "title" : "MII PR MTB Behandlungsepisode",
   "status" : "active",
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

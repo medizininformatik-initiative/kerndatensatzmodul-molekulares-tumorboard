@@ -1,4 +1,4 @@
-# Phase 1/2 CLDN6 CAR-T-Zell-Studie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Phase 1/2 CLDN6 CAR-T-Zell-Studie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Studieneinschluss Anfrage](StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.md) version: 2026.0.1
+Profile: [MII PR MTB Studieneinschluss Anfrage](StructureDefinition-mii-pr-mtb-studieneinschluss-anfrage.md) version: 2027.0.0-ballot.1
 
 **MII EX MTB Empfehlung Priorität**: 2.1
 
@@ -39,7 +39,7 @@ Profile: [MII PR MTB Studieneinschluss Anfrage](StructureDefinition-mii-pr-mtb-s
   "resourceType" : "ServiceRequest",
   "id" : "mii-exa-mtb-study-request-cldn6",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",

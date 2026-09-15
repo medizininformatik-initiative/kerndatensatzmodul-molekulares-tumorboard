@@ -1,4 +1,4 @@
-# MII CPS MTB CapabilityStatement - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII CPS MTB CapabilityStatement - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2025-05-09 | *Maschinenlesbarer Name*:MII_CPS_MTB_CapabilityStatement |
 
  
@@ -25,7 +25,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
   "resourceType" : "CapabilityStatement",
   "id" : "mii-cps-mtb-capabilitystatement",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-mtb/CapabilityStatement/metadata",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_CPS_MTB_CapabilityStatement",
   "title" : "MII CPS MTB CapabilityStatement",
   "status" : "active",

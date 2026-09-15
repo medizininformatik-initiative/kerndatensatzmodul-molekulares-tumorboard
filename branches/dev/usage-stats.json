@@ -1,6 +1,6 @@
 {
   "package": "de.medizininformatikinitiative.kerndatensatz.mtb",
-  "version": "2026.0.1",
+  "version": "2027.0.0-ballot.1",
   "fhirVersion": "4.0.1",
   "jurisdiction": "DE",
   "extensions": [
@@ -499,9 +499,8 @@
       "Condition.code.coding"
     ],
     "http://fhir.de/StructureDefinition/lebensphase": [
-      "Condition.onset[x]",
-      "Condition.onset[x].end",
-      "Condition.onset[x].start"
+      "Condition.abatement[x]",
+      "Condition.onset[x]"
     ],
     "http://fhir.de/StructureDefinition/seitenlokalisation": [
       "Condition.code.coding",
@@ -608,9 +607,6 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/procedure-causedBy": [
       "Procedure"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/regex": [
-      "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/request-statusReason": [
       "ServiceRequest"

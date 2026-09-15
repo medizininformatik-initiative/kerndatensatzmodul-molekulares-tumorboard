@@ -1,4 +1,4 @@
-# Hinweise zur Übersetzung - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Hinweise zur Übersetzung - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * **Hinweise zur Übersetzung**
@@ -13,5 +13,5 @@ Dieser Leitfaden ist **englischsprachig** (Standardsprache); **Deutsch** ist die
 
 Übersetzte Seiten liegen unter `input/translations/de/pagecontent/` (gleicher Dateiname wie die englische Seite); Ressourcen-Übersetzungen als `.po`-Dateien unter `input/translations/de/`. Details: [`docs/recipes/add-translation.md`](https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/main/docs/recipes/add-translation.md) in diesem Repository.
 
-> [TODO: Vermerken Sie, welche Teile des Moduls bereits ins Deutsche übersetzt sind.]
+Das Modul ist vollständig zweisprachig: alle Erzählseiten, alle Artefakt-Intros, das Menü und die Seitentitel liegen unter `/de/` auf Deutsch vor; Englisch ist die Standardsprache. Für aus dem früheren Simplifier-Guide migrierte Inhalte ist der deutsche Text die Quelle; die englischen Default-Seiten entstanden als maschinelle Übersetzungen und sind in Prüfung (`TODO:REVIEW machine-translated`-Marker).
 

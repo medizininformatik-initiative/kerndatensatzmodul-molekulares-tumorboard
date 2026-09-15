@@ -1,4 +1,4 @@
-# MTBChemo1MedicationStatement1-2 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MTBChemo1MedicationStatement1-2 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Onkologie Systemische Therapie Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-systemische-therapie-medikation.html)
+Profile: [MII PR Onkologie Systemische Therapie Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-systemische-therapie-medikation.html)
 
 **partOf**: 
 

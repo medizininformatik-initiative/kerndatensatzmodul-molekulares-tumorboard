@@ -1,4 +1,4 @@
-# Beispiel HRD-Score - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel HRD-Score - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB HRD Score](StructureDefinition-mii-pr-mtb-hrd-score.md) version: 2026.0.1
+Profile: [MII PR MTB HRD Score](StructureDefinition-mii-pr-mtb-hrd-score.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -43,7 +43,7 @@ Profile: [MII PR MTB HRD Score](StructureDefinition-mii-pr-mtb-hrd-score.md) ver
   "resourceType" : "Observation",
   "id" : "MII-EXA-MTB-HRD-Score-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

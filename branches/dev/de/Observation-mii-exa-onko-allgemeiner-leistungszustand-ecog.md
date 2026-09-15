@@ -1,4 +1,4 @@
-# mii-exa-onko-allgemeiner-leistungszustand-ecog - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# mii-exa-onko-allgemeiner-leistungszustand-ecog - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Onkologie Allgemeiner Leistungszustand ECOG](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-allgemeiner-leistungszustand-ecog.html)
+Profile: [MII PR Onkologie Allgemeiner Leistungszustand ECOG](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-allgemeiner-leistungszustand-ecog.html)
 
 **status**: Final
 

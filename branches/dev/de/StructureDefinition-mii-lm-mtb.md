@@ -1,4 +1,4 @@
-# MII LM Molekulares Tumorboard - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII LM Molekulares Tumorboard - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-lm-mtb | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-lm-mtb | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:MII_LM_MTB |
 
  
@@ -73,11 +73,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-mtb.c
   "resourceType" : "StructureDefinition",
   "id" : "mii-lm-mtb",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-lm-mtb",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_LM_MTB",
   "title" : "MII LM Molekulares Tumorboard",
   "status" : "active",
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

@@ -1,4 +1,4 @@
-# Qiagen DHS-3501Z - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Qiagen DHS-3501Z - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)

@@ -1,4 +1,4 @@
-# MII CS Genomic Analysis Method Type - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII CS Genomic Analysis Method Type - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type | *Version*:2026.0.1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type | *Version*:2027.0.0-ballot.1 |
 | Active as of 2026-09-15 | *Computable Name*:MII_CS_MTB_Genomic_Analysis_Method_Type |
 
  
@@ -32,12 +32,12 @@ This Code system is referenced in the definition of the following value sets:
   "id" : "mii-cs-mtb-genomic-analysis-method-type",
   "language" : "de-DE",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_CS_MTB_Genomic_Analysis_Method_Type",
   "title" : "MII CS Genomic Analysis Method Type",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

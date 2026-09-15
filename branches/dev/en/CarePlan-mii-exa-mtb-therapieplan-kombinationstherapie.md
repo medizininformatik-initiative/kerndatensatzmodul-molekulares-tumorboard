@@ -1,4 +1,4 @@
-# mii-exa-mtb-therapieplan-kombinationstherapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# mii-exa-mtb-therapieplan-kombinationstherapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Therapieplan](StructureDefinition-mii-pr-mtb-therapieplan.md) version: 2026.0.1
+Profile: [MII PR MTB Therapieplan](StructureDefinition-mii-pr-mtb-therapieplan.md) version: 2027.0.0-ballot.1
 
 **status**: Active
 
@@ -40,7 +40,7 @@ Profile: [MII PR MTB Therapieplan](StructureDefinition-mii-pr-mtb-therapieplan.m
   "resourceType" : "CarePlan",
   "id" : "mii-exa-mtb-therapieplan-kombinationstherapie",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan|2027.0.0-ballot.1"]
   },
   "status" : "active",
   "intent" : "plan",

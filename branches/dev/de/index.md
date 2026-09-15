@@ -1,4 +1,4 @@
-# Startseite - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Startseite - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * **Startseite**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-ig-mtb | *Version*:2026.0.1 |
-| Active Stand: 2026-03-30 | *Maschinenlesbarer Name*:MII_IG_MTB_DE |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ImplementationGuide/mii-ig-mtb | *Version*:2027.0.0-ballot.1 |
+| Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:MII_IG_MTB_DE |
 
 ### Einleitung
 

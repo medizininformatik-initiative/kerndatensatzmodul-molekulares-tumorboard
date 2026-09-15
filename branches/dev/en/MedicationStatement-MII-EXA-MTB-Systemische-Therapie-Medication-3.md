@@ -1,4 +1,4 @@
-# 07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# 07.08.2023 Z3 Mirvetuximab soravtansine 6mg/kg KG, Wdh d22 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profiles: [MII PR MTB Systemtherapie Medication Statement](StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.md), [https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement|2026.0.1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement|2026.0.1)
+Profiles: [MII PR MTB Systemtherapie Medication Statement](StructureDefinition-mii-pr-mtb-systemtherapie-medication-statement.md), [https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement|2027.0.0-ballot.1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement|2027.0.0-ballot.1)
 
 **basedOn**: [MedicationRequest: extension = 1,Predictive value of the biomarker or clinical effectiveness of the corresponding drug in a molecularly stratified cohort was demonstrated in a prospective study or a meta-analysis in the same tumor type.,http://doi.org#10.1200/JCO.2022.40.16_suppl.5512,http://www.ncbi.nlm.nih.gov/pubmed#38055253; status = completed; intent = proposal; medication[x] = MIRVETUXIMAB SORAVTANSINE; authoredOn = 2023-03-28](MedicationRequest-mii-exa-mtb-medication-request-mirvetuximab.md)
 
@@ -55,7 +55,7 @@ Profiles: [MII PR MTB Systemtherapie Medication Statement](StructureDefinition-m
   "id" : "MII-EXA-MTB-Systemische-Therapie-Medication-3",
   "meta" : {
     "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement",
-    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement|2026.0.1"]
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie-medication-statement|2027.0.0-ballot.1"]
   },
   "basedOn" : [{
     "reference" : "MedicationRequest/mii-exa-mtb-medication-request-mirvetuximab"

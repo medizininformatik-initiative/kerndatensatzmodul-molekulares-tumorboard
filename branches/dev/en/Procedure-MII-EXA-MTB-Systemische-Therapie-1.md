@@ -1,4 +1,4 @@
-# 24.06.2023 - 12.10.2023 Mirvetuximab soravtansine - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# 24.06.2023 - 12.10.2023 Mirvetuximab soravtansine - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Systemische Therapie](StructureDefinition-mii-pr-mtb-systemische-therapie.md) version: 2026.0.1
+Profile: [MII PR MTB Systemische Therapie](StructureDefinition-mii-pr-mtb-systemische-therapie.md) version: 2027.0.0-ballot.1
 
 **MII EX Onko Systemische Therapie Intention**: kurativ
 
@@ -39,7 +39,7 @@ Profile: [MII PR MTB Systemische Therapie](StructureDefinition-mii-pr-mtb-system
   "resourceType" : "Procedure",
   "id" : "MII-EXA-MTB-Systemische-Therapie-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-therapie|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention",

@@ -1,4 +1,4 @@
-# MII PR MTB Therapieempfehlung Systemische Therapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII PR MTB Therapieempfehlung Systemische Therapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:MII_PR_MTB_Therapieempfehlung |
 
  
@@ -92,13 +92,13 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
 
 #### Terminology Bindings
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
 
 ** Summary **
 
@@ -110,7 +110,7 @@ This structure refers to these other structures:
 
 * [MII PR Patho Finding (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding)
 * [MII PR MolGen Variante (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-variante.html)
-* [MII PR Onkologie Genetische Variante (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-genetische-variante)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-genetische-variante.html)
+* [MII PR Onkologie Genetische Variante (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-genetische-variante)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-genetische-variante.html)
 
 **Extensions**
 
@@ -134,7 +134,7 @@ This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.h
 
  **Differential-Ansicht** 
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
 
  **Snapshot-AnsichtView** 
 
@@ -142,7 +142,7 @@ Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](ht
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-medikation.html) 
 
 ** Summary **
 
@@ -154,7 +154,7 @@ This structure refers to these other structures:
 
 * [MII PR Patho Finding (https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding)](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.patho@2027.0.0-ballot&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding)
 * [MII PR MolGen Variante (https://www.medizininformatik-initiative.de/fhir/ext/modul-molgen/StructureDefinition/variante)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-GenetischeTests/2027.0.0-ballot.1/StructureDefinition-mii-pr-molgen-variante.html)
-* [MII PR Onkologie Genetische Variante (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-genetische-variante)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-genetische-variante.html)
+* [MII PR Onkologie Genetische Variante (https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-genetische-variante)](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-genetische-variante.html)
 
 **Extensions**
 
@@ -307,11 +307,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-t
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_PR_MTB_Therapieempfehlung",
   "title" : "MII PR MTB Therapieempfehlung Systemische Therapie",
   "status" : "active",
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

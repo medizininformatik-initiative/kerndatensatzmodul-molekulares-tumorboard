@@ -1,4 +1,4 @@
-# MII EX MTB Antrag GenomicsStudyAnalysis Metrics - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII EX MTB Antrag GenomicsStudyAnalysis Metrics - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-genomic-study-analysis-qc | *Version*:2026.0.1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-genomic-study-analysis-qc | *Version*:2027.0.0-ballot.1 |
 | Active as of 2026-09-15 | *Computable Name*:MII_EX_MTB_GenomicStudyAnalysis_QC |
 
 Sequenzierbezogenen Metriken der Genomic Study Analysis
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-mtb-genomi
   "resourceType" : "StructureDefinition",
   "id" : "mii-ex-mtb-genomic-study-analysis-qc",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-genomic-study-analysis-qc",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_EX_MTB_GenomicStudyAnalysis_QC",
   "title" : "MII EX MTB Antrag GenomicsStudyAnalysis Metrics",
   "status" : "active",
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

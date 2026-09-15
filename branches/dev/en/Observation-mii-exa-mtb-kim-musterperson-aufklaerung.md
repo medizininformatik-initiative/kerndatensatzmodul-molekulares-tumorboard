@@ -1,4 +1,4 @@
-# Einwilligung zur MTB-Besprechung Kim Musterperson - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Einwilligung zur MTB-Besprechung Kim Musterperson - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Consent](StructureDefinition-mii-pr-mtb-consent-given.md) version: 2026.0.1
+Profile: [MII PR MTB Consent](StructureDefinition-mii-pr-mtb-consent-given.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -33,7 +33,7 @@ Profile: [MII PR MTB Consent](StructureDefinition-mii-pr-mtb-consent-given.md) v
   "resourceType" : "Observation",
   "id" : "mii-exa-mtb-kim-musterperson-aufklaerung",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-consent-given|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "code" : {

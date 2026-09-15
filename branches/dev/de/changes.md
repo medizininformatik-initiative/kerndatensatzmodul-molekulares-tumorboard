@@ -1,4 +1,4 @@
-# Änderungshistorie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Änderungshistorie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * **Änderungshistorie**
@@ -41,6 +41,27 @@ Ein Versionsabschnitt mit einer Breaking Change ist erst vollständig, wenn er a
 Kennzeichnen Sie solche Einträge deutlich (zum Beispiel mit dem Präfix **BREAKING:**), damit sie beim Überfliegen des Abschnitts nicht übersehen werden können.
 
 -------
+
+#### Version 2027.0.0-ballot.1 (2026-09-15) — Ballot
+
+**Hinzugefügt**
+
+* Panel-Katalog: 11 `DeviceDefinition`-Templates für NGS-Panel-Produkte, CodeSystem/ValueSet für Panel-Capabilities, Genlisten-Extension und neun HGNC-ID-kodierte Genlisten-ValueSets, dazu die Seite **Panel-Katalog** mit Community-Aufruf.
+* Neue Seiten: Anleitung für Forschende (inkl. OS/PFS/TTNT-Endpunkt-Ableitung), Anwendungsszenarien (Kim Musterperson), DNPM-Transformation, Sicherheit & Datenschutz; vollständige englische Standardsprache mit Deutsch als kompletter Übersetzung.
+* `mii-vs-mtb-interpretation-high-low` (Ersatz für das in Genomics Reporting STU3 entfallene ValueSet); NCIt-Topic **Tumor Board Review** (C93304) am ImplementationGuide.
+
+**Geändert**
+
+* Migration auf das MII-KDS-Modul-Template (Themen-Menü, generierte Artefaktseiten mit den früheren Simplifier-Seitentexten als Intros, Template-CI inkl. SU-TermServ-Validierung).
+* Alle MII-Dependencies auf ihren finalen 2027.0.0-ballot-Versionen (molgen und onkologie auf den `.1`-Fixes); `de.basisprofil.r4` 1.6.0; Genomics Reporting 3.0.0.
+* `Procedure.basedOn` beider Systemtherapie-Profile schränkt jetzt den geerbten `tumorkonferenz`-Slice des Onkologie-Elternprofils auf `MII_PR_MTB_Therapieplan` ein (Breaking Change der Onkologie 2027).
+* IG-Ressourcen-id auf `mii-ig-mtb` umbenannt (Template-Muster; packageId und Canonical unverändert); drei Artefakt-ids an ihre Canonical-Endungen angeglichen; das Logische Modell verlor das nicht-standardkonforme `/LogicalModel/`-Pfadsegment im Canonical.
+* QA: 1.387 Fehler (vor der Migration) → 55 auf dem MII-Terminologieserver, 0 defekte Links; die verbleibenden Klassen sind auf der Implementierer-Anleitung dokumentiert.
+
+**Entfernt**
+
+* Dependency `de.medizininformatikinitiative.kerndatensatz.consent` (kein Artefakt konsumiert sie — das Consent-Profil des Moduls leitet direkt von `Observation` ab).
+* Eingecheckte Validierungs-Reports des Vor-Migrations-Setups (werden von der CI zur Laufzeit erzeugt).
 
 #### Version 2026.0.1 (2026-03-30)
 

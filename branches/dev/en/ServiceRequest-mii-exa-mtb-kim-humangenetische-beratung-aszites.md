@@ -1,4 +1,4 @@
-# Empfehlung Human-genetische Beratung - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Empfehlung Human-genetische Beratung - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Human-genetische Beratung Auftrag](StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.md) version: 2026.0.1
+Profile: [MII PR MTB Human-genetische Beratung Auftrag](StructureDefinition-mii-pr-mtb-humangenetische-beratung-auftrag.md) version: 2027.0.0-ballot.1
 
 **status**: Completed
 
@@ -35,7 +35,7 @@ Profile: [MII PR MTB Human-genetische Beratung Auftrag](StructureDefinition-mii-
   "resourceType" : "ServiceRequest",
   "id" : "mii-exa-mtb-kim-humangenetische-beratung-aszites",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag|2027.0.0-ballot.1"]
   },
   "status" : "completed",
   "intent" : "proposal",

@@ -1,4 +1,4 @@
-# Beispiel RNA-Fusion - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel RNA-Fusion - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB RNA Fusion](StructureDefinition-mii-pr-mtb-rna-fusion.md) version: 2026.0.1
+Profile: [MII PR MTB RNA Fusion](StructureDefinition-mii-pr-mtb-rna-fusion.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -57,7 +57,7 @@ Profile: [MII PR MTB RNA Fusion](StructureDefinition-mii-pr-mtb-rna-fusion.md) v
   "resourceType" : "Observation",
   "id" : "MII-EXA-MTB-RNA-Fusion-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

@@ -1,4 +1,4 @@
-# Beispiel Mikrosatelliteninstabilität - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel Mikrosatelliteninstabilität - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Mikrosatelliteninstabilität](StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.md) version: 2026.0.1
+Profile: [MII PR MTB Mikrosatelliteninstabilität](StructureDefinition-mii-pr-mtb-mikrosatelliteninstabilitaet.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -39,7 +39,7 @@ Profile: [MII PR MTB Mikrosatelliteninstabilität](StructureDefinition-mii-pr-mt
   "resourceType" : "Observation",
   "id" : "MII-EXA-MTB-Mikrosatelliteninstabilitaet-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

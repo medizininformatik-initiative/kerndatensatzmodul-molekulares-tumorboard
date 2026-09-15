@@ -1,4 +1,4 @@
-# MII CS Dosisdichte - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII CS Dosisdichte - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:MII_CS_MTB_Dosisdichte |
 
  
@@ -32,12 +32,12 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
   "id" : "mii-cs-mtb-dosisdichte",
   "language" : "de-DE",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-dosisdichte",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_CS_MTB_Dosisdichte",
   "title" : "MII CS Dosisdichte",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

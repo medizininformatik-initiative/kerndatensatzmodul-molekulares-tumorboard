@@ -1,4 +1,4 @@
-# MII NS Studie DRKS - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII NS Studie DRKS - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/NamingSystem/mii-ns-studie-drks | *Version*:2026.0.1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/NamingSystem/mii-ns-studie-drks | *Version*:2027.0.0-ballot.1 |
 | Active as of 2024-07-19 | *Computable Name*:MII_NS_Studie_DRKS |
 
  
@@ -28,7 +28,7 @@ NamingSystem für Identifikatoren des Deutschen Register Klinischer Studien (DRK
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "2026.0.1"
+    "valueString" : "2027.0.0-ballot.1"
   }],
   "name" : "MII_NS_Studie_DRKS",
   "status" : "active",

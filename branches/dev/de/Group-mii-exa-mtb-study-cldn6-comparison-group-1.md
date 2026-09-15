@@ -1,4 +1,4 @@
-# NCT04503278 Comparison Group: Part 2 Vaccine-modulated - CLDN6 uRNA-LPX/CLDN6 modRNA-LPX - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# NCT04503278 Comparison Group: Part 2 Vaccine-modulated - CLDN6 uRNA-LPX/CLDN6 modRNA-LPX - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)

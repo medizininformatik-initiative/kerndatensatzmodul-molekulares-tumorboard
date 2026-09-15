@@ -1,4 +1,4 @@
-# MII PR MTB Therapieempfehlung Kombinationstherapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII PR MTB Therapieempfehlung Kombinationstherapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:MII_PR_MTB_Therapieempfehlung_Kombination |
 
  
@@ -89,13 +89,13 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
 
 #### Terminology Bindings
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
 
 ** Summary **
 
@@ -125,7 +125,7 @@ This structure refers to these extensions:
 
  **Differential-Ansicht** 
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
 
  **Snapshot-AnsichtView** 
 
@@ -133,7 +133,7 @@ Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationsth
 
 #### Constraints
 
-Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
+Diese Struktur ist abgeleitet von [MII_PR_Onko_Therapieempfehlung_Kombinationstherapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-therapieempfehlung-kombinationstherapie.html) 
 
 ** Summary **
 
@@ -272,11 +272,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-mtb-t
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII_PR_MTB_Therapieempfehlung_Kombination",
   "title" : "MII PR MTB Therapieempfehlung Kombinationstherapie",
   "status" : "active",
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

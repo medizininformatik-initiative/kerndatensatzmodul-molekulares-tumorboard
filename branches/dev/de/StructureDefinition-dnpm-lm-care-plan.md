@@ -1,4 +1,4 @@
-# DNPM MTB Care Plan - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# DNPM MTB Care Plan - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-care-plan | *Version*:2026.0.1 |
+| *Offizielle URL*:https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-care-plan | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2026-09-15 | *Maschinenlesbarer Name*:DNPM_LM_CarePlan |
 
  
@@ -73,11 +73,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-dnpm-lm-care
   "resourceType" : "StructureDefinition",
   "id" : "dnpm-lm-care-plan",
   "url" : "https://dnpm-dip.net/fhir/StructureDefinition/dnpm-lm-care-plan",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "DNPM_LM_CarePlan",
   "title" : "DNPM MTB Care Plan",
   "status" : "active",
-  "date" : "2026-09-15T04:40:11+00:00",
+  "date" : "2026-09-15T12:06:19+00:00",
   "publisher" : "Medizininformatik-Initiative",
   "contact" : [{
     "name" : "Medizininformatik-Initiative",

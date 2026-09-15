@@ -1,4 +1,4 @@
-# MII CM MTB Therapiestatusgrund oBDS Mapping - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII CM MTB Therapiestatusgrund oBDS Mapping - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds | *Version*:2026.0.1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds | *Version*:2027.0.0-ballot.1 |
 | Active Stand: 2025-05-01 | *Maschinenlesbarer Name*:MII CM MTB Therapiestatusgrund oBDS Mapping |
 
  
@@ -23,7 +23,7 @@ Mapping der Codes zur Begründung des Therapiestatus nach oBDS
   "resourceType" : "ConceptMap",
   "id" : "mii-cm-mtb-therapiestatusgrund-obds",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-obds",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII CM MTB Therapiestatusgrund oBDS Mapping",
   "title" : "MII CM MTB Therapiestatusgrund oBDS Mapping",
   "status" : "active",

@@ -1,4 +1,4 @@
-# MII CM MTB Therapiestatusgrund SNOMED CT Mapping - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MII CM MTB Therapiestatusgrund SNOMED CT Mapping - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct | *Version*:2026.0.1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct | *Version*:2027.0.0-ballot.1 |
 | Active as of 2025-05-01 | *Computable Name*:MII CM MTB Therapiestatusgrund SNOMED CT Mapping |
 
  
@@ -23,7 +23,7 @@ Mapping der Codes zur Begründung des Therapiestatus nach SNOMED CT
   "resourceType" : "ConceptMap",
   "id" : "mii-cm-mtb-therapiestatusgrund-sct",
   "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ConceptMap/mii-cm-mtb-therapiestatusgrund-sct",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-ballot.1",
   "name" : "MII CM MTB Therapiestatusgrund SNOMED CT Mapping",
   "title" : "MII CM MTB Therapiestatusgrund SNOMED CT Mapping",
   "status" : "active",

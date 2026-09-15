@@ -1,4 +1,4 @@
-# Metadata Overview - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Metadata Overview - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * **Metadata Overview**
@@ -58,8 +58,6 @@ Not enabled in this scaffold, but prepared as commented blocks in `sushi-config.
 * [Artifact Related Artifact](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-relatedArtifact.html) — a literature citation for the module.
 * [CQF Expansion Parameters](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-cqf-expansionParameters.html) together with a [CRMI Manifest Parameters](https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-manifestparameters.html) resource and the `path-expansion-params` / `pin-manifest` parameters.
 
-> [TODO: Enable the blocks your module needs and then update the tables above. If your module also applies the CRMI shareable/publishable profiles to its own StructureDefinitions, CapabilityStatements, CodeSystems and ValueSets — the `kerndatensatz-basis` idiom is a shared `RuleSet` in [`input/fsh/rulesets/crmi.fsh`](https://github.com/medizininformatik-initiative/kerndatensatzmodul-molekulares-tumorboard/blob/main/input/fsh/rulesets/crmi.fsh) — add the corresponding rows here.]
-
 ##### CodeSystem supplements
 
 Where a module publishes CodeSystem supplements, note that the CRMI **ShareableCodeSystem** profile requires `CodeSystem.caseSensitive`, while FHIR validation warns that a supplement should not restate `caseSensitive` because that could contradict the supplemented code system. [kerndatensatz-basis](https://github.com/medizininformatik-initiative/kerndatensatz-basis) therefore claims only the **publishable** CRMI profile on supplements and omits the shareable one.
@@ -85,7 +83,7 @@ Canonical references are pinned in the built package (`pin-canonicals: pin-all` 
 
 A module that additionally wants reproducible terminology expansion adds a CRMI Manifest Parameters resource — the `kerndatensatz-basis` idiom is `Parameters/mii-param-<slug>-manifest` — links it from the `ImplementationGuide` via `cqf-expansionParameters`, and points the publisher at it with `path-expansion-params` and `pin-manifest`. Both readers and tooling then have one stable place to inspect the parameters used for expansion and package pinning.
 
-> [TODO: Add the manifest for your module (see the commented blocks in `sushi-config.yaml`) and link the generated `Parameters` resource page here, or state explicitly that this module does not pin expansion parameters.]
+This module pins its expansion parameters in the manifest [Parameters-mii-param-mtb-manifest](Parameters-mii-param-mtb-manifest.md) (referenced from the ImplementationGuide via `cqf-expansionParameters`).
 
 #### Relationship to FAIR
 
@@ -117,8 +115,6 @@ The example instances shipped with this guide demonstrate FAIR-relevant FHIR str
 | R1.3 | RDA-R1.3-01M | Metadata complies with a community standard | FHIR R4, the CRMI profiles, the KDS publication conventions and canonical resource metadata. |
 | R1.3 | RDA-R1.3-01D | Data complies with a community standard | The examples declare this module's profiles. In production, conformance must be validated against the profiles, bindings and CapabilityStatement expectations. |
 | R1.3 | RDA-R1.3-02M | Metadata is machine-understandable per a community standard | CRMI-conformant FHIR metadata as JSON/XML and as a FHIR package in the NPM package format used by the IG Publisher ecosystem. |
-
-> [TODO: The table lists the indicators of priority **Essential**. If your module wants the complete self-assessment, extend it with the **Important** and **Useful** indicators — `kerndatensatz-basis` carries the full table.]
 
 #### Practical use
 

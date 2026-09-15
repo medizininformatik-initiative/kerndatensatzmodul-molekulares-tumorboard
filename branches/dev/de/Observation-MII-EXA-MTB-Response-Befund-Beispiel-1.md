@@ -1,4 +1,4 @@
-# Beispiel fuer einen Response Befund - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel fuer einen Response Befund - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Response Befund](StructureDefinition-mii-pr-mtb-response-befund.md) version: 2026.0.1
+Profile: [MII PR MTB Response Befund](StructureDefinition-mii-pr-mtb-response-befund.md) version: 2027.0.0-ballot.1
 
 **partOf**: [Procedure Zytostatische Chemotherapie, Immuntherapie und antiretrovirale Therapie](Procedure-MII-EXA-MTB-Systemtherapie-Beispiel-1.md)
 
@@ -46,7 +46,7 @@ Profile: [MII PR MTB Response Befund](StructureDefinition-mii-pr-mtb-response-be
   "resourceType" : "Observation",
   "id" : "MII-EXA-MTB-Response-Befund-Beispiel-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-response-befund|2027.0.0-ballot.1"]
   },
   "partOf" : [{
     "reference" : "Procedure/MII-EXA-MTB-Systemtherapie-Beispiel-1"

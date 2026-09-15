@@ -1,4 +1,4 @@
-# Empfehlung Biopsie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Empfehlung Biopsie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Biopsie Auftrag](StructureDefinition-mii-pr-mtb-biopsie-auftrag.md) version: 2026.0.1
+Profile: [MII PR MTB Biopsie Auftrag](StructureDefinition-mii-pr-mtb-biopsie-auftrag.md) version: 2027.0.0-ballot.1
 
 **status**: Completed
 
@@ -35,7 +35,7 @@ Profile: [MII PR MTB Biopsie Auftrag](StructureDefinition-mii-pr-mtb-biopsie-auf
   "resourceType" : "ServiceRequest",
   "id" : "mii-exa-mtb-kim-rebiopsie-aszites",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-biopsie-auftrag|2027.0.0-ballot.1"]
   },
   "status" : "completed",
   "intent" : "proposal",

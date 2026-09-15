@@ -1,4 +1,4 @@
-# Empfehlung Histologie-Evaluation - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Empfehlung Histologie-Evaluation - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Histologie-Evaluation Auftrag](StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.md) version: 2026.0.1
+Profile: [MII PR MTB Histologie-Evaluation Auftrag](StructureDefinition-mii-pr-mtb-histologie-evaluation-auftrag.md) version: 2027.0.0-ballot.1
 
 **status**: Draft
 
@@ -35,7 +35,7 @@ Profile: [MII PR MTB Histologie-Evaluation Auftrag](StructureDefinition-mii-pr-m
   "resourceType" : "ServiceRequest",
   "id" : "mii-exa-mtb-kim-histologie-evaluation-aszites",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-histologie-evaluation-auftrag|2027.0.0-ballot.1"]
   },
   "status" : "draft",
   "intent" : "proposal",

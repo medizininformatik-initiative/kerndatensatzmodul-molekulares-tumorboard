@@ -1,4 +1,4 @@
-# MTB-Behandlungsepisode Kim Musterperson - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MTB-Behandlungsepisode Kim Musterperson - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlungsepisode.md) version: 2026.0.1
+Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlungsepisode.md) version: 2027.0.0-ballot.1
 
 **status**: Completed
 
@@ -87,7 +87,7 @@ Profile: [MII PR MTB Behandlungsepisode](StructureDefinition-mii-pr-mtb-behandlu
   "resourceType" : "ClinicalImpression",
   "id" : "mii-exa-mtb-kim-musterperson-behandlungsepisode",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-behandlungsepisode|2027.0.0-ballot.1"]
   },
   "status" : "completed",
   "subject" : {

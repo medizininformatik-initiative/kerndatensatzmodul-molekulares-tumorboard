@@ -1,4 +1,4 @@
-# Lokale Tumorausbreitung - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Lokale Tumorausbreitung - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Tumorausbreitung](StructureDefinition-mii-pr-mtb-tumorausbreitung.md) version: 2026.0.1
+Profile: [MII PR MTB Tumorausbreitung](StructureDefinition-mii-pr-mtb-tumorausbreitung.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -35,7 +35,7 @@ Profile: [MII PR MTB Tumorausbreitung](StructureDefinition-mii-pr-mtb-tumorausbr
   "resourceType" : "Observation",
   "id" : "mii-exa-mtb-kim-tumorausbreitung",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorausbreitung|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

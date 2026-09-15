@@ -1,4 +1,4 @@
-# Bestätigte Primärdiagnose - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Bestätigte Primärdiagnose - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Diagnose Primärtumor](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md) version: 2026.0.1
+Profile: [MII PR MTB Diagnose Primärtumor](StructureDefinition-mii-pr-mtb-diagnose-primaertumor.md) version: 2027.0.0-ballot.1
 
 **Condition Asserted Date**: 2021-06-10
 
@@ -43,7 +43,7 @@ Profile: [MII PR MTB Diagnose Primärtumor](StructureDefinition-mii-pr-mtb-diagn
   "resourceType" : "Condition",
   "id" : "mii-exa-mtb-kim-diagnose",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",

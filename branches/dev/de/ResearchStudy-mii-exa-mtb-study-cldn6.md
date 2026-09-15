@@ -1,4 +1,4 @@
-# A Clinical Study of the Safety and Effectiveness of an Investigational Cell Therapy Given With and Without an Investigational RNA-based Vaccine in Patients With Organ Tumors - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# A Clinical Study of the Safety and Effectiveness of an Investigational Cell Therapy Given With and Without an Investigational RNA-based Vaccine in Patients With Organ Tumors - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Studie](StructureDefinition-mii-pr-mtb-studie.md) version: 2026.0.1
+Profile: [MII PR MTB Studie](StructureDefinition-mii-pr-mtb-studie.md) version: 2027.0.0-ballot.1
 
 **identifier**: [MII_NS_MTB_NCT](NamingSystem-mii-ns-mtb-nct.md)/04503278
 
@@ -63,7 +63,7 @@ Profile: [MII PR MTB Studie](StructureDefinition-mii-pr-mtb-studie.md) version: 
   "resourceType" : "ResearchStudy",
   "id" : "mii-exa-mtb-study-cldn6",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studie|2027.0.0-ballot.1"]
   },
   "identifier" : [{
     "system" : "https://www.medizininformatik-initiative.de/fhir/modul-mtb/sid/nct",

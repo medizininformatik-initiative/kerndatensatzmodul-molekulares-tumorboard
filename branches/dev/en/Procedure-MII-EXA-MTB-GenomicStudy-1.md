@@ -1,4 +1,4 @@
-# Beispiel fuer einen GenomicStudy - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel fuer einen GenomicStudy - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Genomic Study](StructureDefinition-mii-pr-mtb-genomic-study.md) version: 2026.0.1
+Profile: [MII PR MTB Genomic Study](StructureDefinition-mii-pr-mtb-genomic-study.md) version: 2027.0.0-ballot.1
 
 **Genomic Study Analysis Extension**: [Procedure: extension = Next-Generation (NGS)/Massively parallel sequencing (MPS),->Maxim Muster (no stated gender), DoB Unknown,,,,GRCh38; status = completed; category = Laboratory](Procedure-MII-EXA-MTB-GenomicStudyAnalysis-1.md)
 
@@ -33,7 +33,7 @@ Profile: [MII PR MTB Genomic Study](StructureDefinition-mii-pr-mtb-genomic-study
   "resourceType" : "Procedure",
   "id" : "MII-EXA-MTB-GenomicStudy-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext",

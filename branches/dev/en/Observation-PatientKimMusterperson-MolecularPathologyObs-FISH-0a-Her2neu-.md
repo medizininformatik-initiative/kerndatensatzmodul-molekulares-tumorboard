@@ -1,4 +1,4 @@
-# Example In Situ Hybridization HER2/ERBB2 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Example In Situ Hybridization HER2/ERBB2 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB In Situ Hybridization HER2](StructureDefinition-mii-pr-mtb-insituhybridization-her2.md) version: 2026.0.1
+Profile: [MII PR MTB In Situ Hybridization HER2](StructureDefinition-mii-pr-mtb-insituhybridization-her2.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -45,7 +45,7 @@ Profile: [MII PR MTB In Situ Hybridization HER2](StructureDefinition-mii-pr-mtb-
   "resourceType" : "Observation",
   "id" : "PatientKimMusterperson-MolecularPathologyObs-FISH-0a-Her2neu-",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-insituhybridization-her2|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

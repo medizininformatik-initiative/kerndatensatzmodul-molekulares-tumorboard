@@ -1,4 +1,4 @@
-# MTB-NGS-Bericht Kim Musterperson - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MTB-NGS-Bericht Kim Musterperson - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Genomic Study Analysis](StructureDefinition-mii-pr-mtb-genomic-study-analysis.md) version: 2026.0.1
+Profile: [MII PR MTB Genomic Study Analysis](StructureDefinition-mii-pr-mtb-genomic-study-analysis.md) version: 2027.0.0-ballot.1
 
 **Genomic Study Analysis Method Type**: Next-Generation (NGS)/Massively parallel sequencing (MPS)
 
@@ -37,7 +37,7 @@ Profile: [MII PR MTB Genomic Study Analysis](StructureDefinition-mii-pr-mtb-geno
   "resourceType" : "Procedure",
   "id" : "mii-exa-mtb-kim-musterperson-genomic-study-analysis-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type",

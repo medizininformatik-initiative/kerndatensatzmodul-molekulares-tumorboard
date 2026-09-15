@@ -1,4 +1,4 @@
-# PatientKimMusterperson-SystemicTherapy-3 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# PatientKimMusterperson-SystemicTherapy-3 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Onkologie Systemische Therapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot/StructureDefinition-mii-pr-onko-systemische-therapie.html)
+Profile: [MII PR Onkologie Systemische Therapie](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-systemische-therapie.html)
 
 **MII EX Onko Systemische Therapie Intention**: kurativ
 

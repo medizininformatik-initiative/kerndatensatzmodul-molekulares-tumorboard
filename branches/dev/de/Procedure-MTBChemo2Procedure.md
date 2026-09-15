@@ -1,4 +1,4 @@
-# MTBChemo2Procedure - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# MTBChemo2Procedure - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Systemische Vortherapie](StructureDefinition-mii-pr-mtb-systemische-vortherapie.md) version: 2026.0.1
+Profile: [MII PR MTB Systemische Vortherapie](StructureDefinition-mii-pr-mtb-systemische-vortherapie.md) version: 2027.0.0-ballot.1
 
 **MII EX Onko Systemische Therapie Intention**: kurativ
 
@@ -39,7 +39,7 @@ Profile: [MII PR MTB Systemische Vortherapie](StructureDefinition-mii-pr-mtb-sys
   "resourceType" : "Procedure",
   "id" : "MTBChemo2Procedure",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemische-vortherapie|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-systemische-therapie-intention",

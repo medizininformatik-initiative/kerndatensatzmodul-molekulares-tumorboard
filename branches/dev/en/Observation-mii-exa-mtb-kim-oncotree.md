@@ -1,4 +1,4 @@
-# High-Grade Neuroendocrine Carcinoma of the Ovary - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# High-Grade Neuroendocrine Carcinoma of the Ovary - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Oncotree Klassifikation](StructureDefinition-mii-pr-mtb-oncotree.md) version: 2026.0.1
+Profile: [MII PR MTB Oncotree Klassifikation](StructureDefinition-mii-pr-mtb-oncotree.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -33,7 +33,7 @@ Profile: [MII PR MTB Oncotree Klassifikation](StructureDefinition-mii-pr-mtb-onc
   "resourceType" : "Observation",
   "id" : "mii-exa-mtb-kim-oncotree",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-oncotree|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "code" : {

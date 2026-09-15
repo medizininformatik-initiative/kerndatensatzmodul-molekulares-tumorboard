@@ -1,4 +1,4 @@
-# Beispiel fuer einen Sequencer - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel fuer einen Sequencer - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profiles: [Genomic Study Device](StructureDefinition-genomic-study-device.md), [https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-device|2026.0.1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-device|2026.0.1)
+Profiles: [Genomic Study Device](StructureDefinition-genomic-study-device.md), [https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-device|2027.0.0-ballot.1](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-device|2027.0.0-ballot.1)
 
 **manufacturer**: Illumina
 
@@ -33,7 +33,7 @@ Profiles: [Genomic Study Device](StructureDefinition-genomic-study-device.md), [
   "id" : "MII-EXA-MTB-Device-Sequencer-1",
   "meta" : {
     "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device",
-    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-device|2026.0.1"]
+    "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-device|2027.0.0-ballot.1"]
   },
   "manufacturer" : "Illumina",
   "deviceName" : [{

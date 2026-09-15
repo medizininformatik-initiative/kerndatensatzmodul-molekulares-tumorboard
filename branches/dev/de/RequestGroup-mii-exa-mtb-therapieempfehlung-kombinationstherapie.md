@@ -1,4 +1,4 @@
-# mii-exa-mtb-therapieempfehlung-kombinationstherapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# mii-exa-mtb-therapieempfehlung-kombinationstherapie - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Therapieempfehlung Kombinationstherapie](StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.md) version: 2026.0.1
+Profile: [MII PR MTB Therapieempfehlung Kombinationstherapie](StructureDefinition-mii-pr-mtb-therapieempfehlung-kombination.md) version: 2027.0.0-ballot.1
 
 **MII EX MTB Empfehlung Priorität**: 1
 
@@ -41,7 +41,7 @@ Profile: [MII PR MTB Therapieempfehlung Kombinationstherapie](StructureDefinitio
   "resourceType" : "RequestGroup",
   "id" : "mii-exa-mtb-therapieempfehlung-kombinationstherapie",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung-kombination|2027.0.0-ballot.1"]
   },
   "extension" : [{
     "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-empfehlung-prioritaet",

@@ -1,4 +1,4 @@
-# Beispiel DNA-Fusion - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel DNA-Fusion - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB DNA Fusion](StructureDefinition-mii-pr-mtb-dna-fusion.md) version: 2026.0.1
+Profile: [MII PR MTB DNA Fusion](StructureDefinition-mii-pr-mtb-dna-fusion.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -45,7 +45,7 @@ Profile: [MII PR MTB DNA Fusion](StructureDefinition-mii-pr-mtb-dna-fusion.md) v
   "resourceType" : "Observation",
   "id" : "MII-EXA-MTB-DNA-Fusion-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

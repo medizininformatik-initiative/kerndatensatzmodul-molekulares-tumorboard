@@ -1,4 +1,4 @@
-# 10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# 10.03.2023 Krankenkassenantrag gestellt Mirvetuximab soravtansine - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.md) version: 2026.0.1
+Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-antrag-kostenuebernahme.md) version: 2027.0.0-ballot.1
 
 **status**: Active
 
@@ -60,7 +60,7 @@ Profile: [MII PR MTB Antrag Kostenuebernahme](StructureDefinition-mii-pr-mtb-ant
   "resourceType" : "Claim",
   "id" : "MII-EXA-MTB-Antrag-Kostenuebernahme-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-antrag-kostenuebernahme|2027.0.0-ballot.1"]
   },
   "status" : "active",
   "type" : {

@@ -1,4 +1,4 @@
-# PatientKimMusterperson-MolecularPathologyObservation-2-Pax8 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# PatientKimMusterperson-MolecularPathologyObservation-2-Pax8 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB Immunohistochemistry](StructureDefinition-mii-pr-mtb-immunohistochemistry.md) version: 2026.0.1
+Profile: [MII PR MTB Immunohistochemistry](StructureDefinition-mii-pr-mtb-immunohistochemistry.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -35,7 +35,7 @@ Profile: [MII PR MTB Immunohistochemistry](StructureDefinition-mii-pr-mtb-immuno
   "resourceType" : "Observation",
   "id" : "PatientKimMusterperson-MolecularPathologyObservation-2-Pax8",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{

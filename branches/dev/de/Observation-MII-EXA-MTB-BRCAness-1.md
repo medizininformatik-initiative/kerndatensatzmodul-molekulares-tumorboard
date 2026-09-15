@@ -1,4 +1,4 @@
-# Beispiel fuer BRCAness-Analyse - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2026.0.1
+# Beispiel fuer BRCAness-Analyse - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR MTB BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md) version: 2026.0.1
+Profile: [MII PR MTB BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md) version: 2027.0.0-ballot.1
 
 **status**: Final
 
@@ -42,7 +42,7 @@ Profile: [MII PR MTB BRCAness](StructureDefinition-mii-pr-mtb-brcaness.md) versi
   "resourceType" : "Observation",
   "id" : "MII-EXA-MTB-BRCAness-1",
   "meta" : {
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness|2026.0.1"]
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness|2027.0.0-ballot.1"]
   },
   "status" : "final",
   "category" : [{
