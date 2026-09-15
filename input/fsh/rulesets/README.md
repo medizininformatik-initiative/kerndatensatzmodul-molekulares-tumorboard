@@ -53,7 +53,7 @@ IG until you do:
 
 | Placeholder | Where |
 |---|---|
-| `2026.0.1` | `version.fsh`, `meta-profile.fsh`, `cps-rules.fsh` |
+| `2027.0.0-ballot.1` | `version.fsh`, `meta-profile.fsh`, `cps-rules.fsh` |
 | `mtb` | `version.fsh` (package id + canonical of the package source) |
 | `2026` | `version.fsh` (`resource-effectivePeriod.start`) |
 | `2024` | `crmi.fsh` (`artifact-copyrightLabel`) |
