@@ -305,7 +305,7 @@ Usage: #definition
 // Medication Statement requirements
 * insert SupportResource(MedicationStatement, #SHALL)
 * insert Profile(http://hl7.org/fhir/StructureDefinition/MedicationStatement)
-* insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement, #SHALL)
+* insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-systemtherapie-medication-statement, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
 * insert SupportSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, #SHALL)
