@@ -1,0 +1,93 @@
+# MTBChemo1MedicationStatement4-1 - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MTBChemo1MedicationStatement4-1**
+
+## Example MedicationStatement: MTBChemo1MedicationStatement4-1
+
+-------
+
+**English**
+
+-------
+
+Profile: [MII PR Onkologie Systemische Therapie Medikation](https://medizininformatik-initiative.github.io/kerndatensatzmodul-onkologie/2027.0.0-ballot.1/StructureDefinition-mii-pr-onko-systemische-therapie-medikation.html)
+
+**partOf**: 
+
+* [Procedure 367336001](Procedure-MTBChemo1Procedure.md)
+* [MedicationStatement: status = completed; medication[x] = ; effective[x] = 2023-03-29](MedicationStatement-MTBChemo1MedicationStatement4.md)
+
+**status**: Completed
+
+**medication**: L01XA02
+
+**subject**: [Kim Musterperson (no stated gender), DoB: 1956-03-14](Patient-PatientKimMusterperson.md)
+
+**effective**: 2023-03-29
+
+**note**: 
+
+> 
+
+Z4 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2 d1
+
+
+> **dosage****timing**: Events: 2023-03-29 
+
+### DoseAndRates
+
+| | |
+| :--- | :--- |
+| - | **Dose[x]** |
+| * | 5 AUC (Details: UCUM codemg.min/ml = 'mg.min/ml') |
+
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "MedicationStatement",
+  "id" : "MTBChemo1MedicationStatement4-1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-systemische-therapie-medikation"]
+  },
+  "partOf" : [{
+    "reference" : "Procedure/MTBChemo1Procedure"
+  },
+  {
+    "reference" : "MedicationStatement/MTBChemo1MedicationStatement4"
+  }],
+  "status" : "completed",
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/bfarm/atc",
+      "code" : "L01XA02"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "effectiveDateTime" : "2023-03-29",
+  "note" : [{
+    "text" : "Z4 Carboplatin AUC5 d1, pegliposomales Doxorubicin 30 mg/m2 d1"
+  }],
+  "dosage" : [{
+    "timing" : {
+      "event" : ["2023-03-29"]
+    },
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "value" : 5,
+        "unit" : "AUC",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mg.min/ml"
+      }
+    }]
+  }]
+}
+
+```

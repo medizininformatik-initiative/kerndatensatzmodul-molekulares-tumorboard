@@ -1,0 +1,65 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "mii-cs-mtb-panel-capability",
+  "language" : "de",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mii-cs-mtb-panel-capability</b></p><a name=\"de-mii-cs-mtb-panel-capability\"> </a><a name=\"de-hcmii-cs-mtb-panel-capability\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">snv-detection<a name=\"de-mii-cs-mtb-panel-capability-snv-detection\"> </a></td><td>SNV-Detektion</td><td>Detektion einfacher Varianten (SNVs/kleine Indels)</td></tr><tr><td style=\"white-space:nowrap\">fusion-detection<a name=\"de-mii-cs-mtb-panel-capability-fusion-detection\"> </a></td><td>Fusions-Detektion</td><td>Detektion von Genfusionen</td></tr><tr><td style=\"white-space:nowrap\">deletion-detection<a name=\"de-mii-cs-mtb-panel-capability-deletion-detection\"> </a></td><td>Deletions-Detektion</td><td>Detektion von Deletionen</td></tr><tr><td style=\"white-space:nowrap\">amplification-detection<a name=\"de-mii-cs-mtb-panel-capability-amplification-detection\"> </a></td><td>Amplifikations-Detektion</td><td>Detektion von Amplifikationen</td></tr><tr><td style=\"white-space:nowrap\">overexpression-detection<a name=\"de-mii-cs-mtb-panel-capability-overexpression-detection\"> </a></td><td>Ueberexpressions-Detektion</td><td>Detektion von Ueberexpression</td></tr><tr><td style=\"white-space:nowrap\">signature-detection<a name=\"de-mii-cs-mtb-panel-capability-signature-detection\"> </a></td><td>Signatur-Detektion</td><td>Detektion genomischer Signaturen (z. B. TMB, HRD)</td></tr></table></div>"
+  },
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+  "version" : "2027.0.0-ballot.1",
+  "name" : "MII_CS_MTB_Panel_Capability",
+  "title" : "MII CS MTB Panel Capability",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-21T08:19:46+00:00",
+  "publisher" : "Medizininformatik-Initiative",
+  "contact" : [{
+    "name" : "Medizininformatik-Initiative",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de"
+    }]
+  }],
+  "description" : "Analytische Faehigkeiten eines Sequenzier-Panels (aus dem Panel-Metadatenkatalog abgeleitet). TODO:REVIEW",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 6,
+  "concept" : [{
+    "code" : "snv-detection",
+    "display" : "SNV-Detektion",
+    "definition" : "Detektion einfacher Varianten (SNVs/kleine Indels)"
+  },
+  {
+    "code" : "fusion-detection",
+    "display" : "Fusions-Detektion",
+    "definition" : "Detektion von Genfusionen"
+  },
+  {
+    "code" : "deletion-detection",
+    "display" : "Deletions-Detektion",
+    "definition" : "Detektion von Deletionen"
+  },
+  {
+    "code" : "amplification-detection",
+    "display" : "Amplifikations-Detektion",
+    "definition" : "Detektion von Amplifikationen"
+  },
+  {
+    "code" : "overexpression-detection",
+    "display" : "Ueberexpressions-Detektion",
+    "definition" : "Detektion von Ueberexpression"
+  },
+  {
+    "code" : "signature-detection",
+    "display" : "Signatur-Detektion",
+    "definition" : "Detektion genomischer Signaturen (z. B. TMB, HRD)"
+  }]
+}
