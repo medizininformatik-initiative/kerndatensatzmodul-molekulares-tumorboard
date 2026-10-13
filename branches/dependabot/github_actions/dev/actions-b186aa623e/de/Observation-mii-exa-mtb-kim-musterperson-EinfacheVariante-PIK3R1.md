@@ -1,0 +1,106 @@
+# PIK3R1 Einfache Variante - MII IG Kerndatensatz-Modul Molekulares Tumorboard v2027.0.0-ballot.1
+
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **PIK3R1 Einfache Variante**
+
+## Beispiel Observation: PIK3R1 Einfache Variante
+
+-------
+
+**German**
+
+-------
+
+Profile: [MII PR MTB Einfache Variante](StructureDefinition-mii-pr-mtb-einfache-variante.md) version: 2027.0.0-ballot.1
+
+**status**: Final
+
+**category**: Laboratory, Genetik
+
+**code**: Genetic variant assessment
+
+**subject**: [Kim Musterperson (no stated gender), DoB: 1956-03-14](Patient-PatientKimMusterperson.md)
+
+**value**: Present
+
+> **component****code**: Gene studied [ID]**value**: PIK3R1
+
+> **component****code**: Amino acid change (pHGVS)**value**: NP_852664.1:p.(Glu160Ter)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Observation",
+  "id" : "mii-exa-mtb-kim-musterperson-EinfacheVariante-PIK3R1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante|2027.0.0-ballot.1"]
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory",
+      "display" : "Laboratory"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code" : "GE"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "69548-6",
+      "display" : "Genetic variant assessment"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientKimMusterperson"
+  },
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LA9633-4",
+      "display" : "Present"
+    }]
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "48018-6",
+        "display" : "Gene studied [ID]"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.genenames.org/geneId",
+        "code" : "HGNC:8979",
+        "display" : "PIK3R1"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "48005-3",
+        "display" : "Amino acid change (pHGVS)"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://varnomen.hgvs.org",
+        "code" : "NP_852664.1:p.(Glu160Ter)"
+      }]
+    }
+  }]
+}
+
+```
