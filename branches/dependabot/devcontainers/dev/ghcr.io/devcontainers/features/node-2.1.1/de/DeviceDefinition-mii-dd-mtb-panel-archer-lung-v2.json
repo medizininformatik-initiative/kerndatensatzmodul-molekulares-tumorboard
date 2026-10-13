@@ -1,0 +1,52 @@
+{
+  "resourceType" : "DeviceDefinition",
+  "id" : "mii-dd-mtb-panel-archer-lung-v2",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-panel-devicedefinition"]
+  },
+  "language" : "de",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: DeviceDefinition mii-dd-mtb-panel-archer-lung-v2</b></p><a name=\"de-mii-dd-mtb-panel-archer-lung-v2\"> </a><a name=\"de-hcmii-dd-mtb-panel-archer-lung-v2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-panel-devicedefinition.html\">MII PR MTB Panel DeviceDefinition</a></p></div><blockquote><p><b>MII EX MTB Panel Gene List</b></p><ul><li>geneList: <a href=\"ValueSet-mii-vs-mtb-panel-archer-lung-v2.html\">MII VS MTB Panel Archer</a></li><li>scope: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability fusion-detection}\">Fusions-Detektion</span></li></ul></blockquote><p><b>manufacturer</b>: Integrated DNA Technologies (ArcherDX)</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>FusionPlex Archer Lung V2</td><td>User Friendly name</td></tr></table><p><b>type</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction gene-panel}\">Genpanel</span></p><h3>Capabilities</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability fusion-detection}\">Fusions-Detektion</span></td></tr></table><p><b>url</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-archer-lung-v2\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-archer-lung-v2</a></p><p><b>onlineInformation</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=https://eu.idtdna.com/pages/products/next-generation-sequencing/archer-ngs-assay-solutions/solid-tumor-research/archer-fusionplex-lung-v2-panel\">https://eu.idtdna.com/pages/products/next-generation-sequencing/archer-ngs-assay-solutions/solid-tumor-research/archer-fusionplex-lung-v2-panel</a></p><p><b>note</b>: </p><blockquote><div><p>Fusionsanalyse, 17 Gene.</p>\n</div></blockquote></div>"
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "geneList",
+      "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-archer-lung-v2"
+    },
+    {
+      "url" : "scope",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+          "code" : "fusion-detection"
+        }]
+      }
+    }],
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+  }],
+  "manufacturerString" : "Integrated DNA Technologies (ArcherDX)",
+  "deviceName" : [{
+    "name" : "FusionPlex Archer Lung V2",
+    "type" : "user-friendly-name"
+  }],
+  "type" : {
+    "coding" : [{
+      "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction",
+      "code" : "gene-panel"
+    }]
+  },
+  "capability" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+        "code" : "fusion-detection"
+      }]
+    }
+  }],
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-archer-lung-v2",
+  "onlineInformation" : "https://eu.idtdna.com/pages/products/next-generation-sequencing/archer-ngs-assay-solutions/solid-tumor-research/archer-fusionplex-lung-v2-panel",
+  "note" : [{
+    "text" : "Fusionsanalyse, 17 Gene."
+  }]
+}
