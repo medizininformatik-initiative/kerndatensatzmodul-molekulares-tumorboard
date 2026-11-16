@@ -1,0 +1,46 @@
+{
+  "resourceType" : "Observation",
+  "id" : "PatientKimMusterperson-Observation-27",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-27</b></p><a name=\"PatientKimMusterperson-Observation-27\"> </a><a name=\"hcPatientKimMusterperson-Observation-27\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-7.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 246455001}\">vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 246455001}, {http://snomed.info/sct 263920009}\">aktuell metrisch nur noch schwer fassbar</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 80266002}\">True pelvis</span></p></div>"
+  },
+  "partOf" : [{
+    "reference" : "Procedure/PatientKimMusterperson-Procedure-7"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "237679004",
+      "display" : "Status post (contextual qualifier) (qualifier value)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "246455001",
+      "display" : "Recurrence"
+    }],
+    "text" : "vormals KM-aufnehmendes Lokalrezidiv im kleinen Becken"
+  },
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "246455001",
+      "display" : "Recurrence"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "263920009",
+      "display" : "Unrecordable"
+    }],
+    "text" : "aktuell metrisch nur noch schwer fassbar"
+  },
+  "bodySite" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "80266002",
+      "display" : "True pelvis"
+    }]
+  }
+}

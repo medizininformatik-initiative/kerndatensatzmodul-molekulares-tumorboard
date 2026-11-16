@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PatientKimMusterperson-Observation-10"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-10</b></p><a name="PatientKimMusterperson-Observation-10"> </a><a name="hcPatientKimMusterperson-Observation-10"> </a><p><b>partOf</b>: <a href="Procedure-PatientKimMusterperson-Procedure-3.html">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 112231000}, {http://snomed.info/sct 174430004}">Status post (contextual qualifier) (qualifier value)</span></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 94381002}, {http://snomed.info/sct 41647002}">Darüberhinaus kein Hinweis auf Leberfilialisierung.</span></p><p><b>bodySite</b>: <span title="Codes:{http://snomed.info/sct 181268008}">Entire liver</span></p></div>
+  </text>
+  <partOf>
+    <reference value="Procedure/PatientKimMusterperson-Procedure-3"/>
+  </partOf>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="237679004"/>
+      <display value="Status post (contextual qualifier) (qualifier value)"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="112231000"/>
+      <display value="Atypical"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="174430004"/>
+      <display value="Resection of segment of liver (procedure)"/>
+    </coding>
+  </code>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="94381002"/>
+      <display value="Metastatic malignant neoplasm to liver (disorder)"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="41647002"/>
+      <display value="No evidence of (contextual qualifier) (qualifier value)"/>
+    </coding>
+    <text value="Darüberhinaus kein Hinweis auf Leberfilialisierung."/>
+  </valueCodeableConcept>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="181268008"/>
+      <display value="Entire liver"/>
+    </coding>
+  </bodySite>
+</Observation>

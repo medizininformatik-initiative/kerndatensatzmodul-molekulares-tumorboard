@@ -1,0 +1,84 @@
+{
+  "resourceType" : "DeviceDefinition",
+  "id" : "mii-dd-mtb-panel-tso-500",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-panel-devicedefinition"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: DeviceDefinition mii-dd-mtb-panel-tso-500</b></p><a name=\"mii-dd-mtb-panel-tso-500\"> </a><a name=\"hcmii-dd-mtb-panel-tso-500\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-mtb-panel-devicedefinition.html\">MII PR MTB Panel DeviceDefinition</a></p></div><blockquote><p><b>MII EX MTB Panel Gene List</b></p><ul><li>geneList: <a href=\"ValueSet-mii-vs-mtb-panel-tso-500-snv.html\">MII VS MTB Panel TSO 500 SNVs</a></li><li>scope: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability snv-detection}\">SNV-Detektion</span></li></ul></blockquote><blockquote><p><b>MII EX MTB Panel Gene List</b></p><ul><li>geneList: <a href=\"ValueSet-mii-vs-mtb-panel-tso-500-fusion.html\">MII VS MTB Panel TSO 500 Fusions</a></li><li>scope: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability fusion-detection}\">Fusions-Detektion</span></li></ul></blockquote><p><b>manufacturer</b>: Illumina</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>TruSight Oncology 500</td><td>User Friendly name</td></tr></table><p><b>type</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction gene-panel}\">Genpanel</span></p><blockquote><p><b>capability</b></p><p><b>type</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability snv-detection}\">SNV-Detektion</span></p></blockquote><blockquote><p><b>capability</b></p><p><b>type</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability fusion-detection}\">Fusions-Detektion</span></p></blockquote><blockquote><p><b>capability</b></p><p><b>type</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability signature-detection}\">Signatur-Detektion</span></p></blockquote><p><b>url</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-tso-500\">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-tso-500</a></p><p><b>onlineInformation</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=https://www.illumina.com/products/by-type/clinical-research-products/trusight-oncology-500.html\">https://www.illumina.com/products/by-type/clinical-research-products/trusight-oncology-500.html</a></p><p><b>note</b>: </p><blockquote><div><p>523 SNV-Gene, 55 Fusions-Gene; misst u. a. auch TMB/MSI.</p>\n</div></blockquote></div>"
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "geneList",
+      "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-snv"
+    },
+    {
+      "url" : "scope",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+          "code" : "snv-detection"
+        }]
+      }
+    }],
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+  },
+  {
+    "extension" : [{
+      "url" : "geneList",
+      "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-tso-500-fusion"
+    },
+    {
+      "url" : "scope",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+          "code" : "fusion-detection"
+        }]
+      }
+    }],
+    "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list"
+  }],
+  "manufacturerString" : "Illumina",
+  "deviceName" : [{
+    "name" : "TruSight Oncology 500",
+    "type" : "user-friendly-name"
+  }],
+  "type" : {
+    "coding" : [{
+      "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction",
+      "code" : "gene-panel"
+    }]
+  },
+  "capability" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+        "code" : "snv-detection"
+      }]
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+        "code" : "fusion-detection"
+      }]
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability",
+        "code" : "signature-detection"
+      }]
+    }
+  }],
+  "url" : "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-tso-500",
+  "onlineInformation" : "https://www.illumina.com/products/by-type/clinical-research-products/trusight-oncology-500.html",
+  "note" : [{
+    "text" : "523 SNV-Gene, 55 Fusions-Gene; misst u. a. auch TMB/MSI."
+  }]
+}

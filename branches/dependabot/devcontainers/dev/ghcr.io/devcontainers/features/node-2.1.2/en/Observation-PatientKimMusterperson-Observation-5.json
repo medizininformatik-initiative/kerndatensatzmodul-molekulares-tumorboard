@@ -1,0 +1,50 @@
+{
+  "resourceType" : "Observation",
+  "id" : "PatientKimMusterperson-Observation-5",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-5</b></p><a name=\"PatientKimMusterperson-Observation-5\"> </a><a name=\"hcPatientKimMusterperson-Observation-5\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-2.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 112231000}, {http://snomed.info/sct 174430004}\">Status post (contextual qualifier) (qualifier value)</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 420341009}, {http://snomed.info/sct 309201001}\">konstante Flüssigkeitskollektion angrenzend</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 181247007}\">Entire duodenum</span></p></div>"
+  },
+  "partOf" : [{
+    "reference" : "Procedure/PatientKimMusterperson-Procedure-2"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "237679004",
+      "display" : "Status post (contextual qualifier) (qualifier value)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "112231000",
+      "display" : "Atypical"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "174430004",
+      "display" : "Resection of segment of liver (procedure)"
+    }]
+  },
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "420341009",
+      "display" : "Constant"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "309201001",
+      "display" : "Ascitic fluid specimen"
+    }],
+    "text" : "konstante Flüssigkeitskollektion angrenzend"
+  },
+  "bodySite" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "181247007",
+      "display" : "Entire duodenum"
+    }]
+  }
+}

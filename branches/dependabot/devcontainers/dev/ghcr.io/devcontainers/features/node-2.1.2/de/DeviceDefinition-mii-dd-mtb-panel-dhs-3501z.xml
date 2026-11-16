@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DeviceDefinition xmlns="http://hl7.org/fhir">
+  <id value="mii-dd-mtb-panel-dhs-3501z"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-panel-devicedefinition"/>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="extensions"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: DeviceDefinition mii-dd-mtb-panel-dhs-3501z</b></p><a name="de-mii-dd-mtb-panel-dhs-3501z"> </a><a name="de-hcmii-dd-mtb-panel-dhs-3501z"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-mtb-panel-devicedefinition.html">MII PR MTB Panel DeviceDefinition</a></p></div><blockquote><p><b>MII EX MTB Panel Gene List</b></p><ul><li>geneList: <a href="ValueSet-mii-vs-mtb-panel-dhs-3501z.html">MII VS MTB Panel DHS-3501Z</a></li><li>scope: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability snv-detection}">SNV-Detektion</span></li></ul></blockquote><p><b>manufacturer</b>: Qiagen</p><h3>DeviceNames</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style="display: none">*</td><td>Qiagen DHS-3501Z</td><td>User Friendly name</td></tr></table><p><b>type</b>: <span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction gene-panel}">Genpanel</span></p><h3>Capabilities</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Type</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability snv-detection}">SNV-Detektion</span></td></tr></table><p><b>url</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-dhs-3501z">https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-dhs-3501z</a></p><p><b>onlineInformation</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=https://geneglobe.qiagen.com/us/product-groups/qiaseq-targeted-dna-panels/DHS-3501Z">https://geneglobe.qiagen.com/us/product-groups/qiaseq-targeted-dna-panels/DHS-3501Z</a></p><p><b>note</b>: </p><blockquote><div><p>275 Gene; nur SNVs (keine Fusionsanalyse).</p>
+</div></blockquote></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-ex-mtb-panel-gene-list">
+    <extension url="geneList">
+      <valueCanonical value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/ValueSet/mii-vs-mtb-panel-dhs-3501z"/>
+    </extension>
+    <extension url="scope">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"/>
+          <code value="snv-detection"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <manufacturerString value="Qiagen"/>
+  <deviceName>
+    <name value="Qiagen DHS-3501Z"/>
+    <type value="user-friendly-name"/>
+  </deviceName>
+  <type>
+    <coding>
+      <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction"/>
+      <code value="gene-panel"/>
+    </coding>
+  </type>
+  <capability>
+    <type>
+      <coding>
+        <system value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-panel-capability"/>
+        <code value="snv-detection"/>
+      </coding>
+    </type>
+  </capability>
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/DeviceDefinition/mii-dd-mtb-panel-dhs-3501z"/>
+  <onlineInformation value="https://geneglobe.qiagen.com/us/product-groups/qiaseq-targeted-dna-panels/DHS-3501Z"/>
+  <note>
+    <text value="275 Gene; nur SNVs (keine Fusionsanalyse)."/>
+  </note>
+</DeviceDefinition>

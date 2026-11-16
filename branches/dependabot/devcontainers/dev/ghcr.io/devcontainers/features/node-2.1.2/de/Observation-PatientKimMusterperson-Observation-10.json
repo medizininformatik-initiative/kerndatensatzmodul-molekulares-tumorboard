@@ -1,0 +1,50 @@
+{
+  "resourceType" : "Observation",
+  "id" : "PatientKimMusterperson-Observation-10",
+  "language" : "de",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Observation PatientKimMusterperson-Observation-10</b></p><a name=\"de-PatientKimMusterperson-Observation-10\"> </a><a name=\"de-hcPatientKimMusterperson-Observation-10\"> </a><p><b>partOf</b>: <a href=\"Procedure-PatientKimMusterperson-Procedure-3.html\">Procedure Computertomographie [CT], nativ</a></p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 237679004}, {http://snomed.info/sct 112231000}, {http://snomed.info/sct 174430004}\">Status post (contextual qualifier) (qualifier value)</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 94381002}, {http://snomed.info/sct 41647002}\">Darüberhinaus kein Hinweis auf Leberfilialisierung.</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 181268008}\">Entire liver</span></p></div>"
+  },
+  "partOf" : [{
+    "reference" : "Procedure/PatientKimMusterperson-Procedure-3"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "237679004",
+      "display" : "Status post (contextual qualifier) (qualifier value)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "112231000",
+      "display" : "Atypical"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "174430004",
+      "display" : "Resection of segment of liver (procedure)"
+    }]
+  },
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "94381002",
+      "display" : "Metastatic malignant neoplasm to liver (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "41647002",
+      "display" : "No evidence of (contextual qualifier) (qualifier value)"
+    }],
+    "text" : "Darüberhinaus kein Hinweis auf Leberfilialisierung."
+  },
+  "bodySite" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "181268008",
+      "display" : "Entire liver"
+    }]
+  }
+}
